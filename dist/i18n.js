@@ -1,8 +1,10 @@
 import { personalMessages } from './personal-content.js';
 import { musicMessages } from './music-content.js';
+import { folioMessages } from './folio-content.js';
 // Authored translations only. HTML values preserve the site's existing visual accents.
 export const messages = {
   'nav.label': ['主导航', 'Main navigation'],
+  'nav.posts': ['随笔', 'Posts'],
   'nav.now': ['近况', 'Now'],
   'now.title': ['Now — ChefZC 的近况', 'Now — ChefZC'],
   'now.meta': ['ChefZC 的近况与进展。2026 年 9 月 16 日，正式创造自己的个人主页。', 'Updates from ChefZC. September 16, 2026: the day I started building my own personal website.'],
@@ -32,14 +34,14 @@ export const messages = {
   'footer.note': ['保持好奇 · 持续创造 · 2026', 'BUILT WITH CURIOSITY · 2026'],
   'footer.top': ['回到顶部 <span aria-hidden="true">↑</span>', 'Back to top <span aria-hidden="true">↑</span>'],
   'gallery.title': ['Gallery — ChefZC 数字作品陈列室', 'Gallery — ChefZC Digital Collection'],
-  'gallery.meta': ['ChefZC 的数字作品陈列室。试玩第一个正式项目 NBA After Hours，探索代码、篮球与好奇心。', 'The digital collection by ChefZC. Play NBA After Hours, my first released project, and explore code, basketball, and curiosity.'],
+  'gallery.meta': ['ChefZC 的数字作品陈列室。探索 Folio 1.0 模组手帖与 NBA After Hours，收藏每一次创造。', 'The digital collection by ChefZC. Explore Folio 1.0, a considered mod studio, and NBA After Hours, my first game.'],
   'gallery.skip': ['跳到作品', 'Skip to projects'],
   'gallery.kicker': ['<span class="lime-text">[</span> 数字作品陈列室 <span class="lime-text">]</span>', '<span class="lime-text">[</span> THE DIGITAL COLLECTION <span class="lime-text">]</span>'],
   'gallery.mark': ['灵感，正在成形', 'MADE OF IDEAS'],
   'gallery.headline': ['好玩的想法，<span>值得一个展位。</span>', 'Good ideas <span>deserve a space.</span>'],
   'gallery.intro': ['一些关于代码、设计和好奇心的探索。<br>把每一次「试试看」，留在这里。', 'Experiments in code, design, and curiosity.<br>A home for every “let’s try it.”'],
   'gallery.selected': ['作品与实验', 'PROJECTS & EXPERIMENTS'],
-  'gallery.notice': ['正式作品 <span>/</span> 概念习作', 'Released projects <span>/</span> Concept studies'],
+  'gallery.notice': ['真实作品 <span>/</span> 持续创造', 'REAL PROJECTS <span>/</span> STILL CREATING'],
   'court.first': ['我的第一个正式项目', 'MY FIRST RELEASE'],
   'court.play': ['立即上场', 'PLAY NOW'],
   'court.source': ['探索源码', 'EXPLORE THE CODE'],
@@ -131,7 +133,7 @@ export const messages = {
   'profile.enterGallery': ['进入项目陈列室 <span aria-hidden="true">→</span>', 'Step into the collection <span aria-hidden="true">→</span>']
 };
 
-Object.assign(messages, personalMessages, musicMessages);
+Object.assign(messages, personalMessages, musicMessages, folioMessages);
 const storageKey = 'chefzc.language';
 let language = 'zh';
 try { if (globalThis.localStorage?.getItem(storageKey) === 'en') language = 'en'; } catch { /* Storage may be disabled; the switch still works. */ }
@@ -148,11 +150,13 @@ export function onLanguageChange(listener) { listeners.add(listener); return () 
 const commonBindings = [
   ['nav.page-nav', 'nav.label', 'aria-label'], ['.brand', 'nav.home', 'aria-label'],
   ['.page-nav a[href="./now.html"]', 'nav.now'],
+  ['.page-nav a[href="./posts.html"]', 'nav.posts'],
   ['.page-nav a[href="./profile.html"]', 'nav.profile', 'html'], ['.page-nav a[href="./profile.html"]', 'nav.profileLabel', 'aria-label'],
   ['.page-nav a[href="./gallery.html"]', 'nav.gallery', 'html'], ['.edition', 'nav.edition', 'html'],
   ['.language-switch', 'language.label', 'aria-label'], ['.site-footer > .mono', 'footer.note'], ['.back-top', 'footer.top', 'html']
 ];
 const bindings = {
+  posts: [],
   now: [['title', 'now.title'], ['meta[name="description"]', 'now.meta', 'content']],
   gallery: [
     ['title','gallery.title'], ['meta[name="description"]','gallery.meta','content'], ['.skip-link','gallery.skip'],
@@ -192,7 +196,7 @@ const bindings = {
 
 export function applyTranslations() {
   document.documentElement.lang = language === 'en' ? 'en' : 'zh-CN';
-  const page = ['gallery', 'profile', 'now'].find(name => document.body.classList.contains(`${name}-page`)) || 'profile';
+  const page = ['gallery', 'profile', 'now', 'posts'].find(name => document.body.classList.contains(`${name}-page`)) || 'profile';
   for (const [selector, key, mode] of [...commonBindings, ...bindings[page]]) {
     for (const element of document.querySelectorAll(selector)) {
       if (mode === 'html') element.innerHTML = t(key);

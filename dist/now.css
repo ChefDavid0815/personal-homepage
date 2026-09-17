@@ -113,3 +113,25 @@
 .game-milestone-art img { width:115%; height:auto; max-width:none; transform:rotate(-7deg); border:1px solid #192e20; box-shadow:0 10px 20px #14211340; }
 .game-milestone-art .art-caption { border-color:#25351750; }
 @media(max-width:700px) { .milestone--game .game-milestone-art { display:grid; grid-template-columns:1fr 1.3fr; gap:18px; padding:24px; } .game-milestone-art .day-one { grid-column:1/-1; justify-self:start; } .game-milestone-art strong { font-size:2.2rem; } .game-milestone-art img { width:100%; } .game-milestone-art .art-caption { grid-column:1/-1; } }
+
+/* A warm paper chapter within the digital timeline. */
+.milestone--folio { border-color:#8a715d; }
+.milestone--folio .milestone-kicker,.milestone--folio .milestone-link { color:#e7b394; }
+.milestone--folio .folio-milestone-art { background:#f6f3ec; color:#393a32; border-color:#8a715d; }
+.folio-milestone-edition { font-size:10px; letter-spacing:1.8px; line-height:1.8; color:#805940; }
+.folio-milestone-brand { display:flex; flex-direction:column; align-items:center; gap:14px; padding:34px 0; }
+.folio-milestone-brand img { width:85px; height:85px; filter:drop-shadow(0 8px 12px #614b3220); transition:transform .5s; }
+.folio-milestone-brand strong { font:italic 70px/.9 Georgia,serif; letter-spacing:-4px; font-weight:400; }
+.folio-milestone-brand strong span { color:#ac5c40; }
+.folio-milestone-art .art-caption { font-size:10px; letter-spacing:1px; border-color:#d1c6b5; }
+.milestone--folio:hover .folio-milestone-brand img { transform:rotate(-7deg) translateY(-4px); }
+@media(max-width:700px) {
+  .milestone--folio .folio-milestone-art { flex-wrap:wrap; gap:22px; }
+  .folio-milestone-edition { width:100%; }
+  .folio-milestone-brand { padding:0; flex-direction:row; gap:12px; }
+  .folio-milestone-brand img { width:42px; height:42px; }
+  .folio-milestone-brand strong { font-size:43px; letter-spacing:-2px; }
+  .folio-milestone-art .art-caption { margin-left:auto; font-size:9px; }
+  .folio-milestone-art .art-caption > span:last-child { display:none; }
+}
+@media(prefers-reduced-motion:reduce) { .folio-milestone-brand img { transition:none; } .milestone--folio:hover .folio-milestone-brand img { transform:none; } }

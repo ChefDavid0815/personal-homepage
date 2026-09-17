@@ -5,17 +5,31 @@
 ## 页面
 
 - `profile.html`：Personal Profile，包含数字名片、真实简介、篮球与赛车主题卡、AI 与艺术兴趣、数码设备、成长经历及公开联系方式。
-- `gallery.html`：独立的 Gallery，NBA After Hours 主展位、真实游戏截图、概念习作与项目详情。
-- `now.html`：Now 近况页，按日期倒序记录 2026-09-17 发布第一个项目 NBA After Hours、创建音乐模块、2026-09-16 创建个人主页、2026-08-27 步入 IB、2026-04-20 开始接触 Agents。
+- `gallery.html`：独立的 Gallery，Folio 1.0 手帖展柜、NBA After Hours 主展位、真实截图与项目详情。
+- `now.html`：Now 近况页，按日期倒序记录 2026-09-17 发布 Folio 1.0、发布第一个项目 NBA After Hours、创建音乐模块、2026-09-16 创建个人主页、2026-08-27 步入 IB、2026-04-20 开始接触 Agents。
 - `index.html`：网站入口，自动转到 Personal Profile，并保留查询参数与页内锚点。
 
-三个页面共用品牌、配色、导航、语言偏好与页脚，可以互相切换。个人资料采用 ChefZC 提供的信息：在迪拜的 GEMS Wellington International School 就读 Year 12 / IB。公开位置只展示城市。
+所有页面共用品牌、配色、导航、语言偏好与页脚，可以互相切换。个人资料采用 ChefZC 提供的信息：在迪拜的 GEMS Wellington International School 就读 Year 12 / IB。公开位置只展示城市。
 
 公开链接：GitHub `ChefDavid0815`、Instagram `chefzichuan`、邮箱 `zzichuan0808@outlook.com`。主页提供邮箱复制按钮；它仅操作当前设备剪贴板，不会发送邮件。
 
+## Posts 随笔（网站 v1.10）
+
+新增 posts.html 文章概览与 post.html?article=... 独立正文页。首发三篇为 hello-world（主页开张）、nba-after-hours（第一个篮球游戏）、folio（模组手帖 1.0），分别采用荧光数码、暗色球场与暖色出版物视觉。包含真实项目截图、章节目录、阅读进度、相关推荐，以及完整中英文内容。导航加入随笔；手机端四项导航保持单行。
+
+文章维护于 dist/posts-data.js，交互于 dist/posts.js，排版于 dist/posts.css。内容通过文本转义输出，未知文章显示返回列表入口。新增文章时继续保留其真实状态与来源；当前三篇发布于 2026-09-17。
+
+## Folio 手帖展柜（网站 v1.9 / 软件 v1.0）
+
+[Folio 1.0](https://github.com/ChefDavid0815/folio-mod-studio) 是 Windows x64 游戏与模组管理软件。Gallery 为它提供独立的纸感展位：奶油纸、陶土橙、出版物式衬线字、叠页阴影、悬停抬升与扫光。打开后可切换书架、寻找游戏、文件详情三张真实界面；下载入口指向 GitHub Releases。Profile 与 Now 同步更新。
+
+这是一组软件界面展示，本地文件管理须下载 Windows 应用。图片位于 `dist/assets/projects/folio/`，直接取自 Folio 1.0 实际界面；其中游戏资料与封面来自 Steam，归各自权利人。Cormorant Garamond 字体本地提供，保留该目录的 OFL 授权。中英文文案、键盘操作、手机布局与减少动态效果均已支持。
+
+主要维护文件：`folio-exhibit.js`、`folio-content.js`、`gallery-folio.css`；Folio 使用专属布局，版本、源码与下载链接在 `projects.js` 中。
+
 ## 第一个正式项目（v1.8）
 
-[NBA After Hours](https://chefzc-homepage.vercel.app/play/nba-after-hours/) 已加入 Gallery 首位，并更新 Profile 与 Now。主展位使用真实勇士对凯尔特人截图，配合数码海报排版、悬浮透视、扫光和光标动效。手机使用上下布局，所有新文案提供中英文，减少动态效果设置会关闭装饰动画。
+[NBA After Hours](https://chefzc-homepage.vercel.app/play/nba-after-hours/) 已加入 Gallery，并更新 Profile 与 Now。主展位使用真实勇士对凯尔特人截图，配合数码海报排版、悬浮透视、扫光和光标动效。手机使用上下布局，所有新文案提供中英文，减少动态效果设置会关闭装饰动画。
 
 游戏源码独立保存在 [ChefDavid0815/nba-after-hours](https://github.com/ChefDavid0815/nba-after-hours)。`dist/play/nba-after-hours/` 为该项目的静态发布快照；无需 API 或后台。存档属于当前浏览器，不能与桌面版自动同步。版本与源码提交记录在该目录的 `release.json`；依赖授权一并附带。
 
@@ -64,7 +78,7 @@ ChefZC、项目名称与概念封面内的视觉文案保留原设计，不随�
 - `dist/assets/stephen-curry-2016.jpg`、`charles-leclerc-2024.jpg`：真实运动员照片；署名与授权见页面底部及 `dist/assets/PHOTO-CREDITS.md`。照片仅通过 CSS 裁切、调色和覆盖渐变，保留相应 CC BY-SA 授权。
 - `dist/assets/icons.svg`：Lucide 与 Tabler 图标，授权见同目录的 `LUCIDE-LICENSE.txt` 与 `TABLER-LICENSE.txt`。
 
-NBA After Hours 是真实可玩项目；其余三个项目为概念习作，页面已明确标注。替换真实项目时填写 `name`、`subtitle`、`description`、`detail`、`tags`，将 `demo` 改为 `false`；`repoUrl` 与 `liveUrl` 可分别设置源码和在线演示链接。不填写的链接不会显示。新增项目没有对应预览设计时，封面会使用项目名称。
+Gallery 只保留两个真实项目：Folio 桌面软件和 NBA After Hours 篮球游戏。三个概念占位项目已移除。替换真实项目时填写 `name`、`subtitle`、`description`、`detail`、`tags`，将 `demo` 改为 `false`；`repoUrl` 与 `liveUrl` 可分别设置源码和在线演示链接。不填写的链接不会显示。新增项目没有对应预览设计时，封面会使用项目名称。
 
 `layout` 可设为 `court`（首个游戏主展位）、`feature`（横向主展位）、`sound`（窄卡片）、`utility`（宽卡片）或 `standard`（标准卡片）。`headline` 可单独配置 Gallery 文案并使用换行；不填写时使用 `subtitle`。展示数量自动按项目清单更新。
 

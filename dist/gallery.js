@@ -1,5 +1,6 @@
 import { t, localizeProject, onLanguageChange } from './i18n.js';
 import { projects } from './projects.js';
+import { folioCard, folioDetail, changeFolioView } from './folio-exhibit.js';
 
 const waveHeights = [18, 31, 47, 33, 61, 79, 55, 90, 72, 100, 83, 63, 95, 77, 52, 69, 41, 58, 33, 22, 37];
 const previews = {
@@ -31,9 +32,11 @@ const grid = document.querySelector('#project-grid');
 const dialog = document.querySelector('#project-dialog');
 const dialogContent = document.querySelector('#dialog-content');
 let selectedProjectId = null;
+let selectedFolioView = 'library';
 
 function renderCards() {
   grid.innerHTML = projects.map(localizeProject).map(project => {
+    if(project.id === 'folio') return folioCard(project);
     const layout = layouts.has(project.layout) ? project.layout : 'standard';
     const headline = escapeHtml(project.headline || project.subtitle).replace(/\n/g, '<br>');
     const featured = t(isCourt(project) ? 'court.first' : project.demo ? 'project.featuredConcept' : 'project.featuredProject');
@@ -50,6 +53,11 @@ function renderDetail(projectId) {
   const original=projects.find(project=>project.id===projectId);
   if(!original) return;
   const project=localizeProject(original);
+  dialog.classList.toggle('folio-dialog', projectId === 'folio');
+  if(projectId === 'folio') {
+    dialogContent.innerHTML=folioDetail(project, selectedFolioView);
+    return;
+  }
   const live=safeLink(project.liveUrl);
   const repo=safeLink(project.repoUrl);
   dialogContent.innerHTML='<div class="detail-heading"><p class="eyebrow mono">'+t('project.exhibit')+' '+escapeHtml(project.number)+' / '+escapeHtml(project.category)+'</p><h2 id="dialog-title">'+escapeHtml(project.name)+'<span aria-hidden="true">↗</span></h2><p>'+escapeHtml(project.subtitle)+'</p></div>'+
@@ -72,6 +80,12 @@ grid.addEventListener('click',event=>{
   document.body.classList.add('dialog-open');
 });
 dialog.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());
+dialogContent.addEventListener('click',event=>{
+  const button=event.target.closest('[data-folio-view]');
+  if(!button) return;
+  selectedFolioView=button.dataset.folioView;
+  changeFolioView(dialogContent,selectedFolioView);
+});
 dialog.addEventListener('click',event=>{
   if(event.target!==dialog) return;
   const bounds=dialog.getBoundingClientRect();
@@ -82,4 +96,5 @@ dialog.addEventListener('close',()=>{
   const opener=[...grid.querySelectorAll('[data-project]')].find(button=>button.dataset.project===selectedProjectId);
   opener?.focus({preventScroll:true});
   selectedProjectId=null;
+  dialog.classList.remove('folio-dialog');
 });
