@@ -1,0 +1,3681 @@
+{
+  "schemaVersion": 2,
+  "verifiedAt": "2026-09-17",
+  "source": "QQ Music official public catalog and official image CDN",
+  "status": "complete",
+  "notes": [
+    "Metadata queried anonymously from the public QQ Music search endpoint.",
+    "QQ main site pages could not be rendered in this environment; canonical links are built from verified catalog IDs.",
+    "No audio is downloaded.",
+    "The selected recording matches the requested title and original artist; official collaborations are retained.",
+    "Song titles preserve the QQ catalog spelling, punctuation and subtitles.",
+    "Three official portrait endpoints serve WebP bytes despite their .jpg URL suffix; local filenames use .webp to match the actual format."
+  ],
+  "artists": [
+    {
+      "key": "jay-chou",
+      "name": "周杰伦",
+      "displayName": "周杰伦",
+      "englishName": "Jay Chou",
+      "singerId": 4558,
+      "singerMid": "0025NhlN2yWrP4",
+      "qqUrl": "https://y.qq.com/n/ryqq/singer/0025NhlN2yWrP4",
+      "portraitUrl": "https://y.gtimg.cn/music/photo_new/T001R800x800M0000025NhlN2yWrP4.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E5%91%A8%E6%9D%B0%E4%BC%A6%20%E6%99%B4%E5%A4%A9&format=json&p=1&n=20"
+    },
+    {
+      "key": "joker-xue",
+      "name": "薛之谦",
+      "displayName": "薛之谦",
+      "englishName": "Joker Xue",
+      "singerId": 5062,
+      "singerMid": "002J4UUk29y8BY",
+      "qqUrl": "https://y.qq.com/n/ryqq/singer/002J4UUk29y8BY",
+      "portraitUrl": "https://y.gtimg.cn/music/photo_new/T001R800x800M000002J4UUk29y8BY.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E8%96%9B%E4%B9%8B%E8%B0%A6%20%E6%BC%94%E5%91%98&format=json&p=1&n=20"
+    },
+    {
+      "key": "gem",
+      "name": "G.E.M.邓紫棋",
+      "displayName": "邓紫棋",
+      "englishName": "G.E.M.",
+      "singerId": 13948,
+      "singerMid": "001fNHEf1SFEFN",
+      "qqUrl": "https://y.qq.com/n/ryqq/singer/001fNHEf1SFEFN",
+      "portraitUrl": "https://y.gtimg.cn/music/photo_new/T001R800x800M000001fNHEf1SFEFN.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=G.E.M.%E9%82%93%E7%B4%AB%E6%A3%8B%20%E6%B3%A1%E6%B2%AB&format=json&p=1&n=20"
+    },
+    {
+      "key": "david-tao",
+      "name": "陶喆",
+      "displayName": "陶喆",
+      "englishName": "David Tao",
+      "singerId": 101,
+      "singerMid": "002cK0F12szD9T",
+      "qqUrl": "https://y.qq.com/n/ryqq/singer/002cK0F12szD9T",
+      "portraitUrl": "https://y.gtimg.cn/music/photo_new/T001R800x800M000002cK0F12szD9T.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E9%99%B6%E5%96%86%20%E7%88%B1%EF%BC%8C%E5%BE%88%E7%AE%80%E5%8D%95&format=json&p=1&n=20"
+    },
+    {
+      "key": "eason-chan",
+      "name": "陈奕迅",
+      "displayName": "陈奕迅",
+      "englishName": "Eason Chan",
+      "singerId": 143,
+      "singerMid": "003Nz2So3XXYek",
+      "qqUrl": "https://y.qq.com/n/ryqq/singer/003Nz2So3XXYek",
+      "portraitUrl": "https://y.gtimg.cn/music/photo_new/T001R800x800M000003Nz2So3XXYek.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E9%99%88%E5%A5%95%E8%BF%85%20%E5%8D%81%E5%B9%B4&format=json&p=1&n=20"
+    },
+    {
+      "key": "money",
+      "name": "门尼",
+      "displayName": "门尼",
+      "englishName": "MONEY",
+      "singerId": 12896059,
+      "singerMid": "003uZllO1pCUPk",
+      "qqUrl": "https://y.qq.com/n/ryqq/singer/003uZllO1pCUPk",
+      "portraitUrl": "https://y.gtimg.cn/music/photo_new/T001R800x800M000003uZllO1pCUPk.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E9%97%A8%E5%B0%BC%20%E5%93%80%E4%BA%BA&format=json&p=1&n=20"
+    },
+    {
+      "key": "vae",
+      "name": "许嵩",
+      "displayName": "许嵩",
+      "englishName": "Vae",
+      "singerId": 7221,
+      "singerMid": "000CK5xN3yZDJt",
+      "qqUrl": "https://y.qq.com/n/ryqq/singer/000CK5xN3yZDJt",
+      "portraitUrl": "https://y.gtimg.cn/music/photo_new/T001R800x800M000000CK5xN3yZDJt.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E8%AE%B8%E5%B5%A9%20%E6%9C%89%E4%BD%95%E4%B8%8D%E5%8F%AF&format=json&p=1&n=20"
+    },
+    {
+      "key": "jane-zhang",
+      "name": "张靓颖",
+      "displayName": "张靓颖",
+      "englishName": "Jane Zhang",
+      "singerId": 4607,
+      "singerMid": "000aw4WC2EQYTv",
+      "qqUrl": "https://y.qq.com/n/ryqq/singer/000aw4WC2EQYTv",
+      "portraitUrl": "https://y.gtimg.cn/music/photo_new/T001R800x800M000000aw4WC2EQYTv.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E5%BC%A0%E9%9D%93%E9%A2%96%20%E7%94%BB%E5%BF%83&format=json&p=1&n=20"
+    },
+    {
+      "key": "jj-lin",
+      "name": "林俊杰",
+      "displayName": "林俊杰",
+      "englishName": "JJ Lin",
+      "singerId": 4286,
+      "singerMid": "001BLpXF2DyJe2",
+      "qqUrl": "https://y.qq.com/n/ryqq/singer/001BLpXF2DyJe2",
+      "portraitUrl": "https://y.gtimg.cn/music/photo_new/T001R800x800M000001BLpXF2DyJe2.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E6%9E%97%E4%BF%8A%E6%9D%B0%20%E6%B1%9F%E5%8D%97&format=json&p=1&n=20"
+    }
+  ],
+  "songs": [
+    {
+      "key": "0039MnYb0qxYhV",
+      "order": 1,
+      "songId": 97773,
+      "songMid": "0039MnYb0qxYhV",
+      "songName": "晴天",
+      "requestedTitle": "晴天",
+      "artistKey": "jay-chou",
+      "artistName": "周杰伦",
+      "creditedArtists": [
+        {
+          "name": "周杰伦",
+          "id": 4558,
+          "mid": "0025NhlN2yWrP4"
+        }
+      ],
+      "albumId": 8220,
+      "albumMid": "000MkMni19ClKG",
+      "albumName": "叶惠美",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/0039MnYb0qxYhV",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/000MkMni19ClKG",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000000MkMni19ClKG.jpg",
+      "durationSeconds": 269,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E5%91%A8%E6%9D%B0%E4%BC%A6%20%E6%99%B4%E5%A4%A9&format=json&p=1&n=20"
+    },
+    {
+      "key": "004Z8Ihr0JIu5s",
+      "order": 2,
+      "songId": 102065756,
+      "songMid": "004Z8Ihr0JIu5s",
+      "songName": "七里香",
+      "requestedTitle": "七里香",
+      "artistKey": "jay-chou",
+      "artistName": "周杰伦",
+      "creditedArtists": [
+        {
+          "name": "周杰伦",
+          "id": 4558,
+          "mid": "0025NhlN2yWrP4"
+        }
+      ],
+      "albumId": 20612,
+      "albumMid": "003DFRzD192KKD",
+      "albumName": "七里香",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/004Z8Ihr0JIu5s",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/003DFRzD192KKD",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003DFRzD192KKD.jpg",
+      "durationSeconds": 299,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E5%91%A8%E6%9D%B0%E4%BC%A6%20%E4%B8%83%E9%87%8C%E9%A6%99&format=json&p=1&n=20"
+    },
+    {
+      "key": "002qU5aY3Qu24y",
+      "order": 3,
+      "songId": 410316,
+      "songMid": "002qU5aY3Qu24y",
+      "songName": "青花瓷",
+      "requestedTitle": "青花瓷",
+      "artistKey": "jay-chou",
+      "artistName": "周杰伦",
+      "creditedArtists": [
+        {
+          "name": "周杰伦",
+          "id": 4558,
+          "mid": "0025NhlN2yWrP4"
+        }
+      ],
+      "albumId": 33021,
+      "albumMid": "002eFUFm2XYZ7z",
+      "albumName": "我很忙",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/002qU5aY3Qu24y",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/002eFUFm2XYZ7z",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002eFUFm2XYZ7z.jpg",
+      "durationSeconds": 239,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E5%91%A8%E6%9D%B0%E4%BC%A6%20%E9%9D%92%E8%8A%B1%E7%93%B7&format=json&p=1&n=20"
+    },
+    {
+      "key": "003aAYrm3GE0Ac",
+      "order": 4,
+      "songId": 449205,
+      "songMid": "003aAYrm3GE0Ac",
+      "songName": "稻香",
+      "requestedTitle": "稻香",
+      "artistKey": "jay-chou",
+      "artistName": "周杰伦",
+      "creditedArtists": [
+        {
+          "name": "周杰伦",
+          "id": 4558,
+          "mid": "0025NhlN2yWrP4"
+        }
+      ],
+      "albumId": 36062,
+      "albumMid": "002Neh8l0uciQZ",
+      "albumName": "魔杰座",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/003aAYrm3GE0Ac",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/002Neh8l0uciQZ",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002Neh8l0uciQZ.jpg",
+      "durationSeconds": 223,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E5%91%A8%E6%9D%B0%E4%BC%A6%20%E7%A8%BB%E9%A6%99&format=json&p=1&n=20"
+    },
+    {
+      "key": "001zMQr71F1Qo8",
+      "order": 5,
+      "songId": 718477,
+      "songMid": "001zMQr71F1Qo8",
+      "songName": "夜曲",
+      "requestedTitle": "夜曲",
+      "artistKey": "jay-chou",
+      "artistName": "周杰伦",
+      "creditedArtists": [
+        {
+          "name": "周杰伦",
+          "id": 4558,
+          "mid": "0025NhlN2yWrP4"
+        }
+      ],
+      "albumId": 60671,
+      "albumMid": "0024bjiL2aocxT",
+      "albumName": "十一月的萧邦",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/001zMQr71F1Qo8",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/0024bjiL2aocxT",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M0000024bjiL2aocxT.jpg",
+      "durationSeconds": 226,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E5%91%A8%E6%9D%B0%E4%BC%A6%20%E5%A4%9C%E6%9B%B2&format=json&p=1&n=20"
+    },
+    {
+      "key": "0009BCJK1nRaad",
+      "order": 6,
+      "songId": 97744,
+      "songMid": "0009BCJK1nRaad",
+      "songName": "简单爱",
+      "requestedTitle": "简单爱",
+      "artistKey": "jay-chou",
+      "artistName": "周杰伦",
+      "creditedArtists": [
+        {
+          "name": "周杰伦",
+          "id": 4558,
+          "mid": "0025NhlN2yWrP4"
+        }
+      ],
+      "albumId": 8217,
+      "albumMid": "000I5jJB3blWeN",
+      "albumName": "范特西",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/0009BCJK1nRaad",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/000I5jJB3blWeN",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000000I5jJB3blWeN.jpg",
+      "durationSeconds": 271,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E5%91%A8%E6%9D%B0%E4%BC%A6%20%E7%AE%80%E5%8D%95%E7%88%B1&format=json&p=1&n=20"
+    },
+    {
+      "key": "001Bbywq2gicae",
+      "order": 7,
+      "songId": 102065750,
+      "songMid": "001Bbywq2gicae",
+      "songName": "搁浅",
+      "requestedTitle": "搁浅",
+      "artistKey": "jay-chou",
+      "artistName": "周杰伦",
+      "creditedArtists": [
+        {
+          "name": "周杰伦",
+          "id": 4558,
+          "mid": "0025NhlN2yWrP4"
+        }
+      ],
+      "albumId": 20612,
+      "albumMid": "003DFRzD192KKD",
+      "albumName": "七里香",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/001Bbywq2gicae",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/003DFRzD192KKD",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003DFRzD192KKD.jpg",
+      "durationSeconds": 240,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E5%91%A8%E6%9D%B0%E4%BC%A6%20%E6%90%81%E6%B5%85&format=json&p=1&n=20"
+    },
+    {
+      "key": "003OUlho2HcRHC",
+      "order": 8,
+      "songId": 107192078,
+      "songMid": "003OUlho2HcRHC",
+      "songName": "告白气球",
+      "requestedTitle": "告白气球",
+      "artistKey": "jay-chou",
+      "artistName": "周杰伦",
+      "creditedArtists": [
+        {
+          "name": "周杰伦",
+          "id": 4558,
+          "mid": "0025NhlN2yWrP4"
+        }
+      ],
+      "albumId": 1458791,
+      "albumMid": "003RMaRI1iFoYd",
+      "albumName": "周杰伦的床边故事",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/003OUlho2HcRHC",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/003RMaRI1iFoYd",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003RMaRI1iFoYd.jpg",
+      "durationSeconds": 215,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E5%91%A8%E6%9D%B0%E4%BC%A6%20%E5%91%8A%E7%99%BD%E6%B0%94%E7%90%83&format=json&p=1&n=20"
+    },
+    {
+      "key": "001n4C3p1yv0FU",
+      "order": 9,
+      "songId": 97771,
+      "songMid": "001n4C3p1yv0FU",
+      "songName": "以父之名",
+      "requestedTitle": "以父之名",
+      "artistKey": "jay-chou",
+      "artistName": "周杰伦",
+      "creditedArtists": [
+        {
+          "name": "周杰伦",
+          "id": 4558,
+          "mid": "0025NhlN2yWrP4"
+        }
+      ],
+      "albumId": 8220,
+      "albumMid": "000MkMni19ClKG",
+      "albumName": "叶惠美",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/001n4C3p1yv0FU",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/000MkMni19ClKG",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000000MkMni19ClKG.jpg",
+      "durationSeconds": 342,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E5%91%A8%E6%9D%B0%E4%BC%A6%20%E4%BB%A5%E7%88%B6%E4%B9%8B%E5%90%8D&format=json&p=1&n=20"
+    },
+    {
+      "key": "001xd0HI0X9GNq",
+      "order": 10,
+      "songId": 5105986,
+      "songMid": "001xd0HI0X9GNq",
+      "songName": "一路向北",
+      "requestedTitle": "一路向北",
+      "artistKey": "jay-chou",
+      "artistName": "周杰伦",
+      "creditedArtists": [
+        {
+          "name": "周杰伦",
+          "id": 4558,
+          "mid": "0025NhlN2yWrP4"
+        }
+      ],
+      "albumId": 14311,
+      "albumMid": "002MAeob3zLXwZ",
+      "albumName": "J III MP3 Player",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/001xd0HI0X9GNq",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/002MAeob3zLXwZ",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002MAeob3zLXwZ.jpg",
+      "durationSeconds": 294,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E5%91%A8%E6%9D%B0%E4%BC%A6%20%E4%B8%80%E8%B7%AF%E5%90%91%E5%8C%97&format=json&p=1&n=20"
+    },
+    {
+      "key": "001Qu4I30eVFYb",
+      "order": 1,
+      "songId": 102636799,
+      "songMid": "001Qu4I30eVFYb",
+      "songName": "演员",
+      "requestedTitle": "演员",
+      "artistKey": "joker-xue",
+      "artistName": "薛之谦",
+      "creditedArtists": [
+        {
+          "name": "薛之谦",
+          "id": 5062,
+          "mid": "002J4UUk29y8BY"
+        }
+      ],
+      "albumId": 989994,
+      "albumMid": "003y8dsH2wBHlo",
+      "albumName": "绅士",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/001Qu4I30eVFYb",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/003y8dsH2wBHlo",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003y8dsH2wBHlo.jpg",
+      "durationSeconds": 261,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E8%96%9B%E4%B9%8B%E8%B0%A6%20%E6%BC%94%E5%91%98&format=json&p=1&n=20"
+    },
+    {
+      "key": "000QwTVo0YHdcP",
+      "order": 2,
+      "songId": 5106429,
+      "songMid": "000QwTVo0YHdcP",
+      "songName": "丑八怪",
+      "requestedTitle": "丑八怪",
+      "artistKey": "joker-xue",
+      "artistName": "薛之谦",
+      "creditedArtists": [
+        {
+          "name": "薛之谦",
+          "id": 5062,
+          "mid": "002J4UUk29y8BY"
+        }
+      ],
+      "albumId": 443691,
+      "albumMid": "000QgFcm0v8WaF",
+      "albumName": "意外",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/000QwTVo0YHdcP",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/000QgFcm0v8WaF",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000000QgFcm0v8WaF.jpg",
+      "durationSeconds": 248,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E8%96%9B%E4%B9%8B%E8%B0%A6%20%E4%B8%91%E5%85%AB%E6%80%AA&format=json&p=1&n=20"
+    },
+    {
+      "key": "001CG3wA3QkuJS",
+      "order": 3,
+      "songId": 102425546,
+      "songMid": "001CG3wA3QkuJS",
+      "songName": "绅士",
+      "requestedTitle": "绅士",
+      "artistKey": "joker-xue",
+      "artistName": "薛之谦",
+      "creditedArtists": [
+        {
+          "name": "薛之谦",
+          "id": 5062,
+          "mid": "002J4UUk29y8BY"
+        }
+      ],
+      "albumId": 989994,
+      "albumMid": "003y8dsH2wBHlo",
+      "albumName": "绅士",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/001CG3wA3QkuJS",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/003y8dsH2wBHlo",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003y8dsH2wBHlo.jpg",
+      "durationSeconds": 290,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E8%96%9B%E4%B9%8B%E8%B0%A6%20%E7%BB%85%E5%A3%AB&format=json&p=1&n=20"
+    },
+    {
+      "key": "001hUNRP0P8g7x",
+      "order": 4,
+      "songId": 1333803,
+      "songMid": "001hUNRP0P8g7x",
+      "songName": "认真的雪",
+      "requestedTitle": "认真的雪",
+      "artistKey": "joker-xue",
+      "artistName": "薛之谦",
+      "creditedArtists": [
+        {
+          "name": "薛之谦",
+          "id": 5062,
+          "mid": "002J4UUk29y8BY"
+        }
+      ],
+      "albumId": 51504,
+      "albumMid": "003mUYW22JXKVK",
+      "albumName": "薛之谦",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/001hUNRP0P8g7x",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/003mUYW22JXKVK",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003mUYW22JXKVK.jpg",
+      "durationSeconds": 259,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E8%96%9B%E4%B9%8B%E8%B0%A6%20%E8%AE%A4%E7%9C%9F%E7%9A%84%E9%9B%AA&format=json&p=1&n=20"
+    },
+    {
+      "key": "002BWGZQ2UKjKn",
+      "order": 5,
+      "songId": 5106430,
+      "songMid": "002BWGZQ2UKjKn",
+      "songName": "你还要我怎样",
+      "requestedTitle": "你还要我怎样",
+      "artistKey": "joker-xue",
+      "artistName": "薛之谦",
+      "creditedArtists": [
+        {
+          "name": "薛之谦",
+          "id": 5062,
+          "mid": "002J4UUk29y8BY"
+        }
+      ],
+      "albumId": 443691,
+      "albumMid": "000QgFcm0v8WaF",
+      "albumName": "意外",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/002BWGZQ2UKjKn",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/000QgFcm0v8WaF",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000000QgFcm0v8WaF.jpg",
+      "durationSeconds": 310,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E8%96%9B%E4%B9%8B%E8%B0%A6%20%E4%BD%A0%E8%BF%98%E8%A6%81%E6%88%91%E6%80%8E%E6%A0%B7&format=json&p=1&n=20"
+    },
+    {
+      "key": "001TXSYu1Gwuwv",
+      "order": 6,
+      "songId": 107192538,
+      "songMid": "001TXSYu1Gwuwv",
+      "songName": "刚刚好",
+      "requestedTitle": "刚刚好",
+      "artistKey": "joker-xue",
+      "artistName": "薛之谦",
+      "creditedArtists": [
+        {
+          "name": "薛之谦",
+          "id": 5062,
+          "mid": "002J4UUk29y8BY"
+        }
+      ],
+      "albumId": 1376305,
+      "albumMid": "000dcZ9I1nzO62",
+      "albumName": "初学者",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/001TXSYu1Gwuwv",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/000dcZ9I1nzO62",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000000dcZ9I1nzO62.jpg",
+      "durationSeconds": 250,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E8%96%9B%E4%B9%8B%E8%B0%A6%20%E5%88%9A%E5%88%9A%E5%A5%BD&format=json&p=1&n=20"
+    },
+    {
+      "key": "0013WPvt4fQH2b",
+      "order": 7,
+      "songId": 272125057,
+      "songMid": "0013WPvt4fQH2b",
+      "songName": "天外来物",
+      "requestedTitle": "天外来物",
+      "artistKey": "joker-xue",
+      "artistName": "薛之谦",
+      "creditedArtists": [
+        {
+          "name": "薛之谦",
+          "id": 5062,
+          "mid": "002J4UUk29y8BY"
+        }
+      ],
+      "albumId": 16596032,
+      "albumMid": "000K9Zp13TZp5s",
+      "albumName": "天外来物",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/0013WPvt4fQH2b",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/000K9Zp13TZp5s",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000000K9Zp13TZp5s.jpg",
+      "durationSeconds": 257,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E8%96%9B%E4%B9%8B%E8%B0%A6%20%E5%A4%A9%E5%A4%96%E6%9D%A5%E7%89%A9&format=json&p=1&n=20"
+    },
+    {
+      "key": "004dADLe4ec8RG",
+      "order": 8,
+      "songId": 5106590,
+      "songMid": "004dADLe4ec8RG",
+      "songName": "意外",
+      "requestedTitle": "意外",
+      "artistKey": "joker-xue",
+      "artistName": "薛之谦",
+      "creditedArtists": [
+        {
+          "name": "薛之谦",
+          "id": 5062,
+          "mid": "002J4UUk29y8BY"
+        }
+      ],
+      "albumId": 443691,
+      "albumMid": "000QgFcm0v8WaF",
+      "albumName": "意外",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/004dADLe4ec8RG",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/000QgFcm0v8WaF",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000000QgFcm0v8WaF.jpg",
+      "durationSeconds": 291,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E8%96%9B%E4%B9%8B%E8%B0%A6%20%E6%84%8F%E5%A4%96&format=json&p=1&n=20"
+    },
+    {
+      "key": "003RCA7t0y6du5",
+      "order": 9,
+      "songId": 201452010,
+      "songMid": "003RCA7t0y6du5",
+      "songName": "动物世界",
+      "requestedTitle": "动物世界",
+      "artistKey": "joker-xue",
+      "artistName": "薛之谦",
+      "creditedArtists": [
+        {
+          "name": "薛之谦",
+          "id": 5062,
+          "mid": "002J4UUk29y8BY"
+        }
+      ],
+      "albumId": 3310789,
+      "albumMid": "001L7UIu3GXVtT",
+      "albumName": "渡 The Crossing",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/003RCA7t0y6du5",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/001L7UIu3GXVtT",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000001L7UIu3GXVtT.jpg",
+      "durationSeconds": 230,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E8%96%9B%E4%B9%8B%E8%B0%A6%20%E5%8A%A8%E7%89%A9%E4%B8%96%E7%95%8C&format=json&p=1&n=20"
+    },
+    {
+      "key": "003ouHMP12glVD",
+      "order": 10,
+      "songId": 104775877,
+      "songMid": "003ouHMP12glVD",
+      "songName": "其实",
+      "requestedTitle": "其实",
+      "artistKey": "joker-xue",
+      "artistName": "薛之谦",
+      "creditedArtists": [
+        {
+          "name": "薛之谦",
+          "id": 5062,
+          "mid": "002J4UUk29y8BY"
+        }
+      ],
+      "albumId": 443691,
+      "albumMid": "000QgFcm0v8WaF",
+      "albumName": "意外",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/003ouHMP12glVD",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/000QgFcm0v8WaF",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000000QgFcm0v8WaF.jpg",
+      "durationSeconds": 242,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E8%96%9B%E4%B9%8B%E8%B0%A6%20%E5%85%B6%E5%AE%9E&format=json&p=1&n=20"
+    },
+    {
+      "key": "001X0PDf0W4lBq",
+      "order": 1,
+      "songId": 1530858,
+      "songMid": "001X0PDf0W4lBq",
+      "songName": "泡沫",
+      "requestedTitle": "泡沫",
+      "artistKey": "gem",
+      "artistName": "G.E.M.邓紫棋",
+      "creditedArtists": [
+        {
+          "name": "G.E.M.邓紫棋",
+          "id": 13948,
+          "mid": "001fNHEf1SFEFN"
+        }
+      ],
+      "albumId": 123298,
+      "albumMid": "002YFufr4bXZyI",
+      "albumName": "Xposed",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/001X0PDf0W4lBq",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/002YFufr4bXZyI",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002YFufr4bXZyI.jpg",
+      "durationSeconds": 258,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=G.E.M.%E9%82%93%E7%B4%AB%E6%A3%8B%20%E6%B3%A1%E6%B2%AB&format=json&p=1&n=20"
+    },
+    {
+      "key": "002E3MtF0IAMMY",
+      "order": 2,
+      "songId": 200255722,
+      "songMid": "002E3MtF0IAMMY",
+      "songName": "光年之外",
+      "requestedTitle": "光年之外",
+      "artistKey": "gem",
+      "artistName": "G.E.M.邓紫棋",
+      "creditedArtists": [
+        {
+          "name": "G.E.M.邓紫棋",
+          "id": 13948,
+          "mid": "001fNHEf1SFEFN"
+        }
+      ],
+      "albumId": 1796874,
+      "albumMid": "001mTkmb4GJlh4",
+      "albumName": "光年之外",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/002E3MtF0IAMMY",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/001mTkmb4GJlh4",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000001mTkmb4GJlh4.jpg",
+      "durationSeconds": 235,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=G.E.M.%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%85%89%E5%B9%B4%E4%B9%8B%E5%A4%96&format=json&p=1&n=20"
+    },
+    {
+      "key": "000ruq2M3hZIAO",
+      "order": 3,
+      "songId": 680056,
+      "songMid": "000ruq2M3hZIAO",
+      "songName": "A.I.N.Y.",
+      "requestedTitle": "A.I.N.Y.",
+      "artistKey": "gem",
+      "artistName": "G.E.M.邓紫棋",
+      "creditedArtists": [
+        {
+          "name": "G.E.M.邓紫棋",
+          "id": 13948,
+          "mid": "001fNHEf1SFEFN"
+        }
+      ],
+      "albumId": 57457,
+      "albumMid": "000HZzEx0QIMNM",
+      "albumName": "18...",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/000ruq2M3hZIAO",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/000HZzEx0QIMNM",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000000HZzEx0QIMNM.jpg",
+      "durationSeconds": 226,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=G.E.M.%E9%82%93%E7%B4%AB%E6%A3%8B%20A.I.N.Y.&format=json&p=1&n=20"
+    },
+    {
+      "key": "003sYHuC3aBd4r",
+      "order": 4,
+      "songId": 104883226,
+      "songMid": "003sYHuC3aBd4r",
+      "songName": "再见",
+      "requestedTitle": "再见",
+      "artistKey": "gem",
+      "artistName": "G.E.M.邓紫棋",
+      "creditedArtists": [
+        {
+          "name": "G.E.M.邓紫棋",
+          "id": 13948,
+          "mid": "001fNHEf1SFEFN"
+        }
+      ],
+      "albumId": 1196826,
+      "albumMid": "003c616O2Zlswm",
+      "albumName": "新的心跳",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/003sYHuC3aBd4r",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/003c616O2Zlswm",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003c616O2Zlswm.jpg",
+      "durationSeconds": 206,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=G.E.M.%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%86%8D%E8%A7%81&format=json&p=1&n=20"
+    },
+    {
+      "key": "003jjoM94WLiTf",
+      "order": 5,
+      "songId": 215540451,
+      "songMid": "003jjoM94WLiTf",
+      "songName": "倒数",
+      "requestedTitle": "倒数",
+      "artistKey": "gem",
+      "artistName": "G.E.M.邓紫棋",
+      "creditedArtists": [
+        {
+          "name": "G.E.M.邓紫棋",
+          "id": 13948,
+          "mid": "001fNHEf1SFEFN"
+        }
+      ],
+      "albumId": 4331954,
+      "albumMid": "003cKIKZ1J4Yyu",
+      "albumName": "另一个童话",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/003jjoM94WLiTf",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/003cKIKZ1J4Yyu",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003cKIKZ1J4Yyu.jpg",
+      "durationSeconds": 229,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=G.E.M.%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%80%92%E6%95%B0&format=json&p=1&n=20"
+    },
+    {
+      "key": "001QJyJ32zybEe",
+      "order": 6,
+      "songId": 247347346,
+      "songMid": "001QJyJ32zybEe",
+      "songName": "句号",
+      "requestedTitle": "句号",
+      "artistKey": "gem",
+      "artistName": "G.E.M.邓紫棋",
+      "creditedArtists": [
+        {
+          "name": "G.E.M.邓紫棋",
+          "id": 13948,
+          "mid": "001fNHEf1SFEFN"
+        }
+      ],
+      "albumId": 9812833,
+      "albumMid": "0049MVh824D7bM",
+      "albumName": "摩天动物园",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/001QJyJ32zybEe",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/0049MVh824D7bM",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M0000049MVh824D7bM.jpg",
+      "durationSeconds": 235,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=G.E.M.%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%8F%A5%E5%8F%B7&format=json&p=1&n=20"
+    },
+    {
+      "key": "004dFFPd4JNv8q",
+      "order": 7,
+      "songId": 104913384,
+      "songMid": "004dFFPd4JNv8q",
+      "songName": "来自天堂的魔鬼",
+      "requestedTitle": "来自天堂的魔鬼",
+      "artistKey": "gem",
+      "artistName": "G.E.M.邓紫棋",
+      "creditedArtists": [
+        {
+          "name": "G.E.M.邓紫棋",
+          "id": 13948,
+          "mid": "001fNHEf1SFEFN"
+        }
+      ],
+      "albumId": 1196826,
+      "albumMid": "003c616O2Zlswm",
+      "albumName": "新的心跳",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/004dFFPd4JNv8q",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/003c616O2Zlswm",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003c616O2Zlswm.jpg",
+      "durationSeconds": 245,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=G.E.M.%E9%82%93%E7%B4%AB%E6%A3%8B%20%E6%9D%A5%E8%87%AA%E5%A4%A9%E5%A0%82%E7%9A%84%E9%AD%94%E9%AC%BC&format=json&p=1&n=20"
+    },
+    {
+      "key": "003S1hgM2asCye",
+      "order": 8,
+      "songId": 102174489,
+      "songMid": "003S1hgM2asCye",
+      "songName": "多远都要在一起",
+      "requestedTitle": "多远都要在一起",
+      "artistKey": "gem",
+      "artistName": "G.E.M.邓紫棋",
+      "creditedArtists": [
+        {
+          "name": "G.E.M.邓紫棋",
+          "id": 13948,
+          "mid": "001fNHEf1SFEFN"
+        }
+      ],
+      "albumId": 1196826,
+      "albumMid": "003c616O2Zlswm",
+      "albumName": "新的心跳",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/003S1hgM2asCye",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/003c616O2Zlswm",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003c616O2Zlswm.jpg",
+      "durationSeconds": 217,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=G.E.M.%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%A4%9A%E8%BF%9C%E9%83%BD%E8%A6%81%E5%9C%A8%E4%B8%80%E8%B5%B7&format=json&p=1&n=20"
+    },
+    {
+      "key": "002wKHHm42wVh1",
+      "order": 9,
+      "songId": 736924,
+      "songMid": "002wKHHm42wVh1",
+      "songName": "我的秘密",
+      "requestedTitle": "我的秘密",
+      "artistKey": "gem",
+      "artistName": "G.E.M.邓紫棋",
+      "creditedArtists": [
+        {
+          "name": "G.E.M.邓紫棋",
+          "id": 13948,
+          "mid": "001fNHEf1SFEFN"
+        }
+      ],
+      "albumId": 62251,
+      "albumMid": "002F059l1kCcdr",
+      "albumName": "My Secret",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/002wKHHm42wVh1",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/002F059l1kCcdr",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002F059l1kCcdr.jpg",
+      "durationSeconds": 252,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=G.E.M.%E9%82%93%E7%B4%AB%E6%A3%8B%20%E6%88%91%E7%9A%84%E7%A7%98%E5%AF%86&format=json&p=1&n=20"
+    },
+    {
+      "key": "004LHkGL1GVdZo",
+      "order": 10,
+      "songId": 102822120,
+      "songMid": "004LHkGL1GVdZo",
+      "songName": "新的心跳",
+      "requestedTitle": "新的心跳",
+      "artistKey": "gem",
+      "artistName": "G.E.M.邓紫棋",
+      "creditedArtists": [
+        {
+          "name": "G.E.M.邓紫棋",
+          "id": 13948,
+          "mid": "001fNHEf1SFEFN"
+        }
+      ],
+      "albumId": 1196826,
+      "albumMid": "003c616O2Zlswm",
+      "albumName": "新的心跳",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/004LHkGL1GVdZo",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/003c616O2Zlswm",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003c616O2Zlswm.jpg",
+      "durationSeconds": 216,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=G.E.M.%E9%82%93%E7%B4%AB%E6%A3%8B%20%E6%96%B0%E7%9A%84%E5%BF%83%E8%B7%B3&format=json&p=1&n=20"
+    },
+    {
+      "key": "001yZ7Tf0kudte",
+      "order": 1,
+      "songId": 7090,
+      "songMid": "001yZ7Tf0kudte",
+      "songName": "爱，很简单",
+      "requestedTitle": "爱，很简单",
+      "artistKey": "david-tao",
+      "artistName": "陶喆",
+      "creditedArtists": [
+        {
+          "name": "陶喆",
+          "id": 101,
+          "mid": "002cK0F12szD9T"
+        }
+      ],
+      "albumId": 664,
+      "albumMid": "003ROVwj4PqLPa",
+      "albumName": "陶喆同名专辑",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/001yZ7Tf0kudte",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/003ROVwj4PqLPa",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003ROVwj4PqLPa.jpg",
+      "durationSeconds": 269,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E9%99%B6%E5%96%86%20%E7%88%B1%EF%BC%8C%E5%BE%88%E7%AE%80%E5%8D%95&format=json&p=1&n=20"
+    },
+    {
+      "key": "004FITZG2U6rAF",
+      "order": 2,
+      "songId": 4966546,
+      "songMid": "004FITZG2U6rAF",
+      "songName": "普通朋友",
+      "requestedTitle": "普通朋友",
+      "artistKey": "david-tao",
+      "artistName": "陶喆",
+      "creditedArtists": [
+        {
+          "name": "陶喆",
+          "id": 101,
+          "mid": "002cK0F12szD9T"
+        }
+      ],
+      "albumId": 665,
+      "albumMid": "002PjDkE14OUkV",
+      "albumName": "I'm OK",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/004FITZG2U6rAF",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/002PjDkE14OUkV",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002PjDkE14OUkV.jpg",
+      "durationSeconds": 255,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E9%99%B6%E5%96%86%20%E6%99%AE%E9%80%9A%E6%9C%8B%E5%8F%8B&format=json&p=1&n=20"
+    },
+    {
+      "key": "0044lCLh0QK3am",
+      "order": 3,
+      "songId": 7211247,
+      "songMid": "0044lCLh0QK3am",
+      "songName": "爱我还是他",
+      "requestedTitle": "爱我还是他",
+      "artistKey": "david-tao",
+      "artistName": "陶喆",
+      "creditedArtists": [
+        {
+          "name": "陶喆",
+          "id": 101,
+          "mid": "002cK0F12szD9T"
+        }
+      ],
+      "albumId": 442,
+      "albumMid": "003ofGzS3C23Ow",
+      "albumName": "太平盛世",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/0044lCLh0QK3am",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/003ofGzS3C23Ow",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003ofGzS3C23Ow.jpg",
+      "durationSeconds": 292,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E9%99%B6%E5%96%86%20%E7%88%B1%E6%88%91%E8%BF%98%E6%98%AF%E4%BB%96&format=json&p=1&n=20"
+    },
+    {
+      "key": "004W7UED0x3pqD",
+      "order": 4,
+      "songId": 5110,
+      "songMid": "004W7UED0x3pqD",
+      "songName": "就是爱你",
+      "requestedTitle": "就是爱你",
+      "artistKey": "david-tao",
+      "artistName": "陶喆",
+      "creditedArtists": [
+        {
+          "name": "陶喆",
+          "id": 101,
+          "mid": "002cK0F12szD9T"
+        }
+      ],
+      "albumId": 442,
+      "albumMid": "003ofGzS3C23Ow",
+      "albumName": "太平盛世",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/004W7UED0x3pqD",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/003ofGzS3C23Ow",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003ofGzS3C23Ow.jpg",
+      "durationSeconds": 263,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E9%99%B6%E5%96%86%20%E5%B0%B1%E6%98%AF%E7%88%B1%E4%BD%A0&format=json&p=1&n=20"
+    },
+    {
+      "key": "004QWmdX3qHl8C",
+      "order": 5,
+      "songId": 105542279,
+      "songMid": "004QWmdX3qHl8C",
+      "songName": "流沙",
+      "requestedTitle": "流沙",
+      "artistKey": "david-tao",
+      "artistName": "陶喆",
+      "creditedArtists": [
+        {
+          "name": "陶喆",
+          "id": 101,
+          "mid": "002cK0F12szD9T"
+        }
+      ],
+      "albumId": 664,
+      "albumMid": "003ROVwj4PqLPa",
+      "albumName": "陶喆同名专辑",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/004QWmdX3qHl8C",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/003ROVwj4PqLPa",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003ROVwj4PqLPa.jpg",
+      "durationSeconds": 242,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E9%99%B6%E5%96%86%20%E6%B5%81%E6%B2%99&format=json&p=1&n=20"
+    },
+    {
+      "key": "002fWpie3IjneY",
+      "order": 6,
+      "songId": 4966544,
+      "songMid": "002fWpie3IjneY",
+      "songName": "小镇姑娘",
+      "requestedTitle": "小镇姑娘",
+      "artistKey": "david-tao",
+      "artistName": "陶喆",
+      "creditedArtists": [
+        {
+          "name": "陶喆",
+          "id": 101,
+          "mid": "002cK0F12szD9T"
+        }
+      ],
+      "albumId": 665,
+      "albumMid": "002PjDkE14OUkV",
+      "albumName": "I'm OK",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/002fWpie3IjneY",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/002PjDkE14OUkV",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002PjDkE14OUkV.jpg",
+      "durationSeconds": 295,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E9%99%B6%E5%96%86%20%E5%B0%8F%E9%95%87%E5%A7%91%E5%A8%98&format=json&p=1&n=20"
+    },
+    {
+      "key": "003uKKf71WF3v1",
+      "order": 7,
+      "songId": 4966543,
+      "songMid": "003uKKf71WF3v1",
+      "songName": "找自己",
+      "requestedTitle": "找自己",
+      "artistKey": "david-tao",
+      "artistName": "陶喆",
+      "creditedArtists": [
+        {
+          "name": "陶喆",
+          "id": 101,
+          "mid": "002cK0F12szD9T"
+        }
+      ],
+      "albumId": 665,
+      "albumMid": "002PjDkE14OUkV",
+      "albumName": "I'm OK",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/003uKKf71WF3v1",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/002PjDkE14OUkV",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002PjDkE14OUkV.jpg",
+      "durationSeconds": 304,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E9%99%B6%E5%96%86%20%E6%89%BE%E8%87%AA%E5%B7%B1&format=json&p=1&n=20"
+    },
+    {
+      "key": "001fG3BI0ffL2G",
+      "order": 8,
+      "songId": 4966551,
+      "songMid": "001fG3BI0ffL2G",
+      "songName": "天天",
+      "requestedTitle": "天天",
+      "artistKey": "david-tao",
+      "artistName": "陶喆",
+      "creditedArtists": [
+        {
+          "name": "陶喆",
+          "id": 101,
+          "mid": "002cK0F12szD9T"
+        }
+      ],
+      "albumId": 665,
+      "albumMid": "002PjDkE14OUkV",
+      "albumName": "I'm OK",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/001fG3BI0ffL2G",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/002PjDkE14OUkV",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002PjDkE14OUkV.jpg",
+      "durationSeconds": 255,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E9%99%B6%E5%96%86%20%E5%A4%A9%E5%A4%A9&format=json&p=1&n=20"
+    },
+    {
+      "key": "004cS7xb0SGdY4",
+      "order": 9,
+      "songId": 804225,
+      "songMid": "004cS7xb0SGdY4",
+      "songName": "黑色柳丁",
+      "requestedTitle": "黑色柳丁",
+      "artistKey": "david-tao",
+      "artistName": "陶喆",
+      "creditedArtists": [
+        {
+          "name": "陶喆",
+          "id": 101,
+          "mid": "002cK0F12szD9T"
+        }
+      ],
+      "albumId": 663,
+      "albumMid": "001mvhPh0qevad",
+      "albumName": "黑色柳丁",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/004cS7xb0SGdY4",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/001mvhPh0qevad",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000001mvhPh0qevad.jpg",
+      "durationSeconds": 255,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E9%99%B6%E5%96%86%20%E9%BB%91%E8%89%B2%E6%9F%B3%E4%B8%81&format=json&p=1&n=20"
+    },
+    {
+      "key": "003IC4M80QIqVN",
+      "order": 10,
+      "songId": 5104,
+      "songMid": "003IC4M80QIqVN",
+      "songName": "Susan说",
+      "requestedTitle": "Susan说",
+      "artistKey": "david-tao",
+      "artistName": "陶喆",
+      "creditedArtists": [
+        {
+          "name": "陶喆",
+          "id": 101,
+          "mid": "002cK0F12szD9T"
+        }
+      ],
+      "albumId": 442,
+      "albumMid": "003ofGzS3C23Ow",
+      "albumName": "太平盛世",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/003IC4M80QIqVN",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/003ofGzS3C23Ow",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003ofGzS3C23Ow.jpg",
+      "durationSeconds": 261,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E9%99%B6%E5%96%86%20Susan%E8%AF%B4&format=json&p=1&n=20"
+    },
+    {
+      "key": "001OyHbk2MSIi4",
+      "order": 1,
+      "songId": 4830342,
+      "songMid": "001OyHbk2MSIi4",
+      "songName": "十年",
+      "requestedTitle": "十年",
+      "artistKey": "eason-chan",
+      "artistName": "陈奕迅",
+      "creditedArtists": [
+        {
+          "name": "陈奕迅",
+          "id": 143,
+          "mid": "003Nz2So3XXYek"
+        }
+      ],
+      "albumId": 89526,
+      "albumMid": "000GDz8k03UOaI",
+      "albumName": "黑白灰",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/001OyHbk2MSIi4",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/000GDz8k03UOaI",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000000GDz8k03UOaI.jpg",
+      "durationSeconds": 205,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E9%99%88%E5%A5%95%E8%BF%85%20%E5%8D%81%E5%B9%B4&format=json&p=1&n=20"
+    },
+    {
+      "key": "003aAPj81VWrbL",
+      "order": 2,
+      "songId": 260678,
+      "songMid": "003aAPj81VWrbL",
+      "songName": "富士山下",
+      "requestedTitle": "富士山下",
+      "artistKey": "eason-chan",
+      "artistName": "陈奕迅",
+      "creditedArtists": [
+        {
+          "name": "陈奕迅",
+          "id": 143,
+          "mid": "003Nz2So3XXYek"
+        }
+      ],
+      "albumId": 22276,
+      "albumMid": "004Z85XP1c25b7",
+      "albumName": "What's Going On...?",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/003aAPj81VWrbL",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/004Z85XP1c25b7",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000004Z85XP1c25b7.jpg",
+      "durationSeconds": 259,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E9%99%88%E5%A5%95%E8%BF%85%20%E5%AF%8C%E5%A3%AB%E5%B1%B1%E4%B8%8B&format=json&p=1&n=20"
+    },
+    {
+      "key": "002ejEdb4KTwBw",
+      "order": 3,
+      "songId": 1251166,
+      "songMid": "002ejEdb4KTwBw",
+      "songName": "浮夸",
+      "requestedTitle": "浮夸",
+      "artistKey": "eason-chan",
+      "artistName": "陈奕迅",
+      "creditedArtists": [
+        {
+          "name": "陈奕迅",
+          "id": 143,
+          "mid": "003Nz2So3XXYek"
+        }
+      ],
+      "albumId": 7879,
+      "albumMid": "003J6fvc0bVJon",
+      "albumName": "U 87",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/002ejEdb4KTwBw",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/003J6fvc0bVJon",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003J6fvc0bVJon.jpg",
+      "durationSeconds": 283,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E9%99%88%E5%A5%95%E8%BF%85%20%E6%B5%AE%E5%A4%B8&format=json&p=1&n=20"
+    },
+    {
+      "key": "003hjhJP0C1Gxh",
+      "order": 4,
+      "songId": 4907901,
+      "songMid": "003hjhJP0C1Gxh",
+      "songName": "K歌之王 (粤语)",
+      "requestedTitle": "K歌之王",
+      "artistKey": "eason-chan",
+      "artistName": "陈奕迅",
+      "creditedArtists": [
+        {
+          "name": "陈奕迅",
+          "id": 143,
+          "mid": "003Nz2So3XXYek"
+        }
+      ],
+      "albumId": 89554,
+      "albumMid": "002X5NAN24f6TQ",
+      "albumName": "打得火热",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/003hjhJP0C1Gxh",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/002X5NAN24f6TQ",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002X5NAN24f6TQ.jpg",
+      "durationSeconds": 222,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E9%99%88%E5%A5%95%E8%BF%85%20K%E6%AD%8C%E4%B9%8B%E7%8E%8B&format=json&p=1&n=20"
+    },
+    {
+      "key": "004ff6bV3wHhjt",
+      "order": 5,
+      "songId": 553145,
+      "songMid": "004ff6bV3wHhjt",
+      "songName": "爱情转移",
+      "requestedTitle": "爱情转移",
+      "artistKey": "eason-chan",
+      "artistName": "陈奕迅",
+      "creditedArtists": [
+        {
+          "name": "陈奕迅",
+          "id": 143,
+          "mid": "003Nz2So3XXYek"
+        }
+      ],
+      "albumId": 46256,
+      "albumMid": "0042KbE51Xztjx",
+      "albumName": "爱情呼叫转移",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/004ff6bV3wHhjt",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/0042KbE51Xztjx",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M0000042KbE51Xztjx.jpg",
+      "durationSeconds": 255,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E9%99%88%E5%A5%95%E8%BF%85%20%E7%88%B1%E6%83%85%E8%BD%AC%E7%A7%BB&format=json&p=1&n=20"
+    },
+    {
+      "key": "004M3yRr3kOfnS",
+      "order": 6,
+      "songId": 1313993,
+      "songMid": "004M3yRr3kOfnS",
+      "songName": "好久不见",
+      "requestedTitle": "好久不见",
+      "artistKey": "eason-chan",
+      "artistName": "陈奕迅",
+      "creditedArtists": [
+        {
+          "name": "陈奕迅",
+          "id": 143,
+          "mid": "003Nz2So3XXYek"
+        }
+      ],
+      "albumId": 31526,
+      "albumMid": "003yQidc3s7P65",
+      "albumName": "认了吧",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/004M3yRr3kOfnS",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/003yQidc3s7P65",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003yQidc3s7P65.jpg",
+      "durationSeconds": 250,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E9%99%88%E5%A5%95%E8%BF%85%20%E5%A5%BD%E4%B9%85%E4%B8%8D%E8%A7%81&format=json&p=1&n=20"
+    },
+    {
+      "key": "004EzHKM2jXY9i",
+      "order": 7,
+      "songId": 1313990,
+      "songMid": "004EzHKM2jXY9i",
+      "songName": "红玫瑰",
+      "requestedTitle": "红玫瑰",
+      "artistKey": "eason-chan",
+      "artistName": "陈奕迅",
+      "creditedArtists": [
+        {
+          "name": "陈奕迅",
+          "id": 143,
+          "mid": "003Nz2So3XXYek"
+        }
+      ],
+      "albumId": 31526,
+      "albumMid": "003yQidc3s7P65",
+      "albumName": "认了吧",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/004EzHKM2jXY9i",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/003yQidc3s7P65",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003yQidc3s7P65.jpg",
+      "durationSeconds": 239,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E9%99%88%E5%A5%95%E8%BF%85%20%E7%BA%A2%E7%8E%AB%E7%91%B0&format=json&p=1&n=20"
+    },
+    {
+      "key": "004IsqcS2BilGv",
+      "order": 8,
+      "songId": 8769,
+      "songMid": "004IsqcS2BilGv",
+      "songName": "你的背包",
+      "requestedTitle": "你的背包",
+      "artistKey": "eason-chan",
+      "artistName": "陈奕迅",
+      "creditedArtists": [
+        {
+          "name": "陈奕迅",
+          "id": 143,
+          "mid": "003Nz2So3XXYek"
+        }
+      ],
+      "albumId": 743,
+      "albumMid": "004E0Y0A0R8FYZ",
+      "albumName": "Special Thanks To…",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/004IsqcS2BilGv",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/004E0Y0A0R8FYZ",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000004E0Y0A0R8FYZ.jpg",
+      "durationSeconds": 237,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E9%99%88%E5%A5%95%E8%BF%85%20%E4%BD%A0%E7%9A%84%E8%83%8C%E5%8C%85&format=json&p=1&n=20"
+    },
+    {
+      "key": "004CU50m2JjBjr",
+      "order": 9,
+      "songId": 4907894,
+      "songMid": "004CU50m2JjBjr",
+      "songName": "单车",
+      "requestedTitle": "单车",
+      "artistKey": "eason-chan",
+      "artistName": "陈奕迅",
+      "creditedArtists": [
+        {
+          "name": "陈奕迅",
+          "id": 143,
+          "mid": "003Nz2So3XXYek"
+        }
+      ],
+      "albumId": 89552,
+      "albumMid": "004S8YQr3UmEbG",
+      "albumName": "Shall We Dance? Shall We Talk!",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/004CU50m2JjBjr",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/004S8YQr3UmEbG",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000004S8YQr3UmEbG.jpg",
+      "durationSeconds": 211,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E9%99%88%E5%A5%95%E8%BF%85%20%E5%8D%95%E8%BD%A6&format=json&p=1&n=20"
+    },
+    {
+      "key": "003UkWuI0E8U0l",
+      "order": 10,
+      "songId": 331839675,
+      "songMid": "003UkWuI0E8U0l",
+      "songName": "孤勇者",
+      "requestedTitle": "孤勇者",
+      "artistKey": "eason-chan",
+      "artistName": "陈奕迅",
+      "creditedArtists": [
+        {
+          "name": "陈奕迅",
+          "id": 143,
+          "mid": "003Nz2So3XXYek"
+        }
+      ],
+      "albumId": 23277502,
+      "albumMid": "001uaPM93kxk1R",
+      "albumName": "孤勇者",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/003UkWuI0E8U0l",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/001uaPM93kxk1R",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000001uaPM93kxk1R.jpg",
+      "durationSeconds": 256,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E9%99%88%E5%A5%95%E8%BF%85%20%E5%AD%A4%E5%8B%87%E8%80%85&format=json&p=1&n=20"
+    },
+    {
+      "key": "000rUVoS3uzVSj",
+      "order": 1,
+      "songId": 436733402,
+      "songMid": "000rUVoS3uzVSj",
+      "songName": "哀人 (i)",
+      "requestedTitle": "哀人",
+      "artistKey": "money",
+      "artistName": "门尼",
+      "creditedArtists": [
+        {
+          "name": "门尼",
+          "id": 12896059,
+          "mid": "003uZllO1pCUPk"
+        }
+      ],
+      "albumId": 41939595,
+      "albumMid": "000VYwco34rVYK",
+      "albumName": "门尼 (MONEY)",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/000rUVoS3uzVSj",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/000VYwco34rVYK",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000000VYwco34rVYK.jpg",
+      "durationSeconds": 251,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E9%97%A8%E5%B0%BC%20%E5%93%80%E4%BA%BA&format=json&p=1&n=20"
+    },
+    {
+      "key": "0010zYvW3hwC3B",
+      "order": 2,
+      "songId": 513449525,
+      "songMid": "0010zYvW3hwC3B",
+      "songName": "抑人 (e)",
+      "requestedTitle": "抑人",
+      "artistKey": "money",
+      "artistName": "门尼",
+      "creditedArtists": [
+        {
+          "name": "银河快递 (Galaxy Express)",
+          "id": 12473306,
+          "mid": "000Gsupx3yzyVL"
+        },
+        {
+          "name": "门尼",
+          "id": 12896059,
+          "mid": "003uZllO1pCUPk"
+        }
+      ],
+      "albumId": 55450816,
+      "albumMid": "0029eCfb2nbbVm",
+      "albumName": "抑人 (e)",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/0010zYvW3hwC3B",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/0029eCfb2nbbVm",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M0000029eCfb2nbbVm.jpg",
+      "durationSeconds": 219,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E9%97%A8%E5%B0%BC%20%E6%8A%91%E4%BA%BA&format=json&p=1&n=20"
+    },
+    {
+      "key": "004cIIT23E42Bi",
+      "order": 3,
+      "songId": 638575997,
+      "songMid": "004cIIT23E42Bi",
+      "songName": "巴拉莱卡（The Rod）",
+      "requestedTitle": "巴拉莱卡",
+      "artistKey": "money",
+      "artistName": "门尼",
+      "creditedArtists": [
+        {
+          "name": "门尼",
+          "id": 12896059,
+          "mid": "003uZllO1pCUPk"
+        }
+      ],
+      "albumId": 88523764,
+      "albumMid": "004JTrIH0sTFo8",
+      "albumName": "门尼Ⅲ：贵族",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/004cIIT23E42Bi",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/004JTrIH0sTFo8",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000004JTrIH0sTFo8.jpg",
+      "durationSeconds": 225,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E9%97%A8%E5%B0%BC%20%E5%B7%B4%E6%8B%89%E8%8E%B1%E5%8D%A1&format=json&p=1&n=20"
+    },
+    {
+      "key": "004OuC7B2RwVSs",
+      "order": 4,
+      "songId": 436733395,
+      "songMid": "004OuC7B2RwVSs",
+      "songName": "没有了 (The End)",
+      "requestedTitle": "没有了",
+      "artistKey": "money",
+      "artistName": "门尼",
+      "creditedArtists": [
+        {
+          "name": "门尼",
+          "id": 12896059,
+          "mid": "003uZllO1pCUPk"
+        }
+      ],
+      "albumId": 41939595,
+      "albumMid": "000VYwco34rVYK",
+      "albumName": "门尼 (MONEY)",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/004OuC7B2RwVSs",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/000VYwco34rVYK",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000000VYwco34rVYK.jpg",
+      "durationSeconds": 211,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E9%97%A8%E5%B0%BC%20%E6%B2%A1%E6%9C%89%E4%BA%86&format=json&p=1&n=20"
+    },
+    {
+      "key": "002mZevo3wHvsc",
+      "order": 1,
+      "songId": 102296985,
+      "songMid": "002mZevo3wHvsc",
+      "songName": "有何不可",
+      "requestedTitle": "有何不可",
+      "artistKey": "vae",
+      "artistName": "许嵩",
+      "creditedArtists": [
+        {
+          "name": "许嵩",
+          "id": 7221,
+          "mid": "000CK5xN3yZDJt"
+        }
+      ],
+      "albumId": 37333,
+      "albumMid": "002KSDg90IaScI",
+      "albumName": "自定义",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/002mZevo3wHvsc",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/002KSDg90IaScI",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002KSDg90IaScI.jpg",
+      "durationSeconds": 241,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E8%AE%B8%E5%B5%A9%20%E6%9C%89%E4%BD%95%E4%B8%8D%E5%8F%AF&format=json&p=1&n=20"
+    },
+    {
+      "key": "004Gq0xE1YC8xp",
+      "order": 2,
+      "songId": 101813361,
+      "songMid": "004Gq0xE1YC8xp",
+      "songName": "素颜",
+      "requestedTitle": "素颜",
+      "artistKey": "vae",
+      "artistName": "许嵩",
+      "creditedArtists": [
+        {
+          "name": "许嵩",
+          "id": 7221,
+          "mid": "000CK5xN3yZDJt"
+        },
+        {
+          "name": "何曼婷",
+          "id": 3459,
+          "mid": "000FI1360aGvjo"
+        }
+      ],
+      "albumId": 288517,
+      "albumMid": "0035f8nw11cjkf",
+      "albumName": "素颜",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/004Gq0xE1YC8xp",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/0035f8nw11cjkf",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M0000035f8nw11cjkf.jpg",
+      "durationSeconds": 238,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E8%AE%B8%E5%B5%A9%20%E7%B4%A0%E9%A2%9C&format=json&p=1&n=20"
+    },
+    {
+      "key": "003cLs112yMAcW",
+      "order": 3,
+      "songId": 651380,
+      "songMid": "003cLs112yMAcW",
+      "songName": "灰色头像",
+      "requestedTitle": "灰色头像",
+      "artistKey": "vae",
+      "artistName": "许嵩",
+      "creditedArtists": [
+        {
+          "name": "许嵩",
+          "id": 7221,
+          "mid": "000CK5xN3yZDJt"
+        }
+      ],
+      "albumId": 55369,
+      "albumMid": "002CJON012PxwU",
+      "albumName": "寻雾启示",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/003cLs112yMAcW",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/002CJON012PxwU",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002CJON012PxwU.jpg",
+      "durationSeconds": 289,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E8%AE%B8%E5%B5%A9%20%E7%81%B0%E8%89%B2%E5%A4%B4%E5%83%8F&format=json&p=1&n=20"
+    },
+    {
+      "key": "004ENQPZ0dHaqy",
+      "order": 4,
+      "songId": 436088,
+      "songMid": "004ENQPZ0dHaqy",
+      "songName": "断桥残雪",
+      "requestedTitle": "断桥残雪",
+      "artistKey": "vae",
+      "artistName": "许嵩",
+      "creditedArtists": [
+        {
+          "name": "许嵩",
+          "id": 7221,
+          "mid": "000CK5xN3yZDJt"
+        }
+      ],
+      "albumId": 35485,
+      "albumMid": "001jmC6x1RMfh0",
+      "albumName": "许嵩早期单曲集",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/004ENQPZ0dHaqy",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/001jmC6x1RMfh0",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000001jmC6x1RMfh0.jpg",
+      "durationSeconds": 227,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E8%AE%B8%E5%B5%A9%20%E6%96%AD%E6%A1%A5%E6%AE%8B%E9%9B%AA&format=json&p=1&n=20"
+    },
+    {
+      "key": "0027bOQj10UqLl",
+      "order": 5,
+      "songId": 460874,
+      "songMid": "0027bOQj10UqLl",
+      "songName": "清明雨上",
+      "requestedTitle": "清明雨上",
+      "artistKey": "vae",
+      "artistName": "许嵩",
+      "creditedArtists": [
+        {
+          "name": "许嵩",
+          "id": 7221,
+          "mid": "000CK5xN3yZDJt"
+        }
+      ],
+      "albumId": 37333,
+      "albumMid": "002KSDg90IaScI",
+      "albumName": "自定义",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/0027bOQj10UqLl",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/002KSDg90IaScI",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002KSDg90IaScI.jpg",
+      "durationSeconds": 219,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E8%AE%B8%E5%B5%A9%20%E6%B8%85%E6%98%8E%E9%9B%A8%E4%B8%8A&format=json&p=1&n=20"
+    },
+    {
+      "key": "001LuLtP1LqITK",
+      "order": 6,
+      "songId": 651382,
+      "songMid": "001LuLtP1LqITK",
+      "songName": "庐州月",
+      "requestedTitle": "庐州月",
+      "artistKey": "vae",
+      "artistName": "许嵩",
+      "creditedArtists": [
+        {
+          "name": "许嵩",
+          "id": 7221,
+          "mid": "000CK5xN3yZDJt"
+        }
+      ],
+      "albumId": 55369,
+      "albumMid": "002CJON012PxwU",
+      "albumName": "寻雾启示",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/001LuLtP1LqITK",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/002CJON012PxwU",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002CJON012PxwU.jpg",
+      "durationSeconds": 255,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E8%AE%B8%E5%B5%A9%20%E5%BA%90%E5%B7%9E%E6%9C%88&format=json&p=1&n=20"
+    },
+    {
+      "key": "004DGJ3c0Q4AoC",
+      "order": 7,
+      "songId": 739534,
+      "songMid": "004DGJ3c0Q4AoC",
+      "songName": "半城烟沙",
+      "requestedTitle": "半城烟沙",
+      "artistKey": "vae",
+      "artistName": "许嵩",
+      "creditedArtists": [
+        {
+          "name": "许嵩",
+          "id": 7221,
+          "mid": "000CK5xN3yZDJt"
+        }
+      ],
+      "albumId": 62496,
+      "albumMid": "0011dW8j0CePOv",
+      "albumName": "半城烟沙",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/004DGJ3c0Q4AoC",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/0011dW8j0CePOv",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M0000011dW8j0CePOv.jpg",
+      "durationSeconds": 292,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E8%AE%B8%E5%B5%A9%20%E5%8D%8A%E5%9F%8E%E7%83%9F%E6%B2%99&format=json&p=1&n=20"
+    },
+    {
+      "key": "001FGQba3i10mw",
+      "order": 8,
+      "songId": 106034300,
+      "songMid": "001FGQba3i10mw",
+      "songName": "雅俗共赏",
+      "requestedTitle": "雅俗共赏",
+      "artistKey": "vae",
+      "artistName": "许嵩",
+      "creditedArtists": [
+        {
+          "name": "许嵩",
+          "id": 7221,
+          "mid": "000CK5xN3yZDJt"
+        }
+      ],
+      "albumId": 1492897,
+      "albumMid": "000LfSb70Ewn3w",
+      "albumName": "青年晚报",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/001FGQba3i10mw",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/000LfSb70Ewn3w",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000000LfSb70Ewn3w.jpg",
+      "durationSeconds": 249,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E8%AE%B8%E5%B5%A9%20%E9%9B%85%E4%BF%97%E5%85%B1%E8%B5%8F&format=json&p=1&n=20"
+    },
+    {
+      "key": "003CMXGI2yRUDo",
+      "order": 9,
+      "songId": 102433800,
+      "songMid": "003CMXGI2yRUDo",
+      "songName": "玫瑰花的葬礼",
+      "requestedTitle": "玫瑰花的葬礼",
+      "artistKey": "vae",
+      "artistName": "许嵩",
+      "creditedArtists": [
+        {
+          "name": "许嵩",
+          "id": 7221,
+          "mid": "000CK5xN3yZDJt"
+        }
+      ],
+      "albumId": 35485,
+      "albumMid": "001jmC6x1RMfh0",
+      "albumName": "许嵩早期单曲集",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/003CMXGI2yRUDo",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/001jmC6x1RMfh0",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000001jmC6x1RMfh0.jpg",
+      "durationSeconds": 260,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E8%AE%B8%E5%B5%A9%20%E7%8E%AB%E7%91%B0%E8%8A%B1%E7%9A%84%E8%91%AC%E7%A4%BC&format=json&p=1&n=20"
+    },
+    {
+      "key": "000rys863Az3Us",
+      "order": 10,
+      "songId": 818067,
+      "songMid": "000rys863Az3Us",
+      "songName": "千百度",
+      "requestedTitle": "千百度",
+      "artistKey": "vae",
+      "artistName": "许嵩",
+      "creditedArtists": [
+        {
+          "name": "许嵩",
+          "id": 7221,
+          "mid": "000CK5xN3yZDJt"
+        }
+      ],
+      "albumId": 69240,
+      "albumMid": "0048UsY21HmoMU",
+      "albumName": "苏格拉没有底",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/000rys863Az3Us",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/0048UsY21HmoMU",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M0000048UsY21HmoMU.jpg",
+      "durationSeconds": 226,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E8%AE%B8%E5%B5%A9%20%E5%8D%83%E7%99%BE%E5%BA%A6&format=json&p=1&n=20"
+    },
+    {
+      "key": "0045cdSn27l6YM",
+      "order": 1,
+      "songId": 441134,
+      "songMid": "0045cdSn27l6YM",
+      "songName": "画心",
+      "requestedTitle": "画心",
+      "artistKey": "jane-zhang",
+      "artistName": "张靓颖",
+      "creditedArtists": [
+        {
+          "name": "张靓颖",
+          "id": 4607,
+          "mid": "000aw4WC2EQYTv"
+        }
+      ],
+      "albumId": 35899,
+      "albumMid": "004045x24ewU7g",
+      "albumName": "画心",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/0045cdSn27l6YM",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/004045x24ewU7g",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000004045x24ewU7g.jpg",
+      "durationSeconds": 432,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E5%BC%A0%E9%9D%93%E9%A2%96%20%E7%94%BB%E5%BF%83&format=json&p=1&n=20"
+    },
+    {
+      "key": "002vghem1otEWQ",
+      "order": 2,
+      "songId": 770724,
+      "songMid": "002vghem1otEWQ",
+      "songName": "如果这就是爱情",
+      "requestedTitle": "如果这就是爱情",
+      "artistKey": "jane-zhang",
+      "artistName": "张靓颖",
+      "creditedArtists": [
+        {
+          "name": "张靓颖",
+          "id": 4607,
+          "mid": "000aw4WC2EQYTv"
+        }
+      ],
+      "albumId": 64986,
+      "albumMid": "00458UNF0evQeN",
+      "albumName": "我相信",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/002vghem1otEWQ",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/00458UNF0evQeN",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M00000458UNF0evQeN.jpg",
+      "durationSeconds": 282,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E5%BC%A0%E9%9D%93%E9%A2%96%20%E5%A6%82%E6%9E%9C%E8%BF%99%E5%B0%B1%E6%98%AF%E7%88%B1%E6%83%85&format=json&p=1&n=20"
+    },
+    {
+      "key": "003dIT9t46SLw8",
+      "order": 3,
+      "songId": 5026333,
+      "songMid": "003dIT9t46SLw8",
+      "songName": "终于等到你",
+      "requestedTitle": "终于等到你",
+      "artistKey": "jane-zhang",
+      "artistName": "张靓颖",
+      "creditedArtists": [
+        {
+          "name": "张靓颖",
+          "id": 4607,
+          "mid": "000aw4WC2EQYTv"
+        }
+      ],
+      "albumId": 496284,
+      "albumMid": "003BoDmC3jlPXT",
+      "albumName": "第七感",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/003dIT9t46SLw8",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/003BoDmC3jlPXT",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003BoDmC3jlPXT.jpg",
+      "durationSeconds": 295,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E5%BC%A0%E9%9D%93%E9%A2%96%20%E7%BB%88%E4%BA%8E%E7%AD%89%E5%88%B0%E4%BD%A0&format=json&p=1&n=20"
+    },
+    {
+      "key": "003FIqDQ0xyaGF",
+      "order": 4,
+      "songId": 105044366,
+      "songMid": "003FIqDQ0xyaGF",
+      "songName": "我的梦",
+      "requestedTitle": "我的梦",
+      "artistKey": "jane-zhang",
+      "artistName": "张靓颖",
+      "creditedArtists": [
+        {
+          "name": "张靓颖",
+          "id": 4607,
+          "mid": "000aw4WC2EQYTv"
+        }
+      ],
+      "albumId": 1213329,
+      "albumMid": "002JsU5q10jUBt",
+      "albumName": "我的梦",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/003FIqDQ0xyaGF",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/002JsU5q10jUBt",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002JsU5q10jUBt.jpg",
+      "durationSeconds": 219,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E5%BC%A0%E9%9D%93%E9%A2%96%20%E6%88%91%E7%9A%84%E6%A2%A6&format=json&p=1&n=20"
+    },
+    {
+      "key": "002E9hkT4P5J3n",
+      "order": 5,
+      "songId": 178681,
+      "songMid": "002E9hkT4P5J3n",
+      "songName": "如果爱下去",
+      "requestedTitle": "如果爱下去",
+      "artistKey": "jane-zhang",
+      "artistName": "张靓颖",
+      "creditedArtists": [
+        {
+          "name": "张靓颖",
+          "id": 4607,
+          "mid": "000aw4WC2EQYTv"
+        }
+      ],
+      "albumId": 14846,
+      "albumMid": "001JsSLf17WfrE",
+      "albumName": "The One",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/002E9hkT4P5J3n",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/001JsSLf17WfrE",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000001JsSLf17WfrE.jpg",
+      "durationSeconds": 242,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E5%BC%A0%E9%9D%93%E9%A2%96%20%E5%A6%82%E6%9E%9C%E7%88%B1%E4%B8%8B%E5%8E%BB&format=json&p=1&n=20"
+    },
+    {
+      "key": "002sjtbA1K4ASF",
+      "order": 6,
+      "songId": 1523804,
+      "songMid": "002sjtbA1K4ASF",
+      "songName": "天下无双",
+      "requestedTitle": "天下无双",
+      "artistKey": "jane-zhang",
+      "artistName": "张靓颖",
+      "creditedArtists": [
+        {
+          "name": "张靓颖",
+          "id": 4607,
+          "mid": "000aw4WC2EQYTv"
+        }
+      ],
+      "albumId": 96407,
+      "albumMid": "002JALay3zCS22",
+      "albumName": "神雕侠侣 电视主题曲原声大戏",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/002sjtbA1K4ASF",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/002JALay3zCS22",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002JALay3zCS22.jpg",
+      "durationSeconds": 313,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E5%BC%A0%E9%9D%93%E9%A2%96%20%E5%A4%A9%E4%B8%8B%E6%97%A0%E5%8F%8C&format=json&p=1&n=20"
+    },
+    {
+      "key": "000wubcy3RkeYp",
+      "order": 7,
+      "songId": 109127914,
+      "songMid": "000wubcy3RkeYp",
+      "songName": "一定要幸福",
+      "requestedTitle": "一定要幸福",
+      "artistKey": "jane-zhang",
+      "artistName": "张靓颖",
+      "creditedArtists": [
+        {
+          "name": "张靓颖",
+          "id": 4607,
+          "mid": "000aw4WC2EQYTv"
+        }
+      ],
+      "albumId": 1679081,
+      "albumMid": "003V7SAg16Ed0F",
+      "albumName": "一定要幸福",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/000wubcy3RkeYp",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/003V7SAg16Ed0F",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003V7SAg16Ed0F.jpg",
+      "durationSeconds": 294,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E5%BC%A0%E9%9D%93%E9%A2%96%20%E4%B8%80%E5%AE%9A%E8%A6%81%E5%B9%B8%E7%A6%8F&format=json&p=1&n=20"
+    },
+    {
+      "key": "000IS4iG07Wwhr",
+      "order": 8,
+      "songId": 402497,
+      "songMid": "000IS4iG07Wwhr",
+      "songName": "我们说好的",
+      "requestedTitle": "我们说好的",
+      "artistKey": "jane-zhang",
+      "artistName": "张靓颖",
+      "creditedArtists": [
+        {
+          "name": "张靓颖",
+          "id": 4607,
+          "mid": "000aw4WC2EQYTv"
+        }
+      ],
+      "albumId": 32503,
+      "albumMid": "002StVxe22mRNX",
+      "albumName": "Update",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/000IS4iG07Wwhr",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/002StVxe22mRNX",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002StVxe22mRNX.jpg",
+      "durationSeconds": 270,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E5%BC%A0%E9%9D%93%E9%A2%96%20%E6%88%91%E4%BB%AC%E8%AF%B4%E5%A5%BD%E7%9A%84&format=json&p=1&n=20"
+    },
+    {
+      "key": "000jdOQd304RKH",
+      "order": 9,
+      "songId": 178680,
+      "songMid": "000jdOQd304RKH",
+      "songName": "这该死的爱",
+      "requestedTitle": "这该死的爱",
+      "artistKey": "jane-zhang",
+      "artistName": "张靓颖",
+      "creditedArtists": [
+        {
+          "name": "张靓颖",
+          "id": 4607,
+          "mid": "000aw4WC2EQYTv"
+        }
+      ],
+      "albumId": 14846,
+      "albumMid": "001JsSLf17WfrE",
+      "albumName": "The One",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/000jdOQd304RKH",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/001JsSLf17WfrE",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000001JsSLf17WfrE.jpg",
+      "durationSeconds": 297,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E5%BC%A0%E9%9D%93%E9%A2%96%20%E8%BF%99%E8%AF%A5%E6%AD%BB%E7%9A%84%E7%88%B1&format=json&p=1&n=20"
+    },
+    {
+      "key": "002fb3GO0FZiKR",
+      "order": 10,
+      "songId": 402489,
+      "songMid": "002fb3GO0FZiKR",
+      "songName": "G大调的悲伤",
+      "requestedTitle": "G大调的悲伤",
+      "artistKey": "jane-zhang",
+      "artistName": "张靓颖",
+      "creditedArtists": [
+        {
+          "name": "张靓颖",
+          "id": 4607,
+          "mid": "000aw4WC2EQYTv"
+        }
+      ],
+      "albumId": 32503,
+      "albumMid": "002StVxe22mRNX",
+      "albumName": "Update",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/002fb3GO0FZiKR",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/002StVxe22mRNX",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002StVxe22mRNX.jpg",
+      "durationSeconds": 274,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E5%BC%A0%E9%9D%93%E9%A2%96%20G%E5%A4%A7%E8%B0%83%E7%9A%84%E6%82%B2%E4%BC%A4&format=json&p=1&n=20"
+    },
+    {
+      "key": "004TXEXY2G2c7C",
+      "order": 1,
+      "songId": 9063002,
+      "songMid": "004TXEXY2G2c7C",
+      "songName": "江南",
+      "requestedTitle": "江南",
+      "artistKey": "jj-lin",
+      "artistName": "林俊杰",
+      "creditedArtists": [
+        {
+          "name": "林俊杰",
+          "id": 4286,
+          "mid": "001BLpXF2DyJe2"
+        }
+      ],
+      "albumId": 8036,
+      "albumMid": "000y5gq7449K9I",
+      "albumName": "第二天堂",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/004TXEXY2G2c7C",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/000y5gq7449K9I",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000000y5gq7449K9I.jpg",
+      "durationSeconds": 267,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E6%9E%97%E4%BF%8A%E6%9D%B0%20%E6%B1%9F%E5%8D%97&format=json&p=1&n=20"
+    },
+    {
+      "key": "0003y8uR1ZZwOI",
+      "order": 2,
+      "songId": 101014,
+      "songMid": "0003y8uR1ZZwOI",
+      "songName": "曹操",
+      "requestedTitle": "曹操",
+      "artistKey": "jj-lin",
+      "artistName": "林俊杰",
+      "creditedArtists": [
+        {
+          "name": "林俊杰",
+          "id": 4286,
+          "mid": "001BLpXF2DyJe2"
+        }
+      ],
+      "albumId": 8440,
+      "albumMid": "002aaUOS24kcwh",
+      "albumName": "曹操",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/0003y8uR1ZZwOI",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/002aaUOS24kcwh",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002aaUOS24kcwh.jpg",
+      "durationSeconds": 242,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E6%9E%97%E4%BF%8A%E6%9D%B0%20%E6%9B%B9%E6%93%8D&format=json&p=1&n=20"
+    },
+    {
+      "key": "002gcuPM3LQpCi",
+      "order": 3,
+      "songId": 95272,
+      "songMid": "002gcuPM3LQpCi",
+      "songName": "一千年以后",
+      "requestedTitle": "一千年以后",
+      "artistKey": "jj-lin",
+      "artistName": "林俊杰",
+      "creditedArtists": [
+        {
+          "name": "林俊杰",
+          "id": 4286,
+          "mid": "001BLpXF2DyJe2"
+        }
+      ],
+      "albumId": 8035,
+      "albumMid": "001HwwNH1inlz9",
+      "albumName": "编号89757",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/002gcuPM3LQpCi",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/001HwwNH1inlz9",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000001HwwNH1inlz9.jpg",
+      "durationSeconds": 227,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E6%9E%97%E4%BF%8A%E6%9D%B0%20%E4%B8%80%E5%8D%83%E5%B9%B4%E4%BB%A5%E5%90%8E&format=json&p=1&n=20"
+    },
+    {
+      "key": "002CxSLT41D5tD",
+      "order": 4,
+      "songId": 5063375,
+      "songMid": "002CxSLT41D5tD",
+      "songName": "修炼爱情",
+      "requestedTitle": "修炼爱情",
+      "artistKey": "jj-lin",
+      "artistName": "林俊杰",
+      "creditedArtists": [
+        {
+          "name": "林俊杰",
+          "id": 4286,
+          "mid": "001BLpXF2DyJe2"
+        }
+      ],
+      "albumId": 421264,
+      "albumMid": "001gqOnU3DTg2S",
+      "albumName": "因你 而在",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/002CxSLT41D5tD",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/001gqOnU3DTg2S",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000001gqOnU3DTg2S.jpg",
+      "durationSeconds": 287,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E6%9E%97%E4%BF%8A%E6%9D%B0%20%E4%BF%AE%E7%82%BC%E7%88%B1%E6%83%85&format=json&p=1&n=20"
+    },
+    {
+      "key": "004AxZur0wQjFR",
+      "order": 5,
+      "songId": 330621486,
+      "songMid": "004AxZur0wQjFR",
+      "songName": "可惜没如果",
+      "requestedTitle": "可惜没如果",
+      "artistKey": "jj-lin",
+      "artistName": "林俊杰",
+      "creditedArtists": [
+        {
+          "name": "林俊杰",
+          "id": 4286,
+          "mid": "001BLpXF2DyJe2"
+        }
+      ],
+      "albumId": 23077911,
+      "albumMid": "0033R2xQ2I0Uyf",
+      "albumName": "新地球",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/004AxZur0wQjFR",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/0033R2xQ2I0Uyf",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M0000033R2xQ2I0Uyf.jpg",
+      "durationSeconds": 298,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E6%9E%97%E4%BF%8A%E6%9D%B0%20%E5%8F%AF%E6%83%9C%E6%B2%A1%E5%A6%82%E6%9E%9C&format=json&p=1&n=20"
+    },
+    {
+      "key": "001IpbDW34m1Gy",
+      "order": 6,
+      "songId": 102415346,
+      "songMid": "001IpbDW34m1Gy",
+      "songName": "她说",
+      "requestedTitle": "她说",
+      "artistKey": "jj-lin",
+      "artistName": "林俊杰",
+      "creditedArtists": [
+        {
+          "name": "林俊杰",
+          "id": 4286,
+          "mid": "001BLpXF2DyJe2"
+        }
+      ],
+      "albumId": 62342,
+      "albumMid": "000TuW8h0AH2n4",
+      "albumName": "她说 概念自选辑",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/001IpbDW34m1Gy",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/000TuW8h0AH2n4",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000000TuW8h0AH2n4.jpg",
+      "durationSeconds": 320,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E6%9E%97%E4%BF%8A%E6%9D%B0%20%E5%A5%B9%E8%AF%B4&format=json&p=1&n=20"
+    },
+    {
+      "key": "002E8ebM3TFWmA",
+      "order": 7,
+      "songId": 648231,
+      "songMid": "002E8ebM3TFWmA",
+      "songName": "背对背拥抱",
+      "requestedTitle": "背对背拥抱",
+      "artistKey": "jj-lin",
+      "artistName": "林俊杰",
+      "creditedArtists": [
+        {
+          "name": "林俊杰",
+          "id": 4286,
+          "mid": "001BLpXF2DyJe2"
+        }
+      ],
+      "albumId": 54866,
+      "albumMid": "002C0kX720gMQi",
+      "albumName": "100天",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/002E8ebM3TFWmA",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/002C0kX720gMQi",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002C0kX720gMQi.jpg",
+      "durationSeconds": 234,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E6%9E%97%E4%BF%8A%E6%9D%B0%20%E8%83%8C%E5%AF%B9%E8%83%8C%E6%8B%A5%E6%8A%B1&format=json&p=1&n=20"
+    },
+    {
+      "key": "002K4xqW4A7m7q",
+      "order": 8,
+      "songId": 105095766,
+      "songMid": "002K4xqW4A7m7q",
+      "songName": "不为谁而作的歌",
+      "requestedTitle": "不为谁而作的歌",
+      "artistKey": "jj-lin",
+      "artistName": "林俊杰",
+      "creditedArtists": [
+        {
+          "name": "林俊杰",
+          "id": 4286,
+          "mid": "001BLpXF2DyJe2"
+        }
+      ],
+      "albumId": 1220218,
+      "albumMid": "003nbc0602Tgfx",
+      "albumName": "不为谁而作的歌",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/002K4xqW4A7m7q",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/003nbc0602Tgfx",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003nbc0602Tgfx.jpg",
+      "durationSeconds": 265,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E6%9E%97%E4%BF%8A%E6%9D%B0%20%E4%B8%8D%E4%B8%BA%E8%B0%81%E8%80%8C%E4%BD%9C%E7%9A%84%E6%AD%8C&format=json&p=1&n=20"
+    },
+    {
+      "key": "003UTRfZ12wGOs",
+      "order": 9,
+      "songId": 105388642,
+      "songMid": "003UTRfZ12wGOs",
+      "songName": "醉赤壁",
+      "requestedTitle": "醉赤壁",
+      "artistKey": "jj-lin",
+      "artistName": "林俊杰",
+      "creditedArtists": [
+        {
+          "name": "林俊杰",
+          "id": 4286,
+          "mid": "001BLpXF2DyJe2"
+        }
+      ],
+      "albumId": 36160,
+      "albumMid": "002g6zv02X7SNi",
+      "albumName": "JJ陆",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/003UTRfZ12wGOs",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/002g6zv02X7SNi",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002g6zv02X7SNi.jpg",
+      "durationSeconds": 281,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E6%9E%97%E4%BF%8A%E6%9D%B0%20%E9%86%89%E8%B5%A4%E5%A3%81&format=json&p=1&n=20"
+    },
+    {
+      "key": "003h3CYS3UxDB4",
+      "order": 10,
+      "songId": 447253,
+      "songMid": "003h3CYS3UxDB4",
+      "songName": "小酒窝",
+      "requestedTitle": "小酒窝",
+      "artistKey": "jj-lin",
+      "artistName": "林俊杰",
+      "creditedArtists": [
+        {
+          "name": "林俊杰",
+          "id": 4286,
+          "mid": "001BLpXF2DyJe2"
+        },
+        {
+          "name": "蔡卓妍",
+          "id": 4856,
+          "mid": "000N3nfJ398H07"
+        }
+      ],
+      "albumId": 36160,
+      "albumMid": "002g6zv02X7SNi",
+      "albumName": "JJ陆",
+      "qqUrl": "https://y.qq.com/n/ryqq/songDetail/003h3CYS3UxDB4",
+      "qqAlbumUrl": "https://y.qq.com/n/ryqq/albumDetail/002g6zv02X7SNi",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002g6zv02X7SNi.jpg",
+      "durationSeconds": 218,
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E6%9E%97%E4%BF%8A%E6%9D%B0%20%E5%B0%8F%E9%85%92%E7%AA%9D&format=json&p=1&n=20"
+    }
+  ],
+  "albums": [
+    {
+      "albumId": 663,
+      "albumMid": "001mvhPh0qevad",
+      "albumName": "黑色柳丁",
+      "artistKey": "david-tao",
+      "artistName": "陶喆",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/001mvhPh0qevad",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000001mvhPh0qevad.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E9%99%B6%E5%96%86%20%E9%BB%91%E8%89%B2%E6%9F%B3%E4%B8%81&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 442,
+      "albumMid": "003ofGzS3C23Ow",
+      "albumName": "太平盛世",
+      "artistKey": "david-tao",
+      "artistName": "陶喆",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/003ofGzS3C23Ow",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003ofGzS3C23Ow.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E9%99%B6%E5%96%86%20Susan%E8%AF%B4&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 664,
+      "albumMid": "003ROVwj4PqLPa",
+      "albumName": "陶喆同名专辑",
+      "artistKey": "david-tao",
+      "artistName": "陶喆",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/003ROVwj4PqLPa",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003ROVwj4PqLPa.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E9%99%B6%E5%96%86%20%E6%B5%81%E6%B2%99&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 665,
+      "albumMid": "002PjDkE14OUkV",
+      "albumName": "I'm OK",
+      "artistKey": "david-tao",
+      "artistName": "陶喆",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/002PjDkE14OUkV",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002PjDkE14OUkV.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E9%99%B6%E5%96%86%20%E5%A4%A9%E5%A4%A9&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 46256,
+      "albumMid": "0042KbE51Xztjx",
+      "albumName": "爱情呼叫转移",
+      "artistKey": "eason-chan",
+      "artistName": "陈奕迅",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/0042KbE51Xztjx",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M0000042KbE51Xztjx.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E9%99%88%E5%A5%95%E8%BF%85%20%E7%88%B1%E6%83%85%E8%BD%AC%E7%A7%BB&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 89554,
+      "albumMid": "002X5NAN24f6TQ",
+      "albumName": "打得火热",
+      "artistKey": "eason-chan",
+      "artistName": "陈奕迅",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/002X5NAN24f6TQ",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002X5NAN24f6TQ.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E9%99%88%E5%A5%95%E8%BF%85%20K%E6%AD%8C%E4%B9%8B%E7%8E%8B&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 23277502,
+      "albumMid": "001uaPM93kxk1R",
+      "albumName": "孤勇者",
+      "artistKey": "eason-chan",
+      "artistName": "陈奕迅",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/001uaPM93kxk1R",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000001uaPM93kxk1R.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E9%99%88%E5%A5%95%E8%BF%85%20%E5%AD%A4%E5%8B%87%E8%80%85&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 89526,
+      "albumMid": "000GDz8k03UOaI",
+      "albumName": "黑白灰",
+      "artistKey": "eason-chan",
+      "artistName": "陈奕迅",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/000GDz8k03UOaI",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000000GDz8k03UOaI.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E9%99%88%E5%A5%95%E8%BF%85%20%E5%8D%81%E5%B9%B4&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 31526,
+      "albumMid": "003yQidc3s7P65",
+      "albumName": "认了吧",
+      "artistKey": "eason-chan",
+      "artistName": "陈奕迅",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/003yQidc3s7P65",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003yQidc3s7P65.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E9%99%88%E5%A5%95%E8%BF%85%20%E7%BA%A2%E7%8E%AB%E7%91%B0&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 89552,
+      "albumMid": "004S8YQr3UmEbG",
+      "albumName": "Shall We Dance? Shall We Talk!",
+      "artistKey": "eason-chan",
+      "artistName": "陈奕迅",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/004S8YQr3UmEbG",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000004S8YQr3UmEbG.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E9%99%88%E5%A5%95%E8%BF%85%20%E5%8D%95%E8%BD%A6&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 743,
+      "albumMid": "004E0Y0A0R8FYZ",
+      "albumName": "Special Thanks To…",
+      "artistKey": "eason-chan",
+      "artistName": "陈奕迅",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/004E0Y0A0R8FYZ",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000004E0Y0A0R8FYZ.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E9%99%88%E5%A5%95%E8%BF%85%20%E4%BD%A0%E7%9A%84%E8%83%8C%E5%8C%85&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 7879,
+      "albumMid": "003J6fvc0bVJon",
+      "albumName": "U 87",
+      "artistKey": "eason-chan",
+      "artistName": "陈奕迅",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/003J6fvc0bVJon",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003J6fvc0bVJon.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E9%99%88%E5%A5%95%E8%BF%85%20%E6%B5%AE%E5%A4%B8&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 22276,
+      "albumMid": "004Z85XP1c25b7",
+      "albumName": "What's Going On...?",
+      "artistKey": "eason-chan",
+      "artistName": "陈奕迅",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/004Z85XP1c25b7",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000004Z85XP1c25b7.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E9%99%88%E5%A5%95%E8%BF%85%20%E5%AF%8C%E5%A3%AB%E5%B1%B1%E4%B8%8B&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 57457,
+      "albumMid": "000HZzEx0QIMNM",
+      "albumName": "18...",
+      "artistKey": "gem",
+      "artistName": "G.E.M.邓紫棋",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/000HZzEx0QIMNM",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000000HZzEx0QIMNM.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=G.E.M.%E9%82%93%E7%B4%AB%E6%A3%8B%20A.I.N.Y.&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 1796874,
+      "albumMid": "001mTkmb4GJlh4",
+      "albumName": "光年之外",
+      "artistKey": "gem",
+      "artistName": "G.E.M.邓紫棋",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/001mTkmb4GJlh4",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000001mTkmb4GJlh4.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=G.E.M.%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%85%89%E5%B9%B4%E4%B9%8B%E5%A4%96&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 4331954,
+      "albumMid": "003cKIKZ1J4Yyu",
+      "albumName": "另一个童话",
+      "artistKey": "gem",
+      "artistName": "G.E.M.邓紫棋",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/003cKIKZ1J4Yyu",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003cKIKZ1J4Yyu.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=G.E.M.%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%80%92%E6%95%B0&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 9812833,
+      "albumMid": "0049MVh824D7bM",
+      "albumName": "摩天动物园",
+      "artistKey": "gem",
+      "artistName": "G.E.M.邓紫棋",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/0049MVh824D7bM",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M0000049MVh824D7bM.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=G.E.M.%E9%82%93%E7%B4%AB%E6%A3%8B%20%E5%8F%A5%E5%8F%B7&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 1196826,
+      "albumMid": "003c616O2Zlswm",
+      "albumName": "新的心跳",
+      "artistKey": "gem",
+      "artistName": "G.E.M.邓紫棋",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/003c616O2Zlswm",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003c616O2Zlswm.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=G.E.M.%E9%82%93%E7%B4%AB%E6%A3%8B%20%E6%96%B0%E7%9A%84%E5%BF%83%E8%B7%B3&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 62251,
+      "albumMid": "002F059l1kCcdr",
+      "albumName": "My Secret",
+      "artistKey": "gem",
+      "artistName": "G.E.M.邓紫棋",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/002F059l1kCcdr",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002F059l1kCcdr.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=G.E.M.%E9%82%93%E7%B4%AB%E6%A3%8B%20%E6%88%91%E7%9A%84%E7%A7%98%E5%AF%86&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 123298,
+      "albumMid": "002YFufr4bXZyI",
+      "albumName": "Xposed",
+      "artistKey": "gem",
+      "artistName": "G.E.M.邓紫棋",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/002YFufr4bXZyI",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002YFufr4bXZyI.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=G.E.M.%E9%82%93%E7%B4%AB%E6%A3%8B%20%E6%B3%A1%E6%B2%AB&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 496284,
+      "albumMid": "003BoDmC3jlPXT",
+      "albumName": "第七感",
+      "artistKey": "jane-zhang",
+      "artistName": "张靓颖",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/003BoDmC3jlPXT",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003BoDmC3jlPXT.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E5%BC%A0%E9%9D%93%E9%A2%96%20%E7%BB%88%E4%BA%8E%E7%AD%89%E5%88%B0%E4%BD%A0&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 35899,
+      "albumMid": "004045x24ewU7g",
+      "albumName": "画心",
+      "artistKey": "jane-zhang",
+      "artistName": "张靓颖",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/004045x24ewU7g",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000004045x24ewU7g.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E5%BC%A0%E9%9D%93%E9%A2%96%20%E7%94%BB%E5%BF%83&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 96407,
+      "albumMid": "002JALay3zCS22",
+      "albumName": "神雕侠侣 电视主题曲原声大戏",
+      "artistKey": "jane-zhang",
+      "artistName": "张靓颖",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/002JALay3zCS22",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002JALay3zCS22.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E5%BC%A0%E9%9D%93%E9%A2%96%20%E5%A4%A9%E4%B8%8B%E6%97%A0%E5%8F%8C&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 1213329,
+      "albumMid": "002JsU5q10jUBt",
+      "albumName": "我的梦",
+      "artistKey": "jane-zhang",
+      "artistName": "张靓颖",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/002JsU5q10jUBt",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002JsU5q10jUBt.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E5%BC%A0%E9%9D%93%E9%A2%96%20%E6%88%91%E7%9A%84%E6%A2%A6&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 64986,
+      "albumMid": "00458UNF0evQeN",
+      "albumName": "我相信",
+      "artistKey": "jane-zhang",
+      "artistName": "张靓颖",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/00458UNF0evQeN",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M00000458UNF0evQeN.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E5%BC%A0%E9%9D%93%E9%A2%96%20%E5%A6%82%E6%9E%9C%E8%BF%99%E5%B0%B1%E6%98%AF%E7%88%B1%E6%83%85&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 1679081,
+      "albumMid": "003V7SAg16Ed0F",
+      "albumName": "一定要幸福",
+      "artistKey": "jane-zhang",
+      "artistName": "张靓颖",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/003V7SAg16Ed0F",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003V7SAg16Ed0F.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E5%BC%A0%E9%9D%93%E9%A2%96%20%E4%B8%80%E5%AE%9A%E8%A6%81%E5%B9%B8%E7%A6%8F&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 14846,
+      "albumMid": "001JsSLf17WfrE",
+      "albumName": "The One",
+      "artistKey": "jane-zhang",
+      "artistName": "张靓颖",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/001JsSLf17WfrE",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000001JsSLf17WfrE.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E5%BC%A0%E9%9D%93%E9%A2%96%20%E8%BF%99%E8%AF%A5%E6%AD%BB%E7%9A%84%E7%88%B1&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 32503,
+      "albumMid": "002StVxe22mRNX",
+      "albumName": "Update",
+      "artistKey": "jane-zhang",
+      "artistName": "张靓颖",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/002StVxe22mRNX",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002StVxe22mRNX.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E5%BC%A0%E9%9D%93%E9%A2%96%20G%E5%A4%A7%E8%B0%83%E7%9A%84%E6%82%B2%E4%BC%A4&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 8217,
+      "albumMid": "000I5jJB3blWeN",
+      "albumName": "范特西",
+      "artistKey": "jay-chou",
+      "artistName": "周杰伦",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/000I5jJB3blWeN",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000000I5jJB3blWeN.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E5%91%A8%E6%9D%B0%E4%BC%A6%20%E7%AE%80%E5%8D%95%E7%88%B1&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 36062,
+      "albumMid": "002Neh8l0uciQZ",
+      "albumName": "魔杰座",
+      "artistKey": "jay-chou",
+      "artistName": "周杰伦",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/002Neh8l0uciQZ",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002Neh8l0uciQZ.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E5%91%A8%E6%9D%B0%E4%BC%A6%20%E7%A8%BB%E9%A6%99&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 20612,
+      "albumMid": "003DFRzD192KKD",
+      "albumName": "七里香",
+      "artistKey": "jay-chou",
+      "artistName": "周杰伦",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/003DFRzD192KKD",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003DFRzD192KKD.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E5%91%A8%E6%9D%B0%E4%BC%A6%20%E6%90%81%E6%B5%85&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 60671,
+      "albumMid": "0024bjiL2aocxT",
+      "albumName": "十一月的萧邦",
+      "artistKey": "jay-chou",
+      "artistName": "周杰伦",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/0024bjiL2aocxT",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M0000024bjiL2aocxT.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E5%91%A8%E6%9D%B0%E4%BC%A6%20%E5%A4%9C%E6%9B%B2&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 33021,
+      "albumMid": "002eFUFm2XYZ7z",
+      "albumName": "我很忙",
+      "artistKey": "jay-chou",
+      "artistName": "周杰伦",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/002eFUFm2XYZ7z",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002eFUFm2XYZ7z.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E5%91%A8%E6%9D%B0%E4%BC%A6%20%E9%9D%92%E8%8A%B1%E7%93%B7&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 8220,
+      "albumMid": "000MkMni19ClKG",
+      "albumName": "叶惠美",
+      "artistKey": "jay-chou",
+      "artistName": "周杰伦",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/000MkMni19ClKG",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000000MkMni19ClKG.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E5%91%A8%E6%9D%B0%E4%BC%A6%20%E4%BB%A5%E7%88%B6%E4%B9%8B%E5%90%8D&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 1458791,
+      "albumMid": "003RMaRI1iFoYd",
+      "albumName": "周杰伦的床边故事",
+      "artistKey": "jay-chou",
+      "artistName": "周杰伦",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/003RMaRI1iFoYd",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003RMaRI1iFoYd.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E5%91%A8%E6%9D%B0%E4%BC%A6%20%E5%91%8A%E7%99%BD%E6%B0%94%E7%90%83&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 14311,
+      "albumMid": "002MAeob3zLXwZ",
+      "albumName": "J III MP3 Player",
+      "artistKey": "jay-chou",
+      "artistName": "周杰伦",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/002MAeob3zLXwZ",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002MAeob3zLXwZ.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E5%91%A8%E6%9D%B0%E4%BC%A6%20%E4%B8%80%E8%B7%AF%E5%90%91%E5%8C%97&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 54866,
+      "albumMid": "002C0kX720gMQi",
+      "albumName": "100天",
+      "artistKey": "jj-lin",
+      "artistName": "林俊杰",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/002C0kX720gMQi",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002C0kX720gMQi.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E6%9E%97%E4%BF%8A%E6%9D%B0%20%E8%83%8C%E5%AF%B9%E8%83%8C%E6%8B%A5%E6%8A%B1&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 8035,
+      "albumMid": "001HwwNH1inlz9",
+      "albumName": "编号89757",
+      "artistKey": "jj-lin",
+      "artistName": "林俊杰",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/001HwwNH1inlz9",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000001HwwNH1inlz9.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E6%9E%97%E4%BF%8A%E6%9D%B0%20%E4%B8%80%E5%8D%83%E5%B9%B4%E4%BB%A5%E5%90%8E&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 1220218,
+      "albumMid": "003nbc0602Tgfx",
+      "albumName": "不为谁而作的歌",
+      "artistKey": "jj-lin",
+      "artistName": "林俊杰",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/003nbc0602Tgfx",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003nbc0602Tgfx.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E6%9E%97%E4%BF%8A%E6%9D%B0%20%E4%B8%8D%E4%B8%BA%E8%B0%81%E8%80%8C%E4%BD%9C%E7%9A%84%E6%AD%8C&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 8440,
+      "albumMid": "002aaUOS24kcwh",
+      "albumName": "曹操",
+      "artistKey": "jj-lin",
+      "artistName": "林俊杰",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/002aaUOS24kcwh",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002aaUOS24kcwh.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E6%9E%97%E4%BF%8A%E6%9D%B0%20%E6%9B%B9%E6%93%8D&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 8036,
+      "albumMid": "000y5gq7449K9I",
+      "albumName": "第二天堂",
+      "artistKey": "jj-lin",
+      "artistName": "林俊杰",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/000y5gq7449K9I",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000000y5gq7449K9I.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E6%9E%97%E4%BF%8A%E6%9D%B0%20%E6%B1%9F%E5%8D%97&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 62342,
+      "albumMid": "000TuW8h0AH2n4",
+      "albumName": "她说 概念自选辑",
+      "artistKey": "jj-lin",
+      "artistName": "林俊杰",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/000TuW8h0AH2n4",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000000TuW8h0AH2n4.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E6%9E%97%E4%BF%8A%E6%9D%B0%20%E5%A5%B9%E8%AF%B4&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 23077911,
+      "albumMid": "0033R2xQ2I0Uyf",
+      "albumName": "新地球",
+      "artistKey": "jj-lin",
+      "artistName": "林俊杰",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/0033R2xQ2I0Uyf",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M0000033R2xQ2I0Uyf.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E6%9E%97%E4%BF%8A%E6%9D%B0%20%E5%8F%AF%E6%83%9C%E6%B2%A1%E5%A6%82%E6%9E%9C&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 421264,
+      "albumMid": "001gqOnU3DTg2S",
+      "albumName": "因你 而在",
+      "artistKey": "jj-lin",
+      "artistName": "林俊杰",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/001gqOnU3DTg2S",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000001gqOnU3DTg2S.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E6%9E%97%E4%BF%8A%E6%9D%B0%20%E4%BF%AE%E7%82%BC%E7%88%B1%E6%83%85&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 36160,
+      "albumMid": "002g6zv02X7SNi",
+      "albumName": "JJ陆",
+      "artistKey": "jj-lin",
+      "artistName": "林俊杰",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/002g6zv02X7SNi",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002g6zv02X7SNi.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E6%9E%97%E4%BF%8A%E6%9D%B0%20%E5%B0%8F%E9%85%92%E7%AA%9D&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 1376305,
+      "albumMid": "000dcZ9I1nzO62",
+      "albumName": "初学者",
+      "artistKey": "joker-xue",
+      "artistName": "薛之谦",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/000dcZ9I1nzO62",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000000dcZ9I1nzO62.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E8%96%9B%E4%B9%8B%E8%B0%A6%20%E5%88%9A%E5%88%9A%E5%A5%BD&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 3310789,
+      "albumMid": "001L7UIu3GXVtT",
+      "albumName": "渡 The Crossing",
+      "artistKey": "joker-xue",
+      "artistName": "薛之谦",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/001L7UIu3GXVtT",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000001L7UIu3GXVtT.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E8%96%9B%E4%B9%8B%E8%B0%A6%20%E5%8A%A8%E7%89%A9%E4%B8%96%E7%95%8C&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 989994,
+      "albumMid": "003y8dsH2wBHlo",
+      "albumName": "绅士",
+      "artistKey": "joker-xue",
+      "artistName": "薛之谦",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/003y8dsH2wBHlo",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003y8dsH2wBHlo.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E8%96%9B%E4%B9%8B%E8%B0%A6%20%E7%BB%85%E5%A3%AB&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 58722559,
+      "albumMid": "002N4fUq1kRST2",
+      "albumName": "守村人",
+      "artistKey": "joker-xue",
+      "artistName": "薛之谦",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/002N4fUq1kRST2",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002N4fUq1kRST2.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E8%96%9B%E4%B9%8B%E8%B0%A6%20%E5%AE%88%E6%9D%91%E4%BA%BA&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 16596032,
+      "albumMid": "000K9Zp13TZp5s",
+      "albumName": "天外来物",
+      "artistKey": "joker-xue",
+      "artistName": "薛之谦",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/000K9Zp13TZp5s",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000000K9Zp13TZp5s.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E8%96%9B%E4%B9%8B%E8%B0%A6%20%E5%A4%A9%E5%A4%96%E6%9D%A5%E7%89%A9&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 51504,
+      "albumMid": "003mUYW22JXKVK",
+      "albumName": "薛之谦",
+      "artistKey": "joker-xue",
+      "artistName": "薛之谦",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/003mUYW22JXKVK",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003mUYW22JXKVK.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E8%96%9B%E4%B9%8B%E8%B0%A6%20%E8%AE%A4%E7%9C%9F%E7%9A%84%E9%9B%AA&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 443691,
+      "albumMid": "000QgFcm0v8WaF",
+      "albumName": "意外",
+      "artistKey": "joker-xue",
+      "artistName": "薛之谦",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/000QgFcm0v8WaF",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000000QgFcm0v8WaF.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E8%96%9B%E4%B9%8B%E8%B0%A6%20%E5%85%B6%E5%AE%9E&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 41939595,
+      "albumMid": "000VYwco34rVYK",
+      "albumName": "门尼 (MONEY)",
+      "artistKey": "money",
+      "artistName": "门尼",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/000VYwco34rVYK",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000000VYwco34rVYK.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E9%97%A8%E5%B0%BC%20%E6%B2%A1%E6%9C%89%E4%BA%86&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 88523764,
+      "albumMid": "004JTrIH0sTFo8",
+      "albumName": "门尼Ⅲ：贵族",
+      "artistKey": "money",
+      "artistName": "门尼",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/004JTrIH0sTFo8",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000004JTrIH0sTFo8.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E9%97%A8%E5%B0%BC%20%E5%B7%B4%E6%8B%89%E8%8E%B1%E5%8D%A1&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 55450816,
+      "albumMid": "0029eCfb2nbbVm",
+      "albumName": "抑人 (e)",
+      "artistKey": "money",
+      "artistName": "门尼",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/0029eCfb2nbbVm",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M0000029eCfb2nbbVm.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E9%97%A8%E5%B0%BC%20%E6%8A%91%E4%BA%BA&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 62496,
+      "albumMid": "0011dW8j0CePOv",
+      "albumName": "半城烟沙",
+      "artistKey": "vae",
+      "artistName": "许嵩",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/0011dW8j0CePOv",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M0000011dW8j0CePOv.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E8%AE%B8%E5%B5%A9%20%E5%8D%8A%E5%9F%8E%E7%83%9F%E6%B2%99&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 1492897,
+      "albumMid": "000LfSb70Ewn3w",
+      "albumName": "青年晚报",
+      "artistKey": "vae",
+      "artistName": "许嵩",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/000LfSb70Ewn3w",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000000LfSb70Ewn3w.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E8%AE%B8%E5%B5%A9%20%E9%9B%85%E4%BF%97%E5%85%B1%E8%B5%8F&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 69240,
+      "albumMid": "0048UsY21HmoMU",
+      "albumName": "苏格拉没有底",
+      "artistKey": "vae",
+      "artistName": "许嵩",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/0048UsY21HmoMU",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M0000048UsY21HmoMU.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E8%AE%B8%E5%B5%A9%20%E5%8D%83%E7%99%BE%E5%BA%A6&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 288517,
+      "albumMid": "0035f8nw11cjkf",
+      "albumName": "素颜",
+      "artistKey": "vae",
+      "artistName": "许嵩",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/0035f8nw11cjkf",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M0000035f8nw11cjkf.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E8%AE%B8%E5%B5%A9%20%E7%B4%A0%E9%A2%9C&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 35485,
+      "albumMid": "001jmC6x1RMfh0",
+      "albumName": "许嵩早期单曲集",
+      "artistKey": "vae",
+      "artistName": "许嵩",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/001jmC6x1RMfh0",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000001jmC6x1RMfh0.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E8%AE%B8%E5%B5%A9%20%E7%8E%AB%E7%91%B0%E8%8A%B1%E7%9A%84%E8%91%AC%E7%A4%BC&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 55369,
+      "albumMid": "002CJON012PxwU",
+      "albumName": "寻雾启示",
+      "artistKey": "vae",
+      "artistName": "许嵩",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/002CJON012PxwU",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002CJON012PxwU.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E8%AE%B8%E5%B5%A9%20%E5%BA%90%E5%B7%9E%E6%9C%88&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 37333,
+      "albumMid": "002KSDg90IaScI",
+      "albumName": "自定义",
+      "artistKey": "vae",
+      "artistName": "许嵩",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/002KSDg90IaScI",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002KSDg90IaScI.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E8%AE%B8%E5%B5%A9%20%E6%B8%85%E6%98%8E%E9%9B%A8%E4%B8%8A&format=json&p=1&n=20"
+    }
+  ],
+  "favoriteAlbums": [
+    {
+      "albumId": 20612,
+      "albumMid": "003DFRzD192KKD",
+      "albumName": "七里香",
+      "artistKey": "jay-chou",
+      "artistName": "周杰伦",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/003DFRzD192KKD",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003DFRzD192KKD.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E5%91%A8%E6%9D%B0%E4%BC%A6%20%E4%B8%83%E9%87%8C%E9%A6%99&format=json&p=1&n=20"
+    },
+    {
+      "albumId": 58722559,
+      "albumMid": "002N4fUq1kRST2",
+      "albumName": "守村人",
+      "artistKey": "joker-xue",
+      "artistName": "薛之谦",
+      "qqUrl": "https://y.qq.com/n/ryqq/albumDetail/002N4fUq1kRST2",
+      "coverUrl": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002N4fUq1kRST2.jpg",
+      "metadataSourceUrl": "https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w=%E8%96%9B%E4%B9%8B%E8%B0%A6%20%E5%AE%88%E6%9D%91%E4%BA%BA&format=json&p=1&n=20"
+    }
+  ],
+  "issues": [],
+  "downloads": [
+    {
+      "key": "joker-xue",
+      "kind": "portrait",
+      "status": "downloaded-and-visually-verified",
+      "path": "E:\\个人项目\\music-asset-candidates\\artists\\joker-xue.webp",
+      "url": "https://y.gtimg.cn/music/photo_new/T001R800x800M000002J4UUk29y8BY.jpg",
+      "width": 800,
+      "height": 800,
+      "bytes": 21234,
+      "sha256": "f674435843162ba93bc88328a03a7674437526cf7abe12a3c7e4ebf1dee72b39",
+      "mimeType": "image/webp"
+    },
+    {
+      "key": "jay-chou",
+      "kind": "portrait",
+      "status": "downloaded-and-visually-verified",
+      "path": "E:\\个人项目\\music-asset-candidates\\artists\\jay-chou.webp",
+      "url": "https://y.gtimg.cn/music/photo_new/T001R800x800M0000025NhlN2yWrP4.jpg",
+      "width": 800,
+      "height": 800,
+      "bytes": 54668,
+      "sha256": "76d7be44d75011b8a694b3b972935e8d50807b01a879288e5c80ff9a24612b6a",
+      "mimeType": "image/webp"
+    },
+    {
+      "key": "david-tao",
+      "kind": "portrait",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 71060,
+      "sha256": "ce1ba8157645ec9877dba6c5a7134f5e388097d50602bbdf3face6d2ba25d595",
+      "path": "E:\\个人项目\\music-asset-candidates\\artists\\david-tao.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T001R800x800M000002cK0F12szD9T.jpg"
+    },
+    {
+      "key": "gem",
+      "kind": "portrait",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 95528,
+      "sha256": "b7cd8852004af6b56694bfa156f48803cac19dddd963f2b1657adb71bbdd7ae5",
+      "path": "E:\\个人项目\\music-asset-candidates\\artists\\gem.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T001R800x800M000001fNHEf1SFEFN.jpg"
+    },
+    {
+      "key": "eason-chan",
+      "kind": "portrait",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 71316,
+      "sha256": "10cb480ee6dccddc7327f5007949c3c2de033f20e4cdf7311e61b2e9fa0ce6a4",
+      "path": "E:\\个人项目\\music-asset-candidates\\artists\\eason-chan.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T001R800x800M000003Nz2So3XXYek.jpg"
+    },
+    {
+      "key": "jj-lin",
+      "kind": "portrait",
+      "status": "downloaded-and-visually-verified",
+      "path": "E:\\个人项目\\music-asset-candidates\\artists\\jj-lin.webp",
+      "url": "https://y.gtimg.cn/music/photo_new/T001R800x800M000001BLpXF2DyJe2.jpg",
+      "width": 800,
+      "height": 800,
+      "bytes": 35988,
+      "sha256": "8563ffb48f4f9a9ea4f87032bda72f3d41248b16f54486c409ba2c11db91713b",
+      "mimeType": "image/webp"
+    },
+    {
+      "key": "003ROVwj4PqLPa",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 151908,
+      "sha256": "621ec77cd3e4ddd494eda9d717c52a8b5b11f1eb515020c104c61ad3b8890a50",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\003ROVwj4PqLPa.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003ROVwj4PqLPa.jpg"
+    },
+    {
+      "key": "002PjDkE14OUkV",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 429108,
+      "sha256": "1991257fad622f5dee02c05fc7c92fae32968d84928e0700c8a90157d9cb51b7",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\002PjDkE14OUkV.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002PjDkE14OUkV.jpg"
+    },
+    {
+      "key": "003ofGzS3C23Ow",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 65476,
+      "sha256": "2b4c396d3602644e47ad59ef4066f042583bc3d21fa9dbf3f5ac2f17ab489ea7",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\003ofGzS3C23Ow.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003ofGzS3C23Ow.jpg"
+    },
+    {
+      "key": "001mvhPh0qevad",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 96831,
+      "sha256": "5df20b348af1aba95ae5366c03b09cf02b110afb5e3a4342d7303ac3c4ad3e8a",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\001mvhPh0qevad.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000001mvhPh0qevad.jpg"
+    },
+    {
+      "key": "vae",
+      "kind": "portrait",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 73641,
+      "sha256": "00586e0aabdbbfd7078ef3bf9b2c88e9ab832c3be218a928aa5ac5e7f74ad4e5",
+      "path": "E:\\个人项目\\music-asset-candidates\\artists\\vae.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T001R800x800M000000CK5xN3yZDJt.jpg"
+    },
+    {
+      "key": "money",
+      "kind": "portrait",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 124989,
+      "sha256": "285532d4952a179a01152bdd2e99f24a65c0de9485f12ee29249d0f490842cdf",
+      "path": "E:\\个人项目\\music-asset-candidates\\artists\\money.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T001R800x800M000003uZllO1pCUPk.jpg"
+    },
+    {
+      "key": "jane-zhang",
+      "kind": "portrait",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 222468,
+      "sha256": "93a37211413955084bfe1ee4df16c65e1e0425b02b24c13cf85c2941f96e93a2",
+      "path": "E:\\个人项目\\music-asset-candidates\\artists\\jane-zhang.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T001R800x800M000000aw4WC2EQYTv.jpg"
+    },
+    {
+      "key": "000GDz8k03UOaI",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 730,
+      "height": 730,
+      "bytes": 65919,
+      "sha256": "140d5ccd068b302fe07fad35f116cd475800e78ea9e863fee20d8af07befc720",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\000GDz8k03UOaI.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000000GDz8k03UOaI.jpg"
+    },
+    {
+      "key": "0042KbE51Xztjx",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 500,
+      "height": 500,
+      "bytes": 81385,
+      "sha256": "02aa31c4157480252c9758958e2fc347580ce0d2694d8be4164420227a6e975a",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\0042KbE51Xztjx.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M0000042KbE51Xztjx.jpg"
+    },
+    {
+      "key": "003yQidc3s7P65",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 127723,
+      "sha256": "4e8ad986ba146e63f56bf6af5fe4ae18190a4d37d38888a4c41ea114d5a1f043",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\003yQidc3s7P65.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003yQidc3s7P65.jpg"
+    },
+    {
+      "key": "004Z85XP1c25b7",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 163167,
+      "sha256": "75ed9b6d323ed8b1c8fed7a8e6ec9d6d17a6f07c361093a12e2eb9292461caba",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\004Z85XP1c25b7.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000004Z85XP1c25b7.jpg"
+    },
+    {
+      "key": "001uaPM93kxk1R",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 148105,
+      "sha256": "b2621a3c494b9fd445e42b65bbf9eafb75c891442746606b700c54d5aaacd620",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\001uaPM93kxk1R.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000001uaPM93kxk1R.jpg"
+    },
+    {
+      "key": "002X5NAN24f6TQ",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 338033,
+      "sha256": "a70981fca0d83d8c12484a777069f05ae3209183fd860575f04798a3f453e204",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\002X5NAN24f6TQ.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002X5NAN24f6TQ.jpg"
+    },
+    {
+      "key": "004S8YQr3UmEbG",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 92875,
+      "sha256": "21a9b3a3756730d0785acd14d14d767799611c9e3a05a70361def1a6dd36a095",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\004S8YQr3UmEbG.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000004S8YQr3UmEbG.jpg"
+    },
+    {
+      "key": "001mTkmb4GJlh4",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 62259,
+      "sha256": "11532e95bfa8353bbd16b572bac3bcd2fffdf3948308554cc3cec59459105270",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\001mTkmb4GJlh4.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000001mTkmb4GJlh4.jpg"
+    },
+    {
+      "key": "004E0Y0A0R8FYZ",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 48573,
+      "sha256": "a9ea7dea54fe201f967011b2f8df031d04bc1c14125ff2840fb193318e1408e1",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\004E0Y0A0R8FYZ.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000004E0Y0A0R8FYZ.jpg"
+    },
+    {
+      "key": "003cKIKZ1J4Yyu",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 140841,
+      "sha256": "4100bf55273265be25bf6cb5ac220ec9e913d2c3bac8c9e2ea71c4077ef09c3b",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\003cKIKZ1J4Yyu.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003cKIKZ1J4Yyu.jpg"
+    },
+    {
+      "key": "002YFufr4bXZyI",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 123310,
+      "sha256": "1a22e23cc8aeda91ec34dc997d6c22f4a48c4489f84d264e110a3ea046ab5cac",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\002YFufr4bXZyI.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002YFufr4bXZyI.jpg"
+    },
+    {
+      "key": "000HZzEx0QIMNM",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 153549,
+      "sha256": "c38a64a32035de36afbb40b233722d4d9f370140242e2699d15f375494d826cc",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\000HZzEx0QIMNM.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000000HZzEx0QIMNM.jpg"
+    },
+    {
+      "key": "003J6fvc0bVJon",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 405126,
+      "sha256": "fc6395a03ddfd940823275725f29d66689b1f85271a5a239011d90f9725adeed",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\003J6fvc0bVJon.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003J6fvc0bVJon.jpg"
+    },
+    {
+      "key": "0049MVh824D7bM",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 353376,
+      "sha256": "621bce08d2e142ce4c4fa891f2f1971f29c8e282ca1581534e8aa391d2484834",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\0049MVh824D7bM.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M0000049MVh824D7bM.jpg"
+    },
+    {
+      "key": "003c616O2Zlswm",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 297276,
+      "sha256": "a6a0485511a8171d2ced7775731e8c5e9487c45d0e247dc047e2aff480110e25",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\003c616O2Zlswm.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003c616O2Zlswm.jpg"
+    },
+    {
+      "key": "002F059l1kCcdr",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 295491,
+      "sha256": "1085e3a7b19b00a331b04ad6d5e49b46417ce81f9a6e4f73e84eca665d083aef",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\002F059l1kCcdr.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002F059l1kCcdr.jpg"
+    },
+    {
+      "key": "003BoDmC3jlPXT",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 70049,
+      "sha256": "54f740091bab5e0ea0751d969b05e6d0359cdf31a555541ec04285cab74f0565",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\003BoDmC3jlPXT.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003BoDmC3jlPXT.jpg"
+    },
+    {
+      "key": "004045x24ewU7g",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 92841,
+      "sha256": "2ce88dc5255d61d2db8a0747973d522c70b865e7ef0c49d0b0e0d65b63a91100",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\004045x24ewU7g.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000004045x24ewU7g.jpg"
+    },
+    {
+      "key": "002JALay3zCS22",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 760,
+      "height": 760,
+      "bytes": 127327,
+      "sha256": "4fd9eaedc56550e7502a8832531f20220c9b950823c7a92f6296f5079edb06fb",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\002JALay3zCS22.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002JALay3zCS22.jpg"
+    },
+    {
+      "key": "002JsU5q10jUBt",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 140563,
+      "sha256": "18c7148872eb89cb8b3578d48f1dfe3b8d5536ca673edde03f12580a5b452336",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\002JsU5q10jUBt.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002JsU5q10jUBt.jpg"
+    },
+    {
+      "key": "00458UNF0evQeN",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 131844,
+      "sha256": "3371c99085c71ef5ab4b160088d8c895da8a42e44e5eac23bf30a0aaf8d81017",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\00458UNF0evQeN.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M00000458UNF0evQeN.jpg"
+    },
+    {
+      "key": "003DFRzD192KKD",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 197471,
+      "sha256": "36c9ad13acdd7f635122c25760bb4e93653872ce3bc4b0c54ae013a146b570d0",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\003DFRzD192KKD.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003DFRzD192KKD.jpg"
+    },
+    {
+      "key": "000I5jJB3blWeN",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 133360,
+      "sha256": "e0900bd524d72c2b297cf6ccca8eae7f6f2ba05944e4ffa25fc5907504db29fa",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\000I5jJB3blWeN.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000000I5jJB3blWeN.jpg"
+    },
+    {
+      "key": "003V7SAg16Ed0F",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 174149,
+      "sha256": "d392151ecfe8cf7dc530d5fcbf68ed294433ee8fdf6eaf081f53f6b545215609",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\003V7SAg16Ed0F.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003V7SAg16Ed0F.jpg"
+    },
+    {
+      "key": "002StVxe22mRNX",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 550,
+      "height": 550,
+      "bytes": 33270,
+      "sha256": "a29976b8b712c9860da0985449769e222ba04557af3163970cbe6eb4b279d116",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\002StVxe22mRNX.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002StVxe22mRNX.jpg"
+    },
+    {
+      "key": "000MkMni19ClKG",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 183730,
+      "sha256": "deee30d3a4799a974cf14e25ffefeb996b0fc649ea45645790be954f687062fd",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\000MkMni19ClKG.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000000MkMni19ClKG.jpg"
+    },
+    {
+      "key": "001JsSLf17WfrE",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 150965,
+      "sha256": "329f5d86063d20ccb41f69026eb52c50aabf42e371a8a29f306d2931de002d07",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\001JsSLf17WfrE.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000001JsSLf17WfrE.jpg"
+    },
+    {
+      "key": "002Neh8l0uciQZ",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 157712,
+      "sha256": "8e5d17be50f6a4de83bcb38db085dabef5361a0ce908ae4b4a53edaf5917668e",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\002Neh8l0uciQZ.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002Neh8l0uciQZ.jpg"
+    },
+    {
+      "key": "0024bjiL2aocxT",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 90920,
+      "sha256": "e17421046baa9397db2f4b9c9e2d685b491cb2947c443f1e13849c6719b119d1",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\0024bjiL2aocxT.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M0000024bjiL2aocxT.jpg"
+    },
+    {
+      "key": "002C0kX720gMQi",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 202451,
+      "sha256": "28d9146e3a6eeb222df8b5c3a7658e2af220d99c82ee627a2c4448f5f09d0ffe",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\002C0kX720gMQi.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002C0kX720gMQi.jpg"
+    },
+    {
+      "key": "002MAeob3zLXwZ",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 130778,
+      "sha256": "8fb189107a41b3ba142ed9a83ba909c6d4b83dd5e89958ca70e172cea4933030",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\002MAeob3zLXwZ.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002MAeob3zLXwZ.jpg"
+    },
+    {
+      "key": "002eFUFm2XYZ7z",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 170987,
+      "sha256": "26d20def73493fc89bf17fe566abe2d70c81878a8df0ad3fbc449d9ea8d92f63",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\002eFUFm2XYZ7z.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002eFUFm2XYZ7z.jpg"
+    },
+    {
+      "key": "003RMaRI1iFoYd",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 338648,
+      "sha256": "9aa0e50c0a5edf97c203be47b4013cd848706cdab8beb7103bf50d3c95cac58a",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\003RMaRI1iFoYd.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003RMaRI1iFoYd.jpg"
+    },
+    {
+      "key": "002aaUOS24kcwh",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 125997,
+      "sha256": "b94fa9495060beb3da3b1275e50ebfcb7cbcd289bc8b8bd6c4feabf4644cbf32",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\002aaUOS24kcwh.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002aaUOS24kcwh.jpg"
+    },
+    {
+      "key": "003nbc0602Tgfx",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 107230,
+      "sha256": "12efe61e403e48b902cd3c49218131d6b294ce73d0eda9102bc3f4cb71da4fc3",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\003nbc0602Tgfx.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003nbc0602Tgfx.jpg"
+    },
+    {
+      "key": "001HwwNH1inlz9",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 111862,
+      "sha256": "b49796d2811928b977e546038d417b670e47b8288a369c2544523f09ae3b11d3",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\001HwwNH1inlz9.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000001HwwNH1inlz9.jpg"
+    },
+    {
+      "key": "000y5gq7449K9I",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 89030,
+      "sha256": "059d7c5eb9a316aa15c60f8ef3b8f9bf15340adec75f8825c48254c3b7d462f9",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\000y5gq7449K9I.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000000y5gq7449K9I.jpg"
+    },
+    {
+      "key": "000TuW8h0AH2n4",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 130128,
+      "sha256": "b57ecc984a6093c163e35eb1d3903a59c6148546f1d910bac41dcb4f9c94def9",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\000TuW8h0AH2n4.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000000TuW8h0AH2n4.jpg"
+    },
+    {
+      "key": "003y8dsH2wBHlo",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 62755,
+      "sha256": "f97815f737052edd5ddc773eb422f8a57e670c9597a2a57a3c37405743a0f0cb",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\003y8dsH2wBHlo.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003y8dsH2wBHlo.jpg"
+    },
+    {
+      "key": "001gqOnU3DTg2S",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 51699,
+      "sha256": "7b5e89372e76d65623c860a10faf40305ba64d0fa0f24349f2dfab6d17c8c959",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\001gqOnU3DTg2S.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000001gqOnU3DTg2S.jpg"
+    },
+    {
+      "key": "0033R2xQ2I0Uyf",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 82672,
+      "sha256": "79eb705ed8cc6342550d5e5feacfa463c32ae717a9ae41cdebd8896099af9310",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\0033R2xQ2I0Uyf.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M0000033R2xQ2I0Uyf.jpg"
+    },
+    {
+      "key": "001L7UIu3GXVtT",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 72021,
+      "sha256": "7f77808bbfcd9613816997f20e298aafb488b4e18fce2fa53c4648fa49356e7d",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\001L7UIu3GXVtT.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000001L7UIu3GXVtT.jpg"
+    },
+    {
+      "key": "002g6zv02X7SNi",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 250292,
+      "sha256": "f10f8aceba7c6ba879bca2293d4d83342bee1d453f14933598341b2eac2d9828",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\002g6zv02X7SNi.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002g6zv02X7SNi.jpg"
+    },
+    {
+      "key": "000QgFcm0v8WaF",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 170537,
+      "sha256": "caf377922c16bf15479c2c6280aa722c9597443a124f960bfed51e9cd5fd9732",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\000QgFcm0v8WaF.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000000QgFcm0v8WaF.jpg"
+    },
+    {
+      "key": "000dcZ9I1nzO62",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 236954,
+      "sha256": "1e05cb14b025ec3cc327a34ac9d3ed115fffa3afb2e9d3dd35d092300fbf099e",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\000dcZ9I1nzO62.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000000dcZ9I1nzO62.jpg"
+    },
+    {
+      "key": "002N4fUq1kRST2",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 172068,
+      "sha256": "d314d2ec26f14fe73b8040485eafa6c69cdf998da10a8e0134f19cbcc136233f",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\002N4fUq1kRST2.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002N4fUq1kRST2.jpg"
+    },
+    {
+      "key": "000K9Zp13TZp5s",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 117113,
+      "sha256": "336ac9279607c521c2ff2e3e2404f2b4cb335dfec3b2bfa510411c543eb46c8a",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\000K9Zp13TZp5s.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000000K9Zp13TZp5s.jpg"
+    },
+    {
+      "key": "003mUYW22JXKVK",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 180692,
+      "sha256": "1329a298bfd04f8e250dc27cc181241edd791fe67f389366344cb084cef16997",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\003mUYW22JXKVK.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000003mUYW22JXKVK.jpg"
+    },
+    {
+      "key": "004JTrIH0sTFo8",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 200481,
+      "sha256": "29e447ef984d700362cc018d3edc9cbc4693af1f4d750934fdcb9a9bd992b3a5",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\004JTrIH0sTFo8.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000004JTrIH0sTFo8.jpg"
+    },
+    {
+      "key": "000VYwco34rVYK",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 69170,
+      "sha256": "40c56fc4e3fc74b398ce48a8cc17a37f1e3239b475314e7009c66b316ddbe97b",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\000VYwco34rVYK.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000000VYwco34rVYK.jpg"
+    },
+    {
+      "key": "0011dW8j0CePOv",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 59660,
+      "sha256": "59dbd6949d6c1571a3642d381b3aa9e87210fe6d6c33e0a8cd0c80621cb651c1",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\0011dW8j0CePOv.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M0000011dW8j0CePOv.jpg"
+    },
+    {
+      "key": "0029eCfb2nbbVm",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 166386,
+      "sha256": "18dcfcb4064cffde4b1cc73e5e36ade03a120ba702829edf35a10b1de7e70fbd",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\0029eCfb2nbbVm.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M0000029eCfb2nbbVm.jpg"
+    },
+    {
+      "key": "002KSDg90IaScI",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 58284,
+      "sha256": "1c91b5db1c13c3841938984a9c7079654d951769fba207533b0632f02e715cff",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\002KSDg90IaScI.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002KSDg90IaScI.jpg"
+    },
+    {
+      "key": "0048UsY21HmoMU",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 81185,
+      "sha256": "bbbfdd8a9fc349c75b0a9f6a4d8408ee02d82807ce2ccc7e14b6e474b051b816",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\0048UsY21HmoMU.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M0000048UsY21HmoMU.jpg"
+    },
+    {
+      "key": "000LfSb70Ewn3w",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 121747,
+      "sha256": "cd2d417f08a34ba71545b3759c384937f81446aa8b71ef7016dec635027df2e8",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\000LfSb70Ewn3w.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000000LfSb70Ewn3w.jpg"
+    },
+    {
+      "key": "002CJON012PxwU",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 56598,
+      "sha256": "5ebb187b153378718d32fc7475236b5995f5a30bd6e9520b8c13f599c77c8188",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\002CJON012PxwU.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000002CJON012PxwU.jpg"
+    },
+    {
+      "key": "0035f8nw11cjkf",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 81716,
+      "sha256": "e1354aea2b9bb188ea3aa46d1ec963444c4558ed0bb813b24280f8f033f1663b",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\0035f8nw11cjkf.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M0000035f8nw11cjkf.jpg"
+    },
+    {
+      "key": "001jmC6x1RMfh0",
+      "kind": "cover",
+      "status": "downloaded-and-decoded",
+      "width": 800,
+      "height": 800,
+      "bytes": 188302,
+      "sha256": "44cc949d6e97ee613cfdc60b24ee83745a47db393ccd6954ff726e1349b06cff",
+      "path": "E:\\个人项目\\music-asset-candidates\\covers\\001jmC6x1RMfh0.jpg",
+      "url": "https://y.gtimg.cn/music/photo_new/T002R800x800M000001jmC6x1RMfh0.jpg"
+    }
+  ],
+  "verification": {
+    "artistCount": 9,
+    "songCount": 84,
+    "distinctAlbumCount": 62,
+    "imageCount": 71,
+    "allReferencedAssetsExist": true,
+    "uniqueSongIds": true,
+    "allImagesDecodedOrViewed": true,
+    "portraitsVisuallyChecked": 9,
+    "coverContactSheetsVisuallyChecked": 4,
+    "audioDownloaded": false,
+    "notes": [
+      "All nine portraits were viewed individually.",
+      "All 62 covers were viewed in four labeled contact sheets; no placeholder images were present.",
+      "Song names and credited artist names were checked against public QQ Music catalog results.",
+      "Official collaborations: 抑人(e) with 银河快递, 素颜 with 何曼婷, 小酒窝 with 蔡卓妍."
+    ]
+  }
+}

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101112">
+  <meta name="description" content="ChefZC 的数字作品陈列室。以不同的视角，探索 AI 概念、交互体验与小工具。">
+  <title>Gallery — ChefZC 数字作品陈列室</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23c4fa5a'/%3E%3Cpath d='M39 18H28L17 32l11 14h11M43 43h8' fill='none' stroke='%23101112' stroke-width='7'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./gallery.css">
+  <script type="module" src="./gallery.js"></script>
+  <link rel="stylesheet" href="./language.css">
+  <link rel="stylesheet" href="./personal.css">
+  <script type="module" src="./motion.js"></script>
+</head>
+<body class="gallery-page">
+  <a class="skip-link" href="#projects">跳到作品</a>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="./profile.html" aria-label="ChefZC 个人主页"><span class="brand-mark" aria-hidden="true">c<span>_</span></span><span>ChefZC<span class="brand-dot">.</span></span></a>
+      <nav class="page-nav" aria-label="主导航"><a class="nav-link" href="./profile.html" aria-label="Personal Profile"><span class="nav-long">Personal </span>Profile</a><a class="nav-link" href="./gallery.html" aria-current="page">Gallery<span class="nav-count" aria-hidden="true">↗</span></a><a class="nav-link" href="./now.html">近况</a></nav>
+      <div class="header-tools"><span class="edition mono">PERSONAL SPACE <span>/</span> 001</span><div class="language-switch" role="group" aria-label="选择语言"><button type="button" data-language="zh" lang="zh-CN" aria-label="切换为中文" aria-pressed="true">中</button><button type="button" data-language="en" lang="en" aria-label="Switch to English" aria-pressed="false">EN</button></div></div>
+    </header>
+    <main>
+      <section class="gallery-header" aria-labelledby="gallery-title">
+        <div class="gallery-kicker mono"><span><span class="lime-text">[</span> THE DIGITAL COLLECTION <span class="lime-text">]</span></span><span class="collection-volume">CHEFZC / VOL. 01</span></div>
+        <div class="gallery-title-row"><h1 id="gallery-title">GALLERY<span>.</span></h1><div class="collection-mark" aria-hidden="true"><img src="./assets/hero-asterisk.png" width="1254" height="1254" alt=""><span class="mono">MADE OF IDEAS</span></div></div>
+        <div class="gallery-introduction"><h2>好玩的想法，<span>值得一个展位。</span></h2><p>一些关于代码、设计和好奇心的探索。<br>把每一次「试试看」，留在这里。</p></div>
+      </section>
+      <section class="collection-section" id="projects" aria-labelledby="collection-title">
+        <div class="collection-toolbar"><h2 id="collection-title"><span class="mono">SELECTED EXPERIMENTS</span><span class="collection-count mono" data-project-count>03</span></h2><p><span class="concept-symbol" aria-hidden="true">◇</span> 概念设计 <span>/</span> 展示示例</p></div>
+        <div class="exhibition-grid" id="project-grid"></div>
+        <noscript><p>请启用 JavaScript 查看作品卡片及详情。</p></noscript>
+        <div class="collection-end mono"><span>END OF COLLECTION</span><span class="collection-end-line"></span><span>STILL MAKING. STILL EXPLORING. <b aria-hidden="true">✳</b></span></div>
+      </section>
+      <section class="gallery-colophon" id="about" aria-labelledby="colophon-title">
+        <div class="colophon-index mono"><span>BEHIND</span><span>THE WORK</span><span class="colophon-braces" aria-hidden="true">{ c }</span></div>
+        <div class="colophon-copy"><p class="eyebrow mono">A COLLECTION BY CHEFZC</p><h2 id="colophon-title">热爱生活，也热爱创造。</h2><p>我是 ChefZC，在迪拜读 IB 的高中生。篮球、赛车和 AI 都是我的热爱，这里记录我把想法做出来的过程。</p></div>
+        <a class="creator-link" href="./profile.html"><span>认识创作者</span><span aria-hidden="true">↗</span><span class="mono">PERSONAL PROFILE</span></a>
+      </section>
+    </main>
+<div class="site-social-links" aria-label="社交与联系方式" data-i18n-label="contact.socialLabel"><a href="https://github.com/ChefDavid0815" target="_blank" rel="noopener noreferrer"><svg class="symbol " aria-hidden="true" viewBox="0 0 24 24"><use href="./assets/icons.svg#code-xml"></use></svg>GitHub <span aria-hidden="true">↗</span></a><a href="https://www.instagram.com/chefzichuan/" target="_blank" rel="noopener noreferrer"><svg class="symbol " aria-hidden="true" viewBox="0 0 24 24"><use href="./assets/icons.svg#camera"></use></svg>Instagram <span aria-hidden="true">↗</span></a><a href="mailto:zzichuan0808@outlook.com"><svg class="symbol " aria-hidden="true" viewBox="0 0 24 24"><use href="./assets/icons.svg#mail"></use></svg><span data-i18n="contact.email" >邮箱</span><span aria-hidden="true">↗</span></a></div>
+    <footer class="site-footer"><a class="footer-brand" href="./profile.html">ChefZC<span class="lime-text">.</span></a><span class="mono">保持热忱，保持热爱 · VIVA LA VIDA</span><a href="#" class="back-top">回到顶部 <span aria-hidden="true">↑</span></a></footer>
+  </div>
+  <dialog id="project-dialog" class="exhibition-dialog" aria-labelledby="dialog-title"><button class="dialog-close" aria-label="关闭项目详情">×</button><div id="dialog-content"></div></dialog>
+  <div class="visually-hidden" id="language-announcement" role="status" aria-live="polite"></div>
+</body>
+</html>
