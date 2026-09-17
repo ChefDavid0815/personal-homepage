@@ -66,6 +66,8 @@ Now 页的正文使用 `data-i18n` 对应 `dist/i18n.js` 的 `now.*` 翻译。�
 
 ## 发布与部署
 
+在线主页：[chefzc-homepage.vercel.app](https://chefzc-homepage.vercel.app)。
+
 源码仓库：[ChefDavid0815/personal-homepage](https://github.com/ChefDavid0815/personal-homepage)。Vercel 使用 `vercel.json` 中的配置，运行 `npm run check` 后发布 `dist` 目录。首页为 Personal Profile，Gallery 和 Now 均为独立页面。
 
 ChefZC 是展示昵称，GitHub 账号为 ChefDavid0815。字体通过 Google Fonts 加载，离线时使用系统字体；照片与图标随站点本地提供。
