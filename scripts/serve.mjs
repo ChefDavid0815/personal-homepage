@@ -9,7 +9,8 @@ const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=
 http.createServer(async (request, response) => {
   try {
     const url = new URL(request.url, `http://127.0.0.1:${port}`);
-    const relative = decodeURIComponent(url.pathname).replace(/^\/+/, '') || 'index.html';
+    const pathname = decodeURIComponent(url.pathname);
+    const relative = (pathname.endsWith('/') ? pathname + 'index.html' : pathname).replace(/^\/+/, '');
     const target = path.resolve(root, relative);
     if (target !== root && !target.startsWith(root + path.sep)) { response.writeHead(403); response.end('Forbidden'); return; }
     const content = await readFile(target);

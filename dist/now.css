@@ -107,3 +107,9 @@
   .day-one { font-size:.75rem; padding:7px; }
   .art-caption { font-size:.75rem; letter-spacing:0; }
 }
+
+.milestone--game .game-milestone-art { background-color:#c4fa5a; color:#172514; overflow:hidden; gap:25px; }
+.game-milestone-art strong { font-family:var(--display); font-size:2.7rem; line-height:.88; letter-spacing:-.06em; }
+.game-milestone-art img { width:115%; height:auto; max-width:none; transform:rotate(-7deg); border:1px solid #192e20; box-shadow:0 10px 20px #14211340; }
+.game-milestone-art .art-caption { border-color:#25351750; }
+@media(max-width:700px) { .milestone--game .game-milestone-art { display:grid; grid-template-columns:1fr 1.3fr; gap:18px; padding:24px; } .game-milestone-art .day-one { grid-column:1/-1; justify-self:start; } .game-milestone-art strong { font-size:2.2rem; } .game-milestone-art img { width:100%; } .game-milestone-art .art-caption { grid-column:1/-1; } }

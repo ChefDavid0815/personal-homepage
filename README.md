@@ -5,13 +5,21 @@
 ## 页面
 
 - `profile.html`：Personal Profile，包含数字名片、真实简介、篮球与赛车主题卡、AI 与艺术兴趣、数码设备、成长经历及公开联系方式。
-- `gallery.html`：独立的 Gallery，横向主展位、音乐海报、终端封面与项目详情。
-- `now.html`：Now 近况页，按日期倒序记录 2026-09-17 创建音乐模块、2026-09-16 创建个人主页、2026-08-27 步入 IB、2026-04-20 开始接触 Agents。
+- `gallery.html`：独立的 Gallery，NBA After Hours 主展位、真实游戏截图、概念习作与项目详情。
+- `now.html`：Now 近况页，按日期倒序记录 2026-09-17 发布第一个项目 NBA After Hours、创建音乐模块、2026-09-16 创建个人主页、2026-08-27 步入 IB、2026-04-20 开始接触 Agents。
 - `index.html`：网站入口，自动转到 Personal Profile，并保留查询参数与页内锚点。
 
 三个页面共用品牌、配色、导航、语言偏好与页脚，可以互相切换。个人资料采用 ChefZC 提供的信息：在迪拜的 GEMS Wellington International School 就读 Year 12 / IB。公开位置只展示城市。
 
 公开链接：GitHub `ChefDavid0815`、Instagram `chefzichuan`、邮箱 `zzichuan0808@outlook.com`。主页提供邮箱复制按钮；它仅操作当前设备剪贴板，不会发送邮件。
+
+## 第一个正式项目（v1.8）
+
+[NBA After Hours](https://chefzc-homepage.vercel.app/play/nba-after-hours/) 已加入 Gallery 首位，并更新 Profile 与 Now。主展位使用真实勇士对凯尔特人截图，配合数码海报排版、悬浮透视、扫光和光标动效。手机使用上下布局，所有新文案提供中英文，减少动态效果设置会关闭装饰动画。
+
+游戏源码独立保存在 [ChefDavid0815/nba-after-hours](https://github.com/ChefDavid0815/nba-after-hours)。`dist/play/nba-after-hours/` 为该项目的静态发布快照；无需 API 或后台。存档属于当前浏览器，不能与桌面版自动同步。版本与源码提交记录在该目录的 `release.json`；依赖授权一并附带。
+
+更新游戏时，先在游戏源码目录运行 `npm run build`，再从网站目录运行 `node scripts/import-game.mjs "游戏源码路径"`，检查并发布网站。游戏画面文件位于 `dist/assets/projects/nba-after-hours/`，主展位样式在 `dist/gallery-court.css`。
 
 ## 音乐唱片架（v1.6）
 
@@ -56,9 +64,9 @@ ChefZC、项目名称与概念封面内的视觉文案保留原设计，不随�
 - `dist/assets/stephen-curry-2016.jpg`、`charles-leclerc-2024.jpg`：真实运动员照片；署名与授权见页面底部及 `dist/assets/PHOTO-CREDITS.md`。照片仅通过 CSS 裁切、调色和覆盖渐变，保留相应 CC BY-SA 授权。
 - `dist/assets/icons.svg`：Lucide 与 Tabler 图标，授权见同目录的 `LUCIDE-LICENSE.txt` 与 `TABLER-LICENSE.txt`。
 
-现有三个项目均为概念示例，页面已明确标注。替换真实项目时填写 `name`、`subtitle`、`description`、`detail`、`tags`，将 `demo` 改为 `false`；`repoUrl` 与 `liveUrl` 可分别设置源码和在线演示链接。不填写的链接不会显示。新增项目没有对应预览设计时，封面会使用项目名称。
+NBA After Hours 是真实可玩项目；其余三个项目为概念习作，页面已明确标注。替换真实项目时填写 `name`、`subtitle`、`description`、`detail`、`tags`，将 `demo` 改为 `false`；`repoUrl` 与 `liveUrl` 可分别设置源码和在线演示链接。不填写的链接不会显示。新增项目没有对应预览设计时，封面会使用项目名称。
 
-`layout` 可设为 `feature`（横向主展位）、`sound`（窄卡片）、`utility`（宽卡片）或 `standard`（标准卡片）。`headline` 可单独配置 Gallery 文案并使用换行；不填写时使用 `subtitle`。展示数量自动按项目清单更新。
+`layout` 可设为 `court`（首个游戏主展位）、`feature`（横向主展位）、`sound`（窄卡片）、`utility`（宽卡片）或 `standard`（标准卡片）。`headline` 可单独配置 Gallery 文案并使用换行；不填写时使用 `subtitle`。展示数量自动按项目清单更新。
 
 项目的 `translations.zh`、`translations.en` 用于覆盖相应语言的 `category`、`subtitle`、`headline`、`description`、`detail` 和 `tags`；未提供的字段使用项目基础值。新增或替换真实项目时请同时维护两种语言。
 

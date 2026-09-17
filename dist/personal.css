@@ -96,7 +96,7 @@
 .tool-note { margin-left:auto; color:#9599a5; font-size:.8rem; }
 .text-arrow-link { display:inline-flex; align-items:center; gap:18px; color:var(--lime); font-size:.875rem; }
 .text-arrow-link > span:last-child { font-size:1.3rem; }
-.journey-stops { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); margin:0; padding:0; list-style:none; border:1px solid #37383f; border-radius:11px; overflow:hidden; }
+.journey-stops { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); margin:0; padding:0; list-style:none; border:1px solid #37383f; border-radius:11px; overflow:hidden; }
 .journey-stops li { position:relative; padding:25px 27px 28px; background:#17181b; }
 .journey-stops li + li { border-left:1px solid #37383f; }
 .journey-stops time { display:block; color:#9b9daa; font-size:.8rem; }

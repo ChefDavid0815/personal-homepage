@@ -1,0 +1,80 @@
+/* The first released work: a game capture treated as an exhibition poster. */
+.exhibit--court { grid-column:1/-1; --exhibit-accent:#c4fa5a; border-color:#566344; position:relative; isolation:isolate; }
+.exhibit--court .exhibit-button { display:grid; grid-template-columns:1fr 1.25fr; height:auto; }
+.exhibit--court .exhibit-info { grid-column:1; grid-row:1; padding:34px; }
+.exhibit--court .exhibit-preview { grid-column:2; grid-row:1; height:auto; min-height:700px; background:#1a2020; color:#e9eedc; }
+.exhibit--court .exhibit-cover-meta { position:absolute; inset:auto 0 0; padding:22px 28px; border-top:1px solid #c4fa5a30; color:#bfcec0; background:#101816bb; }
+.exhibit--court .exhibit-cover-meta span:first-child { display:block; }
+.exhibit--court .exhibit-title-row { margin-top:28px; align-items:flex-start; }
+.exhibit--court .exhibit-title-row h3 { font-size:clamp(2.9rem,4.9vw,4.7rem); line-height:.99; max-width:380px; text-wrap:balance; letter-spacing:-.055em; }
+.exhibit--court .exhibit-title-arrow { display:none; }
+.exhibit--court .preview-open { display:none; }
+.exhibit--court .exhibit-subtitle { margin-top:23px; color:#e9f2db; font-size:1.2rem; }
+.exhibit--court .exhibit-description { font-size:1rem; max-width:410px; }
+.exhibit--court .exhibit-kicker { font-size:.8125rem; letter-spacing:.5px; }
+.exhibit--court .exhibit-tags { margin-top:20px; }
+.exhibit--court .exhibit-bottom { margin-top:24px; }
+.court-stats { display:flex; gap:24px; margin:25px 0 0; padding-top:23px; border-top:1px solid #ffffff16; }
+.court-stats dt { font-family:var(--display); font-size:1.8rem; line-height:1.2; font-weight:600; color:var(--lime); letter-spacing:-1px; }
+.court-stats dt span { font-size:1rem; color:#737d6d; }
+.court-stats dd { margin:8px 0 0; color:#aeb8aa; font-size:.875rem; }
+.court-composition { position:absolute; inset:0; overflow:hidden; background:radial-gradient(ellipse at 76% 16%,#aa88ff30,transparent 55%),radial-gradient(ellipse at 10% 78%,#73e4e222,transparent 50%),#192123; }
+.court-composition::before { content:''; position:absolute; inset:0; opacity:.12; background-image:linear-gradient(#ceddcb 1px,transparent 1px),linear-gradient(90deg,#ceddcb 1px,transparent 1px); background-size:44px 44px; mask-image:linear-gradient(#000,transparent 90%); }
+.court-edition { position:absolute; left:28px; top:29px; font-size:.75rem; color:#b8c7bc; letter-spacing:1.5px; }
+.court-type { position:absolute; top:68px; left:28px; font-family:var(--display); font-size:clamp(4.5rem,7.5vw,7.3rem); line-height:.83; font-weight:800; letter-spacing:-.075em; color:#c4fa5a; transform:rotate(-4deg); }
+.court-type>span { color:transparent; -webkit-text-stroke:1px #c4fa5a; }
+.court-shot { position:absolute; top:38%; left:9%; width:82%; transform:rotate(-6deg); border:1px solid #bed6c866; box-shadow:0 24px 60px #0009,0 0 40px #73e4e210; background:#0a1117; transition:transform .6s cubic-bezier(.2,.75,.3,1),box-shadow .6s; }
+.court-shot img { display:block; width:100%; height:auto; aspect-ratio:16/10; object-fit:cover; }
+.court-shot-label { display:flex; justify-content:space-between; gap:10px; padding:9px 12px; font-size:.75rem; color:#c6d6bf; background:#111e1d; }
+.court-release { position:absolute; top:30px; right:24px; width:94px; height:94px; display:grid; place-content:center; text-align:center; line-height:1.6; font-size:.75rem; color:#27101f; background:#f582cb; transform:rotate(9deg); border-radius:50%; }
+.court-release b { font-size:1.55rem; line-height:1.2; }
+.court-console { position:absolute; left:28px; bottom:91px; font-size:.875rem; color:#c4fa5a; }
+.court-console i { display:inline-block; width:8px; height:14px; margin-left:6px; background:#c4fa5a; vertical-align:-2px; }
+.court-cross { position:absolute; right:23px; bottom:71px; color:#ac88ff; font-size:3rem; font-weight:300; transition:transform .6s; }
+.court-scan { pointer-events:none; position:absolute; width:160%; height:30%; left:-30%; top:-50%; background:linear-gradient(transparent,#c4fa5a0b,transparent); transform:rotate(-20deg); }
+.exhibit--court:hover .court-shot,.exhibit--court:focus-within .court-shot { transform:rotate(-2deg) translateY(-7px); box-shadow:0 30px 70px #000b,0 0 38px #73e4e223; }
+.exhibit--court:hover .court-cross { transform:rotate(90deg); }
+.exhibit--court:hover .court-scan { animation:court-scan 3.5s ease-in-out infinite; }
+.exhibit--court:hover .court-console i { animation:court-cursor 1.2s steps(1) infinite; }
+@keyframes court-scan { to { top:135%; } }
+@keyframes court-cursor { 50% { opacity:0; } }
+.court-launch { display:flex; justify-content:space-between; align-items:center; gap:20px; padding:20px 28px; border-top:1px solid #566344; background:#c4fa5a08; }
+.court-launch>.mono { font-size:.8125rem; color:#aeb8ab; line-height:1.6; }
+.court-launch>div { display:flex; align-items:center; gap:24px; }
+.court-source { color:#cdd8c7; font-size:.875rem; }
+.court-source:hover { color:var(--lime); }
+.court-play { display:flex; justify-content:space-between; align-items:center; gap:45px; padding:15px 22px; background:var(--lime); color:#182013; border:1px solid var(--lime); border-radius:5px; font-weight:650; font-size:1rem; transition:background .2s,box-shadow .2s; }
+.court-play span { font-size:1.4rem; }
+.court-play:hover { background:#d2ff79; box-shadow:0 0 25px #c4fa5a25; }
+.court-play:focus-visible,.court-source:focus-visible { outline:3px solid var(--cyan); outline-offset:5px; }
+.court-detail { height:auto; background:#0b111a; }
+.court-detail-image { display:block; width:100%; height:auto; }
+.court-help { padding:16px 18px; border-left:2px solid var(--lime); background:#c4fa5a08; }
+.exhibit--standard .neon-composition { padding:65px 24px 45px; }
+.exhibit--standard .neon-floating-note { display:none; }
+@media(min-width:1000px) { .exhibit:not(.exhibit--court) { grid-column:span 4; } .exhibit:not(.exhibit--court) .exhibit-info { padding:24px; } .exhibit:not(.exhibit--court) .exhibit-preview { height:325px; } .exhibit:not(.exhibit--court) .exhibit-title-row h3 { font-size:1.7rem; } }
+@media(max-width:1000px) { .exhibit--court .exhibit-info { padding:28px; } .exhibit--court .exhibit-button { grid-template-columns:1fr 1fr; } .court-stats { gap:18px; } .court-stats dt { font-size:1.5rem; } .court-type { font-size:5.6rem; top:120px; } .court-release { width:78px; height:78px; } .court-shot { top:48%; } }
+@media(max-width:700px) {
+  .exhibit--court .exhibit-button { display:flex; flex-direction:column; }
+  .exhibit--court .exhibit-preview { min-height:0; height:485px; order:0; }
+  .exhibit--court .exhibit-info { order:1; padding:27px 24px; }
+  .exhibit--court .exhibit-title-row h3 { max-width:none; font-size:clamp(2.8rem,11vw,4.5rem); }
+  .exhibit--court .exhibit-title-row { margin-top:20px; }
+  .court-type { font-size:clamp(4.7rem,17vw,7rem); top:72px; }
+  .court-release { top:22px; right:20px; width:73px; height:73px; }
+  .court-release b { font-size:1.3rem; }
+  .court-edition { left:23px; top:28px; max-width:160px; font-size:.75rem; }
+  .court-shot { top:43%; width:87%; left:7%; }
+  .court-console { display:none; }
+  .court-cross { bottom:67px; right:20px; }
+  .court-stats { justify-content:space-between; gap:10px; }
+  .court-stats dt { font-size:1.65rem; }
+  .court-launch { flex-direction:column; align-items:stretch; padding:22px 24px; gap:16px; }
+  .court-launch>div { justify-content:space-between; gap:15px; }
+  .court-play { gap:30px; padding:13px 18px; }
+  .court-shot-label { font-size:.75rem; padding:8px 10px; }
+  .exhibit--court .exhibit-cover-meta { padding:19px 23px; font-size:.75rem; }
+  .court-detail { height:auto; }
+}
+@media(min-width:701px) and (max-width:999px) { .exhibit:not(.exhibit--court) { grid-column:span 6; } .exhibit:last-child { grid-column:1/-1; } }
+@media(prefers-reduced-motion:reduce) { .court-shot,.court-cross,.court-play { transition:none; } .exhibit--court:hover .court-shot,.exhibit--court:focus-within .court-shot { transform:rotate(-6deg); } .exhibit--court:hover .court-cross { transform:none; } .exhibit--court:hover .court-scan,.exhibit--court:hover .court-console i { animation:none; } }

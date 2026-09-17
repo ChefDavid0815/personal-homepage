@@ -20,9 +20,13 @@ const safeLink = value => {
   try { const url = new URL(value); return ['https:', 'http:'].includes(url.protocol) ? escapeHtml(url.href) : ''; }
   catch { return ''; }
 };
-const previewFor = project => previews[project.id] || '<span class="custom-preview">'+escapeHtml(project.name)+'</span>';
+const isCourt = project => project.id === 'nba-after-hours';
+const courtStats = () => '<dl class="court-stats"><div><dt>30</dt><dd>'+t('court.teams')+'</dd></div><div><dt>3v3 <span>/</span> 5v5</dt><dd>'+t('court.modes')+'</dd></div><div><dt>02</dt><dd>'+t('court.local')+'</dd></div></dl>';
+const previewFor = (project, detail = false) => isCourt(project)
+  ? (detail ? '<img class="court-detail-image" src="./assets/projects/nba-after-hours/gameplay.png" alt="">' : `<div class="court-composition"><span class="court-edition mono">CHEFZC ORIGINAL / 2026</span><div class="court-type">AFTER<br><span>HOURS.</span></div><div class="court-shot"><img src="./assets/projects/nba-after-hours/gameplay.png" alt="" width="1440" height="900"><div class="court-shot-label mono"><span>${t('court.capture')}</span><span>GSW × BOS</span></div></div><span class="court-release mono">RELEASE<br><b>V1.0</b></span><span class="court-console mono">&gt; tipoff.ready()<i></i></span><span class="court-cross" aria-hidden="true">＋</span><div class="court-scan"></div></div>`)
+  : previews[project.id] || '<span class="custom-preview">'+escapeHtml(project.name)+'</span>';
 const tagsFor = project => project.tags.map(tag => '<span>'+escapeHtml(tag)+'</span>').join('');
-const layouts = new Set(['feature', 'sound', 'utility', 'standard']);
+const layouts = new Set(['feature', 'sound', 'utility', 'standard', 'court']);
 const grid = document.querySelector('#project-grid');
 const dialog = document.querySelector('#project-dialog');
 const dialogContent = document.querySelector('#dialog-content');
@@ -32,11 +36,12 @@ function renderCards() {
   grid.innerHTML = projects.map(localizeProject).map(project => {
     const layout = layouts.has(project.layout) ? project.layout : 'standard';
     const headline = escapeHtml(project.headline || project.subtitle).replace(/\n/g, '<br>');
-    const featured = t(project.demo ? 'project.featuredConcept' : 'project.featuredProject');
+    const featured = t(isCourt(project) ? 'court.first' : project.demo ? 'project.featuredConcept' : 'project.featuredProject');
     return '<article class="exhibit exhibit--'+layout+' exhibit--'+escapeHtml(project.color)+'" id="project-'+escapeHtml(project.id)+'">'+
       '<button class="exhibit-button" data-project="'+escapeHtml(project.id)+'" aria-label="'+escapeHtml(t('project.viewAria',{name:project.name}))+'">'+
       '<div class="exhibit-preview"><div class="exhibit-cover-meta mono"><span>'+escapeHtml(project.category)+'</span><span>'+t(project.demo?'project.concept':'project.project')+' / '+escapeHtml(project.number)+'</span></div><div class="exhibit-visual" aria-hidden="true">'+previewFor(project)+'</div><span class="preview-open" aria-hidden="true">↗</span></div>'+
-      '<div class="exhibit-info"><div class="exhibit-kicker mono"><span>'+(layout==='feature'?featured:escapeHtml(project.category))+'</span><span class="exhibit-number">/'+escapeHtml(project.number)+'</span></div><div class="exhibit-title-row"><h3>'+escapeHtml(project.name)+'</h3><span class="exhibit-title-arrow" aria-hidden="true">↗</span></div><p class="exhibit-subtitle">'+headline+'</p><p class="exhibit-description">'+escapeHtml(project.description)+'</p><div class="exhibit-tags">'+tagsFor(project)+'</div><div class="exhibit-bottom"><span class="demo-stamp">'+t(project.demo?'project.demo':'project.work')+'</span><span class="exhibit-action">'+t('project.view')+' <span aria-hidden="true">↗</span></span></div></div></button></article>';
+      '<div class="exhibit-info"><div class="exhibit-kicker mono"><span>'+(['feature','court'].includes(layout)?featured:escapeHtml(project.category))+'</span><span class="exhibit-number">/'+escapeHtml(project.number)+'</span></div><div class="exhibit-title-row"><h3>'+escapeHtml(project.name)+'</h3><span class="exhibit-title-arrow" aria-hidden="true">↗</span></div><p class="exhibit-subtitle">'+headline+'</p><p class="exhibit-description">'+escapeHtml(project.description)+'</p>'+(isCourt(project)?courtStats():'')+'<div class="exhibit-tags">'+tagsFor(project)+'</div><div class="exhibit-bottom"><span class="demo-stamp">'+t(project.demo?'project.demo':'project.work')+'</span><span class="exhibit-action">'+t('project.view')+' <span aria-hidden="true">↗</span></span></div></div></button>'+
+      (isCourt(project)?'<div class="court-launch"><span class="mono">'+t('court.noInstall')+'</span><div><a class="court-source" href="'+safeLink(project.repoUrl)+'" target="_blank" rel="noopener noreferrer">'+t('court.source')+' ↗</a><a class="court-play" href="'+safeLink(project.liveUrl)+'">'+t('court.play')+' <span aria-hidden="true">↗</span></a></div></div>':'')+'</article>';
   }).join('');
   document.querySelectorAll('[data-project-count]').forEach(element => { element.textContent=String(projects.length).padStart(2,'0'); });
 }
@@ -48,7 +53,7 @@ function renderDetail(projectId) {
   const live=safeLink(project.liveUrl);
   const repo=safeLink(project.repoUrl);
   dialogContent.innerHTML='<div class="detail-heading"><p class="eyebrow mono">'+t('project.exhibit')+' '+escapeHtml(project.number)+' / '+escapeHtml(project.category)+'</p><h2 id="dialog-title">'+escapeHtml(project.name)+'<span aria-hidden="true">↗</span></h2><p>'+escapeHtml(project.subtitle)+'</p></div>'+
-    '<div class="detail-art exhibit--'+escapeHtml(project.color)+'" aria-hidden="true">'+previewFor(project)+'</div><div class="detail-body"><div class="detail-description"><h3>'+t(project.demo?'project.aboutConcept':'project.aboutProject')+'</h3><p>'+escapeHtml(project.detail||project.description)+'</p></div>'+
+    '<div class="detail-art exhibit--'+escapeHtml(project.color)+(isCourt(project)?' court-detail':'')+'" aria-hidden="true">'+previewFor(project,true)+'</div><div class="detail-body"><div class="detail-description"><h3>'+t(project.demo?'project.aboutConcept':'project.aboutProject')+'</h3><p>'+escapeHtml(project.detail||project.description)+'</p>'+(isCourt(project)?'<p class="court-help">'+t('court.controls')+'</p><p>'+t('court.browserSave')+'</p>':'')+'</div>'+
     '<dl class="detail-facts"><div><dt>'+t('project.type')+'</dt><dd>'+escapeHtml(project.category)+'</dd></div><div><dt>'+t('project.status')+'</dt><dd>'+t(project.demo?'project.demoStatus':'project.work')+'</dd></div><div><dt>'+t('project.tags')+'</dt><dd class="exhibit-tags">'+tagsFor(project)+'</dd></div></dl></div>'+
     (live||repo?'<div class="project-links">'+(live?'<a class="primary-button" href="'+live+'" target="_blank" rel="noopener noreferrer">'+t('project.live')+'</a>':'')+(repo?'<a class="source-link" href="'+repo+'" target="_blank" rel="noopener noreferrer">'+t('project.source')+'</a>':'')+'</div>':'');
 }
