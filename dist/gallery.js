@@ -1,5 +1,6 @@
 import { t, localizeProject, onLanguageChange } from './i18n.js';
 import { projects } from './projects.js';
+import { axiomCard, axiomDetail } from './axiom-exhibit.js';
 import { folioCard, folioDetail, changeFolioView } from './folio-exhibit.js';
 
 const waveHeights = [18, 31, 47, 33, 61, 79, 55, 90, 72, 100, 83, 63, 95, 77, 52, 69, 41, 58, 33, 22, 37];
@@ -37,6 +38,7 @@ let selectedFolioView = 'library';
 function renderCards() {
   const historyOpen = grid.querySelector("#folio-history")?.open ?? (location.hash === "#folio-history");
   grid.innerHTML = projects.map(localizeProject).map(project => {
+    if(project.id === 'axiom') return axiomCard(project);
     if(project.id === 'folio') return folioCard(project);
     const layout = layouts.has(project.layout) ? project.layout : 'standard';
     const headline = escapeHtml(project.headline || project.subtitle).replace(/\n/g, '<br>');
@@ -56,6 +58,8 @@ function renderDetail(projectId) {
   if(!original) return;
   const project=localizeProject(original);
   dialog.classList.toggle('folio-dialog', projectId === 'folio');
+  dialog.classList.toggle('axiom-dialog', projectId === 'axiom');
+  if(projectId === 'axiom') { dialogContent.innerHTML=axiomDetail(project); return; }
   if(projectId === 'folio') {
     const historyOpen = dialogContent.querySelector(".folio-history")?.open;
     dialogContent.innerHTML=folioDetail(project, selectedFolioView);
@@ -100,7 +104,7 @@ dialog.addEventListener('close',()=>{
   const opener=[...grid.querySelectorAll('[data-project]')].find(button=>button.dataset.project===selectedProjectId);
   opener?.focus({preventScroll:true});
   selectedProjectId=null;
-  dialog.classList.remove('folio-dialog');
+  dialog.classList.remove('folio-dialog', 'axiom-dialog');
 });
 
 window.addEventListener("hashchange", () => { if(location.hash === "#folio-history") grid.querySelector("#folio-history").open = true; });

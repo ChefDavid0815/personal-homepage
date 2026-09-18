@@ -1,6 +1,7 @@
 import { personalMessages } from './personal-content.js';
 import { musicMessages } from './music-content.js';
 import { folioMessages } from './folio-content.js';
+import { axiomMessages } from './axiom-content.js';
 // Authored translations only. HTML values preserve the site's existing visual accents.
 export const messages = {
   'nav.label': ['主导航', 'Main navigation'],
@@ -133,7 +134,7 @@ export const messages = {
   'profile.enterGallery': ['进入项目陈列室 <span aria-hidden="true">→</span>', 'Step into the collection <span aria-hidden="true">→</span>']
 };
 
-Object.assign(messages, personalMessages, musicMessages, folioMessages);
+Object.assign(messages, personalMessages, musicMessages, folioMessages, axiomMessages);
 const storageKey = 'chefzc.language';
 let language = 'zh';
 try { if (globalThis.localStorage?.getItem(storageKey) === 'en') language = 'en'; } catch { /* Storage may be disabled; the switch still works. */ }

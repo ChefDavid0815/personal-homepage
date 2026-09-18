@@ -19,7 +19,7 @@
 
 新增 posts.html 文章概览与 post.html?article=... 独立正文页。首发三篇为 hello-world（主页开张）、nba-after-hours（第一个篮球游戏）、folio（模组手帖 1.0），分别采用荧光数码、暗色球场与暖色出版物视觉。包含真实项目截图、章节目录、阅读进度、相关推荐，以及完整中英文内容。导航加入随笔；手机端四项导航保持单行。
 
-文章维护于 dist/posts-data.js，交互于 dist/posts.js，排版于 dist/posts.css。内容通过文本转义输出，未知文章显示返回列表入口。新增文章时继续保留其真实状态与来源；当前三篇发布于 2026-09-17。
+文章维护于 dist/posts-data.js，交互于 dist/posts.js，排版于 dist/posts.css。内容通过文本转义输出，未知文章显示返回列表入口。新增文章时继续保留其真实状态与来源；前三篇发布于 2026-09-17，第四篇 AXIOM 发布手记于 2026-09-18 加入。文章数量与日期由数据自动渲染。
 
 ## Folio 手帖展柜（网站 v1.11 / 软件 v1.1）
 
@@ -82,7 +82,7 @@ ChefZC、项目名称与概念封面内的视觉文案保留原设计，不随�
 - `dist/assets/stephen-curry-2016.jpg`、`charles-leclerc-2024.jpg`：真实运动员照片；署名与授权见页面底部及 `dist/assets/PHOTO-CREDITS.md`。照片仅通过 CSS 裁切、调色和覆盖渐变，保留相应 CC BY-SA 授权。
 - `dist/assets/icons.svg`：Lucide 与 Tabler 图标，授权见同目录的 `LUCIDE-LICENSE.txt` 与 `TABLER-LICENSE.txt`。
 
-Gallery 只保留两个真实项目：Folio 桌面软件和 NBA After Hours 篮球游戏。三个概念占位项目已移除。替换真实项目时填写 `name`、`subtitle`、`description`、`detail`、`tags`，将 `demo` 改为 `false`；`repoUrl` 与 `liveUrl` 可分别设置源码和在线演示链接。不填写的链接不会显示。新增项目没有对应预览设计时，封面会使用项目名称。
+Gallery 只保留三个真实项目：AXIOM 科学绘图工作台、Folio 桌面软件和 NBA After Hours 篮球游戏。三个概念占位项目已移除。替换真实项目时填写 `name`、`subtitle`、`description`、`detail`、`tags`，将 `demo` 改为 `false`；`repoUrl` 与 `liveUrl` 可分别设置源码和在线演示链接。不填写的链接不会显示。新增项目没有对应预览设计时，封面会使用项目名称。
 
 `layout` 可设为 `court`（首个游戏主展位）、`feature`（横向主展位）、`sound`（窄卡片）、`utility`（宽卡片）或 `standard`（标准卡片）。`headline` 可单独配置 Gallery 文案并使用换行；不填写时使用 `subtitle`。展示数量自动按项目清单更新。
 
@@ -101,3 +101,10 @@ ChefZC 是展示昵称，GitHub 账号为 ChefDavid0815。字体通过 Google Fo
 ## 检查
 
 `npm run check` 检查浏览器脚本、项目数据和预览服务的 JavaScript 语法。
+
+
+## AXIOM · 格物 / Scientific plotting
+
+[Open AXIOM / 打开网页版](https://chefzc-axiom.vercel.app) · [Source / 源码](https://github.com/ChefDavid0815/axiom-studio)
+
+第三个真实项目已接入：Gallery 使用冷白、墨黑、荧光黄绿与钴蓝，展示真实工作台截图和内置胡克定律示例。Now 新增第 008 个节点，右侧小窗延续软件的实验图版风格。支持中英文。展柜由 `axiom-exhibit.js`、`axiom-content.js` 和 `axiom.css` 维护。网站版本 1.12.0。

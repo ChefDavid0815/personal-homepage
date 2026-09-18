@@ -3,6 +3,13 @@ import { currentFolio, folioReleaseUrl } from './folio-releases.js';
 // 接入真实项目后，将 demo 设为 false，并填写 repoUrl / liveUrl。
 export const projects = [
   {
+    id: 'axiom', name: 'AXIOM', subtitle: '让数据，形成观点。', layout: 'axiom',
+    category: 'SCIENTIFIC PLOTTING', number: '03', color: 'scientific', tags: ['React', 'TypeScript', 'Electron'],
+    description: 'AXIOM · 格物 1.0。科学绘图、误差分析与数学物理计算，属于好奇心的工作台。',
+    demo: false, version: '1.0.0', repoUrl: 'https://github.com/ChefDavid0815/axiom-studio', liveUrl: 'https://chefzc-axiom.vercel.app',
+    translations: { zh: {category: '科学绘图工作台'}, en: {subtitle: 'From data. To discovery.', description: 'AXIOM 1.0. Scientific plotting, uncertainty analysis and maths and physics calculators. A workspace for curiosity.'} }
+  },
+  {
     id: 'folio', name: 'Folio', subtitle: '为热爱，留一席之地。', layout: 'folio',
     category: 'WINDOWS MOD MANAGER', number: '02', color: 'paper', tags: ['Electron', 'React', 'TypeScript'],
     description: 'Folio · 模组手帖 1.1。FH6 专项适配、Nexus 书房与版本手记，让热爱驶向新的旷野。',
