@@ -1,15 +1,16 @@
+import { currentFolio, folioReleaseUrl } from './folio-releases.js';
 // 只需在这里添加项目，主页就会自动生成对应卡片。
 // 接入真实项目后，将 demo 设为 false，并填写 repoUrl / liveUrl。
 export const projects = [
   {
     id: 'folio', name: 'Folio', subtitle: '为热爱，留一席之地。', layout: 'folio',
     category: 'WINDOWS MOD MANAGER', number: '02', color: 'paper', tags: ['Electron', 'React', 'TypeScript'],
-    description: 'Folio · 模组手帖 1.0。一间安静的 Windows 游戏与模组收藏工作室，优先适配 NBA 2K27。',
-    demo: false, version: '1.0.0', repoUrl: 'https://github.com/ChefDavid0815/folio-mod-studio',
-    downloadUrl: 'https://github.com/ChefDavid0815/folio-mod-studio/releases/tag/v1.0.0', liveUrl: '',
+    description: 'Folio · 模组手帖 1.1。FH6 专项适配、Nexus 书房与版本手记，让热爱驶向新的旷野。',
+    demo: false, version: currentFolio.version, repoUrl: 'https://github.com/ChefDavid0815/folio-mod-studio',
+    downloadUrl: folioReleaseUrl(currentFolio.version), liveUrl: '',
     translations: {
       zh: { category: 'WINDOWS 模组管理软件' },
-      en: { subtitle: 'A home for the things you love.', description: 'Folio Mod Studio 1.0. A quiet Windows studio for your games and mods, with dedicated NBA 2K27 organisation.' }
+      en: { subtitle: 'A home for the things you love.', description: 'Folio Mod Studio 1.1. A wider horizon: dedicated FH6 tools, a Nexus reading room, and a version journal.' }
     }
   },
   {

@@ -34,7 +34,7 @@ export const messages = {
   'footer.note': ['保持好奇 · 持续创造 · 2026', 'BUILT WITH CURIOSITY · 2026'],
   'footer.top': ['回到顶部 <span aria-hidden="true">↑</span>', 'Back to top <span aria-hidden="true">↑</span>'],
   'gallery.title': ['Gallery — ChefZC 数字作品陈列室', 'Gallery — ChefZC Digital Collection'],
-  'gallery.meta': ['ChefZC 的数字作品陈列室。探索 Folio 1.0 模组手帖与 NBA After Hours，收藏每一次创造。', 'The digital collection by ChefZC. Explore Folio 1.0, a considered mod studio, and NBA After Hours, my first game.'],
+  'gallery.meta': ['ChefZC 的数字作品陈列室。探索 Folio 1.1 模组手帖、版本历程与 NBA After Hours，收藏每一次创造。', 'The digital collection by ChefZC. Explore Folio 1.1, its version journal, and NBA After Hours, my first game.'],
   'gallery.skip': ['跳到作品', 'Skip to projects'],
   'gallery.kicker': ['<span class="lime-text">[</span> 数字作品陈列室 <span class="lime-text">]</span>', '<span class="lime-text">[</span> THE DIGITAL COLLECTION <span class="lime-text">]</span>'],
   'gallery.mark': ['灵感，正在成形', 'MADE OF IDEAS'],

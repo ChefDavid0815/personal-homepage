@@ -35,6 +35,7 @@ let selectedProjectId = null;
 let selectedFolioView = 'library';
 
 function renderCards() {
+  const historyOpen = grid.querySelector("#folio-history")?.open ?? (location.hash === "#folio-history");
   grid.innerHTML = projects.map(localizeProject).map(project => {
     if(project.id === 'folio') return folioCard(project);
     const layout = layouts.has(project.layout) ? project.layout : 'standard';
@@ -46,6 +47,7 @@ function renderCards() {
       '<div class="exhibit-info"><div class="exhibit-kicker mono"><span>'+(['feature','court'].includes(layout)?featured:escapeHtml(project.category))+'</span><span class="exhibit-number">/'+escapeHtml(project.number)+'</span></div><div class="exhibit-title-row"><h3>'+escapeHtml(project.name)+'</h3><span class="exhibit-title-arrow" aria-hidden="true">↗</span></div><p class="exhibit-subtitle">'+headline+'</p><p class="exhibit-description">'+escapeHtml(project.description)+'</p>'+(isCourt(project)?courtStats():'')+'<div class="exhibit-tags">'+tagsFor(project)+'</div><div class="exhibit-bottom"><span class="demo-stamp">'+t(project.demo?'project.demo':'project.work')+'</span><span class="exhibit-action">'+t('project.view')+' <span aria-hidden="true">↗</span></span></div></div></button>'+
       (isCourt(project)?'<div class="court-launch"><span class="mono">'+t('court.noInstall')+'</span><div><a class="court-source" href="'+safeLink(project.repoUrl)+'" target="_blank" rel="noopener noreferrer">'+t('court.source')+' ↗</a><a class="court-play" href="'+safeLink(project.liveUrl)+'">'+t('court.play')+' <span aria-hidden="true">↗</span></a></div></div>':'')+'</article>';
   }).join('');
+  grid.querySelector('#folio-history').open = historyOpen;
   document.querySelectorAll('[data-project-count]').forEach(element => { element.textContent=String(projects.length).padStart(2,'0'); });
 }
 
@@ -55,7 +57,9 @@ function renderDetail(projectId) {
   const project=localizeProject(original);
   dialog.classList.toggle('folio-dialog', projectId === 'folio');
   if(projectId === 'folio') {
+    const historyOpen = dialogContent.querySelector(".folio-history")?.open;
     dialogContent.innerHTML=folioDetail(project, selectedFolioView);
+    dialogContent.querySelector(".folio-history").open = Boolean(historyOpen);
     return;
   }
   const live=safeLink(project.liveUrl);
@@ -98,3 +102,5 @@ dialog.addEventListener('close',()=>{
   selectedProjectId=null;
   dialog.classList.remove('folio-dialog');
 });
+
+window.addEventListener("hashchange", () => { if(location.hash === "#folio-history") grid.querySelector("#folio-history").open = true; });
