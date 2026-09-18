@@ -2,7 +2,7 @@
 
 **English** · [简体中文](README.zh-CN.md)
 
-A personal website for the things I love and make: a dark digital canvas with lime, electric blue, violet and warm accents. Each real project gets its own art direction: a midnight basketball court for **NBA After Hours**, a warm paper journal for **Folio**, and a lime/cobalt scientific exhibition for **AXIOM**.
+A personal website for the things I love and make: a dark digital canvas with lime, electric blue, violet and warm accents. Each real project gets its own art direction: a midnight basketball court for **NBA After Hours**, a warm paper journal for **Folio**, a lime/cobalt scientific exhibition for **AXIOM**, and a mint/blue/pink festival pass for **Festival Toolkit**.
 
 [**Enter my space ↗**](https://chefzc-homepage.vercel.app) · [Gallery](https://chefzc-homepage.vercel.app/gallery.html) · [Posts](https://chefzc-homepage.vercel.app/posts.html) · [Now](https://chefzc-homepage.vercel.app/now.html)
 
@@ -11,9 +11,9 @@ A personal website for the things I love and make: a dark digital canvas with li
 | Page | Inside |
 | :--- | :--- |
 | **Personal Profile** | ChefZC, a Year 12 IB student at GEMS Wellington International School in Dubai. Basketball, motorsport, AI, art, devices, milestones and public contact links. Only the city is shown as a location. |
-| **Gallery** | Three real projects: AXIOM 1.0, Folio 1.1 and NBA After Hours. Actual application/game screenshots, independent visual identities, project dialogs, source and download/play links. |
-| **Now** | A chronological journal, newest first. September 18, 2026 adds AXIOM’s web launch and the Folio 1.1 release in its paper-and-terracotta style; the previous six milestones remain. |
-| **Posts** | Four bilingual essays: opening this website, NBA After Hours, Folio 1.0, and AXIOM 1.0. An overview, individual articles, contents, reading progress and related notes. |
+| **Gallery** | Four real projects: Festival Toolkit 0.1.1, AXIOM 1.0, Folio 1.1 and NBA After Hours. Actual application/game screenshots, independent visual identities, project dialogs, source and download/play links. |
+| **Now** | A chronological journal, newest first. Nine milestones, including Festival Toolkit, AXIOM’s web launch and Folio 1.1 on September 18, 2026. |
+| **Posts** | Five bilingual essays: opening this website, NBA After Hours, Folio 1.0, AXIOM 1.0 and Festival Toolkit 0.1.1. An overview, individual articles, contents, reading progress and related notes. |
 
 `index.html` redirects to `profile.html`, retaining the query and fragment. Navigation, language preference and footer are shared. The site defaults to Chinese; the **中 / EN** switch translates navigation, copy, dialogs and page titles. Preference persists when local storage is available and synchronises across same-origin tabs. Brand names and decorative artwork retain their original design.
 
@@ -52,7 +52,7 @@ npm run dev       # http://127.0.0.1:4173
 npm run check     # JavaScript syntax checks
 ```
 
-`dist/` is the complete website. `vercel.json` runs `npm run check` and deploys that directory. The website version **1.12.0** is separate from Folio's **1.1.0**.
+`dist/` is the complete website. `vercel.json` runs `npm run check` and deploys that directory. The website version **1.13.0** is separate from Folio's **1.1.0**.
 
 ## Maintain the space
 
@@ -83,3 +83,12 @@ Sports photographs retain their attribution and CC BY-SA terms in `dist/assets/P
 [Open AXIOM / 打开网页版](https://chefzc-axiom.vercel.app) · [Source / 源码](https://github.com/ChefDavid0815/axiom-studio)
 
 A dedicated cold-white, ink, lime and cobalt exhibition uses real application imagery and the bundled Hooke’s-law dataset. The Now timeline adds milestone 008, with a matching experiment window. Content supports Chinese and English. Maintain the exhibition in `axiom-exhibit.js`, `axiom-content.js` and `axiom.css`.
+
+
+## Festival Toolkit / 网站 1.13
+
+[Gallery](https://chefzc-homepage.vercel.app/gallery.html#project-festival-toolkit) · [Post / 新随笔](https://chefzc-homepage.vercel.app/post.html?article=festival-toolkit) · [Source / 源码](https://github.com/ChefDavid0815/horizon-festival-toolkit)
+
+第四件真实作品，第五篇双语随笔，Now 第 009 个节点。浅绿、淡蓝与粉色的嘉年华通行证，支持四季配色切换、卡片悬停错层、响应式布局与减少动态效果偏好。软件当前为 Windows 0.1.1，没有独立网页版。
+
+The fourth real project and fifth bilingual Post, with Now milestone 009. A mint, blue and pink festival-pass exhibition with interactive season palettes, layered hover motion and reduced-motion support. The application is Windows-only, version 0.1.1. Maintain `festival-content.js`, `festival-exhibit.js`, `festival.css`, `festival-post.js` and `festival-post.css`. Asset sources are recorded in `dist/assets/projects/festival-toolkit/SOURCES.md`.

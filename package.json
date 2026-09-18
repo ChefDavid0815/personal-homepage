@@ -1,10 +1,10 @@
 {
   "name": "chefzc-personal-space",
-  "version": "1.12.0",
+  "version": "1.13.0",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "node scripts/serve.mjs",
-    "check": "node --check dist/i18n.js && node --check dist/personal-content.js && node --check dist/personal.js && node --check dist/motion.js && node --check dist/music.js && node --check dist/music-data.js && node --check dist/music-content.js && node --check dist/gallery.js && node --check dist/projects.js && node --check scripts/serve.mjs && node --check scripts/import-game.mjs && node --check dist/folio-exhibit.js && node --check dist/folio-content.js && node --check dist/posts.js && node --check dist/posts-data.js && node --check dist/folio-releases.js && node --check dist/axiom-exhibit.js && node --check dist/axiom-content.js && node --check dist/axiom-post.js"
+    "check": "node --check dist/i18n.js && node --check dist/personal-content.js && node --check dist/personal.js && node --check dist/motion.js && node --check dist/music.js && node --check dist/music-data.js && node --check dist/music-content.js && node --check dist/gallery.js && node --check dist/projects.js && node --check scripts/serve.mjs && node --check scripts/import-game.mjs && node --check dist/folio-exhibit.js && node --check dist/folio-content.js && node --check dist/posts.js && node --check dist/posts-data.js && node --check dist/folio-releases.js && node --check dist/axiom-exhibit.js && node --check dist/axiom-content.js && node --check dist/axiom-post.js && node --check dist/festival-exhibit.js && node --check dist/festival-content.js && node --check dist/festival-post.js"
   }
 }

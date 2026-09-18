@@ -7,8 +7,8 @@
 ## 页面
 
 - `profile.html`：Personal Profile，包含数字名片、真实简介、篮球与赛车主题卡、AI 与艺术兴趣、数码设备、成长经历及公开联系方式。
-- `gallery.html`：独立的 Gallery，Folio 1.1 手帖展柜与可展开的版本手记、NBA After Hours 主展位、真实截图与项目详情。
-- `now.html`：Now 近况页，按日期倒序记录 2026-09-18 发布 Folio 1.1、2026-09-17 发布 Folio 1.0、发布第一个项目 NBA After Hours、创建音乐模块、2026-09-16 创建个人主页、2026-08-27 步入 IB、2026-04-20 开始接触 Agents。
+- `gallery.html`：四件真实作品：Festival Toolkit 0.1.1 四季通行证、AXIOM 科学工作台、Folio 1.1 手帖与版本历程、NBA After Hours 球场。
+- `now.html`：Now 近况页，九个节点，按日期倒序记录 2026-09-18 Festival Toolkit 加入作品集、AXIOM 上线、发布 Folio 1.1、2026-09-17 发布 Folio 1.0、发布第一个项目 NBA After Hours、创建音乐模块、2026-09-16 创建个人主页、2026-08-27 步入 IB、2026-04-20 开始接触 Agents。
 - `index.html`：网站入口，自动转到 Personal Profile，并保留查询参数与页内锚点。
 
 所有页面共用品牌、配色、导航、语言偏好与页脚，可以互相切换。个人资料采用 ChefZC 提供的信息：在迪拜的 GEMS Wellington International School 就读 Year 12 / IB。公开位置只展示城市。
@@ -107,4 +107,13 @@ ChefZC 是展示昵称，GitHub 账号为 ChefDavid0815。字体通过 Google Fo
 
 [Open AXIOM / 打开网页版](https://chefzc-axiom.vercel.app) · [Source / 源码](https://github.com/ChefDavid0815/axiom-studio)
 
-第三个真实项目已接入：Gallery 使用冷白、墨黑、荧光黄绿与钴蓝，展示真实工作台截图和内置胡克定律示例。Now 新增第 008 个节点，右侧小窗延续软件的实验图版风格。支持中英文。展柜由 `axiom-exhibit.js`、`axiom-content.js` 和 `axiom.css` 维护。网站版本 1.12.0。
+第三个真实项目已接入：Gallery 使用冷白、墨黑、荧光黄绿与钴蓝，展示真实工作台截图和内置胡克定律示例。Now 新增第 008 个节点，右侧小窗延续软件的实验图版风格。支持中英文。展柜由 `axiom-exhibit.js`、`axiom-content.js` 和 `axiom.css` 维护。网站版本 1.13.0。
+
+
+## Festival Toolkit / 网站 1.13
+
+[Gallery](https://chefzc-homepage.vercel.app/gallery.html#project-festival-toolkit) · [Post / 新随笔](https://chefzc-homepage.vercel.app/post.html?article=festival-toolkit) · [Source / 源码](https://github.com/ChefDavid0815/horizon-festival-toolkit)
+
+第四件真实作品，第五篇双语随笔，Now 第 009 个节点。浅绿、淡蓝与粉色的嘉年华通行证，支持四季配色切换、卡片悬停错层、响应式布局与减少动态效果偏好。软件当前为 Windows 0.1.1，没有独立网页版。
+
+The fourth real project and fifth bilingual Post, with Now milestone 009. A mint, blue and pink festival-pass exhibition with interactive season palettes, layered hover motion and reduced-motion support. The application is Windows-only, version 0.1.1. Maintain `festival-content.js`, `festival-exhibit.js`, `festival.css`, `festival-post.js` and `festival-post.css`. Asset sources are recorded in `dist/assets/projects/festival-toolkit/SOURCES.md`.

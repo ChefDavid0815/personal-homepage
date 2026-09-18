@@ -3,6 +3,14 @@ import { currentFolio, folioReleaseUrl } from './folio-releases.js';
 // 接入真实项目后，将 demo 设为 false，并填写 repoUrl / liveUrl。
 export const projects = [
   {
+    id:'festival-toolkit', name:'Festival Toolkit', subtitle:'每一周，都值得点亮。', layout:'festival',
+    category:'WINDOWS SAVE WORKSHOP', number:'04', color:'mint', tags:['Electron','React','Windows'],
+    description:'Horizon Festival Toolkit 0.1.1。FH6 季节赛记录、选周修改与备份恢复，属于赛车爱好者的存档工坊。',
+    demo:false, version:'0.1.1', repoUrl:'https://github.com/ChefDavid0815/horizon-festival-toolkit',
+    downloadUrl:'https://github.com/ChefDavid0815/horizon-festival-toolkit/releases/tag/v0.1.1', liveUrl:'',
+    translations:{zh:{category:'WINDOWS 季节赛存档工具'},en:{subtitle:'Every week. A little brighter.',description:'Horizon Festival Toolkit 0.1.1. FH6 seasonal records, selected-week edits, backups and recovery in a Windows save workshop.'}}
+  },
+  {
     id: 'axiom', name: 'AXIOM', subtitle: '让数据，形成观点。', layout: 'axiom',
     category: 'SCIENTIFIC PLOTTING', number: '03', color: 'scientific', tags: ['React', 'TypeScript', 'Electron'],
     description: 'AXIOM · 格物 1.0。科学绘图、误差分析与数学物理计算，属于好奇心的工作台。',

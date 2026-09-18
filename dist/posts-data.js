@@ -1,6 +1,8 @@
 // Editorial copy is stored as text. Both languages share the same images and links.
 import { axiomPost } from './axiom-post.js';
+import { festivalPost } from './festival-post.js';
 export const posts = [
+  festivalPost,
   axiomPost,
   {
     id: 'hello-world', theme: 'signal', number: '01', date: '2026-09-17',
