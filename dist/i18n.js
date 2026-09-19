@@ -2,6 +2,7 @@ import { personalMessages } from './personal-content.js';
 import { musicMessages } from './music-content.js';
 import { folioMessages } from './folio-content.js';
 import { axiomMessages } from './axiom-content.js';
+import { wisMessages } from './wis-content.js';
 import { festivalMessages } from './festival-content.js';
 // Authored translations only. HTML values preserve the site's existing visual accents.
 export const messages = {
@@ -135,7 +136,7 @@ export const messages = {
   'profile.enterGallery': ['进入项目陈列室 <span aria-hidden="true">→</span>', 'Step into the collection <span aria-hidden="true">→</span>']
 };
 
-Object.assign(messages, personalMessages, musicMessages, folioMessages, axiomMessages, festivalMessages);
+Object.assign(messages, personalMessages, musicMessages, folioMessages, axiomMessages, festivalMessages, wisMessages);
 const storageKey = 'chefzc.language';
 let language = 'zh';
 try { if (globalThis.localStorage?.getItem(storageKey) === 'en') language = 'en'; } catch { /* Storage may be disabled; the switch still works. */ }
@@ -158,6 +159,7 @@ const commonBindings = [
   ['.language-switch', 'language.label', 'aria-label'], ['.site-footer > .mono', 'footer.note'], ['.back-top', 'footer.top', 'html']
 ];
 const bindings = {
+  school: [['title','school.title'], ['meta[name="description"]','school.meta','content']],
   posts: [],
   now: [['title', 'now.title'], ['meta[name="description"]', 'now.meta', 'content']],
   gallery: [
@@ -198,7 +200,7 @@ const bindings = {
 
 export function applyTranslations() {
   document.documentElement.lang = language === 'en' ? 'en' : 'zh-CN';
-  const page = ['gallery', 'profile', 'now', 'posts'].find(name => document.body.classList.contains(`${name}-page`)) || 'profile';
+  const page = ['school', 'gallery', 'profile', 'now', 'posts'].find(name => document.body.classList.contains(`${name}-page`)) || 'profile';
   for (const [selector, key, mode] of [...commonBindings, ...bindings[page]]) {
     for (const element of document.querySelectorAll(selector)) {
       if (mode === 'html') element.innerHTML = t(key);

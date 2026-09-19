@@ -8,14 +8,23 @@
 
 - `profile.html`：Personal Profile，包含数字名片、真实简介、篮球与赛车主题卡、AI 与艺术兴趣、数码设备、成长经历及公开联系方式。
 - `gallery.html`：四件真实作品：Festival Toolkit 0.1.1 四季通行证、AXIOM 科学工作台、Folio 1.1 手帖与版本历程、NBA After Hours 球场。
-- `now.html`：Now 近况页，九个节点，按日期倒序记录 2026-09-18 Festival Toolkit 加入作品集、AXIOM 上线、发布 Folio 1.1、2026-09-17 发布 Folio 1.0、发布第一个项目 NBA After Hours、创建音乐模块、2026-09-16 创建个人主页、2026-08-27 步入 IB、2026-04-20 开始接触 Agents。
+- `school-gallery.html`：独立的校园实验室分页。WIS TECH TANK · STRIDE 自然展柜，三种场景示意切换、真实截图放大、在线体验与观察手记。
+- `now.html`：Now 近况页，十个节点，按日期倒序记录 2026-09-19 STRIDE 上线与校园实验室开放、 2026-09-18 Festival Toolkit 加入作品集、AXIOM 上线、发布 Folio 1.1、2026-09-17 发布 Folio 1.0、发布第一个项目 NBA After Hours、创建音乐模块、2026-09-16 创建个人主页、2026-08-27 步入 IB、2026-04-20 开始接触 Agents。
 - `index.html`：网站入口，自动转到 Personal Profile，并保留查询参数与页内锚点。
 
 所有页面共用品牌、配色、导航、语言偏好与页脚，可以互相切换。个人资料采用 ChefZC 提供的信息：在迪拜的 GEMS Wellington International School 就读 Year 12 / IB。公开位置只展示城市。
 
 公开链接：GitHub `ChefDavid0815`、Instagram `chefzichuan`、邮箱 `zzichuan0808@outlook.com`。主页提供邮箱复制按钮；它仅操作当前设备剪贴板，不会发送邮件。
 
-## Posts 随笔（网站 v1.10）
+## WIS TECH TANK 校园实验室（网站 v1.14）
+
+[STRIDE 网页版](https://chefzc-wis-tech-tank.vercel.app)为学校展示制作，提供九种模拟环境与双语反馈。主展厅保留四件个人作品，新增「主展厅 / 校园实验室」展厅导航。
+
+森林绿、纸张白与原创林间步道视觉，配合缓慢浮动的光点、感知线条和可切换的观察手记。三种展柜示意解释平路、楼梯与不确定信号；完整九场景在真实软件里体验。展柜不读取传感器。可暂停环境动效，尊重系统减少动态效果偏好；截图弹窗支持 Escape 关闭并还原键盘焦点；切换语言保留场景选择。
+
+Now 第十个节点与第六篇双语随笔同步更新，文章聚焦模拟功能。实现位于 `dist/wis-*.js`、`dist/school-gallery.js` 与 `dist/wis.css`；[视觉素材与生成提示词](dist/assets/projects/wis-tech-tank/ARTWORK.md)记录原创插画来源，真实截图明确标注模拟环境。
+
+## Posts 随笔（网站 v1.10 起）
 
 新增 posts.html 文章概览与 post.html?article=... 独立正文页。首发三篇为 hello-world（主页开张）、nba-after-hours（第一个篮球游戏）、folio（模组手帖 1.0），分别采用荧光数码、暗色球场与暖色出版物视觉。包含真实项目截图、章节目录、阅读进度、相关推荐，以及完整中英文内容。导航加入随笔；手机端四项导航保持单行。
 

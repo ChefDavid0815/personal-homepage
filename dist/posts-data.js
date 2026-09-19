@@ -1,7 +1,9 @@
+import { wisPost } from './wis-post.js';
 // Editorial copy is stored as text. Both languages share the same images and links.
 import { axiomPost } from './axiom-post.js';
 import { festivalPost } from './festival-post.js';
 export const posts = [
+  wisPost,
   festivalPost,
   axiomPost,
   {

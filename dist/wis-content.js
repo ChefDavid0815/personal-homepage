@@ -1,0 +1,22 @@
+export const wisMessages = {
+  'gallery.meta': ['ChefZC 的作品集：四件个人作品，以及独立的校园实验室 WIS TECH TANK。', 'ChefZC’s collection: four personal projects and a separate school lab for WIS TECH TANK.'],
+  'collection.label': ['选择展厅', 'Choose a collection'],
+  'collection.main': ['主展厅', 'Personal collection'],
+  'collection.school': ['校园实验室', 'School lab'],
+  'collection.schoolNote': ['为课堂里的好奇心，留一间新的展室。', 'A new room for the curiosity that starts in class.'],
+  'collection.enter': ['走进校园实验室', 'Enter the school lab'],
+  'school.title': ['校园实验室 — ChefZC Gallery', 'School Lab — ChefZC Gallery'],
+  'school.meta': ['WIS TECH TANK · STRIDE：九种环境模拟、声音与触觉反馈，一间绿意盎然的校园项目展室。', 'WIS TECH TANK · STRIDE: nine simulated environments, speech and haptic feedback, in a green school-project exhibition.'],
+  'school.skip': ['跳到校园作品', 'Skip to school projects'],
+  'school.intro': ['让课堂里的一个想法，慢慢长出自己的样子。', 'A place for classroom ideas to take root.'],
+  'school.description': ['这里收录为学校制作的实验与展示。与主展厅分开陈列，保留每一次探索自己的颜色。', 'Experiments and presentations made for school. A separate collection, with room for each idea to find its own character.'],
+  'school.back': ['返回主展厅', 'Back to the personal collection'],
+  'now.meta': ['ChefZC 的近况。2026 年 9 月 19 日，WIS TECH TANK · STRIDE 上线，校园实验室开放。', 'Updates from ChefZC. September 19, 2026: WIS TECH TANK · STRIDE launches with a new school lab.'],
+  'now.wisLabel': ['校园 / 探索', 'SCHOOL / EXPLORATION'],
+  'now.wisKicker': ['让好奇心，长出新的枝叶', 'A NEW BRANCH OF CURIOSITY'],
+  'now.wisTitle': ['STRIDE，感知下一步。', 'STRIDE. A clearer next step.'],
+  'now.wisText': ['今天，把为 WIS TECH TANK 学校展示制作的 STRIDE 放到了线上。九种模拟环境，把路面、障碍与不确定的信号变成看得见的语音和振动反馈。Gallery 也新开了一间校园实验室：森林绿、纸张白，还有慢慢穿过树叶的光。让课堂里的想法，有一处自己的风景。', 'Today, STRIDE goes online for the WIS TECH TANK school presentation. Nine simulated environments turn terrain, obstacles and uncertain signals into visible speech and haptic feedback. Gallery also opens a school lab: forest green, warm paper and light moving through the leaves. A landscape of its own for an idea that began in class.'],
+  'now.wisLink': ['走进校园实验室', 'Visit the school lab'],
+  'now.wisPost': ['读环境模拟手记', 'Read the simulation notes'],
+  'profile.bridgeNote': ['主展厅里的四件作品，校园实验室里的新想法。WIS TECH TANK · STRIDE 已上线，为课堂里的好奇心留一片绿意。', 'Four projects in the main collection, and new ideas in the school lab. WIS TECH TANK · STRIDE is online: a green space for classroom curiosity.']
+};

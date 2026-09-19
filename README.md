@@ -12,10 +12,17 @@ A personal website for the things I love and make: a dark digital canvas with li
 | :--- | :--- |
 | **Personal Profile** | ChefZC, a Year 12 IB student at GEMS Wellington International School in Dubai. Basketball, motorsport, AI, art, devices, milestones and public contact links. Only the city is shown as a location. |
 | **Gallery** | Four real projects: Festival Toolkit 0.1.1, AXIOM 1.0, Folio 1.1 and NBA After Hours. Actual application/game screenshots, independent visual identities, project dialogs, source and download/play links. |
-| **Now** | A chronological journal, newest first. Nine milestones, including Festival Toolkit, AXIOM’s web launch and Folio 1.1 on September 18, 2026. |
-| **Posts** | Five bilingual essays: opening this website, NBA After Hours, Folio 1.0, AXIOM 1.0 and Festival Toolkit 0.1.1. An overview, individual articles, contents, reading progress and related notes. |
+| **School Lab** | A separate `school-gallery.html` collection for school work. WIS TECH TANK · STRIDE has a woodland exhibition, three illustrated scene states, a real interface capture, web/source links and a simulation journal. |
+| **Now** | A chronological journal, newest first. Ten milestones, with WIS TECH TANK · STRIDE and the new school lab on September 19, 2026. |
+| **Posts** | Six bilingual essays: opening this website, NBA After Hours, Folio 1.0, AXIOM 1.0, Festival Toolkit 0.1.1 and STRIDE 0.2.0. An overview, individual articles, contents, reading progress and related notes. |
 
 `index.html` redirects to `profile.html`, retaining the query and fragment. Navigation, language preference and footer are shared. The site defaults to Chinese; the **中 / EN** switch translates navigation, copy, dialogs and page titles. Preference persists when local storage is available and synchronises across same-origin tabs. Brand names and decorative artwork retain their original design.
+
+## WIS TECH TANK / A separate school lab
+
+[STRIDE](https://chefzc-wis-tech-tank.vercel.app) is a bilingual classroom environment simulator. The **Personal collection / School lab** navigation separates the four main personal projects from school work. The school page keeps the site's dark shell and uses forest green, warm paper, an original woodland artwork, drifting light, sensing rings and a field-book scene selector. Three exhibition illustrations explain pavement, stairs and uncertainty; the actual app offers nine scenarios. The exhibit is not a live sensor feed.
+
+Motion can be paused and respects `prefers-reduced-motion`; the screenshot dialog supports Escape and restores focus. Chinese/English switching preserves the selected exhibit scene. The Now milestone and sixth Post share the natural art direction. `wis-content.js`, `wis-exhibit.js`, `wis-post.js`, `school-gallery.js` and `wis.css` contain the feature. [Artwork provenance and generation prompt](dist/assets/projects/wis-tech-tank/ARTWORK.md).
 
 ## Folio 1.1 — a new page
 
