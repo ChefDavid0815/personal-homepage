@@ -6,3 +6,9 @@
 - Seasonal SVG icons in festival-exhibit.js are original simple geometric UI symbols.
 - Photography visible inside the software: Microsoft / Playground Games. Source https://cdn.forza.net/strapi-uploads/assets/FH_6_S04_EW_Mascot_Party_Circuit_01_16x9_WM_aa7cc51b57.jpg ; https://forza.net/news/forza-horizon-6-series-4 . Names and imagery retain their owners' rights.
 - Visual reference: https://forza.net/forzahorizon6 . This is an unofficial personal project, not an official Forza product.
+
+## Version 0.2.0 / 2026-09-20
+
+- `workspace-v0.2.png`, `garage-v0.2.png`: actual 0.2.0 Windows captures, Chinese UI, disconnected. No player save or private identity is visible.
+- The series poster inside `workspace-v0.2.png` is game artwork by its respective rights holders, shown in the application's interface; it is not original portfolio artwork. The app reads these covers from a user's own local game installation. Extracted texture files are not distributed in this project or its binaries.
+- `cover-v0.2.0.svg`: original Festival Pass artwork, versioned for this release. The 0.1.1 post and original screenshots remain historical records.

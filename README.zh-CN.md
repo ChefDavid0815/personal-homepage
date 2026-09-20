@@ -7,9 +7,9 @@
 ## 页面
 
 - `profile.html`：Personal Profile，包含数字名片、真实简介、篮球与赛车主题卡、AI 与艺术兴趣、数码设备、成长经历及公开联系方式。
-- `gallery.html`：四件真实作品：Festival Toolkit 0.1.1 四季通行证、AXIOM 科学工作台、Folio 1.1 手帖与版本历程、NBA After Hours 球场。
+- `gallery.html`：四件真实作品：Festival Toolkit 0.2 四季通行证与版本手记、AXIOM 科学工作台、Folio 1.1 手帖与版本历程、NBA After Hours 球场。
 - `school-gallery.html`：独立的校园实验室分页。WIS TECH TANK · STRIDE 自然展柜，三种场景示意切换、真实截图放大、在线体验与观察手记。
-- `now.html`：Now 近况页，十个节点，按日期倒序记录 2026-09-19 STRIDE 上线与校园实验室开放、 2026-09-18 Festival Toolkit 加入作品集、AXIOM 上线、发布 Folio 1.1、2026-09-17 发布 Folio 1.0、发布第一个项目 NBA After Hours、创建音乐模块、2026-09-16 创建个人主页、2026-08-27 步入 IB、2026-04-20 开始接触 Agents。
+- `now.html`：Now 近况页，十一个节点，按日期倒序记录 2026-09-20 Festival Toolkit 0.2 发布、 2026-09-19 STRIDE 上线与校园实验室开放、 2026-09-18 Festival Toolkit 加入作品集、AXIOM 上线、发布 Folio 1.1、2026-09-17 发布 Folio 1.0、发布第一个项目 NBA After Hours、创建音乐模块、2026-09-16 创建个人主页、2026-08-27 步入 IB、2026-04-20 开始接触 Agents。
 - `index.html`：网站入口，自动转到 Personal Profile，并保留查询参数与页内锚点。
 
 所有页面共用品牌、配色、导航、语言偏好与页脚，可以互相切换。个人资料采用 ChefZC 提供的信息：在迪拜的 GEMS Wellington International School 就读 Year 12 / IB。公开位置只展示城市。
@@ -119,10 +119,12 @@ ChefZC 是展示昵称，GitHub 账号为 ChefDavid0815。字体通过 Google Fo
 第三个真实项目已接入：Gallery 使用冷白、墨黑、荧光黄绿与钴蓝，展示真实工作台截图和内置胡克定律示例。Now 新增第 008 个节点，右侧小窗延续软件的实验图版风格。支持中英文。展柜由 `axiom-exhibit.js`、`axiom-content.js` 和 `axiom.css` 维护。网站版本 1.13.0。
 
 
-## Festival Toolkit / 网站 1.13
+## Festival Toolkit 0.2 / 网站 1.15
 
-[Gallery](https://chefzc-homepage.vercel.app/gallery.html#project-festival-toolkit) · [Post / 新随笔](https://chefzc-homepage.vercel.app/post.html?article=festival-toolkit) · [Source / 源码](https://github.com/ChefDavid0815/horizon-festival-toolkit)
+[展柜](https://chefzc-homepage.vercel.app/gallery.html#project-festival-toolkit) · [版本手记](https://chefzc-homepage.vercel.app/gallery.html#festival-history) · [Windows 下载](https://github.com/ChefDavid0815/horizon-festival-toolkit/releases/tag/v0.2.0)
 
-第四件真实作品，第五篇双语随笔，Now 第 009 个节点。浅绿、淡蓝与粉色的嘉年华通行证，支持四季配色切换、卡片悬停错层、响应式布局与减少动态效果偏好。软件当前为 Windows 0.1.1，没有独立网页版。
+保留薄荷绿、淡蓝与粉色的嘉年华通行证。647 车型车库与动态内容目录进入展柜；新增带齿孔和票根的版本档案，可展开查看 0.2.0 与 0.1.1 的日期、双语更新和独立下载。弹窗可切换新版季节赛、车库真实截图；中英切换保留截图、四季配色与版本栏展开状态。
 
-The fourth real project and fifth bilingual Post, with Now milestone 009. A mint, blue and pink festival-pass exhibition with interactive season palettes, layered hover motion and reduced-motion support. The application is Windows-only, version 0.1.1. Maintain `festival-content.js`, `festival-exhibit.js`, `festival.css`, `festival-post.js` and `festival-post.css`. Asset sources are recorded in `dist/assets/projects/festival-toolkit/SOURCES.md`.
+Now 第 011 个节点记录本次更新，旁边小窗延续 647 车型通行证。9 月 18 日的首发节点与 0.1.1 随笔保留历史原貌。支持键盘、手机布局与减少动态效果偏好；四个主项目和独立校园展厅保持不变。
+
+版本数据维护在 `festival-releases.js`，双语文案在 `festival-content.js`，展柜在 `festival-exhibit.js`，样式在 `festival.css` / `festival-history.css`。截图来源见素材目录的 `SOURCES.md`。软件仅支持 Windows；加密存档使用第三方在线服务，游戏内效果尚未验证。

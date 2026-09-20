@@ -11,9 +11,9 @@ A personal website for the things I love and make: a dark digital canvas with li
 | Page | Inside |
 | :--- | :--- |
 | **Personal Profile** | ChefZC, a Year 12 IB student at GEMS Wellington International School in Dubai. Basketball, motorsport, AI, art, devices, milestones and public contact links. Only the city is shown as a location. |
-| **Gallery** | Four real projects: Festival Toolkit 0.1.1, AXIOM 1.0, Folio 1.1 and NBA After Hours. Actual application/game screenshots, independent visual identities, project dialogs, source and download/play links. |
+| **Gallery** | Four real projects: Festival Toolkit 0.2.0, AXIOM 1.0, Folio 1.1 and NBA After Hours. Actual application/game screenshots, independent visual identities, project dialogs, source and download/play links. |
 | **School Lab** | A separate `school-gallery.html` collection for school work. WIS TECH TANK · STRIDE has a woodland exhibition, three illustrated scene states, a real interface capture, web/source links and a simulation journal. |
-| **Now** | A chronological journal, newest first. Ten milestones, with WIS TECH TANK · STRIDE and the new school lab on September 19, 2026. |
+| **Now** | A chronological journal, newest first. Eleven milestones, with Festival Toolkit 0.2 and its version journal on September 20, 2026. |
 | **Posts** | Six bilingual essays: opening this website, NBA After Hours, Folio 1.0, AXIOM 1.0, Festival Toolkit 0.1.1 and STRIDE 0.2.0. An overview, individual articles, contents, reading progress and related notes. |
 
 `index.html` redirects to `profile.html`, retaining the query and fragment. Navigation, language preference and footer are shared. The site defaults to Chinese; the **中 / EN** switch translates navigation, copy, dialogs and page titles. Preference persists when local storage is available and synchronises across same-origin tabs. Brand names and decorative artwork retain their original design.
@@ -92,10 +92,12 @@ Sports photographs retain their attribution and CC BY-SA terms in `dist/assets/P
 A dedicated cold-white, ink, lime and cobalt exhibition uses real application imagery and the bundled Hooke’s-law dataset. The Now timeline adds milestone 008, with a matching experiment window. Content supports Chinese and English. Maintain the exhibition in `axiom-exhibit.js`, `axiom-content.js` and `axiom.css`.
 
 
-## Festival Toolkit / 网站 1.13
+## Festival Toolkit 0.2 / Website 1.15
 
-[Gallery](https://chefzc-homepage.vercel.app/gallery.html#project-festival-toolkit) · [Post / 新随笔](https://chefzc-homepage.vercel.app/post.html?article=festival-toolkit) · [Source / 源码](https://github.com/ChefDavid0815/horizon-festival-toolkit)
+[Exhibition](https://chefzc-homepage.vercel.app/gallery.html#project-festival-toolkit) · [Version journal](https://chefzc-homepage.vercel.app/gallery.html#festival-history) · [Windows release](https://github.com/ChefDavid0815/horizon-festival-toolkit/releases/tag/v0.2.0)
 
-第四件真实作品，第五篇双语随笔，Now 第 009 个节点。浅绿、淡蓝与粉色的嘉年华通行证，支持四季配色切换、卡片悬停错层、响应式布局与减少动态效果偏好。软件当前为 Windows 0.1.1，没有独立网页版。
+The original mint, sky-blue and pink Festival Pass now introduces 647 car models and an updatable content catalogue. A perforated ticket archive opens to public releases 0.2.0 and 0.1.1, with dates, bilingual changes and separate downloads. The detail dialog switches between actual 0.2.0 playlist and garage captures. Changing language preserves the selected screenshot, season palette and open journals.
 
-The fourth real project and fifth bilingual Post, with Now milestone 009. A mint, blue and pink festival-pass exhibition with interactive season palettes, layered hover motion and reduced-motion support. The application is Windows-only, version 0.1.1. Maintain `festival-content.js`, `festival-exhibit.js`, `festival.css`, `festival-post.js` and `festival-post.css`. Asset sources are recorded in `dist/assets/projects/festival-toolkit/SOURCES.md`.
+Now milestone 011 records this release with a matching 647-model pass. The September 18 launch entry and 0.1.1 Post remain historical. Native disclosure controls support keyboard interaction; motion respects reduced-motion preferences. Main projects and the separate School Lab remain intact.
+
+Maintain `festival-releases.js` for versions and links, `festival-content.js` for translations, `festival-exhibit.js` for markup, and `festival.css` / `festival-history.css` for the artwork. See the asset `SOURCES.md` for capture provenance. The app is Windows-only; encrypted saves use a third-party online service, and in-game effects remain unverified.

@@ -1,7 +1,7 @@
 import { t, localizeProject, onLanguageChange } from './i18n.js';
 import { projects } from './projects.js';
 import { axiomCard, axiomDetail } from './axiom-exhibit.js';
-import { festivalCard, festivalDetail, changeFestivalSeason } from './festival-exhibit.js';
+import { festivalCard, festivalDetail, changeFestivalSeason, changeFestivalView } from './festival-exhibit.js';
 import { folioCard, folioDetail, changeFolioView } from './folio-exhibit.js';
 
 const waveHeights = [18, 31, 47, 33, 61, 79, 55, 90, 72, 100, 83, 63, 95, 77, 52, 69, 41, 58, 33, 22, 37];
@@ -36,8 +36,10 @@ const dialogContent = document.querySelector('#dialog-content');
 let selectedProjectId = null;
 let selectedFolioView = 'library';
 let selectedFestivalSeason = 'summer';
+let selectedFestivalView = 'playlist';
 
 function renderCards() {
+  const festivalHistoryOpen = grid.querySelector("#festival-history")?.open ?? (location.hash === "#festival-history");
   const historyOpen = grid.querySelector("#folio-history")?.open ?? (location.hash === "#folio-history");
   grid.innerHTML = projects.map(localizeProject).map(project => {
     if(project.id === 'festival-toolkit') return festivalCard(project);
@@ -53,6 +55,7 @@ function renderCards() {
       (isCourt(project)?'<div class="court-launch"><span class="mono">'+t('court.noInstall')+'</span><div><a class="court-source" href="'+safeLink(project.repoUrl)+'" target="_blank" rel="noopener noreferrer">'+t('court.source')+' ↗</a><a class="court-play" href="'+safeLink(project.liveUrl)+'">'+t('court.play')+' <span aria-hidden="true">↗</span></a></div></div>':'')+'</article>';
   }).join('');
   grid.querySelector('#folio-history').open = historyOpen;
+  grid.querySelector('#festival-history').open = festivalHistoryOpen;
   changeFestivalSeason(grid,selectedFestivalSeason);
   document.querySelectorAll('[data-project-count]').forEach(element => { element.textContent=String(projects.length).padStart(2,'0'); });
 }
@@ -64,7 +67,12 @@ function renderDetail(projectId) {
   dialog.classList.toggle('folio-dialog', projectId === 'folio');
   dialog.classList.toggle('axiom-dialog', projectId === 'axiom');
   dialog.classList.toggle('festival-dialog', projectId === 'festival-toolkit');
-  if(projectId === 'festival-toolkit') { dialogContent.innerHTML=festivalDetail(project); return; }
+  if(projectId === 'festival-toolkit') {
+    const historyOpen = dialogContent.querySelector('.festival-history')?.open;
+    dialogContent.innerHTML=festivalDetail(project,selectedFestivalView);
+    dialogContent.querySelector('.festival-history').open=Boolean(historyOpen);
+    return;
+  }
   if(projectId === 'axiom') { dialogContent.innerHTML=axiomDetail(project); return; }
   if(projectId === 'folio') {
     const historyOpen = dialogContent.querySelector(".folio-history")?.open;
@@ -97,6 +105,8 @@ grid.addEventListener('click',event=>{
 });
 dialog.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());
 dialogContent.addEventListener('click',event=>{
+  const festivalButton=event.target.closest('[data-festival-view]');
+  if(festivalButton) { selectedFestivalView=festivalButton.dataset.festivalView; changeFestivalView(dialogContent,selectedFestivalView); return; }
   const button=event.target.closest('[data-folio-view]');
   if(!button) return;
   selectedFolioView=button.dataset.folioView;
@@ -115,4 +125,6 @@ dialog.addEventListener('close',()=>{
   dialog.classList.remove('folio-dialog', 'axiom-dialog', 'festival-dialog');
 });
 
-window.addEventListener("hashchange", () => { if(location.hash === "#folio-history") grid.querySelector("#folio-history").open = true; });
+window.addEventListener('hashchange', () => {
+  if(['#folio-history','#festival-history'].includes(location.hash)) grid.querySelector(location.hash).open=true;
+});
