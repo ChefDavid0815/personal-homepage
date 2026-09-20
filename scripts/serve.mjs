@@ -10,6 +10,20 @@ http.createServer(async (request, response) => {
   try {
     const url = new URL(request.url, `http://127.0.0.1:${port}`);
     const pathname = decodeURIComponent(url.pathname);
+    if (pathname === '/api/usage' || pathname === '/api/usage-stream') {
+      if (request.method !== 'GET') { response.writeHead(405); response.end(); return; }
+      const snapshotPath = path.join(process.env.LOCALAPPDATA || '', 'ChefZC','UsageSync','snapshot.json');
+      const readSnapshot = async () => ({ ...JSON.parse(await readFile(snapshotPath,'utf8')), serverTime:new Date().toISOString() });
+      if (pathname === '/api/usage') {
+        response.writeHead(200,{'Content-Type':'application/json','Cache-Control':'no-store'});
+        response.end(JSON.stringify(await readSnapshot())); return;
+      }
+      response.writeHead(200,{'Content-Type':'text/event-stream','Cache-Control':'no-store'});
+      let last='';
+      const send=async()=>{try{const data=await readSnapshot();if(data.collectedAt!==last){last=data.collectedAt;response.write(`data: ${JSON.stringify(data)}\n\n`);}else response.write(': heartbeat\n\n');}catch{response.write('event: unavailable\ndata: {}\n\n');}};
+      await send(); const interval=setInterval(send,1000);
+      response.on('close',()=>clearInterval(interval)); return;
+    }
     const relative = (pathname.endsWith('/') ? pathname + 'index.html' : pathname).replace(/^\/+/, '');
     const target = path.resolve(root, relative);
     if (target !== root && !target.startsWith(root + path.sep)) { response.writeHead(403); response.end('Forbidden'); return; }

@@ -6,6 +6,10 @@ A personal website for the things I love and make: a dark digital canvas with li
 
 [**Enter my space ↗**](https://chefzc-homepage.vercel.app) · [Gallery](https://chefzc-homepage.vercel.app/gallery.html) · [Posts](https://chefzc-homepage.vercel.app/posts.html) · [Now](https://chefzc-homepage.vercel.app/now.html) · [Game](https://chefzc-homepage.vercel.app/game.html)
 
+## Atelier 1.18 / Pulse
+
+A unified glass navigation, richer materials, calmer reading rhythm and shared motion controls, with every project retaining its own art direction. New [Pulse observatory](https://chefzc-homepage.vercel.app/usage.html): today, 7 days, 30 days and locally recorded lifetime tokens, stacked bars, model distribution and an API-price equivalent. Only numeric aggregates are uploaded. New usage records trigger cloud sync and server events update the page. Precise counts follow model-call usage reports; there is no simulated per-token counter. Offline collectors retain clearly dated records. [Accounting and sync](docs/usage-observatory.md) · [Design and motion](docs/atelier-design.md)
+
 ## Game room / Life in play
 
 A new [Game page](https://chefzc-homepage.vercel.app/game.html): FH6 in lime, cobalt and pink with Tokyo pop art; NBA 2K27 in a glass cover sleeve with animated RGB court lighting. Three official FH6 scenes, three NBA lighting looks, motion controls and bilingual copy. Only verified local records are shown; FH6 collection counts are explicitly historical. Unknown currency balances are omitted. [Data provenance and offline refresh](docs/game-room.md).

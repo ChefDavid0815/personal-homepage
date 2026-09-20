@@ -2,5 +2,13 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
   "buildCommand": "npm run check",
-  "outputDirectory": "dist"
+  "outputDirectory": "dist",
+  "functions": {
+    "api/usage-stream.js": {
+      "maxDuration": 30
+    },
+    "api/usage.js": {
+      "maxDuration": 30
+    }
+  }
 }

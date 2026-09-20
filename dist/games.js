@@ -1,8 +1,9 @@
 import { getLanguage, onLanguageChange, t } from './i18n.js';
 import { gameSnapshot } from './games-data.js';
+import { isMotionPaused, setMotionPaused, systemReducesMotion, onMotionChange } from './motion-state.js';
 
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
-let paused = reducedMotion.matches;
+let paused = isMotionPaused();
 let scene = 0;
 const scenes = [
   { file: 'fh6-keyart.jpg', width: 3840, height: 2160 },
@@ -28,6 +29,7 @@ function setTime(selector, iso) {
   if (iso) element.dateTime = iso;
 }
 function updateMotion() {
+  motionButton.disabled = systemReducesMotion();
   body.dataset.motion = paused || document.hidden ? 'off' : 'on';
   motionButton.setAttribute('aria-pressed', String(paused));
   document.querySelector('#motion-text').textContent = t(paused ? 'game.resume' : 'game.pause');
@@ -78,8 +80,8 @@ document.querySelectorAll('[data-light-choice]').forEach(button => {
     document.querySelectorAll('[data-light-choice]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
   });
 });
-motionButton.addEventListener('click', () => { paused = !paused; updateMotion(); });
-reducedMotion.addEventListener('change', event => { paused = event.matches; updateMotion(); });
+motionButton.addEventListener('click', () => setMotionPaused(!paused));
+onMotionChange(value => { paused = value; updateMotion(); });
 document.addEventListener('visibilitychange', updateMotion);
 
 // Offscreen art sleeps; no continuous JavaScript render loop or remote trackers.

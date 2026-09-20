@@ -1,5 +1,6 @@
 import { t, getLanguage, onLanguageChange } from './i18n.js';
 import { artists, songs, favouriteAlbums } from './music-data.js';
+import { canAnimate, onMotionChange } from './motion-state.js';
 
 const section = document.querySelector('#music');
 if (section) {
@@ -50,7 +51,7 @@ if (section) {
     $('#music-index').textContent=`${String(pool.findIndex(s=>s.id===current.id)+1).padStart(2,'0')} / ${String(pool.length).padStart(2,'0')} — SELECTED TRACK`;
     $('#music-prev').disabled=historyIndex===0;
     const stage=$('.music-cover-stage');
-    if (animate && !motion.matches) {
+    if (animate && canAnimate()) {
       stage.classList.remove('is-changing');
       void stage.offsetWidth;
       stage.classList.add('is-changing');
@@ -91,7 +92,7 @@ if (section) {
 
   function scheduleRotation() {
     clearTimeout(timer);
-    if (!rotationEnabled || !isVisible || pointerInside || document.hidden || section.contains(document.activeElement) || playingSelection) return;
+    if (!canAnimate() || !rotationEnabled || !isVisible || pointerInside || section.contains(document.activeElement) || playingSelection) return;
     timer=setTimeout(()=>selectSong(chooseRandom()),12000);
   }
 
@@ -108,6 +109,8 @@ if (section) {
     (key==='all'?$('#music-all'):$(`[data-artist="${key}"]`)).focus({preventScroll:true});
     $('#music-library').open=true;
   }
+
+  onMotionChange(scheduleRotation);
 
   function renderPlayerLabels() {
     if (!playingSelection) return;
@@ -141,7 +144,7 @@ if (section) {
     if(!button) return;
     selectSong(songs.find(s=>s.id===Number(button.dataset.song)),{announce:true});
     $('#music-listen').focus({preventScroll:true});
-    $('.music-feature').scrollIntoView({behavior:motion.matches?'instant':'smooth',block:'center'});
+    $('.music-feature').scrollIntoView({behavior:canAnimate()?'smooth':'instant',block:'center'});
   });
   $('#music-search').addEventListener('input',()=>{page=0;renderLibrary();});
   $('#music-page-prev').addEventListener('click',()=>{page--;renderLibrary();});
@@ -174,7 +177,7 @@ if (section) {
     },8000);
     scheduleRotation();
     $('#music-close').focus({preventScroll:true});
-    $('#music-player').scrollIntoView({behavior:motion.matches?'instant':'smooth',block:'center'});
+    $('#music-player').scrollIntoView({behavior:canAnimate()?'smooth':'instant',block:'center'});
   });
   $('#music-close').addEventListener('click',()=>{
     clearTimeout(playerTimeout);

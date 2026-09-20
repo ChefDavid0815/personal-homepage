@@ -4,6 +4,10 @@
 
 个人介绍与项目展示网站：深色数码风，荧光绿、紫色、电光蓝与橙色点缀。
 
+## Atelier 1.18 / Pulse
+
+全站采用统一的玻璃导航、光影材质、阅读层次和共享动效开关，同时保留每个项目自己的美术风格。新增 [Pulse 用量页](https://chefzc-homepage.vercel.app/usage.html)：今日、近 7 天、近 30 天与本机可追溯累计 Token，堆叠柱状图、模型分布及等额 API 价格。只上传数字汇总；新用量记录产生后自动同步，云端推送到网页。精确值以每次模型调用的上报为准，不模拟逐 Token 数字；电脑离线时标明最后记录。[统计与同步说明](docs/usage-observatory.md) · [设计与动效](docs/atelier-design.md)
+
 ## Game / 热爱的另一面
 
 新的[游戏房间](https://chefzc-homepage.vercel.app/game.html)：FH6 的绿、蓝、粉东京波普展区，与 NBA 2K27 的玻璃封套和 RGB 霓虹球场。支持三张官方画面切换、三种灯光、动效暂停和中英文切换。只展示已核实的本地记录，FH6 收藏数量明确标注为历史快照；未知余额不显示。[数据来源与本地刷新](docs/game-room.md)。

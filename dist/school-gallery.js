@@ -1,4 +1,5 @@
 import { getLanguage, onLanguageChange } from './i18n.js';
+import { isMotionPaused, setMotionPaused, systemReducesMotion, onMotionChange } from './motion-state.js';
 import { wisLinks, wisAsset, wisMark, wisAtmosphere, wisCopy as c } from './wis-exhibit.js';
 
 const root = document.querySelector('#school-exhibition');
@@ -8,7 +9,7 @@ const states = [
   { id:'unknown', number:'09', title:['传感器失效','Sensor uncertainty'], note:['读数不可靠时，先停下来，而不是猜测前路。','When the signal is uncertain, stop before making an assumption.'], signal:['信号不确定 · 停下确认','Signal uncertain · Stop and check'], wave:'M0 24H14V8H61V24H81V8H128V24H148V8H195V24H215V8H250', label:['感知状态','SENSOR STATE'], value:'?', unit:['未知 · 模拟','Unknown · mock'] }
 ];
 let active = 'path';
-let motionPaused = false;
+let motionPaused = isMotionPaused();
 const local = pair => pair[getLanguage() === 'en' ? 1 : 0];
 
 function scanDiagram() {
@@ -41,6 +42,7 @@ function render() {
 function updateMotion(){
   root.querySelector('.wis-exhibit').classList.toggle('wis-motion-paused',motionPaused);
   const button=root.querySelector('[data-wis-motion]');
+  button.disabled=systemReducesMotion();
   button.setAttribute('aria-pressed',String(motionPaused));
   button.textContent=motionPaused?c('继续环境动效','Resume motion'):c('暂停环境动效','Pause motion');
 }
@@ -66,7 +68,7 @@ function renderDialog() {
 }
 let opener=null;
 root.addEventListener('click',event=>{
-  if(event.target.closest('[data-wis-motion]')){motionPaused=!motionPaused;updateMotion();}
+  if(event.target.closest('[data-wis-motion]')) setMotionPaused(!motionPaused);
   const scene=event.target.closest('[data-scene-choice]');
   if(scene){active=scene.dataset.sceneChoice;updateScene();}
   const enlarge=event.target.closest('[data-wis-enlarge]');
@@ -77,3 +79,4 @@ dialog.addEventListener('click',event=>{if(event.target===dialog){const r=dialog
 dialog.addEventListener('close',()=>{document.body.classList.remove('dialog-open');if(opener?.isConnected)opener.focus();else root.querySelector('[data-wis-enlarge]')?.focus();});
 render();
 onLanguageChange(render);
+onMotionChange(value => { motionPaused=value; updateMotion(); });

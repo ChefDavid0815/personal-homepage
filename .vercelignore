@@ -1,0 +1,8 @@
+.git
+.env*
+.asset-work
+.game-work
+node_modules
+**/__pycache__
+**/*.pyc
+**/*.log

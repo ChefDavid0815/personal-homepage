@@ -10,6 +10,7 @@ import { festivalUpdateMessages } from './festival-releases.js';
 // Authored translations only. HTML values preserve the site's existing visual accents.
 export const messages = {
   'nav.label': ['主导航', 'Main navigation'],
+  'nav.usage': ['用量', 'Pulse'],
   'nav.posts': ['随笔', 'Posts'],
   'nav.now': ['近况', 'Now'],
   'now.title': ['Now — ChefZC 的近况', 'Now — ChefZC'],
@@ -158,11 +159,13 @@ const commonBindings = [
   ['.page-nav a[href="./game.html"]', 'nav.game'],
   ['.page-nav a[href="./now.html"]', 'nav.now'],
   ['.page-nav a[href="./posts.html"]', 'nav.posts'],
+  ['.page-nav a[href="./usage.html"]', 'nav.usage'],
   ['.page-nav a[href="./profile.html"]', 'nav.profile', 'html'], ['.page-nav a[href="./profile.html"]', 'nav.profileLabel', 'aria-label'],
   ['.page-nav a[href="./gallery.html"]', 'nav.gallery', 'html'], ['.edition', 'nav.edition', 'html'],
   ['.language-switch', 'language.label', 'aria-label'], ['.site-footer > .mono', 'footer.note'], ['.back-top', 'footer.top', 'html']
 ];
 const bindings = {
+  usage: [],
   game: [['title', 'game.title'], ['meta[name="description"]', 'game.meta', 'content']],
   models: [['title','models.title'], ['meta[name="description"]','models.meta','content']],
   school: [['title','school.title'], ['meta[name="description"]','school.meta','content']],
@@ -206,7 +209,7 @@ const bindings = {
 
 export function applyTranslations() {
   document.documentElement.lang = language === 'en' ? 'en' : 'zh-CN';
-  const page = ['game', 'models', 'school', 'gallery', 'profile', 'now', 'posts'].find(name => document.body.classList.contains(`${name}-page`)) || 'profile';
+  const page = ['usage', 'game', 'models', 'school', 'gallery', 'profile', 'now', 'posts'].find(name => document.body.classList.contains(`${name}-page`)) || 'profile';
   for (const [selector, key, mode] of [...commonBindings, ...bindings[page]]) {
     for (const element of document.querySelectorAll(selector)) {
       if (mode === 'html') element.innerHTML = t(key);

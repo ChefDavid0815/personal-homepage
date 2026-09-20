@@ -1,13 +1,15 @@
 import { t, onLanguageChange } from './i18n.js';
+import { isMotionPaused, setMotionPaused, systemReducesMotion, onMotionChange } from './motion-state.js';
 
 const reduced = matchMedia('(prefers-reduced-motion: reduce)');
 const motionButton = document.querySelector('[data-pop-motion]');
-let paused = reduced.matches;
+let paused = isMotionPaused();
 function renderCopy() {
   document.querySelectorAll('[data-model-html]').forEach(el => el.innerHTML = t(el.dataset.modelHtml));
   motionButton.querySelector('[data-pop-motion-label]').textContent = t(paused ? 'models.motionOff' : 'models.motionOn');
 }
 function setMotion(value) {
+  motionButton.disabled = systemReducesMotion();
   paused = value;
   document.body.dataset.motion = paused ? 'paused' : 'running';
   motionButton.setAttribute('aria-pressed', String(paused));
@@ -16,8 +18,8 @@ function setMotion(value) {
 }
 setMotion(paused);
 onLanguageChange(renderCopy);
-motionButton.addEventListener('click', () => setMotion(!paused));
-reduced.addEventListener('change', event => { if (event.matches) setMotion(true); });
+motionButton.addEventListener('click', () => setMotionPaused(!paused));
+onMotionChange(setMotion);
 
 const tabs = [...document.querySelectorAll('[data-view]')];
 function selectView(tab, focus = false) {
