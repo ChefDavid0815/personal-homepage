@@ -1,0 +1,30 @@
+[
+  {
+    "file": "fh6-keyart.jpg",
+    "url": "https://cdn.forza.net/strapi-uploads/assets/Forza_Horizon_6_3840x2160_Hori_Final_ac7b0063ff.jpg",
+    "source": "https://forza.net/forzahorizon6",
+    "bytes": 1326907,
+    "sha256": "401c31e15cd6f1e53cdd4a92e4b1a75e2b84df8be2a9fbb98a5154ce55bbc312"
+  },
+  {
+    "file": "fh6-tokyo.webp",
+    "url": "https://cdn.forza.net/strapi-uploads/assets/large_Forza_Horizon6_Pre_Order_01_City_Night_Race_16x9_f581404a18.webp",
+    "source": "https://forza.net/forzahorizon6",
+    "bytes": 66892,
+    "sha256": "e97a147de138610d9c4cfb5b493f9f6e158c03464a3dcb0e1ee43a1d043cd791"
+  },
+  {
+    "file": "fh6-drive.webp",
+    "url": "https://cdn.forza.net/strapi-uploads/assets/large_Forza_Horizon6_Pre_Order_12_Cover_Car_City_16x9_b70ab406b0.webp",
+    "source": "https://forza.net/forzahorizon6",
+    "bytes": 33608,
+    "sha256": "4b8ab83223762f2bc92724f6d56850ab77224de4b22b8c83cc2a426caf474d10"
+  },
+  {
+    "file": "nba2k27-cover.jpg",
+    "url": "https://cdn.prgloo.com/media/5ec47e5363614dfbb00d11049b1f0d3b.jpg?width=1200&height=1800",
+    "source": "https://newsroom-anz.2k.com/resources/nba-2k27-standard-edition",
+    "bytes": 251084,
+    "sha256": "b61ce9f5440195ee4bc587e303f86a74f08c7ffda9ae3a40b85f6b86906f0627"
+  }
+]

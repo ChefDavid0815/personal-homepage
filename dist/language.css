@@ -23,8 +23,8 @@ html:lang(en) .detail-facts dd { overflow-wrap:anywhere; }
   .site-header { display:grid; grid-template-columns:1fr auto; height:auto; padding:18px 0 14px; gap:14px 15px; }
   .site-header .brand { grid-column:1; grid-row:1; width:fit-content; }
   .header-tools { grid-column:2; grid-row:1; }
-  .site-header .page-nav { grid-column:1/-1; grid-row:2; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:9px; }
-  .page-nav .nav-link { text-align:center; padding:11px 9px; }
+  .site-header .page-nav { grid-column:1/-1; grid-row:2; display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:5px; }
+  .page-nav .nav-link { text-align:center; padding:11px 5px; font-size:12px; }
   .page-nav .nav-long { display:inline; }
   .language-switch button { min-width:37px; }
   html:lang(en) .profile-hero { grid-template-columns:1fr; }

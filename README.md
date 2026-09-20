@@ -4,7 +4,11 @@
 
 A personal website for the things I love and make: a dark digital canvas with lime, electric blue, violet and warm accents. Each real project gets its own art direction: a midnight basketball court for **NBA After Hours**, a warm paper journal for **Folio**, a lime/cobalt scientific exhibition for **AXIOM**, and a mint/blue/pink festival pass for **Festival Toolkit**.
 
-[**Enter my space ↗**](https://chefzc-homepage.vercel.app) · [Gallery](https://chefzc-homepage.vercel.app/gallery.html) · [Posts](https://chefzc-homepage.vercel.app/posts.html) · [Now](https://chefzc-homepage.vercel.app/now.html)
+[**Enter my space ↗**](https://chefzc-homepage.vercel.app) · [Gallery](https://chefzc-homepage.vercel.app/gallery.html) · [Posts](https://chefzc-homepage.vercel.app/posts.html) · [Now](https://chefzc-homepage.vercel.app/now.html) · [Game](https://chefzc-homepage.vercel.app/game.html)
+
+## Game room / Life in play
+
+A new [Game page](https://chefzc-homepage.vercel.app/game.html): FH6 in lime, cobalt and pink with Tokyo pop art; NBA 2K27 in a glass cover sleeve with animated RGB court lighting. Three official FH6 scenes, three NBA lighting looks, motion controls and bilingual copy. Only verified local records are shown; FH6 collection counts are explicitly historical. Unknown currency balances are omitted. [Data provenance and offline refresh](docs/game-room.md).
 
 ## The collection
 
@@ -60,7 +64,7 @@ npm run dev       # http://127.0.0.1:4173
 npm run check     # JavaScript syntax checks
 ```
 
-`dist/` is the complete website. `vercel.json` runs `npm run check` and deploys that directory. The website version **1.13.0** is separate from Folio's **1.1.0**.
+`dist/` is the complete website. `vercel.json` runs `npm run check` and deploys that directory. The website version **1.17.0** is separate from Folio's **1.1.0**.
 
 ## Maintain the space
 

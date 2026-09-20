@@ -1,3 +1,4 @@
+import { gameMessages } from './games-content.js';
 import { modelMessages } from './models-content.js';
 import { personalMessages } from './personal-content.js';
 import { musicMessages } from './music-content.js';
@@ -138,7 +139,7 @@ export const messages = {
   'profile.enterGallery': ['进入项目陈列室 <span aria-hidden="true">→</span>', 'Step into the collection <span aria-hidden="true">→</span>']
 };
 
-Object.assign(messages, personalMessages, musicMessages, folioMessages, axiomMessages, festivalMessages, wisMessages, festivalUpdateMessages, modelMessages);
+Object.assign(messages, personalMessages, musicMessages, folioMessages, axiomMessages, festivalMessages, wisMessages, festivalUpdateMessages, modelMessages, gameMessages);
 const storageKey = 'chefzc.language';
 let language = 'zh';
 try { if (globalThis.localStorage?.getItem(storageKey) === 'en') language = 'en'; } catch { /* Storage may be disabled; the switch still works. */ }
@@ -154,6 +155,7 @@ export function onLanguageChange(listener) { listeners.add(listener); return () 
 
 const commonBindings = [
   ['nav.page-nav', 'nav.label', 'aria-label'], ['.brand', 'nav.home', 'aria-label'],
+  ['.page-nav a[href="./game.html"]', 'nav.game'],
   ['.page-nav a[href="./now.html"]', 'nav.now'],
   ['.page-nav a[href="./posts.html"]', 'nav.posts'],
   ['.page-nav a[href="./profile.html"]', 'nav.profile', 'html'], ['.page-nav a[href="./profile.html"]', 'nav.profileLabel', 'aria-label'],
@@ -161,6 +163,7 @@ const commonBindings = [
   ['.language-switch', 'language.label', 'aria-label'], ['.site-footer > .mono', 'footer.note'], ['.back-top', 'footer.top', 'html']
 ];
 const bindings = {
+  game: [['title', 'game.title'], ['meta[name="description"]', 'game.meta', 'content']],
   models: [['title','models.title'], ['meta[name="description"]','models.meta','content']],
   school: [['title','school.title'], ['meta[name="description"]','school.meta','content']],
   posts: [],
@@ -203,7 +206,7 @@ const bindings = {
 
 export function applyTranslations() {
   document.documentElement.lang = language === 'en' ? 'en' : 'zh-CN';
-  const page = ['models', 'school', 'gallery', 'profile', 'now', 'posts'].find(name => document.body.classList.contains(`${name}-page`)) || 'profile';
+  const page = ['game', 'models', 'school', 'gallery', 'profile', 'now', 'posts'].find(name => document.body.classList.contains(`${name}-page`)) || 'profile';
   for (const [selector, key, mode] of [...commonBindings, ...bindings[page]]) {
     for (const element of document.querySelectorAll(selector)) {
       if (mode === 'html') element.innerHTML = t(key);
