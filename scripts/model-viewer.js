@@ -16,7 +16,7 @@ const say = key => labels[key][document.documentElement.lang === 'en' ? 1 : 0];
 function announce(v, key) { v.statusKey = key; v.status.textContent = say(key); }
 
 async function openCase(el) {
-  const v = { el, status: el.querySelector('.model-status'), running: !reduced.matches, visible: true, frame: 0, ready: false };
+  const v = { el, status: el.querySelector('.model-status'), running: !reduced.matches && document.body.dataset.motion !== 'paused', visible: true, frame: 0, ready: false };
   viewers.add(v);
   announce(v, 'loading');
   try {
@@ -57,22 +57,35 @@ async function openCase(el) {
       if (index === 0) { light.castShadow = true; light.shadow.mapSize.set(1024, 1024); Object.assign(light.shadow.camera, { left: -4, right: 4, top: 4, bottom: -4, near: .1, far: 25 }); light.shadow.bias = -.0002; light.shadow.normalBias = .008; }
       scene.add(light);
     });
-    const baseMat = new THREE.MeshPhysicalMaterial({ color: 0x061124, metalness: .25, roughness: .4, clearcoat: .12, envMapIntensity: .04 });
-    const gold = new THREE.MeshStandardMaterial({ color: 0xcda654, metalness: .8, roughness: .25 });
+    const baseMat = new THREE.MeshStandardMaterial({ color: 0x0b1661, metalness: .1, roughness: .55, envMapIntensity: .04 });
+    const gold = new THREE.MeshStandardMaterial({ color: 0xffdd38, metalness: .55, roughness: .25 });
+    const popPink = new THREE.MeshBasicMaterial({ color: tall ? 0xff4d91 : 0xffe642 });
     const glass = new THREE.MeshPhysicalMaterial({ color: 0xbdd7ff, metalness: .05, roughness: .06, transmission: 0, ior: 1.45, transparent: true, opacity: .022, depthWrite: false, side: THREE.DoubleSide, clearcoat: .3, envMapIntensity: .12 });
     function box(w, h, d, x, y, z, material) {
       const m = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), material); m.position.set(x, y, z); scene.add(m); return m;
     }
     box(4.2, .17, 3.5, 0, .03, 0, baseMat).receiveShadow = true;
     box(4.23, .025, 3.53, 0, -.045, 0, gold);
+    box(4.28, .045, 3.58, 0, -.11, 0, popPink);
     [-2.06, 2.06].forEach(x => [-1.71, 1.71].forEach(z => box(.012, height, .012, x, height / 2 + .12, z, gold)));
     [-1.71, 1.71].forEach(z => box(4.12, .012, .012, 0, height + .12, z, gold));
     [-2.06, 2.06].forEach(x => box(.012, .012, 3.42, x, height + .12, 0, gold));
     [-2.05, 2.05].forEach(x => box(.012, height, 3.4, x, height / 2 + .12, 0, glass));
     [-1.7, 1.7].forEach(z => box(4.1, height, .012, 0, height / 2 + .12, z, glass));
     box(4.1, .012, 3.4, 0, height + .12, 0, glass);
-    const ring = new THREE.Mesh(new THREE.TorusGeometry(2.8, .009, 5, 100), new THREE.MeshBasicMaterial({ color: 0x416bce, transparent: true, opacity: .5 }));
+    const ring = new THREE.Mesh(new THREE.TorusGeometry(2.8, .016, 5, 100), new THREE.MeshBasicMaterial({ color: tall ? 0xffe642 : 0xff4d91, transparent: true, opacity: .8 }));
     ring.rotation.x = -Math.PI / 2; ring.position.y = -.13; scene.add(ring);
+    // A small collectible basketball gives the display a moving silhouette.
+    const basketball = new THREE.Group();
+    basketball.add(new THREE.Mesh(new THREE.SphereGeometry(.19, 24, 16), new THREE.MeshStandardMaterial({ color: 0xff873b, roughness: .72 })));
+    const seamMaterial = new THREE.MeshBasicMaterial({ color: 0x141325 });
+    for (let i = 0; i < 3; i++) {
+      const seam = new THREE.Mesh(new THREE.TorusGeometry(.19, .008, 4, 40), seamMaterial);
+      if (i === 1) seam.rotation.y = Math.PI / 2;
+      if (i === 2) seam.rotation.x = Math.PI / 2;
+      basketball.add(seam);
+    }
+    basketball.position.set(2.42, .26, .65); scene.add(basketball);
     const draco = new DRACOLoader().setDecoderPath('./assets/models/draco/').setWorkerLimit(1);
     const loader = new GLTFLoader().setDRACOLoader(draco);
     v.draco = draco;
@@ -111,11 +124,24 @@ async function openCase(el) {
     const pause = el.querySelector('[data-control="pause"]');
     function updatePause() { pause.textContent = say(v.running ? 'pause' : 'play'); pause.setAttribute('aria-pressed', String(!v.running)); }
     v.updatePause = updatePause; updatePause();
-    function paint() { controls.update(); renderer.render(scene, camera); }
-    function loop() {
+    let previousTime = 0;
+    let artTime = 0;
+    function paint(time) {
+      const delta = previousTime ? Math.min((time - previousTime) / 1000, .05) : 0;
+      previousTime = time;
+      if (v.running) {
+        artTime += delta;
+        basketball.position.y = .3 + Math.sin(artTime * 1.4) * .09;
+        basketball.rotation.y = artTime * .24;
+        basketball.rotation.z = Math.sin(artTime * .6) * .18;
+      }
+      controls.update(delta);
+      renderer.render(scene, camera);
+    }
+    function loop(time) {
       v.frame = 0;
       if (!v.visible || document.hidden || !v.ready) return;
-      paint();
+      paint(time);
       if (v.running || v.interacting || v.settling > 0) { v.settling = Math.max(0, (v.settling || 0) - 1); v.frame = requestAnimationFrame(loop); }
     }
     v.wake = () => { if (!v.frame) v.frame = requestAnimationFrame(loop); };
@@ -139,6 +165,14 @@ async function openCase(el) {
 const lazy = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { lazy.unobserve(entry.target); openCase(entry.target); } }), { rootMargin: '120px' });
 document.querySelectorAll('.model-stage').forEach(el => lazy.observe(el));
 document.addEventListener('visibilitychange', () => { if (!document.hidden) viewers.forEach(v => v.wake?.()); });
+document.addEventListener('courtside:motion', event => {
+  viewers.forEach(v => {
+    v.running = !event.detail.paused;
+    if (v.controls) v.controls.autoRotate = v.running;
+    v.updatePause?.();
+    v.wake?.();
+  });
+});
 new MutationObserver(() => viewers.forEach(v => { announce(v, v.statusKey); v.updatePause?.(); v.renderer?.domElement.setAttribute('aria-label', `${v.el.closest('.model-exhibit').querySelector('h2').textContent} · 3D`); })).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
 reduced.addEventListener('change', () => { if (reduced.matches) viewers.forEach(v => { v.running = false; if (v.controls) v.controls.autoRotate = false; v.updatePause?.(); }); });
 window.addEventListener('pagehide', event => { if (event.persisted) return; viewers.forEach(v => { cancelAnimationFrame(v.frame); v.resize?.disconnect(); v.visibility?.disconnect(); v.controls?.dispose(); v.draco?.dispose(); v.scene?.traverse(o => { o.geometry?.dispose(); const materials = Array.isArray(o.material) ? o.material : o.material ? [o.material] : []; materials.forEach(m => { Object.values(m).forEach(x => { if (x?.isTexture) x.dispose(); }); m.dispose(); }); }); v.env?.dispose(); v.renderer?.dispose(); }); });

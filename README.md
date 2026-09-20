@@ -112,3 +112,5 @@ Now adds milestone 012. The seventh bilingual Post shares the glass artwork. All
 Browser display copies have simplified materials and seating; the native assets, import evidence and limitations are documented in their repositories. No reference library is published. See [artwork provenance](dist/assets/models/ARTWORK.md).
 
 The checked-in viewer bundle works without a build. To modify `scripts/model-viewer.js`, run `npm ci`, `npm run build:models`, and `npm run check`. Build dependencies are pinned; Vercel continues to serve `dist`.
+
+The Courtside **Pop Edition** uses cobalt, yellow and hot pink, comic halftones, offset printing shadows and collectible-card layouts across the 3D exhibition, Now and its journal entry. Motion includes floating artwork, a moving type strip, scroll reveals, pointer parallax and a small 3D basketball. The motion switch pauses decorative animation and turntables; reduced-motion preferences start with motion paused.

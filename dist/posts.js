@@ -19,7 +19,7 @@ const minutes = item => {
 const readTime = item => copy(`约 ${minutes(item)} 分钟`, `${minutes(item)} MIN READ`);
 
 function artwork(item) {
-  if (item.theme === 'glass') return `<div class="post-art post-art--glass model-micro-art" aria-hidden="true"><img src="./assets/models/arena-case.png" width="1600" height="1100" alt="" loading="lazy"><span>THE COURTSIDE COLLECTION / 03</span><strong>LOVE.<br>IN <i>3D.</i></strong><span>GLASS / BLUE / GOLD · CHEFZC ATELIER</span></div>`;
+  if (item.theme === 'glass') return `<div class="post-art post-art--glass model-micro-art" aria-hidden="true"><img src="./assets/models/arena-case.png" width="1600" height="1100" alt="" loading="lazy"><span>THE COURTSIDE COLLECTION / 03</span><strong>LOVE!<br>IN <i>3D.</i></strong><b class="pop-art-badge">POP!</b><span>COURTSIDE CULTURE / THE POP EDITION</span></div>`;
   if (item.theme === 'wis') return wisPostArt();
   if (item.theme === 'festival') return `<div class="post-art post-art--festival" aria-hidden="true"><div class="post-art-top"><span>FESTIVAL NOTES / 005</span><span>VERSION 0.1.1</span></div><div class="festival-post-word">FESTIVAL<br><span>TOOLKIT.</span></div><div class="festival-post-ticket">${festivalTicket()}</div><span class="post-art-foot">YOUR FESTIVAL. YOUR WAY.</span></div>`;
   if (item.theme === 'axiom') return `<div class="post-art post-art--axiom" aria-hidden="true"><div class="post-art-top"><span>LAB NOTES / 004</span><span>VERSION 1.0</span></div><div class="axiom-post-word">AXIOM<span>↗</span></div><div class="axiom-post-plate"><small>FIGURE 01 / HOOKE’S LAW</small><img src="${item.cover}" width="400" height="280" alt=""></div><span class="post-art-foot">FROM DATA. TO DISCOVERY.</span></div>`;

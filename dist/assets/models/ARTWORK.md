@@ -21,3 +21,7 @@ Two independent works, three real model views: Chase Center (interior/exterior) 
 - Draco decoder: Apache 2.0; bundled from Three.js 0.180.0, see `DRACO-LICENSE.txt`.
 
 No source reference-photo libraries, research, cache folders, credentials or process backups are published.
+
+## Pop Edition / 波普版
+
+The web exhibition, Now and journal now use authored CSS/SVG pop graphics: cobalt, yellow, hot pink, halftones and print shadows. Hero and journal imagery still uses the actual Blender renders above. The animated basketball is procedural Three.js geometry. Repository headers are original vector typography and arena/basketball illustrations; they do not replace the downloadable model geometry.

@@ -138,3 +138,5 @@ Now 增加第 012 个节点，Posts 新增第七篇中英手记，并整体按�
 模型原型和网页显示副本有区别：内景屋顶与座椅密度做了展示优化，人物眼部材质为网页适配。完整建模文件和验证边界见各仓库。未包含参考资料库。[展柜素材说明](dist/assets/models/ARTWORK.md)。
 
 静态部署不需要重新打包 viewer；修改 `scripts/model-viewer.js` 后运行 `npm ci` 与 `npm run build:models`，再运行 `npm run check`。新增依赖仅用于本地重建 bundle，Vercel 仍发布 `dist`。
+
+Courtside **篮球波普版**以钴蓝、亮黄、玫红、漫画网点和错版阴影统一建模展厅、Now 与制作手记。新增悬浮画框、流动字带、滚动入场、指针视差和 3D 篮球。动效总开关可暂停装饰动画与转台，减少动态效果偏好默认暂停。
