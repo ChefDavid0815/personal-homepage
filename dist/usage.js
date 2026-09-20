@@ -17,7 +17,7 @@ const period=()=>({today:c('今日','Today'),'7d':c('近 7 天','7 days'),'30d':
 function labels() {
   document.title=c('Pulse — ChefZC 的 Codex 用量','Pulse — ChefZC’s Codex usage');
   document.querySelector('.skip-link').textContent=c('跳到用量统计','Skip to usage');
-  $('usage-intro').innerHTML=c('让每一次探索，<br><span>留下刻度。</span>','Every token.<br><span>A little progress.</span>');
+  $('usage-intro').innerHTML=c('让每一次探索，<br><span>留下刻度。</span>','Every token.<br> <span>A little progress.</span>');
   const ranges={today:c('今日','Today'),'7d':c('近 7 天','7 days'),'30d':c('近 30 天','30 days'),lifetime:c('累计','Lifetime')};
   document.querySelectorAll('[data-range]').forEach(b=>{b.textContent=ranges[b.dataset.range];b.setAttribute('aria-pressed',String(range===b.dataset.range));});
   $('usage-ranges').setAttribute('aria-label',c('统计时间范围','Usage period'));
@@ -70,7 +70,7 @@ function render(force=false) {
   $('usage-chart-detail').textContent=c('悬停或选中柱形，查看输入与输出的分布。','Hover or select a bar to explore the token mix.');
   let angle=0;
   const gradient=models.map((m,i)=>{const start=angle;angle+=m.total/(total.total||1)*360;return `${colors[i%colors.length]} ${start}deg ${angle}deg`;}).join(',')||'#304137 0deg 360deg';
-  $('usage-models').innerHTML=`<div class="usage-orbit" style="--model-gradient:conic-gradient(${gradient})"><div><strong>${models.length}</strong><span>${c('模型','MODELS')}</span></div></div><div class="usage-model-list">${models.length?models.map((m,i)=>`<div><i style="background:${colors[i%colors.length]}"></i><span><b>${esc(names[m.model]||m.model)}</b><small>${number(m.total)} tokens</small></span><strong>${(m.total/(total.total||1)*100).toFixed(1)}%</strong></div>`).join(''):`<p>${c('这个时段暂无记录。','No records in this period.')}</p>`}</div>`;
+  $('usage-models').innerHTML=`<div class="usage-orbit" style="--model-gradient:conic-gradient(${gradient})"><div><strong>${models.length}</strong><span>${c('模型','MODELS')}</span></div></div><div class="usage-model-list">${models.length?models.map((m,i)=>`<div><i style="background:${colors[i%colors.length]}"></i><span><b>${esc(names[m.model]||m.model)}</b><small>${number(m.total)} tokens</small></span><strong>${(m.total/(total.total||1)*100).toFixed(2)}%</strong></div>`).join(''):`<p>${c('这个时段暂无记录。','No records in this period.')}</p>`}</div>`;
   const categories=[['input',c('普通输入','Uncached input'),total.input-total.cached-total.write],['cached',c('缓存读取','Cache reads'),total.cached],['write',c('缓存写入','Cache writes'),total.write],['output',c('输出 · 含推理','Output · reasoning included'),total.output]];
   $('usage-cost').innerHTML=`<div class="usage-cost-number">${money(total.cost)}<span>${c('等额估算','EQUIVALENT')}</span></div><div class="usage-flow">${categories.map(([id,,n])=>`<i class="is-${id}" style="flex:${n}"></i>`).join('')}</div><dl class="usage-cost-breakdown">${categories.filter(([, ,n])=>n>0).map(([id,label,n])=>`<div><dt><i class="is-${id}"></i>${label}</dt><dd>${short(n)} <small>tokens</small></dd></div>`).join('')}</dl><p class="usage-cost-caption">${total.unpriced?short(total.unpriced)+' '+c('个 Token 缺少可靠价格，未纳入金额。','tokens lack a reliable price and are excluded.'):c('为好奇心记账。这里只计算 Token 的等额价格。','A ledger for curiosity. Token-equivalent pricing only.')}</p>`;
   const rateModels=models.filter(m=>prices[m.model]);
@@ -83,7 +83,7 @@ function detail(index) {
   $('usage-chart-detail').textContent=b.covered?`${date(b.time,range==='today'?{hour:'2-digit',minute:'2-digit'}:{})} · ${c('输入','Input')} ${short(b.input-b.cached-b.write)} / ${c('缓存','Cached')} ${short(b.cached)} / ${c('输出','Output')} ${short(b.output)} · ${number(b.total)} tokens`:c('该日期早于最早可追溯记录，无法统计。','This date precedes the earliest available record.');
 }
 $('usage-chart').addEventListener('pointerover',event=>{const b=event.target.closest('[data-bin]');if(b)detail(Number(b.dataset.bin));});
-$('usage-chart').addEventListener('focusin',event=>{if(event.target.dataset.bin)detail(Number(event.target.dataset.bin));});
+  $('usage-chart').addEventListener('focusin',event=>{if(event.target.dataset.bin!==undefined)detail(Number(event.target.dataset.bin));});
 $('usage-chart').addEventListener('click',event=>{const b=event.target.closest('[data-bin]');if(b)detail(Number(b.dataset.bin));});
 $('usage-chart').addEventListener('keydown',event=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;const i=Number(event.target.dataset.bin);if(!Number.isInteger(i))return;event.preventDefault();const end=selection.bins.length-1;const next=event.key==='Home'?0:event.key==='End'?end:Math.max(0,Math.min(end,i+(event.key==='ArrowRight'?1:-1)));document.querySelector(`[data-bin="${next}"]`)?.focus();});
 $('usage-ranges').addEventListener('click',event=>{const b=event.target.closest('[data-range]');if(!b)return;range=b.dataset.range;labels();});

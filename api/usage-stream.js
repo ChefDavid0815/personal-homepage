@@ -9,7 +9,7 @@ export default async function handler(request,response) {
   response.setHeader('X-Accel-Buffering','no');
   response.flushHeaders();
   response.write('retry: 1000\n\n');
-  let closed=false, etag;
+  let closed=false, etag, lastSent;
   response.on('close',()=>{closed=true;});
   const until=Date.now()+23000;
   try {
@@ -19,7 +19,10 @@ export default async function handler(request,response) {
       if (blob?.statusCode===200) {
         const data=JSON.parse(await new Response(blob.stream).text());
         etag=blob.blob.etag;
-        response.write(`data: ${JSON.stringify({...data,serverTime:new Date().toISOString()})}\n\n`);
+        if (data.collectedAt !== lastSent) {
+          lastSent=data.collectedAt;
+          response.write(`data: ${JSON.stringify({...data,serverTime:new Date().toISOString()})}\n\n`);
+        } else response.write(': heartbeat\n\n');
       } else response.write(': heartbeat\n\n');
       await delay(1000);
     }
