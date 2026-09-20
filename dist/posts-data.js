@@ -1,8 +1,10 @@
+import { modelsPost } from './models-post.js';
 import { wisPost } from './wis-post.js';
 // Editorial copy is stored as text. Both languages share the same images and links.
 import { axiomPost } from './axiom-post.js';
 import { festivalPost } from './festival-post.js';
 export const posts = [
+  modelsPost,
   wisPost,
   festivalPost,
   axiomPost,
@@ -105,4 +107,4 @@ export const posts = [
     },
     link: 'https://github.com/ChefDavid0815/folio-mod-studio/releases/tag/v1.0.0'
   }
-];
+].sort((a, b) => b.date.localeCompare(a.date) || Number(b.number) - Number(a.number));

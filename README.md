@@ -12,9 +12,10 @@ A personal website for the things I love and make: a dark digital canvas with li
 | :--- | :--- |
 | **Personal Profile** | ChefZC, a Year 12 IB student at GEMS Wellington International School in Dubai. Basketball, motorsport, AI, art, devices, milestones and public contact links. Only the city is shown as a location. |
 | **Gallery** | Four real projects: Festival Toolkit 0.2.0, AXIOM 1.0, Folio 1.1 and NBA After Hours. Actual application/game screenshots, independent visual identities, project dialogs, source and download/play links. |
+| **3D collection** | Two independent works: Chase Center (switchable interior/exterior cases) and a Curry head study. Real, draggable glass cases with free modeling downloads. |
 | **School Lab** | A separate `school-gallery.html` collection for school work. WIS TECH TANK · STRIDE has a woodland exhibition, three illustrated scene states, a real interface capture, web/source links and a simulation journal. |
-| **Now** | A chronological journal, newest first. Eleven milestones, with Festival Toolkit 0.2 and its version journal on September 20, 2026. |
-| **Posts** | Six bilingual essays: opening this website, NBA After Hours, Folio 1.0, AXIOM 1.0, Festival Toolkit 0.1.1 and STRIDE 0.2.0. An overview, individual articles, contents, reading progress and related notes. |
+| **Now** | A chronological journal, newest first. Twelve milestones, with the 3D collection and Festival Toolkit 0.2 and its version journal on September 20, 2026. |
+| **Posts** | Seven bilingual essays, including the Courtside 3D collection: opening this website, NBA After Hours, Folio 1.0, AXIOM 1.0, Festival Toolkit 0.1.1 and STRIDE 0.2.0. An overview, individual articles, contents, reading progress and related notes. |
 
 `index.html` redirects to `profile.html`, retaining the query and fragment. Navigation, language preference and footer are shared. The site defaults to Chinese; the **中 / EN** switch translates navigation, copy, dialogs and page titles. Preference persists when local storage is available and synchronises across same-origin tabs. Brand names and decorative artwork retain their original design.
 
@@ -101,3 +102,13 @@ The original mint, sky-blue and pink Festival Pass now introduces 647 car models
 Now milestone 011 records this release with a matching 647-model pass. The September 18 launch entry and 0.1.1 Post remain historical. Native disclosure controls support keyboard interaction; motion respects reduced-motion preferences. Main projects and the separate School Lab remain intact.
 
 Maintain `festival-releases.js` for versions and links, `festival-content.js` for translations, `festival-exhibit.js` for markup, and `festival.css` / `festival-history.css` for the artwork. See the asset `SOURCES.md` for capture provenance. The app is Windows-only; encrypted saves use a third-party online service, and in-game effects remain unverified.
+
+## Courtside collection / Website 1.16
+
+`models-gallery.html` sits beside the main and school collections. Chase Center and Curry are independent works; the arena switches between interior and exterior glass cases. Three.js 0.180 loads actual Draco GLBs, with rotate, pause, reset and zoom controls. Rendering pauses offscreen/in background. Reduced motion disables automatic rotation; actual model renders remain available if WebGL or loading fails.
+
+Now adds milestone 012. The seventh bilingual Post shares the glass artwork. All Posts now use a single-column chronological index: descending date, then descending issue number for same-day entries. The companion GitHub libraries are [NBA Arena Models](https://github.com/ChefDavid0815/nba-arena-models) and [NBA Player Models](https://github.com/ChefDavid0815/nba-player-models).
+
+Browser display copies have simplified materials and seating; the native assets, import evidence and limitations are documented in their repositories. No reference library is published. See [artwork provenance](dist/assets/models/ARTWORK.md).
+
+The checked-in viewer bundle works without a build. To modify `scripts/model-viewer.js`, run `npm ci`, `npm run build:models`, and `npm run check`. Build dependencies are pinned; Vercel continues to serve `dist`.

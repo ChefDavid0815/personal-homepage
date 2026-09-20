@@ -9,7 +9,7 @@
 - `profile.html`：Personal Profile，包含数字名片、真实简介、篮球与赛车主题卡、AI 与艺术兴趣、数码设备、成长经历及公开联系方式。
 - `gallery.html`：四件真实作品：Festival Toolkit 0.2 四季通行证与版本手记、AXIOM 科学工作台、Folio 1.1 手帖与版本历程、NBA After Hours 球场。
 - `school-gallery.html`：独立的校园实验室分页。WIS TECH TANK · STRIDE 自然展柜，三种场景示意切换、真实截图放大、在线体验与观察手记。
-- `now.html`：Now 近况页，十一个节点，按日期倒序记录 2026-09-20 Festival Toolkit 0.2 发布、 2026-09-19 STRIDE 上线与校园实验室开放、 2026-09-18 Festival Toolkit 加入作品集、AXIOM 上线、发布 Folio 1.1、2026-09-17 发布 Folio 1.0、发布第一个项目 NBA After Hours、创建音乐模块、2026-09-16 创建个人主页、2026-08-27 步入 IB、2026-04-20 开始接触 Agents。
+- `now.html`：Now 近况页，十二个节点，按日期倒序记录 2026-09-20 建模展厅上线、Festival Toolkit 0.2 发布、 2026-09-19 STRIDE 上线与校园实验室开放、 2026-09-18 Festival Toolkit 加入作品集、AXIOM 上线、发布 Folio 1.1、2026-09-17 发布 Folio 1.0、发布第一个项目 NBA After Hours、创建音乐模块、2026-09-16 创建个人主页、2026-08-27 步入 IB、2026-04-20 开始接触 Agents。
 - `index.html`：网站入口，自动转到 Personal Profile，并保留查询参数与页内锚点。
 
 所有页面共用品牌、配色、导航、语言偏好与页脚，可以互相切换。个人资料采用 ChefZC 提供的信息：在迪拜的 GEMS Wellington International School 就读 Year 12 / IB。公开位置只展示城市。
@@ -128,3 +128,13 @@ ChefZC 是展示昵称，GitHub 账号为 ChefDavid0815。字体通过 Google Fo
 Now 第 011 个节点记录本次更新，旁边小窗延续 647 车型通行证。9 月 18 日的首发节点与 0.1.1 随笔保留历史原貌。支持键盘、手机布局与减少动态效果偏好；四个主项目和独立校园展厅保持不变。
 
 版本数据维护在 `festival-releases.js`，双语文案在 `festival-content.js`，展柜在 `festival-exhibit.js`，样式在 `festival.css` / `festival-history.css`。截图来源见素材目录的 `SOURCES.md`。软件仅支持 Windows；加密存档使用第三方在线服务，游戏内效果尚未验证。
+
+## 建模作品展厅（网站 v1.16）
+
+新增 `models-gallery.html`，与主展厅和校园实验室并列。两件独立作品：大通中心展柜内切换内景/外景玻璃盒，库里脸模拥有独立展柜。Three.js 0.180 加载真实 Draco GLB，支持拖动旋转、暂停、重置和缩放；离屏与后台暂停，减少动态效果默认关闭自动转台，加载失败保留真实模型渲染。
+
+Now 增加第 012 个节点，Posts 新增第七篇中英手记，并整体按日期倒序、同日按文章序号倒序排列。日期分隔、单列艺术卡片和阅读时间提高可读性。GitHub 对应两个可扩充作品库：[NBA 球馆建模作品](https://github.com/ChefDavid0815/nba-arena-models) 与 [NBA 球员建模作品](https://github.com/ChefDavid0815/nba-player-models)。
+
+模型原型和网页显示副本有区别：内景屋顶与座椅密度做了展示优化，人物眼部材质为网页适配。完整建模文件和验证边界见各仓库。未包含参考资料库。[展柜素材说明](dist/assets/models/ARTWORK.md)。
+
+静态部署不需要重新打包 viewer；修改 `scripts/model-viewer.js` 后运行 `npm ci` 与 `npm run build:models`，再运行 `npm run check`。新增依赖仅用于本地重建 bundle，Vercel 仍发布 `dist`。
