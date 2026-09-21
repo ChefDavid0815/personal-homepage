@@ -4,14 +4,14 @@
 
 - ProjectLens 0.1.0: `https://github.com/ChefDavid0815/projectlens`.
 - Existing Windows x64 portable release published with SHA-256. Signature status: `NotSigned`.
-- GitHub release reports the same executable digest as the local file: `a994488729bf6862c219e8ddf6094d3d43e6e582ffbdce7828887be52d5bc0d8` (101,952,241 bytes).
+- GitHub release reports the same executable digest as the local file: `ac664a03794e23659876a3bd2cdceabcbcd1049297784f8522f0844c3055cd80` (101,956,286 bytes).
 - The software currently depends on Electron for directory access. No standalone scanner website was deployed. Portfolio content explicitly distinguishes the exhibition from the desktop scanner.
 
 ## Basic software checks, as requested
 
-- Existing scanner tests: 3/3 pass (redaction, project foundations, ignored directories/duplicate files).
+- Existing scanner tests: 4/4 pass (redaction, project foundations, ignored directories/duplicate files, file-limit reporting).
 - Vite production build and TypeScript validation pass.
-- Initial frontend inspected in the browser. The capture is the actual empty workspace, not a fabricated scan report.
+- Chinese/English switching, Auto system-language selection and saved preferences after reload verified in the browser. Initial frontend inspected in the browser. The capture is the actual empty workspace, not a fabricated scan report.
 - Existing GitHub CI completed successfully after source publication.
 - No packaged-app end-to-end scan, broad project compatibility testing or security audit was performed.
 
@@ -37,7 +37,7 @@
 - Vercel deployment `dpl_7MwP3mgZ4GykjPRaGGQBzwL1CChX` reports `READY`, with `https://chefzc-homepage.vercel.app` assigned as the production alias.
 - Four main publication routes and ten supporting data/artwork files return HTTP 200 with SHA-256 identical to local release files.
 - The production Gallery renders all five real projects and one active optical canvas, with no horizontal overflow. Switching to Report updates the visible feature panel. No browser warnings or errors were captured.
-- GitHub project page loads both original cover artwork (1600 × 900) and the real initial interface (1264 × 860); the English README entry is present. The separate GitHub profile repository was also pushed successfully.
+- GitHub project page loads both original cover artwork (1600 × 900) and the real initial interface (1699 × 982 in each language); the English README entry is present. The separate GitHub profile repository was also pushed successfully.
 - Delivery capture: `E:/个人项目/.release-work/projectlens-publication/gallery.jpg`.
 
 ## Limits

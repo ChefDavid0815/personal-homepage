@@ -6,7 +6,7 @@
 
 ## Atelier 1.20 / ProjectLens — 把线索，放大。
 
-ProjectLens 0.1.0 加入主展柜：真实程序化 3D 透镜、石墨黑/薄荷绿/冰蓝材质，以及结构、线索、报告三个功能视角。新增同风格双语文章与 Now 节点。源代码和未签名 Windows 便携包已放在 [GitHub](https://github.com/ChefDavid0815/projectlens)。目录扫描需要桌面版，展柜不会读取访问者的文件。
+ProjectLens 0.1.0 加入主展柜：真实程序化 3D 透镜、石墨黑/薄荷绿/冰蓝材质，以及结构、线索、报告三个功能视角。新增同风格双语文章与 Now 节点。源代码和未签名 Windows 便携包已放在 [GitHub](https://github.com/ChefDavid0815/projectlens)。软件支持中英文切换、跟随系统和本机偏好记忆，扫描提示及导出使用所选语言。展柜和文章截图跟随网站语言切换。目录扫描需要桌面版，展柜不会读取访问者的文件。
 
 ## Atelier 1.19 / 材质、光影与动态封面
 

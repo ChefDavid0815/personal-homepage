@@ -6,10 +6,10 @@ export const projects = [
   {
     id:'projectlens',name:'ProjectLens',subtitle:'把线索，放大。',layout:'lens',
     category:'LOCAL PROJECT INTELLIGENCE',number:'05',color:'mint',tags:['Electron','React','TypeScript'],
-    description:'ProjectLens 0.1.0。扫描代码、配置与文档，查看带位置和证据的静态检查结果，导出 Markdown 或 JSON。',
+    description:'ProjectLens 0.1.0。中英双语，可跟随系统语言。扫描代码、配置与文档，查看带位置和证据的静态检查结果，导出 Markdown 或 JSON。',
     demo:false,version:'0.1.0',repoUrl:'https://github.com/ChefDavid0815/projectlens',liveUrl:'',
     downloadUrl:'https://github.com/ChefDavid0815/projectlens/releases/tag/v0.1.0',
-    translations:{zh:{category:'本地项目健康扫描器'},en:{subtitle:'Bring the signals into focus.',description:'ProjectLens 0.1.0. Local static checks for code, configuration and documentation, with locations, evidence and Markdown or JSON reports.'}}
+    translations:{zh:{category:'本地项目健康扫描器'},en:{subtitle:'Bring the signals into focus.',description:'ProjectLens 0.1.0. Chinese / English with system-language detection. Local static checks for code, configuration and documentation, with locations, evidence and Markdown or JSON reports.'}}
   },
   {
     id:'festival-toolkit', name:'Festival Toolkit', subtitle:'每一周，都值得点亮。', layout:'festival',

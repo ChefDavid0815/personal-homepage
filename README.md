@@ -8,7 +8,7 @@ A personal website for the things I love and make: a dark digital canvas with li
 
 ## Atelier 1.20 / ProjectLens — look closer.
 
-ProjectLens 0.1.0 joins the main collection with a real procedural 3D optical instrument, graphite/mint/ice-blue materials and three interactive feature perspectives. The same visual identity appears in a new bilingual article and the newest Now milestone. Its source and unsigned Windows release are on [GitHub](https://github.com/ChefDavid0815/projectlens). Local directory scanning requires the desktop app; the exhibit does not read visitor files.
+ProjectLens 0.1.0 joins the main collection with a real procedural 3D optical instrument, graphite/mint/ice-blue materials and three interactive feature perspectives. The same visual identity appears in a new bilingual article and the newest Now milestone. Its source and unsigned Windows release are on [GitHub](https://github.com/ChefDavid0815/projectlens). The app supports Chinese and English, system-language detection and a saved local preference; scan messages and exports follow that choice. Screenshots in the exhibit and article match the website language. Local directory scanning requires the desktop app; the exhibit does not read visitor files.
 
 ## Atelier 1.19 / Objects, light & living sleeves
 
