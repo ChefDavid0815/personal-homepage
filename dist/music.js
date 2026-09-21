@@ -1,6 +1,7 @@
 import { t, getLanguage, onLanguageChange } from './i18n.js';
 import { artists, songs, favouriteAlbums } from './music-data.js';
 import { canAnimate, onMotionChange } from './motion-state.js';
+import './music-cover-art.js';
 
 const section = document.querySelector('#music');
 if (section) {

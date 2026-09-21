@@ -160,3 +160,6 @@ function observeChapters() {
 observeChapters();
 onLanguageChange(() => { queueMicrotask(() => { enhance(); observeChapters(); }); });
 window.addEventListener('pageshow', () => { scheduleScroll(); renderControls(); });
+
+// Load the scene layer after the shared frame has been constructed.
+import('./atelier-scenes.js');

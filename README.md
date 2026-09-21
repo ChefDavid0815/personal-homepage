@@ -6,7 +6,13 @@ A personal website for the things I love and make: a dark digital canvas with li
 
 [**Enter my space ↗**](https://chefzc-homepage.vercel.app) · [Gallery](https://chefzc-homepage.vercel.app/gallery.html) · [Posts](https://chefzc-homepage.vercel.app/posts.html) · [Now](https://chefzc-homepage.vercel.app/now.html) · [Game](https://chefzc-homepage.vercel.app/game.html)
 
-## Atelier 1.18 / Pulse
+## Atelier 1.19 / Objects, light & living sleeves
+
+A real-time iridescent 3D sculpture for the profile, sculptural room entrances, an exhibition guide, layered paper and glass, woodland light, a chronological editorial journal, and a shared typographic finale. Each project keeps its own palette and materials. NBA 2K27 now has thick glass neon tubes, metal sockets, colored spill and a slow spectrum cycle. [Explore the game room](https://chefzc-homepage.vercel.app/game.html#nba-2k27).
+
+The record shelf adds an **animated cover theatre** using original QQ Music artwork: directed light, mist, ripples, dust and fine moving textures. The two favourite albums have dedicated treatments. These are procedural visual studies, not official animated covers, generated walking performances, or music videos. Artwork stays available when WebGL is unavailable. All animations follow the shared motion preference, pause offscreen, and stop in hidden tabs. The profile sculpture loads only when needed; its render rate is capped, as are cover animations. [Visual system and implementation](docs/atelier-design.md).
+
+## Pulse / Usage observatory
 
 A unified glass navigation, richer materials, calmer reading rhythm and shared motion controls, with every project retaining its own art direction. New [Pulse observatory](https://chefzc-homepage.vercel.app/usage.html): today, 7 days, 30 days and locally recorded lifetime tokens, stacked bars, model distribution and an API-price equivalent. Only numeric aggregates are uploaded. New usage records trigger cloud sync and server events update the page. Precise counts follow model-call usage reports; there is no simulated per-token counter. Offline collectors retain clearly dated records. [Accounting and sync](docs/usage-observatory.md) · [Design and motion](docs/atelier-design.md)
 

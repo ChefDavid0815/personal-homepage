@@ -1,0 +1,56 @@
+/* AFTER DARK / a physical four-tube installation, with glass, sockets and spill. */
+.nba-exhibit{position:relative;padding:23px;border:2px solid #343343;border-radius:24px;background:radial-gradient(ellipse at 0 10%,#12445738,transparent 45%),radial-gradient(ellipse at 100% 80%,#701b532e,transparent 55%),linear-gradient(130deg,#10131e,#13101e 75%);box-shadow:0 30px 75px #0007,inset 0 0 0 5px #07090f,inset 0 0 0 7px #333348,inset 0 0 55px #66dcff12}
+.nba-rgb-frame{display:none}
+.neon-installation{position:absolute;inset:11px;pointer-events:none;z-index:5;border-radius:16px;isolation:isolate}
+.neon-spill{position:absolute;inset:-12px;z-index:-1;border-radius:20px;background:linear-gradient(90deg,color-mix(in srgb,var(--light-a),transparent 83%),transparent 24% 76%,color-mix(in srgb,var(--light-b),transparent 82%)),linear-gradient(0deg,color-mix(in srgb,var(--light-b),transparent 82%),transparent 20% 80%,color-mix(in srgb,var(--light-a),transparent 83%));opacity:.65;mix-blend-mode:screen;animation:neon-spill-breath 8s ease-in-out infinite}
+.neon-tube{--tube:var(--light-a);--tube-angle:180deg;position:absolute;border-radius:100px;background:linear-gradient(var(--tube-angle),#13172e 0%,color-mix(in srgb,var(--tube),#fff 10%) 18%,#fff 40%,color-mix(in srgb,var(--tube),#fff 65%) 58%,var(--tube) 75%,color-mix(in srgb,var(--tube),#090b16 60%) 100%);border:1px solid color-mix(in srgb,var(--tube),#fff 60%);box-shadow:0 0 4px var(--tube),0 0 13px var(--tube),0 0 30px color-mix(in srgb,var(--tube),transparent 25%),0 0 68px color-mix(in srgb,var(--tube),transparent 55%);isolation:isolate}
+.neon-tube::before{content:'';position:absolute;inset:4px 9px;background:#ffffffe8;border-radius:inherit;box-shadow:0 0 7px #fff,0 0 15px var(--tube);opacity:.72}
+.neon-tube::after{content:'';position:absolute;inset:0;border-radius:inherit;background:linear-gradient(90deg,#0b0b16 0 12px,transparent 13px calc(100% - 13px),#0b0b16 calc(100% - 12px));opacity:.8}
+.neon-tube--top,.neon-tube--bottom{height:16px;left:38px;right:38px}
+.neon-tube--top{top:0;animation:neon-tube-drift 17s linear infinite}
+.neon-tube--bottom{bottom:0;--tube:var(--light-b);animation:neon-tube-drift 17s linear infinite reverse}
+.neon-tube--left,.neon-tube--right{--tube-angle:90deg;width:16px;top:38px;bottom:38px}
+.neon-tube--left{left:0;--tube:var(--light-a);animation:neon-tube-breathe 9s ease-in-out infinite}
+.neon-tube--right{right:0;--tube:var(--light-b);animation:neon-contact 13s linear infinite}
+.neon-tube--left::before,.neon-tube--right::before{inset:9px 4px}
+.neon-tube--left::after,.neon-tube--right::after{background:linear-gradient(0deg,#0b0b16 0 12px,transparent 13px calc(100% - 13px),#0b0b16 calc(100% - 12px))}
+.neon-bracket{position:absolute;width:24px;height:24px;border-radius:6px;background:linear-gradient(145deg,#7c7d8e,#282934 40%,#4b4b5a 65%,#10121d);box-shadow:1px 3px 5px #0008,inset 0 1px 0 #ddd4;border:1px solid #82839740;z-index:3}
+.neon-bracket::after{content:'';position:absolute;width:6px;height:6px;left:8px;top:8px;border:1px solid #6b6b80;border-radius:50%;background:linear-gradient(135deg,#1b1c2a 42%,#77758a 44% 54%,#1b1c2a 56%)}
+.neon-bracket--a{left:-4px;top:24%}.neon-bracket--b{right:-4px;top:65%}.neon-bracket--c{top:-4px;left:70%;rotate:90deg}.neon-bracket--d{bottom:-4px;left:27%;rotate:90deg}
+.nba-exhibit[data-light=spectrum] .neon-installation{animation:neon-spectrum 28s linear infinite}
+.nba-exhibit[data-light=ice] .neon-installation,.nba-exhibit[data-light=pink] .neon-installation{filter:none;animation:none}
+.nba-exhibit>.exhibit-edge{padding:21px 24px 23px;position:relative;border-color:#738bc036;letter-spacing:1.5px}
+.nba-main{padding:42px 31px 10px;gap:47px;position:relative;background:radial-gradient(ellipse at 8% 45%,color-mix(in srgb,var(--light-a),transparent 90%),transparent 48%),radial-gradient(ellipse at 92% 35%,color-mix(in srgb,var(--light-b),transparent 91%),transparent 50%)}
+.nba-cover-wrap{position:relative;perspective:1000px;padding:20px 10px 0}
+.nba-cover-glass{border:2px solid #a9cbfa4d;border-radius:9px;box-shadow:0 0 0 5px #111724,0 0 0 6px #96c4ec28,-15px 10px 48px #55d4ed1a,17px 15px 45px #f750c921,0 25px 35px #0007;transform:rotate(-5deg) rotateY(9deg);transition:transform 1s var(--scene-ease),box-shadow .8s;overflow:hidden}
+.nba-cover-glass::after{content:'';position:absolute;inset:0;border-radius:inherit;box-shadow:inset 7px 0 23px #76edff12,inset -7px 0 23px #fc77cb16;pointer-events:none;z-index:3;background:linear-gradient(125deg,#fff1,transparent 35% 65%,#edbbff0a)}
+.nba-cover-wrap:hover .nba-cover-glass{transform:rotate(-2deg) rotateY(1deg) translateY(-5px)}
+.nba-cover-caption{margin-top:30px;opacity:.7;font-size:8px;letter-spacing:1.6px}
+.nba-court-floor{transform:perspective(400px) rotateX(62deg);height:130px;margin-top:12px;opacity:.85;filter:drop-shadow(0 0 8px var(--light-a)) drop-shadow(0 12px 13px var(--light-c))}
+.nba-court-floor svg{stroke-width:2.2}
+.nba-copy{padding-block:12px 20px}.nba-chapter{color:#9db3c2;font-size:9px;letter-spacing:1.2px}
+.nba-copy h2{font-size:27px;letter-spacing:-1px;text-shadow:0 0 25px color-mix(in srgb,var(--light-a),transparent 65%)}
+.nba-display{font-size:clamp(75px,8vw,112px);line-height:.84;margin:29px 0 30px;font-weight:750;letter-spacing:-.07em;color:#e9e5f8;text-shadow:2px 2px 0 #90829e3d,0 9px 25px #0008}
+.nba-display>span{-webkit-text-stroke:2px var(--light-a);filter:drop-shadow(0 0 4px var(--light-a)) drop-shadow(0 0 20px color-mix(in srgb,var(--light-a),transparent 70%));text-shadow:none}
+.nba-copy h3{font-size:22px;font-weight:500;letter-spacing:-.5px}.nba-copy p{font-size:14px;line-height:2;color:#b2b1c1;max-width:395px}
+.nba-ball{opacity:.75;filter:drop-shadow(0 0 12px #ee76b124)}
+.lighting-desk{margin:22px 8px 0;padding:23px 25px;border:1px solid #76749140;border-radius:8px;background:linear-gradient(115deg,#252330,#12131d);box-shadow:0 8px 20px #0004,inset 0 1px 0 #a9b8d617}
+.lighting-desk button{background:linear-gradient(140deg,#353143,#201e2c);border-color:#7c69854d;box-shadow:0 3px 0 #07070f,inset 0 1px 0 #d9c3e512;transition:box-shadow .3s,translate .3s,color .3s}
+.lighting-desk button[aria-pressed=true]{background:linear-gradient(145deg,#393449,#262638);box-shadow:0 2px 0 #07070f,inset 0 1px 0 #fff2,0 0 17px color-mix(in srgb,var(--light-a),transparent 85%)}
+.lighting-desk button:hover{translate:0 -2px}.lighting-desk button>i{box-shadow:0 0 9px var(--light-a)}
+.nba-log{margin:6px 8px 0;padding:36px 26px;background:linear-gradient(145deg,#0d101722,#15122022)}
+.nba-time-main{background:radial-gradient(ellipse at 20% 50%,color-mix(in srgb,var(--light-a),transparent 95%),transparent 70%)}
+.nba-project-link{margin:0 8px 10px;border-radius:7px;background:linear-gradient(100deg,#233d4933,#29203644);border-color:#8286a72c}
+/* One small segment dims briefly; there is no full-screen flash or rapid strobe. */
+@keyframes neon-contact{0%,64%,67%,100%{opacity:1}65%{opacity:.55}66%{opacity:.92}}
+@keyframes neon-tube-breathe{0%,100%{opacity:.9}50%{opacity:1}}
+@keyframes neon-tube-drift{0%,100%{filter:brightness(1)}50%{filter:brightness(.86)}}
+@keyframes neon-spill-breath{0%,100%{opacity:.6}50%{opacity:.8}}
+@keyframes neon-spectrum{to{filter:hue-rotate(360deg)}}
+.nba-exhibit.atelier-sleep .neon-installation,.nba-exhibit.atelier-sleep .neon-installation *{animation-play-state:paused}
+html[data-site-motion=off] .neon-installation,html[data-site-motion=off] .neon-installation *{animation:none!important}
+@media(max-width:1000px){.nba-main{padding:30px 23px 5px;gap:35px}.nba-display{font-size:76px}.nba-copy h3{font-size:19px}.nba-copy p{font-size:13px}.lighting-desk{padding:20px 17px;gap:12px}.nba-log{padding:29px 21px}}
+@media(max-width:760px){.nba-exhibit{padding:19px;border-radius:20px}.neon-installation{inset:9px}.neon-tube--top,.neon-tube--bottom{height:13px;left:29px;right:29px}.neon-tube--left,.neon-tube--right{width:13px;top:29px;bottom:29px}.neon-tube::before{inset:3px 7px}.neon-tube--left::before,.neon-tube--right::before{inset:7px 3px}.neon-bracket{width:20px;height:20px}.neon-bracket::after{width:5px;height:5px;left:6px;top:6px}.nba-exhibit>.exhibit-edge{font-size:7px;padding:19px 13px}.nba-main{padding:27px 15px 0;gap:32px}.nba-cover-wrap{max-width:400px;margin:auto;padding:12px 9px 0}.nba-cover-caption{margin-top:23px}.nba-copy{padding:0 7px 22px}.nba-display{font-size:clamp(72px,15vw,104px);margin-block:24px;line-height:.87}.nba-copy h2{font-size:26px}.nba-copy h3{font-size:21px}.nba-copy p{font-size:14px}.nba-court-floor{height:95px}.lighting-desk{margin:0 4px;display:block;padding:19px 16px}.lighting-desk>div{margin-top:14px;gap:7px}.lighting-desk button{padding:9px 11px;font-size:10px}.nba-log{margin:0 3px;padding:27px 17px}.nba-project-link{margin:0 4px 7px}.nba-cover-glass{transform:rotate(-3deg)}.nba-time-main strong{font-size:33px}}
+@media(max-width:400px){.nba-main{padding-inline:9px}.nba-exhibit>.exhibit-edge{font-size:6px;letter-spacing:.6px}.nba-copy h3{font-size:19px}.nba-copy p{font-size:13px}.nba-display{font-size:70px}.lighting-desk{padding-inline:12px}.lighting-desk button{font-size:9px;padding:9px 8px}.nba-log{padding-inline:12px}.nba-time-main strong{font-size:29px}.nba-copy h2{font-size:25px}}
+@media(prefers-reduced-motion:reduce){.neon-installation,.neon-installation *{animation:none!important}.nba-cover-glass{transition:none}}
+.game-exhibit{scroll-margin-top:25px}
