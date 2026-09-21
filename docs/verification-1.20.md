@@ -34,10 +34,11 @@
 
 ## Production verification
 
-- Vercel deployment `dpl_7MwP3mgZ4GykjPRaGGQBzwL1CChX` reports `READY`, with `https://chefzc-homepage.vercel.app` assigned as the production alias.
-- Four main publication routes and ten supporting data/artwork files return HTTP 200 with SHA-256 identical to local release files.
+- Vercel deployment `dpl_C13ybVmxgJVVwEsJJwwAW6FQrnxF` reports `READY`, with `https://chefzc-homepage.vercel.app` assigned as the production alias.
+- Four publication routes return HTTP 200. All seven changed public JavaScript and screenshot files match local SHA-256 values.
 - The production Gallery renders all five real projects and one active optical canvas, with no horizontal overflow. Switching to Report updates the visible feature panel. No browser warnings or errors were captured.
 - GitHub project page loads both original cover artwork (1600 × 900) and the real initial interface (1699 × 982 in each language); the English README entry is present. The separate GitHub profile repository was also pushed successfully.
+- Same-version language sync: the app remains 0.1.0 and the website remains 1.20.0. The original release asset, tag source, READMEs and existing Now/Post text were updated; no history entry or new version was added. Chinese and English article images follow the site language; the 390 px article and Now checks have no horizontal overflow.
 - Delivery capture: `E:/个人项目/.release-work/projectlens-publication/gallery.jpg`.
 
 ## Limits
