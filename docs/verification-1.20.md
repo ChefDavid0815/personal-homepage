@@ -32,6 +32,14 @@
 - Post overview shows eight articles with ProjectLens first; its reader has four chapters in both authored languages. Now has 13 entries, latest date 2026-09-21.
 - Desktop screenshots inspected for Gallery, Now and the article. SVG cover visually inspected in the browser.
 
+## Production verification
+
+- Vercel deployment `dpl_7MwP3mgZ4GykjPRaGGQBzwL1CChX` reports `READY`, with `https://chefzc-homepage.vercel.app` assigned as the production alias.
+- Four main publication routes and ten supporting data/artwork files return HTTP 200 with SHA-256 identical to local release files.
+- The production Gallery renders all five real projects and one active optical canvas, with no horizontal overflow. Switching to Report updates the visible feature panel. No browser warnings or errors were captured.
+- GitHub project page loads both original cover artwork (1600 × 900) and the real initial interface (1264 × 860); the English README entry is present. The separate GitHub profile repository was also pushed successfully.
+- Delivery capture: `E:/个人项目/.release-work/projectlens-publication/gallery.jpg`.
+
 ## Limits
 
 Procedural artwork is illustrative and never scans visitors' files. Performance was checked on this computer at desktop and emulated narrow widths, not on physical low-end mobile hardware. Static artwork remains available if WebGL cannot initialise.
