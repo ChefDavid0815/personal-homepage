@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+export { mountLens } from './projectlens-optics.js';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 
 // A small, local, procedural object. No remote model, tracking, or video dependency.

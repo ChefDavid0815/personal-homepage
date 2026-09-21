@@ -6,6 +6,10 @@ A personal website for the things I love and make: a dark digital canvas with li
 
 [**Enter my space ↗**](https://chefzc-homepage.vercel.app) · [Gallery](https://chefzc-homepage.vercel.app/gallery.html) · [Posts](https://chefzc-homepage.vercel.app/posts.html) · [Now](https://chefzc-homepage.vercel.app/now.html) · [Game](https://chefzc-homepage.vercel.app/game.html)
 
+## Atelier 1.20 / ProjectLens — look closer.
+
+ProjectLens 0.1.0 joins the main collection with a real procedural 3D optical instrument, graphite/mint/ice-blue materials and three interactive feature perspectives. The same visual identity appears in a new bilingual article and the newest Now milestone. Its source and unsigned Windows release are on [GitHub](https://github.com/ChefDavid0815/projectlens). Local directory scanning requires the desktop app; the exhibit does not read visitor files.
+
 ## Atelier 1.19 / Objects, light & living sleeves
 
 A real-time iridescent 3D sculpture for the profile, sculptural room entrances, an exhibition guide, layered paper and glass, woodland light, a chronological editorial journal, and a shared typographic finale. Each project keeps its own palette and materials. NBA 2K27 now has thick glass neon tubes, metal sockets, colored spill and a slow spectrum cycle. [Explore the game room](https://chefzc-homepage.vercel.app/game.html#nba-2k27).

@@ -1,3 +1,4 @@
+import { lensCard, lensDetail } from './projectlens-exhibit.js';
 import { t, localizeProject, onLanguageChange } from './i18n.js';
 import { projects } from './projects.js';
 import { axiomCard, axiomDetail } from './axiom-exhibit.js';
@@ -42,6 +43,7 @@ function renderCards() {
   const festivalHistoryOpen = grid.querySelector("#festival-history")?.open ?? (location.hash === "#festival-history");
   const historyOpen = grid.querySelector("#folio-history")?.open ?? (location.hash === "#folio-history");
   grid.innerHTML = projects.map(localizeProject).map(project => {
+    if(project.id === 'projectlens') return lensCard(project);
     if(project.id === 'festival-toolkit') return festivalCard(project);
     if(project.id === 'axiom') return axiomCard(project);
     if(project.id === 'folio') return folioCard(project);
@@ -64,6 +66,8 @@ function renderDetail(projectId) {
   const original=projects.find(project=>project.id===projectId);
   if(!original) return;
   const project=localizeProject(original);
+  dialog.classList.toggle('lens-dialog', projectId === 'projectlens');
+  if(projectId === 'projectlens') { dialogContent.innerHTML=lensDetail(project); return; }
   dialog.classList.toggle('folio-dialog', projectId === 'folio');
   dialog.classList.toggle('axiom-dialog', projectId === 'axiom');
   dialog.classList.toggle('festival-dialog', projectId === 'festival-toolkit');
@@ -122,7 +126,7 @@ dialog.addEventListener('close',()=>{
   const opener=[...grid.querySelectorAll('[data-project]')].find(button=>button.dataset.project===selectedProjectId);
   opener?.focus({preventScroll:true});
   selectedProjectId=null;
-  dialog.classList.remove('folio-dialog', 'axiom-dialog', 'festival-dialog');
+  dialog.classList.remove('folio-dialog', 'axiom-dialog', 'festival-dialog', 'lens-dialog');
 });
 
 window.addEventListener('hashchange', () => {
