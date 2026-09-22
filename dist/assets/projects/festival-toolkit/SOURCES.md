@@ -12,3 +12,8 @@
 - `workspace-v0.2.png`, `garage-v0.2.png`: actual 0.2.0 Windows captures, Chinese UI, disconnected. No player save or private identity is visible.
 - The series poster inside `workspace-v0.2.png` is game artwork by its respective rights holders, shown in the application's interface; it is not original portfolio artwork. The app reads these covers from a user's own local game installation. Extracted texture files are not distributed in this project or its binaries.
 - `cover-v0.2.0.svg`: original Festival Pass artwork, versioned for this release. The 0.1.1 post and original screenshots remain historical records.
+
+## Version 0.3.0 / 2026-09-22
+
+- `journey-v0.3.png`, `wristbands-v0.3.png`, `workspace-v0.3.png`, `garage-v0.3.png`: actual development Electron screenshots from the software release, Chinese interface, disconnected. No private player save is shown.
+- `cover-v0.3.0.svg` and the animated compass/journal/bands composition are original vector and CSS artwork for this release. Decorative routes do not represent game-map coordinates or player progress. Lettering uses the same OFL Barlow Condensed font as the application.

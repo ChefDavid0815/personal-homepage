@@ -4,6 +4,12 @@
 
 个人介绍与项目展示网站：深色数码风，荧光绿、紫色、电光蓝与橙色点缀。
 
+## Atelier 1.21 / Festival Toolkit 0.3 — 旅程绽放。
+
+第三张 Festival Pass 加入原创纸质旅程手册、轻轻寻向的指南针和七色织带，沿用浅绿、淡蓝与粉色。展柜呈现 38 个分类、2,833 个收藏项目、腕带持有记录与每日 GitHub 版本提醒；详情可切换四张 0.3 真实截图，翻阅三个公开版本。
+
+Now 新增 **014 / 2026-09-22**，旁边的小窗延续同一套视觉设计。本次不新增 Post，原来的 0.1.1 随笔保留历史原貌。网站及 GitHub 个人主页同步中英双语说明。[下载 0.3.0](https://github.com/ChefDavid0815/horizon-festival-toolkit/releases/tag/v0.3.0) · [查看 Now](https://chefzc-homepage.vercel.app/now.html#milestone-festival03)。
+
 ## Atelier 1.20 / ProjectLens — 把线索，放大。
 
 ProjectLens 0.1.0 加入主展柜：真实程序化 3D 透镜、石墨黑/薄荷绿/冰蓝材质，以及结构、线索、报告三个功能视角。新增同风格双语文章与 Now 节点。源代码和未签名 Windows 便携包已放在 [GitHub](https://github.com/ChefDavid0815/projectlens)。软件支持中英文切换、跟随系统和本机偏好记忆，扫描提示及导出使用所选语言。展柜和文章截图跟随网站语言切换。目录扫描需要桌面版，展柜不会读取访问者的文件。
@@ -25,9 +31,9 @@ ProjectLens 0.1.0 加入主展柜：真实程序化 3D 透镜、石墨黑/薄荷
 ## 页面
 
 - `profile.html`：Personal Profile，包含数字名片、真实简介、篮球与赛车主题卡、AI 与艺术兴趣、数码设备、成长经历及公开联系方式。
-- `gallery.html`：四件真实作品：Festival Toolkit 0.2 四季通行证与版本手记、AXIOM 科学工作台、Folio 1.1 手帖与版本历程、NBA After Hours 球场。
+- `gallery.html`：五件真实作品：ProjectLens 项目透镜、Festival Toolkit 0.3 旅程通行证与版本手记、AXIOM 科学工作台、Folio 1.1 手帖与版本历程、NBA After Hours 球场。
 - `school-gallery.html`：独立的校园实验室分页。WIS TECH TANK · STRIDE 自然展柜，三种场景示意切换、真实截图放大、在线体验与观察手记。
-- `now.html`：Now 近况页，十二个节点，按日期倒序记录 2026-09-20 建模展厅上线、Festival Toolkit 0.2 发布、 2026-09-19 STRIDE 上线与校园实验室开放、 2026-09-18 Festival Toolkit 加入作品集、AXIOM 上线、发布 Folio 1.1、2026-09-17 发布 Folio 1.0、发布第一个项目 NBA After Hours、创建音乐模块、2026-09-16 创建个人主页、2026-08-27 步入 IB、2026-04-20 开始接触 Agents。
+- `now.html`：Now 近况页，十四个节点，按日期倒序记录 2026-09-22 Festival Toolkit 0.3、2026-09-21 ProjectLens 上线、2026-09-20 建模展厅上线、Festival Toolkit 0.2 发布、 2026-09-19 STRIDE 上线与校园实验室开放、 2026-09-18 Festival Toolkit 加入作品集、AXIOM 上线、发布 Folio 1.1、2026-09-17 发布 Folio 1.0、发布第一个项目 NBA After Hours、创建音乐模块、2026-09-16 创建个人主页、2026-08-27 步入 IB、2026-04-20 开始接触 Agents。
 - `index.html`：网站入口，自动转到 Personal Profile，并保留查询参数与页内锚点。
 
 所有页面共用品牌、配色、导航、语言偏好与页脚，可以互相切换。个人资料采用 ChefZC 提供的信息：在迪拜的 GEMS Wellington International School 就读 Year 12 / IB。公开位置只展示城市。

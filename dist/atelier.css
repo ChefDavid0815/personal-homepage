@@ -212,3 +212,6 @@ html[data-site-motion="off"] .pop-motion-ready .pop-reveal{opacity:1;transform:n
 @media(max-width:500px){.profile-page .identity-wrap{max-width:calc(100% - 12px);margin-inline:auto}.profile-page .identity-card{transform:rotate(1deg)}}
 
 .profile-page{overflow-x:clip}
+
+/* Decorative full-bleed light must not create a horizontal page scroller. */
+html{overflow-x:clip}

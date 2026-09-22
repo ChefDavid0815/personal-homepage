@@ -12,12 +12,12 @@ export const projects = [
     translations:{zh:{category:'本地项目健康扫描器'},en:{subtitle:'Bring the signals into focus.',description:'ProjectLens 0.1.0. Chinese / English with system-language detection. Local static checks for code, configuration and documentation, with locations, evidence and Markdown or JSON reports.'}}
   },
   {
-    id:'festival-toolkit', name:'Festival Toolkit', subtitle:'每一周，都值得点亮。', layout:'festival',
+    id:'festival-toolkit', name:'Festival Toolkit', subtitle:'让旅途，完整绽放。', layout:'festival',
     category:'WINDOWS SAVE WORKSHOP', number:'04', color:'mint', tags:['Electron','React','Windows'],
-    description:'Horizon Festival Toolkit 0.2.0。647 款车型、动态内容目录、季节赛与备份恢复，属于赛车爱好者的工坊。',
+    description:'Horizon Festival Toolkit 0.3.0。38 个分类、2,833 个收藏项目、七色腕带、每日更新提醒，以及 647 车型与季节赛工坊。',
     demo:false, version:currentFestival.version, repoUrl:'https://github.com/ChefDavid0815/horizon-festival-toolkit',
     downloadUrl:festivalReleaseUrl(currentFestival.version), liveUrl:'',
-    translations:{zh:{category:'WINDOWS 季节赛与车库工具'},en:{subtitle:'Every week. A little brighter.',description:'Horizon Festival Toolkit 0.2.0. A Windows workshop with 647 car models, updatable content, seasonal records, backups and recovery.'}}
+    translations:{zh:{category:'WINDOWS 旅程与收藏工坊'},en:{subtitle:'Let every journey bloom.',description:'Horizon Festival Toolkit 0.3.0. 38 categories, 2,833 journal entries, seven wristbands and daily release checks, alongside 647 car models and seasonal records.'}}
   },
   {
     id: 'axiom', name: 'AXIOM', subtitle: '让数据，形成观点。', layout: 'axiom',

@@ -37,7 +37,7 @@ const dialogContent = document.querySelector('#dialog-content');
 let selectedProjectId = null;
 let selectedFolioView = 'library';
 let selectedFestivalSeason = 'summer';
-let selectedFestivalView = 'playlist';
+let selectedFestivalView = 'journey';
 
 function renderCards() {
   const festivalHistoryOpen = grid.querySelector("#festival-history")?.open ?? (location.hash === "#festival-history");
@@ -66,6 +66,7 @@ function renderDetail(projectId) {
   const original=projects.find(project=>project.id===projectId);
   if(!original) return;
   const project=localizeProject(original);
+  dialog.classList.remove('lens-dialog', 'folio-dialog', 'axiom-dialog', 'festival-dialog');
   dialog.classList.toggle('lens-dialog', projectId === 'projectlens');
   if(projectId === 'projectlens') { dialogContent.innerHTML=lensDetail(project); return; }
   dialog.classList.toggle('folio-dialog', projectId === 'folio');

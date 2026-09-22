@@ -6,6 +6,12 @@ A personal website for the things I love and make: a dark digital canvas with li
 
 [**Enter my space ↗**](https://chefzc-homepage.vercel.app) · [Gallery](https://chefzc-homepage.vercel.app/gallery.html) · [Posts](https://chefzc-homepage.vercel.app/posts.html) · [Now](https://chefzc-homepage.vercel.app/now.html) · [Game](https://chefzc-homepage.vercel.app/game.html)
 
+## Atelier 1.21 / Festival Toolkit 0.3 — the journey update.
+
+The third Festival Pass adds an original paper journal, an animated compass and seven woven colour bands, keeping the pale mint, sky blue and pink identity. The exhibition introduces 38 categories and 2,833 entries, wristband ownership and daily GitHub release checks. Four real 0.3 screenshots and three public release entries are available in the detail window.
+
+Now milestone **014 / 2026-09-22** has its own matching miniature. No new Post was added; the original 0.1.1 article stays historical. The site and profile documentation are bilingual. [Download 0.3.0](https://github.com/ChefDavid0815/horizon-festival-toolkit/releases/tag/v0.3.0) · [Now](https://chefzc-homepage.vercel.app/now.html#milestone-festival03).
+
 ## Atelier 1.20 / ProjectLens — look closer.
 
 ProjectLens 0.1.0 joins the main collection with a real procedural 3D optical instrument, graphite/mint/ice-blue materials and three interactive feature perspectives. The same visual identity appears in a new bilingual article and the newest Now milestone. Its source and unsigned Windows release are on [GitHub](https://github.com/ChefDavid0815/projectlens). The app supports Chinese and English, system-language detection and a saved local preference; scan messages and exports follow that choice. Screenshots in the exhibit and article match the website language. Local directory scanning requires the desktop app; the exhibit does not read visitor files.
@@ -29,11 +35,11 @@ A new [Game page](https://chefzc-homepage.vercel.app/game.html): FH6 in lime, co
 | Page | Inside |
 | :--- | :--- |
 | **Personal Profile** | ChefZC, a Year 12 IB student at GEMS Wellington International School in Dubai. Basketball, motorsport, AI, art, devices, milestones and public contact links. Only the city is shown as a location. |
-| **Gallery** | Four real projects: Festival Toolkit 0.2.0, AXIOM 1.0, Folio 1.1 and NBA After Hours. Actual application/game screenshots, independent visual identities, project dialogs, source and download/play links. |
+| **Gallery** | Five real projects: ProjectLens 0.1.0, Festival Toolkit 0.3.0, AXIOM 1.0, Folio 1.1 and NBA After Hours. Actual application/game screenshots, independent visual identities, project dialogs, source and download/play links. |
 | **3D collection** | Two independent works: Chase Center (switchable interior/exterior cases) and a Curry head study. Real, draggable glass cases with free modeling downloads. |
 | **School Lab** | A separate `school-gallery.html` collection for school work. WIS TECH TANK · STRIDE has a woodland exhibition, three illustrated scene states, a real interface capture, web/source links and a simulation journal. |
-| **Now** | A chronological journal, newest first. Twelve milestones, with the 3D collection and Festival Toolkit 0.2 and its version journal on September 20, 2026. |
-| **Posts** | Seven bilingual essays, including the Courtside 3D collection: opening this website, NBA After Hours, Folio 1.0, AXIOM 1.0, Festival Toolkit 0.1.1 and STRIDE 0.2.0. An overview, individual articles, contents, reading progress and related notes. |
+| **Now** | A chronological journal, newest first. Fourteen milestones; the newest is Festival Toolkit 0.3 on September 22, 2026. |
+| **Posts** | Eight bilingual essays, including ProjectLens and the Courtside 3D collection: opening this website, NBA After Hours, Folio 1.0, AXIOM 1.0, Festival Toolkit 0.1.1 and STRIDE 0.2.0. An overview, individual articles, contents, reading progress and related notes. |
 
 `index.html` redirects to `profile.html`, retaining the query and fragment. Navigation, language preference and footer are shared. The site defaults to Chinese; the **中 / EN** switch translates navigation, copy, dialogs and page titles. Preference persists when local storage is available and synchronises across same-origin tabs. Brand names and decorative artwork retain their original design.
 
@@ -78,7 +84,7 @@ npm run dev       # http://127.0.0.1:4173
 npm run check     # JavaScript syntax checks
 ```
 
-`dist/` is the complete website. `vercel.json` runs `npm run check` and deploys that directory. The website version **1.17.0** is separate from Folio's **1.1.0**.
+`dist/` is the complete website. `vercel.json` runs `npm run check` and deploys that directory. The website version **1.21.0** is separate from Folio's **1.1.0**.
 
 ## Maintain the space
 
