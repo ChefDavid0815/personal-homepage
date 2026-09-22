@@ -2,6 +2,29 @@
 export const festivalReleaseUrl = version => `https://github.com/ChefDavid0815/horizon-festival-toolkit/releases/tag/v${version}`;
 export const festivalReleases = [
   {
+    version:'0.3.0', date:'2026-09-22', edition:'03',
+    zh:{
+      name:'让旅途，完整绽放。',
+      intro:'从四季和车库，走向整段旅程。探索日本、嘉年华收藏手册与七色腕带，有了自己的精致工作区。',
+      changes:[
+        ['JOURNEY / 收藏手册','38 个分类、2,833 个子项目。搜索、查看真实进度，选择单项、整类、整条路线或全部旅程；完成记录与积分一起写入。'],
+        ['COLOURS / 七色腕带','读取腕带持有记录，单条选择或补齐所有缺失颜色。选择统一进入待应用列表，写入前自动备份。'],
+        ['UPDATE / 下一次相遇','每天检查 GitHub 已发布版本，新版本弹窗直达下载页。延续原有配色，精细化动效、腕带材质与双语版本历史。']
+      ],
+      note:'已通过隔离存档和桌面流程验证。腕带持有记录不等于剧情及赛事资格；真实游戏读档、奖励、解锁与云同步仍未验证。'
+    },
+    en:{
+      name:'Let every journey bloom.',
+      intro:'Beyond seasons and a garage, a whole journey. Discover Japan, Festival journals and seven wristband colours now have their own workspace.',
+      changes:[
+        ['JOURNEY / THE JOURNAL','38 categories, 2,833 items. Search real progress and select an item, category, path or every journey; completion records and points update together.'],
+        ['COLOURS / SEVEN WRISTBANDS','Read ownership records and add one colour or every missing wristband. Changes join a shared queue, with a backup before writing.'],
+        ['UPDATE / THE NEXT CHAPTER','Daily GitHub release checks and a direct download prompt. The palette stays, with refined motion, wristband materials and bilingual release history.']
+      ],
+      note:'Isolated-save and desktop flows verified. Wristband ownership is separate from story and race eligibility. In-game loading, rewards, unlocks and cloud sync remain unverified.'
+    }
+  },
+  {
     version: '0.2.0', date: '2026-09-20', edition: '02',
     zh: {
       name: '把梦想，开进车库。',
