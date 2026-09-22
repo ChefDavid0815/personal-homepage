@@ -5,11 +5,14 @@ import path from 'node:path';
 
 const root = path.resolve(fileURLToPath(new URL('../dist/', import.meta.url)));
 const port = Number(process.env.PORT || 4173);
-const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.png': 'image/png', '.webp': 'image/webp', '.jpg': 'image/jpeg', '.svg': 'image/svg+xml' };
+const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.mjs': 'text/javascript; charset=utf-8', '.wasm': 'application/wasm', '.json': 'application/json', '.woff': 'font/woff', '.woff2': 'font/woff2', '.png': 'image/png', '.webp': 'image/webp', '.jpg': 'image/jpeg', '.svg': 'image/svg+xml' };
 http.createServer(async (request, response) => {
   try {
     const url = new URL(request.url, `http://127.0.0.1:${port}`);
     const pathname = decodeURIComponent(url.pathname);
+    if (pathname === '/axiom' || pathname === '/stride') {
+      response.writeHead(308, {Location: pathname + '/' + url.search}); response.end(); return;
+    }
     if (pathname === '/api/usage' || pathname === '/api/usage-stream') {
       if (request.method !== 'GET') { response.writeHead(405); response.end(); return; }
       const snapshotPath = path.join(process.env.LOCALAPPDATA || '', 'ChefZC','UsageSync','snapshot.json');

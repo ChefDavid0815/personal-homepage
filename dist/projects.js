@@ -31,7 +31,7 @@ export const projects = [
     id: 'axiom', name: 'AXIOM', subtitle: '让数据，形成观点。', layout: 'axiom',
     category: 'SCIENTIFIC PLOTTING', number: '03', color: 'scientific', tags: ['React', 'TypeScript', 'Electron'],
     description: 'AXIOM · 格物 1.0。科学绘图、误差分析与数学物理计算，属于好奇心的工作台。',
-    demo: false, version: '1.0.0', repoUrl: 'https://github.com/ChefDavid0815/axiom-studio', liveUrl: 'https://chefzc-axiom.vercel.app',
+    demo: false, version: '1.0.0', repoUrl: 'https://github.com/ChefDavid0815/axiom-studio', liveUrl: './axiom/',
     translations: { zh: {category: '科学绘图工作台'}, en: {subtitle: 'From data. To discovery.', description: 'AXIOM 1.0. Scientific plotting, uncertainty analysis and maths and physics calculators. A workspace for curiosity.'} }
   },
   {
@@ -51,7 +51,7 @@ export const projects = [
     description: '我的第一个正式项目。一款打开浏览器就能玩的 3D 街机篮球游戏，从一场快速比赛，到一整条冠军之路。',
     category: '3D BASKETBALL', number: '01', color: 'lime', tags: ['Three.js', 'TypeScript', '3v3 / 5v5'],
     detail: 'NBA After Hours / 决胜时刻，是我把篮球与代码放在一起的第一次完整尝试。30 支球队、每队 5 位跨时代经典球员，支持快速比赛、16 队杯赛、自由训练、技巧挑战与同机双人。投篮绿窗、挡拆、慢动作回放和投篮复盘，让每一回合都有值得琢磨的细节。中英文随时切换，进度保存在当前浏览器；这是非官方球迷作品，阵容与能力值为游戏设计，不代表当季名单或官方评级。',
-    demo: false, repoUrl: 'https://github.com/ChefDavid0815/nba-after-hours', liveUrl: 'https://chefzc-homepage.vercel.app/play/nba-after-hours/',
+    demo: false, repoUrl: 'https://github.com/ChefDavid0815/nba-after-hours', liveUrl: './play/nba-after-hours/',
     translations: {
       zh: { category: '3D 篮球游戏', tags: ['Three.js', 'TypeScript', '3v3 / 5v5'] },
       en: {

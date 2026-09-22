@@ -1,5 +1,5 @@
 import { getLanguage } from './i18n.js';
-export const wisLinks = { app: 'https://chefzc-wis-tech-tank.vercel.app', source: 'https://github.com/ChefDavid0815/wis-tech-tank' };
+export const wisLinks = { app: './stride/', source: 'https://github.com/ChefDavid0815/wis-tech-tank' };
 export const wisAsset = './assets/projects/wis-tech-tank/';
 export const wisCopy = (zh, en) => getLanguage() === 'en' ? en : zh;
 export const wisMark = '<svg viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor" transform="rotate(-20 20 20)"><rect x="7" y="22" width="5" height="12" rx="2.5"/><rect x="18" y="13" width="5" height="21" rx="2.5"/><rect x="29" y="5" width="5" height="29" rx="2.5"/></g></svg>';

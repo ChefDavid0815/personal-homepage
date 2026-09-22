@@ -3,6 +3,30 @@
   "framework": null,
   "buildCommand": "npm run check",
   "outputDirectory": "dist",
+  "redirects": [
+    { "source": "/axiom", "destination": "/axiom/", "permanent": true },
+    { "source": "/stride", "destination": "/stride/", "permanent": true }
+  ],
+  "headers": [
+    { "source": "/axiom/(.*)", "headers": [
+      { "key": "X-Content-Type-Options", "value": "nosniff" },
+      { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+    ] },
+    { "source": "/axiom/assets/(.*)", "headers": [
+      { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+    ] },
+    { "source": "/stride/(.*)", "headers": [
+      { "key": "X-Content-Type-Options", "value": "nosniff" },
+      { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+      { "key": "Permissions-Policy", "value": "camera=(self), microphone=(), geolocation=()" }
+    ] },
+    { "source": "/stride/models/(.*)", "headers": [
+      { "key": "Cache-Control", "value": "public, max-age=86400" }
+    ] },
+    { "source": "/stride/assets/(.*)", "headers": [
+      { "key": "Cache-Control", "value": "public, max-age=86400" }
+    ] }
+  ],
   "functions": {
     "api/usage-stream.js": {
       "maxDuration": 30

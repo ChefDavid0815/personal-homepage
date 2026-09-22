@@ -10,13 +10,13 @@
 
 Now 新增 **015 / 2026-09-22** 与同风格仪器小窗；第九篇双语随笔《给电脑的心跳，调一套新颜色。》聊设计、本地监测与真实读数。所有动画遵守全站动效开关及系统减少动态效果偏好，网站外壳和其他项目的独立风格保持一致。
 
-[Windows 早期版本](https://github.com/ChefDavid0815/chroma-monitor/releases/tag/v0.1.0) · [展柜](https://chefzc-homepage.vercel.app/gallery.html#project-chroma) · [随笔](https://chefzc-homepage.vercel.app/post.html?article=chroma) · [Now](https://chefzc-homepage.vercel.app/now.html#milestone-chroma)。[发布检查](docs/verification-1.22.md)。
+[Windows 早期版本](https://github.com/ChefDavid0815/chroma-monitor/releases/tag/v0.1.0) · [展柜](https://chefzc.dev/gallery.html#project-chroma) · [随笔](https://chefzc.dev/post.html?article=chroma) · [Now](https://chefzc.dev/now.html#milestone-chroma)。[发布检查](docs/verification-1.22.md)。
 
 ## Atelier 1.21 / Festival Toolkit 0.3 — 旅程绽放。
 
 第三张 Festival Pass 加入原创纸质旅程手册、轻轻寻向的指南针和七色织带，沿用浅绿、淡蓝与粉色。展柜呈现 38 个分类、2,833 个收藏项目、腕带持有记录与每日 GitHub 版本提醒；详情可切换四张 0.3 真实截图，翻阅三个公开版本。
 
-Now 新增 **014 / 2026-09-22**，旁边的小窗延续同一套视觉设计。本次不新增 Post，原来的 0.1.1 随笔保留历史原貌。网站及 GitHub 个人主页同步中英双语说明。[下载 0.3.0](https://github.com/ChefDavid0815/horizon-festival-toolkit/releases/tag/v0.3.0) · [查看 Now](https://chefzc-homepage.vercel.app/now.html#milestone-festival03)。
+Now 新增 **014 / 2026-09-22**，旁边的小窗延续同一套视觉设计。本次不新增 Post，原来的 0.1.1 随笔保留历史原貌。网站及 GitHub 个人主页同步中英双语说明。[下载 0.3.0](https://github.com/ChefDavid0815/horizon-festival-toolkit/releases/tag/v0.3.0) · [查看 Now](https://chefzc.dev/now.html#milestone-festival03)。
 
 ## Atelier 1.20 / ProjectLens — 把线索，放大。
 
@@ -24,17 +24,17 @@ ProjectLens 0.1.0 加入主展柜：真实程序化 3D 透镜、石墨黑/薄荷
 
 ## Atelier 1.19 / 材质、光影与动态封面
 
-首页加入实时渲染的虹彩 3D 雕塑，三个展厅入口采用纸页、叶片与玻璃盒造型。作品导览、叠纸与玻璃材质、林间光束、时间线与文章的阅读层次、统一的巨幅字体收尾，都保留每件作品自己的配色和艺术语言。NBA 2K27 改为粗玻璃霓虹灯管、金属固定件、彩色环境光和缓慢流动的 RGB 光谱。[走进游戏房间](https://chefzc-homepage.vercel.app/game.html#nba-2k27)。
+首页加入实时渲染的虹彩 3D 雕塑，三个展厅入口采用纸页、叶片与玻璃盒造型。作品导览、叠纸与玻璃材质、林间光束、时间线与文章的阅读层次、统一的巨幅字体收尾，都保留每件作品自己的配色和艺术语言。NBA 2K27 改为粗玻璃霓虹灯管、金属固定件、彩色环境光和缓慢流动的 RGB 光谱。[走进游戏房间](https://chefzc.dev/game.html#nba-2k27)。
 
 音乐区新增**动态封面剧场**：基于真实 QQ 音乐封面，按构图设计微光、薄雾、涟漪、尘粒与流动纹理。《守村人》和《七里香》有独立的视觉演绎。这是程序化动态艺术，不是官方动态封面、人物行走视频或 MV。WebGL 不可用时保留原封面；所有动效遵守全站开关、离屏暂停和隐藏标签页暂停，3D 与封面渲染均限制帧率。[设计与实现说明](docs/atelier-design.md)。
 
 ## Pulse / 用量观测
 
-全站采用统一的玻璃导航、光影材质、阅读层次和共享动效开关，同时保留每个项目自己的美术风格。新增 [Pulse 用量页](https://chefzc-homepage.vercel.app/usage.html)：今日、近 7 天、近 30 天与本机可追溯累计 Token，堆叠柱状图、模型分布及等额 API 价格。只上传数字汇总；新用量记录产生后自动同步，云端推送到网页。精确值以每次模型调用的上报为准，不模拟逐 Token 数字；电脑离线时标明最后记录。[统计与同步说明](docs/usage-observatory.md) · [设计与动效](docs/atelier-design.md)
+全站采用统一的玻璃导航、光影材质、阅读层次和共享动效开关，同时保留每个项目自己的美术风格。新增 [Pulse 用量页](https://chefzc.dev/usage.html)：今日、近 7 天、近 30 天与本机可追溯累计 Token，堆叠柱状图、模型分布及等额 API 价格。只上传数字汇总；新用量记录产生后自动同步，云端推送到网页。精确值以每次模型调用的上报为准，不模拟逐 Token 数字；电脑离线时标明最后记录。[统计与同步说明](docs/usage-observatory.md) · [设计与动效](docs/atelier-design.md)
 
 ## Game / 热爱的另一面
 
-新的[游戏房间](https://chefzc-homepage.vercel.app/game.html)：FH6 的绿、蓝、粉东京波普展区，与 NBA 2K27 的玻璃封套和 RGB 霓虹球场。支持三张官方画面切换、三种灯光、动效暂停和中英文切换。只展示已核实的本地记录，FH6 收藏数量明确标注为历史快照；未知余额不显示。[数据来源与本地刷新](docs/game-room.md)。
+新的[游戏房间](https://chefzc.dev/game.html)：FH6 的绿、蓝、粉东京波普展区，与 NBA 2K27 的玻璃封套和 RGB 霓虹球场。支持三张官方画面切换、三种灯光、动效暂停和中英文切换。只展示已核实的本地记录，FH6 收藏数量明确标注为历史快照；未知余额不显示。[数据来源与本地刷新](docs/game-room.md)。
 
 ## 页面
 
@@ -51,7 +51,7 @@ ProjectLens 0.1.0 加入主展柜：真实程序化 3D 透镜、石墨黑/薄荷
 
 ## WIS TECH TANK 校园实验室（网站 v1.14）
 
-[STRIDE 网页版](https://chefzc-wis-tech-tank.vercel.app)为学校展示制作，提供九种模拟环境与双语反馈。主展厅保留四件个人作品，新增「主展厅 / 校园实验室」展厅导航。
+[STRIDE 网页版](https://chefzc.dev/stride/)为学校展示制作，提供九种模拟环境与双语反馈。主展厅保留四件个人作品，新增「主展厅 / 校园实验室」展厅导航。
 
 森林绿、纸张白与原创林间步道视觉，配合缓慢浮动的光点、感知线条和可切换的观察手记。三种展柜示意解释平路、楼梯与不确定信号；完整九场景在真实软件里体验。展柜不读取传感器。可暂停环境动效，尊重系统减少动态效果偏好；截图弹窗支持 Escape 关闭并还原键盘焦点；切换语言保留场景选择。
 
@@ -75,7 +75,7 @@ Nexus 个人 API Key 接入已实现，但应用尚未注册，SSO 不可用；�
 
 ## 第一个正式项目（v1.8）
 
-[NBA After Hours](https://chefzc-homepage.vercel.app/play/nba-after-hours/) 已加入 Gallery，并更新 Profile 与 Now。主展位使用真实勇士对凯尔特人截图，配合数码海报排版、悬浮透视、扫光和光标动效。手机使用上下布局，所有新文案提供中英文，减少动态效果设置会关闭装饰动画。
+[NBA After Hours](https://chefzc.dev/play/nba-after-hours/) 已加入 Gallery，并更新 Profile 与 Now。主展位使用真实勇士对凯尔特人截图，配合数码海报排版、悬浮透视、扫光和光标动效。手机使用上下布局，所有新文案提供中英文，减少动态效果设置会关闭装饰动画。
 
 游戏源码独立保存在 [ChefDavid0815/nba-after-hours](https://github.com/ChefDavid0815/nba-after-hours)。`dist/play/nba-after-hours/` 为该项目的静态发布快照；无需 API 或后台。存档属于当前浏览器，不能与桌面版自动同步。版本与源码提交记录在该目录的 `release.json`；依赖授权一并附带。
 
@@ -134,7 +134,7 @@ Now 页的正文使用 `data-i18n` 对应 `dist/i18n.js` 的 `now.*` 翻译。�
 
 ## 发布与部署
 
-在线主页：[chefzc-homepage.vercel.app](https://chefzc-homepage.vercel.app)。
+在线主页：[chefzc-homepage.vercel.app](https://chefzc.dev)。
 
 源码仓库：[ChefDavid0815/personal-homepage](https://github.com/ChefDavid0815/personal-homepage)。Vercel 使用 `vercel.json` 中的配置，运行 `npm run check` 后发布 `dist` 目录。首页为 Personal Profile，Gallery、Now、Posts 均为独立页面。
 
@@ -147,14 +147,14 @@ ChefZC 是展示昵称，GitHub 账号为 ChefDavid0815。字体通过 Google Fo
 
 ## AXIOM · 格物 / Scientific plotting
 
-[Open AXIOM / 打开网页版](https://chefzc-axiom.vercel.app) · [Source / 源码](https://github.com/ChefDavid0815/axiom-studio)
+[Open AXIOM / 打开网页版](https://chefzc.dev/axiom/) · [Source / 源码](https://github.com/ChefDavid0815/axiom-studio)
 
 第三个真实项目已接入：Gallery 使用冷白、墨黑、荧光黄绿与钴蓝，展示真实工作台截图和内置胡克定律示例。Now 新增第 008 个节点，右侧小窗延续软件的实验图版风格。支持中英文。展柜由 `axiom-exhibit.js`、`axiom-content.js` 和 `axiom.css` 维护。网站版本 1.13.0。
 
 
 ## Festival Toolkit 0.2 / 网站 1.15
 
-[展柜](https://chefzc-homepage.vercel.app/gallery.html#project-festival-toolkit) · [版本手记](https://chefzc-homepage.vercel.app/gallery.html#festival-history) · [Windows 下载](https://github.com/ChefDavid0815/horizon-festival-toolkit/releases/tag/v0.2.0)
+[展柜](https://chefzc.dev/gallery.html#project-festival-toolkit) · [版本手记](https://chefzc.dev/gallery.html#festival-history) · [Windows 下载](https://github.com/ChefDavid0815/horizon-festival-toolkit/releases/tag/v0.2.0)
 
 保留薄荷绿、淡蓝与粉色的嘉年华通行证。647 车型车库与动态内容目录进入展柜；新增带齿孔和票根的版本档案，可展开查看 0.2.0 与 0.1.1 的日期、双语更新和独立下载。弹窗可切换新版季节赛、车库真实截图；中英切换保留截图、四季配色与版本栏展开状态。
 

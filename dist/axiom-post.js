@@ -1,7 +1,7 @@
 export const axiomPost = {
   id: 'axiom', theme: 'axiom', number: '04', date: '2026-09-18',
   cover: './assets/projects/axiom/experiment.svg', image: './assets/projects/axiom/workspace.png',
-  link: 'https://chefzc-axiom.vercel.app',
+  link: './axiom/',
   zh: {
     category: '制作手记 / AXIOM 1.0', title: '给好奇心，一张自己的工作台。',
     summary: 'AXIOM · 格物上线了。从一列实验数据，到拟合线、误差棒和新的问题，把我对数学、物理与代码的兴趣，放进同一个空间。',

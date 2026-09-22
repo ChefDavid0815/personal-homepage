@@ -22,7 +22,8 @@ const previews = {
 
 const escapeHtml = value => String(value).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
 const safeLink = value => {
-  try { const url = new URL(value); return ['https:', 'http:'].includes(url.protocol) ? escapeHtml(url.href) : ''; }
+  if (!value) return '';
+  try { const url = new URL(value, location.href); return ['https:', 'http:'].includes(url.protocol) ? escapeHtml(url.href) : ''; }
   catch { return ''; }
 };
 const isCourt = project => project.id === 'nba-after-hours';

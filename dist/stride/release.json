@@ -1,0 +1,32 @@
+{
+  "name": "stride-device-simulator",
+  "version": "0.2.0",
+  "source": "https://github.com/ChefDavid0815/wis-tech-tank",
+  "commit": "2c5756b09e867f3a480a4daa8d170cc002ec3a3a",
+  "path": "/stride/",
+  "files": {
+    "assets/ort/ort-wasm-simd-threaded.jsep.mjs": "08fb86ec433c78bfb032c5d84a68b8e8e5a8d81268fa39e24314179a5767a5b9",
+    "assets/ort/ort-wasm-simd-threaded.jsep.wasm": "c46655e8a94afc45338d4cb2b840475f88e5012d524509916e505079c00bfa39",
+    "assets/ort/ort-wasm-simd-threaded.mjs": "43c25054b6b9ac000f786c65545ff83a45f871e0e310e8c2f4d48a363bb66db4",
+    "assets/ort/ort-wasm-simd-threaded.wasm": "f061472c6e77d6d50d079aacdc0ff9b63fee287ddd2cbf46cf62438d3891de2b",
+    "assets/perception-worker.js": "c7f8b9531f4b09de03548663184866eba85846d8c75301f246097c34bc2e9825",
+    "favicon.svg": "e6cb4968ee132e66232dbeff8f464c4b710668996e26773b5ee2833394b9276d",
+    "index.html": "b916c9c8719e694f9acf001aad5c2ad9daeb10d908277b3c418cdcebd62cb1a6",
+    "models/coco/group1-shard1of5": "0e7af0f713e98521252321f7f84892c31cefccccec3ac64c84e5065b75ed5646",
+    "models/coco/group1-shard2of5": "74cc6cfc2c4510c9cd81b8ad4cebf6f6a8f305119bb365ce0eb96276da38519a",
+    "models/coco/group1-shard3of5": "50383033f893eae136392a403e8f70ade5efd90867df5695c4ca5ac640e14f38",
+    "models/coco/group1-shard4of5": "d856dc534c780068bbf6c666ce1516df2c8433d87578aa31fcdf197de7058cc2",
+    "models/coco/group1-shard5of5": "3d356f1fb6dfca6af78c56db34d9326706d0196e303f9de6b04f236ca79ed309",
+    "models/coco/model.json": "3770b2528339b1e3340cb74360e1e40401816b009779aeb8d0cce3a4353ea3a9",
+    "models/depth/config.json": "3aee5b9bc4f711ee885c2526d871f0c8c6c8c4b26b8e04253d0167f6a83264f5",
+    "models/depth/onnx/model_quantized.onnx": "fcf51f1b230362b28690bb9d1809bf0431f29cad20534e3f589bd7285547f20d",
+    "models/depth/preprocessor_config.json": "03576db3c13dd0471fdf5f5e1428befcb95de063fe699879150b293dc9e0a2c6",
+    "models/depth/SOURCE.json": "fc6c06ef8c51f78b7145c1c50681a50059fcf2d7fce3ed874644e3cd2cae532e",
+    "models/layout/config.json": "435799652b2b64c3e422dea20fed4c59651dae9f0e291fd885e9e067fee0ce2a",
+    "models/layout/onnx/model_quantized.onnx": "9a98d6daf3d926869ab8cc4c2ed7374a2bc23b889bb7ca3b0915d15e3c4756bb",
+    "models/layout/preprocessor_config.json": "dbabd93c735c8a5c39ef207c6c4459bf2d261a5dcc55e1ba1c1b982e5947f518",
+    "models/layout/SOURCE.json": "17a17a88cf80d5e1c40f8521dc660902132a096a80decdd954bfef808c4c1779",
+    "models/manifest.json": "4293c36d09a0522bdb648e2332b6352d6cd000bd1c870c639afd1b2000d5623a",
+    "STRIDE-Simulator.html": "b916c9c8719e694f9acf001aad5c2ad9daeb10d908277b3c418cdcebd62cb1a6"
+  }
+}

@@ -4,7 +4,7 @@
 
 A personal website for the things I love and make: a dark digital canvas with lime, electric blue, violet and warm accents. Each real project gets its own art direction: a midnight basketball court for **NBA After Hours**, a warm paper journal for **Folio**, a lime/cobalt scientific exhibition for **AXIOM**, and a mint/blue/pink festival pass for **Festival Toolkit**.
 
-[**Enter my space ↗**](https://chefzc-homepage.vercel.app) · [Gallery](https://chefzc-homepage.vercel.app/gallery.html) · [Posts](https://chefzc-homepage.vercel.app/posts.html) · [Now](https://chefzc-homepage.vercel.app/now.html) · [Game](https://chefzc-homepage.vercel.app/game.html)
+[**Enter my space ↗**](https://chefzc.dev) · [Gallery](https://chefzc.dev/gallery.html) · [Posts](https://chefzc.dev/posts.html) · [Now](https://chefzc.dev/now.html) · [Game](https://chefzc.dev/game.html)
 
 ## Atelier 1.22 / CHROMA — every bit, in color.
 
@@ -12,13 +12,13 @@ A personal website for the things I love and make: a dark digital canvas with li
 
 Now **015 / 2026-09-22** has a matching instrument miniature. The ninth bilingual Post, **A little colour for the heartbeat of a computer**, covers the design, local monitoring and honest measurement limits. Animations share the site’s motion control and reduced-motion preference; the site’s dark shell and all previous project identities are retained.
 
-[Windows early access](https://github.com/ChefDavid0815/chroma-monitor/releases/tag/v0.1.0) · [Exhibition](https://chefzc-homepage.vercel.app/gallery.html#project-chroma) · [Post](https://chefzc-homepage.vercel.app/post.html?article=chroma) · [Now](https://chefzc-homepage.vercel.app/now.html#milestone-chroma). [Publication checks](docs/verification-1.22.md).
+[Windows early access](https://github.com/ChefDavid0815/chroma-monitor/releases/tag/v0.1.0) · [Exhibition](https://chefzc.dev/gallery.html#project-chroma) · [Post](https://chefzc.dev/post.html?article=chroma) · [Now](https://chefzc.dev/now.html#milestone-chroma). [Publication checks](docs/verification-1.22.md).
 
 ## Atelier 1.21 / Festival Toolkit 0.3 — the journey update.
 
 The third Festival Pass adds an original paper journal, an animated compass and seven woven colour bands, keeping the pale mint, sky blue and pink identity. The exhibition introduces 38 categories and 2,833 entries, wristband ownership and daily GitHub release checks. Four real 0.3 screenshots and three public release entries are available in the detail window.
 
-Now milestone **014 / 2026-09-22** has its own matching miniature. No new Post was added; the original 0.1.1 article stays historical. The site and profile documentation are bilingual. [Download 0.3.0](https://github.com/ChefDavid0815/horizon-festival-toolkit/releases/tag/v0.3.0) · [Now](https://chefzc-homepage.vercel.app/now.html#milestone-festival03).
+Now milestone **014 / 2026-09-22** has its own matching miniature. No new Post was added; the original 0.1.1 article stays historical. The site and profile documentation are bilingual. [Download 0.3.0](https://github.com/ChefDavid0815/horizon-festival-toolkit/releases/tag/v0.3.0) · [Now](https://chefzc.dev/now.html#milestone-festival03).
 
 ## Atelier 1.20 / ProjectLens — look closer.
 
@@ -26,17 +26,17 @@ ProjectLens 0.1.0 joins the main collection with a real procedural 3D optical in
 
 ## Atelier 1.19 / Objects, light & living sleeves
 
-A real-time iridescent 3D sculpture for the profile, sculptural room entrances, an exhibition guide, layered paper and glass, woodland light, a chronological editorial journal, and a shared typographic finale. Each project keeps its own palette and materials. NBA 2K27 now has thick glass neon tubes, metal sockets, colored spill and a slow spectrum cycle. [Explore the game room](https://chefzc-homepage.vercel.app/game.html#nba-2k27).
+A real-time iridescent 3D sculpture for the profile, sculptural room entrances, an exhibition guide, layered paper and glass, woodland light, a chronological editorial journal, and a shared typographic finale. Each project keeps its own palette and materials. NBA 2K27 now has thick glass neon tubes, metal sockets, colored spill and a slow spectrum cycle. [Explore the game room](https://chefzc.dev/game.html#nba-2k27).
 
 The record shelf adds an **animated cover theatre** using original QQ Music artwork: directed light, mist, ripples, dust and fine moving textures. The two favourite albums have dedicated treatments. These are procedural visual studies, not official animated covers, generated walking performances, or music videos. Artwork stays available when WebGL is unavailable. All animations follow the shared motion preference, pause offscreen, and stop in hidden tabs. The profile sculpture loads only when needed; its render rate is capped, as are cover animations. [Visual system and implementation](docs/atelier-design.md).
 
 ## Pulse / Usage observatory
 
-A unified glass navigation, richer materials, calmer reading rhythm and shared motion controls, with every project retaining its own art direction. New [Pulse observatory](https://chefzc-homepage.vercel.app/usage.html): today, 7 days, 30 days and locally recorded lifetime tokens, stacked bars, model distribution and an API-price equivalent. Only numeric aggregates are uploaded. New usage records trigger cloud sync and server events update the page. Precise counts follow model-call usage reports; there is no simulated per-token counter. Offline collectors retain clearly dated records. [Accounting and sync](docs/usage-observatory.md) · [Design and motion](docs/atelier-design.md)
+A unified glass navigation, richer materials, calmer reading rhythm and shared motion controls, with every project retaining its own art direction. New [Pulse observatory](https://chefzc.dev/usage.html): today, 7 days, 30 days and locally recorded lifetime tokens, stacked bars, model distribution and an API-price equivalent. Only numeric aggregates are uploaded. New usage records trigger cloud sync and server events update the page. Precise counts follow model-call usage reports; there is no simulated per-token counter. Offline collectors retain clearly dated records. [Accounting and sync](docs/usage-observatory.md) · [Design and motion](docs/atelier-design.md)
 
 ## Game room / Life in play
 
-A new [Game page](https://chefzc-homepage.vercel.app/game.html): FH6 in lime, cobalt and pink with Tokyo pop art; NBA 2K27 in a glass cover sleeve with animated RGB court lighting. Three official FH6 scenes, three NBA lighting looks, motion controls and bilingual copy. Only verified local records are shown; FH6 collection counts are explicitly historical. Unknown currency balances are omitted. [Data provenance and offline refresh](docs/game-room.md).
+A new [Game page](https://chefzc.dev/game.html): FH6 in lime, cobalt and pink with Tokyo pop art; NBA 2K27 in a glass cover sleeve with animated RGB court lighting. Three official FH6 scenes, three NBA lighting looks, motion controls and bilingual copy. Only verified local records are shown; FH6 collection counts are explicitly historical. Unknown currency balances are omitted. [Data provenance and offline refresh](docs/game-room.md).
 
 ## The collection
 
@@ -53,7 +53,7 @@ A new [Game page](https://chefzc-homepage.vercel.app/game.html): FH6 in lime, co
 
 ## WIS TECH TANK / A separate school lab
 
-[STRIDE](https://chefzc-wis-tech-tank.vercel.app) is a bilingual classroom environment simulator. The **Personal collection / School lab** navigation separates the four main personal projects from school work. The school page keeps the site's dark shell and uses forest green, warm paper, an original woodland artwork, drifting light, sensing rings and a field-book scene selector. Three exhibition illustrations explain pavement, stairs and uncertainty; the actual app offers nine scenarios. The exhibit is not a live sensor feed.
+[STRIDE](https://chefzc.dev/stride/) is a bilingual classroom environment simulator. The **Personal collection / School lab** navigation separates the four main personal projects from school work. The school page keeps the site's dark shell and uses forest green, warm paper, an original woodland artwork, drifting light, sensing rings and a field-book scene selector. Three exhibition illustrations explain pavement, stairs and uncertainty; the actual app offers nine scenarios. The exhibit is not a live sensor feed.
 
 Motion can be paused and respects `prefers-reduced-motion`; the screenshot dialog supports Escape and restores focus. Chinese/English switching preserves the selected exhibit scene. The Now milestone and sixth Post share the natural art direction. `wis-content.js`, `wis-exhibit.js`, `wis-post.js`, `school-gallery.js` and `wis.css` contain the feature. [Artwork provenance and generation prompt](dist/assets/projects/wis-tech-tank/ARTWORK.md).
 
@@ -67,7 +67,7 @@ Folio's local file operations require its Windows app. Nexus personal API key su
 
 ## NBA After Hours
 
-[Play in the browser](https://chefzc-homepage.vercel.app/play/nba-after-hours/) or inspect the [separate source repository](https://github.com/ChefDavid0815/nba-after-hours). `dist/play/nba-after-hours/` is a static release snapshot with `release.json` and dependency licences. It needs no backend or API. Saves belong to the current browser and do not automatically sync with desktop copies.
+[Play in the browser](https://chefzc.dev/play/nba-after-hours/) or inspect the [separate source repository](https://github.com/ChefDavid0815/nba-after-hours). `dist/play/nba-after-hours/` is a static release snapshot with `release.json` and dependency licences. It needs no backend or API. Saves belong to the current browser and do not automatically sync with desktop copies.
 
 To update: build the game in its source directory, then run `node scripts/import-game.mjs "path-to-game-source"` here. Inspect and deploy the resulting snapshot. Screenshots are under `dist/assets/projects/nba-after-hours/`; exhibition styles live in `gallery-court.css`.
 
@@ -120,14 +120,14 @@ Sports photographs retain their attribution and CC BY-SA terms in `dist/assets/P
 
 ## AXIOM · 格物 / Scientific plotting
 
-[Open AXIOM / 打开网页版](https://chefzc-axiom.vercel.app) · [Source / 源码](https://github.com/ChefDavid0815/axiom-studio)
+[Open AXIOM / 打开网页版](https://chefzc.dev/axiom/) · [Source / 源码](https://github.com/ChefDavid0815/axiom-studio)
 
 A dedicated cold-white, ink, lime and cobalt exhibition uses real application imagery and the bundled Hooke’s-law dataset. The Now timeline adds milestone 008, with a matching experiment window. Content supports Chinese and English. Maintain the exhibition in `axiom-exhibit.js`, `axiom-content.js` and `axiom.css`.
 
 
 ## Festival Toolkit 0.2 / Website 1.15
 
-[Exhibition](https://chefzc-homepage.vercel.app/gallery.html#project-festival-toolkit) · [Version journal](https://chefzc-homepage.vercel.app/gallery.html#festival-history) · [Windows release](https://github.com/ChefDavid0815/horizon-festival-toolkit/releases/tag/v0.2.0)
+[Exhibition](https://chefzc.dev/gallery.html#project-festival-toolkit) · [Version journal](https://chefzc.dev/gallery.html#festival-history) · [Windows release](https://github.com/ChefDavid0815/horizon-festival-toolkit/releases/tag/v0.2.0)
 
 The original mint, sky-blue and pink Festival Pass now introduces 647 car models and an updatable content catalogue. A perforated ticket archive opens to public releases 0.2.0 and 0.1.1, with dates, bilingual changes and separate downloads. The detail dialog switches between actual 0.2.0 playlist and garage captures. Changing language preserves the selected screenshot, season palette and open journals.
 

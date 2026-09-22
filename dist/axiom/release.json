@@ -1,0 +1,21 @@
+{
+  "name": "axiom-studio",
+  "version": "1.0.0",
+  "source": "https://github.com/ChefDavid0815/axiom-studio",
+  "commit": "467fb90de090a4a6ae39ae1faeee779d0a8afeef",
+  "path": "/axiom/",
+  "files": {
+    "assets/exceljs.min-3xr7Unw-.js": "1c4db8323a29b6769605140ca4fb7b2e18b371fa5d0728685d4ec2894d8592eb",
+    "assets/expression-7_xlVPf6.js": "4cce454b548e9a3cbde26702ffa199469c3bba243ee5d5562a667f3247b3ffaf",
+    "assets/index-DaQ2bvLt.css": "d613794461cf86b1346295466e9b3282ae590d534646eef9a91ea246a6377f6c",
+    "assets/index-Dlvag3q_.js": "ea98783225d0089b925b8a0cf0d03e86cb4b6c32cbade5725e4f67a62f3da6f8",
+    "assets/space-grotesk-latin-700-normal-CwsQ-cCU.woff": "145016049aa47932e2d116f70151edc5a53df894cb367514c52ea2d11289bee7",
+    "assets/space-grotesk-latin-700-normal-RjhwGPKo.woff2": "35f8aec56cfd5cbfdb03cc68733a54a0b05bb3617ffcd5fd332badc0b045ca55",
+    "assets/space-grotesk-latin-ext-700-normal-BQnZhY3m.woff2": "7ce350b706d79c955ebf91314295f39fa82999f980b7e9beee743c2f3580a15e",
+    "assets/space-grotesk-latin-ext-700-normal-HVCqSBdx.woff": "215b0cac2778da21525aab1d204b59b4261099b64afd010864f73ec9613ec5ba",
+    "assets/space-grotesk-vietnamese-700-normal-DMty7AZE.woff2": "96a6d0a746a024bfbcc0b09ed15278755070d73b686e6856458dd0ca8f5d772a",
+    "assets/space-grotesk-vietnamese-700-normal-Duxec5Rn.woff": "10bc4d15c6fded3cb97fc0f36ceb55c7273133e5f9de9b5504a9f4e1171ba812",
+    "favicon.svg": "ba482844a3b5a5d7f4be36e034a1cfda8b93285be3426d0b775c839abde73f4e",
+    "index.html": "5c3c38e788cb5c18b9b0da6b284fbe6ca040c7cb432fccb20ccfa84fe66efbe3"
+  }
+}
