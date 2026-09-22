@@ -6,6 +6,14 @@ A personal website for the things I love and make: a dark digital canvas with li
 
 [**Enter my space ↗**](https://chefzc-homepage.vercel.app) · [Gallery](https://chefzc-homepage.vercel.app/gallery.html) · [Posts](https://chefzc-homepage.vercel.app/posts.html) · [Now](https://chefzc-homepage.vercel.app/now.html) · [Game](https://chefzc-homepage.vercel.app/game.html)
 
+## Atelier 1.22 / CHROMA — every bit, in color.
+
+**CHROMA 0.1.0 · Signal Remix** opens the collection with the app’s electric blue, yellow, signal red, cyan, pixel lettering and chrome instrument frames. A floating monitor, rotating burst stars, moving signal traces, reflective metal and raised keys form an interactive Y2K installation. CPU / GPU / RAM controls change its colour and feature perspective. Three actual interface views show Simple, PRO and the desktop mini window; the PRO screenshot follows the selected language. The artwork never reads a visitor’s hardware.
+
+Now **015 / 2026-09-22** has a matching instrument miniature. The ninth bilingual Post, **A little colour for the heartbeat of a computer**, covers the design, local monitoring and honest measurement limits. Animations share the site’s motion control and reduced-motion preference; the site’s dark shell and all previous project identities are retained.
+
+[Windows early access](https://github.com/ChefDavid0815/chroma-monitor/releases/tag/v0.1.0) · [Exhibition](https://chefzc-homepage.vercel.app/gallery.html#project-chroma) · [Post](https://chefzc-homepage.vercel.app/post.html?article=chroma) · [Now](https://chefzc-homepage.vercel.app/now.html#milestone-chroma). [Publication checks](docs/verification-1.22.md).
+
 ## Atelier 1.21 / Festival Toolkit 0.3 — the journey update.
 
 The third Festival Pass adds an original paper journal, an animated compass and seven woven colour bands, keeping the pale mint, sky blue and pink identity. The exhibition introduces 38 categories and 2,833 entries, wristband ownership and daily GitHub release checks. Four real 0.3 screenshots and three public release entries are available in the detail window.
@@ -35,11 +43,11 @@ A new [Game page](https://chefzc-homepage.vercel.app/game.html): FH6 in lime, co
 | Page | Inside |
 | :--- | :--- |
 | **Personal Profile** | ChefZC, a Year 12 IB student at GEMS Wellington International School in Dubai. Basketball, motorsport, AI, art, devices, milestones and public contact links. Only the city is shown as a location. |
-| **Gallery** | Five real projects: ProjectLens 0.1.0, Festival Toolkit 0.3.0, AXIOM 1.0, Folio 1.1 and NBA After Hours. Actual application/game screenshots, independent visual identities, project dialogs, source and download/play links. |
+| **Gallery** | Six real projects: CHROMA 0.1.0, ProjectLens 0.1.0, Festival Toolkit 0.3.0, AXIOM 1.0, Folio 1.1 and NBA After Hours. Actual application/game screenshots, independent visual identities, project dialogs, source and download/play links. |
 | **3D collection** | Two independent works: Chase Center (switchable interior/exterior cases) and a Curry head study. Real, draggable glass cases with free modeling downloads. |
 | **School Lab** | A separate `school-gallery.html` collection for school work. WIS TECH TANK · STRIDE has a woodland exhibition, three illustrated scene states, a real interface capture, web/source links and a simulation journal. |
-| **Now** | A chronological journal, newest first. Fourteen milestones; the newest is Festival Toolkit 0.3 on September 22, 2026. |
-| **Posts** | Eight bilingual essays, including ProjectLens and the Courtside 3D collection: opening this website, NBA After Hours, Folio 1.0, AXIOM 1.0, Festival Toolkit 0.1.1 and STRIDE 0.2.0. An overview, individual articles, contents, reading progress and related notes. |
+| **Now** | A chronological journal, newest first. Fifteen milestones; the newest is CHROMA 0.1.0 on September 22, 2026. |
+| **Posts** | Nine bilingual essays, including CHROMA, ProjectLens and the Courtside 3D collection: opening this website, NBA After Hours, Folio 1.0, AXIOM 1.0, Festival Toolkit 0.1.1 and STRIDE 0.2.0. An overview, individual articles, contents, reading progress and related notes. |
 
 `index.html` redirects to `profile.html`, retaining the query and fragment. Navigation, language preference and footer are shared. The site defaults to Chinese; the **中 / EN** switch translates navigation, copy, dialogs and page titles. Preference persists when local storage is available and synchronises across same-origin tabs. Brand names and decorative artwork retain their original design.
 
@@ -84,7 +92,7 @@ npm run dev       # http://127.0.0.1:4173
 npm run check     # JavaScript syntax checks
 ```
 
-`dist/` is the complete website. `vercel.json` runs `npm run check` and deploys that directory. The website version **1.21.0** is separate from Folio's **1.1.0**.
+`dist/` is the complete website. `vercel.json` runs `npm run check` and deploys that directory. The website version **1.22.0** is separate from Folio's **1.1.0**.
 
 ## Maintain the space
 

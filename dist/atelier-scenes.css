@@ -107,7 +107,7 @@ html:lang(zh-CN) .profile-hero h1>.profile-greeting{font-size:.35em;line-height:
 .contact-row{transition:padding .5s var(--scene-ease),background .4s}.contact-row:hover{padding-left:15px;padding-right:15px;background:linear-gradient(90deg,#bba3ed0c,transparent)}
 
 /* Four projects: the lighting changes with the material, never the other way round. */
-.exhibition-grid{gap:70px}.exhibit{position:relative;scroll-margin-top:170px;transition:box-shadow .8s var(--scene-ease),border-color .5s}
+.exhibition-grid{row-gap:70px;column-gap:28px}.exhibit{position:relative;scroll-margin-top:170px;transition:box-shadow .8s var(--scene-ease),border-color .5s}
 .exhibit--folio{box-shadow:0 20px 50px #0005,0 2px 0 #e7dbc499;outline:1px solid #e8dbbc30;outline-offset:5px}
 .folio-stage{perspective:1000px;background-image:radial-gradient(ellipse at 70% 30%,#fff8,transparent 60%),repeating-linear-gradient(0deg,transparent 0 4px,#71493602 4px 5px)}
 .folio-stage::before{box-shadow:-8px 9px 0 #eee4d0,-9px 10px 0 #bbaa865c,-16px 18px 0 #ded0b6;transition:transform 1s var(--scene-ease)}

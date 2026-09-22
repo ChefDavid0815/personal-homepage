@@ -1,3 +1,4 @@
+import {chromaCard,chromaDetail,changeChromaChannel,changeChromaView} from './chroma-exhibit.js';
 import { lensCard, lensDetail } from './projectlens-exhibit.js';
 import { t, localizeProject, onLanguageChange } from './i18n.js';
 import { projects } from './projects.js';
@@ -40,9 +41,11 @@ let selectedFestivalSeason = 'summer';
 let selectedFestivalView = 'journey';
 
 function renderCards() {
+  const chromaState = {channel:grid.querySelector('.exhibit--chroma')?.dataset.chromaChannel || 'cpu',view:grid.querySelector('.exhibit--chroma [data-chroma-preview]')?.dataset.chromaPreview || 'pro'};
   const festivalHistoryOpen = grid.querySelector("#festival-history")?.open ?? (location.hash === "#festival-history");
   const historyOpen = grid.querySelector("#folio-history")?.open ?? (location.hash === "#folio-history");
   grid.innerHTML = projects.map(localizeProject).map(project => {
+    if(project.id === 'chroma') return chromaCard();
     if(project.id === 'projectlens') return lensCard(project);
     if(project.id === 'festival-toolkit') return festivalCard(project);
     if(project.id === 'axiom') return axiomCard(project);
@@ -56,6 +59,8 @@ function renderCards() {
       '<div class="exhibit-info"><div class="exhibit-kicker mono"><span>'+(['feature','court'].includes(layout)?featured:escapeHtml(project.category))+'</span><span class="exhibit-number">/'+escapeHtml(project.number)+'</span></div><div class="exhibit-title-row"><h3>'+escapeHtml(project.name)+'</h3><span class="exhibit-title-arrow" aria-hidden="true">↗</span></div><p class="exhibit-subtitle">'+headline+'</p><p class="exhibit-description">'+escapeHtml(project.description)+'</p>'+(isCourt(project)?courtStats():'')+'<div class="exhibit-tags">'+tagsFor(project)+'</div><div class="exhibit-bottom"><span class="demo-stamp">'+t(project.demo?'project.demo':'project.work')+'</span><span class="exhibit-action">'+t('project.view')+' <span aria-hidden="true">↗</span></span></div></div></button>'+
       (isCourt(project)?'<div class="court-launch"><span class="mono">'+t('court.noInstall')+'</span><div><a class="court-source" href="'+safeLink(project.repoUrl)+'" target="_blank" rel="noopener noreferrer">'+t('court.source')+' ↗</a><a class="court-play" href="'+safeLink(project.liveUrl)+'">'+t('court.play')+' <span aria-hidden="true">↗</span></a></div></div>':'')+'</article>';
   }).join('');
+  const chromaChannel=grid.querySelector(`[data-chroma-channel-button="${chromaState.channel}"]`);if(chromaChannel)changeChromaChannel(chromaChannel);
+  const chromaView=grid.querySelector(`.exhibit--chroma [data-chroma-view="${chromaState.view}"]`);if(chromaView)changeChromaView(chromaView);
   grid.querySelector('#folio-history').open = historyOpen;
   grid.querySelector('#festival-history').open = festivalHistoryOpen;
   changeFestivalSeason(grid,selectedFestivalSeason);
@@ -66,7 +71,8 @@ function renderDetail(projectId) {
   const original=projects.find(project=>project.id===projectId);
   if(!original) return;
   const project=localizeProject(original);
-  dialog.classList.remove('lens-dialog', 'folio-dialog', 'axiom-dialog', 'festival-dialog');
+  dialog.classList.remove('chroma-dialog', 'lens-dialog', 'folio-dialog', 'axiom-dialog', 'festival-dialog');
+  if(projectId === 'chroma') { dialog.classList.add('chroma-dialog'); dialogContent.innerHTML=chromaDetail(dialogContent.querySelector('[data-chroma-preview]')?.dataset.chromaPreview || 'pro'); return; }
   dialog.classList.toggle('lens-dialog', projectId === 'projectlens');
   if(projectId === 'projectlens') { dialogContent.innerHTML=lensDetail(project); return; }
   dialog.classList.toggle('folio-dialog', projectId === 'folio');
@@ -127,7 +133,7 @@ dialog.addEventListener('close',()=>{
   const opener=[...grid.querySelectorAll('[data-project]')].find(button=>button.dataset.project===selectedProjectId);
   opener?.focus({preventScroll:true});
   selectedProjectId=null;
-  dialog.classList.remove('folio-dialog', 'axiom-dialog', 'festival-dialog', 'lens-dialog');
+  dialog.classList.remove('folio-dialog', 'axiom-dialog', 'festival-dialog', 'lens-dialog', 'chroma-dialog');
 });
 
 window.addEventListener('hashchange', () => {

@@ -4,6 +4,14 @@
 
 个人介绍与项目展示网站：深色数码风，荧光绿、紫色、电光蓝与橙色点缀。
 
+## Atelier 1.22 / CHROMA — 给每一道信号，调一套颜色。
+
+**CHROMA 0.1.0 · 彩谱** 成为主展厅第一件作品。沿用软件的电光蓝、亮黄、信号红、青色、像素字与金属仪器边框：悬浮屏幕、旋转爆炸星形、移动波形、金属扫光与立体按键，组成一套千禧年视觉装置。CPU / GPU / RAM 按钮切换配色和功能视角，真实界面可切换极简、专业与桌面小窗；专业截图跟随网站语言。展柜不会读取访问者的硬件。
+
+Now 新增 **015 / 2026-09-22** 与同风格仪器小窗；第九篇双语随笔《给电脑的心跳，调一套新颜色。》聊设计、本地监测与真实读数。所有动画遵守全站动效开关及系统减少动态效果偏好，网站外壳和其他项目的独立风格保持一致。
+
+[Windows 早期版本](https://github.com/ChefDavid0815/chroma-monitor/releases/tag/v0.1.0) · [展柜](https://chefzc-homepage.vercel.app/gallery.html#project-chroma) · [随笔](https://chefzc-homepage.vercel.app/post.html?article=chroma) · [Now](https://chefzc-homepage.vercel.app/now.html#milestone-chroma)。[发布检查](docs/verification-1.22.md)。
+
 ## Atelier 1.21 / Festival Toolkit 0.3 — 旅程绽放。
 
 第三张 Festival Pass 加入原创纸质旅程手册、轻轻寻向的指南针和七色织带，沿用浅绿、淡蓝与粉色。展柜呈现 38 个分类、2,833 个收藏项目、腕带持有记录与每日 GitHub 版本提醒；详情可切换四张 0.3 真实截图，翻阅三个公开版本。
@@ -31,9 +39,10 @@ ProjectLens 0.1.0 加入主展柜：真实程序化 3D 透镜、石墨黑/薄荷
 ## 页面
 
 - `profile.html`：Personal Profile，包含数字名片、真实简介、篮球与赛车主题卡、AI 与艺术兴趣、数码设备、成长经历及公开联系方式。
-- `gallery.html`：五件真实作品：ProjectLens 项目透镜、Festival Toolkit 0.3 旅程通行证与版本手记、AXIOM 科学工作台、Folio 1.1 手帖与版本历程、NBA After Hours 球场。
+- `gallery.html`：六件真实作品：CHROMA 彩谱、ProjectLens 项目透镜、Festival Toolkit 0.3 旅程通行证与版本手记、AXIOM 科学工作台、Folio 1.1 手帖与版本历程、NBA After Hours 球场。
+- `posts.html`：九篇双语随笔，按时间排序；最新为 CHROMA《给电脑的心跳，调一套新颜色。》，正文含真实截图和专属视觉。
 - `school-gallery.html`：独立的校园实验室分页。WIS TECH TANK · STRIDE 自然展柜，三种场景示意切换、真实截图放大、在线体验与观察手记。
-- `now.html`：Now 近况页，十四个节点，按日期倒序记录 2026-09-22 Festival Toolkit 0.3、2026-09-21 ProjectLens 上线、2026-09-20 建模展厅上线、Festival Toolkit 0.2 发布、 2026-09-19 STRIDE 上线与校园实验室开放、 2026-09-18 Festival Toolkit 加入作品集、AXIOM 上线、发布 Folio 1.1、2026-09-17 发布 Folio 1.0、发布第一个项目 NBA After Hours、创建音乐模块、2026-09-16 创建个人主页、2026-08-27 步入 IB、2026-04-20 开始接触 Agents。
+- `now.html`：Now 近况页，十五个节点，按日期倒序记录 2026-09-22 CHROMA 上线、2026-09-22 Festival Toolkit 0.3、2026-09-21 ProjectLens 上线、2026-09-20 建模展厅上线、Festival Toolkit 0.2 发布、 2026-09-19 STRIDE 上线与校园实验室开放、 2026-09-18 Festival Toolkit 加入作品集、AXIOM 上线、发布 Folio 1.1、2026-09-17 发布 Folio 1.0、发布第一个项目 NBA After Hours、创建音乐模块、2026-09-16 创建个人主页、2026-08-27 步入 IB、2026-04-20 开始接触 Agents。
 - `index.html`：网站入口，自动转到 Personal Profile，并保留查询参数与页内锚点。
 
 所有页面共用品牌、配色、导航、语言偏好与页脚，可以互相切换。个人资料采用 ChefZC 提供的信息：在迪拜的 GEMS Wellington International School 就读 Year 12 / IB。公开位置只展示城市。

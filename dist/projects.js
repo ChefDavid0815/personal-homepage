@@ -4,6 +4,14 @@ import { currentFestival, festivalReleaseUrl } from './festival-releases.js';
 // 接入真实项目后，将 demo 设为 false，并填写 repoUrl / liveUrl。
 export const projects = [
   {
+    id:'chroma',name:'CHROMA',subtitle:'每一道信号，都有自己的颜色。',layout:'chroma',
+    category:'HARDWARE OBSERVATORY',number:'06',color:'y2k',tags:['Electron','React','C#'],
+    description:'CHROMA · 彩谱 0.1.0。本地硬件观测站：极简 / PRO / 桌面小窗，CPU、GPU、传感器、记录与导出。中英双语。',
+    demo:false,version:'0.1.0',repoUrl:'https://github.com/ChefDavid0815/chroma-monitor',liveUrl:'',
+    downloadUrl:'https://github.com/ChefDavid0815/chroma-monitor/releases/tag/v0.1.0',
+    translations:{zh:{category:'本地硬件观测站'},en:{subtitle:'Every bit. In color.',description:'CHROMA 0.1.0. A local hardware observatory: Simple, PRO and Mini, with CPU, GPU, sensors, session recording and exports. Chinese / English.'}}
+  },
+  {
     id:'projectlens',name:'ProjectLens',subtitle:'把线索，放大。',layout:'lens',
     category:'LOCAL PROJECT INTELLIGENCE',number:'05',color:'mint',tags:['Electron','React','TypeScript'],
     description:'ProjectLens 0.1.0。中英双语，可跟随系统语言。扫描代码、配置与文档，查看带位置和证据的静态检查结果，导出 Markdown 或 JSON。',

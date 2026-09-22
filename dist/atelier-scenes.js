@@ -40,7 +40,7 @@ function addIndex(){
   const grid=document.querySelector('#project-grid');
   if(grid&&!document.querySelector('.scene-index--works')){
     const nav=document.createElement('nav');nav.className='scene-index scene-index--works';nav.setAttribute('aria-label',c('快速浏览作品','Browse the collection'));
-    const projects=[['projectlens','PROJECTLENS','05','lens'],['festival-toolkit','FESTIVAL','04','festival'],['axiom','AXIOM','03','axiom'],['folio','FOLIO','02','folio'],['nba-after-hours','AFTER HOURS','01','court']];
+    const projects=[['chroma','CHROMA','06','chroma'],['projectlens','PROJECTLENS','05','lens'],['festival-toolkit','FESTIVAL','04','festival'],['axiom','AXIOM','03','axiom'],['folio','FOLIO','02','folio'],['nba-after-hours','AFTER HOURS','01','court']];
     nav.innerHTML=projects.map(([id,name,number,theme])=>`<a href="#project-${id}" data-index-theme="${theme}"><i aria-hidden="true"></i><small>${number}</small><span>${name}</span><b aria-hidden="true">↓</b></a>`).join('');grid.before(nav);
   }
   const divider=document.querySelector('.profile-divider');
