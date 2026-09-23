@@ -6,6 +6,12 @@ A personal website for the things I love and make: a dark digital canvas with li
 
 [**Enter my space ↗**](https://chefzc.dev) · [Gallery](https://chefzc.dev/gallery.html) · [Posts](https://chefzc.dev/posts.html) · [Now](https://chefzc.dev/now.html) · [Game](https://chefzc.dev/game.html)
 
+## Atlas 0.3 / Above every idea, a wider universe.
+
+The seventh main exhibit opens with Atlas 0.3, an independent IB learning observatory. Its real 0.3 Renaissance fresco and cosmic pigment art frame an interactive three-view cabinet: a living star chart, a manuscript and a subject index. Procedural stars, orbit light, GSAP scroll choreography and tactile controls echo the app while keeping the site's dark digital shell. [Open Atlas](https://chefzc.dev/atlas/) on this domain, [explore the gallery](https://chefzc.dev/gallery.html#project-atlas), read the [bilingual field notes](https://chefzc.dev/post.html?article=atlas), or follow [Now milestone 016](https://chefzc.dev/now.html#milestone-atlas).
+
+The exhibit uses the existing site language switch. Chinese display and reading type are locally hosted subsets of Zhuque Fangsong and LXGW WenKai GB; the English companion is EB Garamond. The source app and website copy are included in the subsets' CJK coverage. Atlas is an editorial study map, not an official or exhaustive IB syllabus. [Source / EN + 中文](https://github.com/ChefDavid0815/atlas-diploma-observatory).
+
 ## Atelier 1.22 / CHROMA — every bit, in color.
 
 **CHROMA 0.1.0 · Signal Remix** opens the collection with the app’s electric blue, yellow, signal red, cyan, pixel lettering and chrome instrument frames. A floating monitor, rotating burst stars, moving signal traces, reflective metal and raised keys form an interactive Y2K installation. CPU / GPU / RAM controls change its colour and feature perspective. Three actual interface views show Simple, PRO and the desktop mini window; the PRO screenshot follows the selected language. The artwork never reads a visitor’s hardware.
@@ -43,11 +49,11 @@ A new [Game page](https://chefzc.dev/game.html): FH6 in lime, cobalt and pink wi
 | Page | Inside |
 | :--- | :--- |
 | **Personal Profile** | ChefZC, a Year 12 IB student at GEMS Wellington International School in Dubai. Basketball, motorsport, AI, art, devices, milestones and public contact links. Only the city is shown as a location. |
-| **Gallery** | Six real projects: CHROMA 0.1.0, ProjectLens 0.1.0, Festival Toolkit 0.3.0, AXIOM 1.0, Folio 1.1 and NBA After Hours. Actual application/game screenshots, independent visual identities, project dialogs, source and download/play links. |
+| **Gallery** | Seven real projects: Atlas 0.3, CHROMA 0.1.0, ProjectLens 0.1.0, Festival Toolkit 0.3.0, AXIOM 1.0, Folio 1.1 and NBA After Hours. Independent visual identities, project dialogs, source and download/play links. |
 | **3D collection** | Two independent works: Chase Center (switchable interior/exterior cases) and a Curry head study. Real, draggable glass cases with free modeling downloads. |
 | **School Lab** | A separate `school-gallery.html` collection for school work. WIS TECH TANK · STRIDE has a woodland exhibition, three illustrated scene states, a real interface capture, web/source links and a simulation journal. |
-| **Now** | A chronological journal, newest first. Fifteen milestones; the newest is CHROMA 0.1.0 on September 22, 2026. |
-| **Posts** | Nine bilingual essays, including CHROMA, ProjectLens and the Courtside 3D collection: opening this website, NBA After Hours, Folio 1.0, AXIOM 1.0, Festival Toolkit 0.1.1 and STRIDE 0.2.0. An overview, individual articles, contents, reading progress and related notes. |
+| **Now** | A chronological journal, newest first. Sixteen milestones; the newest is Atlas 0.3 on September 23, 2026. |
+| **Posts** | Ten bilingual essays, newest first, including the Atlas 0.3 field notes, CHROMA and ProjectLens. An overview, individual articles, contents, reading progress and related notes. |
 
 `index.html` redirects to `profile.html`, retaining the query and fragment. Navigation, language preference and footer are shared. The site defaults to Chinese; the **中 / EN** switch translates navigation, copy, dialogs and page titles. Preference persists when local storage is available and synchronises across same-origin tabs. Brand names and decorative artwork retain their original design.
 

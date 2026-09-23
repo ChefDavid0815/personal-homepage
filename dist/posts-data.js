@@ -1,4 +1,5 @@
 import {chromaPost} from './chroma-post.js';
+import {atlasPost} from './atlas-post.js';
 import { lensPost } from './projectlens-post.js';
 import { modelsPost } from './models-post.js';
 import { wisPost } from './wis-post.js';
@@ -6,6 +7,7 @@ import { wisPost } from './wis-post.js';
 import { axiomPost } from './axiom-post.js';
 import { festivalPost } from './festival-post.js';
 export const posts = [
+  atlasPost,
   chromaPost,
   lensPost,
   modelsPost,

@@ -4,6 +4,14 @@ import { currentFestival, festivalReleaseUrl } from './festival-releases.js';
 // 接入真实项目后，将 demo 设为 false，并填写 repoUrl / liveUrl。
 export const projects = [
   {
+    id:'atlas',name:'Atlas',subtitle:'在思想之上，仰望无垠。',layout:'atlas',
+    category:'IB KNOWLEDGE OBSERVATORY',number:'07',color:'cosmos',tags:['React','TypeScript','Electron'],
+    description:'Atlas 0.3.0。以文艺复兴手稿与宇宙星图连接 IB 知识：784 个节点、1,059 条关联、241 个主题笔记。中英双语。',
+    demo:false,version:'0.3.0',repoUrl:'https://github.com/ChefDavid0815/atlas-diploma-observatory',liveUrl:'./atlas/',
+    downloadUrl:'https://github.com/ChefDavid0815/atlas-diploma-observatory/releases/tag/v0.3.0',
+    translations:{zh:{category:'IB 知识观星台'},en:{subtitle:'Above every idea, a wider universe.',description:'Atlas 0.3.0 maps IB knowledge through a Renaissance manuscript and a living cosmos: 784 nodes, 1,059 links and notes for 241 topics. Chinese / English.'}}
+  },
+  {
     id:'chroma',name:'CHROMA',subtitle:'每一道信号，都有自己的颜色。',layout:'chroma',
     category:'HARDWARE OBSERVATORY',number:'06',color:'y2k',tags:['Electron','React','C#'],
     description:'CHROMA · 彩谱 0.1.0。本地硬件观测站：极简 / PRO / 桌面小窗，CPU、GPU、传感器、记录与导出。中英双语。',

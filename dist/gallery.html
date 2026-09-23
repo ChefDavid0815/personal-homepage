@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#101112">
-  <meta name="description" content="ChefZC 的五件真实作品：ProjectLens、Festival Toolkit、AXIOM、Folio 与 NBA After Hours。">
+  <meta name="description" content="ChefZC 的七件真实作品：Atlas、CHROMA、ProjectLens、Festival Toolkit、AXIOM、Folio 与 NBA After Hours。">
   <title>Gallery — ChefZC 数字作品陈列室</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23c4fa5a'/%3E%3Cpath d='M39 18H28L17 32l11 14h11M43 43h8' fill='none' stroke='%23101112' stroke-width='7'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="./styles.css">
@@ -23,6 +23,10 @@
   <script type="module" src="./projectlens-motion.js"></script>
   <link rel="stylesheet" href="./chroma.css">
   <script type="module" src="./chroma-motion.js"></script>
+  <link rel="stylesheet" href="./atlas.css">
+  <script src="./vendor/gsap.min.js" defer></script>
+  <script src="./vendor/ScrollTrigger.min.js" defer></script>
+  <script type="module" src="./atlas-motion.js"></script>
 </head>
 <body class="gallery-page">
   <a class="skip-link" href="#projects">跳到作品</a>
@@ -39,10 +43,10 @@
         <div class="gallery-title-row"><h1 id="gallery-title">GALLERY<span>.</span></h1><div class="collection-mark" aria-hidden="true"><img src="./assets/hero-asterisk.png" width="1254" height="1254" alt=""><span class="mono">MADE OF IDEAS</span></div></div>
         <div class="gallery-introduction"><h2>好玩的想法，<span>值得一个展位。</span></h2><p>一些关于代码、设计和好奇心的探索。<br>把每一次「试试看」，留在这里。</p></div>
       </section>
-      <nav class="collection-navigation" aria-label="选择展厅" data-i18n-label="collection.label"><a href="./gallery.html" aria-current="page"><span data-i18n="collection.main">主展厅</span><small>01 / 06</small></a><a href="./school-gallery.html" ><span data-i18n="collection.school">校园实验室</span><small>02 / 01</small></a><a href="./models-gallery.html"><span data-i18n="collection.models">建模作品</span><small>03 / 02</small></a></nav>
+      <nav class="collection-navigation" aria-label="选择展厅" data-i18n-label="collection.label"><a href="./gallery.html" aria-current="page"><span data-i18n="collection.main">主展厅</span><small>01 / 07</small></a><a href="./school-gallery.html" ><span data-i18n="collection.school">校园实验室</span><small>02 / 01</small></a><a href="./models-gallery.html"><span data-i18n="collection.models">建模作品</span><small>03 / 02</small></a></nav>
       <a class="school-portal" href="./school-gallery.html"><img src="./assets/projects/wis-tech-tank/woodland.webp" width="96" height="80" alt="" loading="lazy"><div><small>NEW ROOM / WIS TECH TANK</small><h3 data-i18n="collection.schoolNote">为课堂里的好奇心，留一间新的展室。</h3><p data-i18n="collection.enter">走进校园实验室</p></div><span aria-hidden="true">↗</span></a>
       <section class="collection-section" id="projects" aria-labelledby="collection-title">
-        <div class="collection-toolbar"><h2 id="collection-title"><span class="mono">作品与实验</span><span class="collection-count mono" data-project-count>06</span></h2><p>真实作品 <span>/</span> 持续创造</p></div>
+        <div class="collection-toolbar"><h2 id="collection-title"><span class="mono">作品与实验</span><span class="collection-count mono" data-project-count>07</span></h2><p>真实作品 <span>/</span> 持续创造</p></div>
         <div class="exhibition-grid" id="project-grid"></div>
         <noscript><p>请启用 JavaScript 查看作品卡片及详情。</p></noscript>
         <div class="collection-end mono"><span>END OF COLLECTION</span><span class="collection-end-line"></span><span>STILL MAKING. STILL EXPLORING. <b aria-hidden="true">✳</b></span></div>

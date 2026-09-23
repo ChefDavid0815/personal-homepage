@@ -1,4 +1,5 @@
 import {chromaCard,chromaDetail,changeChromaChannel,changeChromaView} from './chroma-exhibit.js';
+import {atlasCard,atlasDetail,changeAtlasView} from './atlas-exhibit.js';
 import { lensCard, lensDetail } from './projectlens-exhibit.js';
 import { t, localizeProject, onLanguageChange } from './i18n.js';
 import { projects } from './projects.js';
@@ -46,6 +47,7 @@ function renderCards() {
   const festivalHistoryOpen = grid.querySelector("#festival-history")?.open ?? (location.hash === "#festival-history");
   const historyOpen = grid.querySelector("#folio-history")?.open ?? (location.hash === "#folio-history");
   grid.innerHTML = projects.map(localizeProject).map(project => {
+    if(project.id === 'atlas') return atlasCard();
     if(project.id === 'chroma') return chromaCard();
     if(project.id === 'projectlens') return lensCard(project);
     if(project.id === 'festival-toolkit') return festivalCard(project);
@@ -66,13 +68,15 @@ function renderCards() {
   grid.querySelector('#festival-history').open = festivalHistoryOpen;
   changeFestivalSeason(grid,selectedFestivalSeason);
   document.querySelectorAll('[data-project-count]').forEach(element => { element.textContent=String(projects.length).padStart(2,'0'); });
+  document.dispatchEvent(new Event('atlas:render'));
 }
 
 function renderDetail(projectId) {
   const original=projects.find(project=>project.id===projectId);
   if(!original) return;
   const project=localizeProject(original);
-  dialog.classList.remove('chroma-dialog', 'lens-dialog', 'folio-dialog', 'axiom-dialog', 'festival-dialog');
+  dialog.classList.remove('atlas-dialog', 'chroma-dialog', 'lens-dialog', 'folio-dialog', 'axiom-dialog', 'festival-dialog');
+  if(projectId === 'atlas') { dialog.classList.add('atlas-dialog'); dialogContent.innerHTML=atlasDetail(dialogContent.querySelector('.atlas-view')?.dataset.atlasViewActive || 'sky'); document.dispatchEvent(new Event('atlas:render')); return; }
   if(projectId === 'chroma') { dialog.classList.add('chroma-dialog'); dialogContent.innerHTML=chromaDetail(dialogContent.querySelector('[data-chroma-preview]')?.dataset.chromaPreview || 'pro'); return; }
   dialog.classList.toggle('lens-dialog', projectId === 'projectlens');
   if(projectId === 'projectlens') { dialogContent.innerHTML=lensDetail(project); return; }
@@ -106,6 +110,8 @@ onLanguageChange(() => {
   if(dialog.open&&selectedProjectId) renderDetail(selectedProjectId);
 });
 grid.addEventListener('click',event=>{
+  const atlasButton=event.target.closest('[data-atlas-view]');
+  if(atlasButton) { changeAtlasView(atlasButton); return; }
   const seasonButton=event.target.closest('[data-festival-season]');
   if(seasonButton) { selectedFestivalSeason=seasonButton.dataset.festivalSeason; changeFestivalSeason(grid,selectedFestivalSeason); return; }
   const button=event.target.closest('[data-project]');
@@ -117,6 +123,8 @@ grid.addEventListener('click',event=>{
 });
 dialog.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());
 dialogContent.addEventListener('click',event=>{
+  const atlasButton=event.target.closest('[data-atlas-view]');
+  if(atlasButton) { changeAtlasView(atlasButton); return; }
   const festivalButton=event.target.closest('[data-festival-view]');
   if(festivalButton) { selectedFestivalView=festivalButton.dataset.festivalView; changeFestivalView(dialogContent,selectedFestivalView); return; }
   const button=event.target.closest('[data-folio-view]');
@@ -134,7 +142,7 @@ dialog.addEventListener('close',()=>{
   const opener=[...grid.querySelectorAll('[data-project]')].find(button=>button.dataset.project===selectedProjectId);
   opener?.focus({preventScroll:true});
   selectedProjectId=null;
-  dialog.classList.remove('folio-dialog', 'axiom-dialog', 'festival-dialog', 'lens-dialog', 'chroma-dialog');
+  dialog.classList.remove('atlas-dialog', 'folio-dialog', 'axiom-dialog', 'festival-dialog', 'lens-dialog', 'chroma-dialog');
 });
 
 window.addEventListener('hashchange', () => {
