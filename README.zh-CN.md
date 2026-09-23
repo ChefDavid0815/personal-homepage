@@ -4,6 +4,14 @@
 
 个人介绍与项目展示网站：深色数码风，荧光绿、紫色、电光蓝与橙色点缀。
 
+## Roseraie 0.1 / 让灵感，在此盛放。
+
+第八件、也是主展厅首位作品是 **Roseraie · 蔷薇工坊**。展柜在网站深色数码外壳中开出一间玫瑰纸色、薰衣草紫的洛可可工坊：原创 SVG 花饰、缓缓飘落的花瓣、浮动的椭圆徽章和分层的**真实 Windows 软件截图**。三幕可以切换：实际桌面首页、织思三阶段的艺术示意、真实测试中的文件改动确认。Now 的侧窗与第十一篇双语随笔延续纸张、字体和花饰；动效遵守全站暂停开关与系统减少动态效果偏好。
+
+[走进展柜](https://chefzc.dev/gallery.html#project-roseraie) · [读蔷薇工坊手记](https://chefzc.dev/post.html?article=roseraie) · [Now 017](https://chefzc.dev/now.html#milestone-roseraie) · [源码与中英双语文档](https://github.com/ChefDavid0815/roseraie-agent) · [下载 Windows 0.1.0](https://github.com/ChefDavid0815/roseraie-agent/releases/tag/v0.1.0)。
+
+Roseraie 是本地桌面 Agent；网站是作品展柜，不是假装能在浏览器执行本地文件与命令的网页版。未签名的 0.1.0 已通过 12 项测试、构建和 Windows 基础检查，并完成一次真实 Codex CLI 受控修复；其他服务预设和环境仍待验证。
+
 ## Atlas 0.3 / 在思想之上，仰望无垠。
 
 第七件主展品是独立制作的 IB 学习观星台 Atlas 0.3。展柜采用软件实际 0.3 版的文艺复兴壁画和宇宙颜料画面，开放星图、手稿与学科索引三种互动视角；实时星粒、轨道微光、GSAP 滚动编排与细腻按钮反馈和软件呼应，同时融入网站原有的深色数码外壳。[打开网页版](https://chefzc.dev/atlas/)、[走进展柜](https://chefzc.dev/gallery.html#project-atlas)、[阅读双语观星手记](https://chefzc.dev/post.html?article=atlas)或查看 [Now 016](https://chefzc.dev/now.html#milestone-atlas)。
@@ -12,7 +20,7 @@
 
 ## Atelier 1.22 / CHROMA — 给每一道信号，调一套颜色。
 
-**CHROMA 0.1.0 · 彩谱** 成为主展厅第一件作品。沿用软件的电光蓝、亮黄、信号红、青色、像素字与金属仪器边框：悬浮屏幕、旋转爆炸星形、移动波形、金属扫光与立体按键，组成一套千禧年视觉装置。CPU / GPU / RAM 按钮切换配色和功能视角，真实界面可切换极简、专业与桌面小窗；专业截图跟随网站语言。展柜不会读取访问者的硬件。
+**CHROMA 0.1.0 · 彩谱** 拥有独立展柜。沿用软件的电光蓝、亮黄、信号红、青色、像素字与金属仪器边框：悬浮屏幕、旋转爆炸星形、移动波形、金属扫光与立体按键，组成一套千禧年视觉装置。CPU / GPU / RAM 按钮切换配色和功能视角，真实界面可切换极简、专业与桌面小窗；专业截图跟随网站语言。展柜不会读取访问者的硬件。
 
 Now 新增 **015 / 2026-09-22** 与同风格仪器小窗；第九篇双语随笔《给电脑的心跳，调一套新颜色。》聊设计、本地监测与真实读数。所有动画遵守全站动效开关及系统减少动态效果偏好，网站外壳和其他项目的独立风格保持一致。
 
@@ -45,10 +53,10 @@ ProjectLens 0.1.0 加入主展柜：真实程序化 3D 透镜、石墨黑/薄荷
 ## 页面
 
 - `profile.html`：Personal Profile，包含数字名片、真实简介、篮球与赛车主题卡、AI 与艺术兴趣、数码设备、成长经历及公开联系方式。
-- `gallery.html`：七件真实作品：Atlas 0.3、CHROMA 彩谱、ProjectLens 项目透镜、Festival Toolkit 0.3、AXIOM、Folio 1.1、NBA After Hours。
-- `posts.html`：十篇双语随笔，按时间排序；最新为 Atlas《在思想之上，仰望无垠。》，正文使用实际 0.3 素材与独立视觉。
+- `gallery.html`：八件真实作品：Roseraie 0.1、Atlas 0.3、CHROMA 彩谱、ProjectLens 项目透镜、Festival Toolkit 0.3、AXIOM、Folio 1.1、NBA After Hours。
+- `posts.html`：十一篇双语随笔，按时间排序；最新是《给灵感，开一间蔷薇工坊。》，正文包含真实软件与测试截图。
 - `school-gallery.html`：独立的校园实验室分页。WIS TECH TANK · STRIDE 自然展柜，三种场景示意切换、真实截图放大、在线体验与观察手记。
-- `now.html`：Now 近况页，十六个节点，最新为 2026-09-23 Atlas 0.3 上线；其余项目历程按日期倒序保留。
+- `now.html`：Now 近况页，十七个节点，最新为 2026-09-23 Roseraie 0.1 发布；其余项目历程按日期倒序保留。
 - `index.html`：网站入口，自动转到 Personal Profile，并保留查询参数与页内锚点。
 
 所有页面共用品牌、配色、导航、语言偏好与页脚，可以互相切换。个人资料采用 ChefZC 提供的信息：在迪拜的 GEMS Wellington International School 就读 Year 12 / IB。公开位置只展示城市。

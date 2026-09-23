@@ -1,5 +1,6 @@
 import {chromaCard,chromaDetail,changeChromaChannel,changeChromaView} from './chroma-exhibit.js';
-import {atlasCard,atlasDetail,changeAtlasView} from './atlas-exhibit.js';
+import {atlasCard,atlasDetail,changeAtlasView} from './atlas-exhibit-v2.js';
+import {roseraieCard,roseraieDetail,changeRoseraieView} from './roseraie-exhibit.js';
 import { lensCard, lensDetail } from './projectlens-exhibit.js';
 import { t, localizeProject, onLanguageChange } from './i18n.js';
 import { projects } from './projects.js';
@@ -43,10 +44,12 @@ let selectedFestivalSeason = 'summer';
 let selectedFestivalView = 'journey';
 
 function renderCards() {
+  const roseView=grid.querySelector('#project-roseraie [data-rose-gallery]')?.dataset.roseGallery || 'salon';
   const chromaState = {channel:grid.querySelector('.exhibit--chroma')?.dataset.chromaChannel || 'cpu',view:grid.querySelector('.exhibit--chroma [data-chroma-preview]')?.dataset.chromaPreview || 'pro'};
   const festivalHistoryOpen = grid.querySelector("#festival-history")?.open ?? (location.hash === "#festival-history");
   const historyOpen = grid.querySelector("#folio-history")?.open ?? (location.hash === "#folio-history");
   grid.innerHTML = projects.map(localizeProject).map(project => {
+    if(project.id === 'roseraie') return roseraieCard();
     if(project.id === 'atlas') return atlasCard();
     if(project.id === 'chroma') return chromaCard();
     if(project.id === 'projectlens') return lensCard(project);
@@ -63,19 +66,22 @@ function renderCards() {
       (isCourt(project)?'<div class="court-launch"><span class="mono">'+t('court.noInstall')+'</span><div><a class="court-source" href="'+safeLink(project.repoUrl)+'" target="_blank" rel="noopener noreferrer">'+t('court.source')+' ↗</a><a class="court-play" href="'+safeLink(project.liveUrl)+'">'+t('court.play')+' <span aria-hidden="true">↗</span></a></div></div>':'')+'</article>';
   }).join('');
   const chromaChannel=grid.querySelector(`[data-chroma-channel-button="${chromaState.channel}"]`);if(chromaChannel)changeChromaChannel(chromaChannel);
+  if(roseView!=='salon'){const roseButton=grid.querySelector(`#project-roseraie [data-rose-view="${roseView}"]`);if(roseButton)changeRoseraieView(roseButton);}
   const chromaView=grid.querySelector(`.exhibit--chroma [data-chroma-view="${chromaState.view}"]`);if(chromaView)changeChromaView(chromaView);
   grid.querySelector('#folio-history').open = historyOpen;
   grid.querySelector('#festival-history').open = festivalHistoryOpen;
   changeFestivalSeason(grid,selectedFestivalSeason);
   document.querySelectorAll('[data-project-count]').forEach(element => { element.textContent=String(projects.length).padStart(2,'0'); });
   document.dispatchEvent(new Event('atlas:render'));
+  document.dispatchEvent(new Event('roseraie:render'));
 }
 
 function renderDetail(projectId) {
   const original=projects.find(project=>project.id===projectId);
   if(!original) return;
   const project=localizeProject(original);
-  dialog.classList.remove('atlas-dialog', 'chroma-dialog', 'lens-dialog', 'folio-dialog', 'axiom-dialog', 'festival-dialog');
+  dialog.classList.remove('roseraie-dialog', 'atlas-dialog', 'chroma-dialog', 'lens-dialog', 'folio-dialog', 'axiom-dialog', 'festival-dialog');
+  if(projectId === 'roseraie') { dialog.classList.add('roseraie-dialog'); dialogContent.innerHTML=roseraieDetail(dialogContent.querySelector('[data-rose-gallery]')?.dataset.roseGallery || 'salon'); document.dispatchEvent(new Event('roseraie:render')); return; }
   if(projectId === 'atlas') { dialog.classList.add('atlas-dialog'); dialogContent.innerHTML=atlasDetail(dialogContent.querySelector('.atlas-view')?.dataset.atlasViewActive || 'sky'); document.dispatchEvent(new Event('atlas:render')); return; }
   if(projectId === 'chroma') { dialog.classList.add('chroma-dialog'); dialogContent.innerHTML=chromaDetail(dialogContent.querySelector('[data-chroma-preview]')?.dataset.chromaPreview || 'pro'); return; }
   dialog.classList.toggle('lens-dialog', projectId === 'projectlens');
@@ -110,6 +116,8 @@ onLanguageChange(() => {
   if(dialog.open&&selectedProjectId) renderDetail(selectedProjectId);
 });
 grid.addEventListener('click',event=>{
+  const roseButton=event.target.closest('[data-rose-view]');
+  if(roseButton) { changeRoseraieView(roseButton); return; }
   const atlasButton=event.target.closest('[data-atlas-view]');
   if(atlasButton) { changeAtlasView(atlasButton); return; }
   const seasonButton=event.target.closest('[data-festival-season]');
@@ -123,6 +131,8 @@ grid.addEventListener('click',event=>{
 });
 dialog.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());
 dialogContent.addEventListener('click',event=>{
+  const roseButton=event.target.closest('[data-rose-view]');
+  if(roseButton) { changeRoseraieView(roseButton); return; }
   const atlasButton=event.target.closest('[data-atlas-view]');
   if(atlasButton) { changeAtlasView(atlasButton); return; }
   const festivalButton=event.target.closest('[data-festival-view]');
@@ -142,7 +152,7 @@ dialog.addEventListener('close',()=>{
   const opener=[...grid.querySelectorAll('[data-project]')].find(button=>button.dataset.project===selectedProjectId);
   opener?.focus({preventScroll:true});
   selectedProjectId=null;
-  dialog.classList.remove('atlas-dialog', 'folio-dialog', 'axiom-dialog', 'festival-dialog', 'lens-dialog', 'chroma-dialog');
+  dialog.classList.remove('roseraie-dialog', 'atlas-dialog', 'folio-dialog', 'axiom-dialog', 'festival-dialog', 'lens-dialog', 'chroma-dialog');
 });
 
 window.addEventListener('hashchange', () => {

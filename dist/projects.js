@@ -4,6 +4,14 @@ import { currentFestival, festivalReleaseUrl } from './festival-releases.js';
 // 接入真实项目后，将 demo 设为 false，并填写 repoUrl / liveUrl。
 export const projects = [
   {
+    id:'roseraie',name:'Roseraie',subtitle:'让灵感，在此盛放。',layout:'roseraie',
+    category:'THE ROCOCO AGENT ATELIER',number:'08',color:'rose',tags:['Electron','React','TypeScript'],
+    description:'Roseraie · 蔷薇工坊 0.1.0。本地工作空间里的通用 Agent：工具调用、文件与命令确认、织思三阶段、检查点和工作手记。中英双语。',
+    demo:false,version:'0.1.0',repoUrl:'https://github.com/ChefDavid0815/roseraie-agent',liveUrl:'',
+    downloadUrl:'https://github.com/ChefDavid0815/roseraie-agent/releases/tag/v0.1.0',
+    translations:{zh:{category:'洛可可 Agent 工坊'},en:{subtitle:'A little grace in every great idea.',description:'Roseraie 0.1.0 is a local-first general agent with tool calls, file and command approvals, a three-pass Weave, checkpoints and a work journal. Chinese / English.'}}
+  },
+  {
     id:'atlas',name:'Atlas',subtitle:'在思想之上，仰望无垠。',layout:'atlas',
     category:'IB KNOWLEDGE OBSERVATORY',number:'07',color:'cosmos',tags:['React','TypeScript','Electron'],
     description:'Atlas 0.3.0。以文艺复兴手稿与宇宙星图连接 IB 知识：784 个节点、1,059 条关联、241 个主题笔记。中英双语。',

@@ -2,9 +2,17 @@
 
 **English** · [简体中文](README.zh-CN.md)
 
-A personal website for the things I love and make: a dark digital canvas with lime, electric blue, violet and warm accents. Each real project gets its own art direction: a midnight basketball court for **NBA After Hours**, a warm paper journal for **Folio**, a lime/cobalt scientific exhibition for **AXIOM**, and a mint/blue/pink festival pass for **Festival Toolkit**.
+A personal website for the things I love and make: a dark digital canvas with lime, electric blue, violet and warm accents. Each real project has its own visual language, from a midnight basketball court and a cosmic manuscript to a rose-paper Rococo atelier.
 
 [**Enter my space ↗**](https://chefzc.dev) · [Gallery](https://chefzc.dev/gallery.html) · [Posts](https://chefzc.dev/posts.html) · [Now](https://chefzc.dev/now.html) · [Game](https://chefzc.dev/game.html)
+
+## Roseraie 0.1 / A little grace in every great idea.
+
+The eighth—and first—main exhibit opens a pale rose-and-lavender Rococo atelier inside the site's dark digital shell. Original SVG filigree, drifting petals, an animated cameo and a layered **actual Windows screenshot** frame three switchable plates: the real desktop salon, an editorial illustration of the three-pass Weave, and a real file-approval test capture. The Now miniature and the eleventh bilingual Post share its paper, typography and ornament. Motion obeys the site's pause control and reduced-motion setting.
+
+[Explore the exhibit](https://chefzc.dev/gallery.html#project-roseraie) · [Read the atelier journal](https://chefzc.dev/post.html?article=roseraie) · [Now 017](https://chefzc.dev/now.html#milestone-roseraie) · [Source and bilingual documentation](https://github.com/ChefDavid0815/roseraie-agent) · [Windows 0.1.0](https://github.com/ChefDavid0815/roseraie-agent/releases/tag/v0.1.0).
+
+Roseraie is a local-first desktop agent; the portfolio is an exhibition, not a browser version of its native file and command tools. Its unsigned first release passed 12 tests, a build and basic Windows checks, including one controlled Codex CLI repair. Other provider presets and environments need further verification.
 
 ## Atlas 0.3 / Above every idea, a wider universe.
 
@@ -14,7 +22,7 @@ The exhibit uses the existing site language switch. Chinese display and reading 
 
 ## Atelier 1.22 / CHROMA — every bit, in color.
 
-**CHROMA 0.1.0 · Signal Remix** opens the collection with the app’s electric blue, yellow, signal red, cyan, pixel lettering and chrome instrument frames. A floating monitor, rotating burst stars, moving signal traces, reflective metal and raised keys form an interactive Y2K installation. CPU / GPU / RAM controls change its colour and feature perspective. Three actual interface views show Simple, PRO and the desktop mini window; the PRO screenshot follows the selected language. The artwork never reads a visitor’s hardware.
+**CHROMA 0.1.0 · Signal Remix** has a dedicated exhibit with the app’s electric blue, yellow, signal red, cyan, pixel lettering and chrome instrument frames. A floating monitor, rotating burst stars, moving signal traces, reflective metal and raised keys form an interactive Y2K installation. CPU / GPU / RAM controls change its colour and feature perspective. Three actual interface views show Simple, PRO and the desktop mini window; the PRO screenshot follows the selected language. The artwork never reads a visitor’s hardware.
 
 Now **015 / 2026-09-22** has a matching instrument miniature. The ninth bilingual Post, **A little colour for the heartbeat of a computer**, covers the design, local monitoring and honest measurement limits. Animations share the site’s motion control and reduced-motion preference; the site’s dark shell and all previous project identities are retained.
 
@@ -49,11 +57,11 @@ A new [Game page](https://chefzc.dev/game.html): FH6 in lime, cobalt and pink wi
 | Page | Inside |
 | :--- | :--- |
 | **Personal Profile** | ChefZC, a Year 12 IB student at GEMS Wellington International School in Dubai. Basketball, motorsport, AI, art, devices, milestones and public contact links. Only the city is shown as a location. |
-| **Gallery** | Seven real projects: Atlas 0.3, CHROMA 0.1.0, ProjectLens 0.1.0, Festival Toolkit 0.3.0, AXIOM 1.0, Folio 1.1 and NBA After Hours. Independent visual identities, project dialogs, source and download/play links. |
+| **Gallery** | Eight real projects: Roseraie 0.1.0, Atlas 0.3, CHROMA 0.1.0, ProjectLens 0.1.0, Festival Toolkit 0.3.0, AXIOM 1.0, Folio 1.1 and NBA After Hours. Independent visual identities, project dialogs, source and download/play links. |
 | **3D collection** | Two independent works: Chase Center (switchable interior/exterior cases) and a Curry head study. Real, draggable glass cases with free modeling downloads. |
 | **School Lab** | A separate `school-gallery.html` collection for school work. WIS TECH TANK · STRIDE has a woodland exhibition, three illustrated scene states, a real interface capture, web/source links and a simulation journal. |
-| **Now** | A chronological journal, newest first. Sixteen milestones; the newest is Atlas 0.3 on September 23, 2026. |
-| **Posts** | Ten bilingual essays, newest first, including the Atlas 0.3 field notes, CHROMA and ProjectLens. An overview, individual articles, contents, reading progress and related notes. |
+| **Now** | A chronological journal, newest first. Seventeen milestones; the newest is Roseraie 0.1.0 on September 23, 2026. |
+| **Posts** | Eleven bilingual essays, newest first, including Roseraie and Atlas 0.3 field notes, CHROMA and ProjectLens. An overview, individual articles, contents, reading progress and related notes. |
 
 `index.html` redirects to `profile.html`, retaining the query and fragment. Navigation, language preference and footer are shared. The site defaults to Chinese; the **中 / EN** switch translates navigation, copy, dialogs and page titles. Preference persists when local storage is available and synchronises across same-origin tabs. Brand names and decorative artwork retain their original design.
 

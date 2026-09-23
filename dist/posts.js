@@ -1,5 +1,6 @@
 import {chromaPostArt} from './chroma-exhibit.js';
-import {atlasPostArt} from './atlas-exhibit.js';
+import {atlasPostArt} from './atlas-exhibit-v2.js';
+import {roseraiePostArt} from './roseraie-exhibit.js';
 import { lensPostArt } from './projectlens-exhibit.js';
 import { getLanguage, onLanguageChange } from './i18n.js';
 import { posts } from './posts-data.js';
@@ -22,6 +23,7 @@ const minutes = item => {
 const readTime = item => copy(`约 ${minutes(item)} 分钟`, `${minutes(item)} MIN READ`);
 
 function artwork(item) {
+  if(item.theme === 'roseraie') return roseraiePostArt();
   if(item.theme === 'atlas') return atlasPostArt();
   if(item.theme === 'chroma') return chromaPostArt();
   if(item.theme === 'lens') return lensPostArt();
@@ -41,12 +43,12 @@ function card(item, featured = false) {
 
 function overview() {
   document.title = copy('随笔 — ChefZC', 'Posts — ChefZC');
-  document.querySelector('meta[name="description"]').content = copy('ChefZC 的随笔：生活、Atlas、CHROMA、ProjectLens、NBA After Hours、Folio、AXIOM、Festival Toolkit、WIS TECH TANK 与篮球建模的制作手记。', 'Notes by ChefZC: life, Atlas, CHROMA, ProjectLens, NBA After Hours, Folio, AXIOM, Festival Toolkit, WIS TECH TANK and the Courtside 3D collection.');
+  document.querySelector('meta[name="description"]').content = copy('ChefZC 的随笔：生活、Roseraie、Atlas、CHROMA、ProjectLens、NBA After Hours、Folio、AXIOM、Festival Toolkit、WIS TECH TANK 与篮球建模的制作手记。', 'Notes by ChefZC: life, Roseraie, Atlas, CHROMA, ProjectLens, NBA After Hours, Folio, AXIOM, Festival Toolkit, WIS TECH TANK and the Courtside 3D collection.');
   root.innerHTML = `<section class="posts-heading" aria-labelledby="posts-title"><div class="posts-kicker"><span>[ ${copy('写在作品之外', 'THE NOTES BETWEEN THE WORK')} ]</span><span>CHEFZC / JOURNAL</span></div><div class="posts-heading-line"><h1 id="posts-title">POSTS<span>.</span></h1><span class="posts-mark" aria-hidden="true">↙</span></div><div class="posts-intro"><h2>${copy('一些想法，<br>不必急着变成作品。', 'Some thoughts.<br>Room to let them grow.')}</h2><p>${copy('关于做东西，也关于生活。<br>把值得留下的念头，写成一页。', 'On making things, and on living.<br>A page for the thoughts worth keeping.')}</p></div></section><section class="posts-collection" aria-label="${copy('所有文章', 'All posts')}"><div class="posts-section-label"><span>${copy('随笔与制作手记', 'NOTES & BUILD JOURNALS')} <b>${String(posts.length).padStart(2,'0')}</b></span><span class="posts-order-note">${copy('最新在前 / 按时间阅读', 'NEWEST FIRST / THE JOURNAL')}</span></div><div class="posts-grid posts-chronological">${posts.map((item, i) => `${i === 0 || item.date !== posts[i-1].date ? `<div class="post-index-date"><time datetime="${item.date}">${item.date.replaceAll('-','.')}</time>${i === 0 ? `<b>${copy('最新一页','LATEST ENTRY')}</b>` : ''}</div>` : ''}${card(item)}`).join('')}</div></section><div class="posts-end"><span>TO BE CONTINUED</span><p>${copy('下一页，留给新的好奇心。', 'The next page is for a new curiosity.')}</p><span aria-hidden="true">✳</span></div>`;
 }
 
 function figure(src, alt, caption, type = '') {
-  const size = src.includes('/chroma/') ? (src.endsWith('.svg') ? [1600,960] : src.endsWith('/mini.png') ? [410,351] : [1480,962]) : src.includes('/projectlens/') ? (src.endsWith('.svg') ? [1600,900] : [1699,982]) : src.includes('/models/') ? [1600,1100] : src.includes('/wis-tech-tank/') ? (src.endsWith('.webp') ? [1536,1024] : [1440,1292]) : src.includes('/festival-toolkit/') ? [2139,1356] : src.includes('/axiom/') ? (src.endsWith('.svg') ? [400,280] : [2283,1437]) : src.includes('/folio/') ? [1426,924] : src.includes('hero-asterisk') ? [1254,1254] : [1440,900];
+  const size = src.includes('/roseraie/') ? [2304,1517] : src.includes('/chroma/') ? (src.endsWith('.svg') ? [1600,960] : src.endsWith('/mini.png') ? [410,351] : [1480,962]) : src.includes('/projectlens/') ? (src.endsWith('.svg') ? [1600,900] : [1699,982]) : src.includes('/models/') ? [1600,1100] : src.includes('/wis-tech-tank/') ? (src.endsWith('.webp') ? [1536,1024] : [1440,1292]) : src.includes('/festival-toolkit/') ? [2139,1356] : src.includes('/axiom/') ? (src.endsWith('.svg') ? [400,280] : [2283,1437]) : src.includes('/folio/') ? [1426,924] : src.includes('hero-asterisk') ? [1254,1254] : [1440,900];
   return `<figure class="article-figure ${type}"><div><img src="${src}" alt="${esc(alt)}" width="${size[0]}" height="${size[1]}" loading="lazy" decoding="async"></div><figcaption>${esc(caption)}</figcaption></figure>`;
 }
 
@@ -72,7 +74,7 @@ function reader() {
     </article><section class="more-notes" aria-label="${copy('继续阅读', 'Keep reading')}"><div class="posts-section-label"><span>${copy('也许还想翻翻', 'ANOTHER PAGE TO TURN')}</span><a href="./posts.html">${copy('所有随笔', 'ALL POSTS')} ↗</a></div><div>${posts.filter(item => item.id !== post.id).map(item=>`<a class="next-note next-note--${item.theme}" href="${href(item)}"><span class="mono">NOTE ${item.number}</span><h2>${esc(local(item).title)}</h2><span aria-hidden="true">↗</span></a>`).join('')}</div></section>`;
 }
 
-function render() { isReader ? reader() : overview(); updateProgress(); }
+function render() { isReader ? reader() : overview(); updateProgress(); document.dispatchEvent(new Event('atlas:render')); document.dispatchEvent(new Event('roseraie:render')); }
 let pendingFrame = false;
 function updateProgress() {
   const range = document.documentElement.scrollHeight - innerHeight;

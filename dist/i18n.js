@@ -1,5 +1,6 @@
 import {chromaMessages} from './chroma-content.js';
 import {atlasMessages} from './atlas-content.js';
+import {roseraieMessages} from './roseraie-content.js';
 import { festivalJourneyMessages } from './festival-journey.js';
 import { lensMessages } from './projectlens-content.js';
 import { gameMessages } from './games-content.js';
@@ -144,7 +145,7 @@ export const messages = {
   'profile.enterGallery': ['进入项目陈列室 <span aria-hidden="true">→</span>', 'Step into the collection <span aria-hidden="true">→</span>']
 };
 
-Object.assign(messages, personalMessages, musicMessages, folioMessages, axiomMessages, festivalMessages, wisMessages, festivalUpdateMessages, modelMessages, gameMessages, lensMessages, festivalJourneyMessages, chromaMessages, atlasMessages);
+Object.assign(messages, personalMessages, musicMessages, folioMessages, axiomMessages, festivalMessages, wisMessages, festivalUpdateMessages, modelMessages, gameMessages, lensMessages, festivalJourneyMessages, chromaMessages, atlasMessages, roseraieMessages);
 const storageKey = 'chefzc.language';
 let language = 'zh';
 try { if (globalThis.localStorage?.getItem(storageKey) === 'en') language = 'en'; } catch { /* Storage may be disabled; the switch still works. */ }
