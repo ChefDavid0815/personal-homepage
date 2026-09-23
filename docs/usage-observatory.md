@@ -21,7 +21,7 @@ Authenticated `POST /api/usage` validates a strict aggregate schema and writes t
 
 ## Equivalent pricing
 
-`dist/usage-math.js` contains publicly verified **Standard** USD prices, checked 2026-09-20. It reprices retained usage at these rates, not historical invoices. Models currently observed are GPT-6 Astra and GPT-5.6 Sol.
+`dist/usage-math.js` contains publicly verified **Standard** USD prices, checked 2026-09-23, including GPT-6 Sol and GPT-6 Luna. It reprices retained usage at these rates, not historical invoices. The two GPT-6 models use these per-million-token short-context rates (input / cached input / cache write / output): Sol `$2 / $0.20 / $2.50 / $10`; Luna `$0.10 / $0.01 / $0.125 / $0.50`.
 
 Formula per request: `((input - cached - write) × inputRate + cached × cachedRate + write × writeRate + output × outputRate) / 1,000,000`.
 

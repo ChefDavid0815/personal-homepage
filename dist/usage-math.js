@@ -1,8 +1,10 @@
 export const priceSource = 'https://developers.openai.com/api/docs/pricing';
-export const priceDate = '2026-09-20';
+export const priceDate = '2026-09-23';
 // USD / million tokens, Standard tier. Cache writes are separate from cache reads.
 export const prices = {
   'gpt-6-astra': {input:10,cached:1,write:12.5,output:50},
+  'gpt-6-sol': {input:2,cached:.2,write:2.5,output:10},
+  'gpt-6-luna': {input:.1,cached:.01,write:.125,output:.5},
   'gpt-5.6-sol': {input:4,cached:.4,write:5,output:20},
   'gpt-5.6-terra': {input:2,cached:.2,write:2.5,output:12},
   'gpt-5.6-luna': {input:.2,cached:.02,write:.25,output:1.2},

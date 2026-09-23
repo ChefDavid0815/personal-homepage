@@ -8,7 +8,7 @@ const short=value=>value>=1e9?(value/1e9).toFixed(2)+'B':value>=1e6?(value/1e6).
 const money=value=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',minimumFractionDigits:2,maximumFractionDigits:2}).format(value);
 const esc=value=>String(value).replace(/[&<>"']/g,x=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[x]));
 const date=(value,options={})=>new Intl.DateTimeFormat(getLanguage()==='en'?'en-GB':'zh-CN',{timeZone:'Asia/Dubai',month:'short',day:'numeric',...options}).format(new Date(value));
-const names={'gpt-6-astra':'GPT-6 Astra','gpt-5.6-sol':'GPT-5.6 Sol','gpt-5.6-terra':'GPT-5.6 Terra','gpt-5.6-luna':'GPT-5.6 Luna'};
+const names={'gpt-6-astra':'GPT-6 Astra','gpt-6-sol':'GPT-6 Sol','gpt-6-luna':'GPT-6 Luna','gpt-5.6-sol':'GPT-5.6 Sol','gpt-5.6-terra':'GPT-5.6 Terra','gpt-5.6-luna':'GPT-5.6 Luna'};
 const colors=['#c4fa5a','#a890fc','#78d9f1','#f091bb','#ffcd89'];
 let snapshot=null,range='today',selection=null,stream=null,retry=null,offline=false,offset=0,lastRender='',currentDay='';
 const now=()=>Date.now()+offset;

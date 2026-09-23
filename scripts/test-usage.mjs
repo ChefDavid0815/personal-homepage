@@ -6,6 +6,15 @@ import handler from '../api/usage.js';
 const row={hour:'2026-09-20T23:00:00+04:00',model:'gpt-6-astra',context:'short',input:1000000,cached:600000,write:100000,output:100000,reasoning:80000,total:1100000,events:1};
 const snapshot={version:1,collectedAt:'2026-09-20T19:30:00Z',firstEventAt:'2026-09-20T19:00:00Z',lastEventAt:'2026-09-20T19:00:00Z',sourceCount:1,hours:[row]};
 test('cost separates cache reads/writes and never adds reasoning twice',()=>{assert.equal(costOf(row),9.85);assert.equal(costOf({...row,context:'long'}),17.2);assert.equal(costOf({...row,model:'unknown'}),null);assert.equal(costOf({...row,context:'unknown'}),null);});
+test('GPT-6 Sol and Luna use published Standard prices, including long context',()=>{
+  for(const [model,short,long] of [['gpt-6-sol',1.97,3.44],['gpt-6-luna',.0985,.172]]) {
+    assert.ok(Math.abs(costOf({...row,model})-short)<1e-10);
+    assert.ok(Math.abs(costOf({...row,model,context:'long'})-long)<1e-10);
+    const result=selectRange({...snapshot,hours:[{...row,model}]},'lifetime',Date.parse('2026-09-20T19:30:00Z'));
+    assert.equal(result.total.unpriced,0);
+    assert.ok(Math.abs(result.total.cost-short)<1e-10);
+  }
+});
 test('Dubai day boundary, rolling calendar windows and uncovered history',()=>{
   assert.equal(selectRange(snapshot,'today',Date.parse('2026-09-20T19:30:00Z')).total.total,1100000);
   assert.equal(selectRange(snapshot,'today',Date.parse('2026-09-20T20:01:00Z')).total.total,0);
