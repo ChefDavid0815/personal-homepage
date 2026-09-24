@@ -62,19 +62,19 @@ html:lang(zh-CN) .profile-hero h1>.profile-greeting{font-size:.35em;line-height:
 .identity-wrap::after{content:'';position:absolute;left:-15px;right:14px;top:16px;bottom:57px;border-radius:23px;border:1px solid #c4b6ef20;background:linear-gradient(140deg,#9380ba08,#c9f68704);transform:rotate(-4deg);z-index:-1;box-shadow:0 26px 50px #0003}
 .identity-card{transform:rotate(4deg);border-radius:21px;border-color:#d9c7ff45;box-shadow:0 25px 60px #0006,inset 0 1px 0 #fff2}
 .identity-wrap:hover .identity-card{transform:rotate(1deg) perspective(1000px) rotateY(calc(var(--scene-x,0)*7deg)) rotateX(calc(var(--scene-y,0)*-5deg)) translateY(-5px)}
-.identity-art--sculpture{background:radial-gradient(ellipse at 45% 45%,#393449,#23232f 60%,#1b2829);padding:22px 25px 17px;animation:none;color:#c9c2de;min-height:345px}
-.identity-art--sculpture::before{width:260px;height:260px;border-color:#dbc2ff23;box-shadow:0 0 0 24px #dcc6ff03,0 0 0 25px #c3a9e211,0 0 0 48px #c3a9e206;transform:rotateX(35deg) rotate(-30deg);top:50%;z-index:0}
-.identity-art--sculpture::after{background:linear-gradient(120deg,transparent,#edddff12 45%,transparent 65%);mix-blend-mode:screen;z-index:1;pointer-events:none}
-.identity-art--sculpture .identity-top{position:relative;z-index:2;border-color:#c7afd329;color:#d5c8e5;font-size:8px;letter-spacing:1.7px}
-.identity-art--sculpture .monogram{position:absolute;font-size:170px;top:75px;left:50%;translate:-50% 0;opacity:.065;transform:rotate(-8deg);color:#e8e2ff;text-shadow:none;pointer-events:none}
-.identity-art--sculpture .monogram>span{display:none}
-.identity-art--sculpture .identity-art-footer{position:relative;z-index:2;font-size:8px;letter-spacing:.9px;color:#d1c7de}
-.atelier-sculpture{position:relative;height:277px;margin:-8px -25px -6px;isolation:isolate}
-.atelier-sculpture canvas{position:absolute;inset:0;width:100%;height:100%;z-index:1;opacity:0;transition:opacity 1s}
-.atelier-sculpture.is-rendered canvas{opacity:1}
-.sculpture-fallback{position:absolute;inset:0;display:grid;place-items:center;font:180px var(--display);color:#c3b0ea;filter:drop-shadow(8px 10px 0 #b1e69633);transition:opacity .6s}
-.atelier-sculpture.is-rendered .sculpture-fallback{opacity:0}
-.sculpture-coordinate,.sculpture-material{position:absolute;top:45%;z-index:2;writing-mode:vertical-rl;font:7px var(--mono);letter-spacing:1.7px;opacity:.45}.sculpture-coordinate{left:17px}.sculpture-material{right:17px;rotate:180deg}
+.identity-card:has(.identity-art--flame){border-color:#a5eaff6b;box-shadow:0 25px 60px #0008,0 0 35px #68dff221,inset 0 1px 0 #eaffff65}
+.identity-art--flame{aspect-ratio:1112/1079;min-height:0;padding:0;overflow:hidden;isolation:isolate;background:#101c3a;color:#e7f9ff;animation:none}
+.identity-art--flame::before{content:'';position:absolute;inset:13px;width:auto;height:auto;border:1px solid #c9faff35;border-radius:0;translate:none;transform:none;box-shadow:none;z-index:3;pointer-events:none}
+.identity-art--flame::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,#090e2aab 0%,transparent 22%,transparent 67%,#071326c4 100%);background-size:auto;animation:none;mix-blend-mode:normal;z-index:1;pointer-events:none}
+.identity-art--flame .monogram{display:none}
+.identity-flame{position:absolute;inset:0;overflow:hidden;z-index:0}
+.identity-flame-still,.identity-flame-video{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.identity-flame-video{opacity:0;transition:opacity .3s ease}
+.identity-flame.is-playing .identity-flame-video{opacity:1}
+.identity-art--flame .identity-top,.identity-art--flame .identity-art-footer{position:absolute;left:0;right:0;z-index:4;padding:18px 23px;color:#defaff;font-size:8px;letter-spacing:1.4px;text-shadow:0 1px 8px #08162b}
+.identity-art--flame .identity-top{top:0;border-color:#d5f7ff3b}
+.identity-art--flame .identity-art-footer{bottom:0;letter-spacing:.9px}
+.identity-art--flame .identity-art-footer span:first-child{color:#d3ffff}
 .identity-details{padding:25px 26px 22px;background:radial-gradient(ellipse at 100% 0,#b49cf016,transparent 75%),#151c19;border-top:1px solid #d4dcb023}
 .identity-floating{z-index:4;box-shadow:3px 4px 0 #0004,0 5px 12px #0003;padding:11px 17px;left:-15px}
 .identity-signature{padding-top:15px}.identity-fields{margin:21px 0}.identity-caption{font-size:9px;line-height:1.8;max-width:90%;margin-inline:auto;text-align:center}

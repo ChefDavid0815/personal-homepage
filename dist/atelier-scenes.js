@@ -8,10 +8,28 @@ function decoration(className,html){const node=document.createElement('div');nod
 
 const identity=document.querySelector('.identity-art');
 if(identity){
-  const sculpture=decoration('atelier-sculpture','<span class="sculpture-fallback">✳</span><span class="sculpture-coordinate">OBJECT / C–01</span><span class="sculpture-material">IRIDESCENT STUDY</span>');
-  identity.querySelector('.monogram').after(sculpture);
-  identity.classList.add('identity-art--sculpture');
-  const observer=new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting)){observer.disconnect();import('./atelier-sculpture.bundle.js').then(module=>module.mountSculpture(sculpture,{canAnimate,onMotionChange})).catch(()=>{});}},{rootMargin:'120px'});observer.observe(sculpture);
+  const flame=decoration('identity-flame','<img class="identity-flame-still" src="./assets/identity-blueflame-poster.jpg" alt="" width="1112" height="1079"><video class="identity-flame-video" muted loop playsinline preload="none" aria-hidden="true"></video>');
+  identity.querySelector('.monogram').after(flame);
+  identity.classList.add('identity-art--flame');
+  const video=flame.querySelector('video');
+  let visible=false,sourceAdded=false,playRequest=0;
+  const syncFlame=()=>{
+    const request=++playRequest;
+    if(!visible||!canAnimate()){
+      video.pause();
+      flame.classList.remove('is-playing');
+      return;
+    }
+    if(!sourceAdded){video.src='./assets/identity-blueflame-loop.mp4';sourceAdded=true;video.load();}
+    video.play().then(()=>{
+      if(request===playRequest&&visible&&canAnimate())flame.classList.add('is-playing');
+      else video.pause();
+    }).catch(()=>flame.classList.remove('is-playing'));
+  };
+  video.addEventListener('error',()=>flame.classList.remove('is-playing'));
+  const flameObserver=new IntersectionObserver(entries=>{visible=entries.some(entry=>entry.isIntersecting);syncFlame();},{rootMargin:'120px'});
+  flameObserver.observe(flame);
+  onMotionChange(syncFlame);
 }
 
 const directory=document.querySelector('.atelier-directory');
