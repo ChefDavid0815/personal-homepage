@@ -150,6 +150,7 @@ html:lang(en) .atlas-v2-detail-chapters p { font:19px/1.55 var(--atlas-serif); }
 .milestone--atlas .milestone-copy { background:radial-gradient(circle at 100% 0,#294665,#10243b 68%); }
 .milestone--atlas .milestone-copy::before { content:""; position:absolute; inset:9px 244px 9px 9px; border:1px solid #d4ae7040; pointer-events:none; }
 .milestone--atlas h3 { color:#f1dfbc; }
+.milestone--atlas h3 .atlas-title-phrase { display:block; white-space:nowrap; }
 .milestone--atlas .milestone-description { color:#e4d4b6; }
 .milestone--atlas .milestone-link { color:#f0c48b; text-underline-offset:4px; }
 .milestone--atlas .milestone-link:hover { color:#fff0ce; }
@@ -342,6 +343,7 @@ html:lang(en) .article-card--atlas .article-body blockquote { font:italic clamp(
   .atlas-v2-detail-chapters { padding:48px 26px; }
   .atlas-v2-detail>.atlas-v2-actions { padding:25px; }
   .milestone--atlas .milestone-copy::before { display:none; }
+  .milestone--atlas h3 .atlas-title-phrase { white-space:normal; text-wrap:balance; }
   .milestone-art.atlas-v2-now { min-height:270px; border-left:0; border-top:1px solid #c7a470; border-radius:0 0 10px 10px; }
   .atlas-v2-now>img { object-position:50% 39%; }
   .atlas-v2-now .atlas-v2-orrery { width:69%; left:15%; top:-8%; }

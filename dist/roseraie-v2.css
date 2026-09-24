@@ -1,0 +1,140 @@
+@font-face{font-family:RoseCormorant;src:url('./assets/fonts/cormorant-garamond-latin-300-normal.woff2') format('woff2');font-weight:300;font-display:swap}
+@font-face{font-family:RoseCormorant;src:url('./assets/fonts/cormorant-garamond-latin-400-italic.woff2') format('woff2');font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:RoseCormorant;src:url('./assets/fonts/cormorant-garamond-latin-500-normal.woff2') format('woff2');font-weight:500;font-display:swap}
+.rose-v2,.rose-v2-detail,.rose-v2-now{--rv-paper:#f9f3ff;--rv-paper-deep:#eee3fa;--rv-ink:#463853;--rv-plum:#71518d;--rv-rose:#b867a0;--rv-silver:#af9cc6;--rv-line:#d4bfeb;--rv-latin:RoseCormorant,Georgia,serif;--rv-han:RoseHan,'Noto Serif SC',serif}
+.rose-v2{background:var(--rv-paper);color:var(--rv-ink);border-color:#bca7d4}
+.exhibition-grid>.rose-v2{box-shadow:0 25px 90px #08081288}
+.exhibition-grid>.rose-v2:hover{border-color:#cdb3e5;box-shadow:0 35px 110px #0e0c2199}
+.rose-v2 .rose-ribbon,.rose-v2 .rose-footer{background:#f2e9ff;color:#6e5a7e;border-color:#d9c7ec;letter-spacing:.16em}
+.rose-v2 .rose-ribbon b,.rose-v2 .rose-footer b{color:#8e65aa}
+.rose-v2-hero{grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);min-height:740px;background:radial-gradient(ellipse at 74% 30%,#ebe0fac9,transparent 55%),radial-gradient(ellipse at 23% 100%,#f4d9e8,transparent 58%),linear-gradient(132deg,#fffafd,#f4ebff 70%,#eaddf6)}
+.rose-v2-hero:before,.rose-v2-hero:after{border-color:#937ab852}
+.rose-v2-atmosphere{position:absolute;inset:0;pointer-events:none;z-index:0;background:repeating-linear-gradient(0deg,transparent 0 48px,#b498d008 49px 50px),radial-gradient(circle at 44% 5%,#fff9,transparent 23%)}
+.rose-v2 .rose-hero-copy{padding:64px 14px 83px clamp(30px,5.4vw,84px)}
+.rose-v2 .rose-overline{color:#8d70a3;letter-spacing:.2em}
+.rose-v2-hero-mark{display:block;width:72px;height:72px;margin:19px 0 -2px;filter:drop-shadow(0 8px 12px #9672aa44)}
+.rose-v2 .rose-hero-copy h3{font:300 clamp(78px,9vw,139px)/.82 var(--rv-latin);letter-spacing:-.077em;color:#574466;margin:4px 0 4px;text-shadow:0 12px 24px #8a63a52b}
+.rose-v2 .rose-hero-copy h3 span{color:#9b72b9}
+.rose-v2 .rose-hero-cn{font:400 clamp(16px,1.8vw,23px)/1.6 var(--rv-han);letter-spacing:.32em;color:#8565a0;margin:0 0 35px}
+.rose-v2 .rose-hero-copy h4{font:400 clamp(36px,4.3vw,59px)/1.35 var(--rv-han);letter-spacing:.015em;color:#59416f;margin-bottom:16px}
+.rose-v2 .rose-hero-copy>p:last-of-type{font:400 15px/1.95 var(--rv-han);color:#6f5c7f;max-width:440px}
+.rose-v2 .rose-hero-copy button{background:#76589d;border:1px solid #76589d;color:#fffaff;border-radius:11px;box-shadow:inset 0 1px #ffffff8a,0 12px 27px #8566ab44;transition:transform .3s,box-shadow .3s,background .3s}
+.rose-v2 .rose-hero-copy button:hover{background:#5d417d;box-shadow:inset 0 1px #ffffff75,0 19px 32px #765c994f}
+.rose-v2 .rose-hero-copy button:active{transform:translateY(1px) scale(.985)}
+.rose-v2-hero-art{min-height:720px;overflow:hidden}
+.rose-v2-ring{position:absolute;pointer-events:none;border:1px solid #aa8bc264;border-radius:50%;z-index:0;animation:rose-v2-ring 45s linear infinite}
+.rose-v2-ring:before,.rose-v2-ring:after{content:'';position:absolute;border-radius:50%;border:1px solid #bb9cc058}
+.rose-v2-ring:before{inset:22px}.rose-v2-ring:after{inset:55px}
+.rose-v2-ring--outer{width:700px;height:700px;right:-190px;top:-116px;background:repeating-conic-gradient(from 0deg,#9b77b315 0 1deg,transparent 1deg 15deg)}
+.rose-v2-ring--inner{width:450px;height:450px;right:-22px;top:11px;animation-direction:reverse;animation-duration:35s}
+.rose-v2-botanical-halo{position:absolute;width:480px;height:480px;right:5%;top:-7%;border-radius:50%;background:radial-gradient(circle,#ffffffd9 0,#ead6f1a2 43%,transparent 70%);filter:blur(15px);animation:rose-v2-halo 7s ease-in-out infinite alternate}
+.rose-v2-botanical{position:absolute;z-index:2;right:-1%;top:-4%;width:min(62%,390px);height:auto;filter:drop-shadow(0 22px 20px #65507f55);animation:rose-v2-flower 8s ease-in-out infinite alternate}
+.rose-v2-preview{z-index:4;width:90%;left:2%;bottom:10%;padding:9px 9px 0;border:1px solid #cbb4e5;border-radius:10px;background:#fffafd;box-shadow:0 29px 70px #523b6a67,0 0 0 7px #ffffff9c;transform:rotate(-3.1deg);overflow:hidden}
+.rose-v2-preview:after{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(110deg,transparent 27%,#ffffff63 38%,transparent 47%);transform:translateX(-125%);animation:rose-v2-sheen 9s ease-in-out infinite}
+.rose-v2-preview>span,.rose-v2-preview small{color:#856e9b}
+.rose-v2-preview img{aspect-ratio:1.52;object-fit:cover;border-color:#d8cae8}
+.rose-v2:hover .rose-v2-preview{transform:rotate(-.9deg) translateY(-12px)}
+.rose-v2-medallion{position:absolute;z-index:5;right:3%;bottom:8%;width:100px;height:100px;display:flex;flex-direction:column;align-items:center;justify-content:center;border:1px solid #a785c8;border-radius:50%;background:radial-gradient(circle at 35% 23%,#fffbff,#e7d6f2);box-shadow:inset 0 0 0 5px #f8edff,0 12px 30px #68477d4d;font:italic 400 49px/1 var(--rv-latin);color:#8263a3;animation:rose-v2-medallion 9s ease-in-out infinite alternate}
+.rose-v2-medallion small{font:600 8px/1 var(--mono);letter-spacing:.14em}
+.rose-v2 .rose-hero-foot{color:#786487;border-color:#cdb3e0}
+.rose-v2 .rose-petals i,.rose-v2-now .rose-petals i{background:linear-gradient(130deg,#f9d9f0,#9777cbbd);filter:drop-shadow(0 2px 4px #63478b55)}
+.rose-v2-prologue{background:linear-gradient(130deg,#fffafe,#f3ecfb);border-color:#d9c8e9;grid-template-columns:1.05fr .95fr}
+.rose-v2-prologue h3{font-family:var(--rv-han);font-size:clamp(36px,4vw,56px);color:#514064}
+.rose-v2-prologue h3 em{font-style:normal;color:#9870b2}
+.rose-v2-prologue p{font:400 16px/1.95 var(--rv-han);color:#675479}
+.rose-v2-triptych{background:#f3ebfb}
+.rose-v2-triptych>div{background:linear-gradient(150deg,#fffaff,#f1e7f9);border-color:#d7c5e8;box-shadow:0 15px 30px #795e9b24}
+.rose-v2-triptych>div:nth-child(2){background:linear-gradient(150deg,#fdf9ff,#e5d7f4)}
+.rose-v2-triptych>div:nth-child(3){background:linear-gradient(150deg,#fff9fc,#efdfef)}
+.rose-v2-triptych>div:before{border-color:#9775b64a}
+.rose-v2-triptych b{color:#9c7ab5}.rose-v2-triptych strong{font-family:var(--rv-han);font-size:clamp(18px,2.1vw,27px);color:#6b5185}.rose-v2-triptych p{color:#766385}
+.rose-v2-gallery{background:#efe5f7;border-color:#d6c1e9;color:#4e3d60}
+.rose-v2-gallery .rose-gallery-heading{border-color:#c8afdc}
+.rose-v2-gallery .rose-gallery-heading p{font:300 25px/1.3 var(--rv-latin);color:#775c92}
+.rose-v2-gallery .rose-gallery-rail{border-color:#c8afdc}
+.rose-v2-gallery .rose-gallery-rail button{border-color:#d4c3e4;color:#6c537d}
+.rose-v2-gallery .rose-gallery-rail button[aria-pressed=true],.rose-v2-gallery .rose-gallery-rail button:hover{background:#fff8ff;color:#5e367d}
+.rose-v2-gallery .rose-gallery-rail p{color:#856e96}
+.rose-v2-gallery .rose-gallery-stage{background:radial-gradient(circle at 50% 23%,#fffbff,#e8d9f2);border-color:#cbb2e0;min-height:490px}
+.rose-v2-scene{min-height:490px;margin:0;padding:22px 26px 43px;display:grid;place-items:center;position:relative;overflow:hidden}
+.rose-v2-scene:before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 20%,#fffafa99,transparent 60%);pointer-events:none}
+.rose-v2-scene img{display:block;position:relative;z-index:1;width:100%;height:auto;max-height:425px;object-fit:contain;border:1px solid #d5c4e3;box-shadow:0 19px 34px #5c477b36}
+.rose-v2-scene--compact img{width:auto;max-width:min(100%,230px);max-height:440px}
+.rose-v2-scene figcaption{position:absolute;z-index:2;left:20px;bottom:10px;font:600 9px/1.3 var(--mono);letter-spacing:.12em;color:#765f90}
+.rose-v2-gallery .rose-gallery-caption{color:#765d91}
+.rose-v2-gallery .rose-gallery-caption span:nth-child(2){font-family:var(--rv-han)}
+.rose-v2-history{position:relative;background:linear-gradient(120deg,#f6ecff,#eee0f8);border-top:1px solid #cbb7dc;border-bottom:1px solid #cbb7dc;color:#4d3b60;overflow:hidden;scroll-margin-top:160px}
+.rose-v2-history:before{content:'';position:absolute;pointer-events:none;right:-50px;top:-70px;width:290px;height:290px;background:url('./assets/projects/roseraie/violet-botanical.webp') center/contain no-repeat;opacity:.13}
+.rose-v2-history summary{position:relative;display:grid;grid-template-columns:70px 1fr auto 36px;align-items:center;gap:24px;list-style:none;cursor:pointer;padding:35px clamp(26px,6vw,85px)}
+.rose-v2-history summary::-webkit-details-marker{display:none}
+.rose-v2-history summary:focus-visible{outline:3px solid #77549c;outline-offset:-5px}
+.rose-v2-history-seal{display:grid;place-items:center;width:62px;height:62px;border:1px solid #ac8ec9;border-radius:50%;box-shadow:0 0 0 5px #ffffff90,inset 0 0 0 4px #f6eaff;font:italic 500 34px/1 var(--rv-latin);color:#765299}
+.rose-v2-history-seal span{position:absolute;font:14px/1 var(--rv-latin);translate:21px -20px}
+.rose-v2-history-intro{display:flex;flex-direction:column;gap:3px}
+.rose-v2-history-intro small{font:600 9px/1.3 var(--mono);letter-spacing:.17em;color:#8e70a5}
+.rose-v2-history-intro strong{font:400 clamp(29px,3.5vw,46px)/1.15 var(--rv-han);color:#583e75}
+.rose-v2-history-intro em{font:italic 400 20px/1.25 var(--rv-latin);color:#805f99}
+.rose-v2-history-route{font:300 32px/1 var(--rv-latin);color:#765995;white-space:nowrap}.rose-v2-history-route i{font-style:normal;color:#b765a3}
+.rose-v2-history-plus{display:grid;place-items:center;width:36px;height:36px;border:1px solid #b99cd0;border-radius:50%;font:24px/1 var(--rv-latin);transition:transform .35s}
+.rose-v2-history[open] .rose-v2-history-plus{transform:rotate(45deg)}
+.rose-v2-history-pages{display:grid;grid-template-columns:1.1fr .9fr;gap:0;padding:0 clamp(26px,6vw,85px) 55px;animation:rose-v2-unfold .55s cubic-bezier(.2,.8,.2,1) both}
+.rose-v2-history-page{position:relative;padding:32px;min-width:0;background:#fffbff;border:1px solid #d7c6e7}
+.rose-v2-history-page+article{background:#f7edf9;border-left:0}
+.rose-v2-history-date{display:flex;justify-content:space-between;gap:10px;color:#8c72a1;font:600 9px/1.4 var(--mono);letter-spacing:.12em}
+.rose-v2-history-page h4{font:400 clamp(28px,3vw,42px)/1.3 var(--rv-han);color:#5e477c;margin:26px 0 8px}
+.rose-v2-history-page h4 span{font:italic 500 1.3em/1 var(--rv-latin);color:#9469b5}
+.rose-v2-history-page>p{font:400 14px/1.8 var(--rv-han);color:#776582}
+.rose-v2-history-changes{display:grid;gap:0;margin:25px 0}
+.rose-v2-history-changes section{display:grid;grid-template-columns:34px 1fr;gap:13px;padding:15px 0;border-top:1px solid #dfd1ea}
+.rose-v2-history-changes b{font:italic 500 23px/1 var(--rv-latin);color:#a97bba}
+.rose-v2-history-changes h5{font:400 19px/1.35 var(--rv-han);color:#634778;margin:0 0 4px}
+.rose-v2-history-changes p{font:400 12px/1.8 var(--rv-han);color:#806c8c;margin:0}
+.rose-v2-history-note{border-left:2px solid #af8ac9;padding-left:12px}
+.rose-v2-history-page>a{display:inline-flex;gap:25px;justify-content:space-between;margin-top:14px;padding:9px 0;color:#674681;font:500 13px var(--rv-han);text-decoration:none;border-bottom:1px solid #aa82c2}
+.rose-v2-history-page>a:hover{color:#9a5d9b}
+.rose-v2-closing{background:radial-gradient(circle at 90% 0,#e4d4f0,transparent 49%),#fbf5ff}
+.rose-v2-closing strong{font-family:var(--rv-han);font-size:clamp(34px,4vw,53px);color:#614478}
+.rose-v2-closing .rose-actions a{border-color:#ae8ccb;color:#684c83;border-radius:9px}
+.rose-v2-closing .rose-actions .rose-action-main{background:#79589d;color:#fff}
+.rose-v2-detail{--rose-serif:var(--rv-latin);font-family:var(--rv-han);color:#594274}
+.roseraie-dialog:has(.rose-v2-detail){background:#f6edfc;border-color:#ae8cc9}
+.rose-v2-detail .rose-detail-head{background:radial-gradient(circle at 50% 0,#fff,#e8d9f4)}
+.rose-v2-detail .rose-detail-head img{margin:auto}
+.rose-v2-detail .rose-detail-head h2{font-family:var(--rv-latin);font-weight:300;color:#64477e}
+.rose-v2-detail .rose-detail-grid h3{color:#674982}
+.rose-v2-detail .rose-detail-grid p{color:#766481}
+.rose-v2-detail>.rose-actions{padding:25px 35px 40px}
+.milestone--roseraie .milestone-copy{background:radial-gradient(circle at 100% 0,#422956,#231a30 68%)}
+.milestone--roseraie-first .milestone-copy{background:radial-gradient(circle at 100% 0,#493048,#281d2f 68%)}
+.milestone--roseraie .milestone-kicker,.milestone--roseraie .milestone-link{color:#dab7f2}
+.rose-now-links{display:flex;flex-wrap:wrap;column-gap:24px;row-gap:8px}.rose-now-links .milestone-link{gap:8px}
+.milestone--roseraie .milestone-art{border-color:#ac89ca}
+.rose-v2-now{position:relative;min-height:390px;isolation:isolate;padding:20px;background:radial-gradient(circle at 50% 25%,#fffaff,#e8d9f5 63%,#d9c3ee);color:#604474}
+.rose-v2-now--first{background:radial-gradient(circle at 50% 22%,#fff8fc,#f3e1f0 58%,#e1c8e6)}
+.rose-v2-now:before{inset:10px;border:1px solid #a78ac77a;border-radius:120px 120px 8px 8px}
+.rose-v2-now:after{content:'';position:absolute;pointer-events:none;inset:20px;border:1px solid #cfb4e46b;border-radius:105px 105px 3px 3px}
+.rose-v2-now-orbit{position:absolute;z-index:0;left:50%;top:42%;width:215px;height:215px;border:1px solid #9877b264;border-radius:50%;translate:-50% -50%;box-shadow:0 0 0 18px #a58bb915,0 0 0 38px #a58bb910;animation:rose-v2-ring 38s linear infinite}
+.rose-v2-now-orbit:before,.rose-v2-now-orbit:after{content:'';position:absolute;inset:18px;border:1px solid #b491c269;border-radius:50%;transform:scaleX(.5) rotate(26deg)}
+.rose-v2-now-orbit:after{transform:scaleX(.45) rotate(-36deg)}
+.rose-v2-now-flower{position:absolute;z-index:1;width:74%;height:auto;left:13%;top:8%;filter:drop-shadow(0 12px 14px #634a7d57);animation:rose-v2-flower 8s ease-in-out infinite alternate}
+.rose-v2-now--first .rose-v2-now-flower{width:66%;left:17%;top:13%;filter:sepia(.1) saturate(.7) drop-shadow(0 9px 12px #854f7a48)}
+.rose-v2-now .rose-now-head{color:#765b8b;letter-spacing:.08em}
+.rose-v2-now-title{position:relative;z-index:3;display:flex;flex-direction:column;align-items:center;gap:3px;margin:auto 0 20px;text-align:center;text-shadow:0 2px 14px #fff}
+.rose-v2-now-title>span{font:600 8px var(--mono);letter-spacing:.16em;color:#765c94}
+.rose-v2-now-title strong{font:italic 400 43px/.9 var(--rv-latin);color:#65487f;letter-spacing:-.06em}
+.rose-v2-now-title strong i{color:#ae76b0}
+.rose-v2-now-title small{font:400 12px/1.5 var(--rv-han);color:#6d567f}
+.rose-v2-now-bottom{position:relative;z-index:3;display:flex;justify-content:space-between;gap:5px;border-top:1px solid #a988c07c;padding-top:10px;color:#715785;font:600 8px var(--mono);letter-spacing:.04em}
+.rose-v2-now-bottom b{font:italic 500 18px/1 var(--rv-latin)}
+[data-rose-visible=false] .rose-v2-ring,[data-rose-visible=false] .rose-v2-botanical-halo,[data-rose-visible=false] .rose-v2-botanical,[data-rose-visible=false] .rose-v2-preview:after,[data-rose-visible=false] .rose-v2-medallion,[data-rose-visible=false] .rose-v2-now-orbit,[data-rose-visible=false] .rose-v2-now-flower{animation-play-state:paused}
+@keyframes rose-v2-ring{to{rotate:360deg}}
+@keyframes rose-v2-halo{to{opacity:.6;scale:1.08}}
+@keyframes rose-v2-flower{to{transform:translate3d(8px,-13px,0) rotate(3deg) scale(1.035)}}
+@keyframes rose-v2-sheen{0%,72%,100%{transform:translateX(-125%)}84%{transform:translateX(125%)}}
+@keyframes rose-v2-medallion{to{transform:translateY(-8px) rotate(7deg)}}
+@keyframes rose-v2-unfold{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:none}}
+@media(max-width:1000px){.rose-v2-hero{min-height:625px}.rose-v2-hero-art{min-height:610px}.rose-v2 .rose-hero-copy h3{font-size:clamp(65px,9vw,100px)}.rose-v2 .rose-hero-copy h4{font-size:clamp(29px,4vw,45px)}.rose-v2-botanical{width:60%}.rose-v2-preview{width:93%;bottom:14%}}
+@media(max-width:720px){.rose-v2-hero{grid-template-columns:1fr;min-height:0}.rose-v2 .rose-hero-copy{padding:48px 25px 6px}.rose-v2-hero-mark{width:54px;height:54px;margin:10px 0 0}.rose-v2 .rose-hero-copy h3{font-size:clamp(72px,15vw,105px)}.rose-v2 .rose-hero-cn{margin-bottom:17px}.rose-v2 .rose-hero-copy h4{font-size:clamp(31px,7vw,43px)}.rose-v2 .rose-hero-copy>p:last-of-type{font-size:13px}.rose-v2 .rose-hero-copy button{margin-top:18px}.rose-v2-hero-art{min-height:430px}.rose-v2-ring--outer{width:440px;height:440px;right:-70px;top:-50px}.rose-v2-ring--inner{width:310px;height:310px;right:3%;top:0}.rose-v2-botanical{width:55%;right:2%;top:-1%}.rose-v2-botanical-halo{width:300px;height:300px}.rose-v2-preview{width:82%;left:8%;bottom:17%;transform:rotate(-2deg)}.rose-v2-medallion{width:66px;height:66px;right:1%;bottom:16%;font-size:34px}.rose-v2-medallion small{font-size:6px}.rose-v2-prologue{display:block;padding:50px 25px}.rose-v2-prologue h3{font-size:34px}.rose-v2-prologue p{font-size:14px}.rose-v2-triptych{padding:0 23px 38px;gap:7px}.rose-v2-triptych>div{padding:15px 9px;min-height:155px}.rose-v2-triptych strong{font-size:17px}.rose-v2-triptych p{font-size:10px}.rose-v2-gallery{padding:28px 20px 35px}.rose-v2-gallery .rose-gallery-layout{display:block}.rose-v2-gallery .rose-gallery-rail{display:flex;flex-wrap:wrap;gap:6px;border:0;padding:0 0 15px}.rose-v2-gallery .rose-gallery-rail button{width:auto;display:flex;padding:9px 10px;border:1px solid #cbb4db;border-radius:8px}.rose-v2-gallery .rose-gallery-rail button small,.rose-v2-gallery .rose-gallery-rail p{display:none}.rose-v2-gallery .rose-gallery-stage,.rose-v2-scene{min-height:300px}.rose-v2-scene{padding:12px 12px 35px}.rose-v2-scene img{max-height:270px}.rose-v2-scene--compact img{max-height:370px}.rose-v2-history summary{grid-template-columns:48px 1fr 28px;gap:13px;padding:25px}.rose-v2-history-seal{width:46px;height:46px;font-size:27px}.rose-v2-history-route{display:none}.rose-v2-history-intro strong{font-size:30px}.rose-v2-history-intro em{font-size:15px}.rose-v2-history-pages{display:block;padding:0 20px 35px}.rose-v2-history-page{padding:23px}.rose-v2-history-page+article{border-left:1px solid #d7c6e7;border-top:0}.rose-v2-closing{display:block;padding:48px 25px}.rose-v2-closing strong{font-size:36px}.rose-v2-now{min-height:275px}.rose-v2-now-flower{width:44%;left:28%;top:1%}.rose-v2-now--first .rose-v2-now-flower{width:42%;left:29%;top:4%}.rose-v2-now-orbit{width:200px;height:200px;top:37%}.rose-v2-now-title{margin:auto 0 15px}}
+@media(max-width:380px){.rose-v2-triptych{grid-template-columns:1fr}.rose-v2-triptych>div{min-height:110px}.rose-v2-triptych b{margin:4px 0}.rose-v2 .rose-hero-foot span:last-child{display:none}.rose-v2-gallery .rose-gallery-heading p{font-size:20px}.rose-v2-gallery .rose-gallery-caption span:last-child{display:none}.rose-v2-history-date{font-size:8px}}
+@media(prefers-reduced-motion:reduce){.rose-v2-ring,.rose-v2-botanical-halo,.rose-v2-botanical,.rose-v2-preview:after,.rose-v2-medallion,.rose-v2-now-orbit,.rose-v2-now-flower,.rose-v2-history-pages{animation:none!important}.rose-v2-preview,.rose-v2 .rose-hero-copy button{transition:none!important}}
+html[data-site-motion=off] .rose-v2-ring,html[data-site-motion=off] .rose-v2-botanical-halo,html[data-site-motion=off] .rose-v2-botanical,html[data-site-motion=off] .rose-v2-preview:after,html[data-site-motion=off] .rose-v2-medallion,html[data-site-motion=off] .rose-v2-now-orbit,html[data-site-motion=off] .rose-v2-now-flower{animation:none!important}

@@ -6,10 +6,10 @@ export const projects = [
   {
     id:'roseraie',name:'Roseraie',subtitle:'让灵感，在此盛放。',layout:'roseraie',
     category:'THE ROCOCO AGENT ATELIER',number:'08',color:'rose',tags:['Electron','React','TypeScript'],
-    description:'Roseraie · 蔷薇工坊 0.1.0。本地工作空间里的通用 Agent：工具调用、文件与命令确认、织思三阶段、检查点和工作手记。中英双语。',
-    demo:false,version:'0.1.0',repoUrl:'https://github.com/ChefDavid0815/roseraie-agent',liveUrl:'',
-    downloadUrl:'https://github.com/ChefDavid0815/roseraie-agent/releases/tag/v0.1.0',
-    translations:{zh:{category:'洛可可 Agent 工坊'},en:{subtitle:'A little grace in every great idea.',description:'Roseraie 0.1.0 is a local-first general agent with tool calls, file and command approvals, a three-pass Weave, checkpoints and a work journal. Chinese / English.'}}
+    description:'Roseraie · 蔷薇工坊 0.2.0。紫罗兰瓷釉与植物画的新工坊，可选任务模型及推理强度；保留文件与命令确认、织思审阅、检查点和手账。中英双语。',
+    demo:false,version:'0.2.0',repoUrl:'https://github.com/ChefDavid0815/roseraie-agent',liveUrl:'',
+    downloadUrl:'https://github.com/ChefDavid0815/roseraie-agent/releases/tag/v0.2.0',
+    translations:{zh:{category:'洛可可 Agent 工坊'},en:{subtitle:'A little grace in every great idea.',description:'Roseraie 0.2.0 brings a violet botanical atelier, task model and effort selection, approvals, Weave review, checkpoints and a local journal. Chinese / English.'}}
   },
   {
     id:'atlas',name:'Atlas',subtitle:'在思想之上，仰望无垠。',layout:'atlas',
