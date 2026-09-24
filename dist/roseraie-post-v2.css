@@ -1,0 +1,246 @@
+@font-face{font-family:RoseCormorant;src:url('./assets/fonts/cormorant-garamond-latin-300-normal.woff2') format('woff2');font-weight:300;font-display:swap}
+@font-face{font-family:RoseCormorant;src:url('./assets/fonts/cormorant-garamond-latin-400-italic.woff2') format('woff2');font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:RoseCormorant;src:url('./assets/fonts/cormorant-garamond-latin-500-normal.woff2') format('woff2');font-weight:500;font-display:swap}
+
+/* The post is a smaller, readable companion to the violet Roseraie exhibit. */
+.post-card--roseraie,.article-card--roseraie{
+  --rp-paper:#faf5ff;--rp-deep:#eee3fa;--rp-ink:#493a58;--rp-plum:#71518d;
+  --rp-rose:#b867a0;--rp-line:#d5c2e8;--rp-muted:#725e80;
+}
+.posts-chronological .post-card--roseraie{
+  border-color:#bba6d2;
+  background:var(--rp-paper);
+  color:var(--rp-ink);
+  box-shadow:0 18px 48px #12081d40,0 0 0 1px #e9dafa inset;
+}
+.posts-chronological .post-card--roseraie:hover,
+.posts-chronological .post-card--roseraie:focus-visible{
+  border-color:#9273b6;
+  box-shadow:0 26px 56px #170a2855,0 0 0 1px #d2bbe8 inset;
+}
+.post-card--roseraie .post-card-copy{
+  position:relative;
+  background:radial-gradient(circle at 100% 0,#e6d8f390,transparent 45%),linear-gradient(145deg,#fffcff,#f3eafa);
+  border-left:1px solid #d9c5e8;
+}
+.post-card--roseraie .post-card-copy::before{
+  content:'';
+  position:absolute;
+  right:22px;top:17px;width:48px;height:48px;
+  background:url('./assets/projects/roseraie/mark-0.2.0.svg') center/contain no-repeat;
+  opacity:.15;pointer-events:none;
+}
+.post-card--roseraie h2{
+  font:400 clamp(25px,2.5vw,33px)/1.5 RoseHan,'Noto Serif SC',serif;
+  letter-spacing:0;color:#554167;
+}
+html[lang^="en"] .post-card--roseraie h2{font:400 clamp(32px,3vw,42px)/1.08 RoseCormorant,Georgia,serif;letter-spacing:-.025em}
+.post-card--roseraie p,.post-card--roseraie .post-card-meta,.post-card--roseraie .post-card-bottom{color:#685774}
+.post-card--roseraie .post-card-meta>span:last-child{color:#705785;opacity:.7}
+.post-card--roseraie .post-read,.post-card--roseraie .post-read b{color:#765197}
+.post-card--roseraie .post-card-bottom{border-top:1px solid #d8c7e5}
+
+.post-art--roseraie.rose-post-v2{
+  display:block;min-height:300px;padding:0;
+  border:0;color:#514063;
+  background:
+    radial-gradient(circle at 81% 13%,#ead5f8cc,transparent 37%),
+    radial-gradient(circle at 8% 92%,#f3ddea99,transparent 36%),
+    linear-gradient(137deg,#fffaff 0%,#f5edff 53%,#eadcf5 100%);
+}
+.post-art--roseraie.rose-post-v2::before{
+  content:'';position:absolute;inset:11px;z-index:6;
+  border:1px solid #a788c65c;pointer-events:none;
+}
+.rose-post-v2::after{
+  content:'';position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:repeating-linear-gradient(0deg,transparent 0 46px,#9c77bd08 47px 48px);
+}
+.rose-post-v2-orbit{
+  position:absolute;z-index:1;right:-95px;top:-62px;width:380px;aspect-ratio:1;
+  border:1px solid #9c79bf45;border-radius:50%;
+  box-shadow:0 0 0 25px #bb9bd012,0 0 0 52px #b28dc50b;
+  animation:rose-post-orbit 40s linear infinite;
+}
+.rose-post-v2-orbit::before,.rose-post-v2-orbit::after{
+  content:'';position:absolute;border-radius:50%;pointer-events:none;
+}
+.rose-post-v2-orbit::before{inset:32px;border:1px solid #b89bd54d}
+.rose-post-v2-orbit::after{width:9px;height:9px;top:17%;left:12%;background:#b78ac8;box-shadow:0 0 18px #aa78c9}
+.rose-post-v2 .rose-petals{z-index:5}
+.rose-post-v2 .rose-petals i{background:linear-gradient(135deg,#f6d7ee,#9977c8bf);filter:drop-shadow(0 2px 5px #7d5ca866)}
+.rose-post-v2-top,.rose-post-v2-bottom{
+  position:absolute;left:25px;right:25px;z-index:8;
+  display:flex;justify-content:space-between;align-items:center;gap:16px;
+  font:600 8px/1.4 var(--mono);letter-spacing:.13em;color:#745a8c;
+}
+.rose-post-v2-top{top:25px}
+.rose-post-v2-bottom{bottom:25px}
+.rose-post-v2-bottom span:last-child{font-size:7px;text-align:right}
+.rose-post-v2-wordmark{position:absolute;z-index:4;left:27px;top:73px;display:flex;flex-direction:column;align-items:flex-start}
+.rose-post-v2-wordmark img{display:block;width:46px;height:46px;filter:drop-shadow(0 6px 8px #896ca84d)}
+.rose-post-v2-wordmark strong{
+  display:block;margin-top:-1px;font:300 72px/.8 RoseCormorant,Georgia,serif;
+  letter-spacing:-.075em;color:#564268;text-shadow:0 11px 18px #9779b038;
+}
+.rose-post-v2-wordmark i{font-style:normal;color:#9a6db9}
+.rose-post-v2-wordmark>span{margin:11px 0 0 4px;font:400 14px/1.5 RoseHan,'Noto Serif SC',serif;letter-spacing:.26em;color:#765a8f}
+.rose-post-v2-botanical{
+  position:absolute;z-index:2;right:-43px;top:-68px;width:260px;height:260px;object-fit:contain;
+  filter:drop-shadow(0 16px 18px #6b4c8c4d);
+  animation:rose-post-bloom 8s ease-in-out infinite alternate;
+}
+.rose-post-v2-capture{
+  position:absolute;z-index:4;right:3px;bottom:45px;width:43%;
+  padding:6px;background:#fffbff;border:1px solid #bea7d2;
+  box-shadow:5px 7px 0 #b298ca77,0 16px 24px #593c734d;
+  transform:rotate(-7deg);
+  animation:rose-post-float 7s ease-in-out infinite alternate;
+  transition:transform .65s cubic-bezier(.2,.7,.2,1),box-shadow .65s;
+}
+.rose-post-v2-capture img{display:block;width:100%;height:auto}
+.rose-post-v2-capture::after{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(105deg,transparent 40%,#fff9 48%,transparent 55%);
+  transform:translateX(-120%);animation:rose-post-sheen 11s ease-in-out infinite;
+}
+.post-card--roseraie:hover .rose-post-v2-capture,.post-card--roseraie:focus-visible .rose-post-v2-capture{
+  transform:rotate(-2deg) translateY(-8px) scale(1.03);
+  box-shadow:8px 11px 0 #b298ca9c,0 26px 38px #593c736b;
+  animation-play-state:paused;
+}
+.post-card--roseraie:hover .rose-post-v2-botanical,.post-card--roseraie:focus-visible .rose-post-v2-botanical{filter:drop-shadow(0 20px 22px #6b4c8c77)}
+
+/* The reading surface keeps the site's shell, with the atelier's paper and ink inside. */
+.article-card--roseraie{
+  --article-ink:#493a58;--article-muted:#6b5977;--article-accent:#735098;
+  --article-line:#d8c5e8;--article-fill:#faf5ff;
+  border-color:#bda6d4;background:var(--article-fill);
+  box-shadow:0 34px 100px #13091f70,0 0 0 1px #f8efff inset;
+}
+.article-card--roseraie .article-header{
+  overflow:hidden;isolation:isolate;
+  background:radial-gradient(circle at 85% 0,#e4cff5bc,transparent 37%),linear-gradient(130deg,#fffaff,#f4eafa);
+  border-bottom:1px solid #decbee;
+}
+.article-card--roseraie .article-header::before{
+  content:'';position:absolute;z-index:-1;right:2%;top:-70px;width:340px;height:340px;
+  background:url('./assets/projects/roseraie/violet-botanical.webp') center/contain no-repeat;
+  opacity:.15;pointer-events:none;
+}
+.article-card--roseraie .article-header::after{
+  content:'';position:absolute;inset:14px;border:1px solid #aa8ec34d;pointer-events:none;
+}
+.article-card--roseraie .article-meta{color:#79569a}
+.article-card--roseraie .article-header h1{
+  max-width:800px;color:#503c65;
+  font:400 clamp(35px,4.4vw,57px)/1.4 RoseHan,'Noto Serif SC',serif;
+  letter-spacing:-.035em;text-shadow:0 8px 20px #8d6daa20;
+}
+html[lang^="en"] .article-card--roseraie .article-header h1{font:400 clamp(48px,5vw,68px)/1.05 RoseCormorant,Georgia,serif;letter-spacing:-.025em}
+.article-card--roseraie .article-avatar{background:#735098;color:#fff;border-color:#684282}
+.article-card--roseraie .article-edition{color:#745a89}
+.article-card--roseraie .article-art{padding:14px;background:#eee2f7;border-color:#d9c5e8}
+.article-card--roseraie .article-art .rose-post-v2{min-height:460px}
+.article-card--roseraie .article-art .rose-post-v2-wordmark{left:6%;top:90px}
+.article-card--roseraie .article-art .rose-post-v2-wordmark img{width:72px;height:72px}
+.article-card--roseraie .article-art .rose-post-v2-wordmark strong{font-size:clamp(100px,13vw,175px)}
+.article-card--roseraie .article-art .rose-post-v2-wordmark>span{font-size:19px;margin-top:18px}
+.article-card--roseraie .article-art .rose-post-v2-botanical{width:400px;height:400px;right:24%;top:-75px}
+.article-card--roseraie .article-art .rose-post-v2-orbit{width:600px;right:10%;top:-160px}
+.article-card--roseraie .article-art .rose-post-v2-capture{width:47%;right:6%;bottom:68px;padding:9px;transform:rotate(-5deg);box-shadow:9px 12px 0 #b298ca77,0 28px 46px #593c7359}
+.article-card--roseraie .article-reading{
+  background:radial-gradient(circle at 5% 12%,#eee4f685,transparent 36%),linear-gradient(160deg,#fcf9ff,#f7f0fd);
+}
+.article-card--roseraie .article-index>span:first-child{color:#735098}
+.article-card--roseraie .article-index a:hover,.article-card--roseraie .article-index a:focus-visible{color:#673d90}
+.article-card--roseraie .article-index b{color:#8462a2}
+.article-card--roseraie .article-index-note{color:#8e76a3}
+.article-card--roseraie .article-body .article-lead{font-family:RoseHan,'Noto Serif SC',serif;color:#503c62}
+html[lang^="en"] .article-card--roseraie .article-body .article-lead{font-family:RoseCormorant,Georgia,serif;font-size:clamp(26px,3vw,34px);line-height:1.45}
+.article-card--roseraie .article-chapter h2{font:400 clamp(27px,2.9vw,36px)/1.5 RoseHan,'Noto Serif SC',serif;color:#55416a;letter-spacing:-.03em}
+html[lang^="en"] .article-card--roseraie .article-chapter h2{font:500 clamp(34px,3.6vw,45px)/1.15 RoseCormorant,Georgia,serif;letter-spacing:-.015em}
+.article-card--roseraie .chapter-label{color:#8563a2}
+.article-card--roseraie .chapter-label>span:first-child{border-color:#bca3d4;background:#f4eafa}
+.article-card--roseraie .article-body blockquote{
+  background:radial-gradient(circle at 100% 0,#e5d2f4,transparent 55%),#f0e5f7;
+  border-color:#9263b2;color:#684780;
+  font:400 clamp(24px,3vw,33px)/1.7 RoseHan,'Noto Serif SC',serif;
+  box-shadow:inset 0 1px 0 #fff9,0 12px 30px #65457c14;
+  background-size:140% 140%;
+  animation:rose-post-ink-light 14s ease-in-out infinite alternate;
+}
+html[lang^="en"] .article-card--roseraie .article-body blockquote{font:italic 400 clamp(30px,3.4vw,43px)/1.16 RoseCormorant,Georgia,serif}
+.article-card--roseraie .article-figure>div{background:#ece1f3;border-color:#c4acd8;padding:8px;box-shadow:7px 8px 0 #d9c7e9,0 18px 35px #4e2f6626;transition:transform .65s cubic-bezier(.2,.7,.2,1),box-shadow .65s}
+.article-card--roseraie .article-figure:hover>div{transform:translateY(-5px) rotate(.25deg);box-shadow:9px 12px 0 #cbb1e2,0 26px 45px #4e2f6633}
+.article-card--roseraie .article-figure img{border-color:#bfa6d4}
+.article-card--roseraie .article-figure figcaption{border-left-color:#9a76b9;color:#786586}
+.article-card--roseraie .article-signoff{border-color:#d8c5e8}
+.article-card--roseraie .article-signoff>span{font-family:RoseCormorant,Georgia,serif;font-size:37px;font-weight:500;letter-spacing:-.02em}
+.article-card--roseraie .article-cta{background:#654581;color:#fff;box-shadow:5px 6px 0 #bfa3d7;border:1px solid #5b3d76}
+.article-card--roseraie .article-cta:hover,.article-card--roseraie .article-cta:focus-visible{background:#57356f;box-shadow:7px 9px 0 #bfa3d7}
+
+@keyframes rose-post-orbit{to{transform:rotate(360deg)}}
+@keyframes rose-post-bloom{to{transform:translate3d(10px,12px,0) rotate(4deg) scale(1.055)}}
+@keyframes rose-post-float{to{translate:0 -8px}}
+@keyframes rose-post-sheen{0%,75%,100%{transform:translateX(-120%)}88%{transform:translateX(120%)}}
+@keyframes rose-post-ink-light{to{background-position:100% 100%}}
+@keyframes rose-post-page-turn{from{opacity:.7;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@supports (animation-timeline:view()){
+  html:not([data-site-motion=off]) .article-card--roseraie .article-chapter h2,
+  html:not([data-site-motion=off]) .article-card--roseraie .article-figure{
+    animation:rose-post-page-turn linear both;
+    animation-timeline:view();
+    animation-range:entry 0% cover 22%;
+  }
+}
+[data-rose-visible=false] .rose-post-v2-orbit,
+[data-rose-visible=false] .rose-post-v2-botanical,
+[data-rose-visible=false] .rose-post-v2-capture,
+[data-rose-visible=false] .rose-post-v2-capture::after{animation-play-state:paused}
+
+@media(max-width:900px){
+  .article-card--roseraie .article-art .rose-post-v2-wordmark{top:115px}
+  .article-card--roseraie .article-art .rose-post-v2-wordmark strong{font-size:115px}
+  .article-card--roseraie .article-art .rose-post-v2-botanical{right:10%;width:320px;height:320px}
+  .article-card--roseraie .article-art .rose-post-v2-capture{right:3%;width:45%;bottom:66px}
+}
+@media(max-width:700px){
+  .post-card--roseraie .post-card-copy{border-left:0;border-top:1px solid #d9c5e8}
+  .posts-chronological .post-card .rose-post-v2{min-height:375px;height:375px;max-height:none}
+  .rose-post-v2-wordmark{top:71px}
+  .rose-post-v2-wordmark strong{font-size:71px}
+  .rose-post-v2-botanical{right:-27px;top:-70px;width:250px;height:250px}
+  .rose-post-v2-capture{width:49%;bottom:39px}
+  .article-card--roseraie .article-art{padding:8px}
+  .article-card--roseraie .article-art .rose-post-v2{min-height:410px;padding:0}
+  .article-card--roseraie .article-art .rose-post-v2-wordmark{left:25px;top:67px}
+  .article-card--roseraie .article-art .rose-post-v2-wordmark img{width:48px;height:48px}
+  .article-card--roseraie .article-art .rose-post-v2-wordmark strong{font-size:clamp(70px,17vw,108px)}
+  .article-card--roseraie .article-art .rose-post-v2-wordmark>span{font-size:14px;margin-top:12px}
+  .article-card--roseraie .article-art .rose-post-v2-botanical{right:-40px;top:-80px;width:290px;height:290px}
+  .article-card--roseraie .article-art .rose-post-v2-orbit{right:-120px;top:-105px;width:400px}
+  .article-card--roseraie .article-art .rose-post-v2-capture{width:54%;right:4%;bottom:40px;padding:5px}
+  .article-card--roseraie .article-header h1{font-size:clamp(30px,8vw,42px);line-height:1.5}
+  html[lang^="en"] .article-card--roseraie .article-header h1{font-size:clamp(43px,10vw,57px)}
+  .article-card--roseraie .article-header::before{width:230px;height:230px;right:-55px;top:-35px}
+}
+@media(max-width:400px){
+  .rose-post-v2-bottom span:last-child{display:none}
+  .rose-post-v2-wordmark strong{font-size:68px}
+  .article-card--roseraie .article-art .rose-post-v2{min-height:395px}
+  .article-card--roseraie .article-art .rose-post-v2-capture{width:57%;right:2%;bottom:38px}
+  .article-card--roseraie .article-art .rose-post-v2-wordmark strong{font-size:68px}
+}
+@media(prefers-reduced-motion:reduce){
+  .rose-post-v2-orbit,.rose-post-v2-botanical,.rose-post-v2-capture,.rose-post-v2-capture::after,.rose-post-v2 .rose-petals i,.article-card--roseraie .article-body blockquote,.article-card--roseraie .article-chapter h2,.article-card--roseraie .article-figure{animation:none!important}
+  .rose-post-v2-capture,.post-card--roseraie,.article-card--roseraie .article-cta,.article-card--roseraie .article-figure>div{transition:none!important}
+}
+html[data-site-motion=off] .rose-post-v2-orbit,
+html[data-site-motion=off] .rose-post-v2-botanical,
+html[data-site-motion=off] .rose-post-v2-capture,
+html[data-site-motion=off] .rose-post-v2-capture::after,
+html[data-site-motion=off] .rose-post-v2 .rose-petals i,
+html[data-site-motion=off] .article-card--roseraie .article-body blockquote,
+html[data-site-motion=off] .article-card--roseraie .article-chapter h2,
+html[data-site-motion=off] .article-card--roseraie .article-figure{animation:none!important}
