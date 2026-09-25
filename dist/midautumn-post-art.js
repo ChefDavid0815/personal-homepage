@@ -5,7 +5,7 @@ export function midautumnPostArt() {
     <div class="midpost-stars"><i></i><i></i><i></i><i></i><i></i><i></i></div>
     <div class="midpost-orbit"></div><div class="midpost-orbit midpost-orbit--small"></div>
     <div class="midpost-top"><span>CHEFZC ✦ MOON JOURNAL</span><span>09.25 / 2026</span></div>
-    <div class="midpost-title"><span>月 · 满</span><strong class="midpost-wordmark"><span class="midpost-wordmark-line">MID<span class="midpost-dash">—</span></span><span class="midpost-wordmark-line">AUTUMN<span class="midpost-period">.</span></span></strong><small>FULL MOON / FULL HEART / FROM DUBAI</small></div>
+    <div class="midpost-title"><span>月 · 满</span><strong>MID<span>—</span><br>AUTUMN<span class="midpost-period">.</span></strong><small>FULL MOON / FULL HEART / FROM DUBAI</small></div>
     <div class="midpost-footer"><span>今夜，月亮上线。</span><b>✳</b><span>ONE NIGHT / ONE MOON</span></div>
   </div>`;
 }
