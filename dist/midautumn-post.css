@@ -46,3 +46,27 @@ html[lang^="en"] .article-card--midautumn .article-header h1{font:400 clamp(49px
 @media(max-width:700px){.post-art--midautumn,.post-card--midautumn .post-art--midautumn{min-height:340px}.midpost-title{left:25px}.midpost-title strong{font-size:clamp(65px,15vw,95px)}.midpost-title>span{font-size:16px}.midpost-title small{font-size:7px;max-width:210px}.midpost-halo{right:-21%;top:-5%;width:90%}.midpost-orbit{right:-40%;top:-42%;width:120%}.midpost-orbit--small{right:-21%;top:-18%;width:92%}.article-card--midautumn .article-art{padding:10px 10px 0}.article-card--midautumn .article-art .post-art{min-height:370px}.article-card--midautumn .article-art .midpost-title strong{font-size:clamp(63px,14vw,93px)}.article-card--midautumn .article-header::after{font-size:90px;right:16px;top:28px}.article-card--midautumn .article-header h1{font-size:39px}.article-card--midautumn .article-body blockquote{padding:19px;font-size:28px}}
 @media(max-width:410px){.midpost-title strong{font-size:58px}.article-card--midautumn .article-art .midpost-title strong{font-size:60px}.midpost-top,.midpost-footer{font-size:7px;left:16px;right:16px}.midpost-title>span{margin-bottom:14px}.midpost-title small{letter-spacing:.08em}}
 @media(prefers-reduced-motion:reduce){.midpost-halo,.midpost-orbit,.midpost-stars i,.midpost-footer b,.post-card--midautumn .post-card-copy::before{animation:none!important}.post-art--midautumn>img,.article-card--midautumn .article-figure img{transition:none}.post-card--midautumn:hover .post-art--midautumn>img{transform:none}}
+
+/* Journal index: keep the moonlit wordmark inside the shared card format. */
+.post-card--midautumn .post-art--midautumn{container-type:inline-size}
+.posts-chronological .post-card--midautumn .midpost-title{left:clamp(22px,5cqw,36px);top:50%;transform:translateY(-50%)}
+.posts-chronological .post-card--midautumn .midpost-title>span{font-size:clamp(18px,5cqw,22px);margin-bottom:6px}
+.posts-chronological .post-card--midautumn .midpost-title strong{font-size:clamp(56px,17cqw,84px);line-height:.78}
+.posts-chronological .post-card--midautumn .midpost-title small{margin-top:7px}
+.posts-chronological .post-card--midautumn .midpost-footer{bottom:14px;padding-top:8px}
+@media(max-width:700px){
+  .posts-chronological .post-card--midautumn .midpost-title{left:24px}
+  .posts-chronological .post-card--midautumn .midpost-title strong{font-size:clamp(54px,10cqw,67px)}
+  .posts-chronological .post-card--midautumn .midpost-title>span{margin-bottom:6px}
+  .posts-chronological .post-card--midautumn .midpost-title small{margin-top:6px}
+}
+@media(min-width:501px) and (max-width:700px){
+  .posts-chronological .post-card--midautumn .midpost-title{top:48%}
+  .posts-chronological .post-card--midautumn .midpost-title strong{font-size:clamp(44px,7.5cqw,54px);line-height:.88}
+  .posts-chronological .post-card--midautumn .midpost-title strong br{display:none}
+}
+@media(max-width:500px){
+  .posts-chronological .post-card--midautumn .midpost-title strong{font-size:clamp(53px,16cqw,64px)}
+  .posts-chronological .post-card--midautumn .midpost-title>span{margin-bottom:4px}
+  .posts-chronological .post-card--midautumn .midpost-title small{margin-top:4px}
+}
