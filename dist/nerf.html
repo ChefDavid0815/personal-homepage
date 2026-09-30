@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#040806"><meta name="description" content="NeRF Research Console：独立实现的神经辐射场与本地研究工作台。"><title>NeRF — 数学长出一个世界 / ChefZC</title><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23c4fa5a'/%3E%3Cpath d='M39 18H28L17 32l11 14h11M43 43h8' fill='none' stroke='%23101112' stroke-width='7'/%3E%3C/svg%3E">
+<link rel="canonical" href="https://chefzc.dev/nerf.html"><meta property="og:title" content="NeRF — A world, made of numbers."><meta property="og:description" content="Neural rendering, recorded reconstruction and a local research console."><meta property="og:image" content="https://chefzc.dev/assets/projects/nerf/workstation-en.webp">
+
+<script src="./vendor/gsap.min.js" defer></script><script src="./vendor/ScrollTrigger.min.js" defer></script>
+<link rel="stylesheet" href="./nerf.bundle.css">
+<link rel="preload" href="./assets/fonts/space-grotesk-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
+<script type="module" src="./nerf-page.bundle.js"></script>
+</head><body class="nerf-page"><a class="skip-link" href="#nerf-project">跳到项目 / Skip to project</a><div class="site-shell"><header class="site-header">
+      <a class="brand" href="./profile.html" aria-label="ChefZC 个人主页"><span class="brand-mark" aria-hidden="true">c<span>_</span></span><span>ChefZC<span class="brand-dot">.</span></span></a>
+      <nav class="page-nav" aria-label="主导航"><a class="nav-link" href="./profile.html" aria-label="Personal Profile"><span class="nav-long">Personal </span>Profile</a><a class="nav-link" href="./gallery.html" aria-current="page">Gallery<span class="nav-count" aria-hidden="true">↗</span></a><a class="nav-link" href="./game.html">游戏</a>
+        <a class="nav-link" href="./now.html">近况</a><a class="nav-link" href="./posts.html">随笔</a><a class="nav-link" href="./usage.html">用量</a></nav>
+      <div class="header-tools"><span class="edition mono">PERSONAL SPACE <span>/</span> 001</span><div class="language-switch" role="group" aria-label="选择语言"><button type="button" data-language="zh" lang="zh-CN" aria-label="切换为中文" aria-pressed="true">中</button><button type="button" data-language="en" lang="en" aria-label="Switch to English" aria-pressed="false">EN</button></div></div>
+    </header>
+<main id="nerf-project"><nav class="nerf-breadcrumb" aria-label="项目导航"><a href="./school-gallery.html#project-nerf">← 学校实验室</a><span>CHEFZC / COMPUTATIONAL RESEARCH</span></nav><article class="nerf-project" aria-labelledby="nerf-title"><header class="nerf-hero"><span class="nerf-overline">NEURAL RADIANCE FIELDS / RESEARCH CONSOLE</span><h1 id="nerf-title">NeRF<span>_</span></h1><h2>让数学，在屏幕里长出一个世界。</h2><p>从图像、相机与一组坐标出发，<br>让一个神经网络，重新学会看见空间。</p><div class="nerf-actions"><a class="nerf-button" href="./post.html?article=nerf">翻开研究日志 <span aria-hidden="true">↗</span></a><a class="nerf-text-link" href="https://github.com/ChefDavid0815/nerf-research-console" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></div><div class="nerf-hero-field"><div class="nerf-space" data-nerf-space>
+    <canvas data-nerf-field aria-hidden="true"></canvas>
+    <div class="nerf-plane nerf-plane--back" aria-hidden="true"></div><div class="nerf-plane nerf-plane--floor" aria-hidden="true"></div>
+    <svg class="nerf-ray-map" viewBox="0 0 1000 640" preserveAspectRatio="none" aria-hidden="true">
+      <defs><linearGradient id="nerf-beam-1"><stop stop-color="#b4ff7d" stop-opacity=".65"/><stop offset="1" stop-color="#b4ff7d" stop-opacity=".02"/></linearGradient></defs>
+      <g fill="none" stroke="url(#nerf-beam-1)" stroke-width=".8">
+        <path d="M120 390L700 150M120 390L810 270M120 390L780 430M120 390L670 530M120 390L590 280"/>
+        <path d="M105 380L105 400L125 408L125 373Z"/><path d="M125 373L174 350L174 430L125 408M174 350L105 380M174 430L105 400"/>
+      </g><g class="nerf-svg-samples" fill="#b4ff7d"><circle cx="338" cy="300" r="2"/><circle cx="525" cy="223" r="1.5"/><circle cx="396" cy="342" r="2"/><circle cx="621" cy="306" r="1.4"/><circle cx="434" cy="409" r="2"/><circle cx="584" cy="415" r="1.5"/></g>
+      <g fill="none" stroke="#b4ff7d" stroke-opacity=".22" stroke-width=".6"><path d="M52 564H950M75 543V590M924 543V590M50 77V46H82M949 77V46H915"/><circle cx="120" cy="390" r="28"/></g>
+    </svg>
+    <div class="nerf-floating-label nerf-origin" aria-hidden="true">o + td<br><span>CAMERA ORIGIN</span></div>
+    <div class="nerf-floating-label nerf-coordinate" aria-hidden="true">x · y · z<br><span>CONTINUOUS / FIELD</span></div>
+    <div class="nerf-plate nerf-shared-plate">
+      <div class="nerf-plate-top"><span>LEGO / VAL 000</span><span>RGB</span></div>
+      <div class="nerf-image-well"><img src="./assets/projects/nerf/reconstruction.webp" width="800" height="800" alt="50,000 次训练后实际渲染的 Lego 验证视角，保留白色背景" decoding="async" data-nerf-preview><div class="nerf-reconstruction-grain" aria-hidden="true"></div><div class="nerf-acquisition" aria-hidden="true"></div></div>
+      <div class="nerf-plate-bottom"><span data-nerf-iteration>ITER 050000</span><span>已记录</span></div>
+    </div>
+    <span class="nerf-field-index" aria-hidden="true">F<sub>θ</sub> (x, d) → (σ, c)</span>
+    <span class="nerf-space-status" aria-hidden="true"><i></i>NEURAL SPACE / SPECIMEN</span>
+    <span class="nerf-space-caption">真实输出 · 空间射线为视觉示意</span>
+  </div><div class="nerf-init" aria-hidden="true"><span>camera_to_world · mat4</span><span>ray origin → positional encoding → field</span><span>scene memory / reconstructed.</span></div></div></header></article><noscript><p>本页的互动需要 JavaScript。软件源码、安装与研究记录：<a href="https://github.com/ChefDavid0815/nerf-research-console">GitHub ↗</a></p></noscript></main><footer class="site-footer"><a class="footer-brand" href="./profile.html">ChefZC<span class="lime-text">.</span></a><span class="mono">保持热忱，保持热爱 · VIVA LA VIDA</span><a href="#" class="back-top">回到顶部 <span aria-hidden="true">↑</span></a></footer></div>
+<dialog class="nerf-dialog" id="nerf-dialog" aria-labelledby="nerf-dialog-title"><button type="button">关闭 ×</button><h2 id="nerf-dialog-title">NeRF Research Console / Actual interface</h2><img src="./assets/projects/nerf/workstation-zh.webp" width="1440" height="960" alt="NeRF Research Console"></dialog><div class="visually-hidden" id="language-announcement" role="status" aria-live="polite"></div></body></html>

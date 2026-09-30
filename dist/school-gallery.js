@@ -1,4 +1,6 @@
 import { getLanguage, onLanguageChange } from './i18n.js';
+import { nerfCabinet } from './nerf-art.js';
+import './nerf-motion.js';
 import { isMotionPaused, setMotionPaused, systemReducesMotion, onMotionChange } from './motion-state.js';
 import { wisLinks, wisAsset, wisMark, wisAtmosphere, wisCopy as c } from './wis-exhibit.js';
 
@@ -17,7 +19,7 @@ function scanDiagram() {
 }
 
 function render() {
-  root.innerHTML = `<article class="wis-exhibit" id="project-wis-tech-tank" aria-labelledby="wis-title">
+  root.innerHTML = nerfCabinet() + `<article class="wis-exhibit" id="project-wis-tech-tank" aria-labelledby="wis-title">
     <div class="wis-cover"><img class="wis-cover-photo" src="${wisAsset}woodland.webp" width="1536" height="1024" alt="${c('晨光穿过绿意盎然的林间步道，原创环境艺术插画','Original environmental artwork of morning light on a green woodland path')}"><div class="wis-cover-shade"></div>${wisAtmosphere()}
       <div class="wis-cover-top"><span>WIS TECH TANK</span><span class="wis-tag">${c('校园展览 / 001','SCHOOL EXHIBITION / 001')}</span></div>
       <div class="wis-cover-copy"><span class="wis-eyebrow">A STUDY IN PERCEPTION</span><h2 id="wis-title">${wisMark}stride<span>.</span></h2><p>${c('感知多一点，<br>下一步更从容。','A little awareness.<br>A better next step.')}</p></div>
@@ -37,6 +39,8 @@ function render() {
   root.querySelector('.wis-cover').append(motionButton);
   updateMotion();
   if (dialog.open) renderDialog();
+  document.dispatchEvent(new Event('nerf:render'));
+  if(location.hash === '#project-nerf') requestAnimationFrame(()=>document.querySelector('#project-nerf')?.scrollIntoView({behavior:'instant'}));
 }
 
 function updateMotion(){

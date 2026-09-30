@@ -1,3 +1,6 @@
+import {nerfPostArt} from './nerf-art.js';
+import {renderNeRFReader} from './nerf-post.js';
+import './nerf-motion.js';
 import {chromaPostArt} from './chroma-exhibit.js';
 import {atlasPostArt} from './atlas-exhibit-v2.js';
 import {roseraiePostArt} from './roseraie-post-art-v2.js';
@@ -25,6 +28,7 @@ const minutes = item => {
 const readTime = item => copy(`约 ${minutes(item)} 分钟`, `${minutes(item)} MIN READ`);
 
 function artwork(item) {
+  if(item.theme === 'nerf') return nerfPostArt();
   if(item.theme === 'afterimage') return afterimagePostArt();
   if(item.theme === 'midautumn') return midautumnPostArt();
   if(item.theme === 'roseraie') return roseraiePostArt();
@@ -63,6 +67,12 @@ function reader() {
     return;
   }
   const text = local(post);
+  if(post.theme === 'nerf') {
+    document.title = `${text.title} — ChefZC`;
+    document.querySelector('meta[name="description"]').content = text.summary;
+    root.innerHTML = renderNeRFReader();
+    return;
+  }
   const displayTitle = post.theme === 'court' && getLanguage() === 'zh' ? esc(text.title).replace('，', '，<br>') : esc(text.title);
   document.title = `${text.title} — ChefZC`;
   document.querySelector('meta[name="description"]').content = text.summary;
@@ -78,7 +88,7 @@ function reader() {
     </article><section class="more-notes" aria-label="${copy('继续阅读', 'Keep reading')}"><div class="posts-section-label"><span>${copy('也许还想翻翻', 'ANOTHER PAGE TO TURN')}</span><a href="./posts.html">${copy('所有随笔', 'ALL POSTS')} ↗</a></div><div>${posts.filter(item => item.id !== post.id).map(item=>`<a class="next-note next-note--${item.theme}" href="${href(item)}"><span class="mono">NOTE ${item.number}</span><h2>${esc(local(item).title)}</h2><span aria-hidden="true">↗</span></a>`).join('')}</div></section>`;
 }
 
-function render() { isReader ? reader() : overview(); updateProgress(); document.dispatchEvent(new Event('atlas:render')); document.dispatchEvent(new Event('roseraie:render')); }
+function render() { isReader ? reader() : overview(); updateProgress(); document.dispatchEvent(new Event('atlas:render')); document.dispatchEvent(new Event('roseraie:render')); document.dispatchEvent(new Event('nerf:render')); }
 let pendingFrame = false;
 function updateProgress() {
   const range = document.documentElement.scrollHeight - innerHeight;

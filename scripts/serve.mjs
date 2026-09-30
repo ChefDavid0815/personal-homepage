@@ -2,6 +2,7 @@ import http from 'node:http';
 import { readFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { gzipSync } from 'node:zlib';
 import {getResetData} from '../lib/reset-data.js';
 import resetPostHandler from '../api/reset-post.js';
 
@@ -42,8 +43,11 @@ http.createServer(async (request, response) => {
     const target = path.resolve(root, relative);
     if (target !== root && !target.startsWith(root + path.sep)) { response.writeHead(403); response.end('Forbidden'); return; }
     const content = await readFile(target);
-    response.writeHead(200, { 'Content-Type': types[path.extname(target)] || 'application/octet-stream', 'Cache-Control': 'no-store' });
-    response.end(request.method === 'HEAD' ? undefined : content);
+    const compressible = ['.html','.css','.js','.mjs','.json','.svg'].includes(path.extname(target));
+    const compressed = compressible && /\bgzip\b/.test(request.headers['accept-encoding'] || '');
+    const body = compressed ? gzipSync(content) : content;
+    response.writeHead(200, { 'Content-Type': types[path.extname(target)] || 'application/octet-stream', 'Cache-Control': 'no-store', 'Content-Length': body.length, ...(compressible ? {'Vary':'Accept-Encoding'} : {}), ...(compressed ? {'Content-Encoding':'gzip'} : {}) });
+    response.end(request.method === 'HEAD' ? undefined : body);
   } catch {
     response.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
     response.end('Not found');

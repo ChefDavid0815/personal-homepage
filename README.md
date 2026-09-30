@@ -6,6 +6,16 @@ A personal website for the things I love and make: a dark digital canvas with li
 
 [**Enter my space ↗**](https://chefzc.dev) · [Gallery](https://chefzc.dev/gallery.html) · [Posts](https://chefzc.dev/posts.html) · [Now](https://chefzc.dev/now.html) · [Game](https://chefzc.dev/game.html)
 
+## NeRF 1.0 / A world, made of numbers.
+
+The School Lab opens a dedicated computational specimen for **NeRF Research Console**: layered camera rays, restrained phosphor light, a floating recorded reconstruction and a short progressive reveal. Its project space follows six transformations from input views to a rendered scene. A real checkpoint time machine and three saved test cameras sit beside a clearly scoped evidence ledger. The newest Now entry retains the timeline's original structure and embeds a small neural-renderer window; the fourteenth bilingual Post has its own computational editorial layout.
+
+[Enter the field](https://chefzc.dev/nerf.html) · [School exhibit](https://chefzc.dev/school-gallery.html#project-nerf) · [Research log](https://chefzc.dev/post.html?article=nerf) · [Now 024](https://chefzc.dev/now.html#milestone-nerf) · [Source / EN + 中文](https://github.com/ChefDavid0815/nerf-research-console).
+
+[![NeRF — computational research by ChefZC](dist/assets/projects/nerf/cover.svg)](https://chefzc.dev/nerf.html)
+
+The software runs locally with PyTorch, FastAPI, React and an Electron Windows shell. Published imagery and CSVs come from an actual 50,000-step **256-ray** Lego continuation; the evaluated view sets are specified. Spatial particles are editorial diagrams, and the website starts no training. No full-dataset benchmark or completed encoding-bandwidth study is claimed. [Design, evidence and verification](docs/nerf-exhibition.md).
+
 ## Roseraie 0.1 / A little grace in every great idea.
 
 The eighth—and first—main exhibit opens a pale rose-and-lavender Rococo atelier inside the site's dark digital shell. Original SVG filigree, drifting petals, an animated cameo and a layered **actual Windows screenshot** frame three switchable plates: the real desktop salon, an editorial illustration of the three-pass Weave, and a real file-approval test capture. The Now miniature and the eleventh bilingual Post share its paper, typography and ornament. Motion obeys the site's pause control and reduced-motion setting.
@@ -59,15 +69,15 @@ The [Game page](https://chefzc.dev/game.html) now has three exhibits: F1 25 as a
 | **Personal Profile** | ChefZC, a Year 12 IB student at GEMS Wellington International School in Dubai. Basketball, motorsport, AI, art, devices, milestones and public contact links. Only the city is shown as a location. |
 | **Gallery** | Eight real projects: Roseraie 0.1.0, Atlas 0.3, CHROMA 0.1.0, ProjectLens 0.1.0, Festival Toolkit 0.3.0, AXIOM 1.0, Folio 1.1 and NBA After Hours. Independent visual identities, project dialogs, source and download/play links. |
 | **3D collection** | Two independent works: Chase Center (switchable interior/exterior cases) and a Curry head study. Real, draggable glass cases with free modeling downloads. |
-| **School Lab** | A separate `school-gallery.html` collection for school work. WIS TECH TANK · STRIDE has a woodland exhibition, three illustrated scene states, a real interface capture, web/source links and a simulation journal. |
-| **Now** | A chronological journal, newest first. Seventeen milestones; the newest is Roseraie 0.1.0 on September 23, 2026. |
-| **Posts** | Eleven bilingual essays, newest first, including Roseraie and Atlas 0.3 field notes, CHROMA and ProjectLens. An overview, individual articles, contents, reading progress and related notes. |
+| **School Lab** | NeRF Research Console and WIS TECH TANK · STRIDE. Independent computational and woodland exhibitions, project/source links and research journals. |
+| **Now** | Twenty-four milestones, newest first. NeRF publication on 30 September 2026, with research beginning on 24 September. |
+| **Posts** | Fourteen bilingual notes, newest first. A computational research log for NeRF, alongside AFTERIMAGE and earlier project journals. |
 
 `index.html` redirects to `profile.html`, retaining the query and fragment. Navigation, language preference and footer are shared. The site defaults to Chinese; the **中 / EN** switch translates navigation, copy, dialogs and page titles. Preference persists when local storage is available and synchronises across same-origin tabs. Brand names and decorative artwork retain their original design.
 
 ## WIS TECH TANK / A separate school lab
 
-[STRIDE](https://chefzc.dev/stride/) is a bilingual classroom environment simulator. The **Personal collection / School lab** navigation separates the four main personal projects from school work. The school page keeps the site's dark shell and uses forest green, warm paper, an original woodland artwork, drifting light, sensing rings and a field-book scene selector. Three exhibition illustrations explain pavement, stairs and uncertainty; the actual app offers nine scenarios. The exhibit is not a live sensor feed.
+[STRIDE](https://chefzc.dev/stride/) is a bilingual classroom environment simulator. The **Personal collection / School lab** navigation separates the main personal projects from school work. The school page keeps the site's dark shell and uses forest green, warm paper, an original woodland artwork, drifting light, sensing rings and a field-book scene selector. Three exhibition illustrations explain pavement, stairs and uncertainty; the actual app offers nine scenarios. The exhibit is not a live sensor feed.
 
 Motion can be paused and respects `prefers-reduced-motion`; the screenshot dialog supports Escape and restores focus. Chinese/English switching preserves the selected exhibit scene. The Now milestone and sixth Post share the natural art direction. `wis-content.js`, `wis-exhibit.js`, `wis-post.js`, `school-gallery.js` and `wis.css` contain the feature. [Artwork provenance and generation prompt](dist/assets/projects/wis-tech-tank/ARTWORK.md).
 
@@ -106,7 +116,7 @@ npm run dev       # http://127.0.0.1:4173
 npm run check     # JavaScript syntax checks
 ```
 
-`dist/` is the complete website. `vercel.json` runs `npm run check` and deploys that directory. The website version **1.22.0** is separate from Folio's **1.1.0**.
+`dist/` is the complete website. `vercel.json` runs `npm run check` and deploys that directory. The website version **1.23.0** is separate from Folio's **1.1.0**.
 
 ## Maintain the space
 
@@ -129,7 +139,7 @@ Keep new projects real and link their actual source or playable/downloadable rel
 
 ChefZC is the display name; GitHub: [ChefDavid0815](https://github.com/ChefDavid0815), Instagram: [chefzichuan](https://www.instagram.com/chefzichuan/), public email: [zzichuan0808@outlook.com](mailto:zzichuan0808@outlook.com).
 
-Sports photographs retain their attribution and CC BY-SA terms in `dist/assets/PHOTO-CREDITS.md`. Music imagery has separate rights and source records. Lucide and Tabler icon licences are included. The original hero asterisk was generated for this site. Folio's Cormorant Garamond font is local with its OFL licence; other site fonts load from Google Fonts with system fallbacks. Game metadata, covers, names and marks belong to their respective rights holders.
+Sports photographs retain their attribution and CC BY-SA terms in `dist/assets/PHOTO-CREDITS.md`. Music imagery has separate rights and source records. Lucide and Tabler icon licences are included. The original hero asterisk was generated for this site. Folio's Cormorant Garamond font is local with its OFL licence; the core Space Grotesk, DM Sans, IBM Plex Mono and Noto Sans SC families are now self-hosted with OFL licences and a source/hash manifest. Game metadata, covers, names and marks belong to their respective rights holders.
 
 
 ## AXIOM · 格物 / Scientific plotting

@@ -49,10 +49,15 @@ if (footer) {
   renderDirectory(); onLanguageChange(renderDirectory); footer.before(directory);
 }
 
-let scrollFrame = 0, lastPercent = -1;
+let scrollFrame = 0, lastPercent = -1, backdropWidth = -1;
 function updateScroll() {
   scrollFrame = 0;
   const max = document.documentElement.scrollHeight - innerHeight;
+  const width = document.documentElement.clientWidth;
+  if (width !== backdropWidth) {
+    header?.style.setProperty('--atelier-viewport-width', `${width}px`);
+    backdropWidth = width;
+  }
   const ratio = max > 0 ? Math.min(1, Math.max(0, scrollY / max)) : 0;
   const percent = Math.round(ratio * 1000) / 10;
   if (percent !== lastPercent) {

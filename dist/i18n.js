@@ -1,3 +1,4 @@
+import {nerfMessages} from './nerf-content.js';
 import {chromaMessages} from './chroma-content.js';
 import {atlasMessages} from './atlas-content.js';
 import {roseraieMessages} from './roseraie-content.js';
@@ -153,7 +154,7 @@ export const messages = {
   'profile.enterGallery': ['进入项目陈列室 <span aria-hidden="true">→</span>', 'Step into the collection <span aria-hidden="true">→</span>']
 };
 
-Object.assign(messages, personalMessages, musicMessages, folioMessages, axiomMessages, festivalMessages, wisMessages, festivalUpdateMessages, modelMessages, gameMessages, lensMessages, festivalJourneyMessages, chromaMessages, atlasMessages, roseraieMessages, afterimageMessages);
+Object.assign(messages, personalMessages, musicMessages, folioMessages, axiomMessages, festivalMessages, wisMessages, festivalUpdateMessages, modelMessages, gameMessages, lensMessages, festivalJourneyMessages, chromaMessages, atlasMessages, roseraieMessages, afterimageMessages, nerfMessages);
 const storageKey = 'chefzc.language';
 let language = 'zh';
 try { if (globalThis.localStorage?.getItem(storageKey) === 'en') language = 'en'; } catch { /* Storage may be disabled; the switch still works. */ }
@@ -181,6 +182,7 @@ const bindings = {
   usage: [],
   game: [['title', 'game.title'], ['meta[name="description"]', 'game.meta', 'content']],
   models: [['title','models.title'], ['meta[name="description"]','models.meta','content']],
+  nerf: [['title','nerf.title'], ['meta[name="description"]','nerf.meta','content']],
   school: [['title','school.title'], ['meta[name="description"]','school.meta','content']],
   posts: [],
   now: [['title', 'now.title'], ['meta[name="description"]', 'now.meta', 'content']],
@@ -222,7 +224,7 @@ const bindings = {
 
 export function applyTranslations() {
   document.documentElement.lang = language === 'en' ? 'en' : 'zh-CN';
-  const page = ['usage', 'game', 'models', 'school', 'gallery', 'profile', 'now', 'posts'].find(name => document.body.classList.contains(`${name}-page`)) || 'profile';
+  const page = ['nerf', 'usage', 'game', 'models', 'school', 'gallery', 'profile', 'now', 'posts'].find(name => document.body.classList.contains(`${name}-page`)) || 'profile';
   for (const [selector, key, mode] of [...commonBindings, ...bindings[page]]) {
     for (const element of document.querySelectorAll(selector)) {
       if (mode === 'html') element.innerHTML = t(key);

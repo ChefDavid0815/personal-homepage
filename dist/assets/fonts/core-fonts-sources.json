@@ -1,0 +1,52 @@
+[
+  {
+    "file": "space-grotesk-latin-variable.woff2",
+    "package": "@fontsource-variable/space-grotesk",
+    "version": "5.3.0",
+    "url": "https://registry.npmjs.org/@fontsource-variable/space-grotesk/-/space-grotesk-5.3.0.tgz",
+    "sha256": "0640890476fc1198ab4de571fb658de443c4d85b66466ec09534a8737ab1ce9d",
+    "bytes": 22288
+  },
+  {
+    "file": "dm-sans-latin-variable.woff2",
+    "package": "@fontsource-variable/dm-sans",
+    "version": "5.3.0",
+    "url": "https://registry.npmjs.org/@fontsource-variable/dm-sans/-/dm-sans-5.3.0.tgz",
+    "sha256": "9fea608a947e67020c33cad9a6fe3d60c54119dfb8cff87768a8117a15ed7543",
+    "bytes": 36932
+  },
+  {
+    "file": "ibm-plex-mono-latin-400.woff2",
+    "package": "@fontsource/ibm-plex-mono",
+    "version": "5.3.0",
+    "url": "https://registry.npmjs.org/@fontsource/ibm-plex-mono/-/ibm-plex-mono-5.3.0.tgz",
+    "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7",
+    "bytes": 14708
+  },
+  {
+    "file": "ibm-plex-mono-latin-500.woff2",
+    "package": "@fontsource/ibm-plex-mono",
+    "version": "5.3.0",
+    "url": "https://registry.npmjs.org/@fontsource/ibm-plex-mono/-/ibm-plex-mono-5.3.0.tgz",
+    "sha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22",
+    "bytes": 14888
+  },
+  {
+    "file": "ibm-plex-mono-latin-600.woff2",
+    "package": "@fontsource/ibm-plex-mono",
+    "version": "5.3.0",
+    "url": "https://registry.npmjs.org/@fontsource/ibm-plex-mono/-/ibm-plex-mono-5.3.0.tgz",
+    "sha256": "0d1f0b8d0722224e32e9f28261bdc86c79115be73444ae5eceb73976a1bcdf83",
+    "bytes": 15620
+  },
+  {
+    "file": "noto-sans-sc-site-variable.woff2",
+    "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/notosanssc/NotoSansSC%5Bwght%5D.ttf",
+    "source_sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+    "sha256": "fbaa5d1ff7369334f6c92dd7a67bfcb0a90019341f5f47f133ecc12d5d683973",
+    "bytes": 363684,
+    "characters_requested": 1384,
+    "cjk_characters": 1312,
+    "fonttools": "4.66.1"
+  }
+]

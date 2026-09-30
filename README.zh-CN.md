@@ -4,6 +4,16 @@
 
 个人介绍与项目展示网站：深色数码风，荧光绿、紫色、电光蓝与橙色点缀。
 
+## NeRF 1.0 / 让数学，长出一个世界。
+
+校园实验室加入 **NeRF Research Console** 的专属计算标本：分层射线、克制磷光、悬浮的真实重建与短暂的渐进显影。独立项目空间用六次转化连接输入视角与渲染场景，并提供真实 checkpoint 时间机、三个保存的测试相机和明确标注范围的评估记录。最新 Now 节点保留时间轴原有结构，嵌入一块神经渲染仪器小窗；第十四篇双语日志采用独立的计算编辑版式。
+
+[进入计算空间](https://chefzc.dev/nerf.html) · [学校展柜](https://chefzc.dev/school-gallery.html#project-nerf) · [研究日志](https://chefzc.dev/post.html?article=nerf) · [Now 024](https://chefzc.dev/now.html#milestone-nerf) · [源码 / 中英文文档](https://github.com/ChefDavid0815/nerf-research-console)。
+
+[![NeRF — ChefZC 的计算研究](dist/assets/projects/nerf/cover.svg)](https://chefzc.dev/nerf.html)
+
+软件在本机运行，由 PyTorch、FastAPI、React 与 Electron Windows 外壳连接。公开画面和 CSV 来自真实 50,000 次、**256 rays/batch** 的 Lego 续训，评估明确列出视角。空间粒子为叙事图解，网页不会启动训练；没有将它写成完整数据集 benchmark 或已完成的编码带宽研究。[设计、证据与验证](docs/nerf-exhibition.md)。
+
 ## Roseraie 0.1 / 让灵感，在此盛放。
 
 第八件、也是主展厅首位作品是 **Roseraie · 蔷薇工坊**。展柜在网站深色数码外壳中开出一间玫瑰纸色、薰衣草紫的洛可可工坊：原创 SVG 花饰、缓缓飘落的花瓣、浮动的椭圆徽章和分层的**真实 Windows 软件截图**。三幕可以切换：实际桌面首页、织思三阶段的艺术示意、真实测试中的文件改动确认。Now 的侧窗与第十一篇双语随笔延续纸张、字体和花饰；动效遵守全站暂停开关与系统减少动态效果偏好。
@@ -54,9 +64,9 @@ ProjectLens 0.1.0 加入主展柜：真实程序化 3D 透镜、石墨黑/薄荷
 
 - `profile.html`：Personal Profile，包含数字名片、真实简介、篮球与赛车主题卡、AI 与艺术兴趣、数码设备、成长经历及公开联系方式。
 - `gallery.html`：八件真实作品：Roseraie 0.1、Atlas 0.3、CHROMA 彩谱、ProjectLens 项目透镜、Festival Toolkit 0.3、AXIOM、Folio 1.1、NBA After Hours。
-- `posts.html`：十一篇双语随笔，按时间排序；最新是《给灵感，开一间蔷薇工坊。》，正文包含真实软件与测试截图。
-- `school-gallery.html`：独立的校园实验室分页。WIS TECH TANK · STRIDE 自然展柜，三种场景示意切换、真实截图放大、在线体验与观察手记。
-- `now.html`：Now 近况页，十七个节点，最新为 2026-09-23 Roseraie 0.1 发布；其余项目历程按日期倒序保留。
+- `posts.html`：十四篇双语随笔，最新为 NeRF 研究日志，具有独立的计算编辑版式；旧项目手记按时间保留。
+- `school-gallery.html`：NeRF Research Console 计算标本与 WIS TECH TANK · STRIDE 自然展柜，各自保留独立视觉语言。
+- `now.html`：二十四个时间节点，最新为 2026-09-30 NeRF 正式公开，旁边嵌入小型渲染仪器；保留原时间轴结构。
 - `index.html`：网站入口，自动转到 Personal Profile，并保留查询参数与页内锚点。
 
 所有页面共用品牌、配色、导航、语言偏好与页脚，可以互相切换。个人资料采用 ChefZC 提供的信息：在迪拜的 GEMS Wellington International School 就读 Year 12 / IB。公开位置只展示城市。
@@ -152,7 +162,7 @@ Now 页的正文使用 `data-i18n` 对应 `dist/i18n.js` 的 `now.*` 翻译。�
 
 源码仓库：[ChefDavid0815/personal-homepage](https://github.com/ChefDavid0815/personal-homepage)。Vercel 使用 `vercel.json` 中的配置，运行 `npm run check` 后发布 `dist` 目录。首页为 Personal Profile，Gallery、Now、Posts 均为独立页面。
 
-ChefZC 是展示昵称，GitHub 账号为 ChefDavid0815。字体通过 Google Fonts 加载，离线时使用系统字体；照片与图标随站点本地提供。
+ChefZC 是展示昵称，GitHub 账号为 ChefDavid0815。核心字体沿用 Space Grotesk、DM Sans、IBM Plex Mono 与 Noto Sans SC，现已本地托管并保留 OFL 授权及来源记录；照片与图标随站点本地提供。
 
 ## 检查
 

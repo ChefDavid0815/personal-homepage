@@ -1,0 +1,55 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+
+test('recorded evidence and checkpoint controls preserve their measurement identity',async()=>{
+  const evidence=JSON.parse(await readFile(new URL('../dist/assets/projects/nerf/evidence.json',import.meta.url),'utf8'));
+  assert.equal(evidence.batch_size,256);
+  assert.equal(evidence.checkpoint_iteration,50000);
+  assert.equal(evidence.training_curve.at(-1).iteration,50000);
+  assert.equal(evidence.training_curve.at(-1).total_loss,.0046847478952258825);
+  const table=evidence.evaluation_summary.find(row=>row.split==='test');
+  assert.equal(table.view_indices,'0;1;2;66;133');
+  assert.equal(Number(table.psnr_mean).toFixed(3),'26.055');
+  assert.equal(evidence.checkpoint_sha256,'0e564e02fc28875a7fde02fa55682566342f06d1252fbbcab5d6581278dd3264');
+});
+
+test('renderer suspends offscreen, on global pause and in hidden tabs; removes observers on detach',async()=>{
+  const raf=new Map(),intersections=[],resizes=[];
+  let next=0,stages=[],draws=0;
+  const docEvents=new Map(),winEvents=new Map();
+  const reduced={matches:false,addEventListener(){}};
+  const context=new Proxy({}, {get:(object,key)=>key in object?object[key]:(...args)=>{if(key==='clearRect')draws++;},set:(object,key,value)=>{object[key]=value;return true;}});
+  const canvas={clientWidth:1000,clientHeight:540,width:0,height:0,getContext:()=>context};
+  const stage={isConnected:true,dataset:{},classList:{contains:()=>false,toggle(){}},style:{setProperty(){},removeProperty(){}},querySelector:selector=>selector==='[data-nerf-field]'?canvas:null,addEventListener(){},getBoundingClientRect:()=>({left:0,top:0,width:1000,height:540})};
+  stages=[stage];
+  globalThis.matchMedia=query=>query.includes('reduce')?reduced:{matches:true};
+  globalThis.localStorage={getItem:()=>null,setItem(){}};
+  Object.defineProperty(globalThis,'navigator',{configurable:true,value:{hardwareConcurrency:8}});
+  globalThis.devicePixelRatio=3;
+  globalThis.window={addEventListener:(name,fn)=>winEvents.set(name,fn)};
+  globalThis.document={hidden:false,readyState:'complete',documentElement:{dataset:{}},addEventListener:(name,fn)=>docEvents.set(name,fn),querySelectorAll:selector=>selector==='[data-nerf-space]'?stages:[]};
+  globalThis.requestAnimationFrame=fn=>{const id=++next;raf.set(id,fn);return id;};
+  globalThis.cancelAnimationFrame=id=>raf.delete(id);
+  globalThis.IntersectionObserver=class{constructor(fn){this.fn=fn;this.disconnected=false;intersections.push(this);}observe(){}disconnect(){this.disconnected=true;}};
+  globalThis.ResizeObserver=class{constructor(fn){this.fn=fn;this.disconnected=false;resizes.push(this);}observe(){}disconnect(){this.disconnected=true;}};
+  const motion=await import('../dist/nerf-motion.js');
+  const preference=await import('../dist/motion-state.js');
+  assert.equal(canvas.width,1500,'DPR caps at 1.5');
+  assert.equal(raf.size,0,'no offscreen loop');
+  intersections[0].fn([{isIntersecting:true}]);
+  assert.equal(raf.size,1);
+  const [id,callback]=raf.entries().next().value;raf.delete(id);callback(100);
+  assert.equal(raf.size,1,'one scheduled frame after a tick');
+  assert.ok(draws>0);
+  preference.setMotionPaused(true);assert.equal(raf.size,0);
+  preference.setMotionPaused(false);assert.equal(raf.size,1);
+  document.hidden=true;docEvents.get('visibilitychange')();assert.equal(raf.size,0);
+  document.hidden=false;docEvents.get('visibilitychange')();assert.equal(raf.size,1);
+  intersections[0].fn([{isIntersecting:false}]);assert.equal(raf.size,0);
+  stage.isConnected=false;stages=[];motion.refreshNeRF();
+  assert.equal(intersections[0].disconnected,true);
+  assert.equal(resizes[0].disconnected,true);
+  assert.equal(raf.size,0);
+  winEvents.get('pagehide')();
+});

@@ -1,0 +1,56 @@
+import { getLanguage } from './i18n.js';
+import { nc, fieldArt, pipelineDiagram } from './nerf-art.js';
+import { nerfLinks, nerfAsset } from './nerf-content.js';
+
+export const nerfPost = {
+  id: 'nerf', theme: 'nerf', number: '14', date: '2026-09-30', version: '1.0.0',
+  cover: nerfAsset + 'reconstruction.webp', image: nerfAsset + 'workstation-zh.webp', link: nerfLinks.project,
+  zh: {
+    category: '研究日志 / 神经渲染', title: '让数学，在屏幕里长出一个世界。',
+    summary: '从相机射线到一幅逐渐清晰的 Lego 图像。关于独立实现 NeRF、搭建本地研究工作台，以及让每个数字都有来处的制作记录。',
+    lead: '第一次看见 Lego 的轮廓从模糊里出现时，最打动我的不是它有多清晰，而是那些坐标、频率和采样值，真的开始共同描述一个空间。这个项目想保留的，就是“看见”发生的过程。',
+    quote: '一组坐标，也可以慢慢学会描述一个世界。',
+    sections: [
+      { title: '从一条射线开始', paragraphs: ['9 月 24 日，我从官方 NeRF synthetic 的 Lego 数据开始。先确认图像、相机内参与 camera-to-world 矩阵，再让每个像素获得自己的射线。这里没有网格模型供网络直接复制；场景要由连续的位置与观察方向重新表达。','研究的起点是位置编码带宽：不同频率的输入，怎样影响不同空间细节的重建。但一份能运行的管线，只是提出这个问题的基础。网站展示工程过程与已保存的结果，不把它们包装成研究结论。'] },
+      { title: '六次转化，回到一幅图像', paragraphs: ['原始三维输入与显式的正弦、余弦频带一起进入网络。位置 L=10 得到 63 维，方向 L=4 得到 27 维。本实现采用 sin(2^k πx) 与 cos(2^k πx)；这一约定与原作者发布代码中不含 π 的 embedder 不同，文档中保留了这个区别。','位置分支预测密度与特征，观察方向参与颜色。coarse 采样的权重引导 fine 采样，两套独立的网络再经由可微体渲染产生像素。模型、采样与渲染保持在 Python 中，界面只把真实数据与操作连接起来。'] },
+      { title: '让训练留下可以追索的痕迹', paragraphs: ['每次运行保存完整配置、环境快照、随机状态、指标、checkpoint 与图像。恢复训练先检查配置与 checkpoint 的兼容性。停止发生在完整迭代边界，页面刷新也不会让历史曲线消失。','展览中的时间机只切换真实保存的 500、2,000、10,000 与 50,000 次预览。训练批次 PSNR 和 coarse + fine MSE 来自 metrics.csv；100 × 100 验证预览与 800 × 800 全图评估分别标注。它们不会因为共享一个画面，就变成同一种测量。'] },
+      { title: '一台本地的研究仪器', paragraphs: ['NeRF Research Console 把操作分成训练、运行档案、分析与系统。常用设置保持可见，研究配置在启动后冻结。分析工作区能回看重建、比较 checkpoint、读真实曲线，也能从指定 checkpoint 按需检查某个像素的密度、权重与透射率。','深黑、磷光绿与精细网格来自软件本身。字符不是为了“黑客感”，而是把输入、变换和状态留在画面里。双语界面连接 FastAPI 与 PyTorch；Electron 提供 Windows 本地外壳。启动控制台不会自动开始训练或带宽扫描。'] },
+      { title: '数字应该说到哪里为止', paragraphs: ['现有 50,000 次运行从 500 次工程 smoke checkpoint 续训，冻结配置为 256 rays/batch。它不是 configs/baseline.yaml 中的 4096-ray 配置。全图评估只覆盖下面列出的验证与测试视角；表格是这些视角的均值，不是整套数据集 benchmark。','白底 RGBA 合成、相机轴、未归一化射线、位置编码与评估版本都会影响解释。源码保留这些实现约定，公开记录附上 checkpoint SHA-256。一个漂亮的画面可以说明场景正在形成，却不能替代受控比较。'] },
+      { title: '把工程证据留在作品背后', paragraphs: ['学校展厅、这篇日志和 GitHub 是同一件作品的三个入口。空间射线与粒子负责叙事，实际 RGB 画面与 CSV 负责证据。网站保留个人主页的建筑，只让一个房间逐渐受到计算世界的影响。','下一步仍是经过明确设计的受控实验：固定预算、跨场景与位置编码条件的比较。它们留在后续计划里，没有在这次发布中自动执行。眼下先把已经做成的东西整理清楚，让另一个开发者能够读懂、运行，并追问每个数字的来处。'] }
+    ],
+    afterword: '2026.09.30 / 记录一台研究工作站的完成。研究仍在继续。',
+    cta: '进入 NeRF 计算空间'
+  },
+  en: {
+    category: 'RESEARCH LOG / NEURAL RENDERING', title: 'A world, made of numbers.',
+    summary: 'From camera rays to a Lego image that slowly becomes recognisable. Notes on implementing NeRF, building a local workstation, and keeping every measurement traceable.',
+    lead: 'When the Lego silhouette first emerged from the blur, the remarkable part was not its sharpness. Coordinates, frequencies and samples had begun to describe a space together. This project keeps the process of seeing visible.',
+    quote: 'A set of coordinates can learn to describe a world.',
+    sections: [
+      { title: 'Begin with a ray', paragraphs: ['On 24 September I began with Lego from the official NeRF synthetic dataset. Images, camera intrinsics and camera-to-world matrices came first; every pixel then acquired a ray. The network has no polygon mesh to copy. It represents the scene through continuous positions and viewing directions.','The research question concerns positional-encoding bandwidth and reconstruction of spatial detail. A working pipeline is the foundation for asking that question. This exhibition records engineering work and saved results without turning them into a research conclusion.'] },
+      { title: 'Six transformations, back to an image', paragraphs: ['Raw coordinates enter the network alongside explicit sine and cosine bands. Position L=10 gives 63 dimensions; direction L=4 gives 27. This implementation uses sin(2^k πx) and cos(2^k πx), whereas the authors’ released embedder omits π. The documentation preserves that distinction.','The position branch predicts density and features; viewing direction informs colour. Coarse weights guide fine sampling. Two independent networks produce pixels through differentiable volume rendering. The scientific computation stays in Python; the interface connects real data and explicit operations.'] },
+      { title: 'Leave a trace that can be followed', paragraphs: ['Each run saves its configuration, environment, random state, metrics, checkpoints and images. Resume checks configuration compatibility. Stop requests save at a complete iteration boundary; refreshing the interface does not erase a curve.','The exhibition time machine switches between saved previews at 500, 2,000, 10,000 and 50,000 iterations. Training-batch PSNR and coarse-plus-fine MSE come from metrics.csv. The 100 × 100 validation preview and the 800 × 800 evaluation are labelled separately: a shared screen does not make them the same measurement.'] },
+      { title: 'A local research instrument', paragraphs: ['NeRF Research Console organises the work into Train, Runs, Analyze and System. Frequent settings remain visible and scientific configuration freezes when a run begins. Analysis revisits reconstructions, compares checkpoints, reads curves and can inspect density, weights and transmittance for a selected pixel on demand.','Deep black, phosphor green and precise grids come from the application. Characters give inputs, transformations and state a place on screen. The bilingual interface connects FastAPI and PyTorch; Electron provides a local Windows shell. Opening the console does not start training or an encoding sweep.'] },
+      { title: 'Know where the numbers stop', paragraphs: ['The existing 50,000-step run continues a 500-step engineering smoke checkpoint with 256 rays per batch. It is not the 4096-ray configuration in configs/baseline.yaml. Full-resolution evaluation covers only the validation and test views listed below; the table reports their means, not a full-dataset benchmark.','White-background alpha compositing, camera conventions, unnormalised rays, encoding and metric versions all matter. The source documents these choices and the public record includes a checkpoint SHA-256. An image can show a scene emerging, but it cannot replace a controlled comparison.'] },
+      { title: 'Keep the evidence behind the work', paragraphs: ['The School Lab, this log and GitHub are three entrances into one project. Spatial rays and particles tell its story; recorded RGB images and CSV files carry its evidence. The personal website remains the architecture, with one room gradually inhabited by a computational world.','The next work remains a deliberately controlled experiment: fixed budgets, different scenes and encoding conditions. It is on the roadmap, not automatically executed by this publication. For now the completed engineering is made understandable, runnable and open to questions about where every number came from.'] }
+    ],
+    afterword: '30 September 2026 / A research workstation, completed. The research continues.',
+    cta: 'Enter the NeRF field'
+  }
+};
+const safe = text => String(text).replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function technicalInsert(index) {
+  if(index===0) return `<blockquote>${safe(nerfPost[getLanguage()].quote)}</blockquote>`;
+  if(index===1) return `${pipelineDiagram()}<pre><code>γ(x) = [x, sin(2⁰πx), cos(2⁰πx), …]
+r(t) = o + td
+Fθ(x, d) → (σ, c)
+Ĉ(r) = Σ Tᵢ αᵢ cᵢ</code></pre>`;
+  if(index===2) return `<figure class="nerf-editorial-figure"><img src="${nerfAsset}reconstruction.webp" width="800" height="800" alt="${nc('50,000 次 checkpoint 的 800 × 800 验证视角 000 实际输出','Actual 800 × 800 validation view 000 at checkpoint 50,000')}" loading="lazy"><figcaption>LEGO / VAL 000 / ITER 050000 / ${nc('真实全图评估输出','RECORDED FULL-RESOLUTION OUTPUT')}</figcaption></figure>`;
+  if(index===3) return `<figure class="nerf-editorial-figure"><img src="${nerfAsset}workstation-${getLanguage()}.webp" width="1440" height="960" alt="${nc('真实 NeRF 本地工作台界面','Actual local NeRF workstation interface')}" loading="lazy"><figcaption>${nc('真实软件截图 / 2026.09.30 / 当前没有训练','Actual software capture / 2026.09.30 / No active training')}</figcaption></figure>`;
+  if(index===4) return `<table class="nerf-evidence-ledger"><caption class="visually-hidden">${nc('选定视角的全图评估','Full-resolution evaluation of selected views')}</caption><thead><tr><th scope="col">SPLIT / VIEWS</th><th scope="col">PSNR ↑</th><th scope="col">SSIM ↑</th><th scope="col">LPIPS ↓</th></tr></thead><tbody><tr><td>VAL / 0,1,2</td><td>27.333</td><td>0.88850</td><td>0.08770</td></tr><tr><td>TEST / 0,1,2,66,133</td><td>26.055</td><td>0.89022</td><td>0.09240</td></tr></tbody></table><a class="nerf-text-link" href="${nerfLinks.source}/tree/main/docs/evidence" target="_blank" rel="noopener noreferrer">${nc('查看原始记录','Inspect the recorded evidence')} ↗</a>`;
+  return '';
+}
+export function renderNeRFReader() {
+  const text = nerfPost[getLanguage()];
+  return `<nav class="reader-topline" aria-label="${nc('文章导航','Article navigation')}"><a href="./posts.html">← ${nc('所有随笔','ALL POSTS')}</a><span>RESEARCH LOG / 014</span><a href="${nerfLinks.project}">NeRF ↗</a></nav><article class="nerf-reader" aria-labelledby="article-title"><header class="nerf-reader-header"><div class="nerf-editorial-meta"><span>${text.category}</span><time datetime="2026-09-30">2026.09.30</time></div><h1 id="article-title">${text.title}</h1><p class="nerf-reader-deck">${text.summary}</p></header><div class="nerf-reader-cover">${fieldArt({caption:false})}<div class="nerf-post-word" aria-hidden="true">NeRF<span>_</span></div></div><div class="nerf-editorial-grid"><aside class="nerf-editorial-aside" aria-label="${nc('本篇目录','On this page')}"><span>LEGO / L10 / SEED 0</span><ol>${text.sections.map((section,i)=>`<li><a href="#chapter-${i+1}">${section.title}</a></li>`).join('')}</ol><small>RESEARCH START / 2026.09.24<br>PUBLICATION / 2026.09.30<br>256 RAYS / RECORDED RUN<br>CHEFZC / SCHOOL LAB</small></aside><div class="nerf-editorial-body"><p>${text.lead}</p>${text.sections.map((section,i)=>`<section class="nerf-editorial-chapter" id="chapter-${i+1}"><span class="nerf-overline">${['CAMERA GEOMETRY','CONTINUOUS REPRESENTATION','RECORDED RECONSTRUCTION','LOCAL WORKSTATION','MEASUREMENT BOUNDARIES','THE NEXT QUESTION'][i]}</span><h2>${section.title}</h2>${section.paragraphs.map(p=>`<p>${safe(p)}</p>`).join('')}${technicalInsert(i)}</section>`).join('')}<div class="nerf-reader-tail"><p>${text.afterword}<br>ChefZC</p><div class="nerf-actions"><a class="nerf-button" href="${nerfLinks.project}">${text.cta} <span aria-hidden="true">↗</span></a><a class="nerf-text-link" href="${nerfLinks.source}" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a class="nerf-text-link" href="${nerfLinks.now}">Now ↗</a></div></div></div></div></article><section class="more-notes"><div class="posts-section-label"><span>${nc('继续探索','CONTINUE EXPLORING')}</span><a href="./posts.html">${nc('所有随笔','ALL POSTS')} ↗</a></div><div><a class="next-note" href="${nerfLinks.exhibition}"><span class="mono">THE SCHOOL LAB</span><h2>${nc('回到计算标本展柜','Return to the computational specimen')}</h2><span aria-hidden="true">↗</span></a></div></section>`;
+}
