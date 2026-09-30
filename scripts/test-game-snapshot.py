@@ -14,6 +14,50 @@ spec.loader.exec_module(module)
 
 
 class SnapshotTests(unittest.TestCase):
+    def test_f1_25_reads_steam_time_and_save_metadata_without_private_content(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            config = root / 'localconfig.vdf'
+            config.write_text('"Steam" { "apps" { "3059520" { "Playtime" "4050" '
+                              '"Playtime2wks" "156" "LastPlayed" "1790364256" } } }',
+                              encoding='utf-8')
+            remote = root / 'remote'
+            remote.mkdir()
+            for name in ('savegame@profile#PRIVATE.BWW',
+                         'savegame@midsessions0#PRIVATE.RBQ',
+                         'savegame@highlights000#PRIVATE.PSX',
+                         'savegame@highlights001#PRIVATE.PSX',
+                         'savegame@highlights000#QKRHMYXE'):
+                (remote / name).write_bytes(b'PRIVATE_SAVE_CONTENT')
+            tracked = [config, *remote.iterdir()]
+            before = {p: hashlib.sha256(p.read_bytes()).digest() for p in tracked}
+            result = module.f1_25_snapshot(config, remote)
+            self.assertEqual(result['playtimeMinutes'], 4050)
+            self.assertEqual(result['recentPlaytimeMinutes'], 156)
+            self.assertEqual(result['highlightReplays'], 2)
+            self.assertEqual(result['lastPlayedAt'], '2026-09-25T19:24:16+00:00')
+            self.assertIsNotNone(result['latestSaveAt'])
+            self.assertNotIn('PRIVATE', json.dumps(result))
+            self.assertNotIn(str(root), json.dumps(result))
+            self.assertEqual(before, {p: hashlib.sha256(p.read_bytes()).digest() for p in tracked})
+
+    def test_f1_25_export_only_writes_a_public_aggregate_module(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            config = root / 'localconfig.vdf'
+            config.write_text('"Steam" { "apps" { "3059520" { "Playtime" "65" } } }', encoding='utf-8')
+            remote = root / 'remote'
+            remote.mkdir()
+            (remote / 'savegame@profile#PRIVATE.BWW').write_bytes(b'PRIVATE_SAVE_CONTENT')
+            output = root / 'games-f1-data.js'
+            module.export_f1_25_snapshot(config, remote, output)
+            public = output.read_text(encoding='utf-8')
+            self.assertIn('export const f1Snapshot = ', public)
+            self.assertIn('"playtimeMinutes": 65', public)
+            self.assertNotIn('PRIVATE', public)
+            with self.assertRaises(ValueError):
+                module.export_f1_25_snapshot(config, remote, config)
+
     def test_vdf_only_reads_correct_app_and_handles_quoted_braces(self):
         vdf = r'''"UserLocalConfigStore" { "Software" { "Valve" { "Steam" { "apps" {
           "123" { "Playtime" "777" }

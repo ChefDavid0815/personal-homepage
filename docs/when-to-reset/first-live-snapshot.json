@@ -1,0 +1,254 @@
+{
+  "checkedAt": "2026-09-22T17:36:28.941Z",
+  "refreshSeconds": 300,
+  "sources": {
+    "x": {
+      "state": "available",
+      "provider": "FxEmbed public X mirror",
+      "url": "https://x.com/thsottiaux",
+      "lastSuccess": "2026-09-22T17:36:28.941Z",
+      "latestPostAt": "2026-09-22T16:51:19.000Z",
+      "count": 20
+    },
+    "status": {
+      "state": "available",
+      "provider": "OpenAI Status",
+      "url": "https://status.openai.com",
+      "lastSuccess": "2026-09-22T17:36:28.941Z"
+    }
+  },
+  "signals": [
+    {
+      "id": "2102440619616682120",
+      "author": "Tibo",
+      "handle": "thsottiaux",
+      "url": "https://x.com/thsottiaux/status/2102440619616682120",
+      "createdAt": "2026-09-22T16:51:19.000Z",
+      "excerpt": "We have been focusing on efficiency and intelligence for all. Very proud of the team. Only possible when you have incredible models at the …",
+      "kind": "context",
+      "weight": 0,
+      "targetDay": null
+    },
+    {
+      "id": "2102292452329820272",
+      "author": "Tibo",
+      "handle": "thsottiaux",
+      "url": "https://x.com/thsottiaux/status/2102292452329820272",
+      "createdAt": "2026-09-22T07:02:33.000Z",
+      "excerpt": "@steipete Huge!!",
+      "kind": "context",
+      "weight": 0,
+      "targetDay": null
+    },
+    {
+      "id": "2102290126344974551",
+      "author": "Tibo",
+      "handle": "thsottiaux",
+      "url": "https://x.com/thsottiaux/status/2102290126344974551",
+      "createdAt": "2026-09-22T06:53:19.000Z",
+      "excerpt": "@FintechKristen @ajambrosino Negroni is on you",
+      "kind": "context",
+      "weight": 0,
+      "targetDay": null
+    },
+    {
+      "id": "2102289624945352906",
+      "author": "Tibo",
+      "handle": "thsottiaux",
+      "url": "https://x.com/thsottiaux/status/2102289624945352906",
+      "createdAt": "2026-09-22T06:51:19.000Z",
+      "excerpt": "@matteing Sergio is indeed on fire",
+      "kind": "context",
+      "weight": 0,
+      "targetDay": null
+    },
+    {
+      "id": "2102289383068180659",
+      "author": "Tibo",
+      "handle": "thsottiaux",
+      "url": "https://x.com/thsottiaux/status/2102289383068180659",
+      "createdAt": "2026-09-22T06:50:22.000Z",
+      "excerpt": "@thdxr ah yes, that elusive and unlimited ambient inference that they don’t want to know you about",
+      "kind": "context",
+      "weight": 0,
+      "targetDay": null
+    },
+    {
+      "id": "2102284586713522193",
+      "author": "Tibo",
+      "handle": "thsottiaux",
+      "url": "https://x.com/thsottiaux/status/2102284586713522193",
+      "createdAt": "2026-09-22T06:31:18.000Z",
+      "excerpt": "@Cch_Chichieh Burn those tokens",
+      "kind": "context",
+      "weight": 0,
+      "targetDay": null
+    },
+    {
+      "id": "2102284352801427520",
+      "author": "Tibo",
+      "handle": "thsottiaux",
+      "url": "https://x.com/thsottiaux/status/2102284352801427520",
+      "createdAt": "2026-09-22T06:30:22.000Z",
+      "excerpt": "@neogoose_btw Good choice, good choice",
+      "kind": "context",
+      "weight": 0,
+      "targetDay": null
+    },
+    {
+      "id": "2102254445082116335",
+      "author": "Tibo",
+      "handle": "thsottiaux",
+      "url": "https://x.com/thsottiaux/status/2102254445082116335",
+      "createdAt": "2026-09-22T04:31:32.000Z",
+      "excerpt": "… almost Tuesday and I promised a reset for Tuesday. Among some other things. See you soon.",
+      "kind": "promise",
+      "weight": 2.9,
+      "targetDay": "2026-09-22"
+    },
+    {
+      "id": "2102253723879670183",
+      "author": "Tibo",
+      "handle": "thsottiaux",
+      "url": "https://x.com/thsottiaux/status/2102253723879670183",
+      "createdAt": "2026-09-22T04:28:40.000Z",
+      "excerpt": "@prit4k @noahrshinn Probably nothing, do not worry",
+      "kind": "context",
+      "weight": 0,
+      "targetDay": null
+    },
+    {
+      "id": "2101921202436702657",
+      "author": "Tibo",
+      "handle": "thsottiaux",
+      "url": "https://x.com/thsottiaux/status/2101921202436702657",
+      "createdAt": "2026-09-21T06:27:21.000Z",
+      "excerpt": "@melvindvivas 👁️codex👁️",
+      "kind": "context",
+      "weight": 0,
+      "targetDay": null
+    },
+    {
+      "id": "2101920928070562029",
+      "author": "Tibo",
+      "handle": "thsottiaux",
+      "url": "https://x.com/thsottiaux/status/2101920928070562029",
+      "createdAt": "2026-09-21T06:26:15.000Z",
+      "excerpt": "@My_Ai_Bi 3am on a tuesday",
+      "kind": "context",
+      "weight": 0,
+      "targetDay": null
+    },
+    {
+      "id": "2101920329346195690",
+      "author": "Tibo",
+      "handle": "thsottiaux",
+      "url": "https://x.com/thsottiaux/status/2101920329346195690",
+      "createdAt": "2026-09-21T06:23:52.000Z",
+      "excerpt": "@h4nkdog That's cool!!!",
+      "kind": "context",
+      "weight": 0,
+      "targetDay": null
+    },
+    {
+      "id": "2101772015028130032",
+      "author": "Tibo",
+      "handle": "thsottiaux",
+      "url": "https://x.com/thsottiaux/status/2101772015028130032",
+      "createdAt": "2026-09-20T20:34:32.000Z",
+      "excerpt": "@Ananth7e Most folks have been very nice! Love this community",
+      "kind": "context",
+      "weight": 0,
+      "targetDay": null
+    },
+    {
+      "id": "2101554478940070162",
+      "author": "Tibo",
+      "handle": "thsottiaux",
+      "url": "https://x.com/thsottiaux/status/2101554478940070162",
+      "createdAt": "2026-09-20T06:10:07.000Z",
+      "excerpt": "@argofowl Mind sharing your instructions?",
+      "kind": "context",
+      "weight": 0,
+      "targetDay": null
+    },
+    {
+      "id": "2101531597820596462",
+      "author": "Tibo",
+      "handle": "thsottiaux",
+      "url": "https://x.com/thsottiaux/status/2101531597820596462",
+      "createdAt": "2026-09-20T04:39:12.000Z",
+      "excerpt": "@_dylanga Billions",
+      "kind": "context",
+      "weight": 0,
+      "targetDay": null
+    },
+    {
+      "id": "2101448279712207203",
+      "author": "Tibo",
+      "handle": "thsottiaux",
+      "url": "https://x.com/thsottiaux/status/2101448279712207203",
+      "createdAt": "2026-09-19T23:08:07.000Z",
+      "excerpt": "@alexandr_wang You missed the long way to go part of the quote",
+      "kind": "context",
+      "weight": 0,
+      "targetDay": null
+    },
+    {
+      "id": "2101432860892901859",
+      "author": "Tibo",
+      "handle": "thsottiaux",
+      "url": "https://x.com/thsottiaux/status/2101432860892901859",
+      "createdAt": "2026-09-19T22:06:51.000Z",
+      "excerpt": "@cherry_mx_reds Clearly not me",
+      "kind": "context",
+      "weight": 0,
+      "targetDay": null
+    },
+    {
+      "id": "2101432368682983749",
+      "author": "Tibo",
+      "handle": "thsottiaux",
+      "url": "https://x.com/thsottiaux/status/2101432368682983749",
+      "createdAt": "2026-09-19T22:04:54.000Z",
+      "excerpt": "@Rubzem @TesanaAI People will do anything instead of cleaning their house",
+      "kind": "context",
+      "weight": 0,
+      "targetDay": null
+    },
+    {
+      "id": "2101431497437950458",
+      "author": "Tibo",
+      "handle": "thsottiaux",
+      "url": "https://x.com/thsottiaux/status/2101431497437950458",
+      "createdAt": "2026-09-19T22:01:26.000Z",
+      "excerpt": "2026 is the year of linux desktop",
+      "kind": "context",
+      "weight": 0,
+      "targetDay": null
+    },
+    {
+      "id": "2101354419829010896",
+      "author": "Tibo",
+      "handle": "thsottiaux",
+      "url": "https://x.com/thsottiaux/status/2101354419829010896",
+      "createdAt": "2026-09-19T16:55:09.000Z",
+      "excerpt": "… bail or at least show him codex before?",
+      "kind": "context",
+      "weight": 0,
+      "targetDay": null
+    },
+    {
+      "id": "status-01M34TAFM9WBGEBE3G1GBH4SE8",
+      "author": "OpenAI Status",
+      "handle": "OpenAI",
+      "url": "https://status.openai.com/incidents/01M34TAFM9WBGEBE3G1GBH4SE8",
+      "createdAt": "2026-09-22T15:04:05Z",
+      "excerpt": "Elevated Error Rates for ChatGPT Work, across Plus, Pro, Business, Enterprise and Education plans.",
+      "kind": "incident",
+      "weight": 0.3,
+      "targetDay": null,
+      "status": "resolved"
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 import { t, onLanguageChange } from './i18n.js';
 import './motion.js';
 import './music.js';
+import './reset-entrance.js';
 
 const copyButton = document.querySelector('[data-copy-email]');
 const announcement = document.querySelector('#copy-announcement');

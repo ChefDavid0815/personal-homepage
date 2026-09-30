@@ -26,5 +26,54 @@
     "source": "https://newsroom-anz.2k.com/resources/nba-2k27-standard-edition",
     "bytes": 251084,
     "sha256": "b61ce9f5440195ee4bc587e303f86a74f08c7ffda9ae3a40b85f6b86906f0627"
+  },
+  {
+    "file": "f1-2026/ferrari-sf26.webp",
+    "url": "https://media.formula1.com/image/upload/c_fit,w_1600,h_900/q_auto/v1740000001/fom-website/2026/Ferrari/F678_still_f15_16_9_v10.webp",
+    "source": "https://www.formula1.com/en/latest/article/gallery-check-out-every-angle-of-ferraris-2026-f1-car.7HdOPtJJwN5VHJ8XAWVtuS.7HdOPtJJwN5VHJ8XAWVtuS",
+    "bytes": 83962,
+    "sha256": "f396870b1cd517e421cf6c4801c232219c2a441a487458d316ef818312f6e0cb"
+  },
+  {
+    "file": "f1-2026/mclaren-mcl40.webp",
+    "url": "https://media.formula1.com/image/upload/c_fit,w_1600,h_900/q_auto/v1740000001/fom-website/2026/McLaren/MCL40_B_Social_1920x1080.webp",
+    "source": "https://www.formula1.com/en/latest/article/gallery-take-a-look-at-every-angle-of-mclarens-2026-livery.7z5YtdHeuCJaX2XMxLWgMR",
+    "bytes": 102874,
+    "sha256": "e14c7e6886ce3eefcc76f889963bd8fe24d6bceb59cae4d899e93cd581be9d4f"
+  },
+  {
+    "file": "f1-2026/mercedes-w17.webp",
+    "url": "https://media.formula1.com/image/upload/c_fit,w_1600,h_900/q_auto/v1740000001/fom-website/2026/Mercedes/Mercedes-AMG%20F1%20W17%20E%20PERFORMANCE%20-%20GR%206.webp",
+    "source": "https://www.formula1.com/en/latest/article/gallery-check-out-every-angle-of-mercedes-new-livery-for-2026.70sm6Znl139u64MesOt5Vf.70sm6Znl139u64MesOt5Vf",
+    "bytes": 89746,
+    "sha256": "afef3057675c0af001d10800878cd88f305be2d04cd3cbda019ab3988b9978dc"
+  },
+  {
+    "file": "f1-2026/ferrari-logo.svg",
+    "url": "https://media.formula1.com/image/upload/v1740000001/common/f1/2025/ferrari/2025ferrarilogolight.svg",
+    "source": "https://www.formula1.com/en/teams/ferrari",
+    "bytes": 45709,
+    "sha256": "f1b8436daad22d09c669f5dfb5124ab2839dd6cb8a673179f04bedf40a6a22e7"
+  },
+  {
+    "file": "f1-2026/mclaren-logo.svg",
+    "url": "https://media.formula1.com/image/upload/v1740000001/common/f1/2025/mclaren/2025mclarenlogowhite.svg",
+    "source": "https://www.formula1.com/en/teams/mclaren",
+    "bytes": 378,
+    "sha256": "574cd41315e200f2461c9e37af69b033f94bffb3fd868083dc3b45bcf56d67a8"
+  },
+  {
+    "file": "f1-2026/mercedes-logo.svg",
+    "url": "https://media.formula1.com/image/upload/v1740000001/common/f1/2025/mercedes/2025mercedeslogowhite.svg",
+    "source": "https://www.formula1.com/en/teams/mercedes",
+    "bytes": 4026,
+    "sha256": "de50760a9f7b3f8abbcf04275cd91c3e84e2c84c0fbc8fbca2d5dfab6bbd3e95"
+  },
+  {
+    "file": "f1-2026/f1-logo.svg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Formula_One_logo.svg",
+    "source": "https://commons.wikimedia.org/wiki/File:Formula_One_logo.svg",
+    "bytes": 1720,
+    "sha256": "e2309c6f585e39bad725a6ce89074099833de22804572d88e145b7ed89991190"
   }
 ]

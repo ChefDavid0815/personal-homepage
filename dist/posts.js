@@ -1,6 +1,7 @@
 import {chromaPostArt} from './chroma-exhibit.js';
 import {atlasPostArt} from './atlas-exhibit-v2.js';
 import {roseraiePostArt} from './roseraie-post-art-v2.js';
+import {afterimagePostArt} from './afterimage-art.js';
 import {midautumnPostArt} from './midautumn-post-art.js';
 import { lensPostArt } from './projectlens-exhibit.js';
 import { getLanguage, onLanguageChange } from './i18n.js';
@@ -24,6 +25,7 @@ const minutes = item => {
 const readTime = item => copy(`约 ${minutes(item)} 分钟`, `${minutes(item)} MIN READ`);
 
 function artwork(item) {
+  if(item.theme === 'afterimage') return afterimagePostArt();
   if(item.theme === 'midautumn') return midautumnPostArt();
   if(item.theme === 'roseraie') return roseraiePostArt();
   if(item.theme === 'atlas') return atlasPostArt();
@@ -45,12 +47,12 @@ function card(item, featured = false) {
 
 function overview() {
   document.title = copy('随笔 — ChefZC', 'Posts — ChefZC');
-  document.querySelector('meta[name="description"]').content = copy('ChefZC 的随笔：生活、Roseraie、Atlas、CHROMA、ProjectLens、NBA After Hours、Folio、AXIOM、Festival Toolkit、WIS TECH TANK 与篮球建模的制作手记。', 'Notes by ChefZC: life, Roseraie, Atlas, CHROMA, ProjectLens, NBA After Hours, Folio, AXIOM, Festival Toolkit, WIS TECH TANK and the Courtside 3D collection.');
+  document.querySelector('meta[name="description"]').content = copy('ChefZC 的随笔：AfterImage 赛车影像档案、Roseraie、Atlas、CHROMA、ProjectLens 等作品与生活手记。', 'Notes by ChefZC: AFTERIMAGE, Roseraie, Atlas, CHROMA, ProjectLens and the stories behind the work.');
   root.innerHTML = `<section class="posts-heading" aria-labelledby="posts-title"><div class="posts-kicker"><span>[ ${copy('写在作品之外', 'THE NOTES BETWEEN THE WORK')} ]</span><span>CHEFZC / JOURNAL</span></div><div class="posts-heading-line"><h1 id="posts-title">POSTS<span>.</span></h1><span class="posts-mark" aria-hidden="true">↙</span></div><div class="posts-intro"><h2>${copy('一些想法，<br>不必急着变成作品。', 'Some thoughts.<br>Room to let them grow.')}</h2><p>${copy('关于做东西，也关于生活。<br>把值得留下的念头，写成一页。', 'On making things, and on living.<br>A page for the thoughts worth keeping.')}</p></div></section><section class="posts-collection" aria-label="${copy('所有文章', 'All posts')}"><div class="posts-section-label"><span>${copy('随笔与制作手记', 'NOTES & BUILD JOURNALS')} <b>${String(posts.length).padStart(2,'0')}</b></span><span class="posts-order-note">${copy('最新在前 / 按时间阅读', 'NEWEST FIRST / THE JOURNAL')}</span></div><div class="posts-grid posts-chronological">${posts.map((item, i) => `${i === 0 || item.date !== posts[i-1].date ? `<div class="post-index-date"><time datetime="${item.date}">${item.date.replaceAll('-','.')}</time>${i === 0 ? `<b>${copy('最新一页','LATEST ENTRY')}</b>` : ''}</div>` : ''}${card(item)}`).join('')}</div></section><div class="posts-end"><span>TO BE CONTINUED</span><p>${copy('下一页，留给新的好奇心。', 'The next page is for a new curiosity.')}</p><span aria-hidden="true">✳</span></div>`;
 }
 
 function figure(src, alt, caption, type = '') {
-  const size = src.includes('midautumn-') ? [1672,941] : src.includes('/roseraie/') ? (src.endsWith('models-0.2.0.png') ? [1536,960] : [2304,1517]) : src.includes('/chroma/') ? (src.endsWith('.svg') ? [1600,960] : src.endsWith('/mini.png') ? [410,351] : [1480,962]) : src.includes('/projectlens/') ? (src.endsWith('.svg') ? [1600,900] : [1699,982]) : src.includes('/models/') ? [1600,1100] : src.includes('/wis-tech-tank/') ? (src.endsWith('.webp') ? [1536,1024] : [1440,1292]) : src.includes('/festival-toolkit/') ? [2139,1356] : src.includes('/axiom/') ? (src.endsWith('.svg') ? [400,280] : [2283,1437]) : src.includes('/folio/') ? [1426,924] : src.includes('hero-asterisk') ? [1254,1254] : [1440,900];
+  const size = src.includes('/afterimage/') ? (src.endsWith('silverstone.webp') ? [1800,1200] : [1800,1013]) : src.includes('midautumn-') ? [1672,941] : src.includes('/roseraie/') ? (src.endsWith('models-0.2.0.png') ? [1536,960] : [2304,1517]) : src.includes('/chroma/') ? (src.endsWith('.svg') ? [1600,960] : src.endsWith('/mini.png') ? [410,351] : [1480,962]) : src.includes('/projectlens/') ? (src.endsWith('.svg') ? [1600,900] : [1699,982]) : src.includes('/models/') ? [1600,1100] : src.includes('/wis-tech-tank/') ? (src.endsWith('.webp') ? [1536,1024] : [1440,1292]) : src.includes('/festival-toolkit/') ? [2139,1356] : src.includes('/axiom/') ? (src.endsWith('.svg') ? [400,280] : [2283,1437]) : src.includes('/folio/') ? [1426,924] : src.includes('hero-asterisk') ? [1254,1254] : [1440,900];
   return `<figure class="article-figure ${type}"><div><img src="${src}" alt="${esc(alt)}" width="${size[0]}" height="${size[1]}" loading="lazy" decoding="async"></div><figcaption>${esc(caption)}</figcaption></figure>`;
 }
 
@@ -66,9 +68,9 @@ function reader() {
   document.querySelector('meta[name="description"]').content = text.summary;
   root.innerHTML = `<nav class="reader-topline" aria-label="${copy('文章导航', 'Article navigation')}"><a href="./posts.html">← ${copy('所有随笔', 'ALL POSTS')}</a><span>NOTE ${post.number} / ${String(posts.length).padStart(2,'0')}</span><span>${readTime(post)}</span></nav>
     <article class="article-card article-card--${post.theme}" aria-labelledby="article-title">
-      <header class="article-header"><div class="article-meta"><span>${esc(text.category)}</span><time datetime="${post.date}">${post.date.replaceAll('-','.')}</time></div><h1 id="article-title">${displayTitle}</h1><div class="article-byline"><span class="article-avatar" aria-hidden="true">c_</span><span>ChefZC <small>${copy('写在热爱里', 'NOTES FROM MY WORLD')}</small></span><span class="article-edition">${post.theme === 'midautumn' ? 'MID-AUTUMN / 2026' : post.theme === 'signal' ? 'VOL. 01' : `VERSION ${esc(post.version || '1.0')}`}</span></div></header>
+      <header class="article-header"><div class="article-meta"><span>${esc(text.category)}</span><time datetime="${post.date}">${post.date.replaceAll('-','.')}</time></div><h1 id="article-title">${displayTitle}</h1><div class="article-byline"><span class="article-avatar" aria-hidden="true">c_</span><span>ChefZC <small>${copy('写在热爱里', 'NOTES FROM MY WORLD')}</small></span><span class="article-edition">${post.theme === 'afterimage' ? 'THE VISUAL SEASON / 2026' : post.theme === 'midautumn' ? 'MID-AUTUMN / 2026' : post.theme === 'signal' ? 'VOL. 01' : `VERSION ${esc(post.version || '1.0')}`}</span></div></header>
       <div class="article-art">${artwork(post)}</div>
-      <div class="article-reading"><aside class="article-index"><span>${copy('本篇目录', 'ON THIS PAGE')}</span><ol>${text.sections.map((section, i) => `<li><a href="#chapter-${i+1}"><b>0${i+1}</b>${esc(section.title)}</a></li>`).join('')}</ol><span class="article-index-note">${post.theme === 'midautumn' ? 'FULL MOON / FULL HEART' : post.theme === 'roseraie' ? 'LE SALON DES POSSIBLES' : post.theme === 'paper' ? 'COLLECT WITH CARE.' : 'STAY CURIOUS.'}</span></aside>
+      <div class="article-reading"><aside class="article-index"><span>${copy('本篇目录', 'ON THIS PAGE')}</span><ol>${text.sections.map((section, i) => `<li><a href="#chapter-${i+1}"><b>0${i+1}</b>${esc(section.title)}</a></li>`).join('')}</ol><span class="article-index-note">${post.theme === 'afterimage' ? 'EVERY FRAME KEEPS IT ALIVE.' : post.theme === 'midautumn' ? 'FULL MOON / FULL HEART' : post.theme === 'roseraie' ? 'LE SALON DES POSSIBLES' : post.theme === 'paper' ? 'COLLECT WITH CARE.' : 'STAY CURIOUS.'}</span></aside>
         <div class="article-body"><p class="article-lead">${esc(text.lead)}</p>
         ${text.sections.map((section, i) => `<section class="article-chapter" id="chapter-${i+1}"><div class="chapter-label"><span>0${i+1}</span><span></span></div><h2>${esc(section.title)}</h2>${section.paragraphs.map(p => `<p>${esc(p)}</p>`).join('')}${i === 0 ? `<blockquote>${esc(text.quote).replace(/\n/g,'<br>')}</blockquote>${figure(text.image || post.image, text.imageAlt, text.caption, post.theme === 'signal' ? 'article-figure--sculpture' : '')}` : ''}${section.image ? figure(section.image, section.imageAlt, section.caption) : ''}</section>`).join('')}
         <div class="article-signoff"><p>${esc(text.afterword)}</p><span>ChefZC<span aria-hidden="true">_</span></span></div>

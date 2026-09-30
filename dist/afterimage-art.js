@@ -1,0 +1,3 @@
+export function afterimagePostArt() {
+  return `<div class="post-art post-art--afterimage ai-post-art" aria-hidden="true"><img class="ai-post-bg" src="./assets/afterimage/belgium.webp" width="1800" height="1013" alt="" loading="lazy"><div class="ai-post-shade"></div><div class="ai-post-scan"></div><div class="post-art-top"><span>A / THE VISUAL SEASON RECORD</span><span>2026 / AFTERIMAGE</span></div><div class="ai-post-word"><span>AFTER</span><span>IMAGE</span></div><div class="ai-post-small-frame"><img src="./assets/afterimage/monaco.webp" width="1800" height="1013" alt="" loading="lazy"><small>CHAPTER 06 / MONACO</small></div><span class="post-art-foot">THE SEASON MOVES FAST. <b>THE IMAGES STAY.</b></span></div>`;
+}

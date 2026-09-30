@@ -1,6 +1,7 @@
 import {chromaMessages} from './chroma-content.js';
 import {atlasMessages} from './atlas-content.js';
 import {roseraieMessages} from './roseraie-content.js';
+import {afterimageMessages} from './afterimage-content.js';
 import { festivalJourneyMessages } from './festival-journey.js';
 import { lensMessages } from './projectlens-content.js';
 import { gameMessages } from './games-content.js';
@@ -46,12 +47,19 @@ export const messages = {
   'footer.note': ['保持好奇 · 持续创造 · 2026', 'BUILT WITH CURIOSITY · 2026'],
   'footer.top': ['回到顶部 <span aria-hidden="true">↑</span>', 'Back to top <span aria-hidden="true">↑</span>'],
   'gallery.title': ['Gallery — ChefZC 数字作品陈列室', 'Gallery — ChefZC Digital Collection'],
-  'gallery.meta': ['ChefZC 的数字作品陈列室。探索 Folio 1.1 模组手帖、版本历程与 NBA After Hours，收藏每一次创造。', 'The digital collection by ChefZC. Explore Folio 1.1, its version journal, and NBA After Hours, my first game.'],
+  'gallery.meta': ['ChefZC 的数字作品陈列室：持续运营的 AfterImage 1.2 赛车影像档案，以及 Roseraie、Atlas、CHROMA 等八件作品。', 'ChefZC’s digital collection: the ongoing AFTERIMAGE 1.2 motorsport archive, plus eight works including Roseraie, Atlas and CHROMA.'],
   'gallery.skip': ['跳到作品', 'Skip to projects'],
   'gallery.kicker': ['<span class="lime-text">[</span> 数字作品陈列室 <span class="lime-text">]</span>', '<span class="lime-text">[</span> THE DIGITAL COLLECTION <span class="lime-text">]</span>'],
   'gallery.mark': ['灵感，正在成形', 'MADE OF IDEAS'],
   'gallery.headline': ['好玩的想法，<span>值得一个展位。</span>', 'Good ideas <span>deserve a space.</span>'],
   'gallery.intro': ['一些关于代码、设计和好奇心的探索。<br>把每一次「试试看」，留在这里。', 'Experiments in code, design, and curiosity.<br>A home for every “let’s try it.”'],
+  'gallery.liveCta': ['看正在生长的网站', 'Explore the living site'],
+  'gallery.exploreCta': ['浏览全部作品', 'Browse all works'],
+  'gallery.heroFoot': ['一个不断扩展的数字陈列室', 'An ever-growing digital collection'],
+  'gallery.roomsLabel': ['选择一间展室', 'Choose a room'],
+  'gallery.worksEyebrow': ['02 / 主展厅', '02 / THE MAIN ROOM'],
+  'gallery.worksHeadline': ['想法，有自己的形状。', 'Ideas take their own shape.'],
+  'gallery.worksIntro': ['从实用工具到游戏与视觉实验。每件作品都是一次认真完成的「试试看」。', 'From useful tools to games and visual experiments. Each work is a curious idea brought to life.'],
   'gallery.selected': ['作品与实验', 'PROJECTS & EXPERIMENTS'],
   'gallery.notice': ['真实作品 <span>/</span> 持续创造', 'REAL PROJECTS <span>/</span> STILL CREATING'],
   'court.first': ['我的第一个正式项目', 'MY FIRST RELEASE'],
@@ -145,7 +153,7 @@ export const messages = {
   'profile.enterGallery': ['进入项目陈列室 <span aria-hidden="true">→</span>', 'Step into the collection <span aria-hidden="true">→</span>']
 };
 
-Object.assign(messages, personalMessages, musicMessages, folioMessages, axiomMessages, festivalMessages, wisMessages, festivalUpdateMessages, modelMessages, gameMessages, lensMessages, festivalJourneyMessages, chromaMessages, atlasMessages, roseraieMessages);
+Object.assign(messages, personalMessages, musicMessages, folioMessages, axiomMessages, festivalMessages, wisMessages, festivalUpdateMessages, modelMessages, gameMessages, lensMessages, festivalJourneyMessages, chromaMessages, atlasMessages, roseraieMessages, afterimageMessages);
 const storageKey = 'chefzc.language';
 let language = 'zh';
 try { if (globalThis.localStorage?.getItem(storageKey) === 'en') language = 'en'; } catch { /* Storage may be disabled; the switch still works. */ }

@@ -2,6 +2,8 @@ import http from 'node:http';
 import { readFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import {getResetData} from '../lib/reset-data.js';
+import resetPostHandler from '../api/reset-post.js';
 
 const root = path.resolve(fileURLToPath(new URL('../dist/', import.meta.url)));
 const port = Number(process.env.PORT || 4173);
@@ -10,8 +12,17 @@ http.createServer(async (request, response) => {
   try {
     const url = new URL(request.url, `http://127.0.0.1:${port}`);
     const pathname = decodeURIComponent(url.pathname);
-    if (pathname === '/axiom' || pathname === '/stride') {
+    if (pathname === '/axiom' || pathname === '/stride' || pathname === '/when-to-reset' || pathname === '/reset-history') {
       response.writeHead(308, {Location: pathname + '/' + url.search}); response.end(); return;
+    }
+    if (pathname === '/api/reset-radar') {
+      if (!['GET','HEAD'].includes(request.method)) { response.writeHead(405,{'Allow':'GET, HEAD'}); response.end(); return; }
+      response.writeHead(200,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store'});
+      response.end(request.method==='HEAD'?undefined:JSON.stringify(await getResetData())); return;
+    }
+    if (pathname === '/api/reset-post') {
+      const adapter={headers:{},statusCode:200,setHeader(key,value){this.headers[key]=value;return this;},status(code){this.statusCode=code;return this;},json(body){response.writeHead(this.statusCode,this.headers);response.end(JSON.stringify(body));return this;}};
+      await resetPostHandler({method:request.method,query:{url:url.searchParams.get('url')}},adapter);return;
     }
     if (pathname === '/api/usage' || pathname === '/api/usage-stream') {
       if (request.method !== 'GET') { response.writeHead(405); response.end(); return; }

@@ -1,0 +1,91 @@
+{
+  "schema_version": "1.0",
+  "system_version": "2.0.0",
+  "status": "final",
+  "project": "ChefZC personal homepage / Atlas 0.3 exhibition, Now milestone and field notes",
+  "brief": "Bring the personal-site Atlas presentation into the application's Renaissance observatory and painted cosmos, while keeping the site's collection, timeline and journal structures usable.",
+  "mode": "editorial",
+  "reproduction_target": "style",
+  "constraints": [
+    "Keep the existing Now timeline and the order of other projects and posts.",
+    "Use Atlas 0.3 artwork and verified knowledge counts; do not present decorative constellation coordinates as real graph data.",
+    "Maintain Chinese and English versions, keyboard paths, responsive layout and reduced-motion behavior."
+  ],
+  "assumptions": [
+    "The requested Now and Post redesign applies to the current Atlas entry and its article; earlier entries retain their project-specific art direction.",
+    "The three observatory plates are editorial views that link into the working Atlas application."
+  ],
+  "decisions": [
+    {
+      "topic": "Collection scale",
+      "choice": "A full-width painted overture, manuscript prologue, numerical ledger, three switchable celestial plates and closing invitation.",
+      "reason": "The Atlas entry should feel like a complete exhibition while retaining direct routes into the application, source and field notes."
+    },
+    {
+      "topic": "Now and Posts",
+      "choice": "Keep the site's timeline and journal frames; place an Atlas micro observatory in the Now art window and a matching editorial plate in the latest post and reader.",
+      "reason": "Preserves the reading chronology and each older project's own identity."
+    },
+    {
+      "topic": "Motion",
+      "choice": "Canvas starlight, slow SVG instruments, staged scroll reveals, an interactive light and view changes with an explicit pause control.",
+      "reason": "Give the observatory a sense of time and discovery without delaying access to content."
+    }
+  ],
+  "direction": {
+    "name": "The illuminated observatory",
+    "visible_rules": [
+      "Renaissance architectural frescoes act as monumental openings and close views.",
+      "Lapis blue space and thin brass instruments carry the active exploration areas.",
+      "Warm vellum sheets and classical lettering hold reading, facts and calls to action."
+    ],
+    "signature": "A painted cosmos unfolds into a working folio of three celestial plates.",
+    "avoid": ["Generic card grids inside the Atlas exhibit", "Unlabelled fake graph data", "Continuous motion without a pause path"]
+  },
+  "tokens": {
+    "night": "#081624",
+    "lapis": "#142a43",
+    "gold": "#d7b77e",
+    "cream": "#f2e5c8",
+    "ink": "#23354a",
+    "copper": "#9e583c",
+    "source": "dist/atlas-v2.css"
+  },
+  "typography": [
+    {"role": "Latin display", "family": "EB Garamond", "source_kind": "file", "path": "dist/assets/fonts/eb-garamond-latin-400-normal.woff2", "version": "Atlas 0.3 local subset"},
+    {"role": "Chinese display", "family": "AtlasZhuque / Zhuque Fangsong", "source_kind": "file", "path": "dist/assets/fonts/zhuque-fangsong-0212.woff2", "version": "Atlas 0.3 local subset"},
+    {"role": "Chinese reading", "family": "AtlasWenKai / LXGW WenKai GB", "source_kind": "file", "path": "dist/assets/fonts/lxgw-wenkai-gb-1522.woff2", "version": "Atlas 0.3 local subset"}
+  ],
+  "assets": [
+    {"path": "dist/assets/projects/atlas/philosophical-cosmos-03.webp", "source": "Atlas 0.3 philosophical cosmos artwork, optimized copy in the personal site", "license_status": "Project artwork; provenance documented in Atlas repo docs/COSMOS-ART-DIRECTION.md"},
+    {"path": "dist/assets/projects/atlas/cosmic-pigment-03.webp", "source": "Atlas 0.3 cosmic pigment artwork, optimized copy in the personal site", "license_status": "Project artwork; provenance documented in Atlas repo docs/COSMOS-ART-DIRECTION.md"},
+    {"path": "dist/atlas/art/renaissance-observatory.png", "source": "Atlas 0.3 Renaissance observatory artwork shipped with the web app", "license_status": "Project artwork; provenance documented in Atlas repo docs/ART-DIRECTION.md"}
+  ],
+  "layout": {
+    "structure": "Gallery collection > Atlas overture > prologue > 3-plus-1 fact ledger > 3-plate observatory > epilogue; existing Now timeline and Posts order stay intact.",
+    "breakpoints_css_px": [1000, 700, 390],
+    "observed_viewports_css_px": [360, 390, 768, 1440],
+    "mobile_order": "The observatory rail precedes the active plate in DOM and visual order."
+  },
+  "motion": [
+    {"layer": "environment", "implementation": "72 deterministic canvas stars (44 on narrow stages), DPR capped at 1.5; slow 85-100 second SVG rotation; pause offscreen and when document is hidden."},
+    {"layer": "scene and story", "implementation": "GSAP ScrollTrigger reveals overture, headings and facts; short figure crop scrubs with reading."},
+    {"layer": "interaction", "implementation": "Plate controls update aria-pressed and live content; pointer light follows only while motion is enabled."},
+    {"layer": "reduced motion", "implementation": "Global motion switch and prefers-reduced-motion turn off continuous movement and staged transforms; content remains visible."}
+  ],
+  "environment": {
+    "site_version": "1.22.0",
+    "atlas_content_version": "0.3.0",
+    "platform": "Windows",
+    "renderer": "Codex in-app Chromium browser",
+    "renderer_version": "unknown",
+    "delivery": "Static dist with Vercel project chefzc-homepage"
+  },
+  "evidence": [
+    {"kind": "local browser and command verification", "path": "design/verification.md"}
+  ],
+  "limitations": [
+    "The plate illustrations are editorial; the actual node positions and tools are in /atlas/.",
+    "Hardware frame-time and 200% browser zoom were not measured in this pass."
+  ]
+}

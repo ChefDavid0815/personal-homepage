@@ -50,7 +50,7 @@ A unified glass navigation, richer materials, calmer reading rhythm and shared m
 
 ## Game room / Life in play
 
-A new [Game page](https://chefzc.dev/game.html): FH6 in lime, cobalt and pink with Tokyo pop art; NBA 2K27 in a glass cover sleeve with animated RGB court lighting. Three official FH6 scenes, three NBA lighting looks, motion controls and bilingual copy. Only verified local records are shown; FH6 collection counts are explicitly historical. Unknown currency balances are omitted. [Data provenance and offline refresh](docs/game-room.md).
+The [Game page](https://chefzc.dev/game.html) now has three exhibits: F1 25 as a bright pop-art 2026 grid with authentic Ferrari SF-26, McLaren MCL40 and Mercedes W17 imagery and official team marks; FH6 in lime, cobalt and pink with Tokyo pop art; NBA 2K27 in a glass cover sleeve with animated RGB court lighting. The F1 car focus, three FH6 scenes, three NBA lighting looks, motion controls and bilingual copy are interactive. F1 playtime and save metadata come from a dated, read-only Steam snapshot; FH6 collection counts remain explicitly historical. [Data provenance and offline refresh](docs/game-room.md).
 
 ## The collection
 
