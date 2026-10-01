@@ -37,6 +37,17 @@ class LedgerTest(unittest.TestCase):
         with self.path.open('a') as f:f.write(raw[40:]+'\n')
         self.assertEqual(self.ledger.scan([self.path]),1)
         self.assertEqual(self.ledger.scan([self.path]),0)
+    def test_gpt_61_usage_preserves_model_and_earlier_history(self):
+        self.write(event([1000,700,0,100,20,1100]))
+        self.assertEqual(self.ledger.scan([self.path]),1)
+        self.write({'type':'turn_context','payload':{'model':'gpt-6.1-sol'}},event([1500,1000,0,150,25,1650],[500,300,0,50,5,550],'2026-09-20T20:06:00Z'))
+        self.assertEqual(self.ledger.scan([self.path]),1)
+        self.assertEqual(self.ledger.scan([self.path]),0)
+        models={row['model']:row for row in self.ledger.snapshot()['hours']}
+        self.assertEqual(models['gpt-6-astra']['total'],1100)
+        self.assertEqual(models['gpt-6.1-sol']['total'],550)
+        self.assertEqual(models['gpt-6.1-sol']['cached'],300)
+        self.assertEqual(models['gpt-6.1-sol']['context'],'short')
     def test_counter_reset_and_unknown_request_length(self):
         self.write(event([400000,200000,0,100,0,400100]),event([100,0,0,10,0,110],at='2026-09-20T20:07:00Z'),event([400,100,0,50,0,450],[100,0,0,10,0,110],at='2026-09-20T20:08:00Z'))
         self.assertEqual(self.ledger.scan([self.path]),3)

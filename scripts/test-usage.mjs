@@ -15,6 +15,22 @@ test('GPT-6 Sol and Luna use published Standard prices, including long context',
     assert.ok(Math.abs(result.total.cost-short)<1e-10);
   }
 });
+test('GPT-6.1 Sol prices cached reads separately and reprices retained records in every range',()=>{
+  const model='gpt-6.1-sol';
+  assert.ok(Math.abs(costOf({...row,model})-1.91)<1e-10);
+  assert.ok(Math.abs(costOf({...row,model,context:'long'})-3.32)<1e-10);
+  for(const range of ['today','7d','30d','lifetime']) {
+    const result=selectRange({...snapshot,hours:[{...row,model}]},range,Date.parse('2026-09-20T19:30:00Z'));
+    assert.equal(result.total.total,row.total);
+    assert.equal(result.total.unpriced,0);
+    assert.ok(Math.abs(result.total.cost-1.91)<1e-10);
+    assert.equal(result.models[0].model,model);
+    assert.equal(result.models[0].unpriced,0);
+    assert.equal(result.bins.reduce((sum,bin)=>sum+bin.total,0),row.total);
+  }
+  assert.equal(costOf({...row,model,context:'unknown'}),null);
+  assert.equal(costOf({...row,model:'gpt-6.1-unpublished'}),null);
+});
 test('Dubai day boundary, rolling calendar windows and uncovered history',()=>{
   assert.equal(selectRange(snapshot,'today',Date.parse('2026-09-20T19:30:00Z')).total.total,1100000);
   assert.equal(selectRange(snapshot,'today',Date.parse('2026-09-20T20:01:00Z')).total.total,0);

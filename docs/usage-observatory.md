@@ -21,13 +21,13 @@ Authenticated `POST /api/usage` validates a strict aggregate schema and writes t
 
 ## Equivalent pricing
 
-`dist/usage-math.js` contains publicly verified **Standard** USD prices, checked 2026-09-23, including GPT-6 Sol and GPT-6 Luna. It reprices retained usage at these rates, not historical invoices. The two GPT-6 models use these per-million-token short-context rates (input / cached input / cache write / output): Sol `$2 / $0.20 / $2.50 / $10`; Luna `$0.10 / $0.01 / $0.125 / $0.50`.
+`dist/usage-math.js` contains publicly verified **Standard** USD prices, with GPT-6.1 Sol added on 2026-10-01. It reprices retained usage at these rates, not historical invoices. Per-million-token short-context rates (input / cached input / cache write / output): GPT-6.1 Sol `$2 / $0.10 / $2.50 / $10`; GPT-6 Sol `$2 / $0.20 / $2.50 / $10`; GPT-6 Luna `$0.10 / $0.01 / $0.125 / $0.50`. GPT-6.1 Sol remains a distinct model; its cached-input rate is half GPT-6 Sol's. Existing and new `gpt-6.1-sol` records appear in all four time ranges, charts, model distribution and the equivalent-cost total without a collector reset.
 
 Formula per request: `((input - cached - write) × inputRate + cached × cachedRate + write × writeRate + output × outputRate) / 1,000,000`.
 
 Above 272K input tokens, input/cache rates double and output rates multiply by 1.5. Unknown models or ambiguous request lengths are excluded from the monetary sum and explicitly identified. Image/audio/tool fees, tax, regional uplifts and Pro subscription charges are excluded.
 
-Sources: [OpenAI API prices](https://developers.openai.com/api/docs/pricing), [GPT-6 Astra context pricing](https://developers.openai.com/api/docs/models/gpt-6-astra), [Codex token usage notification schema](https://github.com/openai/codex/blob/main/codex-rs/app-server-protocol/schema/json/v2/ThreadTokenUsageUpdatedNotification.json), [workspace Analytics API scope](https://learn.chatgpt.com/docs/enterprise/analytics-api), [Vercel consistent Blob reads](https://vercel.com/changelog/vercel-blob-now-supports-consistent-reads-on-private-storage).
+Sources: [OpenAI API prices](https://developers.openai.com/api/docs/pricing), [GPT-6.1 Sol pricing](https://developers.openai.com/api/docs/models/gpt-6.1-sol), [GPT-6 Astra context pricing](https://developers.openai.com/api/docs/models/gpt-6-astra), [Codex token usage notification schema](https://github.com/openai/codex/blob/main/codex-rs/app-server-protocol/schema/json/v2/ThreadTokenUsageUpdatedNotification.json), [workspace Analytics API scope](https://learn.chatgpt.com/docs/enterprise/analytics-api), [Vercel consistent Blob reads](https://vercel.com/changelog/vercel-blob-now-supports-consistent-reads-on-private-storage).
 
 ## Operating the collector
 
@@ -46,3 +46,5 @@ Local preview serves the same private aggregate through two local GET endpoints;
 ## 中文说明
 
 Pulse 展示今日、近 7 天、近 30 天及本机可追溯累计用量，含堆叠柱状图、模型比例与等额 API 估算。原始对话、文件路径、凭据和任务内容均不上传。同步器只读本机记录，新记录落地后上传数字汇总，服务器持续推送；电脑离线时展示最后记录。精确用量依赖 Codex 每次模型调用的上报，不伪造生成过程中的逐 Token 计数。金额按公开 Standard 费率估算，不是实际 Pro 账单。
+
+2026-10-01 接入 GPT-6.1 Sol：每百万 Token 的普通输入、缓存读取、缓存写入、输出分别为 `$2 / $0.10 / $2.50 / $10`。超过 272K 输入的请求沿用官方长上下文倍率。6.1 的已存历史与新增用量都会进入四个时间范围、柱状图、模型分布和等额估算，不需要清空或重新安装同步器；6.1 与 GPT-6 Sol 分开统计。
