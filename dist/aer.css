@@ -34,6 +34,7 @@
 .aer-screen-figure--results img{max-height:700px;object-fit:cover;object-position:top}
 .aer-reader-header h1>span{display:block}.aer-reader-header h1 .aer-title-sky,.aer-reader-header h1 .aer-title-prefix{display:inline;white-space:nowrap}
 .aer-reader{overflow:clip}
+.exhibition-grid .aer-exhibit{scroll-margin-top:210px}
 @media(min-width:701px){.posts-chronological .post-card--aer .post-art{max-height:none}}
 @keyframes aer-horizon{to{transform:translate(-3%,7%) rotate(-4deg)}}
 @keyframes aer-fin-float{0%,100%{transform:translateY(0) rotateY(-4deg) rotateZ(-2deg)}50%{transform:translateY(-17px) rotateY(13deg) rotateZ(2deg)}}

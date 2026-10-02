@@ -126,8 +126,14 @@ function openHistoryFromHash(scroll=false) {
   if(scroll) requestAnimationFrame(()=>requestAnimationFrame(()=>history.scrollIntoView({block:'start',behavior:'auto'})));
 }
 
+function openAerFromHash() {
+  if(location.hash !== '#project-aer') return;
+  requestAnimationFrame(()=>requestAnimationFrame(()=>grid.querySelector('#project-aer')?.scrollIntoView({block:'start',behavior:'auto'})));
+}
+
 renderCards();
 openHistoryFromHash(true);
+openAerFromHash();
 onLanguageChange(() => {
   renderCards();
   if(dialog.open&&selectedProjectId) renderDetail(selectedProjectId);
@@ -174,4 +180,4 @@ dialog.addEventListener('close',()=>{
   dialog.classList.remove('roseraie-dialog', 'atlas-dialog', 'folio-dialog', 'axiom-dialog', 'festival-dialog', 'lens-dialog', 'chroma-dialog', 'aer-dialog');
 });
 
-window.addEventListener('hashchange',()=>openHistoryFromHash(true));
+window.addEventListener('hashchange',()=>{openHistoryFromHash(true);openAerFromHash();});
