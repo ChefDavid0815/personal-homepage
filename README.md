@@ -6,15 +6,15 @@ A personal website for the things I love and make: a dark digital canvas with li
 
 [**Enter my space ↗**](https://chefzc.dev) · [Gallery](https://chefzc.dev/gallery.html) · [Posts](https://chefzc.dev/posts.html) · [Now](https://chefzc.dev/now.html) · [Game](https://chefzc.dev/game.html)
 
-## AER 1.0 / A clearer sky for the next journey.
+## AER 1.1 / A wider horizon.
 
-The ninth main exhibit is a daylight optical-glass installation: original airline-tail livery, a real-time ray-marched glass ring, moving reflections, a floating plinth and three selectable tail studies. Route exploration, traveller signatures and aircraft reference artwork appear as transparent instruments. The original timeline surrounds a matching glass miniature; the fifteenth bilingual Post opens a full glass editorial space with actual application captures and sourced aircraft imagery. Optical renderers pause offscreen, and the artwork follows the site's shared motion preference.
+<a href="https://chefzc.dev/aer.html"><img src="https://chefzc.dev/assets/projects/aer/cover-v11.png" width="100%" alt="AER 1.1 — colourless optical glass, real airline tails and a personal flight workspace." /></a>
 
-[Glass exhibit](https://chefzc.dev/gallery.html#project-aer) · [Departure notes](https://chefzc.dev/post.html?article=aer) · [Now 026](https://chefzc.dev/now.html#milestone-aer).
+**AER 1.1 · Flight, thoughtfully** — a little closer to your kind of journey.
 
-[![AER — optical glass and considered journeys by ChefZC](dist/assets/projects/aer/cover.svg)](https://chefzc.dev/gallery.html#project-aer)
+A flight exploration and personalised recommendation product shaped by clear optical glass, dawn light and real airline tails. Search, filter and compare journeys, discover a traveller constellation and understand why a flight fits. The public web experience keeps personal profiles and saved choices behind sign-in. A separate Windows workspace adds persistent navigation, five search workspaces, a journey inspector, keyboard commands, local profiles and offline demo search. Flights and fares are demonstrative; no ticket or reservation is created. Application source and Windows installers are kept off GitHub.
 
-AER is currently a private site requiring authorised access. Its flight schedules and fares are demonstrative. Selecting a journey saves a shortlist entry; it does not create a reservation, payment or ticket. The exhibit is an art experience, with original-source marks and attribution retained.
+[**EXPLORE AER ↗**](https://aer-personal-journeys.workspace-298846.chatgpt.site) &nbsp; / &nbsp; [**OPTICAL GLASS EXHIBITION ↗**](https://chefzc.dev/gallery.html#project-aer) &nbsp; / &nbsp; [**1.1 EDITION JOURNAL ↗**](https://chefzc.dev/gallery.html#aer-history) &nbsp; / &nbsp; [**NOW 027 ↗**](https://chefzc.dev/now.html#milestone-aer-11)
 
 ## NeRF 1.0 / A world, made of numbers.
 
