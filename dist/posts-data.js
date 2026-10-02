@@ -1,4 +1,5 @@
 import {nerfPost} from './nerf-post.js';
+import {aerPost} from './aer-post.js';
 import {chromaPost} from './chroma-post.js';
 import {atlasPost} from './atlas-post.js';
 import {roseraiePost} from './roseraie-post.js';
@@ -11,6 +12,7 @@ import { wisPost } from './wis-post.js';
 import { axiomPost } from './axiom-post.js';
 import { festivalPost } from './festival-post.js';
 export const posts = [
+  aerPost,
   nerfPost,
   afterimagePost,
   midautumnPost,

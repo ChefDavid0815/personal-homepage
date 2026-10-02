@@ -6,6 +6,16 @@ A personal website for the things I love and make: a dark digital canvas with li
 
 [**Enter my space ↗**](https://chefzc.dev) · [Gallery](https://chefzc.dev/gallery.html) · [Posts](https://chefzc.dev/posts.html) · [Now](https://chefzc.dev/now.html) · [Game](https://chefzc.dev/game.html)
 
+## AER 1.0 / A clearer sky for the next journey.
+
+The ninth main exhibit is a daylight optical-glass installation: original airline-tail livery, a real-time ray-marched glass ring, moving reflections, a floating plinth and three selectable tail studies. Route exploration, traveller signatures and aircraft reference artwork appear as transparent instruments. The original timeline surrounds a matching glass miniature; the fifteenth bilingual Post opens a full glass editorial space with actual application captures and sourced aircraft imagery. Optical renderers pause offscreen, and the artwork follows the site's shared motion preference.
+
+[Glass exhibit](https://chefzc.dev/gallery.html#project-aer) · [Departure notes](https://chefzc.dev/post.html?article=aer) · [Now 026](https://chefzc.dev/now.html#milestone-aer).
+
+[![AER — optical glass and considered journeys by ChefZC](dist/assets/projects/aer/cover.svg)](https://chefzc.dev/gallery.html#project-aer)
+
+AER is currently a private site requiring authorised access. Its flight schedules and fares are demonstrative. Selecting a journey saves a shortlist entry; it does not create a reservation, payment or ticket. The exhibit is an art experience, with original-source marks and attribution retained.
+
 ## NeRF 1.0 / A world, made of numbers.
 
 The School Lab opens a dedicated computational specimen for **NeRF Research Console**: layered camera rays, restrained phosphor light, a floating recorded reconstruction and a short progressive reveal. Its project space follows six transformations from input views to a rendered scene. A real checkpoint time machine and three saved test cameras sit beside a clearly scoped evidence ledger. The newest Now entry retains the timeline's original structure and embeds a small neural-renderer window; the fourteenth bilingual Post has its own computational editorial layout.

@@ -1,0 +1,8 @@
+AER exhibition / ChefZC / 2026-10-02
+
+Manrope variable font: copied from AER's locally hosted font; licence in Manrope-OFL.txt.
+The cover's Chinese title uses outlines from the personal site's Noto Sans SC subset. Its OFL licence is retained at ../../fonts/OFL-Noto-Sans-SC.txt. Typeface outlines are used so GitHub's renderer preserves both scripts' intended appearance.
+Airline tail livery: original transparent AER assets, extracted from logostream public airline illustrations. Sources: https://images.logostream.dev/UAE.png , https://images.logostream.dev/QTR.png , https://images.logostream.dev/SIA.png . Airline marks remain their owners' property. Exhibition depth and specular masks are procedural overlays.
+Emirates Airbus A380-800: Fred053, https://commons.wikimedia.org/wiki/File:A380-Emirates.png , CC BY-SA 3.0, https://creativecommons.org/licenses/by-sa/3.0/ . Resized and converted to WebP. No model or livery was substituted.
+home.webp and results.webp: actual local AER 1.0 application captures supplied by the project under outputs/. Flight schedules and fares are demonstration data. Images resized and converted to WebP for the personal-site exhibit.
+The glass-ring shader, orbit graphics and floating glass planes are exhibition artwork, not a live flight visualisation.

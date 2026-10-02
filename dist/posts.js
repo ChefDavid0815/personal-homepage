@@ -1,4 +1,7 @@
 import {nerfPostArt} from './nerf-art.js';
+import {aerPostArt} from './aer-art.js';
+import {renderAerReader} from './aer-post.js';
+import './aer-motion.js';
 import {renderNeRFReader} from './nerf-post.js';
 import './nerf-motion.js';
 import {chromaPostArt} from './chroma-exhibit.js';
@@ -28,6 +31,7 @@ const minutes = item => {
 const readTime = item => copy(`约 ${minutes(item)} 分钟`, `${minutes(item)} MIN READ`);
 
 function artwork(item) {
+  if(item.theme === 'aer') return aerPostArt();
   if(item.theme === 'nerf') return nerfPostArt();
   if(item.theme === 'afterimage') return afterimagePostArt();
   if(item.theme === 'midautumn') return midautumnPostArt();
@@ -51,7 +55,7 @@ function card(item, featured = false) {
 
 function overview() {
   document.title = copy('随笔 — ChefZC', 'Posts — ChefZC');
-  document.querySelector('meta[name="description"]').content = copy('ChefZC 的随笔：AfterImage 赛车影像档案、Roseraie、Atlas、CHROMA、ProjectLens 等作品与生活手记。', 'Notes by ChefZC: AFTERIMAGE, Roseraie, Atlas, CHROMA, ProjectLens and the stories behind the work.');
+  document.querySelector('meta[name="description"]').content = copy('ChefZC 的随笔：AER 玻璃航班探索、NeRF 研究、AfterImage 赛车影像档案，以及作品与生活手记。', 'Notes by ChefZC: AER flight exploration, NeRF research, AFTERIMAGE and the stories behind the work.');
   root.innerHTML = `<section class="posts-heading" aria-labelledby="posts-title"><div class="posts-kicker"><span>[ ${copy('写在作品之外', 'THE NOTES BETWEEN THE WORK')} ]</span><span>CHEFZC / JOURNAL</span></div><div class="posts-heading-line"><h1 id="posts-title">POSTS<span>.</span></h1><span class="posts-mark" aria-hidden="true">↙</span></div><div class="posts-intro"><h2>${copy('一些想法，<br>不必急着变成作品。', 'Some thoughts.<br>Room to let them grow.')}</h2><p>${copy('关于做东西，也关于生活。<br>把值得留下的念头，写成一页。', 'On making things, and on living.<br>A page for the thoughts worth keeping.')}</p></div></section><section class="posts-collection" aria-label="${copy('所有文章', 'All posts')}"><div class="posts-section-label"><span>${copy('随笔与制作手记', 'NOTES & BUILD JOURNALS')} <b>${String(posts.length).padStart(2,'0')}</b></span><span class="posts-order-note">${copy('最新在前 / 按时间阅读', 'NEWEST FIRST / THE JOURNAL')}</span></div><div class="posts-grid posts-chronological">${posts.map((item, i) => `${i === 0 || item.date !== posts[i-1].date ? `<div class="post-index-date"><time datetime="${item.date}">${item.date.replaceAll('-','.')}</time>${i === 0 ? `<b>${copy('最新一页','LATEST ENTRY')}</b>` : ''}</div>` : ''}${card(item)}`).join('')}</div></section><div class="posts-end"><span>TO BE CONTINUED</span><p>${copy('下一页，留给新的好奇心。', 'The next page is for a new curiosity.')}</p><span aria-hidden="true">✳</span></div>`;
 }
 
@@ -67,6 +71,12 @@ function reader() {
     return;
   }
   const text = local(post);
+  if(post.theme === 'aer') {
+    document.title = `${text.title} — ChefZC`;
+    document.querySelector('meta[name="description"]').content = text.summary;
+    root.innerHTML = renderAerReader();
+    return;
+  }
   if(post.theme === 'nerf') {
     document.title = `${text.title} — ChefZC`;
     document.querySelector('meta[name="description"]').content = text.summary;
@@ -88,7 +98,7 @@ function reader() {
     </article><section class="more-notes" aria-label="${copy('继续阅读', 'Keep reading')}"><div class="posts-section-label"><span>${copy('也许还想翻翻', 'ANOTHER PAGE TO TURN')}</span><a href="./posts.html">${copy('所有随笔', 'ALL POSTS')} ↗</a></div><div>${posts.filter(item => item.id !== post.id).map(item=>`<a class="next-note next-note--${item.theme}" href="${href(item)}"><span class="mono">NOTE ${item.number}</span><h2>${esc(local(item).title)}</h2><span aria-hidden="true">↗</span></a>`).join('')}</div></section>`;
 }
 
-function render() { isReader ? reader() : overview(); updateProgress(); document.dispatchEvent(new Event('atlas:render')); document.dispatchEvent(new Event('roseraie:render')); document.dispatchEvent(new Event('nerf:render')); }
+function render() { isReader ? reader() : overview(); updateProgress(); document.dispatchEvent(new Event('atlas:render')); document.dispatchEvent(new Event('roseraie:render')); document.dispatchEvent(new Event('nerf:render')); document.dispatchEvent(new Event('aer:render')); }
 let pendingFrame = false;
 function updateProgress() {
   const range = document.documentElement.scrollHeight - innerHeight;

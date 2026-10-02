@@ -1,4 +1,6 @@
 import {chromaCard,chromaDetail,changeChromaChannel,changeChromaView} from './chroma-exhibit.js';
+import {aerCard,aerDetail,changeAerAirline} from './aer-exhibit.js';
+import './aer-motion.js';
 import {atlasCard,atlasDetail,changeAtlasView} from './atlas-exhibit-v2.js';
 import {roseraieCard,roseraieDetail,changeRoseraieView} from './roseraie-exhibit-v2.js';
 import { lensCard, lensDetail } from './projectlens-exhibit.js';
@@ -44,12 +46,14 @@ let selectedFestivalSeason = 'summer';
 let selectedFestivalView = 'journey';
 
 function renderCards() {
+  const aerCarrier=grid.querySelector('#project-aer')?.dataset.aerAirline||'EK';
   const roseView=grid.querySelector('#project-roseraie [data-rose-gallery]')?.dataset.roseGallery || 'salon';
   const roseHistoryOpen=grid.querySelector('#roseraie-history')?.open ?? (location.hash === '#roseraie-history');
   const chromaState = {channel:grid.querySelector('.exhibit--chroma')?.dataset.chromaChannel || 'cpu',view:grid.querySelector('.exhibit--chroma [data-chroma-preview]')?.dataset.chromaPreview || 'pro'};
   const festivalHistoryOpen = grid.querySelector("#festival-history")?.open ?? (location.hash === "#festival-history");
   const historyOpen = grid.querySelector("#folio-history")?.open ?? (location.hash === "#folio-history");
   grid.innerHTML = projects.map(localizeProject).map(project => {
+    if(project.id === 'aer') return aerCard(aerCarrier);
     if(project.id === 'roseraie') return roseraieCard();
     if(project.id === 'atlas') return atlasCard();
     if(project.id === 'chroma') return chromaCard();
@@ -76,13 +80,15 @@ function renderCards() {
   document.querySelectorAll('[data-project-count]').forEach(element => { element.textContent=String(projects.length).padStart(2,'0'); });
   document.dispatchEvent(new Event('atlas:render'));
   document.dispatchEvent(new Event('roseraie:render'));
+  document.dispatchEvent(new Event('aer:render'));
 }
 
 function renderDetail(projectId) {
   const original=projects.find(project=>project.id===projectId);
   if(!original) return;
   const project=localizeProject(original);
-  dialog.classList.remove('roseraie-dialog', 'atlas-dialog', 'chroma-dialog', 'lens-dialog', 'folio-dialog', 'axiom-dialog', 'festival-dialog');
+  dialog.classList.remove('roseraie-dialog', 'atlas-dialog', 'chroma-dialog', 'lens-dialog', 'folio-dialog', 'axiom-dialog', 'festival-dialog', 'aer-dialog');
+  if(projectId === 'aer') { dialog.classList.add('aer-dialog'); dialogContent.innerHTML=aerDetail(); document.dispatchEvent(new Event('aer:render')); return; }
   if(projectId === 'roseraie') { const historyOpen=dialogContent.querySelector('#roseraie-detail-history')?.open; dialog.classList.add('roseraie-dialog'); dialogContent.innerHTML=roseraieDetail(dialogContent.querySelector('[data-rose-gallery]')?.dataset.roseGallery || 'salon'); dialogContent.querySelector('#roseraie-detail-history').open=Boolean(historyOpen); document.dispatchEvent(new Event('roseraie:render')); return; }
   if(projectId === 'atlas') { dialog.classList.add('atlas-dialog'); dialogContent.innerHTML=atlasDetail(dialogContent.querySelector('.atlas-view')?.dataset.atlasViewActive || 'sky'); document.dispatchEvent(new Event('atlas:render')); return; }
   if(projectId === 'chroma') { dialog.classList.add('chroma-dialog'); dialogContent.innerHTML=chromaDetail(dialogContent.querySelector('[data-chroma-preview]')?.dataset.chromaPreview || 'pro'); return; }
@@ -127,6 +133,8 @@ onLanguageChange(() => {
   if(dialog.open&&selectedProjectId) renderDetail(selectedProjectId);
 });
 grid.addEventListener('click',event=>{
+  const aerButton=event.target.closest('[data-aer-airline-button]');
+  if(aerButton){changeAerAirline(aerButton);return;}
   const roseButton=event.target.closest('[data-rose-view]');
   if(roseButton) { changeRoseraieView(roseButton); return; }
   const atlasButton=event.target.closest('[data-atlas-view]');
@@ -163,7 +171,7 @@ dialog.addEventListener('close',()=>{
   const opener=[...grid.querySelectorAll('[data-project]')].find(button=>button.dataset.project===selectedProjectId);
   opener?.focus({preventScroll:true});
   selectedProjectId=null;
-  dialog.classList.remove('roseraie-dialog', 'atlas-dialog', 'folio-dialog', 'axiom-dialog', 'festival-dialog', 'lens-dialog', 'chroma-dialog');
+  dialog.classList.remove('roseraie-dialog', 'atlas-dialog', 'folio-dialog', 'axiom-dialog', 'festival-dialog', 'lens-dialog', 'chroma-dialog', 'aer-dialog');
 });
 
 window.addEventListener('hashchange',()=>openHistoryFromHash(true));

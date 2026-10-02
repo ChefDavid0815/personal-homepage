@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#101112">
-  <meta name="description" content="ChefZC 的近况。2026 年 9 月 28 日，AfterImage 1.4 发布 Community Discovery 与首期铃鹿策展。">
+  <meta name="description" content="ChefZC 的近况。2026 年 10 月 2 日，AER 航班探索网站加入个人作品集。">
   <title>Now — ChefZC 的近况</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23c4fa5a'/%3E%3Cpath d='M39 18H28L17 32l11 14h11M43 43h8' fill='none' stroke='%23101112' stroke-width='7'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="./styles.css">
@@ -40,6 +40,8 @@
   <script type="module" src="./midautumn-moon.bundle.js"></script>
   <link rel="stylesheet" href="./nerf.css">
   <script type="module" src="./nerf-entry.js"></script>
+  <link rel="stylesheet" href="./aer.css">
+  <script type="module" src="./aer-entry.js"></script>
 </head>
 <body class="now-page">
   <a class="skip-link" href="#timeline" data-i18n="now.skip">跳到近况记录</a>
@@ -64,14 +66,15 @@
         </div>
         <div class="now-update">
           <span class="mono" data-i18n="now.updated">最近更新</span>
-          <time class="mono" datetime="2026-09-30">2026.09.30</time>
+          <time class="mono" datetime="2026-10-02">2026.10.02</time>
           <span class="now-building"><i aria-hidden="true"></i><span data-i18n="now.building">持续构建中</span></span>
         </div>
       </section>
 
       <section class="now-timeline" id="timeline" aria-labelledby="timeline-title">
-        <div class="timeline-heading"><h2 class="mono" id="timeline-title" data-i18n="now.timeline">成长记录</h2><span class="mono">2026 <span aria-hidden="true">/</span> 24</span></div>
+        <div class="timeline-heading"><h2 class="mono" id="timeline-title" data-i18n="now.timeline">成长记录</h2><span class="mono">2026 <span aria-hidden="true">/</span> 26</span></div>
         <ol class="timeline-list">
+          <li class="timeline-entry" data-reveal><div class="entry-date"><time datetime="2026-10-02"><span class="entry-year mono">2026</span><span class="entry-day">10<span>/</span>02</span></time><span class="entry-label mono" data-i18n="now.aerLabel">网站 / 新作品</span></div><article class="milestone milestone--aer" aria-labelledby="milestone-aer"><div class="milestone-copy"><div class="milestone-kicker mono"><span data-i18n="now.aerKicker">给远方，一座透明的候机室</span><span>026</span></div><h3 id="milestone-aer" data-i18n="now.aerTitle">AER 1.0，让下一程，更像你。</h3><p class="milestone-description" data-i18n="now.aerText">做了一座透明玻璃里的航班探索空间。路线搜索、筛选与比较，连接旅人偏好、历史选择和可解释的推荐；航司尾翼、精确机型插画与机队参考，让每一次抬头都有自己的方向。今天把它带进 Gallery，也写下这次关于出发与光的制作手记。</p><ul class="milestone-tags"><li>AER 1.0</li><li>Optical Glass</li><li>Traveller Signature</li></ul><p class="milestone-progress" data-i18n="now.aerNote">当前为授权访问的私人站点；航班与票价是演示数据，选择保存为意向记录，不创建机票或订单。</p><div class="aer-now-links"><a class="milestone-link" href="./gallery.html#project-aer"><span data-i18n="now.aerGallery">走进玻璃展柜</span> ↗</a><a class="milestone-link" href="./post.html?article=aer"><span data-i18n="now.aerPost">阅读出发手记</span> ↗</a></div></div><a class="milestone-art aer-now-art" data-aer-now href="./gallery.html#project-aer" aria-label="打开 AER 玻璃展柜"></a></article></li>
 <li class="timeline-entry" data-reveal>
   <div class="entry-date"><time datetime="2026-09-30"><span class="entry-year mono">2026</span><span class="entry-day">09<span>/</span>30</span></time><span class="entry-label mono" data-i18n="now.nerfLabel">研究 / 正式公开</span></div>
   <article class="milestone milestone--nerf" aria-labelledby="milestone-nerf"><div class="milestone-copy"><div class="milestone-kicker mono"><span data-i18n="now.nerfKicker">从坐标，到一个可以看见的世界</span><span>024</span></div><h3 id="milestone-nerf" data-i18n="now.nerfTitle">让数学，在屏幕里长出一个世界。</h3><p class="milestone-description" data-i18n="now.nerfText">9 月 24 日开始研究 Neural Radiance Fields。今天把 NeRF Research Console 正式公开。</p><ul class="milestone-tags"><li>PyTorch · NeRF</li><li>Research Console</li><li>50,000 / Recorded</li></ul><p class="milestone-progress" data-i18n="now.nerfNote">256 rays/batch；选定视角评估。</p><div class="nerf-now-links"><a class="milestone-link" href="./nerf.html"><span data-i18n="now.nerfExplore">进入计算空间</span><span aria-hidden="true">↗</span></a><a class="milestone-link" href="./post.html?article=nerf"><span data-i18n="now.nerfRead">翻开研究日志</span><span aria-hidden="true">↗</span></a><a class="milestone-link" href="https://github.com/ChefDavid0815/nerf-research-console" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></div></div><a class="milestone-art nerf-now-art" data-nerf-now href="./nerf.html" aria-label="进入 NeRF 项目">NeRF / Recorded reconstruction</a></article>

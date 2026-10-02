@@ -1,8 +1,10 @@
 import { currentFolio, folioReleaseUrl } from './folio-releases.js';
+import {aerProject} from './aer-content.js';
 import { currentFestival, festivalReleaseUrl } from './festival-releases.js';
 // 只需在这里添加项目，主页就会自动生成对应卡片。
 // 接入真实项目后，将 demo 设为 false，并填写 repoUrl / liveUrl。
 export const projects = [
+  aerProject,
   {
     id:'roseraie',name:'Roseraie',subtitle:'让灵感，在此盛放。',layout:'roseraie',
     category:'THE ROCOCO AGENT ATELIER',number:'08',color:'rose',tags:['Electron','React','TypeScript'],
