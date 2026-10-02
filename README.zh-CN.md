@@ -4,15 +4,15 @@
 
 个人介绍与项目展示网站：深色数码风，荧光绿、紫色、电光蓝与橙色点缀。
 
-## AER 1.0 / 为下一程，留一片透明的天空。
+## AER 1.1 / 一片公开的天空，一座自己的工作台。
 
-第九件主展厅作品是一座日光里的光学玻璃装置：保留原航司涂装的尾翼、实时光线步进渲染的玻璃环、流动反射、悬浮底座，以及三枚可切换的尾翼标本。路线探索、旅人签名与飞机参考分别进入透明的小仪器。Now 延续原有时间线结构，侧窗展示同款玻璃艺术；第十五篇双语随笔采用完整的玻璃编辑版式，配上真实软件截图与注明来源的机型插画。艺术动效遵守全站暂停偏好，光学渲染器在离屏时暂停。
+<a href="https://chefzc.dev/aer.html"><img src="https://chefzc.dev/assets/projects/aer/cover-v11.png" width="100%" alt="AER 1.1：无色光学玻璃、真实航司尾翼与个人航班工作区。" /></a>
 
-[玻璃展柜](https://chefzc.dev/gallery.html#project-aer) · [出发手记](https://chefzc.dev/post.html?article=aer) · [Now 026](https://chefzc.dev/now.html#milestone-aer)。
+**AER 1.1 · Flight, thoughtfully** — 让下一程，更像你。
 
-[![AER — ChefZC 的透明玻璃与出发手记](dist/assets/projects/aer/cover.svg)](https://chefzc.dev/gallery.html#project-aer)
+一款从晨光、舷窗与真实航司尾翼生长出来的航班探索与个性化推荐产品。搜索、筛选与比较旅程，建立旅人星图，也看清推荐背后的理由。网页版可以公开探索，个人档案与已选行程由登录保护；独立 Windows 版本重新安排固定导航、五个搜索工作区、常驻旅程详情、快捷键、本机档案与离线演示搜索。航班与票价为演示数据，不创建预订或机票。应用源码和 Windows 安装包不上传 GitHub。
 
-AER 当前为需要授权访问的私人站点。航班时刻与票价用于演示；选择行程只保存意向记录，不生成预订、付款或机票。展柜为艺术展示，保留原素材标志与来源署名。
+[**进入 AER ↗**](https://aer-personal-journeys.workspace-298846.chatgpt.site) &nbsp; / &nbsp; [**光学玻璃展柜 ↗**](https://chefzc.dev/gallery.html#project-aer) &nbsp; / &nbsp; [**1.1 版本手记 ↗**](https://chefzc.dev/gallery.html#aer-history) &nbsp; / &nbsp; [**NOW 027 ↗**](https://chefzc.dev/now.html#milestone-aer-11)
 
 ## NeRF 1.0 / 让数学，长出一个世界。
 
