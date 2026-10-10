@@ -4,8 +4,8 @@
   "author": "TerryWang",
   "source": "https://cdn.jsdelivr.net/npm/@fontpkg/huiwen-mincho-gbk@1.0.0/ (汇文明朝体GBK.ttf, V1.000)",
   "sourceSha256": "ef29d60717b749ff2ae422ffac1b78ad33df6370e1c5ac2082e8210b16f5736c",
-  "outputSha256": "0cb0677fff28b9d00e152b41afe9a8ff22911481beca7411e39ee5004015e629",
-  "glyphs": 1869,
+  "outputSha256": "aad73854753f9c2d6052dcf36edef1969f889142cfe5b5123db3963a308b6c99",
+  "glyphs": 1873,
   "subsetRanges": "U+2000-206F, U+3000-303F, U+3400-9FFF, U+FF00-FFEF (characters used on the site)",
   "tool": "fontTools subset, woff2",
   "repairs": "14 simplified code points carried traditional/Japanese components (认让讲论证 钟钥钻 辆辐辑输 练继). They are rebuilt from the font's own correct radicals (计 针 轨 红) and their own right-hand components (练 uses 炼's 东) with skia-pathops; see scripts/patch-huiwen-mincho.py."

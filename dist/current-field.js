@@ -18,7 +18,7 @@ function boxBlur(src,w,h,r){
   return out;
 }
 
-export function mountCurrentField(root,{glyphs,background='#0b0d26'}={}){
+export function mountCurrentField(root,{glyphs,background='#0b0d26',density=1}={}){
   const canvas=root.querySelector('canvas');
   const ctx=canvas?.getContext('2d',{alpha:false});
   if(!ctx)return {destroy(){}};
@@ -59,7 +59,7 @@ export function mountCurrentField(root,{glyphs,background='#0b0d26'}={}){
   }
   function record(p){p.h[p.k*2]=p.x;p.h[p.k*2+1]=p.y;p.k=(p.k+1)%TAIL;if(p.n<TAIL)p.n++;}
   function seed(){
-    const count=Math.min(1700,Math.round(W*H/760));
+    const count=Math.min(1700,Math.round(W*H*density/760));
     particles=Array.from({length:count},()=>{const p={};spawn(p,false);return p;});
   }
   function resize(){

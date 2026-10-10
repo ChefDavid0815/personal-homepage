@@ -346,3 +346,22 @@ html:not([lang=en]) .atlas-chart-legend{letter-spacing:.03em}
   .jr-latest,html[lang=en] .jr-latest{font-size:12px;max-width:64px}
   .nba-shoot{position:relative;left:auto;right:auto;bottom:auto;margin:0 20px 28px}
 }
+
+/* ============ Current 2.0 — the release window (Now 030, post current-2) ============ */
+.wa--current{--wa-bg:#0b0d26;--wa-fg:#e7ebf2;--wa-dim:#e7ebf2b8;background:#0b0d26}
+.wa--current .wa-motif{inset:0;height:auto;overflow:hidden}
+.wa--current .wa-motif canvas{display:block;width:100%;height:100%}
+.wa--current .wa-type{justify-content:space-between}
+.wa--current .wa-data span:first-child{color:var(--wa-fg)}
+.wa--current .wa-head{margin-top:auto;max-width:none}
+.wa--current .wa-title.wa-current-mark{display:flex;align-items:baseline;font:400 min(56cqw,58cqh)/.8 var(--display);letter-spacing:-.04em;color:var(--wa-fg);font-synthesis:none;margin-left:-.04em}
+.wa--current .wa-current-dot{color:#ff5c9a;margin:0 -.04em}
+.wa--current .wa-line{margin-top:clamp(12px,3.4cqw,20px);color:var(--wa-dim)}
+@container wa (aspect-ratio > 1){
+  .wa--current .wa-head{max-width:none}
+  .wa--current .wa-title.wa-current-mark{font-size:min(30cqw,66cqh)}
+}
+.current-now-art{display:block}
+.wa.wa--current .wa-motif{left:0;right:0;top:0;bottom:0;width:100%!important;height:100%!important;max-width:none;translate:none}
+.wa--current .wa-line,.wa--current .wa-data>span{display:inline-block;width:fit-content;padding:3px 9px;margin-left:-9px;border-radius:6px;background:#0b0d26e6}
+.wa--current .wa-data>span:last-child{margin-left:0;margin-right:-9px}

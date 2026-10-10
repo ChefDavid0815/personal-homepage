@@ -3,6 +3,7 @@ import './dot-air-globe.bundle.js';
 import {nabatPostArt} from './nabat-art.js';
 import './nabat-entry.js';
 import { flowReleaseArt } from './flow-release-art.js';
+import { currentReleaseArt } from './current-release-art.js';
 import {nerfPostArt} from './nerf-art.js';
 import {nerfReaderParts} from './nerf-post.js';
 import './nerf-motion.js';
@@ -45,6 +46,7 @@ function artwork(item) {
   if(item.theme === 'dot-air') return dotAirPostArt();
   if(item.theme === 'nabat') return nabatPostArt();
   if(item.theme === 'flow') return flowReleaseArt();
+  if(item.theme === 'current') return currentReleaseArt();
   if(item.theme === 'nerf') return nerfPostArt();
   if(item.theme === 'afterimage') return afterimagePostArt();
   if(item.theme === 'midautumn') return midautumnPostArt();
@@ -64,7 +66,7 @@ function artwork(item) {
 // Journal frame (Current 2.1). The index is a reading log: months as chapters, dates as a real
 // sequence down one river line, and each post's own cover art given room beside its words.
 const icon = (name, cls = '') => `<svg class="ic${cls ? ' ' + cls : ''}" aria-hidden="true"><use href="./assets/flow/current-icons.svg#${name}"></use></svg>`;
-const accents = {'dot-air':'#d8352a', nabat:'#2e5a43', flow:'#2445ef', nerf:'#3c7a2a', afterimage:'#c2331b', midautumn:'#a85a1a', roseraie:'#7d55a8', atlas:'#94592f', chroma:'#1b36e8', lens:'#1d7653', glass:'#d42f6a', wis:'#2f6a3f', festival:'#466d93', axiom:'#2f4fe0', signal:'#3d5cff', court:'#c24d1d', paper:'#a44e2a'};
+const accents = {current:'#3d5cff', 'dot-air':'#d8352a', nabat:'#2e5a43', flow:'#2445ef', nerf:'#3c7a2a', afterimage:'#c2331b', midautumn:'#a85a1a', roseraie:'#7d55a8', atlas:'#94592f', chroma:'#1b36e8', lens:'#1d7653', glass:'#d42f6a', wis:'#2f6a3f', festival:'#466d93', axiom:'#2f4fe0', signal:'#3d5cff', court:'#c24d1d', paper:'#a44e2a'};
 const accent = item => accents[item.theme] || '#3d5cff';
 const dotted = date => date.replaceAll('-', '.');
 const total = String(posts.length).padStart(2, '0');
@@ -120,7 +122,7 @@ function overview() {
 }
 
 function figure(src, alt, caption, type = '') {
-  const size = src.includes('/dot-air/') ? [1265,712] : src.includes('/nabat/') ? (src.endsWith('monstera.webp') ? [1536,1024] : src.endsWith('compare-native.png') ? [1748,1369] : [2282,1524]) : src.includes('/afterimage/') ? (src.endsWith('silverstone.webp') ? [1800,1200] : [1800,1013]) : src.includes('midautumn-') ? [1672,941] : src.includes('/roseraie/') ? (src.endsWith('models-0.2.0.png') ? [1536,960] : [2304,1517]) : src.includes('/chroma/') ? (src.endsWith('.svg') ? [1600,960] : src.endsWith('/mini.png') ? [410,351] : [1480,962]) : src.includes('/projectlens/') ? (src.endsWith('.svg') ? [1600,900] : [1699,982]) : src.includes('/models/') ? [1600,1100] : src.includes('/wis-tech-tank/') ? (src.endsWith('.webp') ? [1536,1024] : [1440,1292]) : src.includes('/festival-toolkit/') ? [2139,1356] : src.includes('/axiom/') ? (src.endsWith('.svg') ? [400,280] : [2283,1437]) : src.includes('/folio/') ? [1426,924] : src.includes('flow/river-loop.svg') ? [640,640] : src.includes('flow/river-sculpture.webp') ? [1280,1280] : [1440,900];
+  const size = src.includes('/dot-air/') ? [1265,712] : src.includes('/nabat/') ? (src.endsWith('monstera.webp') ? [1536,1024] : src.endsWith('compare-native.png') ? [1748,1369] : [2282,1524]) : src.includes('/afterimage/') ? (src.endsWith('silverstone.webp') ? [1800,1200] : [1800,1013]) : src.includes('midautumn-') ? [1672,941] : src.includes('/roseraie/') ? (src.endsWith('models-0.2.0.png') ? [1536,960] : [2304,1517]) : src.includes('/chroma/') ? (src.endsWith('.svg') ? [1600,960] : src.endsWith('/mini.png') ? [410,351] : [1480,962]) : src.includes('/projectlens/') ? (src.endsWith('.svg') ? [1600,900] : [1699,982]) : src.includes('/models/') ? [1600,1100] : src.includes('/wis-tech-tank/') ? (src.endsWith('.webp') ? [1536,1024] : [1440,1292]) : src.includes('/festival-toolkit/') ? [2139,1356] : src.includes('/axiom/') ? (src.endsWith('.svg') ? [400,280] : [2283,1437]) : src.includes('/folio/') ? [1426,924] : src.includes('/flow/v2/') ? [1600,1000] : src.includes('flow/river-loop.svg') ? [640,640] : src.includes('flow/river-sculpture.webp') ? [1280,1280] : [1440,900];
   return `<figure class="article-figure jr-figure ${type}"><div><img src="${src}" alt="${esc(alt)}" width="${size[0]}" height="${size[1]}" loading="lazy" decoding="async"></div><figcaption>${esc(caption)}</figcaption></figure>`;
 }
 
@@ -140,7 +142,7 @@ function reader() {
   }
   const text = local(post);
   const nerf = post.theme === 'nerf' ? nerfReaderParts() : null;
-  const displayTitle = post.theme === 'flow' && getLanguage() === 'zh' ? esc(text.title).replace('：', '：<br>') : post.theme === 'court' && getLanguage() === 'zh' ? esc(text.title).replace('，', '，<br>') : esc(text.title);
+  const displayTitle = (post.theme === 'flow' || post.theme === 'current') && getLanguage() === 'zh' ? esc(text.title).replace('：', '：<br>') : post.theme === 'court' && getLanguage() === 'zh' ? esc(text.title).replace('，', '，<br>') : esc(text.title);
   document.title = `${text.title} — ChefZC`;
   document.querySelector('meta[name="description"]').content = text.summary;
   const at = posts.indexOf(post);
