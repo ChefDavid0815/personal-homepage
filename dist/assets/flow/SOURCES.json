@@ -1,0 +1,31 @@
+{
+  "sculpture": {
+    "source": "Built-in image_gen",
+    "original": "Locally archived master artwork",
+    "alpha": true,
+    "output": "river-sculpture.webp",
+    "use": "Decorative original sculpture; never a product screenshot"
+  },
+  "font": {
+    "family": "Unbounded",
+    "fileSource": "https://cdn.jsdelivr.net/gh/google/fonts@main/ofl/unbounded/Unbounded%5Bwght%5D.ttf",
+    "licenseSource": "https://cdn.jsdelivr.net/gh/google/fonts@main/ofl/unbounded/OFL.txt",
+    "license": "OFL-1.1",
+    "weightRange": [
+      200,
+      900
+    ],
+    "subset": "Latin",
+    "adobeCandidate": "Obviously: catalog preview only; no Adobe web kit created",
+    "webSource": "https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap",
+    "webFileSource": "https://fonts.gstatic.com/s/unbounded/v12/Yq6W-LOTXCb04q32xlpwu8Zf.woff2",
+    "webFile": "unbounded-variable.woff2",
+    "webBytes": 50904
+  },
+  "riverLoop": {
+    "source": "Editable native SVG, authored for the user requested replacement",
+    "file": "river-loop.svg",
+    "meaning": "Interlocking currents and return; blue, yellow and pink",
+    "retiredAsset": "Archived outside the served site at design/retired-art/hero-asterisk.png"
+  }
+}

@@ -1,4 +1,5 @@
 import { getLanguage, onLanguageChange } from './i18n.js';
+import {projects as siteProjects} from './projects.js';
 import { canAnimate, onMotionChange } from './motion-state.js';
 
 const c=(zh,en)=>getLanguage()==='en'?en:zh;
@@ -35,7 +36,7 @@ if(identity){
 const directory=document.querySelector('.atelier-directory');
 if(directory){
   const finale=document.createElement('section');finale.className='atelier-finale';
-  const render=()=>{finale.setAttribute('aria-label',c('保持热爱，继续创造','Keep loving. Keep creating.'));finale.innerHTML=`<div class="finale-eyebrow"><span>CHEFZC / AN OPEN-ENDED EXPERIMENT</span><span>EST. 2026</span></div><a href="./gallery.html" class="finale-title"><span>KEEP <i>✳</i></span><span>CREATING<span class="finale-period">.</span><b aria-hidden="true">↗</b></span></a><div class="finale-caption"><span>${c('热爱没有终点，好奇心也是。','No finish line for curiosity.')}</span><span>VIVA LA VIDA</span></div>`;};
+  const render=()=>{finale.setAttribute('aria-label',c('保持热爱，继续创造','Keep loving. Keep creating.'));finale.innerHTML=`<div class="finale-eyebrow"><span>CHEFZC / AN OPEN-ENDED EXPERIMENT</span><span>EST. 2026</span></div><a href="./gallery.html" class="finale-title"><span>KEEP <i>∞</i></span><span>CREATING<span class="finale-period">.</span><b aria-hidden="true">↗</b></span></a><div class="finale-caption"><span>${c('热爱没有终点，好奇心也是。','No finish line for curiosity.')}</span><span>VIVA LA VIDA</span></div>`;};
   render();onLanguageChange(render);directory.before(finale);
 }
 
@@ -58,7 +59,8 @@ function addIndex(){
   const grid=document.querySelector('#project-grid');
   if(grid&&!document.querySelector('.scene-index--works')){
     const nav=document.createElement('nav');nav.className='scene-index scene-index--works';nav.setAttribute('aria-label',c('快速浏览作品','Browse the collection'));
-    const projects=[['aer','AER','09','aer'],['roseraie','ROSERAIE','08','rose'],['atlas','ATLAS','07','atlas'],['chroma','CHROMA','06','chroma'],['projectlens','PROJECTLENS','05','lens'],['festival-toolkit','FESTIVAL','04','festival'],['axiom','AXIOM','03','axiom'],['folio','FOLIO','02','folio'],['nba-after-hours','AFTER HOURS','01','court']];
+    const labels={'festival-toolkit':'FESTIVAL','nba-after-hours':'AFTER HOURS'};
+    const projects=siteProjects.map(project=>[project.id,labels[project.id]||project.name.toUpperCase(),project.number,project.layout]);
     nav.innerHTML=projects.map(([id,name,number,theme])=>`<a href="#project-${id}" data-index-theme="${theme}"><i aria-hidden="true"></i><small>${number}</small><span>${name}</span><b aria-hidden="true">↓</b></a>`).join('');grid.before(nav);
   }
   const divider=document.querySelector('.profile-divider');

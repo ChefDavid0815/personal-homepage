@@ -13,13 +13,13 @@
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="preload" href="./assets/doto.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="./style.css"><script type="module" src="./app.js"></script>
-</head>
+<link rel="stylesheet" href="/flow-tools.css"></head>
 <body>
   <a class="skip" href="#forecast">Skip to forecast</a>
   <div class="page">
-    <header class="topbar"><a href="/profile.html" class="brand" aria-label="Back to ChefZC"><span class="brand-symbol">c_</span> ChefZC<span class="slash">/</span><span class="lab-label">SMALL INTERNET EXPERIMENTS</span></a><div class="top-actions"><a href="#method" data-copy="how">How it works</a><button id="language" type="button" aria-label="切换中文">中文</button></div></header>
+    <header class="topbar"><a href="/profile.html" class="brand" aria-label="Back to ChefZC"><span class="brand-symbol">c_</span> ChefZC<span class="slash">/</span><span class="lab-label">SMALL INTERNET EXPERIMENTS</span></a><div class="top-actions"><a class="flow-tool-index" href="/explore.html">Index / 索引</a><a href="#method" data-copy="how">How it works</a><button id="language" type="button" aria-label="切换中文">中文</button></div></header>
     <main>
-      <section class="intro" aria-labelledby="title"><div><p class="eyebrow"><span class="mini-grid" aria-hidden="true">⠿</span><span data-copy="kicker">FOR THE TEMPORARILY TOKENLESS</span></p><h1 id="title">WHEN TO <br><span>RESET</span><span class="question">?</span></h1><p class="intro-copy" data-copy="intro">Your tokens are gone. Your hope isn't.</p></div><aside class="intro-stamp"><span class="stamp-top">CODEX</span><strong>0<span>%</span></strong><span data-copy="stamp">out of tokens<br>full of feelings</span><span class="stamp-spark" aria-hidden="true">✳</span></aside></section>
+      <section class="intro" aria-labelledby="title"><div><p class="eyebrow"><span class="mini-grid" aria-hidden="true">⠿</span><span data-copy="kicker">FOR THE TEMPORARILY TOKENLESS</span></p><h1 id="title">WHEN TO <br><span>RESET</span><span class="question">?</span></h1><p class="intro-copy" data-copy="intro">Your tokens are gone. Your hope isn't.</p></div><aside class="intro-stamp"><span class="stamp-top">CODEX</span><strong>0<span>%</span></strong><span data-copy="stamp">out of tokens<br>full of feelings</span><span class="stamp-spark" aria-hidden="true">∞</span></aside></section>
       <section id="forecast" aria-label="Reset forecast">
         <div class="monitor-bar"><p id="connection" role="status"><span class="status-dot"></span><span data-copy="connecting">Connecting to the signal desk…</span></p><div class="monitor-tools"><label for="timezone" data-copy="timezone">Day boundary</label><select id="timezone"><option value="America/Los_Angeles">San Francisco · PT</option><option value="UTC">UTC</option><option value="Asia/Dubai">Dubai · GST</option></select><button id="refresh" class="refresh" aria-label="Refresh sources" title="Refresh sources">↻</button></div></div>
         <div class="forecast-grid">
@@ -27,7 +27,7 @@
           <div class="right-stack"><article class="odds-card tomorrow"><div class="card-heading"><span class="eyebrow" data-copy="tomorrow">02 / TOMORROW</span><span id="tomorrow-date" class="chip">—</span></div><div class="tomorrow-body"><div class="probability"><strong id="tomorrow-value">--</strong><span>%</span></div><p data-copy="tomorrowNote">A new day.<br>A fresh dose of maybe.</p></div></article>
           <article class="button-card"><div class="button-copy"><span class="eyebrow" data-copy="ritual">THE UNOFFICIAL BUTTON</span><h2 data-copy="pressTitle">Press for<br>emotional support.</h2><p id="press-message" role="status" data-copy="pressNote">Does absolutely nothing to your quota.</p></div><button id="reset-button" aria-label="Press the pretend reset button"><span class="button-icon">↻</span><span>RESET</span></button><span class="press-counter"><span id="press-count">0</span> <span data-copy="presses">LOCAL HOPES SENT</span></span></article></div>
         </div>
-        <div class="forecast-foot"><p><span class="asterisk">✳</span> <span data-copy="experimental">Experimental estimate. Not a promise, not an OpenAI product.</span></p><span id="checked-at">—</span></div>
+        <div class="forecast-foot"><p><span class="asterisk">∞</span> <span data-copy="experimental">Experimental estimate. Not a promise, not an OpenAI product.</span></p><span id="checked-at">—</span></div>
         <div id="latest-event" class="latest-event" hidden></div>
         <div id="source-warning" class="source-warning" role="status" hidden></div>
       </section>

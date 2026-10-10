@@ -54,3 +54,36 @@ export function renderNeRFReader() {
   const text = nerfPost[getLanguage()];
   return `<nav class="reader-topline" aria-label="${nc('文章导航','Article navigation')}"><a href="./posts.html">← ${nc('所有随笔','ALL POSTS')}</a><span>RESEARCH LOG / 014</span><a href="${nerfLinks.project}">NeRF ↗</a></nav><article class="nerf-reader" aria-labelledby="article-title"><header class="nerf-reader-header"><div class="nerf-editorial-meta"><span>${text.category}</span><time datetime="2026-09-30">2026.09.30</time></div><h1 id="article-title">${text.title}</h1><p class="nerf-reader-deck">${text.summary}</p></header><div class="nerf-reader-cover">${fieldArt({caption:false})}<div class="nerf-post-word" aria-hidden="true">NeRF<span>_</span></div></div><div class="nerf-editorial-grid"><aside class="nerf-editorial-aside" aria-label="${nc('本篇目录','On this page')}"><span>LEGO / L10 / SEED 0</span><ol>${text.sections.map((section,i)=>`<li><a href="#chapter-${i+1}">${section.title}</a></li>`).join('')}</ol><small>RESEARCH START / 2026.09.24<br>PUBLICATION / 2026.09.30<br>256 RAYS / RECORDED RUN<br>CHEFZC / SCHOOL LAB</small></aside><div class="nerf-editorial-body"><p>${text.lead}</p>${text.sections.map((section,i)=>`<section class="nerf-editorial-chapter" id="chapter-${i+1}"><span class="nerf-overline">${['CAMERA GEOMETRY','CONTINUOUS REPRESENTATION','RECORDED RECONSTRUCTION','LOCAL WORKSTATION','MEASUREMENT BOUNDARIES','THE NEXT QUESTION'][i]}</span><h2>${section.title}</h2>${section.paragraphs.map(p=>`<p>${safe(p)}</p>`).join('')}${technicalInsert(i)}</section>`).join('')}<div class="nerf-reader-tail"><p>${text.afterword}<br>ChefZC</p><div class="nerf-actions"><a class="nerf-button" href="${nerfLinks.project}">${text.cta} <span aria-hidden="true">↗</span></a><a class="nerf-text-link" href="${nerfLinks.source}" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a class="nerf-text-link" href="${nerfLinks.now}">Now ↗</a></div></div></div></div></article><section class="more-notes"><div class="posts-section-label"><span>${nc('继续探索','CONTINUE EXPLORING')}</span><a href="./posts.html">${nc('所有随笔','ALL POSTS')} ↗</a></div><div><a class="next-note" href="${nerfLinks.exhibition}"><span class="mono">THE SCHOOL LAB</span><h2>${nc('回到计算标本展柜','Return to the computational specimen')}</h2><span aria-hidden="true">↗</span></a></div></section>`;
 }
+
+// Journal reader parts: the shared long-read frame (posts.js) asks for NeRF's own inserts,
+// so the research log keeps its instrument plates and evidence while reading like every other post.
+const jrIcon = '<svg class="ic" aria-hidden="true"><use href="./assets/flow/current-icons.svg#arrow-up-right"></use></svg>';
+const jrFigure = (src, w, h, alt, caption) => `<figure class="article-figure jr-figure"><div><img src="${src}" width="${w}" height="${h}" alt="${safe(alt)}" loading="lazy" decoding="async"></div><figcaption>${safe(caption)}</figcaption></figure>`;
+export function nerfReaderParts() {
+  const lang = getLanguage();
+  const overlines = ['CAMERA GEOMETRY','CONTINUOUS REPRESENTATION','RECORDED RECONSTRUCTION','LOCAL WORKSTATION','MEASUREMENT BOUNDARIES','THE NEXT QUESTION'];
+  const insert = index => {
+    if(index===1) return `<div class="jr-instrument nerf-scope">${pipelineDiagram()}<pre><code>γ(x) = [x, sin(2⁰πx), cos(2⁰πx), …]
+r(t) = o + td
+Fθ(x, d) → (σ, c)
+Ĉ(r) = Σ Tᵢ αᵢ cᵢ</code></pre></div>`;
+    if(index===2) return jrFigure(`${nerfAsset}reconstruction.webp`, 800, 800, nc('50,000 次 checkpoint 的 800 × 800 验证视角 000 实际输出','Actual 800 × 800 validation view 000 at checkpoint 50,000'), `LEGO / VAL 000 / ITER 050000 / ${nc('真实全图评估输出','RECORDED FULL-RESOLUTION OUTPUT')}`).replace('article-figure jr-figure', 'article-figure jr-figure jr-figure--square');
+    if(index===3) return jrFigure(`${nerfAsset}workstation-${lang}.webp`, 1440, 960, nc('真实 NeRF 本地工作台界面','Actual local NeRF workstation interface'), nc('真实软件截图 / 2026.09.30 / 当前没有训练','Actual software capture / 2026.09.30 / No active training'));
+    if(index===4) return `<div class="jr-instrument nerf-scope"><table class="nerf-evidence-ledger"><caption class="visually-hidden">${nc('选定视角的全图评估','Full-resolution evaluation of selected views')}</caption><thead><tr><th scope="col">SPLIT / VIEWS</th><th scope="col">PSNR ↑</th><th scope="col">SSIM ↑</th><th scope="col">LPIPS ↓</th></tr></thead><tbody><tr><td>VAL / 0,1,2</td><td>27.333</td><td>0.88850</td><td>0.08770</td></tr><tr><td>TEST / 0,1,2,66,133</td><td>26.055</td><td>0.89022</td><td>0.09240</td></tr></tbody></table><a class="jr-instrument-link" href="${nerfLinks.source}/tree/main/docs/evidence" target="_blank" rel="noopener noreferrer">${nc('查看原始记录','Inspect the recorded evidence')} ${jrIcon}</a></div>`;
+    return '';
+  };
+  return {
+    toplineLabel: 'RESEARCH LOG / 014',
+    projectLink: nerfLinks.project,
+    cover: `<div class="nerf-reader-cover nerf-scope">${fieldArt({caption:false})}<div class="nerf-post-word" aria-hidden="true">NeRF<span>_</span></div></div>`,
+    railTag: 'LEGO / L10 / SEED 0',
+    facts: ['RESEARCH START / 2026.09.24', 'PUBLICATION / 2026.09.30', '256 RAYS / RECORDED RUN', 'CHEFZC / SCHOOL LAB'],
+    overline: index => overlines[index] || '',
+    insert,
+    links: [
+      { href: nerfLinks.source, label: 'GitHub', external: true },
+      { href: nerfLinks.now, label: 'Now' }
+    ],
+    beyond: { href: nerfLinks.exhibition, tag: 'THE SCHOOL LAB', title: nc('回到计算标本展柜','Return to the computational specimen'), heading: nc('继续探索','Continue exploring') }
+  };
+}

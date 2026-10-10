@@ -47,3 +47,12 @@ test('ingestion rejects an unauthenticated writer before storage',async()=>{
   let code,body;const response={setHeader(){},status(value){code=value;return this;},json(value){body=value;}};
   await handler({method:'POST',headers:{},body:snapshot},response);assert.equal(code,401);assert.equal(body.error,'Unauthorized');
 });
+
+test('Claude rows price 5-minute and 1-hour cache writes separately', async () => {
+  const {costOf} = await import('../dist/usage-math.js');
+  const row = {model:'claude-opus-5-5',context:'short',input:1_000_000+2_000_000+3_000_000,cached:3_000_000,write:2_000_000,write1h:500_000,output:1_000_000};
+  // 1M uncached x $4 + 3M reads x $0.20 + 1.5M 5-min writes x $5 + 0.5M 1-hour writes x $8 + 1M output x $20
+  assert.equal(Math.round(costOf(row)*100)/100, 4+0.6+7.5+4+20);
+  const haiku = {model:'claude-haiku-5-5',context:'long',input:200_000,cached:0,write:0,write1h:0,output:0};
+  assert.equal(Math.round(costOf(haiku)*1e4)/1e4, 0.1);
+});

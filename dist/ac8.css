@@ -1,0 +1,180 @@
+/* ACE COMBAT 8 / Wings of Theve — the Game room's first exhibit.
+   A night tactical chart seen from above: luminous contour fields, a radar sweep and HUD read-outs over a dark sky,
+   the real F-35C top-view in its own grey, and the Tasha sticker (owner requirement: always kept). Motion: ac8-motion.js. */
+.ac8-exhibit{--ace-night:#08131f;--ace-deep:#0d1f31;--ace-hud:#d5ed9c;--ace-cyan:#8fe3d9;--ace-flare:#ff6748;--ace-paper:#eef3ea;--ace-dim:#eef3eab3;--ace-wide:'Flow Wide','hellofont-id-chunhei','Noto Sans SC',sans-serif;--ace-body:'DM Sans','hellofont-id-juejianghei50','Noto Sans SC',sans-serif;--ace-zh:'hellofont-id-chunhei','hellofont-id-juejianghei80','Noto Sans SC',sans-serif;--ace-mono:'IBM Plex Mono','hellofont-id-juejianghei65','Noto Sans SC',monospace;--ace-pad:max(var(--gutter,24px),calc((100vw - 1680px)/2));position:relative;background:var(--ace-night);color:var(--ace-paper);font-family:var(--ace-body);margin:0 calc(50% - 50vw);border:0;border-radius:0;overflow:clip;scroll-margin-top:76px}
+.ac8-exhibit *{box-sizing:border-box}
+.ac8-exhibit.atelier-arrive{animation:none;opacity:1;translate:0 0}
+.ac8-exhibit.atelier-surface:before{display:none}
+
+/* ── The chart ── */
+.ac8-stage{position:relative;isolation:isolate;container-type:inline-size;min-height:max(880px,min(100svh,1040px));color:var(--ace-hud);overflow:clip;background:radial-gradient(70% 55% at 62% 46%,#173452 0%,transparent 72%),radial-gradient(60% 50% at 10% 100%,#0f2a3b 0%,transparent 70%),linear-gradient(180deg,#060e19 0%,#0b1a2b 55%,#0e2233 100%)}
+.ac8-map-window{position:absolute;inset:0;overflow:hidden;z-index:0}
+.ac8-map{display:block;width:100%;height:100%;object-fit:cover;opacity:.13;filter:invert(1) hue-rotate(180deg) saturate(.5);mix-blend-mode:screen;will-change:transform}
+.ac8-map-wash{position:absolute;inset:0;background:radial-gradient(80% 70% at 30% 70%,#ff6748aa,transparent 70%),linear-gradient(180deg,transparent 40%,#b0463488);opacity:calc(var(--ac8-warm,0)*.6);pointer-events:none;mix-blend-mode:screen}
+.ac8-map-window:after{content:"";position:absolute;inset:0;background:#0b2a44;opacity:calc(var(--ac8-war,0)*.35);pointer-events:none;mix-blend-mode:multiply}
+.ac8-cloud{position:absolute;border-radius:50%;pointer-events:none;background:radial-gradient(closest-side,#dfe9f0 0%,#dfe9f055 45%,transparent 100%);opacity:.09;mix-blend-mode:screen}
+.ac8-cloud-a{left:-12%;top:46%;width:62%;height:48%}
+.ac8-cloud-b{right:-14%;top:-12%;width:58%;height:44%;opacity:.07}
+.ac8-stage:after{content:"";position:absolute;left:0;right:0;bottom:0;height:200px;background:linear-gradient(transparent,#08131fe6);pointer-events:none;z-index:2}
+.ac8-radar{position:absolute;inset:0;width:100%;height:100%;color:#d5ed9c59;overflow:visible}
+.ac8-live-contours{fill:none;stroke:var(--ace-cyan);stroke-width:.9;opacity:.26}
+.ac8-live-contours path:nth-child(5n){stroke-width:1.5;opacity:.75;stroke:var(--ace-hud)}
+.ac8-vector-targets{opacity:calc(.3 + var(--ac8-war,0)*.7)}
+.ac8-radar-sweep{transform-origin:680px 400px;transform-box:view-box}
+.ac8-target-ring{opacity:.85}
+.ac8-enemy-photo{filter:brightness(.62) contrast(1.1) drop-shadow(0 0 1px #08131f) drop-shadow(0 6px 6px #00000080)}
+.ac8-enemy-route{fill:none;stroke:var(--ace-flare);stroke-width:1;stroke-dasharray:3 7;opacity:.6}
+.ac8-enemy-lock{fill:none;stroke:var(--ace-flare);stroke-width:1.3}
+.ac8-enemy-id{font:500 8px var(--ace-mono);fill:#ffb3a3}
+.ac8-effects{position:absolute;inset:0;width:100%;height:100%;z-index:4;pointer-events:none;overflow:visible}
+.ac8-countermeasure-sprite{filter:drop-shadow(0 0 4px #ffc773aa)}
+.ac8-flare-smoke{fill:none;stroke:#fff6e0;stroke-width:3;stroke-linecap:round;opacity:.5}
+.ac8-flare-spark{fill:#ffdd8a}
+.ac8-missile-sprite{filter:url(#ac8-small-paper) drop-shadow(0 4px 5px #0009)}
+.ac8-missile-vapor{fill:none;stroke:#f4f8ff;stroke-width:6;stroke-linecap:round;stroke-dasharray:0 1;opacity:.6}
+.ac8-missile-smoke{fill:none;stroke:var(--ace-flare);stroke-width:2;stroke-linecap:round;opacity:.8;stroke-dasharray:0 1}
+.ac8-missile-shock{fill:none;stroke:var(--ace-flare);stroke-width:1.5}
+.ac8-missile-body{transform-origin:center}
+.ac8-launch-flare{fill:#fffbde;filter:drop-shadow(0 0 16px #ff714b)}
+
+/* ── HUD furniture ── */
+.ac8-hud-top{position:absolute;left:0;right:0;top:0;z-index:7;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:20px var(--ace-pad) 0;font:500 12px/1.4 var(--ace-mono);color:var(--ace-hud);pointer-events:none}
+.ac8-hud-top>span:nth-child(2){color:var(--ace-dim)}
+.ac8-hud-id{font-weight:600;font-size:14px}
+.ac8-tape{position:absolute;left:0;right:0;top:52px;width:100%;height:40px;stroke:#d5ed9c66;stroke-width:1;fill:#d5ed9c99;font:500 9px var(--ace-mono);mask-image:linear-gradient(90deg,transparent,#000 18%,#000 82%,transparent)}
+.ac8-tape text{text-anchor:middle;stroke:none}
+.ac8-bracket{position:absolute;z-index:6;width:30px;height:30px;border:0 solid var(--ace-hud);opacity:.7;pointer-events:none}
+.ac8-bracket-tl{left:calc(var(--ace-pad) - 14px);top:104px;border-left-width:1.5px;border-top-width:1.5px}
+.ac8-bracket-tr{right:calc(var(--ace-pad) - 14px);top:104px;border-right-width:1.5px;border-top-width:1.5px}
+.ac8-bracket-bl{left:calc(var(--ace-pad) - 14px);bottom:22px;border-left-width:1.5px;border-bottom-width:1.5px}
+.ac8-bracket-br{right:calc(var(--ace-pad) - 14px);bottom:22px;border-right-width:1.5px;border-bottom-width:1.5px}
+.ac8-ambient-hud{position:absolute;left:var(--ace-pad);top:118px;z-index:7;display:grid;gap:6px;color:var(--ace-hud);pointer-events:none;font:500 12px/1.3 var(--ace-mono)}
+.ac8-ambient-hud span{display:flex;justify-content:space-between;gap:18px;min-width:150px;padding:5px 0;border-bottom:1px solid #d5ed9c33}
+.ac8-ambient-hud b{font-weight:600;color:var(--ace-paper);font-variant-numeric:tabular-nums}
+.ac8-chart-foot{position:absolute;left:var(--ace-pad);right:var(--ace-pad);bottom:34px;z-index:7;display:flex;justify-content:space-between;gap:20px;font:500 12px/1.4 var(--ace-mono);color:var(--ace-dim)}
+.ac8-chart-foot span:nth-child(2){color:var(--ace-hud)}
+
+/* ── Title ── */
+.ac8-title-layer{position:absolute;left:var(--ace-pad);bottom:90px;z-index:6;max-width:min(64%,920px);pointer-events:none}
+.ac8-title-layer h2{margin:0;font:800 clamp(60px,8.2cqi,150px)/.9 var(--ace-wide);letter-spacing:-.07em;color:var(--ace-paper);text-transform:uppercase;text-shadow:0 10px 40px #08131f}
+.ac8-line-mask{display:block;overflow:hidden;padding-block:.06em;margin-block:-.03em;white-space:nowrap}
+.ac8-line-mask>span{display:block;transform-origin:0 100%}
+.ac8-line-mask b{display:inline-flex;align-items:center;justify-content:center;width:1.06em;height:1.06em;margin-left:.08em;border-radius:50%;background:var(--ace-hud);color:var(--ace-night);font:800 .7em/1 var(--ace-wide);letter-spacing:-.04em;vertical-align:.04em}
+.ac8-subtitle{display:block;margin-top:18px;font:500 13px/1.4 var(--ace-mono);color:var(--ace-hud)}
+.ac8-title-layer>p{margin:14px 0 0;max-width:30em;font:400 16px/1.8 var(--ace-body);color:var(--ace-dim)}
+
+/* ── Aircraft and the Tasha sticker ── */
+.ac8-aircraft{position:absolute;left:27%;top:96px;width:33%;aspect-ratio:3000/2328;z-index:3;transform-origin:50% 50%;pointer-events:none;will-change:transform}
+.ac8-aircraft img{display:block;width:100%;height:100%;object-fit:contain;filter:brightness(.92) contrast(1.05) drop-shadow(0 34px 26px #00000094)}
+.ac8-wing-label{position:absolute;left:57%;top:132px;z-index:5;color:var(--ace-hud);pointer-events:none}
+.ac8-wing-label>span{display:block;font:800 26px/1 var(--ace-wide);letter-spacing:-.05em;color:var(--ace-paper)}
+.ac8-wing-label small{display:block;margin-top:8px;font:500 12px/1.4 var(--ace-mono)}
+.ac8-wing-label svg{display:block;width:150px;height:40px;margin-top:10px;transform:scaleX(-1)}
+.ac8-tasha-wrap{position:absolute;right:calc(var(--ace-pad) - 1%);top:110px;width:31%;max-width:470px;z-index:5;transform-origin:50% 20%;will-change:transform;pointer-events:none}
+.ac8-tasha{display:block;width:100%;height:auto;filter:drop-shadow(0 26px 30px #000000a6)}
+.ac8-tasha-stamp{position:absolute;top:2%;right:-2%;padding:10px 14px;background:var(--ace-hud);color:var(--ace-night);font:800 clamp(16px,1.8cqi,26px)/1.1 var(--ace-wide);letter-spacing:-.04em;rotate:-6deg;box-shadow:0 10px 20px -6px #0008}
+.ac8-tasha-stamp span{display:block;margin-top:5px;font:500 10px/1.4 var(--ace-mono);letter-spacing:0}
+.ac8-tasha-note{position:absolute;right:6%;bottom:-6px;padding:6px 10px;background:#08131fcc;color:var(--ace-paper);font:500 12px/1.3 var(--ace-mono);border-radius:3px}
+
+/* ── Cockpit: view and launch controls ── */
+.ac8-cockpit{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:28px 6vw;padding:36px var(--ace-pad);background:var(--ace-night);border-top:1px solid #d5ed9c26}
+.ac8-view-copy{display:grid;gap:10px}
+.ac8-view-copy h3{margin:0;font:400 clamp(24px,2.2vw,34px)/1.3 var(--ace-zh);letter-spacing:0;color:var(--ace-paper)}
+html[lang=en] .ac8-view-copy h3{font:800 clamp(20px,1.8vw,28px)/1.15 var(--ace-wide);letter-spacing:-.04em}
+.ac8-view-copy p{margin:0;max-width:44em;font:400 15px/1.8 var(--ace-body);color:var(--ace-dim)}
+.ac8-launch-status{min-height:18px;font:500 12px/1.5 var(--ace-mono);color:var(--ace-hud)}
+.ac8-flight-console{display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:flex-end}
+.ac8-view-buttons{display:flex;padding:4px;border-radius:999px;box-shadow:inset 0 0 0 1px #eef3ea33}
+.ac8-view-buttons button{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 18px;border:0;border-radius:999px;background:transparent;color:var(--ace-paper);font:600 14px/1 var(--ace-body);cursor:pointer;transition:background .3s,color .3s}
+.ac8-view-buttons small{font:500 12px/1 var(--ace-mono);opacity:.7}
+.ac8-view-buttons button:hover{background:#d5ed9c1f}
+.ac8-view-buttons button[aria-pressed=true]{background:var(--ace-hud);color:var(--ace-night)}
+.ac8-fire{display:inline-flex;align-items:center;gap:12px;min-height:52px;padding:0 22px 0 18px;border:0;border-radius:999px;background:var(--ace-flare);color:#1a0d08;font:700 14px/1 var(--ace-body);cursor:pointer;transition:transform .4s var(--ease-out,ease),box-shadow .4s}
+.ac8-fire:hover{box-shadow:0 12px 30px -12px #ff6748}
+.ac8-fire-cross{width:22px;height:22px;transition:rotate .5s var(--ease-out,ease)}
+.ac8-fire:hover .ac8-fire-cross{rotate:90deg}
+.ac8-fire-go{width:18px;height:18px;transition:translate .25s}
+.ac8-fire:active .ac8-fire-go{translate:3px -3px}
+
+/* ── Flight log: Steam record as an instrument cluster ── */
+.ac8-flight-log{padding:clamp(40px,4.5vw,72px) var(--ace-pad) clamp(34px,3.5vw,52px);background:linear-gradient(180deg,#0b1a2a,#08131f);color:var(--ace-paper);border-top:1px solid #d5ed9c26}
+.ac8-log-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:clamp(26px,3vw,44px)}
+.ac8-log-src{font:500 12px/1.4 var(--ace-mono);color:var(--ace-hud)}
+.ac8-log-heading h3{margin:10px 0 0;font:400 clamp(32px,3.4vw,56px)/1.15 var(--ace-zh);letter-spacing:0;color:var(--ace-paper)}
+html[lang=en] .ac8-log-heading h3{font:800 clamp(28px,3vw,48px)/1 var(--ace-wide);letter-spacing:-.05em}
+.ac8-sync{display:flex;align-items:center;gap:10px;padding:10px 16px;border-radius:999px;box-shadow:inset 0 0 0 1px #eef3ea2e;font:600 13px/1.3 var(--ace-body);color:var(--ace-paper);max-width:320px}
+.ac8-sync i{display:block;width:9px;height:9px;border-radius:50%;flex:none;background:#e0b25e;box-shadow:0 0 0 3px #e0b25e33}
+.ac8-flight-log[data-ac8-record-status=synced] .ac8-sync i{background:#35d49a;box-shadow:0 0 0 3px #35d49a40}
+.ac8-flight-log[data-ac8-record-status=unavailable] .ac8-sync i{background:var(--ace-flare);box-shadow:0 0 0 3px #ff674833}
+.ac8-flight-log[data-ac8-record-status=connecting] .ac8-sync i{background:var(--ace-cyan)}
+.ac8-stats{display:grid;grid-template-columns:1fr 1fr 1.15fr;gap:clamp(12px,1.6vw,24px)}
+.ac8-gauge{position:relative;display:grid;align-content:space-between;gap:14px;min-width:0;padding:34px 24px 22px;border-radius:14px;background:#0f2335;box-shadow:inset 0 0 0 1px #d5ed9c1f;overflow:hidden}
+.ac8-gauge::before{content:'';position:absolute;left:24px;right:24px;top:14px;height:9px;background:repeating-linear-gradient(90deg,#d5ed9c66 0 1px,transparent 1px 10px);mask-image:linear-gradient(90deg,#000 70%,transparent)}
+.ac8-gauge::after{content:'';position:absolute;left:24px;top:12px;width:1.5px;height:13px;background:var(--ace-flare)}
+.ac8-gauge>span{font:600 13px/1.3 var(--ace-body);color:var(--ace-dim)}
+.ac8-gauge strong{display:block;word-spacing:-.3em;font:600 clamp(28px,3.1vw,52px)/1.08 var(--ace-mono);letter-spacing:-.03em;color:var(--ace-paper);font-variant-numeric:tabular-nums}
+.ac8-gauge time{display:block;font:500 clamp(18px,1.6vw,26px)/1.3 var(--ace-mono);color:var(--ace-paper);font-variant-numeric:tabular-nums}
+.ac8-gauge small{font:500 12px/1.4 var(--ace-mono);color:var(--ace-hud)}
+.ac8-data-footer{display:grid;grid-template-columns:1fr 1fr auto;gap:20px 30px;align-items:center;margin-top:26px;padding-top:20px;border-top:1px solid #eef3ea1c}
+.ac8-data-footer>div>span{display:block;margin-bottom:6px;font:500 12px/1.3 var(--ace-body);color:var(--ace-dim)}
+.ac8-data-footer time{font:500 13px/1.6 var(--ace-mono);color:var(--ace-paper)}
+.ac8-data-footer button{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 18px;border:0;border-radius:999px;box-shadow:inset 0 0 0 1px #eef3ea4d;background:transparent;color:var(--ace-paper);font:600 13px/1 var(--ace-body);cursor:pointer;transition:background .3s,color .3s}
+.ac8-data-footer button .ic{width:16px;height:16px}
+.ac8-data-footer button:hover{background:var(--ace-hud);color:var(--ace-night)}
+.ac8-data-footer button[aria-busy=true] .ic{animation:ac8-spin 1s linear infinite}
+@keyframes ac8-spin{to{rotate:360deg}}
+.ac8-log-note{margin:20px 0 0;max-width:68ch;font:400 13px/1.8 var(--ace-body);color:var(--ace-dim)}
+.ac8-colophon{display:flex;align-items:center;gap:12px 28px;flex-wrap:wrap;padding:26px var(--ace-pad) 10px;border-top:1px solid #eef3ea1c}
+.ac8-colophon a{display:inline-flex;align-items:center;gap:8px;min-height:44px;color:var(--ace-paper);font:600 14px/1.4 var(--ace-body);text-decoration:underline;text-decoration-color:#d5ed9c80;text-underline-offset:6px}
+.ac8-colophon a:hover{color:var(--ace-hud)}
+.ac8-colophon .ic{width:16px;height:16px}
+.ac8-colophon-id{margin-left:auto;font:500 12px/1.4 var(--ace-mono);color:var(--ace-dim)}
+.ac8-credit{margin:0;padding:6px var(--ace-pad) 36px;max-width:calc(1100px + var(--ace-pad));font:400 12px/1.8 var(--ace-body);color:#eef3ea99}
+.ac8-credit a{display:inline-flex;align-items:center;gap:4px;color:var(--ace-paper);text-decoration:underline;text-underline-offset:3px}
+.ac8-credit .ic{width:13px;height:13px}
+.ac8-exhibit :focus-visible{outline:2px solid var(--ace-hud);outline-offset:4px}
+
+/* ── Hall index colour for AC8 is defined in flow-room-game.css ── */
+
+@media (max-width:1180px){
+  .ac8-title-layer{max-width:64%}
+  .ac8-aircraft{left:16%;width:44%}
+  .ac8-wing-label{display:none}
+  .ac8-tasha-wrap{width:34%}
+  .ac8-cockpit{grid-template-columns:1fr}
+  .ac8-flight-console{justify-content:flex-start}
+}
+@media (max-width:760px){
+  .ac8-exhibit{scroll-margin-top:104px}
+  .ac8-stage{min-height:960px}
+  .ac8-hud-top{flex-wrap:wrap;gap:4px 12px;padding-top:16px;font-size:10px}
+  .ac8-hud-top>span:nth-child(2){order:3;width:100%}
+  .ac8-hud-id{margin-left:auto;font-size:12px}
+  .ac8-tape{top:64px}
+  .ac8-bracket{display:none}
+  .ac8-title-layer{top:118px;bottom:auto;max-width:none;right:var(--ace-pad)}
+  .ac8-title-layer h2{font-size:clamp(40px,13.2cqi,80px)}
+  .ac8-subtitle{font-size:11px;margin-top:12px}
+  .ac8-title-layer>p{font-size:14px;max-width:24em}
+  .ac8-aircraft{left:-6%;top:420px;width:76%}
+  .ac8-tasha-wrap{right:2%;top:auto;bottom:96px;width:50%}
+  .ac8-tasha-stamp{right:-4%;font-size:15px}
+  .ac8-ambient-hud{top:auto;bottom:104px;font-size:10px}
+  .ac8-ambient-hud span{min-width:120px}
+  .ac8-chart-foot{bottom:22px;flex-wrap:wrap;gap:4px 12px;font-size:10px}
+  .ac8-chart-foot>span:last-child{display:none}
+  .ac8-cockpit{padding:28px var(--ace-pad)}
+  .ac8-flight-console{display:grid;grid-template-columns:1fr;width:100%}
+  .ac8-view-buttons{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+  .ac8-view-buttons button{justify-content:center;padding:0 8px;gap:6px;font-size:13px}
+  .ac8-view-buttons small{display:none}
+  .ac8-fire{justify-content:space-between}
+  .ac8-log-heading{flex-direction:column;align-items:flex-start;gap:16px}
+  .ac8-stats{grid-template-columns:1fr}
+  .ac8-data-footer{grid-template-columns:1fr;gap:16px}
+  .ac8-data-footer button{justify-self:start}
+  .ac8-colophon-id{width:100%;margin:0}
+}
+html[data-site-motion=off] .ac8-exhibit *{transition:none;will-change:auto}
+@media (prefers-reduced-motion:reduce){.ac8-exhibit *{transition:none!important;animation:none!important;will-change:auto}}
+@media (forced-colors:active){.ac8-stage{forced-color-adjust:none}.ac8-view-buttons button,.ac8-fire,.ac8-data-footer button{border:1px solid ButtonText}}

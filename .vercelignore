@@ -6,3 +6,8 @@ node_modules
 **/__pycache__
 **/*.pyc
 **/*.log
+
+# Publish the site, not local recovery snapshots or review captures.
+design/*
+!design/flow-styles.json
+Preview-Flow.cmd

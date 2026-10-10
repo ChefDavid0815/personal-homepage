@@ -1,0 +1,26 @@
+/* Reset tools: the same river identity with steady input and readable evidence. */
+:root{--ink:#202044;--blue:#2445ef}
+body{background:#eeeaf8;color:var(--ink)}
+.page{max-width:1400px}.topbar{border-color:#20204425}.brand-symbol{background:#2445ef;color:white;border-radius:50%;padding:9px;font-weight:700}
+.top-actions button{background:#202044;color:white;border-radius:30px;border-color:#202044}
+.intro h1{color:#2445ef}.intro h1 .question{color:#ff713e}.intro-stamp{background:#fcaed3;border-radius:70px 18px 70px 18px;border:0;box-shadow:none}
+.odds-card,.button-card,.reading-room{border-color:#20204425;box-shadow:none;border-radius:25px}
+.today{background:#f6ef59}.tomorrow{background:#c6f2c9}.button-card{background:#fcaed3}.reading-room{background:#f8f6ff}
+input,select{color:#202044;background:#f8f6ff;border-color:#20204455;border-radius:12px}
+.signal-card,.archive-card{border-color:#20204425;border-radius:18px;background:#faf8ff}
+.post-lookup{background:#e4def4;border-radius:22px}.lookup-controls button{background:#2445ef;color:white;border-radius:30px}
+:where(a,button,input,select,summary):focus-visible{outline:3px solid #2445ef;outline-offset:4px}
+:root{--muted:#49465f}
+.slash,.intro-copy,.monitor-tools label,.forecast-foot,.archive-disclaimer,
+.latest-event time,.latest-note,.method-body p,.archive-entry-copy p,
+.method-section summary .eyebrow,footer,footer>a,footer>span{color:#49465f}
+.intro h1 .question{color:#b43c1e}
+.intro-stamp .stamp-spark{color:#2445ef}
+.archive-entry .eyebrow,.archive-entry-copy .eyebrow{color:#31472c}
+/* Entry motion keeps reading opacity stable from the first frame. */
+@keyframes arrive{from{transform:translateY(10px)}to{transform:translateY(0)}}
+.tomorrow-body>p,.button-copy p,.press-counter,.press-counter span,
+.section-head .eyebrow,.section-head h2 span,#lookup-status,.signal-head time,
+.signal-handle,.source-row span,.source-description,.archive-entry-copy small,
+.banked-card p,.timeline-day,.state-tag,.time-box span,.archive-room p{color:#49465f}
+.source-row .bad{color:#885116}

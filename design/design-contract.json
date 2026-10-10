@@ -1,91 +1,148 @@
 {
   "schema_version": "1.0",
-  "system_version": "2.0.0",
-  "status": "final",
-  "project": "ChefZC personal homepage / Atlas 0.3 exhibition, Now milestone and field notes",
-  "brief": "Bring the personal-site Atlas presentation into the application's Renaissance observatory and painted cosmos, while keeping the site's collection, timeline and journal structures usable.",
-  "mode": "editorial",
-  "reproduction_target": "style",
-  "constraints": [
-    "Keep the existing Now timeline and the order of other projects and posts.",
-    "Use Atlas 0.3 artwork and verified knowledge counts; do not present decorative constellation coordinates as real graph data.",
-    "Maintain Chinese and English versions, keyboard paths, responsive layout and reduced-motion behavior."
-  ],
-  "assumptions": [
-    "The requested Now and Post redesign applies to the current Atlas entry and its article; earlier entries retain their project-specific art direction.",
-    "The three observatory plates are editorial views that link into the working Atlas application."
-  ],
-  "decisions": [
-    {
-      "topic": "Collection scale",
-      "choice": "A full-width painted overture, manuscript prologue, numerical ledger, three switchable celestial plates and closing invitation.",
-      "reason": "The Atlas entry should feel like a complete exhibition while retaining direct routes into the application, source and field notes."
-    },
-    {
-      "topic": "Now and Posts",
-      "choice": "Keep the site's timeline and journal frames; place an Atlas micro observatory in the Now art window and a matching editorial plate in the latest post and reader.",
-      "reason": "Preserves the reading chronology and each older project's own identity."
-    },
-    {
-      "topic": "Motion",
-      "choice": "Canvas starlight, slow SVG instruments, staged scroll reveals, an interactive light and view changes with an explicit pause control.",
-      "reason": "Give the observatory a sense of time and discovery without delaying access to content."
-    }
-  ],
-  "direction": {
-    "name": "The illuminated observatory",
-    "visible_rules": [
-      "Renaissance architectural frescoes act as monumental openings and close views.",
-      "Lapis blue space and thin brass instruments carry the active exploration areas.",
-      "Warm vellum sheets and classical lettering hold reading, facts and calls to action."
-    ],
-    "signature": "A painted cosmos unfolds into a working folio of three celestial plates.",
-    "avoid": ["Generic card grids inside the Atlas exhibit", "Unlabelled fake graph data", "Continuous motion without a pause path"]
+  "system_version": "3.4.0",
+  "status": "published and verified on 2026-10-09",
+  "project": "ChefZC personal website — 川流不息 / Everything in flow",
+  "brief": "An expressive, youthful dopamine portfolio whose flowing forms, typography, relationships and returns express continuity and causality. Preserve every existing work, note, record, source and asset.",
+  "theme": {
+    "name": "川流不息",
+    "statement": "万物流动不止，世间万物皆有轮回因果。",
+    "signature": "Offset Chinese theme lettering, interlocking sculptural currents, a continuous river spine and a navigable flow index."
   },
-  "tokens": {
-    "night": "#081624",
-    "lapis": "#142a43",
-    "gold": "#d7b77e",
-    "cream": "#f2e5c8",
-    "ink": "#23354a",
-    "copper": "#9e583c",
-    "source": "dist/atlas-v2.css"
+  "platform": "Existing static HTML / ESM JavaScript / CSS / esbuild; embedded apps keep their own interfaces.",
+  "sourceOfTruth": {
+    "content": "Existing project, post, music and research records; exact decorative revisions tracked in flow-authorized-art-revision.json, retired raster hash protected in the design archive.",
+    "routes": "dist/site-routes.js",
+    "catalogue": "dist/site-catalog.js + existing project and post records",
+    "visual": "dist/flow.css + dist/site-navigation.css",
+    "motionPreference": "dist/motion-state.js",
+    "sceneBuild": "scripts/build-motion.mjs"
   },
-  "typography": [
-    {"role": "Latin display", "family": "EB Garamond", "source_kind": "file", "path": "dist/assets/fonts/eb-garamond-latin-400-normal.woff2", "version": "Atlas 0.3 local subset"},
-    {"role": "Chinese display", "family": "AtlasZhuque / Zhuque Fangsong", "source_kind": "file", "path": "dist/assets/fonts/zhuque-fangsong-0212.woff2", "version": "Atlas 0.3 local subset"},
-    {"role": "Chinese reading", "family": "AtlasWenKai / LXGW WenKai GB", "source_kind": "file", "path": "dist/assets/fonts/lxgw-wenkai-gb-1522.woff2", "version": "Atlas 0.3 local subset"}
-  ],
-  "assets": [
-    {"path": "dist/assets/projects/atlas/philosophical-cosmos-03.webp", "source": "Atlas 0.3 philosophical cosmos artwork, optimized copy in the personal site", "license_status": "Project artwork; provenance documented in Atlas repo docs/COSMOS-ART-DIRECTION.md"},
-    {"path": "dist/assets/projects/atlas/cosmic-pigment-03.webp", "source": "Atlas 0.3 cosmic pigment artwork, optimized copy in the personal site", "license_status": "Project artwork; provenance documented in Atlas repo docs/COSMOS-ART-DIRECTION.md"},
-    {"path": "dist/atlas/art/renaissance-observatory.png", "source": "Atlas 0.3 Renaissance observatory artwork shipped with the web app", "license_status": "Project artwork; provenance documented in Atlas repo docs/ART-DIRECTION.md"}
+  "scope": [
+    "Personal profile and all original sections",
+    "Gallery and its four collection rooms",
+    "Game room",
+    "Now timeline",
+    "Posts and individual readers",
+    "Usage observatory",
+    "School and model exhibits",
+    "NeRF and AER public topics",
+    "Reset radar and archive",
+    "New flow index with 40 real destinations"
   ],
   "layout": {
-    "structure": "Gallery collection > Atlas overture > prologue > 3-plus-1 fact ledger > 3-plate observatory > epilogue; existing Now timeline and Posts order stay intact.",
-    "breakpoints_css_px": [1000, 700, 390],
-    "observed_viewports_css_px": [360, 390, 768, 1440],
-    "mobile_order": "The observatory rail precedes the active plate in DOM and visual order."
+    "composition": "Subject-led asymmetry; wide identity typography; flowing sculptural material; calm reading and direct controls.",
+    "breakpoints": [
+      600,
+      760,
+      1000,
+      1100,
+      1600
+    ],
+    "phone": "Recompose text and sculpture into a vertical flow; all primary navigation remains visible. Reading panels use comfortable insets; metrics become compact rows and the model ring separates from its legend below 600px."
   },
-  "motion": [
-    {"layer": "environment", "implementation": "72 deterministic canvas stars (44 on narrow stages), DPR capped at 1.5; slow 85-100 second SVG rotation; pause offscreen and when document is hidden."},
-    {"layer": "scene and story", "implementation": "GSAP ScrollTrigger reveals overture, headings and facts; short figure crop scrubs with reading."},
-    {"layer": "interaction", "implementation": "Plate controls update aria-pressed and live content; pointer light follows only while motion is enabled."},
-    {"layer": "reduced motion", "implementation": "Global motion switch and prefers-reduced-motion turn off continuous movement and staged transforms; content remains visible."}
+  "tokens": {
+    "paper": "#eeeaf8",
+    "ink": "#202044",
+    "blue": "#2445ef",
+    "pink": "#fcaed3",
+    "yellow": "#f6ef59",
+    "mint": "#c6f2c9",
+    "orange": "#ff713e"
+  },
+  "typography": [
+    {
+      "role": "Latin display",
+      "family": "Unbounded",
+      "weightRange": [
+        200,
+        900
+      ],
+      "source": "OFL self-hosted variable WOFF2"
+    },
+    {
+      "role": "Chinese display",
+      "family": "Noto Sans SC with readable system fallback",
+      "weight": 900
+    },
+    {
+      "role": "Reading / controls",
+      "family": "DM Sans + Noto Sans SC",
+      "mobileInputs": "16px to avoid Safari focus zoom"
+    }
   ],
-  "environment": {
-    "site_version": "1.22.0",
-    "atlas_content_version": "0.3.0",
-    "platform": "Windows",
-    "renderer": "Codex in-app Chromium browser",
-    "renderer_version": "unknown",
-    "delivery": "Static dist with Vercel project chefzc-homepage"
+  "assets": [
+    "design/flow-assets.json",
+    "design/flow-board.svg",
+    "dist/assets/flow/SOURCES.json",
+    "design/project-expression.json"
+  ],
+  "stateInvariants": [
+    "One shared language and motion preference across owned pages.",
+    "The current project identity is reflected in a shareable URL.",
+    "Browser Back closes a project view before leaving the collection.",
+    "Article return links point to the original stable card.",
+    "Changing language retains the selected Atlas plate.",
+    "Empty search and invalid project links have a working recovery path.",
+    "Copy transactions cannot publish stale feedback after language changes.",
+    "All collection rooms derive the main count from the actual project array."
+  ],
+  "motion": {
+    "ambient": "9-second sculptural breathing, flowing SVG traces, context-specific existing exhibit motion and native navigation transitions.",
+    "interaction": "One critically damped controller owns sculpture inspection and pointer pose; target changes retain position and velocity.",
+    "pause": "Shared OS/manual preference; background/offscreen suspension; full settled content in reduced motion.",
+    "build": "Shared Three.js engine chunks; canonical imports for language, motion and shared chrome."
   },
   "evidence": [
-    {"kind": "local browser and command verification", "path": "design/verification.md"}
+    "design/flow-spacing-verification.json",
+    "design/flow-reading-pass.json",
+    "design/flow-reading-readers.json",
+    "design/flow-reading-dialogs.json",
+    "design/flow-spacing-responsive.json",
+    "design/flow-contrast-after.json",
+    "design/flow-reader-contrast.json",
+    "design/flow-dialog-contrast.json",
+    "design/flow-art-revision-verification.json",
+    "design/flow-content-verification.json",
+    "design/flow-http-verification.json",
+    "design/flow-route-verification.json",
+    "design/flow-responsive-verification.json",
+    "design/flow-engine-verification.json",
+    "design/flow-navigation-verification.json",
+    "design/flow-qa/",
+    "design/flow-publication-verification.json",
+    "design/flow-release-responsive.json"
   ],
+  "review": {
+    "kind": "One-agent simulated review across nine perspectives; no independent experts or numerical award scores claimed.",
+    "perspectives": [
+      "Creative direction",
+      "Art direction",
+      "UX",
+      "Motion",
+      "Creative development",
+      "Frontend engineering",
+      "Accessibility",
+      "Performance",
+      "Mobile"
+    ]
+  },
   "limitations": [
-    "The plate illustrations are editorial; the actual node positions and tools are in /atlas/.",
-    "Hardware frame-time and 200% browser zoom were not measured in this pass."
+    "No Awwwards submission or award result claimed; the 2026-10-08 publication is tracked separately in flow-publication-verification.json.",
+    "Browser viewport emulation is not physical phone or Safari evidence.",
+    "Physical touch, screen-reader output, forced colours, 200% text zoom and hardware Web Vitals remain unverified.",
+    "QQ Music playback permissions remain platform-dependent.",
+    "Editable deliverables are local SVG/CSS/JS and specifications; no Figma/Illustrator cloud files created."
+  ],
+  "previousContract": "design/before-dopamine-20261007/design/design-contract.json",
+  "codeFingerprint": "90e6a83a62467ab9fe40b8f80a9b489aa8d4b979d78fdb412df683339da603bd",
+  "publication": {
+    "version": "1.25.0",
+    "domain": "https://chefzc.dev",
+    "deploymentId": "dpl_9g61kUqTL2GPYAqUREfKCUectKYT",
+    "evidence": "design/nabat-publication-verification.json"
+  },
+  "projectExhibits": [
+    "NABAT 1.1 / INJAZ"
   ]
 }

@@ -3,29 +3,25 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#101112">
+  <meta name="theme-color" content="#0b0d26">
   <meta name="description" content="ChefZC，在迪拜就读 IB 的 Year 12 学生。热爱篮球、赛车、Agent 与生活，向往计算机工程和空气动力学。">
-  <title>Personal Profile — ChefZC</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23c4fa5a'/%3E%3Cpath d='M39 18H28L17 32l11 14h11M43 43h8' fill='none' stroke='%23101112' stroke-width='7'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="./styles.css">
-  <link rel="stylesheet" href="./profile.css">
-  <link rel="stylesheet" href="./language.css">
+  <title>个人介绍 — ChefZC</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/flow/mark.svg">
+  <link rel="preconnect" href="https://use.typekit.net" crossorigin>
+  <script>(function(d){var c={kitId:'per8hkf',scriptTimeout:3000,async:true},h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/wf-loading/g,"")+" wf-inactive";},c.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+c.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(c)}catch(e){}};s.parentNode.insertBefore(tk,s)})(document);</script>
+  <link rel="preload" href="./assets/fonts/noto-sans-sc-site-variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="./flow-legacy-profile.css">
   <script type="module" src="./personal.js"></script>
-  <link rel="stylesheet" href="./personal.css">
-  <link rel="stylesheet" href="./music.css">
-  <link rel="stylesheet" href="./atelier.css">
-  <link rel="stylesheet" href="./atelier-scenes.css">
-  <link rel="stylesheet" href="./music-cover-art.css">
-  <link rel="stylesheet" href="./reset-entrance.css">
-  <script type="module" src="./atelier.js"></script>
-  <script src="./midautumn-season.js"></script>
-  <link rel="stylesheet" href="./midautumn-season.css">
-  <script type="module" src="./midautumn-moon.bundle.js"></script>
-  <link rel="stylesheet" href="./nerf.css">
   <script type="module" src="./nerf-entry.js"></script>
-</head>
-<body class="profile-page">
-  <a class="skip-link" href="#intro">跳到个人介绍</a>
+  <link rel="stylesheet" href="./flow.css">
+  <link rel="stylesheet" href="./flow-current.css">
+  <link rel="stylesheet" href="./flow-home.css">
+  <script type="module" src="./flow-motion.js"></script>
+  <script type="module" src="./flow-home.js"></script>
+<link rel="stylesheet" href="./site-navigation.css"></head>
+<body class="profile-page home-current">
+  <a class="skip-link" href="#creed">跳到个人介绍</a>
+  <div class="h-veil" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M22 14c1.6 11.5.6 23-7 36"/><path d="M32.5 19c1.4 7.5-.4 14.5.6 25"/><path d="M45 12c-1.8 13.5 1.8 27 .4 40"/></svg><span>川流不息 · EVERYTHING IN FLOW</span></div>
   <div class="site-shell">
     <header class="site-header">
       <a class="brand" href="./profile.html" aria-label="ChefZC 个人主页"><span class="brand-mark" aria-hidden="true">c<span>_</span></span><span>ChefZC<span class="brand-dot">.</span></span></a>
@@ -34,103 +30,239 @@
         <a class="nav-link" href="./gallery.html">Gallery<span class="nav-count" aria-hidden="true">↗</span></a>
         <a class="nav-link" href="./game.html">游戏</a>
         <a class="nav-link" href="./now.html">近况</a>
-      <a class="nav-link" href="./posts.html">随笔</a><a class="nav-link" href="./usage.html">用量</a></nav>
+        <a class="nav-link" href="./posts.html">随笔</a>
+        <a class="nav-link" href="./usage.html">用量</a>
+      </nav>
       <div class="header-tools"><span class="edition mono">PERSONAL SPACE <span>/</span> 001</span><div class="language-switch" role="group" aria-label="选择语言"><button type="button" data-language="zh" lang="zh-CN" aria-label="切换为中文" aria-pressed="true">中</button><button type="button" data-language="en" lang="en" aria-label="Switch to English" aria-pressed="false">EN</button></div></div>
     </header>
 
-    <main>
-<section class="profile-hero" aria-labelledby="profile-title">
- <div class="profile-hero-copy">
-  <p class="eyebrow mono"><span class="bracket">[</span> YEAR 12 · IB 学生 · 迪拜 <span class="bracket">]</span></p>
-  <h1 id="profile-title"><span class="profile-greeting">你好，我是</span><br><span class="profile-name">ChefZC</span><span class="profile-cursor" aria-hidden="true">_</span></h1>
-  <p class="profile-headline">保持热忱，保持热爱。<span class="profile-spark" aria-hidden="true">✳</span></p>
-  <p class="profile-hero-description">在迪拜读 IB 的高中生。<br>热爱篮球与赛车，也喜欢折腾 Agent、探索 AI。</p>
-  <div class="profile-actions"><a class="primary-button" href="./gallery.html">逛逛我的 Gallery <span aria-hidden="true">↗</span></a><a class="intro-link" href="#intro">更多关于我 <span aria-hidden="true">↓</span></a></div>
-  <p class="profile-coordinate mono"><span>迪拜 / 阿联酋</span><span class="coordinate-line"></span><span>VIVA LA VIDA</span></p>
- </div>
- <div class="identity-wrap">
-  <div class="identity-floating mono">热爱，是我的驱动力。</div>
-  <article class="identity-card" aria-label="ChefZC 数字名片">
-   <div class="identity-art"><div class="identity-top mono"><span>DIGITAL ID</span><span>YEAR_12</span></div><div class="monogram" aria-hidden="true">CZ<span>✳</span></div><div class="identity-art-footer mono"><span>保持热忱，保持热爱。</span><span>© CHEFZC</span></div></div>
-   <div class="identity-details"><div class="identity-name"><strong>ChefZC<span>_</span></strong><span class="identity-role mono">YEAR 12 / IB 学生</span></div>
-    <dl class="identity-fields"><div><dt>昵称</dt><dd>ChefZC</dd></div><div><dt>坐标</dt><dd>迪拜，阿联酋</dd></div><div><dt>探索中</dt><dd>AI 与神经网络<span class="identity-caret" aria-hidden="true">▌</span></dd></div></dl>
-    <div class="identity-signature"><span class="mono">&lt; student /&gt;</span><span class="signature">ChefZC.</span></div>
-   </div>
-  </article>
-  <div class="identity-caption mono"><span class="lime-text">+</span> GEMS Wellington International School</div>
- </div>
-</section>
-<div class="profile-divider" aria-hidden="true"><span class="mono">热爱</span><span>→</span><span class="mono">探索</span><span>→</span><span class="mono">创造</span><span class="divider-rule"></span><span class="mono">生活 <b>✳</b></span></div>
-<a class="reset-entrance" href="/when-to-reset/" aria-label="When to Reset — Codex reset radar">
- <span class="reset-entry-label">A SMALL INTERNET EXPERIMENT <span>↳</span></span><span class="reset-entry-copy"><strong>WHEN TO RESET?</strong><span id="reset-entry-description">额度用完了，希望还没有。今天会重置吗？</span></span><span class="reset-entry-button" id="reset-entry-action">查看线索 ↗</span>
-</a>
-<section class="profile-intro" id="intro" aria-labelledby="intro-title" data-reveal>
- <div class="profile-section-heading"><p class="eyebrow mono">01 / 一点关于我</p><h2 id="intro-title">用户名之外<span class="purple-dot">.</span></h2></div>
- <div class="intro-grid"><article class="readme-panel"><div class="readme-toolbar"><span class="readme-file mono"><span aria-hidden="true">↳</span> README.md</span><span class="mono">THE PERSONAL EDITION</span></div><div class="readme-content"><p class="readme-title"><span class="mono">#</span> 你好，再正式认识一下。</p><p>我是 <strong>ChefZC</strong>，一名在迪拜生活的 Year 12 高中生，目前在 <strong>GEMS Wellington International School</strong> 攻读 IB。</p><p>我对生活充满热爱和向往：想去看广阔的远方、世界的美景，也想认真感受眼前的美好。篮球、赛车、画画和书法，是生活里让我投入其中的事；电脑硬件、AI 趋势和 Agent，则让我一直想弄明白「它是怎么做到的」。</p><p class="readme-last">未来，我想成为计算机工程师，或者空气动力学设计者。<br><span>一边学习，一边把热爱变成自己的方向。</span></p></div><div class="readme-status mono"><span>学习中，热爱不设限。</span><span>UTF-8 <span class="lime-text">↵</span></span></div></article>
- <aside class="curiosity-panel" aria-label="我的人生信条"><div class="curiosity-top mono"><span>我的人生信条</span><span>001 / ∞</span></div><img class="curiosity-art" src="./assets/hero-asterisk.png" width="1254" height="1254" alt="荧光色与液态金属交织的星形雕塑" loading="lazy"><div class="curiosity-copy"><p>保持热忱，<br><span>保持热爱。</span></p><span class="mono">VIVA LA VIDA</span></div></aside></div>
-</section>
-<section class="passions-section personal-section" aria-labelledby="passions-title">
- <div class="personal-section-heading" data-reveal><div><p data-i18n="passion.kicker" class="eyebrow mono">02 / 我的热爱</p><h2 data-i18n="passion.title" id="passions-title">认真生活，也尽情热爱。</h2></div><p data-i18n="passion.note" class="section-note">球场、赛道，还有脑海里的新想法。</p></div>
- <div class="sports-grid">
-  <article class="sport-card curry-card" data-reveal data-tilt>
-   <div class="sport-visual"><img class="sport-photo" src="./assets/stephen-curry-2016.jpg" width="818" height="1351" alt="斯蒂芬·库里在篮球赛场上" data-i18n-alt="passion.curryAlt" loading="lazy"><div class="sport-overlay"></div><div class="sport-topline mono"><span>ON THE COURT</span><span>SC / 30</span></div><span class="jersey-number" aria-hidden="true">30</span><div class="sport-caption"><span class="sport-favourite mono" data-i18n="passion.favourite">FAVOURITE PLAYER</span><strong>STEPHEN<br><span>CURRY.</span></strong><svg class="symbol sport-symbol" aria-hidden="true" viewBox="0 0 24 24"><use href="./assets/icons.svg#basketball"></use></svg></div></div>
-   <div class="sport-copy"><p class="eyebrow mono" data-i18n="passion.basketball">篮球 / NBA / 2K</p><h3 data-i18n="passion.curry" >斯蒂芬·库里</h3><p data-i18n="passion.curryText" class="sport-description">最喜欢的球星是库里。喜欢自己上场打球，也爱看 NBA；离开球场，就在 2K 里继续。</p></div>
-  </article>
-  <article class="sport-card leclerc-card" data-reveal data-tilt>
-   <div class="sport-visual"><img class="sport-photo" src="./assets/charles-leclerc-2024.jpg" width="960" height="1322" alt="夏尔·勒克莱尔与赛车运动" data-i18n-alt="passion.leclercAlt" loading="lazy"><div class="sport-overlay"></div><div class="sport-topline mono"><span>LIGHTS OUT</span><span>CL / 16</span></div><span class="jersey-number" aria-hidden="true">16</span><div class="sport-caption"><span class="sport-favourite mono" data-i18n="passion.driver">FAVOURITE DRIVER</span><strong>CHARLES<br><span>LECLERC.</span></strong><svg class="symbol sport-symbol" aria-hidden="true" viewBox="0 0 24 24"><use href="./assets/icons.svg#flag"></use></svg></div><div class="speed-lines" aria-hidden="true"><i></i><i></i><i></i></div></div>
-   <div class="sport-copy"><p class="eyebrow mono" data-i18n="passion.racing">赛车 / F1 / 勒芒</p><h3 data-i18n="passion.leclerc" >夏尔·勒克莱尔</h3><p data-i18n="passion.leclercText" class="sport-description">从 F1 到勒芒，赛车总能让我投入其中。最喜欢的车手是勒克莱尔，也向往有一天参与空气动力学设计。</p></div>
-  </article>
- </div>
- <div class="interest-grid">
-  <article class="interest-card ai-interest" data-reveal><div class="interest-top"><svg class="symbol " aria-hidden="true" viewBox="0 0 24 24"><use href="./assets/icons.svg#brain-circuit"></use></svg><span data-i18n="passion.aiLabel" class="mono">AGENT / 神经网络</span></div>
-   <svg class="neural-diagram" viewBox="0 0 380 130" aria-hidden="true"><g class="neural-wires" fill="none" stroke="currentColor"><path d="M35 30 130 20 230 40 345 65M35 30 130 65 230 90 345 65M35 100 130 20 230 90M35 100 130 110 230 40M35 100 130 65 230 40M35 30 130 110 230 90"/></g><g class="neural-nodes"><circle cx="35" cy="30" r="7"/><circle cx="35" cy="100" r="7"/><circle cx="130" cy="20" r="7"/><circle cx="130" cy="65" r="7"/><circle cx="130" cy="110" r="7"/><circle cx="230" cy="40" r="7"/><circle cx="230" cy="90" r="7"/><circle cx="345" cy="65" r="9"/></g><path class="neural-signal" d="M35 30 130 65 230 90 345 65" fill="none" stroke="currentColor" stroke-width="3"/></svg>
-   <h3 data-i18n="passion.aiTitle" >从好奇，到动手。</h3><p data-i18n="passion.aiText" >喜欢折腾 Agent、追踪 AI 新闻和趋势。目前正在学习神经网络，常用 Codex，也开始用 ChatGPT Pro 探索更多可能。</p><div class="learning-tag mono"><span aria-hidden="true">↳</span><span data-i18n="passion.learning" >正在学习 · 神经网络</span></div>
-  </article>
-  <article class="interest-card art-interest" data-reveal><div class="interest-top"><svg class="symbol " aria-hidden="true" viewBox="0 0 24 24"><use href="./assets/icons.svg#pencil"></use></svg><span data-i18n="passion.artLabel" class="mono">画画 / 书法</span></div><div class="ink-word" aria-hidden="true">墨<span>一笔一画</span></div><h3 data-i18n="passion.artTitle" >也喜欢，慢慢落笔。</h3><p data-i18n="passion.artText" >画画，也写书法。用线条和笔墨，留住生活里喜欢的东西。</p></article>
-  <article class="interest-card life-interest" data-reveal><div class="interest-top"><svg class="symbol " aria-hidden="true" viewBox="0 0 24 24"><use href="./assets/icons.svg#plane"></use></svg><span data-i18n="passion.travelLabel" class="mono">生活 / 远方</span></div><div class="life-word" aria-hidden="true">VIVA<br><span>LA VIDA</span><b>✳</b></div><h3 data-i18n="passion.travelTitle" >心向远方，珍惜眼前。</h3><p data-i18n="passion.travelText" >向往广阔的世界、美丽的风景，也珍惜眼前细小而真实的美好。</p></article>
- </div>
-</section>
-<section class="music-section personal-section" id="music" aria-labelledby="music-title">
- <div class="personal-section-heading" data-reveal><div><p class="eyebrow mono" data-i18n="music.kicker">03 / 我的音乐宇宙</p><h2 id="music-title" data-i18n="music.title">给生活，配一段旋律。</h2></div><p class="section-note" data-i18n="music.note">喜欢的声音，反复听也会心动。</p></div>
- <div class="music-room">
-  <div class="music-room-top"><div class="music-room-label mono"><svg class="symbol" viewBox="0 0 24 24" aria-hidden="true"><use href="./assets/music-icons.svg#headphones"></use></svg><span data-i18n="music.collection">私人唱片架</span><span class="music-stat" id="music-stats">9 位歌手 · 84 首精选</span></div><button type="button" id="music-rotation" class="rotation-control" aria-label="暂停封面轮播" aria-pressed="true"><span id="music-rotation-icon"></span><span data-i18n="music.rotation">封面轮播</span></button></div>
-  <div class="music-showcase">
-   <div class="music-feature">
-    <div class="music-feature-top"><p class="music-feature-word" lang="en">ON REPEAT<span>.</span></p><button type="button" id="music-shuffle" class="music-shuffle" data-i18n-label="music.shuffle" aria-label="随机换一首"><svg class="symbol" viewBox="0 0 24 24" aria-hidden="true"><use href="./assets/music-icons.svg#shuffle"></use></svg><span data-i18n="music.shuffle">随机换一首</span></button></div>
-    <div class="music-feature-body"><div class="music-cover-stage"><img id="music-cover" src="./assets/music/covers/003DFRzD192KKD.jpg" alt="七里香 · 七里香" width="500" height="500" loading="lazy"><span class="music-cover-corner" aria-hidden="true"><svg class="symbol" viewBox="0 0 24 24"><use href="./assets/music-icons.svg#music-2"></use></svg></span></div><div class="music-track-copy"><p class="eyebrow mono" data-i18n="music.featured">这一首，刚好。</p><h3 id="music-song-title">七里香</h3><p id="music-song-artist" class="music-track-artist">周杰伦</p><p id="music-song-album" class="music-track-album">七里香</p><button type="button" id="music-listen" class="music-listen" aria-controls="music-player"><svg class="symbol" viewBox="0 0 24 24" aria-hidden="true"><use href="./assets/music-icons.svg#play"></use></svg><span data-i18n="music.listen">在此听歌</span></button><a id="music-song-link" class="music-qq-link" href="https://y.qq.com/n/ryqq/songDetail/004Z8Ihr0JIu5s" target="_blank" rel="noopener noreferrer"><span data-i18n="music.qq">去 QQ 音乐听</span><span aria-hidden="true">↗</span></a></div></div>
-    <div class="music-feature-bottom"><span id="music-index" class="music-track-index mono">02 / 84 — SELECTED TRACK</span><div class="music-cover-controls"><button type="button" class="music-icon-button" id="music-prev" data-i18n-label="music.previous" aria-label="上一张封面"><svg class="symbol" viewBox="0 0 24 24" aria-hidden="true"><use href="./assets/music-icons.svg#arrow-left"></use></svg></button><button type="button" class="music-icon-button" id="music-next" data-i18n-label="music.next" aria-label="下一张封面"><svg class="symbol" viewBox="0 0 24 24" aria-hidden="true"><use href="./assets/music-icons.svg#arrow-right"></use></svg></button></div></div>
-   </div>
-   <aside class="music-albums" aria-labelledby="music-albums-title"><h3 class="music-albums-label mono"><span id="music-albums-title" data-i18n="music.favourite">最爱的专辑</span><svg class="symbol" viewBox="0 0 24 24" aria-hidden="true"><use href="./assets/music-icons.svg#heart"></use></svg></h3><div id="music-album-list"></div><div class="music-account"><a href="https://y.qq.com/" target="_blank" rel="noopener noreferrer"><span data-i18n="music.openQQ">打开我的 QQ 音乐</span><span aria-hidden="true">↗</span></a><p data-i18n="music.accountNote">在 QQ 音乐中使用你的登录账号</p></div></aside>
-  </div>
-  <div class="music-player-panel" id="music-player" hidden><div class="music-player-heading"><span id="music-player-label"></span><button type="button" id="music-close" class="music-icon-button" data-i18n-label="music.closePlayer" aria-label="关闭播放器"><svg class="symbol" viewBox="0 0 24 24" aria-hidden="true"><use href="./assets/music-icons.svg#x"></use></svg></button></div><p id="music-player-hint" role="status" aria-live="polite">请点击下方封面上的播放键。无法播放时，可前往 QQ 音乐继续收听。</p><div id="music-player-slot" class="music-player-slot"></div><a class="music-qq-link" id="music-player-link" href="https://y.qq.com/" target="_blank" rel="noopener noreferrer"><span data-i18n="music.qq">去 QQ 音乐听</span><span aria-hidden="true">↗</span></a><p class="music-player-limit" data-i18n="music.limit">播放由 QQ 音乐提供，登录、会员及地区权限以平台为准。</p></div>
-  <div class="music-artists-block"><div class="music-artists-heading"><h3 class="mono" data-i18n="music.artists">反复听的声音</h3><button type="button" id="music-all" class="music-filter-all" aria-pressed="true" data-i18n="music.all">全部歌手</button></div><div id="music-artists" class="music-artist-grid"></div></div>
-  <details class="music-library" id="music-library"><summary data-i18n="music.library">展开精选曲库</summary><div class="music-library-inner"><div class="music-library-tools"><p id="music-library-artist">全部歌手</p><label class="music-search"><svg class="symbol" viewBox="0 0 24 24" aria-hidden="true"><use href="./assets/music-icons.svg#search"></use></svg><input type="search" id="music-search" data-i18n-label="music.search" aria-label="搜索歌名、专辑或歌手" autocomplete="off" placeholder="搜索歌名、专辑或歌手"></label></div><ol class="music-track-list" id="music-tracks"></ol><p class="music-empty" id="music-empty" hidden data-i18n="music.empty">这次没有找到，试试别的歌名。</p><div class="music-pagination"><span id="music-page-count" class="mono" role="status" aria-live="polite"></span><button type="button" id="music-page-prev" class="music-icon-button" data-i18n-label="music.prevPage" aria-label="上一页歌曲"><svg class="symbol" viewBox="0 0 24 24" aria-hidden="true"><use href="./assets/music-icons.svg#arrow-left"></use></svg></button><button type="button" id="music-page-next" class="music-icon-button" data-i18n-label="music.nextPage" aria-label="下一页歌曲"><svg class="symbol" viewBox="0 0 24 24" aria-hidden="true"><use href="./assets/music-icons.svg#arrow-right"></use></svg></button></div></div></details>
-  <noscript><p data-i18n="music.noJS">开启 JavaScript 即可浏览歌手与曲库，也可以直接打开 QQ 音乐。</p></noscript>
- </div>
- <div class="music-bottom-note"><p data-i18n="music.credit">歌手照片、歌曲与专辑封面来自 QQ 音乐，版权归各权利人所有。歌曲为精选代表作，非账号歌单同步。</p><span class="mono">GOOD MUSIC. GOOD LIFE.</span></div>
- <span id="music-announcement" class="visually-hidden" role="status" aria-live="polite"></span>
-</section>
-<section class="setup-section personal-section" aria-labelledby="setup-title">
- <div class="personal-section-heading" data-reveal><div><p data-i18n="setup.kicker" class="eyebrow mono">04 / 我的数字工作台</p><h2 data-i18n="setup.title" id="setup-title">让好奇心，接上电源。</h2></div><p data-i18n="setup.note" class="section-note">研究硬件，也用它们学习和探索。</p></div>
- <div class="setup-grid">
-  <article class="device-card main-device" data-reveal><div class="device-top"><svg class="symbol " aria-hidden="true" viewBox="0 0 24 24"><use href="./assets/icons.svg#laptop"></use></svg><span data-i18n="setup.main" class="mono">主力电脑</span><span class="device-index mono">01</span></div><h3>ROG Strix G</h3><div class="gpu-word" aria-hidden="true">RTX<span>5090</span></div><dl class="device-specs"><div><dt data-i18n="setup.gpu" >显卡</dt><dd>RTX 5090</dd></div><div><dt data-i18n="setup.ram" >内存</dt><dd>64 GB</dd></div><div><dt data-i18n="setup.storage" >存储</dt><dd>2 TB</dd></div></dl></article>
-  <article class="device-card tablet-device" data-reveal><div class="device-top"><svg class="symbol " aria-hidden="true" viewBox="0 0 24 24"><use href="./assets/icons.svg#tablet"></use></svg><span data-i18n="setup.tablet" class="mono">平板</span><span class="device-index mono">02</span></div><div class="device-model-symbol" aria-hidden="true">M4<span>PRO</span></div><h3>iPad Pro M4</h3><p class="device-capacity mono">512 GB</p></article>
-  <article class="device-card phone-device" data-reveal><div class="device-top"><svg class="symbol " aria-hidden="true" viewBox="0 0 24 24"><use href="./assets/icons.svg#smartphone"></use></svg><span data-i18n="setup.phone" class="mono">手机</span><span class="device-index mono">03</span></div><div class="device-model-symbol" aria-hidden="true">15<span>PRO MAX</span></div><h3>iPhone 15 Pro Max</h3><p class="device-capacity mono">256 GB</p></article>
- </div>
- <div class="tool-strip" data-reveal><span data-i18n="setup.tools" class="mono">常用工具</span><span class="tool-name"><span aria-hidden="true">⌘</span> Codex</span><span class="tool-name"><span aria-hidden="true">✳</span> ChatGPT Pro</span><span data-i18n="setup.pro" class="tool-note">刚加入我的工具箱</span></div>
-</section>
-<section class="journey-section personal-section" aria-labelledby="journey-title" data-reveal>
- <div class="personal-section-heading"><div><p data-i18n="journey.kicker" class="eyebrow mono">05 / 一路走来</p><h2 data-i18n="journey.title" id="journey-title">每一步，都算数。</h2></div><a class="text-arrow-link" href="./now.html"><span data-i18n="journey.more" >查看 Now 时间线</span><span aria-hidden="true">↗</span></a></div>
- <ol class="journey-stops"><li><time datetime="2026-04-20" class="mono">2026.04.20</time><svg class="symbol " aria-hidden="true" viewBox="0 0 24 24"><use href="./assets/icons.svg#brain-circuit"></use></svg><h3 data-i18n="journey.agents" >正式开始接触 Agents</h3></li><li><time datetime="2026-08-27" class="mono">2026.08.27</time><svg class="symbol " aria-hidden="true" viewBox="0 0 24 24"><use href="./assets/icons.svg#graduation-cap"></use></svg><h3 data-i18n="journey.ib" >正式步入 IB</h3></li><li><time datetime="2026-09-16" class="mono">2026.09.16</time><svg class="symbol " aria-hidden="true" viewBox="0 0 24 24"><use href="./assets/icons.svg#code-xml"></use></svg><h3 data-i18n="journey.homepage" >创造自己的个人主页</h3></li><li><time datetime="2026-09-17" class="mono">2026.09.17</time><svg class="symbol" aria-hidden="true" viewBox="0 0 24 24"><use href="./assets/icons.svg#code-xml"></use></svg><h3 data-i18n="journey.game">发布第一个项目：NBA After Hours</h3></li></ol>
-</section>
-<section class="contact-section personal-section" id="contact" aria-labelledby="contact-title" data-reveal>
- <div class="contact-heading"><p data-i18n="contact.kicker" class="eyebrow mono">06 / 保持联系</p><h2 data-i18n="contact.title" id="contact-title">很高兴，在这里遇见你。</h2><p data-i18n="contact.text" >关于 AI、篮球、赛车，或是一个有意思的新想法。</p><span class="contact-spark" aria-hidden="true">✳</span></div>
- <div class="contact-links"><a class="contact-row" href="https://github.com/ChefDavid0815" target="_blank" rel="noopener noreferrer"><svg class="symbol " aria-hidden="true" viewBox="0 0 24 24"><use href="./assets/icons.svg#code-xml"></use></svg><span><b>GitHub</b><span>ChefDavid0815</span></span><span aria-hidden="true">↗</span></a><a class="contact-row" href="https://www.instagram.com/chefzichuan/" target="_blank" rel="noopener noreferrer"><svg class="symbol " aria-hidden="true" viewBox="0 0 24 24"><use href="./assets/icons.svg#camera"></use></svg><span><b>Instagram</b><span>@chefzichuan</span></span><span aria-hidden="true">↗</span></a><div class="email-contact"><a class="contact-row" href="mailto:zzichuan0808@outlook.com"><svg class="symbol " aria-hidden="true" viewBox="0 0 24 24"><use href="./assets/icons.svg#mail"></use></svg><span><b data-i18n="contact.email">邮箱</b><span>zzichuan0808@outlook.com</span></span><span aria-hidden="true">↗</span></a><button type="button" class="copy-email" data-copy-email="zzichuan0808@outlook.com" data-i18n="contact.copy">复制邮箱</button></div><span id="copy-announcement" class="copy-announcement" role="status" aria-live="polite"></span></div>
-</section>
-<section class="gallery-bridge" aria-labelledby="gallery-bridge-title" data-reveal><div><p class="eyebrow mono">聊过了我，再看看作品。</p><h2 id="gallery-bridge-title">想法的另一面，<br>是<span>做出来的东西。</span></h2><p class="bridge-note">AfterImage 1.4 为赛车影像加入每日社区版面、策展精选与真实车迷收藏；展厅里还有 Roseraie、Atlas、CHROMA、ProjectLens、Festival Toolkit、AXIOM、Folio 与 NBA After Hours。八件作品，一座持续运营的网站。</p></div><a class="gallery-door" href="./gallery.html"><span class="mono">打开作品集</span><span class="door-arrow" aria-hidden="true">↗</span><span class="door-bottom">进入项目陈列室 <span aria-hidden="true">→</span></span></a></section>
-<details class="photo-credits"><summary data-i18n="credits.label">图片来源与授权</summary><p>Stephen Curry: <a href="https://commons.wikimedia.org/wiki/File:Stephen_Curry_dribbling_2016_(cropped).jpg" target="_blank" rel="noopener noreferrer">Keith Allison · Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by-sa/2.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 2.0</a>. Commons crop: TBMNY / Bagumba.</p><p>Charles Leclerc: <a href="https://commons.wikimedia.org/wiki/File:2024-08-25_Motorsport,_Formel_1,_Gro%C3%9Fer_Preis_der_Niederlande_2024_STP_3978_by_Stepro_(cropped2).jpg" target="_blank" rel="noopener noreferrer">Steffen Prößdorf · Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>. Commons crop: Mb2437.</p><p>Display crops, colour treatments and overlays; adapted photographs retain their respective CC BY-SA licences. Icons: Lucide (ISC) and Tabler (MIT).</p></details>
-<section class="nerf-discovery" data-nerf-discovery aria-label="NeRF Research Console"><span>SCHOOL LAB / NeRF</span><a href="./school-gallery.html#project-nerf">NeRF ↗</a></section>
-</main>
+    <main id="home">
+      <nav class="h-chapters" aria-label="章节">
+        <a href="#source" data-target="source"><b>源</b><span>Source</span></a>
+        <a href="#creed" data-target="creed"><b>信</b><span>Creed</span></a>
+        <a href="#self" data-target="self"><b>我</b><span>Self</span></a>
+        <a href="#passion" data-target="passion"><b>爱</b><span>Passion</span></a>
+        <a href="#music" data-target="music"><b>声</b><span>Sound</span></a>
+        <a href="#tools" data-target="tools"><b>器</b><span>Tools</span></a>
+        <a href="#journey" data-target="journey"><b>途</b><span>Journey</span></a>
+        <a href="#works" data-target="works"><b>作</b><span>Works</span></a>
+        <a href="#contact" data-target="contact"><b>遇</b><span>Hello</span></a>
+        <a href="#return" data-target="return"><b>归</b><span>Return</span></a>
+      </nav>
+
+      <!-- 00 源 / SOURCE -->
+      <section class="h-source" id="source" data-chapter="source" data-theme="dark" aria-labelledby="h-title">
+        <div class="h-field" data-current-field><canvas aria-hidden="true"></canvas></div>
+        <div class="h-source-top">
+          <p class="h-meta"><span class="h-dot"></span><span data-home="hello">你好，我是</span> <strong>ChefZC</strong></p>
+          <p class="h-meta h-meta--right h-intro" data-home-html="profile.intro">在迪拜读 IB 的高中生。<br>热爱篮球与赛车，也喜欢折腾 Agent、探索 AI。</p>
+        </div>
+        <h1 class="h-title" id="h-title" aria-label="川流不息 — ChefZC"><span class="h-title-row"><span class="h-char" data-char><i>川</i></span><span class="h-char" data-char><i>流</i></span></span><span class="h-title-row"><span class="h-char" data-char><i>不</i></span><span class="h-char" data-char><i>息</i></span></span></h1>
+        <div class="h-source-lede">
+          <p class="h-serif" lang="en">Everything <em>in flow.</em></p>
+          <p class="h-creedline" data-home="creedLine">保持热爱，保持初心。</p>
+          <p class="h-cta"><a href="./gallery.html" data-home-html="profile.galleryCta">逛逛我的 Gallery</a><a href="#self" data-home-html="profile.aboutCta">更多关于我</a></p>
+        </div>
+        <p class="h-stir" aria-hidden="true"><span class="h-stir-ring"></span><span data-home="stir">移动光标，水流为你让路；按住，搅动它。</span></p>
+        <div class="h-source-bottom">
+          <span class="h-coord">25.2048° N&ensp;55.2708° E</span>
+          <span class="h-clock"><span data-home="local">迪拜此刻</span> <time data-dubai-clock>--:--</time></span>
+          <span class="h-viva" lang="en">VIVA LA VIDA</span>
+          <a class="h-down" href="#creed"><span data-home="scroll">顺流而下</span><i aria-hidden="true"></i></a>
+        </div>
+      </section>
+
+      <!-- 01 信 / CREED -->
+      <section class="h-creed" id="creed" data-chapter="creed" data-theme="light" aria-labelledby="creed-title">
+        <div class="h-wrap">
+          <header class="h-head"><span class="h-glyph" aria-hidden="true">信</span><h2 class="visually-hidden" id="creed-title" data-home="creedTitle">我的信条</h2></header>
+          <p class="h-manifesto" data-manifesto data-home="manifesto">万物流动不止。我在迪拜读书，在球场上奔跑，在赛道边心跳，在代码里造梦。世界很大，日子很快，而我只想把每一天都过得滚烫——保持热爱，保持初心。</p>
+          <p class="h-process" data-home-html="profile.process"></p>
+          <ol class="h-tenets">
+            <li class="h-tenet h-tenet--flow" data-reveal>
+              <svg class="h-tenet-art" viewBox="0 0 220 120" aria-hidden="true"><path d="M-10 40C40 10 70 70 120 40S180 10 230 40"/><path d="M-10 62C40 32 70 92 120 62S180 32 230 62"/><path d="M-10 84C40 54 70 114 120 84S180 54 230 84"/></svg>
+              <span class="h-tenet-no">I</span><h3>川流不息</h3><p class="h-tenet-en" lang="en">Everything in flow</p><p data-home="tenet1">万物流动，皆有回响。不停下，也不慌张。</p>
+            </li>
+            <li class="h-tenet h-tenet--viva" data-reveal>
+              <svg class="h-tenet-art" viewBox="0 0 220 120" aria-hidden="true"><circle cx="110" cy="72" r="30"/><g><path d="M110 18v14M110 112v8M56 72h-14M178 72h-14M72 34l10 10M148 34l-10 10M72 110l10-10M148 110l-10-10"/></g></svg>
+              <span class="h-tenet-no">II</span><h3 lang="en">VIVA LA VIDA</h3><p class="h-tenet-en" data-home="tenet2en">生活万岁</p><p data-home="tenet2">认真生活，尽情热爱。远方要去，眼前也要珍惜。</p>
+            </li>
+            <li class="h-tenet h-tenet--heart" data-reveal>
+              <svg class="h-tenet-art" viewBox="0 0 220 120" aria-hidden="true"><path d="M110 104C60 104 40 70 60 46s50-10 50 24c0-34 30-48 50-24s0 58-50 58Z"/><circle cx="110" cy="70" r="5"/></svg>
+              <span class="h-tenet-no">III</span><h3>保持初心</h3><p class="h-tenet-en" lang="en">Stay true to the spring</p><p data-home="tenet3">不论走多远，都记得为什么出发。</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- 02 我 / SELF -->
+      <section class="h-self" id="self" data-chapter="self" data-theme="light" aria-labelledby="self-title">
+        <div class="h-wrap h-self-grid">
+          <header class="h-head h-self-head"><span class="h-glyph" aria-hidden="true">我</span><h2 class="h-display" id="self-title" data-home="selfTitle">用户名之外。</h2></header>
+          <figure class="h-id" data-tilt-card aria-label="ChefZC 数字名片">
+            <div class="h-id-card">
+              <div class="h-id-media"><img src="./assets/identity-blueflame-poster.jpg" width="1112" height="1079" alt="" loading="lazy" decoding="async"><video muted loop playsinline preload="none" aria-hidden="true" data-flame></video></div>
+              <div class="h-id-top"><span data-home-html="profile.digitalId">数字身份</span><span>№ 0815</span></div>
+              <div class="h-id-name"><strong>ChefZC<i>_</i></strong><span data-home="idRole">YEAR 12 · IB 学生</span></div>
+              <div class="h-id-foot"><span>川流不息</span><span data-home-html="profile.sticker">热爱，是我的驱动力。</span></div>
+              <span class="h-id-sheen" aria-hidden="true"></span>
+            </div>
+          </figure>
+          <div class="h-self-copy">
+            <p class="h-lead" data-home-html="profile.readmeTitle"># 你好，再正式认识一下。</p>
+            <p data-home-html="profile.bio1">我是 <strong>ChefZC</strong>，一名在迪拜生活的 Year 12 高中生，目前在 <strong>GEMS Wellington International School</strong> 攻读 IB。</p>
+            <p data-home-html="profile.bio2">我对生活充满热爱和向往：想去看广阔的远方、世界的美景，也想认真感受眼前的美好。篮球、赛车、画画和书法，是生活里让我投入其中的事；电脑硬件、AI 趋势和 Agent，则让我一直想弄明白「它是怎么做到的」。</p>
+            <p class="h-self-future" data-home-html="profile.bio3">未来，我想成为计算机工程师，或者空气动力学设计者。<br><span>一边学习，一边把热爱变成自己的方向。</span></p>
+            <dl class="h-facts">
+              <div><dt data-home-html="profile.alias">昵称</dt><dd>ChefZC</dd></div>
+              <div><dt data-home="factBase">坐标</dt><dd data-home="factBaseValue">迪拜，阿联酋</dd></div>
+              <div><dt data-home="factSchool">学校</dt><dd>GEMS Wellington International School</dd></div>
+              <div><dt data-home="factStage">阶段</dt><dd data-home="factStageValue">Year 12 · IB</dd></div>
+              <div><dt data-home="factFuture">方向</dt><dd data-home="factFutureValue">计算机工程 · 空气动力学</dd></div>
+              <div><dt data-home="factNow">探索中</dt><dd><span data-home="factNowValue">AI 与神经网络</span><i class="h-caret" aria-hidden="true"></i></dd></div>
+            </dl>
+            <p class="h-status"><i aria-hidden="true"></i><span data-home-html="profile.readmeStatus">学习中，热爱不设限。</span></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 03 爱 / PASSION -->
+      <section class="h-passion" id="passion" data-chapter="passion" data-theme="dark" aria-labelledby="passions-title">
+        <div class="h-passion-pin">
+          <header class="h-wrap h-head h-passion-head"><span class="h-glyph" aria-hidden="true">爱</span><h2 class="h-display" id="passions-title" data-i18n="passion.title">认真生活，也尽情热爱。</h2><p class="h-note" data-i18n="passion.note">球场、赛道，还有脑海里的新想法。</p></header>
+          <div class="h-track" data-track>
+            <article class="h-panel h-panel--court">
+              <div class="h-panel-photo"><img src="./assets/stephen-curry-2016.jpg" width="818" height="1351" alt="斯蒂芬·库里在篮球赛场上" data-i18n-alt="passion.curryAlt" loading="lazy" decoding="async"></div>
+              <p class="h-panel-top" lang="en"><span>ON THE COURT</span><span>SC / 30</span></p><span class="h-panel-number" aria-hidden="true">30</span>
+              <svg class="h-arc" viewBox="0 0 600 400" aria-hidden="true"><path d="M30 360C140 40 420 -10 560 170"/><circle cx="560" cy="170" r="9"/></svg>
+              <div class="h-panel-copy"><p class="h-panel-tag" data-i18n="passion.basketball">篮球 / NBA / 2K</p><p class="h-panel-fav" data-i18n="passion.favourite">FAVOURITE PLAYER</p><h3><span lang="en">STEPHEN</span> <span lang="en">CURRY.</span></h3><p class="h-panel-zh" data-i18n="passion.curry">斯蒂芬·库里</p><p data-i18n="passion.curryText">最喜欢的球星是库里。喜欢自己上场打球，也爱看 NBA；离开球场，就在 2K 里继续。</p></div>
+            </article>
+            <article class="h-panel h-panel--track">
+              <div class="h-panel-photo"><img src="./assets/charles-leclerc-2024.jpg" width="960" height="1322" alt="夏尔·勒克莱尔与赛车运动" data-i18n-alt="passion.leclercAlt" loading="lazy" decoding="async"></div>
+              <p class="h-panel-top" lang="en"><span>LIGHTS OUT</span><span>CL / 16</span></p><span class="h-panel-number" aria-hidden="true">16</span>
+              <svg class="h-racing" viewBox="0 0 600 400" preserveAspectRatio="none" aria-hidden="true"><path d="M-20 130C60 130 100 40 190 40S290 120 360 110 470 20 640 30"/></svg>
+              <div class="h-panel-copy"><p class="h-panel-tag" data-i18n="passion.racing">赛车 / F1 / 勒芒</p><p class="h-panel-fav" data-i18n="passion.driver">FAVOURITE DRIVER</p><h3><span lang="en">CHARLES</span> <span lang="en">LECLERC.</span></h3><p class="h-panel-zh" data-i18n="passion.leclerc">夏尔·勒克莱尔</p><p data-i18n="passion.leclercText">从 F1 到勒芒，赛车总能让我投入其中。最喜欢的车手是勒克莱尔，也向往有一天参与空气动力学设计。</p></div>
+            </article>
+            <article class="h-panel h-panel--mind">
+              <svg class="h-neural" viewBox="0 0 380 260" aria-hidden="true"><g class="h-neural-wires"><path d="M40 50 140 30 240 80 340 130M40 50 140 130 240 180 340 130M40 210 140 30 240 180M40 210 140 230 240 80M40 210 140 130 240 80M40 50 140 230 240 180M40 130 140 30M40 130 140 230M40 130 140 130"/></g><path class="h-neural-signal" d="M40 50 140 130 240 180 340 130"/><g class="h-neural-nodes"><circle cx="40" cy="50" r="8"/><circle cx="40" cy="130" r="8"/><circle cx="40" cy="210" r="8"/><circle cx="140" cy="30" r="8"/><circle cx="140" cy="130" r="8"/><circle cx="140" cy="230" r="8"/><circle cx="240" cy="80" r="8"/><circle cx="240" cy="180" r="8"/><circle cx="340" cy="130" r="11"/></g></svg>
+              <div class="h-panel-copy"><p class="h-panel-tag" data-i18n="passion.aiLabel">AGENT / 神经网络</p><h3 data-i18n="passion.aiTitle">从好奇，到动手。</h3><p data-i18n="passion.aiText">喜欢折腾 Agent、追踪 AI 新闻和趋势。目前正在学习神经网络，常用 Codex，也开始用 ChatGPT Pro 探索更多可能。</p><p class="h-learning"><i aria-hidden="true"></i><span data-i18n="passion.learning">正在学习 · 神经网络</span></p></div>
+            </article>
+            <article class="h-panel h-panel--ink">
+              <div class="h-ink" aria-hidden="true"><svg viewBox="0 0 300 300"><defs><filter id="h-ink-bleed" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="3" seed="8" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="0" result="d"><animate attributeName="scale" values="60;3" dur="2.4s" begin="indefinite" fill="freeze" calcMode="spline" keySplines=".2 .8 .2 1" data-ink-anim/></feDisplacementMap><feGaussianBlur in="d" stdDeviation=".4"/></filter></defs><text x="150" y="215" text-anchor="middle" filter="url(#h-ink-bleed)">墨</text></svg><span>一笔一画</span></div>
+              <div class="h-panel-copy"><p class="h-panel-tag" data-i18n="passion.artLabel">画画 / 书法</p><h3 data-i18n="passion.artTitle">也喜欢，慢慢落笔。</h3><p data-i18n="passion.artText">画画，也写书法。用线条和笔墨，留住生活里喜欢的东西。</p></div>
+            </article>
+            <article class="h-panel h-panel--life">
+              <div class="h-sun" aria-hidden="true"><span lang="en">VIVA</span><span lang="en">LA VIDA</span></div>
+              <div class="h-panel-copy"><p class="h-panel-tag" data-i18n="passion.travelLabel">生活 / 远方</p><h3 data-i18n="passion.travelTitle">心向远方，珍惜眼前。</h3><p data-i18n="passion.travelText">向往广阔的世界、美丽的风景，也珍惜眼前细小而真实的美好。</p></div>
+            </article>
+          </div>
+          <div class="h-wrap h-track-meter" aria-hidden="true"><span>30&ensp;16&ensp;AI&ensp;墨&ensp;∞</span><i><b data-track-meter></b></i><span data-home="dragHint">继续向下，热爱向右流动</span></div>
+        </div>
+      </section>
+
+      <!-- 04 声 / SOUND (the record library keeps its own functioning interface) -->
+      <section class="h-sound music-section personal-section" id="music" data-chapter="music" data-theme="dark" aria-labelledby="music-title">
+        <div class="h-sound-glow" aria-hidden="true"><img alt="" data-sound-glow></div>
+        <div class="h-wrap">
+          <header class="h-head h-sound-head"><span class="h-glyph" aria-hidden="true">声</span><h2 class="h-display" id="music-title" data-i18n="music.title">给生活，配一段旋律。</h2><p class="h-note" data-i18n="music.note">喜欢的声音，反复听也会心动。</p></header>
+          <div class="music-room">
+            <div class="music-room-top"><div class="music-room-label mono"><svg class="symbol" viewBox="0 0 24 24" aria-hidden="true"><use href="./assets/music-icons.svg#headphones"></use></svg><span data-i18n="music.collection">私人唱片架</span><span class="music-stat" id="music-stats">9 位歌手 · 84 首精选</span></div><button type="button" id="music-rotation" class="rotation-control" aria-label="暂停封面轮播" aria-pressed="true"><span id="music-rotation-icon"></span><span data-i18n="music.rotation">封面轮播</span></button></div>
+            <div class="music-showcase">
+              <div class="music-feature">
+                <div class="music-feature-top"><p class="music-feature-word" lang="en">ON REPEAT<span>.</span></p><button type="button" id="music-shuffle" class="music-shuffle" data-i18n-label="music.shuffle" aria-label="随机换一首"><svg class="symbol" viewBox="0 0 24 24" aria-hidden="true"><use href="./assets/music-icons.svg#shuffle"></use></svg><span data-i18n="music.shuffle">随机换一首</span></button></div>
+                <div class="music-feature-body"><div class="music-cover-stage"><img id="music-cover" src="./assets/music/covers/003DFRzD192KKD.jpg" alt="七里香 · 七里香" width="500" height="500" loading="lazy"><span class="music-cover-corner" aria-hidden="true"><svg class="symbol" viewBox="0 0 24 24"><use href="./assets/music-icons.svg#music-2"></use></svg></span></div><div class="music-track-copy"><p class="eyebrow mono" data-i18n="music.featured">这一首，刚好。</p><h3 id="music-song-title">七里香</h3><p id="music-song-artist" class="music-track-artist">周杰伦</p><p id="music-song-album" class="music-track-album">七里香</p><button type="button" id="music-listen" class="music-listen" aria-controls="music-player"><svg class="symbol" viewBox="0 0 24 24" aria-hidden="true"><use href="./assets/music-icons.svg#play"></use></svg><span data-i18n="music.listen">在此听歌</span></button><a id="music-song-link" class="music-qq-link" href="https://y.qq.com/n/ryqq/songDetail/004Z8Ihr0JIu5s" target="_blank" rel="noopener noreferrer"><span data-i18n="music.qq">去 QQ 音乐听</span><svg class="ic" aria-hidden="true"><use href="./assets/flow/current-icons.svg#arrow-up-right"></use></svg></a></div></div>
+                <div class="music-feature-bottom"><span id="music-index" class="music-track-index mono">02 / 84 — SELECTED TRACK</span><div class="music-cover-controls"><button type="button" class="music-icon-button" id="music-prev" data-i18n-label="music.previous" aria-label="上一张封面"><svg class="symbol" viewBox="0 0 24 24" aria-hidden="true"><use href="./assets/music-icons.svg#arrow-left"></use></svg></button><button type="button" class="music-icon-button" id="music-next" data-i18n-label="music.next" aria-label="下一张封面"><svg class="symbol" viewBox="0 0 24 24" aria-hidden="true"><use href="./assets/music-icons.svg#arrow-right"></use></svg></button></div></div>
+              </div>
+              <aside class="music-albums" aria-labelledby="music-albums-title"><h3 class="music-albums-label mono"><span id="music-albums-title" data-i18n="music.favourite">最爱的专辑</span><svg class="symbol" viewBox="0 0 24 24" aria-hidden="true"><use href="./assets/music-icons.svg#heart"></use></svg></h3><div id="music-album-list"></div><div class="music-account"><a href="https://y.qq.com/" target="_blank" rel="noopener noreferrer"><span data-i18n="music.openQQ">打开我的 QQ 音乐</span><svg class="ic" aria-hidden="true"><use href="./assets/flow/current-icons.svg#arrow-up-right"></use></svg></a><p data-i18n="music.accountNote">在 QQ 音乐中使用你的登录账号</p></div></aside>
+            </div>
+            <div class="music-player-panel" id="music-player" hidden><div class="music-player-heading"><span id="music-player-label"></span><button type="button" id="music-close" class="music-icon-button" data-i18n-label="music.closePlayer" aria-label="关闭播放器"><svg class="symbol" viewBox="0 0 24 24" aria-hidden="true"><use href="./assets/music-icons.svg#x"></use></svg></button></div><p id="music-player-hint" role="status" aria-live="polite">请点击下方封面上的播放键。无法播放时，可前往 QQ 音乐继续收听。</p><div id="music-player-slot" class="music-player-slot"></div><a class="music-qq-link" id="music-player-link" href="https://y.qq.com/" target="_blank" rel="noopener noreferrer"><span data-i18n="music.qq">去 QQ 音乐听</span><svg class="ic" aria-hidden="true"><use href="./assets/flow/current-icons.svg#arrow-up-right"></use></svg></a><p class="music-player-limit" data-i18n="music.limit">播放由 QQ 音乐提供，登录、会员及地区权限以平台为准。</p></div>
+            <div class="music-artists-block"><div class="music-artists-heading"><h3 class="mono" data-i18n="music.artists">反复听的声音</h3><button type="button" id="music-all" class="music-filter-all" aria-pressed="true" data-i18n="music.all">全部歌手</button></div><div id="music-artists" class="music-artist-grid"></div></div>
+            <details class="music-library" id="music-library"><summary data-i18n="music.library">展开精选曲库</summary><div class="music-library-inner"><div class="music-library-tools"><p id="music-library-artist">全部歌手</p><label class="music-search"><svg class="symbol" viewBox="0 0 24 24" aria-hidden="true"><use href="./assets/music-icons.svg#search"></use></svg><input type="search" id="music-search" data-i18n-label="music.search" aria-label="搜索歌名、专辑或歌手" autocomplete="off" placeholder="搜索歌名、专辑或歌手"></label></div><ol class="music-track-list" id="music-tracks"></ol><p class="music-empty" id="music-empty" hidden data-i18n="music.empty">这次没有找到，试试别的歌名。</p><div class="music-pagination"><span id="music-page-count" class="mono" role="status" aria-live="polite"></span><button type="button" id="music-page-prev" class="music-icon-button" data-i18n-label="music.prevPage" aria-label="上一页歌曲"><svg class="symbol" viewBox="0 0 24 24" aria-hidden="true"><use href="./assets/music-icons.svg#arrow-left"></use></svg></button><button type="button" id="music-page-next" class="music-icon-button" data-i18n-label="music.nextPage" aria-label="下一页歌曲"><svg class="symbol" viewBox="0 0 24 24" aria-hidden="true"><use href="./assets/music-icons.svg#arrow-right"></use></svg></button></div></div></details>
+            <noscript><p data-i18n="music.noJS">开启 JavaScript 即可浏览歌手与曲库，也可以直接打开 QQ 音乐。</p></noscript>
+          </div>
+          <div class="music-bottom-note"><p data-i18n="music.credit">歌手照片、歌曲与专辑封面来自 QQ 音乐，版权归各权利人所有。歌曲为精选代表作，非账号歌单同步。</p><span class="mono">GOOD MUSIC. GOOD LIFE.</span></div>
+          <span id="music-announcement" class="visually-hidden" role="status" aria-live="polite"></span>
+        </div>
+      </section>
+
+      <!-- 05 器 / TOOLS -->
+      <section class="h-tools" id="tools" data-chapter="tools" data-theme="dark" aria-labelledby="setup-title">
+        <div class="h-wrap">
+          <header class="h-head"><span class="h-glyph" aria-hidden="true">器</span><h2 class="h-display" id="setup-title" data-i18n="setup.title">让好奇心，接上电源。</h2><p class="h-note" data-i18n="setup.note">研究硬件，也用它们学习和探索。</p></header>
+          <div class="h-rig">
+            <article class="h-rig-main" data-reveal>
+              <p class="h-rig-label"><span data-i18n="setup.main">主力电脑</span><span>01</span></p>
+              <h3>ROG Strix G</h3>
+              <p class="h-rig-hero" aria-hidden="true"><span>RTX</span><b>5090</b></p>
+              <dl class="h-rig-specs"><div><dt data-i18n="setup.gpu">显卡</dt><dd>RTX 5090</dd></div><div><dt data-i18n="setup.ram">内存</dt><dd><b data-count="64">64</b> GB</dd></div><div><dt data-i18n="setup.storage">存储</dt><dd><b data-count="2">2</b> TB</dd></div></dl>
+              <span class="h-scan" aria-hidden="true"></span>
+            </article>
+            <article class="h-rig-item" data-reveal><p class="h-rig-label"><span data-i18n="setup.tablet">平板</span><span>02</span></p><p class="h-rig-glyph" aria-hidden="true">M4</p><h3>iPad Pro M4</h3><p class="h-rig-cap">512 GB</p></article>
+            <article class="h-rig-item" data-reveal><p class="h-rig-label"><span data-i18n="setup.phone">手机</span><span>03</span></p><p class="h-rig-glyph" aria-hidden="true">15</p><h3>iPhone 15 Pro Max</h3><p class="h-rig-cap">256 GB</p></article>
+          </div>
+          <div class="h-toolkit" data-reveal><span data-i18n="setup.tools">常用工具</span><b><i aria-hidden="true">⌘</i> Codex</b><b><i aria-hidden="true">∞</i> ChatGPT Pro</b><em data-i18n="setup.pro">刚加入我的工具箱</em></div>
+        </div>
+      </section>
+
+      <!-- 06 途 / JOURNEY -->
+      <section class="h-journey" id="journey" data-chapter="journey" data-theme="light" aria-labelledby="journey-title">
+        <div class="h-wrap">
+          <header class="h-head h-journey-head"><span class="h-glyph" aria-hidden="true">途</span><h2 class="h-display" id="journey-title" data-i18n="journey.title">每一步，都算数。</h2><a class="h-link" href="./now.html"><span data-i18n="journey.more">查看 Now 时间线</span><svg class="ic" aria-hidden="true"><use href="./assets/flow/current-icons.svg#arrow-up-right"></use></svg></a></header>
+          <div class="h-river" data-river>
+            <svg class="h-river-line" viewBox="0 0 1200 320" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="h-current-grad" x1="0" x2="1"><stop offset="0" stop-color="#3d5cff"/><stop offset=".3" stop-color="#7a5cff"/><stop offset=".55" stop-color="#ff5c9a"/><stop offset=".78" stop-color="#ff6b3d"/><stop offset="1" stop-color="#ffd23f"/></linearGradient></defs><path class="h-river-bed" d="M0 170C150 60 250 60 330 160S520 280 620 160 830 40 920 150 1100 260 1200 140"/><path class="h-river-flow" d="M0 170C150 60 250 60 330 160S520 280 620 160 830 40 920 150 1100 260 1200 140" pathLength="1"/></svg>
+            <ol class="h-stops">
+              <li><time datetime="2026-04-20">2026.04.20</time><h3 data-i18n="journey.agents">正式开始接触 Agents</h3></li>
+              <li><time datetime="2026-08-27">2026.08.27</time><h3 data-i18n="journey.ib">正式步入 IB</h3></li>
+              <li><time datetime="2026-09-16">2026.09.16</time><h3 data-i18n="journey.homepage">创造自己的个人主页</h3></li>
+              <li><time datetime="2026-09-17">2026.09.17</time><h3 data-i18n="journey.game">发布第一个项目：NBA After Hours</h3></li>
+              <li class="h-stop-next"><time>∞</time><h3 data-home="next">下一站，未完待续。</h3></li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- 07 作 / WORKS -->
+      <section class="h-works" id="works" data-chapter="works" data-theme="light" aria-labelledby="works-title">
+        <div class="h-marquee" aria-hidden="true"><div><span>GALLERY</span><i>作品集</i><span>GALLERY</span><i>作品集</i><span>GALLERY</span><i>作品集</i></div></div>
+        <div class="h-wrap h-works-grid">
+          <header class="h-head"><span class="h-glyph" aria-hidden="true">作</span><h2 class="h-display" id="works-title" data-home="worksTitle" data-break>想法的另一面，是做出来的东西。</h2><p class="h-note" data-home="worksNote">一座持续运营的网站，和一条还在变长的作品河流。</p><p class="h-note h-bridge"><span data-home-html="profile.bridgeEyebrow">聊过了我，再看看作品。</span> <span class="bridge-note">我的项目、实验，还有下一次新尝试。</span></p></header>
+          <ol class="h-work-list" data-work-list></ol>
+          <a class="h-door" href="./gallery.html"><span class="h-door-label" data-home="worksDoor">打开作品集</span><span class="h-door-count"><span data-work-count>—</span> · <span data-home-html="profile.enterGallery">进入项目陈列室</span></span><span class="h-door-arrow" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="./assets/flow/current-icons.svg#arrow-up-right"></use></svg></span></a>
+        </div>
+        <div class="h-wrap h-experiments">
+          <a class="h-exp reset-entrance" href="/when-to-reset/" aria-label="When to Reset — Codex reset radar"><span class="h-exp-label" lang="en">A SMALL INTERNET EXPERIMENT</span><strong lang="en">WHEN TO RESET?</strong><span id="reset-entry-description">额度用完了，希望还没有。今天会重置吗？</span><span class="h-exp-action" id="reset-entry-action">查看线索 ↗</span></a>
+          <section class="h-exp nerf-discovery" data-nerf-discovery aria-label="NeRF Research Console"><span>SCHOOL LAB / NeRF</span><a href="./school-gallery.html#project-nerf">NeRF ↗</a></section>
+        </div>
+      </section>
+
+      <!-- 08 遇 / HELLO -->
+      <section class="h-contact" id="contact" data-chapter="contact" data-theme="light" aria-labelledby="contact-title">
+        <div class="h-wrap">
+          <header class="h-head"><span class="h-glyph" aria-hidden="true">遇</span></header>
+          <h2 class="h-hello" id="contact-title" data-i18n="contact.title" data-break>很高兴，在这里遇见你。</h2>
+          <p class="h-note h-contact-note" data-i18n="contact.text">关于 AI、篮球、赛车，或是一个有意思的新想法。</p>
+          <div class="h-links">
+            <a class="h-link-row" href="https://github.com/ChefDavid0815" target="_blank" rel="noopener noreferrer"><span class="h-link-k">GitHub</span><span class="h-link-v">ChefDavid0815</span><svg class="ic" aria-hidden="true"><use href="./assets/flow/current-icons.svg#arrow-up-right"></use></svg></a>
+            <a class="h-link-row" href="https://www.instagram.com/chefzichuan/" target="_blank" rel="noopener noreferrer"><span class="h-link-k">Instagram</span><span class="h-link-v">@chefzichuan</span><svg class="ic" aria-hidden="true"><use href="./assets/flow/current-icons.svg#arrow-up-right"></use></svg></a>
+            <div class="h-link-row h-link-row--mail"><a href="mailto:zzichuan0808@outlook.com"><span class="h-link-k" data-i18n="contact.email">邮箱</span><span class="h-link-v">zzichuan0808@outlook.com</span></a><button type="button" class="copy-email" data-copy-email="zzichuan0808@outlook.com" data-i18n="contact.copy">复制邮箱</button></div>
+            <span id="copy-announcement" class="copy-announcement" role="status" aria-live="polite"></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 09 归 / RETURN -->
+      <section class="h-return" id="return" data-chapter="return" data-theme="dark" aria-labelledby="return-title">
+        <div class="h-return-rings" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="h-wrap">
+          <span class="h-glyph" aria-hidden="true">归</span>
+          <h2 class="h-return-title" id="return-title"><span data-home="returnTitle">流向远方，</span><span data-home="returnTitle2">也回到自己。</span></h2>
+          <p class="h-return-motto" data-home-html="profile.headline">保持热忱，保持热爱。</p>
+          <p class="h-return-line" data-home="returnLine">川流不息，热爱也是。保持热爱，保持初心。</p>
+          <a class="h-return-up" href="#source"><span data-home="returnUp">回到源头</span><svg class="ic" aria-hidden="true"><use href="./assets/flow/current-icons.svg#arrow-up"></use></svg></a>
+        </div>
+        <details class="h-credits photo-credits"><summary data-i18n="credits.label">图片来源与授权</summary><p>Stephen Curry: <a href="https://commons.wikimedia.org/wiki/File:Stephen_Curry_dribbling_2016_(cropped).jpg" target="_blank" rel="noopener noreferrer">Keith Allison · Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by-sa/2.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 2.0</a>. Commons crop: TBMNY / Bagumba.</p><p>Charles Leclerc: <a href="https://commons.wikimedia.org/wiki/File:2024-08-25_Motorsport,_Formel_1,_Gro%C3%9Fer_Preis_der_Niederlande_2024_STP_3978_by_Stepro_(cropped2).jpg" target="_blank" rel="noopener noreferrer">Steffen Prößdorf · Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>. Commons crop: Mb2437.</p><p>Display crops, colour treatments and overlays; adapted photographs retain their respective CC BY-SA licences. Icons: Lucide (ISC) and Tabler (MIT).</p></details>
+      </section>
+    </main>
 
     <footer class="site-footer"><a class="footer-brand" href="./profile.html">ChefZC<span class="lime-text">.</span></a><span class="mono">保持热忱，保持热爱 · VIVA LA VIDA</span><a href="#" class="back-top">回到顶部 <span aria-hidden="true">↑</span></a></footer>
   </div>

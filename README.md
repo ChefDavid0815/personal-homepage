@@ -2,19 +2,53 @@
 
 **English** · [简体中文](README.zh-CN.md)
 
-A personal website for the things I love and make: a dark digital canvas with lime, electric blue, violet and warm accents. Each real project has its own visual language, from a midnight basketball court and a cosmic manuscript to a rose-paper Rococo atelier.
+A personal website for the things I love and make. **Current 2.1** turns the whole space into one river: indigo night water, mist, and a living current of colour. Every real project keeps its own visual language, from a midnight basketball court and a cosmic manuscript to a violet botanical atelier.
 
 [**Enter my space ↗**](https://chefzc.dev) · [Gallery](https://chefzc.dev/gallery.html) · [Posts](https://chefzc.dev/posts.html) · [Now](https://chefzc.dev/now.html) · [Game](https://chefzc.dev/game.html)
 
-## AER 1.1 / A wider horizon.
+## Current 2.1 / Everything in flow · Website 2.0
 
-<a href="https://chefzc.dev/aer.html"><img src="https://chefzc.dev/assets/projects/aer/cover-v11.png" width="100%" alt="AER 1.1 — colourless optical glass, real airline tails and a personal flight workspace." /></a>
+A full redesign of every room. The homepage opens on a live streamline field: thousands of currents part around 川流不息 and around your cursor (exact potential flow past a cylinder; hold to stir), then the page runs downstream through ten chapters — 源 Source, 信 Creed, 我 Self, 爱 Passion, 声 Sound, 器 Tools, 途 Journey, 作 Works, 遇 Hello, 归 Return. Every long page ends at the same river.
 
-**AER 1.1 · Flight, thoughtfully** — a little closer to your kind of journey.
+- Palette: night-river indigo `#0b0d26`, mist `#e7ebf2`, and a six-colour current used only as strokes and marks.
+- Type: Adobe Fonts kit `per8hkf` — HelloFont ChunHei (heavy, wide modern Chinese display), HelloFont JueJiangHei (Chinese reading), Cesso (Latin display); DM Sans and IBM Plex Mono stay self-hosted. The Noto Sans SC fallback subset now includes every character on the site (川 was missing before).
+- New mark: 川, written as three currents.
+- Motion: one shared clock, paused off-screen, in background tabs, by the site-wide switch and by reduced motion; cross-page view transitions.
+- Design system: [`DESIGN.md`](DESIGN.md); product context: [`PRODUCT.md`](PRODUCT.md). Previous shell files are archived in `design/before-current-20261009/`.
 
-A flight exploration and personalised recommendation product shaped by clear optical glass, dawn light and real airline tails. Search, filter and compare journeys, discover a traveller constellation and understand why a flight fits. The public web experience keeps personal profiles and saved choices behind sign-in. A separate Windows workspace adds persistent navigation, five search workspaces, a journey inspector, keyboard commands, local profiles and offline demo search. Flights and fares are demonstrative; no ticket or reservation is created. Application source and Windows installers are kept off GitHub.
+## Pulse / Claude joins the observatory
 
-[**EXPLORE AER ↗**](https://aer-personal-journeys.workspace-298846.chatgpt.site) &nbsp; / &nbsp; [**OPTICAL GLASS EXHIBITION ↗**](https://chefzc.dev/gallery.html#project-aer) &nbsp; / &nbsp; [**1.1 EDITION JOURNAL ↗**](https://chefzc.dev/gallery.html#aer-history) &nbsp; / &nbsp; [**NOW 027 ↗**](https://chefzc.dev/now.html#milestone-aer-11)
+Pulse now counts Anthropic models alongside GPT, in real time. The same local collector reads Claude Code session transcripts (`~/.claude/projects`, including the desktop app's Code tab and subagents), counts each assistant message once, and publishes only hourly numeric aggregates. Claude cache writes are priced separately as 5-minute (1.25× input) and 1-hour (2×) writes, cache reads at each model's rate. [Details](docs/usage-observatory.md).
+
+## AC8 / A living battlespace · Website 1.27.1
+
+The sky keeps moving: real contour-path deformation, bounded incoming photographic aircraft stickers, automatically tracking missile stickers and fan-shaped countermeasure bursts. One visible-only clock drives every loop and supports pause/resume and reduced motion. The new transparent missile and flare assets are AI-generated artwork; these fictional formations are separate from the unchanged, real Steam log.
+
+## AC8 / The other sky · Website 1.27
+
+ACE COMBAT 8 joins the Game Room with an authentic JSF F-35C silhouette, original vector contours, a white-edged Tasha cosplay sticker cut out non-generatively with Adobe, and interruptible illustrated missile trails. Steam aggregates synchronize from a read-only, AC8-only Windows bridge; playtime is never invented between Steam writes. The bridge starts at the current user's Windows login and retains the last record offline.
+
+[Flight exhibit](https://chefzc.dev/game.html#ace-combat-8) · [Public aggregates](https://chefzc.dev/api/ac8-record)
+
+## NABAT / INJAZ · Website 1.25
+
+NABAT 1.1 joins the School Lab as my INJAZ business competition project. Its ivory and botanical-green exhibit connects identity, living history and native operations, with four actual software screens and interruptible motion. A new Now milestone and bilingual botanical note share the same visual identity.
+
+[School exhibit](https://chefzc.dev/school-gallery.html#project-nabat) · [Now 027](https://chefzc.dev/now.html#milestone-nabat) · [Botanical note](https://chefzc.dev/post.html?article=nabat) · [Source repository](https://github.com/ChefDavid0815/nabat-injaz)
+
+## Everything in Flow / Flow Edition · Website 1.24
+
+8 October 2026: the personal website has a new look. Profile, Gallery, Now, Posts and the Flow Index share one continuous route. Reading and imagery have more room, while each exhibit retains its own type, colour and material. The release adds Now milestone **026** and bilingual note **015**, preserving all earlier work and records.
+
+[New homepage](https://chefzc.dev/profile.html) · [Release milestone](https://chefzc.dev/now.html#milestone-everything-in-flow) · [Design note](https://chefzc.dev/post.html?article=everything-in-flow) · [Flow Index](https://chefzc.dev/explore.html)
+
+## DOT/AIR 1.1 / Orbital Earth · Website 1.26
+
+<a href="https://chefzc.dev/gallery.html#project-dot-air"><img src="https://chefzc.dev/assets/projects/dot-air/software-v1.1.png" width="100%" alt="Actual published DOT/AIR 1.1 Web interface, with a red dotted Earth." /></a>
+
+DOT/AIR replaces the retired AER exhibit. Its own vermilion, polka dots and wide type frame a real rotating sphere with 19,717 geographic samples. The edition drawer follows 1.1 → 0.1 with actual native horizon and theoretical-route captures. Now 029 records the 1.1 update, Now 028 the first exhibit, and bilingual note 017 tells the story. Live flight inventory and ticketing remain unavailable.
+
+[Exhibit](https://chefzc.dev/gallery.html#project-dot-air) · [Edition log](https://chefzc.dev/gallery.html#dot-air-history) · [Now 029](https://chefzc.dev/now.html#milestone-dot-air-11) · [Departure note](https://chefzc.dev/post.html?article=dot-air)
 
 ## NeRF 1.0 / A world, made of numbers.
 
@@ -77,13 +111,13 @@ The [Game page](https://chefzc.dev/game.html) now has three exhibits: F1 25 as a
 | Page | Inside |
 | :--- | :--- |
 | **Personal Profile** | ChefZC, a Year 12 IB student at GEMS Wellington International School in Dubai. Basketball, motorsport, AI, art, devices, milestones and public contact links. Only the city is shown as a location. |
-| **Gallery** | Eight real projects: Roseraie 0.1.0, Atlas 0.3, CHROMA 0.1.0, ProjectLens 0.1.0, Festival Toolkit 0.3.0, AXIOM 1.0, Folio 1.1 and NBA After Hours. Independent visual identities, project dialogs, source and download/play links. |
+| **Gallery** | Nine real projects: DOT/AIR 1.1, Roseraie 0.2.0, Atlas 0.3, CHROMA 0.1.0, ProjectLens 0.1.0, Festival Toolkit 0.3.0, AXIOM 1.0, Folio 1.1 and NBA After Hours. Independent visual identities, project dialogs, source and download/play links. |
 | **3D collection** | Two independent works: Chase Center (switchable interior/exterior cases) and a Curry head study. Real, draggable glass cases with free modeling downloads. |
 | **School Lab** | NeRF Research Console and WIS TECH TANK · STRIDE. Independent computational and woodland exhibitions, project/source links and research journals. |
 | **Now** | Twenty-four milestones, newest first. NeRF publication on 30 September 2026, with research beginning on 24 September. |
-| **Posts** | Fourteen bilingual notes, newest first. A computational research log for NeRF, alongside AFTERIMAGE and earlier project journals. |
+| **Posts** | Seventeen bilingual notes, newest first. A computational research log for NeRF, alongside AFTERIMAGE and earlier project journals. |
 
-`index.html` redirects to `profile.html`, retaining the query and fragment. Navigation, language preference and footer are shared. The site defaults to Chinese; the **中 / EN** switch translates navigation, copy, dialogs and page titles. Preference persists when local storage is available and synchronises across same-origin tabs. Brand names and decorative artwork retain their original design.
+`index.html` redirects to `profile.html`, retaining the query and fragment. Navigation, language preference and footer are shared. The first visit follows the system language (Chinese or English); the **中 / EN** switch translates navigation, copy, dialogs and page titles. Preference persists when local storage is available and synchronises across same-origin tabs. Brand names and decorative artwork retain their original design.
 
 ## WIS TECH TANK / A separate school lab
 

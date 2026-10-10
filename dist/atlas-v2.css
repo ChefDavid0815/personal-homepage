@@ -16,7 +16,7 @@
 .atlas-v2-overture::before { content:""; position:absolute; inset:0; z-index:1; background:linear-gradient(90deg,#07152470,transparent 32%,transparent 68%,#07152470),linear-gradient(180deg,#0715248a,transparent 27%,#08162736 61%,#071523dc); pointer-events:none; }
 .atlas-v2-overture::after { content:""; position:absolute; z-index:3; inset:0; pointer-events:none; background:radial-gradient(ellipse at var(--atlas-pointer-x,50%) var(--atlas-pointer-y,38%),#ffe4b11c,transparent 33%); }
 .atlas-v2-overture-frame { position:absolute; z-index:3; inset:15px; border:1px solid #dfc28b99; pointer-events:none; }
-.atlas-v2-overture-frame::before,.atlas-v2-overture-frame::after { content:"✦"; position:absolute; top:-11px; color:#f6d69b; font:20px var(--atlas-serif); background:#14263a; padding:0 7px; }
+.atlas-v2-overture-frame::before,.atlas-v2-overture-frame::after { content:"∞"; position:absolute; top:-11px; color:#f6d69b; font:20px var(--atlas-serif); background:#14263a; padding:0 7px; }
 .atlas-v2-overture-frame::before { left:50%; transform:translateX(-50%); }
 .atlas-v2-overture-frame::after { top:auto; bottom:-11px; left:50%; transform:translateX(-50%); }
 .atlas-v2-overture-top,.atlas-v2-overture-bottom { position:absolute; z-index:4; left:42px; right:42px; display:flex; justify-content:space-between; align-items:center; gap:12px; font:10px/1.5 var(--mono); letter-spacing:.17em; text-shadow:0 2px 12px #04101b; }
@@ -175,7 +175,7 @@ html:lang(en) .atlas-v2-now-core i { font:italic 15px/1.2 var(--atlas-serif); }
 /* Posts: illuminated cover followed by a dark sky and a readable folio. */
 .post-card--atlas { border-color:#ba9864; box-shadow:0 16px 55px #0006; }
 .post-card--atlas .post-card-copy { position:relative; background:radial-gradient(circle at 93% 10%,#fff3d9,#ead8b4 72%); border-left:3px double #a68756; padding:clamp(32px,4vw,58px); }
-.post-card--atlas .post-card-copy::after { content:"✦"; position:absolute; right:28px; top:43%; font:90px var(--atlas-serif); color:#ba92633a; pointer-events:none; }
+.post-card--atlas .post-card-copy::after { content:"∞"; position:absolute; right:28px; top:43%; font:90px var(--atlas-serif); color:#ba92633a; pointer-events:none; }
 .post-card--atlas h2 { position:relative; z-index:1; font-size:clamp(37px,4vw,57px); }
 .post-card--atlas p { position:relative; z-index:1; }
 .post-card--atlas .post-read { font:16px var(--atlas-read); }
@@ -227,7 +227,7 @@ html:lang(en) .article-card--atlas .article-chapter h2 { font:italic clamp(38px,
 .article-card--atlas .article-chapter:first-of-type>p:first-of-type::first-letter { float:left; font:400 86px/.75 var(--atlas-zh); color:#a45e40; padding:11px 9px 0 0; }
 html:lang(en) .article-card--atlas .article-chapter:first-of-type>p:first-of-type::first-letter { font-family:var(--atlas-serif); }
 .article-card--atlas .article-body blockquote { position:relative; border:0; border-top:3px double #a87d4d; border-bottom:3px double #a87d4d; padding:36px 12px 36px 75px; margin:58px 0; font:400 clamp(26px,3.1vw,42px)/1.6 var(--atlas-zh); color:#8d5039; }
-.article-card--atlas .article-body blockquote::before { content:"✦"; position:absolute; left:14px; top:21px; font:48px var(--atlas-serif); color:#b88955; }
+.article-card--atlas .article-body blockquote::before { content:"∞"; position:absolute; left:14px; top:21px; font:48px var(--atlas-serif); color:#b88955; }
 html:lang(en) .article-card--atlas .article-body blockquote { font:italic clamp(31px,3.5vw,48px)/1.35 var(--atlas-serif); }
 .article-card--atlas .article-figure { margin:54px -25px; }
 .article-card--atlas .article-figure>div { background:#10253b; border:1px solid #ad8957; border-radius:0; padding:8px; box-shadow:10px 10px 0 #b6966545; }

@@ -1,5 +1,10 @@
+import {ac8Messages} from './ac8-content.js';
+import {dotAirReleaseMessages} from './dot-air-releases.js';
+import {dotAirMessages} from './dot-air-content.js';
+import {nabatMessages} from './nabat-content.js';
+import { flowReleaseMessages } from './flow-release.js';
+import {resolveSiteLanguage} from './flow-state.js';
 import {nerfMessages} from './nerf-content.js';
-import {aerMessages} from './aer-content.js';
 import {chromaMessages} from './chroma-content.js';
 import {atlasMessages} from './atlas-content.js';
 import {roseraieMessages} from './roseraie-content.js';
@@ -75,7 +80,7 @@ export const messages = {
   'court.controls': ['WASD 移动，按住空格投篮，在绿色区间松开。也支持手柄与触屏。', 'Move with WASD. Hold Space to shoot; release in the green window. Controller and touch supported.'],
   'court.browserSave': ['进度保存在当前浏览器。换设备前，可在游戏设置中导出备份。', 'Progress stays in this browser. Export a backup in game settings before switching devices.'],
   'gallery.end': ['本次陈列到此', 'END OF COLLECTION'],
-  'gallery.continue': ['持续创造，继续探索。 <b aria-hidden="true">✳</b>', 'STILL MAKING. STILL EXPLORING. <b aria-hidden="true">✳</b>'],
+  'gallery.continue': ['持续创造，继续探索。 <b aria-hidden="true">∞</b>', 'STILL MAKING. STILL EXPLORING. <b aria-hidden="true">∞</b>'],
   'gallery.behind1': ['作品', 'BEHIND'],
   'gallery.behind2': ['背后的我', 'THE WORK'],
   'gallery.by': ['CHEFZC 的个人作品集', 'A COLLECTION BY CHEFZC'],
@@ -101,12 +106,14 @@ export const messages = {
   'project.live': ['在线体验 ↗', 'Live demo ↗'],
   'project.source': ['GitHub 源码 ↗', 'Source on GitHub ↗'],
   'project.close': ['关闭项目详情', 'Close project details'],
+  'project.linkMissing': ['这个作品入口暂时没有找到，完整展厅仍可浏览。','This project link could not be found. The complete collection is still available.'],
+  'project.viewAll': ['浏览全部作品','Browse all works'],
   'profile.title': ['个人介绍 — ChefZC', 'Personal Profile — ChefZC'],
   'profile.meta': ['认识 ChefZC。一个保持好奇、喜欢动手的数字世界探索者。这里记录我的创作想法，以及想做出来的东西。', 'Meet ChefZC: a curious, hands-on explorer of the digital world. Get to know the person and ideas behind the projects.'],
   'profile.skip': ['跳到个人介绍', 'Skip to personal introduction'],
   'profile.eyebrow': ['<span class="bracket">[</span> 作品背后的那个人 <span class="bracket">]</span>', '<span class="bracket">[</span> THE HUMAN BEHIND THE PROJECTS <span class="bracket">]</span>'],
   'profile.heroTitle': ['<span class="profile-greeting">你好，我是</span><br><span class="profile-name">ChefZC</span><span class="profile-cursor" aria-hidden="true">_</span>', '<span class="profile-greeting">Hi, I’m</span><br><span class="profile-name">ChefZC</span><span class="profile-cursor" aria-hidden="true">_</span>'],
-  'profile.headline': ['保持好奇。<br class="mobile-line">偶尔脑洞大开。<span class="profile-spark" aria-hidden="true">✳</span>', 'Stay curious.<br class="language-mobile-break"> Think a little differently.<span class="profile-spark" aria-hidden="true">✳</span>'],
+  'profile.headline': ['保持好奇。<br class="mobile-line">偶尔脑洞大开。<span class="profile-spark" aria-hidden="true">∞</span>', 'Stay curious.<br class="language-mobile-break"> Think a little differently.<span class="profile-spark" aria-hidden="true">∞</span>'],
   'profile.intro': ['一个喜欢把「要不试试」变成现实的人。<br>在代码、设计和新想法之间，探索更多可能。', 'I turn “what if?” into something real.<br>Exploring where code, design, and new ideas meet.'],
   'profile.galleryCta': ['逛逛我的 Gallery <span aria-hidden="true">↗</span>', 'Explore my Gallery <span aria-hidden="true">↗</span>'],
   'profile.aboutCta': ['更多关于我 <span aria-hidden="true">↓</span>', 'More about me <span aria-hidden="true">↓</span>'],
@@ -134,7 +141,7 @@ export const messages = {
   'profile.readmeStatus': ['文字很简单，想法很真实。', 'PLAIN TEXT. REAL THOUGHTS.'],
   'profile.manifestoLabel': ['创作宣言', 'Creative manifesto'],
   'profile.note': ['写给自己', 'NOTE TO SELF'],
-  'profile.artAlt': ['荧光色与液态金属交织的星形雕塑', 'A sculptural asterisk in fluorescent colors and liquid chrome'],
+  'profile.artAlt': ['色彩交汇、回环往复的川流图形', 'Interlocking currents in cobalt, pink and yellow'],
   'profile.whatIf': ['永远给<br><span>「如果呢？」</span><br>留一点空间。', 'Always leave<br><span>a little room</span><br>for “what if?”'],
   'profile.weird': ['保留一点不一样。', 'STAY A LITTLE WEIRD.'],
   'profile.principlesEyebrow': ['02 / 我的创作准则', '02 / MY OPERATING SYSTEM'],
@@ -155,10 +162,10 @@ export const messages = {
   'profile.enterGallery': ['进入项目陈列室 <span aria-hidden="true">→</span>', 'Step into the collection <span aria-hidden="true">→</span>']
 };
 
-Object.assign(messages, personalMessages, musicMessages, folioMessages, axiomMessages, festivalMessages, wisMessages, festivalUpdateMessages, modelMessages, gameMessages, lensMessages, festivalJourneyMessages, chromaMessages, atlasMessages, roseraieMessages, afterimageMessages, nerfMessages, aerMessages);
+Object.assign(messages, personalMessages, musicMessages, folioMessages, axiomMessages, festivalMessages, wisMessages, festivalUpdateMessages, modelMessages, gameMessages, lensMessages, festivalJourneyMessages, chromaMessages, atlasMessages, roseraieMessages, afterimageMessages, nerfMessages, flowReleaseMessages, nabatMessages, dotAirMessages, dotAirReleaseMessages, ac8Messages);
 const storageKey = 'chefzc.language';
-let language = 'zh';
-try { if (globalThis.localStorage?.getItem(storageKey) === 'en') language = 'en'; } catch { /* Storage may be disabled; the switch still works. */ }
+let language = resolveSiteLanguage(null,globalThis.navigator?.language);
+try { language = resolveSiteLanguage(globalThis.localStorage?.getItem(storageKey),globalThis.navigator?.language); } catch { /* Storage may be disabled; the switch still works. */ }
 const listeners = new Set();
 export const getLanguage = () => language;
 export function t(key, params = {}) {
@@ -225,8 +232,8 @@ const bindings = {
 
 export function applyTranslations() {
   document.documentElement.lang = language === 'en' ? 'en' : 'zh-CN';
-  const page = ['nerf', 'usage', 'game', 'models', 'school', 'gallery', 'profile', 'now', 'posts'].find(name => document.body.classList.contains(`${name}-page`)) || 'profile';
-  for (const [selector, key, mode] of [...commonBindings, ...bindings[page]]) {
+  const page = ['nerf', 'usage', 'game', 'models', 'school', 'gallery', 'profile', 'now', 'posts'].find(name => document.body.classList.contains(`${name}-page`));
+  for (const [selector, key, mode] of [...commonBindings, ...(bindings[page]||[])]) {
     for (const element of document.querySelectorAll(selector)) {
       if (mode === 'html') element.innerHTML = t(key);
       else if (mode) element.setAttribute(mode, t(key));
@@ -240,19 +247,21 @@ export function applyTranslations() {
 }
 
 export function setLanguage(next, { persist = true, announce = true } = {}) {
-  if (!['zh', 'en'].includes(next) || next === language) return;
-  language = next;
+  if (!['zh', 'en'].includes(next)) return;
   if (persist) { try { localStorage.setItem(storageKey, next); } catch { /* In-memory switching remains available. */ } }
+  if (next === language) return;
+  language = next;
   applyTranslations();
   listeners.forEach(listener => listener(language));
-  if (announce) document.querySelector('#language-announcement').textContent = t('language.changed');
+  const announcement=document.querySelector('#language-announcement');
+  if (announce && announcement) announcement.textContent = t('language.changed');
 }
 
 function initialize() {
   applyTranslations();
   document.querySelectorAll('[data-language]').forEach(button => button.addEventListener('click', () => setLanguage(button.dataset.language)));
   window.addEventListener('storage', event => {
-    if (event.key === storageKey || event.key === null) setLanguage(event.newValue === 'en' ? 'en' : 'zh', { persist: false, announce: false });
+    if (event.key === storageKey || event.key === null) setLanguage(resolveSiteLanguage(event.newValue,globalThis.navigator?.language), { persist: false, announce: false });
   });
 }
 if (typeof document !== 'undefined') {

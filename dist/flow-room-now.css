@@ -1,0 +1,182 @@
+/* Current 2.1 room layer: now. Unlayered, loaded after flow-current.css, so it overrides the legacy bundle.
+   The timeline is the river. Time runs down the page as one thin current; every milestone is a landing on its
+   bank: the date on the near shore, the story and the project's own window on the far one. The newest landing
+   is at the top; the spring (where curiosity started) is at the bottom. */
+
+.now-page main{position:relative}
+
+/* ───────── Hall header: the light Cesso NOW., then the room's name and its line ───────── */
+.now-page .now-header{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:40px clamp(40px,6vw,120px);padding:clamp(28px,4vw,64px) 0 clamp(64px,6vw,104px);border:0;background:none}
+.now-page .now-heading{display:flex;flex-direction:column;align-items:flex-start;min-width:0}
+.now-page .now-header h1{order:1;display:flex;align-items:baseline;margin:clamp(18px,2vw,30px) 0 0;font-size:clamp(112px,15vw,248px)!important;line-height:.86!important;color:var(--flow-ink)}
+.now-page .now-header h1>.now-asterisk{align-self:flex-start;margin:.06em 0 0 .1em;font:400 .2em/1 var(--display);transform:none;animation:none;text-shadow:none;letter-spacing:0}
+.now-page .now-eyebrow{order:2;display:block;margin:clamp(26px,2.6vw,40px) 0 0;font:400 clamp(28px,2.7vw,44px)/1.2 var(--zh-display);letter-spacing:.01em;color:var(--flow-ink)}
+.now-page .now-eyebrow>span[aria-hidden]{display:none}
+html[lang^=en] .now-page .now-eyebrow{font-family:var(--display);letter-spacing:-.01em;line-height:1.05}
+.now-page .now-intro{order:3;max-width:30em;margin:14px 0 0;font:400 17px/1.75 var(--body);color:var(--muted)}
+.now-page .now-update{display:grid;grid-template-columns:auto auto;align-items:baseline;justify-content:end;gap:6px 16px;min-width:0;margin:0 0 6px;padding:0;border:0;border-radius:0;background:none;box-shadow:none;rotate:0deg;transform:none;color:var(--flow-ink);text-align:right}
+.now-page .now-update>span.mono{grid-column:1/-1;grid-row:1;font:500 13px/1.4 var(--body);letter-spacing:0;color:var(--muted)}
+.now-page .now-update>time.mono{grid-column:1/-1;grid-row:2;align-self:auto;font:400 clamp(34px,3.2vw,52px)/1 var(--display);letter-spacing:-.02em;color:var(--flow-ink);font-variant-numeric:lining-nums}
+.now-page .now-building{grid-column:1/-1;grid-row:3;justify-self:end;display:inline-flex;align-items:center;gap:9px;margin-top:6px;font:500 13px/1.4 var(--body);color:var(--flow-ink)}
+.now-page .now-building i{width:8px;height:8px;border-radius:50%;background:var(--c-mint);box-shadow:0 0 0 4px #35d49a2e}
+
+/* ───────── The river's geometry (shared by CSS and now-river.js) ───────── */
+.now-page .now-timeline{--date-w:176px;--bank-w:96px;--river-x:224px;--node-y:20px;--river-swing:9px;--river-lead:40px;
+  position:relative;isolation:isolate;padding:0 0 clamp(40px,5vw,80px);border:0}
+.now-page .timeline-list{position:relative;z-index:1;margin:0;padding:0;list-style:none}
+.now-page .timeline-list::before,.now-page .timeline-list::after{content:none}
+
+/* Heading of the river: name on the left bank, year and count where the river starts. */
+.now-page .timeline-heading{display:flex;align-items:baseline;justify-content:space-between;gap:20px;margin:0 0 72px;padding:22px 0 0;border-top:1px solid var(--flow-ink)}
+.now-page .timeline-heading h2{margin:0;font:400 clamp(24px,2vw,32px)/1.2 var(--zh-display);letter-spacing:.01em;color:var(--flow-ink)}
+html[lang^=en] .now-page .timeline-heading h2{font-family:var(--display);letter-spacing:-.01em}
+.now-page .timeline-heading>span{font:500 13px/1 var(--mono);letter-spacing:.02em;color:var(--muted)}
+.now-page .timeline-heading>span>span{margin:0 6px;color:var(--c-pink)}
+
+/* The current itself: a pale bed, and the six-colour line that is drawn as the reader travels. */
+.now-page .now-river{position:absolute;left:0;width:100%;z-index:0;overflow:visible;pointer-events:none}
+.now-page .now-river-bed{fill:none;stroke:#10132e17;stroke-width:1.5;stroke-linecap:round}
+.now-page .now-river-flow{fill:none;stroke-width:2.5;stroke-linecap:round;transition:stroke-dashoffset .18s linear}
+.now-page .river-still .now-river-flow{transition:none}
+/* Without the script the river is still there: a plain hairline down the bank. */
+.now-page .now-timeline:not(.has-river) .timeline-list::before{content:'';position:absolute;top:0;bottom:0;left:var(--river-x);width:2px;margin-left:-1px;background:linear-gradient(#3d5cff,#7a5cff,#ff5c9a,#ff6b3d,#ffd23f,#35d49a)}
+
+/* ───────── A landing ───────── */
+.now-page .timeline-entry{--landing:var(--flow-ink);position:relative;display:grid;grid-template-columns:var(--date-w) var(--bank-w) minmax(0,1fr);gap:0;margin:0 0 clamp(84px,7vw,124px);padding:0}
+.now-page .timeline-entry:last-child{margin-bottom:0}
+.now-page .timeline-entry.atelier-arrive{animation:none}
+/* The landing stone on the river. */
+.now-page .timeline-entry::before{content:'';position:absolute;z-index:2;left:var(--river-x);top:var(--node-y);width:15px;height:15px;margin:-7.5px 0 0 -7.5px;border-radius:50%;background:var(--paper);border:2px solid var(--landing);box-sizing:border-box;transition:background .5s var(--ease-out),transform .6s var(--ease-out),box-shadow .6s var(--ease-out)}
+.now-page .timeline-entry.is-reached::before{background:var(--landing);transform:scale(1.15);box-shadow:0 0 0 5px color-mix(in srgb,var(--landing) 16%,transparent)}
+.now-page .timeline-entry--same-day::before{width:11px;height:11px;margin:-5.5px 0 0 -5.5px}
+.now-page .timeline-entry::after{content:none}
+html[data-site-motion=off] .now-page .timeline-entry::before{transition:none}
+
+/* Near shore: the date. Day in large Cesso numerals, month as its small partner, the year in mono. */
+.now-page .entry-date{grid-column:1;display:flex;flex-direction:column;align-items:flex-start;gap:14px;position:static;padding:0;opacity:1}
+.now-page .entry-date time{display:flex;flex-direction:column;align-items:flex-start;gap:10px;color:var(--flow-ink)}
+.now-page .entry-year{order:0;font:500 12px/1 var(--mono);letter-spacing:.06em;color:var(--muted)}
+.now-page .timeline-entry .entry-day{display:flex;align-items:flex-start;margin:0;font:400 88px/.78 var(--display);letter-spacing:-.04em;color:var(--flow-ink);-webkit-text-fill-color:currentColor;background:none;text-shadow:none;font-variant-numeric:lining-nums}
+.now-page .entry-month{font-size:.34em;line-height:1;letter-spacing:-.01em;color:var(--muted);margin-top:.02em}
+.now-page .timeline-entry .entry-day>.entry-slash{display:block;align-self:stretch;width:1.5px;margin:.04em .16em 0 .14em;padding:0;overflow:hidden;color:transparent;background:linear-gradient(#3d5cff,#ff5c9a,#ffd23f);transform:skewX(-22deg);transform-origin:bottom}
+.now-page .entry-dom{display:block}
+.now-page .timeline-entry .entry-label{display:block;margin:0;max-width:150px;font:500 13px/1.5 var(--body);letter-spacing:0;color:var(--muted)}
+/* The same day continues: the date drops to a quieter size so each day reads once. */
+.now-page .timeline-entry--same-day .entry-day{font-size:44px;color:var(--muted)}
+.now-page .timeline-entry--same-day .entry-month{font-size:.42em}
+.now-page .timeline-entry--same-day .entry-year{opacity:.75}
+
+/* Far shore: the story and the window. */
+.now-page .timeline-list .milestone{grid-column:3;position:static;display:grid;grid-template-columns:minmax(0,1fr) clamp(300px,29vw,416px);align-items:start;gap:clamp(36px,4.6vw,84px);margin:0;padding:0;background:none;border:0;border-radius:0;box-shadow:none;overflow:visible;color:var(--flow-ink);font-family:var(--body)}
+.now-page .timeline-list .milestone::before,.now-page .timeline-list .milestone::after,.now-page .timeline-list .milestone-copy::before{content:none}
+.now-page .timeline-list .milestone-copy{position:static;display:flex;flex-direction:column;align-items:flex-start;min-width:0;max-width:40rem;margin:0;padding:0;background:none;border:0;border-radius:0;color:var(--flow-ink)}
+.now-page .timeline-list .milestone-copy>*{order:3}
+.now-page .timeline-list .milestone-kicker{display:contents}
+
+/* Heading: ChunHei for Chinese, Cesso for English. */
+.now-page .timeline-list .milestone-copy h3{order:1;max-width:21em;margin:0;word-break:keep-all;overflow-wrap:anywhere;font:400 clamp(26px,2.25vw,36px)/1.3 var(--zh-display);letter-spacing:.005em;color:var(--flow-ink);text-wrap:balance;scroll-margin-top:120px}
+.now-page .timeline-list .milestone-copy h3 span{font:inherit;letter-spacing:inherit;color:inherit;white-space:normal}
+html[lang^=en] .now-page .timeline-list .milestone-copy h3{max-width:18em;font:400 clamp(29px,2.6vw,42px)/1.08 var(--display);letter-spacing:-.015em}
+/* The kicker line becomes the heading's quieter second voice. */
+.now-page .timeline-list .milestone-kicker>span:first-child{order:2;display:block;margin:12px 0 0;font:400 17px/1.55 var(--zh-strong);letter-spacing:.01em;color:#3d4268}
+html[lang^=en] .now-page .timeline-list .milestone-kicker>span:first-child{font:500 16px/1.5 var(--body);letter-spacing:0}
+/* The sequence number rides on the river, just under its landing stone. */
+.now-page .timeline-list .milestone-kicker>span:last-child{position:absolute;z-index:2;left:var(--river-x);top:calc(var(--node-y) + 18px);transform:translateX(-50%);padding:4px 0;background:var(--paper);font:500 11px/1 var(--mono);letter-spacing:.04em;color:var(--muted);writing-mode:vertical-rl}
+.now-page .timeline-list .milestone-kicker>span:only-child{order:2}
+
+.now-page .timeline-list .milestone-description{margin:22px 0 0;max-width:38em;font:400 16px/1.9 var(--body);letter-spacing:0;color:#2c3052}
+html[lang^=en] .now-page .timeline-list .milestone-description{max-width:62ch;font-size:16.5px;line-height:1.7}
+.now-page .timeline-list .milestone-description:empty{display:none}
+
+.now-page .timeline-list .milestone-tags{display:flex;flex-wrap:wrap;gap:6px;margin:22px 0 0;padding:0;list-style:none}
+.now-page .timeline-list .milestone-tags>li{margin:0;padding:6px 11px 7px;border:1px solid #10132e26;border-radius:999px;background:none;font:500 12px/1.2 var(--body);letter-spacing:0;color:var(--flow-ink)}
+.now-page .timeline-list :is(.milestone-progress,.festival03-note,.folio11-note){max-width:40em;margin:20px 0 0;padding:14px 0 0;border:0;border-top:1px solid var(--line);background:none;font:400 13.5px/1.75 var(--body);letter-spacing:0;color:var(--muted)}
+.now-page .timeline-list :is(.milestone-progress,.festival03-note,.folio11-note):empty{display:none}
+.now-page .timeline-list :is(.ai-v13-credit,.ai-v14-credit){margin:18px 0 0;font:400 12px/1.7 var(--body);letter-spacing:0;color:var(--muted)}
+.now-page .timeline-list :is(.ai-v13-credit,.ai-v14-credit) a{color:inherit;font:inherit;text-decoration:underline;text-decoration-color:#10132e40;text-underline-offset:3px}
+.now-page .timeline-list :is(.ai-v13-credit,.ai-v14-credit) a:hover{color:var(--flow-ink);text-decoration-color:var(--landing)}
+
+/* Links: plain verbs with a drawn arrow, underlined in the project's colour. */
+.now-page .timeline-list .milestone-copy>div[class*=links]{display:flex;flex-wrap:wrap;gap:12px 28px;margin:28px 0 0}
+.now-page .timeline-list .milestone-link{display:inline-flex;align-items:center;gap:8px;margin:0;padding:0 0 6px;border:0;border-bottom:1.5px solid color-mix(in srgb,var(--landing) 55%,transparent);border-radius:0;background:none;font:600 14.5px/1.3 var(--body);letter-spacing:0;color:var(--flow-ink);text-decoration:none;transition:border-color .3s,color .3s}
+.now-page .timeline-list .milestone-copy>.milestone-link{margin-top:28px}
+.now-page .timeline-list .milestone-link span{font:inherit;color:inherit}
+.now-page .timeline-list .milestone-link .ic{width:15px;height:15px;transition:transform .45s var(--ease-out)}
+.now-page .timeline-list .milestone-link:hover{border-bottom-color:var(--landing)}
+.now-page .timeline-list .milestone-link:hover .ic{transform:translate(2px,-2px)}
+
+/* The window: each project's own artwork, in one mount. A pale mat, a hairline and a soft shadow. */
+.now-page .timeline-list .milestone>:last-child:not(.milestone-copy){grid-column:2;align-self:start;justify-self:center;position:relative;width:calc(100% - 20px);height:auto;min-height:0;aspect-ratio:4/5;margin:10px 10px 0;border:0;border-radius:14px;overflow:hidden;
+  outline:9px solid var(--paper-2);outline-offset:0;box-shadow:0 0 0 10px #10132e12,0 44px 64px -44px #0b0d2699;transition:outline-color .3s,translate .6s var(--ease-out),box-shadow .6s var(--ease-out)}
+.now-page .timeline-list a.milestone-art:hover,.now-page .timeline-list .milestone>a:last-child:hover{translate:0 -4px;box-shadow:0 0 0 10px #10132e12,0 54px 70px -44px #0b0d26b3}
+.now-page .timeline-list .milestone>:last-child:not(.milestone-copy):focus-visible{outline-color:var(--flow-blue);outline-offset:0;border-radius:14px}
+html[data-site-motion=off] .now-page .timeline-list .milestone>:last-child{transition:none}
+
+/* Landing colours: the stone and the link rule take each project's signature. */
+.now-page .timeline-entry:has(.milestone--dot-air){--landing:#ee3829}
+.now-page .timeline-entry:has(.milestone--nabat){--landing:#2f6b4f}
+.now-page .timeline-entry:has(.milestone--flow){--landing:#7a5cff}
+.now-page .timeline-entry:has(.milestone--afterimage){--landing:#c8372d}
+.now-page .timeline-entry:has(.milestone--nerf){--landing:#3f8f5a}
+.now-page .timeline-entry:has(.milestone--roseraie){--landing:#8a63b8}
+.now-page .timeline-entry:has(.milestone--atlas){--landing:#b48a3c}
+.now-page .timeline-entry:has(.milestone--chroma){--landing:#173dff}
+.now-page .timeline-entry:has(.milestone--festival){--landing:#e0569a}
+.now-page .timeline-entry:has(.milestone--lens){--landing:#2c8a76}
+.now-page .timeline-entry:has(.milestone--models){--landing:#2445ef}
+.now-page .timeline-entry:has(.milestone--wis){--landing:#3e6b34}
+.now-page .timeline-entry:has(.milestone--axiom){--landing:#2e56ed}
+.now-page .timeline-entry:has(.milestone--folio),.now-page .timeline-entry:has(.milestone--folio11){--landing:#a4583a}
+.now-page .timeline-entry:has(.milestone--game){--landing:#ff6b3d}
+.now-page .timeline-entry:has(.milestone--music){--landing:#ff5c9a}
+.now-page .timeline-entry:has(.milestone--ib){--landing:#3d5cff}
+.now-page .timeline-entry:has(.milestone--agents){--landing:#ff6b3d}
+
+/* ───────── The spring: where the river (and the record) begins ───────── */
+.now-page .timeline-origin{position:relative;z-index:1;display:flex;align-items:center;gap:22px;margin:clamp(96px,8.5vw,148px) 0 0;padding:0 0 0 calc(var(--river-x) - 15px);font:400 clamp(20px,1.7vw,26px)/1.4 var(--zh-strong);letter-spacing:.01em;color:var(--flow-ink)}
+html[lang^=en] .now-page .timeline-origin{font:400 clamp(24px,2vw,32px)/1.2 var(--display);letter-spacing:-.01em}
+.now-page .timeline-origin>span:first-child{display:block;flex:none;width:30px;height:30px;border-radius:50%;overflow:hidden;font-size:0;color:transparent;background:conic-gradient(from 200deg,#3d5cff,#7a5cff,#ff5c9a,#ff6b3d,#ffd23f,#35d49a,#3d5cff);box-shadow:0 0 0 6px var(--paper),0 0 0 7px #10132e1f}
+
+/* ───────── Narrower screens ───────── */
+@media (max-width:1180px){
+  .now-page .now-timeline{--date-w:136px;--bank-w:72px;--river-x:172px}
+  .now-page .timeline-entry .entry-day{font-size:68px}
+  .now-page .timeline-entry--same-day .entry-day{font-size:38px}
+  .now-page .timeline-list .milestone{grid-template-columns:minmax(0,1fr) clamp(260px,30vw,340px);gap:40px}
+}
+@media (max-width:980px){
+  .now-page .timeline-list .milestone{grid-template-columns:minmax(0,1fr);gap:44px}
+  .now-page .timeline-list .milestone>:last-child:not(.milestone-copy){grid-column:1;max-width:400px}
+}
+@media (max-width:760px){
+  .now-page .now-header{grid-template-columns:1fr;gap:36px;padding:28px 0 64px}
+  .now-page .now-header h1{font-size:clamp(96px,30vw,150px)!important}
+  .now-page .now-update{grid-template-columns:auto;justify-content:start;text-align:left}
+  .now-page .now-building{justify-self:start}
+  .now-page .now-timeline{--river-x:9px;--node-y:12px;--river-lead:28px}
+  .now-page .timeline-heading{margin-bottom:48px}
+  .now-page .timeline-entry{grid-template-columns:minmax(0,1fr);row-gap:22px;padding-left:40px;margin-bottom:88px}
+  .now-page .timeline-entry .entry-date,.now-page .timeline-list .milestone{grid-column:1}
+  .now-page .entry-date{flex-direction:row;align-items:flex-end;flex-wrap:wrap;gap:8px 16px}
+  .now-page .entry-date time{flex-direction:row-reverse;align-items:flex-end;gap:12px}
+  .now-page .timeline-entry .entry-day{font-size:52px}
+  .now-page .timeline-entry--same-day .entry-day{font-size:32px}
+  .now-page .entry-year{padding-bottom:4px}
+  .now-page .timeline-entry .entry-label{max-width:none;padding-bottom:2px}
+  .now-page .timeline-list .milestone-copy h3{font-size:clamp(24px,6.6vw,30px)}
+  html[lang^=en] .now-page .timeline-list .milestone-copy h3{font-size:clamp(28px,8vw,34px)}
+  .now-page .timeline-list .milestone-description{font-size:15.5px}
+  .now-page .timeline-list .milestone>:last-child:not(.milestone-copy){max-width:none;width:calc(100% - 16px);margin:8px 8px 0;aspect-ratio:auto;outline-width:7px;box-shadow:0 0 0 8px #10132e12,0 36px 50px -36px #0b0d2699}
+  .now-page .timeline-list .milestone>.ai-now-art.milestone-art:last-child{height:390px}
+  .now-page .timeline-origin{gap:18px;margin:88px 0 0 -6px;padding-left:0;font-size:19px}
+}
+
+/* Each window's own ink. The shared flow layer once painted every artwork's text near-white, which washed out
+   the light windows (Folio, After Hours, Festival, AXIOM, the first three landings). Hand colour back to each
+   artwork's own rules. */
+.now-page .timeline-list .milestone-art{color:revert-layer}
+
+/* English labels arrive in capitals; set them in sentence case, the site's label voice. */
+html[lang^=en] .now-page :is(.now-eyebrow,.now-update>span.mono,.timeline-heading h2,.timeline-entry .entry-label){text-transform:lowercase}
+html[lang^=en] .now-page :is(.now-eyebrow,.now-update>span.mono,.timeline-heading h2,.timeline-entry .entry-label)::first-letter{text-transform:uppercase}
+html[lang^=en] .now-page .timeline-entry:has(.milestone--nabat) .entry-label{text-transform:none}

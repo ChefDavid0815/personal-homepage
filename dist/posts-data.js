@@ -1,5 +1,7 @@
+import {dotAirPost} from './dot-air-content.js';
+import {nabatPost} from './nabat-content.js';
+import { flowPost } from './flow-release.js';
 import {nerfPost} from './nerf-post.js';
-import {aerPost} from './aer-post.js';
 import {chromaPost} from './chroma-post.js';
 import {atlasPost} from './atlas-post.js';
 import {roseraiePost} from './roseraie-post.js';
@@ -12,7 +14,9 @@ import { wisPost } from './wis-post.js';
 import { axiomPost } from './axiom-post.js';
 import { festivalPost } from './festival-post.js';
 export const posts = [
-  aerPost,
+  dotAirPost,
+  nabatPost,
+  flowPost,
   nerfPost,
   afterimagePost,
   midautumnPost,
@@ -26,13 +30,13 @@ export const posts = [
   axiomPost,
   {
     id: 'hello-world', theme: 'signal', number: '01', date: '2026-09-17',
-    cover: './assets/hero-asterisk.png', image: './assets/hero-asterisk.png',
+    cover: './assets/flow/river-loop.svg', image: './assets/flow/river-loop.svg',
     zh: {
       category: '生活切片 / 一个开始', title: '你好，这是我的一小块互联网。',
       summary: '网站终于搭起来了。想在这里放作品，也放一些没有标准答案的想法。先不着急定义它，慢慢长成自己的样子。',
       lead: '终于，我也有了一个自己的网址。点开它的时候，感觉有点像推开一扇刚装好的门：里面还会添很多东西，但已经是自己的地方了。',
       quote: '保持热忱，保持热爱。\nViva la vida.',
-      imageAlt: '荧光绿与液态金属交织的星形雕塑，个人主页的视觉符号',
+      imageAlt: '回环往复的彩色川流，个人主页的视觉符号',
       caption: '01 / 一点数码感，一点多巴胺。把喜欢的颜色，变成这个空间的开场白。',
       sections: [
         { title: '先给自己留一个位置', paragraphs: ['9 月 16 日，我正式开始搭建自己的个人主页。原本想得很简单：以后做出来的东西，总要有个地方好好放着。随着页面一点点成形，我又想加上喜欢的音乐、正在做的事，还有眼前这些小文章。', '这里不只是一个项目清单。我希望过一段时间再回来，能看见当时的自己：在对什么好奇，又把哪个“要不试试”真的做了出来。'] },
@@ -46,7 +50,7 @@ export const posts = [
       summary: 'The website is finally here. A home for my work, a few unfinished thoughts, and whatever this space grows into.',
       lead: 'I finally have a web address of my own. Opening it feels a little like walking through a newly fitted door. There is plenty left to put inside, but it already feels like my place.',
       quote: 'Stay passionate. Keep loving life.\nViva la vida.',
-      imageAlt: 'A fluorescent green and liquid-metal asterisk, the visual symbol of my personal website',
+      imageAlt: 'Interlocking coloured currents, the visual symbol of my personal website',
       caption: '01 / A little digital energy, a little dopamine. My favourite colours introduce this space.',
       sections: [
         { title: 'A place to put things', paragraphs: ['On September 16, I started building my personal website. The first idea was simple: everything I make should have somewhere to live. As the pages took shape, I wanted to add music, small updates, and now these notes.', 'I want this to be more than a project list. When I come back later, I hope to recognise the person I was: what made me curious, and which “what if?” I actually tried.'] },

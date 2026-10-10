@@ -1,6 +1,6 @@
-# Pulse / Codex usage observatory
+# Pulse / Codex and Claude usage observatory
 
-Pulse is a bilingual public page at `/usage.html`. It publishes **hourly numeric aggregates only**, sourced from this computer's retained Codex rollout records. It is not an account-wide OpenAI billing feed.
+Pulse is a bilingual public page at `/usage.html`. It publishes **hourly numeric aggregates only**, sourced from this computer's retained Codex rollout records and Claude Code session transcripts. It is not an account-wide OpenAI or Anthropic billing feed.
 
 ## Data and accounting
 
@@ -10,6 +10,14 @@ Pulse is a bilingual public page at `/usage.html`. It publishes **hourly numeric
 - Input includes cache reads and cache writes. Output includes reasoning. Total is **input + output**, not the sum of all fields.
 - Each record is attributed to its observed `turn_context.model`. Unrecognized names remain visible and unpriced. Request lengths are determined only when the cumulative delta matches `last_token_usage`; ambiguous intervals are unpriced.
 - Dubai calendar days (`UTC+4`): today, today plus six earlier days, today plus 29 earlier days, or the full retained history. Dates preceding the first record are marked uncovered, not presented as measured zero usage.
+
+## Claude Code (added 2026-10-10)
+
+- Source: `<claude home>/projects/**/*.jsonl` (default `~/.claude`, or `CLAUDE_CONFIG_DIR`), which includes Claude Code in the terminal, the desktop app's Code tab, and subagent transcripts. Read-only; offsets live in the same ledger.
+- Each assistant line carries `message.usage`; Claude repeats a reply's usage on every content block, so events are keyed by `message.id` + `requestId` and the largest (final) count is kept. `<synthetic>` placeholder messages are skipped.
+- Mapping: input = `input_tokens` + `cache_creation_input_tokens` + `cache_read_input_tokens`; cached = cache reads; write = cache creation, with `write1h` = `cache_creation.ephemeral_1h_input_tokens`; output = `output_tokens`; reasoning = `output_tokens_details.thinking_tokens` (already inside output).
+- Prices (Standard, USD per million tokens, checked 2026-10-10): Claude Fable 5.1 $10 / $50, cache read $0.25; Claude Opus 5.5 $4 / $20, read $0.20; Claude Opus 5 and 4.6–4.8 $5 / $25; Claude Sonnet 5.5 and 5 $2 / $10, read $0.20; Claude Sonnet 4.6 $3 / $15; Claude Haiku 5.5 $0.10 / $0.50 (prompts above 100K: $0.50 / $2.50); Claude Haiku 4.5 $1 / $5. Cache writes: 5-minute 1.25× input, 1-hour 2× input; other cache reads 0.1× input. Source: [Anthropic pricing](https://platform.claude.com/docs/en/about-claude/pricing).
+- The snapshot gains an optional per-row `write1h` field and scope `local-agent-records`; the API accepts snapshots from older collectors unchanged.
 
 ## Latency and availability
 

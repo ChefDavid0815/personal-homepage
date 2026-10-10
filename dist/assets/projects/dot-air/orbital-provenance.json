@@ -1,0 +1,8 @@
+{
+  "points": 19717,
+  "landDots": 5633,
+  "source": "Natural Earth public domain; existing data/land.json",
+  "airportSource": "mwgg/Airports MIT; existing data/airports.json",
+  "clients": "independent WPF sphere and Three.js WebGL sphere",
+  "sampling": "equal-area latitude bands; 1.35 degree latitude / 1.55 degree equatorial longitude"
+}

@@ -1,24 +1,27 @@
+import {dotAirCard,dotAirDetail} from './dot-air-art.js';
+import './dot-air-globe.bundle.js';
 import {chromaCard,chromaDetail,changeChromaChannel,changeChromaView} from './chroma-exhibit.js';
-import {aerCard,aerDetail,changeAerAirline} from './aer-exhibit.js';
-import './aer-motion.js';
 import {atlasCard,atlasDetail,changeAtlasView} from './atlas-exhibit-v2.js';
 import {roseraieCard,roseraieDetail,changeRoseraieView} from './roseraie-exhibit-v2.js';
 import { lensCard, lensDetail } from './projectlens-exhibit.js';
 import { t, localizeProject, onLanguageChange } from './i18n.js';
 import { projects } from './projects.js';
+import {projectLocation} from './site-routes.js';
 import { axiomCard, axiomDetail } from './axiom-exhibit.js';
 import { festivalCard, festivalDetail, changeFestivalSeason, changeFestivalView } from './festival-exhibit.js';
 import { folioCard, folioDetail, changeFolioView } from './folio-exhibit.js';
+import { courtCard, courtDetail } from './court-exhibit.js';
+import './gallery-rooms.js';
 
 const waveHeights = [18, 31, 47, 33, 61, 79, 55, 90, 72, 100, 83, 63, 95, 77, 52, 69, 41, 58, 33, 22, 37];
 const previews = {
   neon: `<div class="neon-composition">
     <div class="concept-browser"><div class="concept-browser-bar"><span class="concept-dots"><i></i><i></i><i></i></span><span>neon.space / playground</span><span>⌘ K</span></div>
-      <div class="neon-workspace"><div class="neon-rail"><b>n<span>✳</span></b><span class="neon-rail-item selected">＋ New thought</span><span class="neon-rail-item">↗ Explore</span><span class="neon-rail-item">▤ My space</span><span class="neon-rail-bottom">A LITTLE SPARK<br>GOES A LONG WAY.</span></div>
-        <div class="neon-canvas"><span class="neon-greeting">YOUR NEXT BIG IDEA STARTS HERE</span><span class="neon-emblem">✳</span><strong>What if<br>we made it real?</strong><div class="neon-prompt">An idea worth exploring… <span>↑</span></div><div class="neon-suggestions"><span>✧ Imagine something</span><span>⌘ Make a plan</span></div></div>
+      <div class="neon-workspace"><div class="neon-rail"><b>n<span>∞</span></b><span class="neon-rail-item selected">＋ New thought</span><span class="neon-rail-item">↗ Explore</span><span class="neon-rail-item">▤ My space</span><span class="neon-rail-bottom">A LITTLE SPARK<br>GOES A LONG WAY.</span></div>
+        <div class="neon-canvas"><span class="neon-greeting">YOUR NEXT BIG IDEA STARTS HERE</span><span class="neon-emblem">∞</span><strong>What if<br>we made it real?</strong><div class="neon-prompt">An idea worth exploring… <span>↑</span></div><div class="neon-suggestions"><span>✧ Imagine something</span><span>⌘ Make a plan</span></div></div>
       </div>
     </div>
-    <div class="neon-floating-note"><span>✳</span><div><b>Small spark. Big possibilities.</b><small>EVERY GOOD IDEA STARTS SOMEWHERE.</small></div></div>
+    <div class="neon-floating-note"><span>∞</span><div><b>Small spark. Big possibilities.</b><small>EVERY GOOD IDEA STARTS SOMEWHERE.</small></div></div>
   </div>`,
   flow: `<div class="flow-composition"><div class="flow-poster-type">TUNE IN.<br><span>ZONE OUT.</span></div><div class="focus-player"><div class="focus-player-top"><span>FLOW STATE</span><span>SESSION / 01</span></div><div class="focus-wave">${waveHeights.map((height, index) => `<i style="--bar:${height}%;--delay:${index * 35}ms"></i>`).join('')}</div><div class="focus-track"><div><strong>Somewhere, quieter.</strong><span>DEEP FOCUS / AMBIENT</span></div><span class="focus-play">Ⅱ</span></div><div class="focus-progress"><span></span></div><div class="focus-time"><span>02:48</span><span>∞</span></div></div><div class="flow-cover-foot mono"><span>LESS NOISE.</span><span>MORE YOU.</span></div></div>`,
   devkit: `<div class="tools-composition"><div class="tools-poster-heading"><span>{ }</span><div>SMALL TOOLS.<br><strong>BIG DIFFERENCE.</strong></div></div><div class="toolbox-editor"><div class="toolbox-titlebar"><span class="concept-dots"><i></i><i></i><i></i></span><span>tiny-tools / workspace</span><span>⌘</span></div><div class="toolbox-tab">{ } &nbsp; everyday.json <span>×</span></div><div class="toolbox-code"><div><span>01</span><code>{</code></div><div><span>02</span><code>&nbsp; <b>"less"</b>: <em>"repetitive work"</em>,</code></div><div><span>03</span><code>&nbsp; <b>"more"</b>: <em>"time to create"</em>,</code></div><div><span>04</span><code>&nbsp; <b>"make_it"</b>: <em>"simple"</em></code></div><div><span>05</span><code>}</code></div></div><div class="toolbox-status"><span>✓ &nbsp; A little less friction.</span><span>UTF-8</span></div></div><div class="tools-keycap mono">⌘ <span>+ a better way</span></div></div>`
@@ -41,19 +44,22 @@ const grid = document.querySelector('#project-grid');
 const dialog = document.querySelector('#project-dialog');
 const dialogContent = document.querySelector('#dialog-content');
 let selectedProjectId = null;
+let closeFromRoute = false;
+let restoreLinkedProject = false;
 let selectedFolioView = 'library';
 let selectedFestivalSeason = 'summer';
 let selectedFestivalView = 'journey';
 
 function renderCards() {
-  const aerCarrier=grid.querySelector('#project-aer')?.dataset.aerAirline||'EK';
+  const dotHistoryOpen=grid.querySelector("#dot-air-history")?.open??(location.hash==="#dot-air-history");
+  const atlasView=grid.querySelector('#project-atlas .atlas-view')?.dataset.atlasViewActive||'sky';
   const roseView=grid.querySelector('#project-roseraie [data-rose-gallery]')?.dataset.roseGallery || 'salon';
   const roseHistoryOpen=grid.querySelector('#roseraie-history')?.open ?? (location.hash === '#roseraie-history');
-  const chromaState = {channel:grid.querySelector('.exhibit--chroma')?.dataset.chromaChannel || 'cpu',view:grid.querySelector('.exhibit--chroma [data-chroma-preview]')?.dataset.chromaPreview || 'pro'};
+  const chromaState = {channel:grid.querySelector('#project-chroma')?.dataset.chromaChannel || 'cpu',view:grid.querySelector('#project-chroma [data-chroma-preview]')?.dataset.chromaPreview || 'pro'};
   const festivalHistoryOpen = grid.querySelector("#festival-history")?.open ?? (location.hash === "#festival-history");
   const historyOpen = grid.querySelector("#folio-history")?.open ?? (location.hash === "#folio-history");
   grid.innerHTML = projects.map(localizeProject).map(project => {
-    if(project.id === 'aer') return aerCard(aerCarrier);
+    if(project.id === 'dot-air') return dotAirCard();
     if(project.id === 'roseraie') return roseraieCard();
     if(project.id === 'atlas') return atlasCard();
     if(project.id === 'chroma') return chromaCard();
@@ -61,6 +67,7 @@ function renderCards() {
     if(project.id === 'festival-toolkit') return festivalCard(project);
     if(project.id === 'axiom') return axiomCard(project);
     if(project.id === 'folio') return folioCard(project);
+    if(isCourt(project)) return courtCard(project);
     const layout = layouts.has(project.layout) ? project.layout : 'standard';
     const headline = escapeHtml(project.headline || project.subtitle).replace(/\n/g, '<br>');
     const featured = t(isCourt(project) ? 'court.first' : project.demo ? 'project.featuredConcept' : 'project.featuredProject');
@@ -70,28 +77,31 @@ function renderCards() {
       '<div class="exhibit-info"><div class="exhibit-kicker mono"><span>'+(['feature','court'].includes(layout)?featured:escapeHtml(project.category))+'</span><span class="exhibit-number">/'+escapeHtml(project.number)+'</span></div><div class="exhibit-title-row"><h3>'+escapeHtml(project.name)+'</h3><span class="exhibit-title-arrow" aria-hidden="true">↗</span></div><p class="exhibit-subtitle">'+headline+'</p><p class="exhibit-description">'+escapeHtml(project.description)+'</p>'+(isCourt(project)?courtStats():'')+'<div class="exhibit-tags">'+tagsFor(project)+'</div><div class="exhibit-bottom"><span class="demo-stamp">'+t(project.demo?'project.demo':'project.work')+'</span><span class="exhibit-action">'+t('project.view')+' <span aria-hidden="true">↗</span></span></div></div></button>'+
       (isCourt(project)?'<div class="court-launch"><span class="mono">'+t('court.noInstall')+'</span><div><a class="court-source" href="'+safeLink(project.repoUrl)+'" target="_blank" rel="noopener noreferrer">'+t('court.source')+' ↗</a><a class="court-play" href="'+safeLink(project.liveUrl)+'">'+t('court.play')+' <span aria-hidden="true">↗</span></a></div></div>':'')+'</article>';
   }).join('');
+  const dotHistory=grid.querySelector('#dot-air-history');if(dotHistory)dotHistory.open=dotHistoryOpen;
   const chromaChannel=grid.querySelector(`[data-chroma-channel-button="${chromaState.channel}"]`);if(chromaChannel)changeChromaChannel(chromaChannel);
+  if(atlasView!=='sky'){const atlasButton=grid.querySelector(`#project-atlas [data-atlas-view="${atlasView}"]`);if(atlasButton)changeAtlasView(atlasButton);}
   if(roseView!=='salon'){const roseButton=grid.querySelector(`#project-roseraie [data-rose-view="${roseView}"]`);if(roseButton)changeRoseraieView(roseButton);}
   grid.querySelector('#roseraie-history').open=roseHistoryOpen;
-  const chromaView=grid.querySelector(`.exhibit--chroma [data-chroma-view="${chromaState.view}"]`);if(chromaView)changeChromaView(chromaView);
+  const chromaView=grid.querySelector(`#project-chroma [data-chroma-view="${chromaState.view}"]`);if(chromaView)changeChromaView(chromaView);
   grid.querySelector('#folio-history').open = historyOpen;
   grid.querySelector('#festival-history').open = festivalHistoryOpen;
   changeFestivalSeason(grid,selectedFestivalSeason);
   document.querySelectorAll('[data-project-count]').forEach(element => { element.textContent=String(projects.length).padStart(2,'0'); });
   document.dispatchEvent(new Event('atlas:render'));
   document.dispatchEvent(new Event('roseraie:render'));
-  document.dispatchEvent(new Event('aer:render'));
+  document.dispatchEvent(new Event('dot-air:render'));
 }
 
 function renderDetail(projectId) {
   const original=projects.find(project=>project.id===projectId);
   if(!original) return;
   const project=localizeProject(original);
-  dialog.classList.remove('roseraie-dialog', 'atlas-dialog', 'chroma-dialog', 'lens-dialog', 'folio-dialog', 'axiom-dialog', 'festival-dialog', 'aer-dialog');
-  if(projectId === 'aer') { dialog.classList.add('aer-dialog'); dialogContent.innerHTML=aerDetail(); document.dispatchEvent(new Event('aer:render')); return; }
+  dialog.classList.remove('roseraie-dialog', 'atlas-dialog', 'chroma-dialog', 'lens-dialog', 'folio-dialog', 'axiom-dialog', 'festival-dialog', 'da-dialog', 'court-dialog', 'chx-dialog');
+  if(projectId === 'nba-after-hours') {dialog.classList.add('court-dialog');dialogContent.innerHTML=courtDetail(project);return;}
+  if(projectId === 'dot-air') {dialog.classList.add('da-dialog');dialogContent.innerHTML=dotAirDetail();return;}
   if(projectId === 'roseraie') { const historyOpen=dialogContent.querySelector('#roseraie-detail-history')?.open; dialog.classList.add('roseraie-dialog'); dialogContent.innerHTML=roseraieDetail(dialogContent.querySelector('[data-rose-gallery]')?.dataset.roseGallery || 'salon'); dialogContent.querySelector('#roseraie-detail-history').open=Boolean(historyOpen); document.dispatchEvent(new Event('roseraie:render')); return; }
   if(projectId === 'atlas') { dialog.classList.add('atlas-dialog'); dialogContent.innerHTML=atlasDetail(dialogContent.querySelector('.atlas-view')?.dataset.atlasViewActive || 'sky'); document.dispatchEvent(new Event('atlas:render')); return; }
-  if(projectId === 'chroma') { dialog.classList.add('chroma-dialog'); dialogContent.innerHTML=chromaDetail(dialogContent.querySelector('[data-chroma-preview]')?.dataset.chromaPreview || 'pro'); return; }
+  if(projectId === 'chroma') { dialog.classList.add('chx-dialog'); dialogContent.innerHTML=chromaDetail(dialogContent.querySelector('[data-chroma-preview]')?.dataset.chromaPreview || 'pro'); return; }
   dialog.classList.toggle('lens-dialog', projectId === 'projectlens');
   if(projectId === 'projectlens') { dialogContent.innerHTML=lensDetail(project); return; }
   dialog.classList.toggle('folio-dialog', projectId === 'folio');
@@ -126,21 +136,39 @@ function openHistoryFromHash(scroll=false) {
   if(scroll) requestAnimationFrame(()=>requestAnimationFrame(()=>history.scrollIntoView({block:'start',behavior:'auto'})));
 }
 
-function openAerFromHash() {
-  if(location.hash !== '#project-aer') return;
-  requestAnimationFrame(()=>requestAnimationFrame(()=>grid.querySelector('#project-aer')?.scrollIntoView({block:'start',behavior:'auto'})));
+function openDotAirFromHash() {
+  if(location.hash==='#dot-air-history'){const log=grid.querySelector('#dot-air-history');if(log){log.open=true;requestAnimationFrame(()=>requestAnimationFrame(()=>log.scrollIntoView({block:'start',behavior:'auto'})));}return;}
+  if(location.hash==='#project-dot-air')requestAnimationFrame(()=>requestAnimationFrame(()=>grid.querySelector('#project-dot-air')?.scrollIntoView({block:'start',behavior:'auto'})));
+}
+
+function openProject(projectId,{push=false,linked=false}={}) {
+  if(!projects.some(project=>project.id===projectId))return false;
+  document.querySelector('#project-route-status')?.remove();
+  selectedProjectId=projectId;restoreLinkedProject=linked;
+  renderDetail(projectId);
+  if(!dialog.open)dialog.showModal();
+  document.body.classList.add('dialog-open');
+  if(push)history.pushState({...history.state,flowProject:projectId},'',projectLocation(location.href,projectId));
+  return true;
+}
+function syncProjectFromUrl(initial=false) {
+  const projectId=new URLSearchParams(location.search).get('project');
+  if(projectId&&openProject(projectId,{linked:initial}))return;
+  if(dialog.open){closeFromRoute=true;dialog.close();}
+  document.querySelector('#project-route-status')?.remove();
+  if(projectId){const notice=document.createElement('p');notice.id='project-route-status';notice.className='gallery-route-status';notice.setAttribute('role','status');notice.innerHTML=escapeHtml(t('project.linkMissing'))+' <a href="./gallery.html#projects">'+escapeHtml(t('project.viewAll'))+' ↗</a>';grid.before(notice);}
 }
 
 renderCards();
 openHistoryFromHash(true);
-openAerFromHash();
+openDotAirFromHash();
+syncProjectFromUrl(true);
 onLanguageChange(() => {
   renderCards();
   if(dialog.open&&selectedProjectId) renderDetail(selectedProjectId);
+  if(new URLSearchParams(location.search).has('project')&&!dialog.open)syncProjectFromUrl();
 });
 grid.addEventListener('click',event=>{
-  const aerButton=event.target.closest('[data-aer-airline-button]');
-  if(aerButton){changeAerAirline(aerButton);return;}
   const roseButton=event.target.closest('[data-rose-view]');
   if(roseButton) { changeRoseraieView(roseButton); return; }
   const atlasButton=event.target.closest('[data-atlas-view]');
@@ -149,10 +177,7 @@ grid.addEventListener('click',event=>{
   if(seasonButton) { selectedFestivalSeason=seasonButton.dataset.festivalSeason; changeFestivalSeason(grid,selectedFestivalSeason); return; }
   const button=event.target.closest('[data-project]');
   if(!button) return;
-  selectedProjectId=button.dataset.project;
-  renderDetail(selectedProjectId);
-  dialog.showModal();
-  document.body.classList.add('dialog-open');
+  openProject(button.dataset.project,{push:true});
 });
 dialog.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());
 dialogContent.addEventListener('click',event=>{
@@ -173,11 +198,20 @@ dialog.addEventListener('click',event=>{
   if(event.clientX<bounds.left||event.clientX>bounds.right||event.clientY<bounds.top||event.clientY>bounds.bottom) dialog.close();
 });
 dialog.addEventListener('close',()=>{
+  const routed=closeFromRoute;closeFromRoute=false;
+  if(dialog.open)return; // Ignore a close event from a dialog that has already reopened.
+  const closedProject=selectedProjectId;
   document.body.classList.remove('dialog-open');
   const opener=[...grid.querySelectorAll('[data-project]')].find(button=>button.dataset.project===selectedProjectId);
-  opener?.focus({preventScroll:true});
+  if(restoreLinkedProject)opener?.scrollIntoView({block:'center',behavior:'instant'});
+  opener?.focus({preventScroll:true});restoreLinkedProject=false;
   selectedProjectId=null;
-  dialog.classList.remove('roseraie-dialog', 'atlas-dialog', 'folio-dialog', 'axiom-dialog', 'festival-dialog', 'lens-dialog', 'chroma-dialog', 'aer-dialog');
+  dialog.classList.remove('roseraie-dialog', 'atlas-dialog', 'folio-dialog', 'axiom-dialog', 'festival-dialog', 'lens-dialog', 'chroma-dialog', 'da-dialog', 'court-dialog', 'chx-dialog');
+  if(!routed&&closedProject&&new URLSearchParams(location.search).get('project')===closedProject){
+    if(history.state?.flowProject===closedProject)history.back();
+    else {const url=projectLocation(location.href,null);url.hash='#project-'+closedProject;history.replaceState(history.state,'',url);}
+  }
 });
 
-window.addEventListener('hashchange',()=>{openHistoryFromHash(true);openAerFromHash();});
+window.addEventListener('hashchange',()=>{openHistoryFromHash(true);openDotAirFromHash();});
+window.addEventListener('popstate',()=>syncProjectFromUrl());

@@ -5,6 +5,7 @@ import path from 'node:path';
 import { gzipSync } from 'node:zlib';
 import {getResetData} from '../lib/reset-data.js';
 import resetPostHandler from '../api/reset-post.js';
+import {readAc8Snapshot} from './ac8-sync.mjs';
 
 const root = path.resolve(fileURLToPath(new URL('../dist/', import.meta.url)));
 const port = Number(process.env.PORT || 4173);
@@ -13,6 +14,12 @@ http.createServer(async (request, response) => {
   try {
     const url = new URL(request.url, `http://127.0.0.1:${port}`);
     const pathname = decodeURIComponent(url.pathname);
+    if(pathname==='/api/ac8-record'){
+      if(!['GET','HEAD'].includes(request.method)){response.writeHead(405,{'Allow':'GET, HEAD'});response.end();return;}
+      const snapshot=await readAc8Snapshot('E:/Steam/userdata/796657407/config/localconfig.vdf');
+      response.writeHead(200,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store'});
+      response.end(request.method==='HEAD'?undefined:JSON.stringify({...snapshot,freshness:'synced',serverTime:new Date().toISOString()}));return;
+    }
     if (pathname === '/axiom' || pathname === '/stride' || pathname === '/when-to-reset' || pathname === '/reset-history') {
       response.writeHead(308, {Location: pathname + '/' + url.search}); response.end(); return;
     }

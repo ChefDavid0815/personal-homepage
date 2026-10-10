@@ -1,7 +1,7 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
-  "buildCommand": "npm run check",
+  "buildCommand": "npm run check && npm run check:flow && npm run build:flow && npm run build:motion",
   "outputDirectory": "dist",
   "redirects": [
     {

@@ -45,13 +45,13 @@
       <div class="moon-lantern moon-lantern--two" aria-hidden="true"><i></i><b></b></div>
       <div class="moon-lantern moon-lantern--three" aria-hidden="true"><i></i><b></b></div>
       <div class="moon-copy">
-        <p class="moon-eyebrow"><span class="moon-spark">✦</span> CHEFZC / MOON FESTIVAL 2026 <span>·</span> 09.25</p>
-        <h2><span data-moon-zh="今夜，月亮上线。" data-moon-en="THE MOON IS ONLINE."></span><em>FULL MOON <b>✳</b> FULL HEART</em></h2>
+        <p class="moon-eyebrow"><span class="moon-spark">∞</span> CHEFZC / MOON FESTIVAL 2026 <span>·</span> 09.25</p>
+        <h2><span data-moon-zh="今夜，月亮上线。" data-moon-en="THE MOON IS ONLINE."></span><em>FULL MOON <b>∞</b> FULL HEART</em></h2>
         <p class="moon-description" data-moon-zh="把满月、花灯和一点波普色彩，挂进我的数字宇宙。愿这束光，也照到你那边。" data-moon-en="A full moon, floating lanterns and a burst of pop colour in my digital universe. May this light find you, too."></p>
         <a class="moon-post-link" href="./post.html?article=midautumn"><span data-moon-zh="翻开中秋随笔" data-moon-en="READ THE MOON NOTE"></span><span aria-hidden="true">↗</span></a>
       </div>
       <div class="moon-edition" aria-hidden="true"><span>ONE NIGHT</span><b>25</b><span>SEPT / DUBAI</span></div>
-      <div class="moon-bottom" aria-hidden="true"><span>月亮照见远方，也照见此刻。</span><span>THE MID-AUTUMN EDITION ✦ 仅此一天</span></div>`;
+      <div class="moon-bottom" aria-hidden="true"><span>月亮照见远方，也照见此刻。</span><span>THE MID-AUTUMN EDITION ∞ 仅此一天</span></div>`;
     header.after(section);
     const stage = section.querySelector('.moon-stage');
     stage.addEventListener('pointermove', event => {

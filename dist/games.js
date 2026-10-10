@@ -1,6 +1,7 @@
 import { getLanguage, onLanguageChange, t } from './i18n.js';
 import { gameSnapshot } from './games-data.js';
 import { f1Snapshot } from './games-f1-data.js';
+import './game-room.js';
 import { isMotionPaused, setMotionPaused, systemReducesMotion, onMotionChange, canAnimate } from './motion-state.js';
 
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
@@ -69,6 +70,8 @@ function updateF1Team(animate = false) {
   copy.dataset.i18n = team.copy;
   copy.textContent = t(team.copy);
   document.querySelector('#f1-focus-link').href = team.link;
+  // The arrow is drawn as an icon beside the label, so the glyph in the message is not repeated.
+  document.querySelector('#f1-focus-link-text').textContent = t('game.f1Official').replace(/\s*↗\s*$/, '');
   if (animate && canAnimate()) {
     for (const element of [title, copy]) {
       element.getAnimations().forEach(animation => animation.cancel());
@@ -106,7 +109,6 @@ function updateMotion() {
   body.dataset.motion = paused || document.hidden ? 'off' : 'on';
   motionButton.setAttribute('aria-pressed', String(paused));
   document.querySelector('#motion-text').textContent = t(paused ? 'game.resume' : 'game.pause');
-  motionButton.querySelector('.motion-icon').textContent = paused ? '▷' : 'Ⅱ';
 }
 function updateLanguage() {
   document.title = t('game.title');

@@ -54,4 +54,20 @@ class LedgerTest(unittest.TestCase):
         rows=self.ledger.snapshot()['hours'];self.assertEqual({r['context'] for r in rows},{'long','short','unknown'})
         self.assertEqual(sum(r['total'] for r in rows),400550)
 
+    def test_claude_code_transcripts_dedupe_and_split_cache_writes(self):
+        path=self.base/'claude.jsonl'
+        usage={'input_tokens':2,'cache_creation_input_tokens':15648,'cache_read_input_tokens':44164,'output_tokens':150,'output_tokens_details':{'thinking_tokens':20},'cache_creation':{'ephemeral_1h_input_tokens':15648,'ephemeral_5m_input_tokens':0}}
+        line=lambda u,block:{'type':'assistant','timestamp':'2026-10-09T19:30:00Z','requestId':'req_1','message':{'id':'msg_1','model':'claude-opus-5-5','usage':u,'content':[{'type':block,'text':'PRIVATE'}]}}
+        partial=dict(usage,output_tokens=40)
+        with path.open('w',encoding='utf-8') as f:
+            for r in (line(partial,'thinking'),line(usage,'text'),line(usage,'tool_use'),{'type':'assistant','timestamp':'2026-10-09T19:31:00Z','message':{'id':'msg_2','model':'<synthetic>','usage':usage}}):f.write(json.dumps(r)+'\n')
+        self.ledger.scan_claude([path])
+        rows=[r for r in self.ledger.snapshot()['hours'] if r['model'].startswith('claude')]
+        self.assertEqual(len(rows),1);row=rows[0]
+        self.assertEqual(row['events'],1);self.assertEqual(row['input'],2+15648+44164);self.assertEqual(row['cached'],44164)
+        self.assertEqual(row['write'],15648);self.assertEqual(row['write1h'],15648);self.assertEqual(row['output'],150);self.assertEqual(row['reasoning'],20)
+        self.assertEqual(row['total'],row['input']+row['output']);self.assertEqual(row['hour'],'2026-10-09T23:00:00+04:00')
+        self.assertEqual(self.ledger.scan_claude([path]),0)
+        self.assertNotIn('PRIVATE',json.dumps(self.ledger.snapshot()))
+
 if __name__=='__main__':unittest.main()

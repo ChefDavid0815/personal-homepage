@@ -1,0 +1,105 @@
+{
+  "assets": [
+    {
+      "file": "app-icon.svg",
+      "sha256": "2054e903bed773681a1b1366fbf72bd2df1b075b1f6433ae5fbc4265357de4f0",
+      "bytes": 379,
+      "origin": "Existing NABAT application icon and leaf/radio geometry"
+    },
+    {
+      "file": "compare-native.png",
+      "sha256": "79b74a81027b86c66a954a9bd7b2491248a985ab3b5897cd723854eb2d924770",
+      "bytes": 1287842,
+      "dimensions": [
+        1748,
+        1369
+      ],
+      "origin": "NABAT 1.1 release acceptance capture of the actual WinUI XAML root",
+      "syntheticDemoData": true,
+      "osCompositorCaptured": false
+    },
+    {
+      "file": "fraunces-latin.woff2",
+      "sha256": "88e17be075f1be50ab67b057b99e3701b828f44ed28f9452df6c02645bb0cba9",
+      "bytes": 36560,
+      "origin": "Existing NABAT next/font Google font bundle",
+      "license": "SIL OFL 1.1"
+    },
+    {
+      "file": "geist-latin.woff2",
+      "sha256": "9b6f5ff45b278c744b5f379a2c4ecbaf858a842b8eaf82ac8d21b699ca16c608",
+      "bytes": 29288,
+      "origin": "Existing NABAT next/font Google font bundle",
+      "license": "SIL OFL 1.1"
+    },
+    {
+      "file": "home-native.png",
+      "sha256": "f0875951617468588261d3acae41377d7fc8fee9100052b05be363e9464e8307",
+      "bytes": 408988,
+      "dimensions": [
+        2282,
+        1524
+      ],
+      "origin": "NABAT 1.1 release acceptance capture of the actual WinUI XAML root",
+      "syntheticDemoData": true,
+      "osCompositorCaptured": false
+    },
+    {
+      "file": "monstera.webp",
+      "sha256": "2a3b1e48f6d417d9dc31b5833f65391a2382e66c6208f9fa10706881964d9422",
+      "bytes": 142142,
+      "origin": "Original NABAT generated brand/sample photography",
+      "synthetic": true
+    },
+    {
+      "file": "noto-arabic.woff2",
+      "sha256": "69cdf0bf005fdc9cc13fb5a8581697eb9ba8f761aeaf255fc717d14c62c38891",
+      "bytes": 166152,
+      "origin": "Existing NABAT next/font Google font bundle",
+      "license": "SIL OFL 1.1"
+    },
+    {
+      "file": "olive.webp",
+      "sha256": "96a1b2959cb86982e355113492ad9366997b4b57c35610b1afb3b60689d5727d",
+      "bytes": 165020,
+      "origin": "Original NABAT generated brand/sample photography",
+      "synthetic": true
+    },
+    {
+      "file": "peace-lily.webp",
+      "sha256": "497824db4f95aac17738b44992f56058cc0538488fc68bbe9975724487c4ea35",
+      "bytes": 121980,
+      "origin": "Original NABAT generated brand/sample photography",
+      "synthetic": true
+    },
+    {
+      "file": "plants-native.png",
+      "sha256": "d0cec212f4b46bc6b9c72059f5b3dbfc8a0b27aae50c738ba6b63439a5a3c64d",
+      "bytes": 331926,
+      "dimensions": [
+        2282,
+        1524
+      ],
+      "origin": "NABAT 1.1 release acceptance capture of the actual WinUI XAML root",
+      "syntheticDemoData": true,
+      "osCompositorCaptured": false
+    },
+    {
+      "file": "tags-native.png",
+      "sha256": "1d6f1d2067555b726f722a94e3217aa4041cb9f62970721d9dcea56b6b91b12a",
+      "bytes": 250382,
+      "dimensions": [
+        2282,
+        1524
+      ],
+      "origin": "NABAT 1.1 release acceptance capture of the actual WinUI XAML root",
+      "syntheticDemoData": true,
+      "osCompositorCaptured": false
+    }
+  ],
+  "fontLicenses": {
+    "Fraunces": "https://github.com/google/fonts/blob/main/ofl/fraunces/OFL.txt",
+    "Geist": "https://github.com/google/fonts/blob/main/ofl/geist/OFL.txt",
+    "Noto Sans Arabic": "https://github.com/google/fonts/blob/main/ofl/notosansarabic/OFL.txt"
+  }
+}

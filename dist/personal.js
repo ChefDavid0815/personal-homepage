@@ -2,15 +2,18 @@ import { t, onLanguageChange } from './i18n.js';
 import './motion.js';
 import './music.js';
 import './reset-entrance.js';
+import {createCopyTransaction} from './flow-state.js';
 
 const copyButton = document.querySelector('[data-copy-email]');
 const announcement = document.querySelector('#copy-announcement');
-copyButton?.addEventListener('click', async () => {
-  try {
-    await navigator.clipboard.writeText(copyButton.dataset.copyEmail);
-    announcement.textContent = t('contact.copied');
-  } catch {
-    announcement.textContent = t('contact.copyFailed');
+const copy = createCopyTransaction({
+  write:value=>navigator.clipboard.writeText(value),
+  onState:state=>{
+    if(copyButton){copyButton.disabled=state==='pending';copyButton.setAttribute('aria-busy',String(state==='pending'));}
+    if(announcement&&state==='success')announcement.textContent=t('contact.copied');
+    if(announcement&&state==='error')announcement.textContent=t('contact.copyFailed');
   }
 });
-onLanguageChange(() => { if (announcement) announcement.textContent = ''; });
+copyButton?.addEventListener('click',()=>copy.copy(copyButton.dataset.copyEmail));
+onLanguageChange(()=>{copy.invalidate();if(announcement)announcement.textContent='';});
+window.addEventListener('pagehide',event=>{if(!event.persisted)copy.dispose();});

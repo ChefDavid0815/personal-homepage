@@ -2,17 +2,51 @@
 
 # ChefZC — 数字实验室
 
-个人介绍与项目展示网站：深色数码风，荧光绿、紫色、电光蓝与橙色点缀。
+个人介绍与项目展示网站。**Current 2.1** 把整个空间做成一条河：夜河靛蓝、晨雾，以及一道流动的色彩；每个项目继续保留自己的艺术语言。
 
-## AER 1.1 / 一片公开的天空，一座自己的工作台。
+## Current 2.1 / 川流不息 · 网站 2.0
 
-<a href="https://chefzc.dev/aer.html"><img src="https://chefzc.dev/assets/projects/aer/cover-v11.png" width="100%" alt="AER 1.1：无色光学玻璃、真实航司尾翼与个人航班工作区。" /></a>
+每一个房间全面重做。首页以实时流线场开场：成千上万道水流绕开「川流不息」四个字和你的光标（圆柱绕流的势流解；按住可以搅动），随后整页顺流而下，经过十个章节——源、信、我、爱、声、器、途、作、遇、归。每个长页面的结尾都回到同一条河。
 
-**AER 1.1 · Flight, thoughtfully** — 让下一程，更像你。
+- 配色：夜河靛蓝 `#0b0d26`、晨雾 `#e7ebf2`，六色流光只用于线条与标记。
+- 字体：Adobe Fonts 套件 `per8hkf`——HelloFont 纯黑（厚重扁宽的现代中文标题字）、HelloFont 倔强黑（中文正文）、Cesso（西文标题）；DM Sans 与 IBM Plex Mono 仍本地托管。Noto Sans SC 后备子集补齐全站用字（之前缺「川」）。
+- 新标志：「川」，三道水流写成。
+- 动效：共用一个时钟，离屏、后台、全站暂停与减少动态时停止；跨页面视图过渡。
+- 设计规范见 [`DESIGN.md`](DESIGN.md)，产品定位见 [`PRODUCT.md`](PRODUCT.md)。改版前的外壳文件存档于 `design/before-current-20261009/`。
 
-一款从晨光、舷窗与真实航司尾翼生长出来的航班探索与个性化推荐产品。搜索、筛选与比较旅程，建立旅人星图，也看清推荐背后的理由。网页版可以公开探索，个人档案与已选行程由登录保护；独立 Windows 版本重新安排固定导航、五个搜索工作区、常驻旅程详情、快捷键、本机档案与离线演示搜索。航班与票价为演示数据，不创建预订或机票。应用源码和 Windows 安装包不上传 GitHub。
+## Pulse / Claude 加入用量观测站
 
-[**进入 AER ↗**](https://aer-personal-journeys.workspace-298846.chatgpt.site) &nbsp; / &nbsp; [**光学玻璃展柜 ↗**](https://chefzc.dev/gallery.html#project-aer) &nbsp; / &nbsp; [**1.1 版本手记 ↗**](https://chefzc.dev/gallery.html#aer-history) &nbsp; / &nbsp; [**NOW 027 ↗**](https://chefzc.dev/now.html#milestone-aer-11)
+Pulse 现在实时统计 Anthropic 模型与 GPT 的用量。同一个本机同步器读取 Claude Code 的本地会话记录（`~/.claude/projects`，含桌面应用 Code 标签页与子代理），每条回复只计一次，只上传按小时汇总的数字。Claude 的缓存写入分别按 5 分钟（输入价 1.25 倍）和 1 小时（2 倍）计价，缓存读取按各模型单价。[说明](docs/usage-observatory.md)。
+
+## AC8 / 常驻的天空 · 网站 1.27.1
+
+天空持续运转：真正形变的等高线、分批进入并循环退场的摄影敌机贴纸、连续追踪的导弹和扇形散开的热焰弹。所有循环共用一个时钟，离屏与后台暂停，支持全站暂停和减少动态。新增透明导弹与热焰弹为 AI 生成艺术素材；编队属于虚构艺术编排，真实 Steam 记录保持原有同步。
+
+## AC8 / 天空的另一面 · 网站 1.27
+
+ACE COMBAT 8 飞进游戏房间：真实 JSF F-35C 轮廓、原创等高线与战场矢量、Adobe 非生成式抠出的塔莎造型白边贴纸，以及可打断的艺术化导弹轨迹。只读本机桥接只同步 AC8 的 Steam 统计，在当前用户登录 Windows 后自动运行；时长按 Steam 实际写入更新，不自行编造。离线时保留最近记录。
+
+[空战展位](https://chefzc.dev/game.html#ace-combat-8) · [公开同步数据](https://chefzc.dev/api/ac8-record)
+
+## NABAT / INJAZ 商赛作品 · 网站 1.25
+
+NABAT 1.1 加入校园实验室：象牙白、深植物绿与原有软件字体，把身份、照护历史和原生 Windows 工作台连成一本生长档案。配套新增 Now 027 与中英植物手记，保留原有项目内容。
+
+[生长档案展柜](https://chefzc.dev/school-gallery.html#project-nabat) · [Now 027](https://chefzc.dev/now.html#milestone-nabat) · [植物手记](https://chefzc.dev/post.html?article=nabat) · [源代码](https://github.com/ChefDavid0815/nabat-injaz)
+
+## 川流不息 / Flow Edition · 网站 1.24
+
+2026 年 10 月 8 日，个人网站以全新面貌上线。Profile、Gallery、Now、Posts 与流域索引沿同一条流线连接；正文与图像有了更舒服的留白，展柜保留各自的字体、色彩与材质。Now 新增第 **026** 个节点，Posts 新增第 **015** 篇双语设计手记，原有记录与作品完整保留。
+
+[新主页](https://chefzc.dev/profile.html) · [上线记录](https://chefzc.dev/now.html#milestone-everything-in-flow) · [设计手记](https://chefzc.dev/post.html?article=everything-in-flow) · [流域索引](https://chefzc.dev/explore.html)
+
+## DOT/AIR 1.1 / Orbital Earth · 网站 1.26
+
+<a href="https://chefzc.dev/gallery.html#project-dot-air"><img src="https://chefzc.dev/assets/projects/dot-air/software-v1.1.png" width="100%" alt="真实已上线的 DOT/AIR 1.1 Web 界面与红色波点地球。" /></a>
+
+DOT/AIR 接替已撤下的 AER 展柜。原有朱红、波点与宽体字，搭配 19,717 个地理采样点组成的实时旋转地球。版本下拉菜单沿 1.1 → 0.1 展开，收录真实原生地平线与理论航线截图；Now 029 记录 1.1 更新，Now 028 记录第一座展柜，双语随笔 017 留下制作手记。可售航班、票价与出票仍未开放。
+
+[展柜](https://chefzc.dev/gallery.html#project-dot-air) · [版本手记](https://chefzc.dev/gallery.html#dot-air-history) · [Now 029](https://chefzc.dev/now.html#milestone-dot-air-11) · [出发手记](https://chefzc.dev/post.html?article=dot-air)
 
 ## NeRF 1.0 / 让数学，长出一个世界。
 
