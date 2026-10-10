@@ -6,6 +6,7 @@ export function buildCatalog(projects,posts){
   const works=projects.map(project=>({id:'project:'+project.id,group:'works',href:projectHref(project.id),title:[project.name,project.name],description:[project.description,project.translations?.en?.description||project.description],tags:project.tags||[]}));
   const additions=[
     ...schoolProjects.map(work=>({id:'work:'+work.catalogId,title:work.title,href:work.href,description:work.description})),
+    {id:'work:sun-mv',title:['没了我你依然拥有太阳 MV','The Sun MV'],href:'./gallery.html#code-films',description:['第一支代码渲染的音乐 MV，每一帧都由歌曲算出。','A first code-rendered music video, every frame computed from the song.']},
     {id:'work:afterimage',title:['AfterImage','AfterImage'],href:'./gallery.html#living-sites',description:['持续运营的赛车影像档案。','The living motorsport archive.']},
     {id:'work:chase-center',title:['Chase Center','Chase Center'],href:'./models-gallery.html#project-chase-center',description:['球馆内场与建筑外部的建模作品。','Interior and exterior model studies of the arena.']},
     {id:'work:curry',title:['Stephen Curry','Stephen Curry'],href:'./models-gallery.html#project-curry-head',description:['Curry 球员头像的建模作品。','A Curry player-head model study.']}

@@ -26,7 +26,7 @@ test('every collection uses the same order and the actual current project count'
 const projects=[{id:'test-work',name:'Color Lab',description:'彩色工具',translations:{en:{description:'A colorful tool'}},tags:['TypeScript']}];
 const posts=[{id:'nerf-note',date:'2026-10-07',zh:{title:'神经网络手记',summary:'看见一个世界',category:'研究'},en:{title:'NeRF study',summary:'A world appears',category:'Research'}}];
 test('catalogue keeps each work and note and gives every entry a unique identity and destination',()=>{
-  const catalog=buildCatalog(projects,posts);assert.equal(catalog.filter(r=>r.group==='works').length,7);assert.equal(catalog.filter(r=>r.group==='notes').length,1);assert.equal(new Set(catalog.map(r=>r.id)).size,catalog.length);assert.equal(new Set(catalog.map(r=>r.href)).size,catalog.length);
+  const catalog=buildCatalog(projects,posts);assert.equal(catalog.filter(r=>r.group==='works').length,8);assert.equal(catalog.filter(r=>r.group==='notes').length,1);assert.equal(new Set(catalog.map(r=>r.id)).size,catalog.length);assert.equal(new Set(catalog.map(r=>r.href)).size,catalog.length);
   assert.ok(catalog.some(r=>r.href==='./models-gallery.html#project-curry-head'));assert.ok(catalog.some(r=>r.href==='./post.html?article=nerf-note'));
 });
 test('search supports both languages, normalized characters, conjunctive terms and a recoverable empty state',()=>{
