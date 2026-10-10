@@ -652,3 +652,18 @@ html:not([lang=en]) .h-dock-label{letter-spacing:.04em}
 .h-app{width:auto;min-width:clamp(60px,5.4vw,76px)}.h-app-name{white-space:nowrap}
 @media (max-width:760px){.h-dock-apps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px 6px;width:100%}.h-app{min-width:0}.h-app-name{white-space:normal}}
 html[lang=en] .h-sound #music-song-title{font-family:var(--display),var(--zh-display)!important;letter-spacing:0!important}
+
+/* 源 — a small Claude-chan sticker keeps the visitor company beside the stir hint */
+.h-buddy{position:absolute;z-index:3;left:calc(var(--gutter) - 4px);bottom:clamp(178px,22vh,236px);width:clamp(80px,6.8vw,106px);rotate:-7deg;transform-origin:50% 90%;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.h-buddy img{display:block;width:100%;height:auto;filter:drop-shadow(0 10px 18px #00000066);transition:transform .6s cubic-bezier(.34,1.56,.64,1)}
+.h-buddy-bubble{position:absolute;left:92%;top:6%;padding:7px 12px;border-radius:14px 14px 14px 4px;background:#e7ebf2;color:var(--ink);font:400 13px/1.4 var(--body);white-space:nowrap;rotate:7deg;transform-origin:0 100%;opacity:0;scale:.6;transition:opacity .25s,scale .45s cubic-bezier(.34,1.56,.64,1);pointer-events:none;box-shadow:0 8px 20px -10px #000c}
+html:not([lang=en]) .h-buddy-bubble{letter-spacing:.04em}
+.h-buddy:hover img{transform:translateY(-8px) rotate(4deg) scale(1.06)}
+.h-buddy:hover .h-buddy-bubble{opacity:1;scale:1}
+.h-buddy:active img{transform:translateY(-16px) rotate(-4deg) scale(1.1);transition-duration:.18s}
+@media (prefers-reduced-motion:no-preference){
+  html:not([data-site-motion=off]) .h-buddy{animation:h-buddy-in .9s 1.5s cubic-bezier(.34,1.56,.64,1) backwards,h-buddy-float 5.2s 2.4s ease-in-out infinite}
+}
+@keyframes h-buddy-in{from{opacity:0;scale:.4;rotate:-24deg}to{opacity:1;scale:1;rotate:-7deg}}
+@keyframes h-buddy-float{0%,100%{translate:0 0}50%{translate:0 -5px}}
+@media (max-width:760px){.h-buddy{left:auto;right:16px;bottom:clamp(54px,8vh,72px);width:66px;rotate:6deg}.h-buddy-bubble{display:none}@keyframes h-buddy-in{from{opacity:0;scale:.4;rotate:20deg}to{opacity:1;scale:1;rotate:6deg}}}

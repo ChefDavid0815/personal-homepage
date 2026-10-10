@@ -62,6 +62,7 @@ export const personalMessages = {
   'setup.pro': ['刚加入我的工具箱', 'NEW TO MY TOOLKIT'],
   'setup.groupAi': ['AI 搭档', 'AI partners'],
   'setup.groupMake': ['设计与影像', 'Design & media'],
+  'home.buddy': ['今天也一起顺流而下吧', 'Let’s go with the flow today'],
   'setup.claudeChan': ['今天也一起写点什么吧？', 'Shall we build something today?'],
   'journey.kicker': ['05 / 一路走来', '05 / THE JOURNEY SO FAR'],
   'journey.title': ['每一步，都算数。', 'Every beginning counts.'],
