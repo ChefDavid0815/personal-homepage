@@ -163,13 +163,17 @@ function pickAllele(button){
 const cycles=new Map();
 function mountCycle(node){
   if(cycles.has(node))return;
-  const c={node,index:1,timer:0,visible:false};cycles.set(node,c);io.observe(node);
+  const c={node,index:node.dataset.daCycle==='airlines'?0:1,timer:0,visible:false};cycles.set(node,c);io.observe(node);
 }
+// 1.2 Airline Identity: the board reads ICAO, IATA and the airline, one carrier at a time.
+const AIRLINES=[['CCA','CA','AIR CHINA'],['UAE','EK','EMIRATES'],['SIA','SQ','SINGAPORE'],['DLH','LH','LUFTHANSA'],['QFA','QF','QANTAS'],['BAW','BA','BRITISH']];
 function runCycle(c){
   clearInterval(c.timer);c.timer=0;
   if(!c.visible||isMotionPaused()||document.hidden)return;
   c.timer=setInterval(()=>{
-    c.index=c.index%(dotAirAirports.length-1)+1;const a=dotAirAirports[c.index],[,to,dist]=c.node.querySelectorAll('.da-flaps');
+    const [from,to,dist]=c.node.querySelectorAll('.da-flaps');
+    if(c.node.dataset.daCycle==='airlines'){c.index=(c.index+1)%AIRLINES.length;const [icao,iata,name]=AIRLINES[c.index];setFlaps(from,icao);setFlaps(to,iata);setFlaps(dist,name);return;}
+    c.index=c.index%(dotAirAirports.length-1)+1;const a=dotAirAirports[c.index];
     setFlaps(to,a.code);setFlaps(dist,kmLabel(a));
   },3400);
 }
@@ -180,10 +184,25 @@ const io=new IntersectionObserver(entries=>{
     const f=fields.get(e.target);if(f){f.visible=e.isIntersecting;if(f.visible&&!f.born){f.born=performance.now();}if(f.visible)wake(f);continue;}
     const d=discs.get(e.target);if(d){d.visible=e.isIntersecting;if(d.visible)paintDisc(d);continue;}
     const c=cycles.get(e.target);if(c){c.visible=e.isIntersecting;runCycle(c);continue;}
+    if(e.target.matches('[data-da-whiteroom]')&&e.isIntersecting){e.target.classList.add('is-in');io.unobserve(e.target);continue;}
     if(e.target.matches('[data-da-dna]')&&e.isIntersecting){e.target.classList.add('is-in');io.unobserve(e.target);}
   }
 },{threshold:.05});
 
+const rooms=new WeakSet();
+function mountWhiteRoom(win){
+  if(rooms.has(win))return;rooms.add(win);
+  if(isMotionPaused())win.classList.add('is-in');else io.observe(win);
+  const wall=win.querySelector('.wr-wall');let timer=0,stick=0;
+  const add=()=>{
+    if(isMotionPaused()||wall.childElementCount>=22)return;
+    const d=document.createElement('i'),r=4+Math.random()*9;
+    d.style.cssText=`left:${(4+Math.random()*92).toFixed(1)}%;top:${(6+Math.random()*80).toFixed(1)}%;width:${(r*2).toFixed(1)}px;height:${(r*2).toFixed(1)}px`;
+    wall.append(d);
+  };
+  win.addEventListener('pointerenter',()=>{clearTimeout(timer);wall.classList.remove('is-fading');clearInterval(stick);add();stick=setInterval(add,140);});
+  win.addEventListener('pointerleave',()=>{clearInterval(stick);timer=setTimeout(()=>{wall.classList.add('is-fading');setTimeout(()=>{if(wall.classList.contains('is-fading')){wall.replaceChildren();wall.classList.remove('is-fading');}},700);},1400);});
+}
 export function mountDotAirMotion(){
   for(const [hero,f] of fields)if(!hero.isConnected){f.ro.disconnect();io.unobserve(hero);cancelAnimationFrame(f.raf);fields.delete(hero);}
   for(const [el,d] of discs)if(!el.isConnected){d.ro.disconnect();io.unobserve(el);cancelAnimationFrame(d.raf);discs.delete(el);}
@@ -191,6 +210,7 @@ export function mountDotAirMotion(){
   document.querySelectorAll('.da-hero').forEach(mountField);
   document.querySelectorAll('.da-tail-disc').forEach(mountDisc);
   document.querySelectorAll('[data-da-cycle]').forEach(mountCycle);
+  document.querySelectorAll('[data-da-whiteroom]').forEach(mountWhiteRoom);
   document.querySelectorAll('[data-da-dna]').forEach(root=>{syncStrand(root);if(isMotionPaused())root.classList.add('is-in');else io.observe(root);});
   document.querySelectorAll('[data-da-exhibit]').forEach(root=>{const code=root.querySelector('[data-da-airport][aria-pressed=true]')?.dataset.daAirport;if(code)updateBoard(root,code);});
 }

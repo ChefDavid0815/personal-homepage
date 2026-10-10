@@ -39,14 +39,14 @@ test('retired AER has no independent route and no remaining Now entries',async()
   assert.equal(siteRoutes.some(p=>p.id==='aer'),false);
   const now=await readFile(new URL('../dist/now.html',import.meta.url),'utf8');
   assert.equal(now.includes('milestone--aer'),false);
-  assert.equal((now.match(/class="timeline-entry[\s"]/g)||[]).length,30);
+  assert.equal((now.match(/class="timeline-entry[\s"]/g)||[]).length,32);
 });
-test('the exhibit follows the verified latest software release',()=>assert.equal(dotAirProject.version,'1.1.0'));
+test('the exhibit follows the verified latest software release',()=>assert.equal(dotAirProject.version,'2.0.0'));
 test('the edition log records both real releases, newest first, with bilingual changes',()=>{
-  assert.deepEqual(dotAirReleases.map(r=>r.version),['1.1.0','0.1.0']);
+  assert.deepEqual(dotAirReleases.map(r=>r.version),['2.0.0','1.2.0','1.1.0','0.1.0']);
   assert.equal(dotAirReleases[0].version,dotAirProject.version);
   assert.equal(dotAirReleases.filter(r=>r.current).length,1);
-  for(const r of dotAirReleases){assert.equal(r.date,'2026-10-09');for(const pair of [r.title,r.intro,r.note,...r.changes.flatMap(c=>[c.title,c.copy])]){assert.equal(pair.length,2);assert.ok(pair.every(s=>s.length>0));}}
+  for(const r of dotAirReleases){assert.equal(r.date,r.version==='2.0.0'?'2026-10-10':'2026-10-09');for(const pair of [r.title,r.intro,r.note,...r.changes.flatMap(c=>[c.title,c.copy])]){assert.equal(pair.length,2);assert.ok(pair.every(s=>s.length>0));}}
 });
 test('frame pacing adapts after sustained pressure, recovers more slowly and ignores inactivity',()=>{
   const q=createQualityGovernor({targetFrameMs:16.7,windowMs:200,minSamples:5,badWindows:2,goodWindows:4,cooldownMs:100});

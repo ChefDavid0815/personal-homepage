@@ -365,3 +365,56 @@ html:not([lang=en]) .atlas-chart-legend{letter-spacing:.03em}
 .wa.wa--current .wa-motif{left:0;right:0;top:0;bottom:0;width:100%!important;height:100%!important;max-width:none;translate:none}
 .wa--current .wa-line,.wa--current .wa-data>span{display:inline-block;width:fit-content;padding:3px 9px;margin-left:-9px;border-radius:6px;background:#0b0d26e6}
 .wa--current .wa-data>span:last-child{margin-left:0;margin-right:-9px}
+
+/* ============ DOT/AIR 1.2 + 2.0 ============ */
+/* 1.2 Airline Identity: three fins rise from the dotted ground; the board reads carriers */
+.wa--dotair-fins .da-fin-row{position:absolute;z-index:2;left:50%;bottom:24%;width:84%;translate:-50% 0;display:flex;align-items:flex-end;justify-content:center;gap:5%}
+.wa--dotair-fins .da-fin{width:28%;height:auto;filter:drop-shadow(0 14px 18px #5d0c0866);transform-origin:50% 100%}
+.wa--dotair-fins .da-fin:nth-child(2){width:33%}
+@media (prefers-reduced-motion:no-preference){
+  html:not([data-site-motion=off]) .wa--dotair-fins .da-fin{animation:da-fin-rise .9s cubic-bezier(.34,1.56,.64,1) calc(.25s + var(--i) * .14s) backwards}
+  html:not([data-site-motion=off]) .wa--dotair-fins:hover .da-fin{animation:da-fin-sway 1.6s ease-in-out infinite alternate;animation-delay:calc(var(--i) * -.4s)}
+}
+@keyframes da-fin-rise{from{translate:0 60%;opacity:0}to{translate:0 0;opacity:1}}
+@keyframes da-fin-sway{from{rotate:-3deg}to{rotate:3deg}}
+@container wa (aspect-ratio > 1){.wa--dotair-fins .da-fin-row{left:auto;right:4%;width:52%;translate:none;bottom:18%}}
+
+/* 2.0 The White Room: a glossy red dotted planet in a white gallery */
+.wa--whiteroom{--wa-bg:#f6f5f1;--wa-fg:#111214;--wa-dim:#3c3d40;background:#f6f5f1;color:#111214}
+.wa--whiteroom .wa-motif{inset:0;height:auto;overflow:hidden}
+.wa--whiteroom .wa-title{font-family:'neue-haas-grotesk-display',var(--display);font-weight:500;letter-spacing:-.025em;line-height:.92;color:#111214;font-synthesis:none}
+.wa--whiteroom .wa-data,.wa--whiteroom .wa-line{color:#3c3d40}
+.wr-rules{position:absolute;inset:0;background:linear-gradient(#1112141a 1px,transparent 1px) 0 0/100% 20%,linear-gradient(90deg,#1112141a 1px,transparent 1px) 0 0/20% 100%}
+.wr-planet{position:absolute;z-index:2;left:50%;top:66%;width:min(60cqw,46cqh);aspect-ratio:1;translate:-50% -50%;border-radius:50%;overflow:hidden;background:radial-gradient(circle at 34% 30%,#ff6d5e 0,#e5241b 36%,#b6130d 70%,#6a0705 100%);box-shadow:inset -14px -20px 36px #4f0402b0}
+.wr-dots{position:absolute;inset:0;border-radius:50%;background-image:radial-gradient(#fff 24%,transparent 26%);background-size:14% 14%;background-position:0 0;-webkit-mask-image:radial-gradient(circle at 46% 44%,#000 52%,transparent 74%);mask-image:radial-gradient(circle at 46% 44%,#000 52%,transparent 74%)}
+.wr-gloss{position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 31% 25%,#ffffffc0 0,#ffffff00 19%),radial-gradient(circle at 70% 82%,#00000040 0,transparent 46%)}
+.wr-floor{position:absolute;z-index:1;left:50%;top:calc(66% + min(30cqw,23cqh) + 2%);width:min(56cqw,42cqh);height:min(8cqw,6cqh);translate:-50% -50%;border-radius:50%;background:radial-gradient(closest-side,#11121442,transparent)}
+.wr-sign{position:absolute;z-index:3;right:7%;top:30%;writing-mode:vertical-rl;font:400 15px/1 var(--zh-strong);letter-spacing:.32em;color:#111214}
+.wr-sign i{display:block;width:7px;height:7px;margin:10px auto 0;border-radius:50%;background:#e5241b}
+.wr-wall{position:absolute;inset:0;z-index:2;pointer-events:none;transition:opacity .6s}
+.wr-wall i{position:absolute;border-radius:50%;background:#e5241b;translate:-50% -50%;animation:wr-stick .5s cubic-bezier(.34,1.56,.64,1) both}
+.wr-wall.is-fading{opacity:0}
+@keyframes wr-stick{from{scale:0}to{scale:1}}
+@media (prefers-reduced-motion:no-preference){
+  html:not([data-site-motion=off]) .wa--whiteroom:not(.is-in) .wa-motif{clip-path:circle(0% at 50% 66%)}
+  html:not([data-site-motion=off]) .wa--whiteroom.is-in .wa-motif{animation:wr-open 1.2s cubic-bezier(.65,0,.15,1)}
+  html:not([data-site-motion=off]) .wr-dots{animation:wr-spin 18s linear infinite}
+  html:not([data-site-motion=off]) .wa--whiteroom:hover .wr-planet{animation:wr-bob 2.4s ease-in-out infinite}
+}
+@keyframes wr-open{from{clip-path:circle(0% at 50% 66%);background:#e5241b}to{clip-path:circle(150% at 50% 66%)}}
+@keyframes wr-spin{to{background-position:-100% 0}}
+@keyframes wr-bob{0%,100%{translate:-50% -50%}50%{translate:-50% -53%}}
+@container wa (aspect-ratio > 1){.wr-planet{left:70%;top:52%;width:min(36cqw,64cqh)}.wr-floor{left:70%;top:calc(52% + min(18cqw,32cqh) + 2%);width:min(32cqw,58cqh)}.wr-sign{right:4%}}
+
+/* 2.0 boarding pass: white gallery ticket, red planet seal */
+.da-release--white.da-release--current .da-ticket{background:#fbfaf7;color:#111214;border-color:#111214}
+.da-release--white.da-release--current .da-ticket :is(h4,p,.da-overline,time){color:#111214!important}
+.da-release--white .da-ticket>.da-release-meta,.da-release--white .da-ticket-barcode{border-left-color:#11121433;color:#e5241b}
+#project-dot-air .da-release--white.da-release--current .da-ticket .da-release-meta span{background:#e5241b;border-color:#e5241b;color:#fff}
+#project-dot-air .da-release--white .da-release-heading>strong{color:#fff;font-family:'neue-haas-grotesk-display',var(--da-wide);font-weight:500;letter-spacing:-.03em}
+.da-release--white .da-release-heading>strong::before{border:0!important;background:radial-gradient(circle at 31% 25%,#ffffffb0 0,#fff0 20%),radial-gradient(#fff 22%,transparent 24%) 0 0/18% 18%,radial-gradient(circle at 34% 30%,#ff6d5e,#e5241b 38%,#9e0f0a)!important;box-shadow:inset -8px -12px 20px #4f0402a0}
+.da-release--white .da-ticket::before,.da-release--white .da-ticket::after{background:var(--da-paper);border-color:#111214}
+@media (max-width:760px){.da-release--white .da-ticket>.da-release-meta{border-top-color:#11121433}}
+.da-software--past{margin-top:18px;opacity:.92}
+.wr-sign i{position:absolute;left:50%;top:100%;margin:10px 0 0 -3.5px}
+#project-dot-air .da-release--white .da-release-heading>strong{text-shadow:0 2px 12px #6a0705cc}
