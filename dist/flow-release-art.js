@@ -1,8 +1,2 @@
-// One editable graphic composition, shared by the release's post and timeline.
-export const flowReleaseArt = () => `<div class="post-art post-art--flow flow-release-art" aria-hidden="true">
-  <svg class="flow-release-river" viewBox="0 0 640 640"><path class="flow-release-river-base" d="M30 580C10 240 510 30 560 330S260 650 180 370 580 20 620 130"/><path class="flow-release-river-trace" d="M30 580C10 240 510 30 560 330S260 650 180 370 580 20 620 130"/></svg>
-  <span class="flow-release-edition">CHEFZC / FLOW EDITION</span>
-  <strong class="flow-release-word">川流<span>不息</span></strong>
-  <img src="./assets/flow/river-sculpture.webp" width="1280" height="1280" alt="" loading="lazy">
-  <span class="flow-release-art-foot">EVERYTHING IN FLOW.<b>08 OCT / 2026</b></span>
-</div>`;
+// One editable graphic composition, shared by the release's post and timeline (window series A, flow-windows-a.css).
+export const flowReleaseArt = () => `<div class="wa wa--flow" aria-hidden="true"><div class="wa-motif"><img src="./assets/flow/river-sculpture.webp" width="1280" height="1280" alt="" loading="lazy"></div><div class="wa-type"><p class="wa-data"><span>ChefZC / Flow edition</span><span>08 Oct 2026</span></p><div class="wa-head"><strong class="wa-title wa-zh" lang="zh-CN">川流<br>不息</strong><span class="wa-line">Everything in flow.</span></div></div></div>`;

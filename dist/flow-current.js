@@ -9,7 +9,8 @@ const c=(zh,en)=>getLanguage()==='en'?en:zh;
 /* Adobe Fonts (kit pqh3hik) is a dynamic CJK kit: it serves only the glyphs on the page, so new text asks again. */
 const fontListeners=new Set();
 let fontsReady=false;
-const brushReady=()=>document.documentElement.classList.contains('wf-active')&&(document.fonts?.check?.('500 100px hellofont-id-chunhei','川流不息')??true);
+const brushReady=()=>document.fonts?.check?.('400 100px "Huiwen Mincho"','川流不息')??true;
+document.fonts?.load?.('400 100px "Huiwen Mincho"','川流不息').then(()=>pingFonts()).catch(()=>{});
 function pingFonts(){if(fontsReady||!brushReady())return;fontsReady=true;for(const cb of fontListeners)cb();}
 export function onFontsActive(cb){fontListeners.add(cb);if(fontsReady)cb();return()=>fontListeners.delete(cb);}
 new MutationObserver(pingFonts).observe(document.documentElement,{attributes:true,attributeFilter:['class']});

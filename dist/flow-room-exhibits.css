@@ -1,18 +1,19 @@
 /* Current 2.1 room layer: exhibits. Unlayered, loaded after flow-current.css, so it overrides the legacy bundle.
    Six rooms: CHROMA, ProjectLens, Festival Toolkit, AXIOM, Folio and NBA After Hours.
    Each is a full-bleed room in its software's own materials; the frame is shared:
-   title (Cesso + exhibit number) → line → subtitle (ChunHei) → lede → spec list → actions, stage on the right.
+   title (Cesso + exhibit number) → line → subtitle (--zh-strong) → lede → spec list → actions, stage on the right.
    Every selector is scoped to .xr (the room), .xd (its detail sheet) or the room's own dialog class. */
 
 /* ───────────── Shared frame ───────────── */
 .xr,
 .exhibition-dialog:is(.chx-dialog,.lens-dialog,.festival-dialog,.axiom-dialog,.folio-dialog,.court-dialog){
-  --xr-display:'cesso','hellofont-id-chunhei','Noto Sans SC',serif;
-  --xr-zh:'hellofont-id-juejianghei80','hellofont-id-chunhei','Noto Sans SC',sans-serif;
-  --xr-body:'DM Sans','hellofont-id-juejianghei50','Noto Sans SC',system-ui,sans-serif;
+  --xr-display:var(--display);
+  --xr-zh:var(--zh-strong);
+  --xr-zh-display:var(--zh-display);
+  --xr-label:var(--body);
+  --xr-body:var(--body);
   --xr-mono:'IBM Plex Mono',ui-monospace,monospace;
   --xr-ease:cubic-bezier(.16,1,.3,1);
-  --display:var(--xr-display);--body:var(--xr-body);
   --xr-mark:var(--xr-accent);
 }
 .exhibit.xr{
@@ -485,3 +486,50 @@ html[data-site-motion=off] :is(.xr,.xd) *,html[data-site-motion=off] .exhibit.xr
   .fsx-stub{grid-template-areas:'top top' 'word ed' 'season code' 'facts facts'}
   .fsx-stub-facts{grid-area:facts}
 }
+
+/* ═════════════ Unification pass (2026-10): type roles, controls and redrawn chrome for the six rooms ═════════════
+   Chinese chapter headings → --zh-display (--xr-zh-display); sub-heads and the hero line → --zh-strong (--xr-zh);
+   buttons, tabs, fact values and status pills → --xr-label (= --body). */
+.xr-title{letter-spacing:-.02em}
+.xr-release-v,.xr-history-count b,.fsx-stats dt,.axx-stats dt,.fsx-edition b,.xr--chroma .chx-channels button{letter-spacing:-.02em}
+.chx-remix-title,.lnx-panel h4,.fsx-palette h4,.xr-history-title strong{font-family:var(--xr-zh-display);letter-spacing:.03em}
+html[lang=en] :is(.chx-remix-title,.lnx-panel h4,.fsx-palette h4,.xr-history-title strong){font-family:var(--xr-display);letter-spacing:-.01em}
+.xr-sub,.xd-copy h3,.xr-release-copy h4,.chx-channel-copy h4,.lnx-modes button,.fsx-season strong,.fox-name span:first-child{letter-spacing:.03em}
+.xr-sub{line-height:1.3}
+.xr-history-title strong{font-size:clamp(26px,2.4vw,36px);line-height:1.15}
+.xr-release-copy h4{font-size:clamp(22px,2.1vw,32px);line-height:1.3}
+.xd-copy h3{line-height:1.25}
+html:not([lang=en]) .xr-release-copy li b{font:400 15px/1.4 var(--xr-zh);letter-spacing:.03em}
+.xr-btn,.xd-views button,.fsx-seasons button,.chx-keys button,.xr-release-status,.xr-spec dd,.xr-release-copy a,.xr-aside{font-family:var(--xr-label)}
+.fox-index button{font:500 16px/1.2 var(--xr-label)}
+.chx-bezel-label{font-family:var(--xr-label)}
+/* Micro text: nothing readable under 11px (12px on phones). */
+.chx-remix-tag,.xr--chroma .xr-foot .chx-pixel,.chx-bezel-foot .chx-pixel{font-size:11px}
+.lnx-label small{font-size:11px}
+.chx-channels button small{font-size:12px}
+/* CHROMA: the hardware bezel is redrawn flat — one pale metal plate, flat keys, no bevel or hard key shadow. */
+.chx-bezel{background:#e8edfb;box-shadow:0 50px 90px -46px #000000b3,0 0 0 1px #0b1a6e1f}
+.chx-keys button{border:1px solid #0b1a6e2e;border-radius:999px;background:#fff;box-shadow:none;transition:background .25s,border-color .25s,color .25s}
+.chx-keys button:hover{translate:none;border-color:#0b1a6e80}
+.chx-keys button[aria-pressed=true]{background:#081038;border-color:#081038;color:#fff000;box-shadow:none;translate:none}
+.chx-glass{box-shadow:none}
+/* NBA After Hours: no coloured halo around the jumbotron; the ball is a flat disc. */
+.ctx-jumbotron{box-shadow:0 0 0 1px #ffffff17,0 60px 120px -50px #000}
+.ctx-first::before{box-shadow:none}
+@media (max-width:760px){
+  .xr-spec dt,.xr-release-ed,.xr-history-count small,.xd-shot-bar,.fsx-stub-top,.fsx-season small,.fsx-edition,.fsx-stub-facts,.ctx-board dd,.ctx-jumbo-bar,.ctx-jumbotron figcaption,.lnx-note,.lnx-plate figcaption,.fsx-page figcaption,.axx-figure figcaption,.axx-window figcaption,.axx-window-bar,.chx-screen figcaption,.xr-foot,.xr-history-foot,.lnx-label small,.chx-remix-tag,.fox-real{font-size:12px}
+  .lnx-modes button .xr-data{font-size:12px}
+}
+html:not([lang=en]) :is(.xr-lede,.xd-copy p,.xr-release-copy>p,.xr-release-copy li span,.lnx-panel h4+p,.chx-channel-copy p,.xd-note){line-height:1.9}
+@media (max-width:760px){
+  .fsx-stats{gap:0 14px}
+  .fsx-stats dt{font-size:clamp(28px,8.6vw,42px)}
+  .ctx-board{grid-template-columns:minmax(0,.8fr) minmax(0,1.4fr) minmax(0,.8fr)}
+  .ctx-board dt{font-size:clamp(20px,6.2vw,28px);white-space:normal}
+  .ctx-board div{padding:12px 10px}
+}
+/* Two families per room besides mono: the CHROMA pixel face stays for its slogan only; Folio's serif for its margin note and mark. */
+.xr--chroma .chx-pixel:not(.chx-slogan),.xd--chroma .chx-pixel:not(.chx-slogan){font-family:var(--xr-mono);font-weight:500;letter-spacing:0;text-transform:none}
+.fox-index-n{font:500 12px/1 var(--xr-mono);color:var(--xr-accent)}
+.fox-index-end{font:400 15px/1.4 var(--xr-body);font-style:normal}
+.fox-history .xr-release-v{font-family:var(--xr-display)}

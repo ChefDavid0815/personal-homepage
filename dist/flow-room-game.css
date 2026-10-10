@@ -5,12 +5,14 @@
 .game-page{
   --gr-ink:#0b0d26;--gr-mist:#e7ebf2;
   --gr-pad:max(var(--gutter),calc((100vw - 1680px)/2));
-  --gr-cesso:'cesso','hellofont-id-chunhei','Noto Sans SC',serif;
-  --gr-wide:'Flow Wide','hellofont-id-chunhei','Noto Sans SC',sans-serif;
-  --gr-zh:'hellofont-id-chunhei','hellofont-id-juejianghei80','Noto Sans SC',sans-serif;
-  --gr-zh-strong:'hellofont-id-juejianghei80','hellofont-id-chunhei','Noto Sans SC',sans-serif;
-  --gr-body:'DM Sans','hellofont-id-juejianghei50','Noto Sans SC',system-ui,sans-serif;
-  --gr-num:'IBM Plex Mono','hellofont-id-juejianghei65','Noto Sans SC',ui-monospace,monospace;
+  /* Type roles resolve through the shared tokens only. Flow Wide is the room's one signature Latin face, kept for
+     game wordmarks and big numerals; Chinese always lands on the site's Chinese faces via --zh-display / --zh-strong / --body. */
+  --gr-cesso:var(--display);
+  --gr-wide:'Flow Wide',var(--zh-display);
+  --gr-zh:var(--zh-display);
+  --gr-zh-strong:var(--zh-strong);
+  --gr-body:var(--body);
+  --gr-num:'IBM Plex Mono',var(--zh-strong);
   --gr-ac8:#d5ed9c;--gr-f1:#ff3347;--gr-fh:#ff7eb6;--gr-nba:#46d7ff;
   --gr-hdr:76px;
   background:var(--gr-mist);
@@ -215,8 +217,8 @@ html[lang=en] .gr-fh-copy h3{font:800 clamp(26px,2.2vw,38px)/1.05 var(--gr-wide)
 html[data-site-motion=on] .gr-route{animation:gr-route 6s linear infinite}
 .gr-fh-ticker{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:12px 22px;padding:18px 28px;background:var(--blue);color:var(--lime);font:800 clamp(18px,1.6vw,26px)/1.2 var(--gr-wide);letter-spacing:-.03em}
 .gr-fh-ticker .gr-loop{width:30px;height:15px;color:var(--pink)}
-.gr-fh [lang=ja]{font-family:'Yu Gothic UI','Yu Gothic','Hiragino Sans','Noto Sans JP','Noto Sans SC',sans-serif;font-weight:800;letter-spacing:0}
-.gr-fh-ticker [lang=ja]{font-weight:900}
+/* The Japanese decoration resolves through the site's Chinese face (it carries 東京); kana fall back by lang=ja. */
+.gr-fh [lang=ja]{font-family:var(--zh-strong);font-weight:400;letter-spacing:.04em}
 .gr-fh-log{margin-top:clamp(48px,5vw,80px);padding:clamp(24px,3vw,44px);background:#f6ffe6;border:1.5px solid var(--ink);border-radius:24px}
 .gr-fh-log-head{display:flex;align-items:center;flex-wrap:wrap;gap:12px 18px;margin-bottom:clamp(22px,2.5vw,36px)}
 .gr-fh-log-head h3{margin:0 auto 0 0;font:400 clamp(30px,2.8vw,46px)/1.1 var(--gr-zh);letter-spacing:0}
@@ -421,3 +423,41 @@ html[lang=en] .gr-outro>span{font:400 clamp(56px,8vw,140px)/.9 var(--gr-cesso);l
   .gr-branch path,.gr-save-list li,.gr-f1-lights i,.gr-route,.gr-nba *{animation:none!important}
   .gr-save::before,.gr-f1-photo img,.gr-fh-frame img,.gr-nba-sleeve{transition:none}
 }
+
+/* ───────────────── Unification pass: type roles, Chinese tuning, legibility ─────────────────
+   Chinese headings sit on --zh-display with open tracking; Chinese reading text on --body at 1.9; English sub-heads
+   speak in the site's Latin display (Cesso) while Flow Wide stays on wordmarks and big numerals only. */
+html[lang=zh-CN] .game-page :is(.gr-hall-motto,.gr-f1-copy h2,.gr-fh-copy h3,.gr-fh-log-head h3,.gr-nba-copy h3,.gr-nba-board h3,.gr-source-head h2,.gr-outro>span,.ac8-view-copy h3,.ac8-log-heading h3){font-family:var(--zh-display);font-weight:400;letter-spacing:.03em;line-height:1.2}
+html[lang=zh-CN] .game-page :is(.gr-saves-head h2,.gr-f1-tower h3,.gr-project strong){font-family:var(--zh-strong);font-weight:400;letter-spacing:.03em;line-height:1.3}
+html[lang=zh-CN] .game-page :is(.gr-hall-intro,.gr-f1-copy p,.gr-f1-focus p,.gr-fh-text,.gr-nba-text,.gr-source-head p,.gr-ledger-v p,.ac8-title-layer>p,.ac8-view-copy p,.ac8-log-note,.gr-fh-note){line-height:1.9;letter-spacing:.01em}
+html[lang=en] .game-page :is(.gr-f1-copy h2,.gr-fh-copy h3,.gr-fh-log-head h3,.gr-nba-copy h3,.gr-nba-board h3,.ac8-view-copy h3,.ac8-log-heading h3,.gr-f1-tower h3){font-family:var(--display);font-weight:400;letter-spacing:-.01em;line-height:1.08}
+html[lang=en] .game-page .gr-f1-copy h2{font-size:clamp(38px,4vw,68px)}
+html[lang=en] .game-page :is(.gr-fh-copy h3,.gr-nba-copy h3){font-size:clamp(28px,2.6vw,42px)}
+html[lang=en] .game-page :is(.gr-fh-log-head h3,.gr-nba-board h3,.ac8-log-heading h3){font-size:clamp(30px,3vw,50px)}
+html[lang=en] .game-page .gr-f1-tower h3{font-size:clamp(22px,2vw,30px)}
+html[lang=en] .game-page .ac8-view-copy h3{font-size:clamp(22px,2vw,32px)}
+/* Read-outs that mix numerals with Chinese units never close up their tracking. */
+.game-page :is(.gr-f1-rows dd>.gr-num,.gr-nba-clock .gr-num,.gr-nba-cells .gr-num,.gr-read .gr-num,.ac8-gauge strong){letter-spacing:0}
+/* Souvenirs sit flat: no tilted stickers, no drop shadows. */
+.gr-fh-stamp,.gr-fh-sign{transform:none}
+.gr-fh-sign small{font-size:11px}
+@media (max-width:760px){
+  .gr-fh-sign small{font-size:12px}
+  .gr-saves-room,.gr-player,.gr-read>span,.gr-save-slot,.gr-fh-coord,.gr-fh-edge,.gr-nba-edge,.gr-f1-strip,.gr-f1-strip-no,.gr-odo>.mono,.gr-nba-led,.gr-nba-case-cap,.gr-f1-rows small,.gr-nba-clock>.mono,.gr-ledger-k time,.gr-source-no{font-size:12px}
+}
+/* The road band's slogan runs once, as a two-part sign: Latin line, loop, Japanese line. */
+.gr-fh-ticker{flex-direction:column;gap:12px;padding:22px 28px}
+.gr-fh-ticker [lang=ja]{font-size:1.1em}
+/* No labels above headings: each source/status line now follows its heading as a quiet data line. */
+.gr-f1-focus h3{order:0}.gr-f1-focus-k{order:1;margin-top:-14px;opacity:.8}.gr-f1-focus p{order:2}.gr-f1-link{order:3}
+.ac8-log-heading>div:first-child,.gr-nba-board-head>div:first-child{display:flex;flex-direction:column}
+.ac8-log-heading>div:first-child>h3,.gr-nba-board-head>div:first-child>h3{order:0;margin:0 0 10px}
+.ac8-log-src,.gr-nba-src{order:1}
+.gr-source-head{display:flex;flex-direction:column}
+.gr-source-head h2{order:0;margin-top:0}.gr-source-no{order:1;margin-top:16px}.gr-source-head p{order:2}
+/* The focused car: name and label grouped at the top, copy and link anchored to the foot. */
+.gr-f1-focus{display:flex;flex-direction:column;gap:14px}
+.gr-f1-focus-k{margin-top:0}
+.gr-f1-focus p{margin-top:auto;padding-top:28px}
+/* flow.css (shared, frozen) re-points --display / --body inside every .game-exhibit; hand the site tokens back. */
+.game-page :is(.game-exhibit,dialog){--display:var(--gr-cesso);--body:var(--gr-body)}

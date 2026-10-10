@@ -13,8 +13,19 @@ export function nerfCabinet() {
     <div class="nerf-cabinet-footer"><span>PYTORCH · NEURAL RENDERING · LOCAL RESEARCH</span><a href="${nerfLinks.post}">${nc('读研究日志','Read the research log')} <svg class="ic" aria-hidden="true"><use href="./assets/flow/current-icons.svg#arrow-up-right"></use></svg></a></div>
   </article>`;
 }
+// Window series A (flow-windows-a.css): field black, lime rays from one camera converging on the recorded view.
+export function nerfWindow({ data, line, label = '' }) {
+  const img = label ? ' role="img" aria-label="' + label + '"' : ' aria-hidden="true"';
+  return `<div class="wa-motif"><svg class="wa-rays" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid meet"${img}>
+    <g fill="none" stroke="#b4ff7d" stroke-linecap="round" vector-effect="non-scaling-stroke"><path d="M10 284H390" stroke-opacity=".16"/><path d="M40 222L184 24M40 222L384 24M40 222L384 228M40 222L184 228" stroke-opacity=".42"/><path d="M40 222L284 126" stroke-opacity=".85"/></g>
+    <circle cx="40" cy="222" r="7" fill="#b4ff7d"/><circle cx="40" cy="222" r="15" fill="none" stroke="#b4ff7d" stroke-opacity=".4"/>
+    <g fill="#b4ff7d"><circle cx="110" cy="194" r="3"/><circle cx="162" cy="174" r="2.5"/><circle cx="214" cy="153" r="2"/></g>
+    <image href="${nerfAsset}reconstruction.webp" x="184" y="24" width="204" height="204" preserveAspectRatio="xMidYMid slice"/>
+    <rect x="184" y="24" width="204" height="204" fill="none" stroke="#b4ff7d" stroke-opacity=".55" vector-effect="non-scaling-stroke"/>
+  </svg></div><div class="wa-type"${label ? ' aria-hidden="true"' : ''}><p class="wa-data"><span>${data[0]}</span><span>${data[1]}</span></p><div class="wa-head"><strong class="wa-title">NeRF<i>_</i></strong><span class="wa-line">${line}</span></div></div>`;
+}
 export function nerfPostArt() {
-  return `<div class="post-art post-art--nerf" aria-hidden="true"><span class="nerf-overline">RESEARCH LOG / 014</span>${fieldArt({ miniature: true, caption: false })}<div class="nerf-post-word">NeRF<span>_</span></div><div class="nerf-post-art-foot"><span>FROM COORDINATES. TO REALITY.</span><span>2026 / LEGO</span></div></div>`;
+  return `<div class="wa wa--nerf" aria-hidden="true">${nerfWindow({ data: ['ChefZC / Research log 014', '2026 / Lego'], line: 'From coordinates. To reality.' })}</div>`;
 }
 
 export function pipelineDiagram() {

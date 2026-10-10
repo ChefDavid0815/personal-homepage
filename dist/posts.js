@@ -16,7 +16,7 @@ import { getLanguage, onLanguageChange } from './i18n.js';
 import { posts } from './posts-data.js';
 import { wisPostArt } from './wis-exhibit.js';
 import {articleHref} from './site-routes.js';
-import { festivalTicket } from './festival-exhibit.js';
+import { festivalIcon } from './festival-exhibit.js';
 
 const root = document.querySelector('#posts-content');
 const isReader = document.body.dataset.view === 'article';
@@ -33,6 +33,14 @@ const minutes = item => {
 };
 const readTime = item => copy(`约 ${minutes(item)} 分钟`, `${minutes(item)} min read`);
 
+// Series plates for the set B covers and heroes (flow-windows-b.css): one motif, the wordmark,
+// one line and one data line.
+const bleed = (src, w, h) => `<div class="wb-motif wb-motif--bleed"><img src="${src}" width="${w}" height="${h}" alt="" loading="lazy" decoding="async"></div>`;
+// The legacy bundle pins square corners and hard offset shadows on these two frames with layered !important
+// rules, which no unlayered rule can beat; their frames take a neutral class name instead.
+const frameTheme = theme => (theme === 'chroma' || theme === 'glass') ? `wb-${theme}` : theme;
+const plate = (theme, motif, mark, line, data) => `<div class="post-art wb wb--wide wb--${theme}" aria-hidden="true">${motif.startsWith('<div class="wb-motif') ? motif : `<div class="wb-motif">${motif}</div>`}<div class="wb-type"><strong class="wb-mark">${mark}</strong><span class="wb-line">${line}</span></div><div class="wb-data"><span>${data[0]}</span><span>${data[1]}</span></div></div>`;
+
 function artwork(item) {
   if(item.theme === 'dot-air') return dotAirPostArt();
   if(item.theme === 'nabat') return nabatPostArt();
@@ -44,13 +52,13 @@ function artwork(item) {
   if(item.theme === 'atlas') return atlasPostArt();
   if(item.theme === 'chroma') return chromaPostArt();
   if(item.theme === 'lens') return lensPostArt();
-  if (item.theme === 'glass') return `<div class="post-art post-art--glass model-micro-art" aria-hidden="true"><img src="./assets/models/arena-case.png" width="1600" height="1100" alt="" loading="lazy"><span>THE COURTSIDE COLLECTION / 03</span><strong>LOVE!<br>IN <i>3D.</i></strong><b class="pop-art-badge">POP!</b><span>COURTSIDE CULTURE / THE POP EDITION</span></div>`;
+  if (item.theme === 'glass') return plate('court-models', bleed('./assets/models/arena-case.png', 1600, 1100), 'Love!<br>In 3D.', 'Courtside culture, the pop edition.', ['The courtside collection', '03']);
   if (item.theme === 'wis') return wisPostArt();
-  if (item.theme === 'festival') return `<div class="post-art post-art--festival" aria-hidden="true"><div class="post-art-top"><span>FESTIVAL NOTES / 005</span><span>VERSION 0.1.1</span></div><div class="festival-post-word">FESTIVAL<br><span>TOOLKIT.</span></div><div class="festival-post-ticket">${festivalTicket()}</div><span class="post-art-foot">YOUR FESTIVAL. YOUR WAY.</span></div>`;
-  if (item.theme === 'axiom') return `<div class="post-art post-art--axiom" aria-hidden="true"><div class="post-art-top"><span>LAB NOTES / 004</span><span>VERSION 1.0</span></div><div class="axiom-post-word">AXIOM<span>↗</span></div><div class="axiom-post-plate"><small>FIGURE 01 / HOOKE’S LAW</small><img src="${item.cover}" width="400" height="280" alt=""></div><span class="post-art-foot">FROM DATA. TO DISCOVERY.</span></div>`;
-  if (item.theme === 'signal') return `<div class="post-art post-art--signal" aria-hidden="true"><div class="post-art-top"><span>PERSONAL SPACE / 001</span><span>EST. 2026</span></div><div class="signal-word">HELLO,<br><span>WORLD</span><i>_</i></div><img src="${item.cover}" width="1254" height="1254" alt=""><span class="post-art-foot">CURIOSITY IS THE STARTING POINT.</span></div>`;
-  if (item.theme === 'court') return `<div class="post-art post-art--court" aria-hidden="true"><img src="${item.cover}" width="1440" height="900" alt=""><div class="post-art-top"><span>FIRST RELEASE / V1.0</span><span>COURTSIDE NOTES</span></div><div class="court-word">AFTER<br><span>HOURS.</span></div><span class="post-art-foot">30 TEAMS <b>·</b> 3v3 / 5v5 <b>·</b> YOUR COURT.</span></div>`;
-  return `<div class="post-art post-art--paper" aria-hidden="true"><div class="post-art-top"><span>THE MOD JOURNAL</span><span>FIRST EDITION / 1.0</span></div><span class="paper-word">Folio<i>.</i></span><div class="paper-print"><img src="${item.cover}" width="1426" height="924" alt=""></div><span class="post-art-foot">A LITTLE MORE OF WHAT YOU LOVE.</span></div>`;
+  if (item.theme === 'festival') return plate('festival', `<div class="wb-stamps">${['#c3dbae', '#f0d2b0', '#bfdcf4', '#f7bbd4'].map((tone, i) => `<span style="--stamp:${tone}">${festivalIcon(i)}</span>`).join('')}</div>`, 'FESTIVAL<br>TOOLKIT.', 'Your festival. Your way.', ['Festival notes / 005<em class="wb-more"> / four seasons</em>', '0.1.1']);
+  if (item.theme === 'axiom') return plate('axiom', `<figure class="wb-plate"><img src="${item.cover}" width="400" height="280" alt="" loading="lazy"></figure>`, 'AXIOM<i>.</i>', 'From data. To discovery.', ['Lab notes 004<em class="wb-more"> / figure 01</em> / Hooke’s law', '1.0']);
+  if (item.theme === 'signal') return `<div class="wa wa--signal" aria-hidden="true"><div class="wa-motif"><img src="${item.cover}" width="640" height="640" alt="" loading="lazy"></div><div class="wa-type"><p class="wa-data"><span>Personal space / 001</span><span>Est. 2026</span></p><div class="wa-head"><strong class="wa-title">Hello,<br>world<i></i></strong><span class="wa-line">Curiosity is the starting point.</span></div></div></div>`;
+  if (item.theme === 'court') return plate('court', bleed(item.cover, 1440, 900), 'AFTER<br>HOURS.', '30 teams. 3v3 and 5v5. Your court.', ['First release<em class="wb-more"> / courtside notes</em>', '1.0']);
+  return plate('folio', `<figure class="wb-plate"><img src="${item.cover}" width="1426" height="924" alt="" loading="lazy"></figure>`, 'Folio<i>.</i>', 'A little more of what you love.', ['The mod journal<em class="wb-more"> / first edition</em>', '1.0']);
 }
 
 // Journal frame (Current 2.1). The index is a reading log: months as chapters, dates as a real
@@ -74,7 +82,7 @@ function entry(item, i) {
       <p class="jr-entry-meta"><time datetime="${item.date}">${dotted(item.date)}</time><span>${esc(text.category)}</span><span>${readTime(item)}</span><span class="jr-entry-no">${item.number} / ${total}</span></p>
       <span class="jr-entry-go" aria-hidden="true">${copy('翻开这一篇', 'Read the note')}${icon('arrow-up-right')}</span>
     </div>
-    <div class="jr-entry-cover post-card post-card--${item.theme}" aria-hidden="true">${artwork(item)}</div>
+    <div class="jr-entry-cover post-card post-card--${frameTheme(item.theme)}" aria-hidden="true">${artwork(item)}</div>
   </article>`;
 }
 
@@ -148,7 +156,7 @@ function reader() {
           <div class="jr-byline"><span class="jr-avatar" aria-hidden="true">c_</span><span class="jr-byline-name">ChefZC<small>${copy('写在热爱里', 'Notes from my world')}</small></span><span class="jr-byline-data"><span>${edition}</span><span>${readTime(post)}</span></span></div>
         </div>
       </header>
-      <div class="jr-hero${nerf ? ' jr-hero--nerf' : ` article-card article-card--${post.theme}`}"><div class="article-art">${nerf ? nerf.cover : artwork(post)}</div></div>
+      <div class="jr-hero${nerf ? ' jr-hero--nerf' : ` article-card article-card--${frameTheme(post.theme)}`}"><div class="article-art">${nerf ? nerf.cover : artwork(post)}</div></div>
       <div class="jr-reading">
         <aside class="jr-rail article-index" aria-label="${copy('本篇目录', 'On this page')}">
           <p class="jr-rail-title">${copy('本篇目录', 'On this page')}</p>

@@ -1,4 +1,5 @@
 // 川流 / Current 2.0 — the homepage. Ten chapters from the source back to the source.
+import './home-dock.js';
 import {t,getLanguage,onLanguageChange} from './i18n.js';
 import {canAnimate,isMotionPaused,onMotionChange} from './motion-state.js';
 import {projects} from './projects.js';

@@ -1,0 +1,10 @@
+汇文明朝体 / Huiwen Mincho — Font © Copyright 2022 TerryWang. All rights reserved.
+
+Licence statement embedded in the font's version record (V 1.000):
+本字体文件开源且免费商用，禁止第三方在任何平台以任何方式用此字体牟利。如果您用付费方式获得了此字体文件，请找卖家退款。
+(This font file is open source and free for commercial use. Third parties may not profit from this font in any way on any platform. If you paid for this font file, ask the seller for a refund.)
+
+This site serves a subset (only the characters it uses) as huiwen-mincho-site.woff2 for its own pages. It is not offered for download or sale.
+Source and checksums: huiwen-mincho-source.json
+
+This site applies a small repair to 14 simplified code points whose glyphs used traditional or Japanese components; details in huiwen-mincho-source.json.

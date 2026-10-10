@@ -2,6 +2,7 @@
    Ink, rice paper and one living current. Loaded after flow.css on every owned page, so it is
    the final authority for the frame (header, footer, buttons, page titles, motion). Exhibits keep
    their own materials; this layer never reaches inside an artwork. */
+@font-face{font-family:'Huiwen Mincho';src:url('./assets/fonts/huiwen-mincho-site.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap;unicode-range:U+2000-206F,U+3000-303F,U+3400-9FFF,U+FF00-FFEF}
 @font-face{font-family:'Current Serif';src:url('./assets/fonts/cormorant-garamond-latin-400-italic.woff2') format('woff2');font-style:italic;font-weight:400;font-display:swap}
 @font-face{font-family:'Current Serif';src:url('./assets/fonts/cormorant-garamond-latin-500-normal.woff2') format('woff2');font-style:normal;font-weight:500;font-display:swap}
 @font-face{font-family:'Flow Wide';src:url('./assets/fonts/unbounded-variable.woff2') format('woff2');font-weight:200 900;font-style:normal;font-display:swap}
@@ -15,12 +16,13 @@
   --bg:var(--paper);--surface:var(--paper-2);--text:var(--flow-ink);--muted:#4e5373;--line:#10132e1c;
   --serif:'Current Serif','EB Garamond',Georgia,serif;
   --mono:'IBM Plex Mono',ui-monospace,monospace;
-  /* Chinese: one heavy, wide, modern voice. HelloFont ChunHei for display, JueJiangHei for reading (Adobe Fonts kit per8hkf). */
-  --zh-display:'hellofont-id-chunhei','hellofont-id-juejianghei80','Noto Sans SC',sans-serif;
-  --zh-strong:'hellofont-id-juejianghei80','hellofont-id-chunhei','Noto Sans SC',sans-serif;
-  --zh-mid:'hellofont-id-juejianghei65','Noto Sans SC',sans-serif;
-  --body:'DM Sans','hellofont-id-juejianghei50','Noto Sans SC',system-ui,sans-serif;
-  --display:'cesso','hellofont-id-chunhei','Noto Sans SC',serif;
+  /* Chinese: 汇文明朝体 (Huiwen Mincho), a letterpress Song, for every Chinese line on the site. Self-hosted subset. */
+  --zh:'Huiwen Mincho','Noto Serif SC','Songti SC','SimSun',serif;
+  --zh-display:var(--zh);
+  --zh-strong:var(--zh);
+  --zh-mid:var(--zh);
+  --body:'DM Sans','Huiwen Mincho','Noto Serif SC','Songti SC',serif;
+  --display:'cesso','Huiwen Mincho',serif;
   --brush:var(--zh-display);
   --sans-zh:var(--zh-mid);
   --seal:#d7263d;
@@ -126,7 +128,7 @@ html[data-site-motion=off] .flow-index-map .index-river-blue{animation:none!impo
 .atelier-directory a::after{content:'';position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--current);transform:scaleX(0);transform-origin:left;transition:transform .6s var(--ease-out)}
 .atelier-directory a:hover::after,.atelier-directory a[aria-current=page]::after{transform:scaleX(1)}
 .atelier-directory a:hover{background:color-mix(in srgb,var(--paper-2) 70%,transparent)}
-.atelier-directory a small{font:500 10px var(--mono);color:var(--muted)}
+.atelier-directory a small{font:500 11px var(--mono);color:var(--muted)}
 .atelier-directory a strong{font:400 clamp(24px,2.2vw,34px)/1.05 var(--display);letter-spacing:-.02em}
 .atelier-directory a span{font:500 11px var(--body);color:var(--muted)}
 
@@ -204,3 +206,14 @@ html[data-site-motion=off] .cz-split .cz-w>i{transform:none;transition:none}
   .site-footer{flex-wrap:wrap;gap:12px 20px}
 }
 @media (prefers-reduced-motion:reduce){.cz-rise{opacity:1;transform:none}.cz-split .cz-w>i{transform:none}}
+/* Unification: the shared ending never drops below 11px on phones. */
+@media (max-width:760px){
+  .atelier-directory a small{font-size:11px}
+  .site-footer,.site-footer>.mono,.flow-footer-index,.back-top{font-size:12px!important}
+}
+/* 2.1: finale caption keeps Chinese tracking positive; finale rails never drop below 12px */
+html[lang=zh-CN] .cz-finale-caption p:first-child{font-weight:400;letter-spacing:.02em}
+html[lang=en] .cz-finale-caption p:first-child{letter-spacing:-.01em}
+.cz-finale-top,.cz-finale-bottom{font-size:12px}
+.cz-finale :is(small,.mono){font-size:max(12px,1em)}
+@media (max-width:900px){html .flow-breadcrumb,html .flow-footer-index,html .flow-breadcrumb-meta,html #flow-result-count{font-size:12px}}

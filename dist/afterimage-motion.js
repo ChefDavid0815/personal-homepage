@@ -1,3 +1,4 @@
+import './afterimage-trails.js';
 import { canAnimate, onMotionChange } from './motion-state.js';
 
 const pieces = [...document.querySelectorAll('.ai-stage,.ai-now-art,.ai-post-art')];

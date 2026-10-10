@@ -1,0 +1,180 @@
+/* Unification pass: project windows (Now + Posts covers), set a. Unlayered, loads last.
+
+   One series, one grammar. Every window is a flat ground in its project's colour with three tiers of type
+   and one signature motif:
+     data   top edge, IBM Plex Mono 12px: what this is and which edition/number/date;
+     title  the project's wordmark or display words (its own face, Cesso, or var(--zh-display) for Chinese);
+     line   one sentence in the reading face;
+     motif  one drawn or photographic element that never sits under text.
+   Portrait (Now): data, then title + line on the ground, motif anchored to the bottom edge.
+   Landscape (Posts covers and article heroes): type in the left column, motif in the right column.
+   The orientation is read from the window itself (size container), so the same markup serves both. */
+
+.wa{--wa-bg:#0b0d26;--wa-fg:#e7ebf2;--wa-dim:color-mix(in srgb,var(--wa-fg) 74%,transparent);--wa-accent:#3d5cff;
+  position:absolute;inset:0;display:block;overflow:hidden;container:wa/size;margin:0;padding:0;border:0;border-radius:inherit;
+  background:var(--wa-bg);color:var(--wa-fg);font:400 15px/1.5 var(--body);letter-spacing:0;text-align:left;text-transform:none;text-decoration:none;text-shadow:none}
+.wa *,.wa *::before,.wa *::after{box-sizing:border-box}
+.wa img{max-width:none}
+
+/* Type column */
+.wa .wa-type{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;align-items:flex-start;padding:clamp(18px,6cqw,44px);pointer-events:none}
+.wa .wa-data{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 14px;width:100%;max-width:none;margin:0;padding:0;font:400 12px/1.45 var(--mono);letter-spacing:0;color:var(--wa-dim);font-variant-numeric:tabular-nums;text-transform:none}
+.wa .wa-data>span{min-width:0}
+.wa .wa-data>span:first-child{white-space:nowrap}
+.wa .wa-data>span:last-child:not(:first-child){text-align:right;white-space:nowrap}
+.wa .wa-head{display:flex;flex-direction:column;align-items:flex-start;margin-top:clamp(16px,6.5cqw,30px);max-width:100%}
+.wa .wa-title{display:block;margin:0;padding:0;font:400 clamp(30px,11.6cqw,58px)/1 var(--display);letter-spacing:-.02em;color:var(--wa-fg);text-transform:none;white-space:nowrap}
+.wa .wa-title.wa-zh{font-family:var(--zh-display);line-height:1.2;letter-spacing:.04em}
+.wa .wa-line{display:block;margin:clamp(10px,3cqw,16px) 0 0;max-width:30ch;font:400 clamp(13px,3.7cqw,15px)/1.45 var(--body);letter-spacing:0;color:var(--wa-dim);text-transform:none}
+.wa .wa-line.wa-zh{font-family:var(--zh-strong);font-size:clamp(14px,3.9cqw,17px);letter-spacing:.04em;line-height:1.6}
+
+/* Motif field: bottom of a portrait window */
+.wa .wa-motif{position:absolute;left:0;right:0;bottom:0;height:54%;z-index:1;overflow:hidden}
+.wa .wa-plate{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+/* A caption on a plate sits on a notch of the ground, never on the image itself. */
+.wa .wa-cap{position:absolute;z-index:2;left:0;top:0;max-width:86%;margin:0;padding:0 14px 9px clamp(18px,6cqw,44px);background:var(--wa-bg);border-bottom-right-radius:10px;font:400 12px/1.45 var(--mono);letter-spacing:0;color:var(--wa-dim);font-variant-numeric:tabular-nums}
+
+/* Landscape: type left, motif right */
+@container wa (aspect-ratio > 1){
+  .wa .wa-type{padding:clamp(18px,4.4cqw,52px)}
+  .wa .wa-data{font-size:clamp(12px,1.1cqw,13px)}
+  .wa .wa-head{margin-top:auto;max-width:46%}
+  .wa .wa-title{font-size:min(8.4cqw,15cqh)}
+  .wa .wa-line{font-size:clamp(13px,1.45cqw,18px);max-width:34ch}
+  .wa .wa-cap{padding:0 14px 10px 0;font-size:clamp(12px,1.1cqw,13px)}
+}
+
+/* ───────── Mounts ───────── */
+/* Older artwork layers re-pointed the type tokens on these frames (Space Grotesk, Noto Sans SC). Hand the site tokens back. */
+.now-page .timeline-list .milestone>.wa-win,.jr-entry-cover:has(>.wa),.jr-hero:has(.wa),.jr-hero .article-art:has(>.wa){--display:inherit;--body:inherit;--mono:inherit;--zh:inherit;--zh-display:inherit;--zh-strong:inherit}
+/* Now: the room frames every window; inside, the series ground replaces each artwork's old chrome. */
+.now-page .timeline-list .milestone>.milestone-art.wa-win:last-child{padding:0;background:none;background-image:none;color:inherit;font-size:16px;text-decoration:none;filter:none}
+.now-page .timeline-list .milestone>.wa-win::before,.now-page .timeline-list .milestone>.wa-win::after{content:none;display:none}
+.now-page .timeline-list .milestone>.wa-win>:not(.wa){display:none}
+@media (max-width:760px){
+  .now-page .timeline-list .milestone>.milestone-art.wa-win:last-child{height:auto;min-height:0;aspect-ratio:4/5}
+}
+/* Posts index: the cover frame already pins its child to the box. */
+.jr-entry-cover>.wa{border-radius:0}
+.jr-entry-cover:has(>.wa)::before,.jr-entry-cover:has(>.wa)::after{content:none;display:none}
+/* Article hero: the window takes a fixed proportion. */
+.jr-hero .article-art:has(>.wa){position:relative;aspect-ratio:12/5;min-height:0;max-height:620px;padding:0!important;background:none!important;overflow:hidden}
+.jr-hero .article-art:has(>.wa)::before,.jr-hero .article-art:has(>.wa)::after{content:none;display:none}
+.jr-hero--nerf:has(.wa){background:#070b07!important}
+@media (max-width:760px){.jr-hero .article-art:has(>.wa){aspect-ratio:4/5;max-height:none}}
+
+/* ───────── DOT/AIR: red sky, paper type, the dotted Earth rising ───────── */
+.wa--dotair{--wa-bg:#ee3829;--wa-fg:#f5f3eb;--wa-dim:#f5f3eb}
+.wa--dotair .wa-title{font-family:"Dot Air Display",var(--display);letter-spacing:-.02em;line-height:.98;font-size:clamp(30px,11cqw,56px)}
+.wa--dotair .wa-data .da-mark{display:inline-grid;place-items:center;width:14px;height:14px;margin:0 8px -2px 0;border-radius:50%;background:#f5f3eb;vertical-align:baseline}
+.wa--dotair .wa-data .da-mark i{display:block;width:5px;height:5px;border-radius:50%;background:#ee3829}
+.wa--dotair .wa-motif{height:56%;overflow:visible}
+.wa--dotair .wa-motif .da-globe{position:absolute;left:50%;top:4%;width:118%;translate:-50% 0;filter:none;pointer-events:none;z-index:1}
+.wa .da-pin{padding:4px 8px;border-radius:999px;font:400 11px/1 var(--mono);letter-spacing:0;background:#f5f3eb;color:#b3271c}
+@container wa (aspect-ratio > 1){
+  .wa--dotair .wa-title{font-size:min(7.4cqw,14cqh)}
+  .wa--dotair .wa-motif .da-globe{top:50%;left:52%;width:min(112%,128cqh);translate:-50% -50%}
+}
+
+/* ───────── NABAT: plant paper, specimen green, the leaf circuit ───────── */
+.wa--nabat{--wa-bg:#f1ede3;--wa-fg:#173f30;--wa-dim:#3d5a4c;--nb-action:#b5532a}
+.wa--nabat .wa-title{font-family:"Nabat Editorial",Georgia,serif;font-size:clamp(34px,14cqw,68px);line-height:.95;letter-spacing:-.01em}
+.wa--nabat .wa-title b{font-weight:inherit;color:#b5532a}
+.wa--nabat .wa-data [lang=ar]{font-family:"Nabat Arabic",var(--body);font-size:14px;line-height:1}
+.wa--nabat .wa-motif{height:58%}
+.wa--nabat .wa-motif .nabat-circuit{position:absolute;left:46%;top:8%;width:88%;height:auto;aspect-ratio:1;translate:-50% 0;color:#173f30;overflow:visible}
+.wa--nabat .nabat-circuit path{vector-effect:non-scaling-stroke}
+.wa--nabat .nabat-circuit-outline{fill:#173f30;stroke:#173f30;stroke-width:2px}
+.wa--nabat .nabat-circuit-veins{stroke:#f1ede3;stroke-width:1.4px;opacity:.55}
+.wa--nabat .nabat-circuit-radio{stroke:#173f30;stroke-width:2px}
+.wa--nabat .nabat-circuit-current{stroke:#e0874f;stroke-width:3px}
+@container wa (aspect-ratio > 1){
+  .wa--nabat .wa-title{font-size:min(10cqw,19cqh)}
+  .wa--nabat .wa-motif .nabat-circuit{top:50%;width:min(96%,104cqh);translate:-50% -46%}
+}
+
+/* ───────── Flow edition: current blue, 川流不息, the river sculpture ───────── */
+.wa--flow{--wa-bg:#2445ef;--wa-fg:#f3f5f9;--wa-dim:color-mix(in srgb,#f3f5f9 82%,transparent)}
+.wa--flow .wa-title{font-family:var(--zh-display);font-size:clamp(44px,16cqw,80px);line-height:1.16;letter-spacing:.04em}
+.wa--flow .wa-motif{height:60%}
+.wa--flow .wa-motif img{position:absolute;right:-12%;bottom:-10%;width:84%;height:auto;aspect-ratio:1}
+@container wa (aspect-ratio > 1){
+  .wa--flow .wa-title{font-size:min(10.5cqw,21cqh)}
+  .wa--flow .wa-motif img{right:-4%;top:50%;bottom:auto;width:auto;height:116%;translate:0 -50%}
+}
+
+/* ───────── NeRF: field black, lime rays converging on the recorded view ───────── */
+.wa--nerf{--wa-bg:#070b07;--wa-fg:#e3f2dc;--wa-dim:color-mix(in srgb,#e3f2dc 70%,transparent)}
+.wa--nerf .wa-title{font-family:"Space Grotesk",var(--display);font-weight:500;letter-spacing:-.04em;font-size:clamp(40px,16cqw,80px);line-height:.95}
+.wa--nerf .wa-title i{font-style:normal;color:#b4ff7d}
+.wa--nerf .wa-motif{height:58%}
+.wa--nerf .wa-rays :is(path,rect){vector-effect:non-scaling-stroke}
+.wa--nerf .wa-rays{position:absolute;inset:0;width:100%;height:100%;display:block}
+@container wa (aspect-ratio > 1){
+  .wa--nerf .wa-title{font-size:min(10cqw,19cqh)}
+}
+
+/* ───────── AfterImage: carbon black, a photographic plate, the hollow wordmark ───────── */
+.wa--afterimage{--wa-bg:#0c0c0d;--wa-fg:#f0eee8;--wa-dim:color-mix(in srgb,#f0eee8 70%,transparent);--wa-accent:#ef4a33}
+.wa--afterimage .wa-head{flex-direction:row;align-items:flex-end;gap:14px;width:100%}
+.wa--afterimage .wa-title{font:800 clamp(40px,15cqw,74px)/.82 AfterimageBarlow,var(--display);letter-spacing:-.03em}
+.wa--afterimage .wa-title span{display:block}
+.wa--afterimage .wa-title span+span{color:transparent;-webkit-text-stroke:1.2px var(--wa-fg)}
+.wa--afterimage .wa-num{margin:0 0 2px auto;font:800 clamp(24px,8cqw,40px)/.9 AfterimageBarlow,var(--display);letter-spacing:-.02em;color:var(--wa-accent);font-variant-numeric:tabular-nums}
+.wa--afterimage .wa-headtext{display:flex;flex-direction:column;align-items:flex-start}
+.wa--afterimage .wa-motif{height:46%}
+.wa--afterimage .wa-plate{filter:saturate(.9)}
+.wa--afterimage .wa-track{position:absolute;z-index:1;left:50%;top:54%;width:62%;height:auto;aspect-ratio:1;translate:-50% -50%;filter:brightness(0) invert(1);opacity:.92}
+.wa--afterimage .wa-plate.is-dim{filter:brightness(.42) saturate(.6)}
+@container wa (aspect-ratio > 1){
+  .wa--afterimage .wa-title{font-size:min(11cqw,22cqh)}
+  .wa--afterimage .wa-num{display:none}
+  .wa--afterimage .wa-motif{width:54%}
+}
+
+/* ───────── Mid-Autumn: night navy, moon cream, the lantern moon ───────── */
+.wa--midautumn{--wa-bg:#0b1330;--wa-fg:#f6e4bf;--wa-dim:color-mix(in srgb,#f6e4bf 76%,transparent)}
+.wa--midautumn .wa-title{font-family:MoonLatin,"EB Garamond",Georgia,serif;font-size:clamp(36px,13cqw,64px);line-height:.92;letter-spacing:-.01em}
+.wa--midautumn .wa-title b{font-weight:inherit;color:#f3a25b}
+.wa--midautumn .wa-motif .wa-plate{object-position:62% 40%}
+@container wa (aspect-ratio > 1){
+  .wa--midautumn .wa-title{font-size:min(9.4cqw,18cqh)}
+}
+
+/* ───────── The personal space: first site, Hello world, music, IB, agents ───────── */
+.wa--signal{--wa-bg:#0b0d26;--wa-fg:#e7ebf2;--wa-dim:color-mix(in srgb,#e7ebf2 72%,transparent)}
+.wa--signal .wa-title i{display:inline-block;width:.42em;height:.075em;margin-left:.06em;background:#ff5c9a;color:transparent;overflow:hidden;font-style:normal;vertical-align:baseline}
+.wa--signal .wa-motif img{position:absolute;left:50%;top:50%;width:min(92%,150cqh);height:auto;aspect-ratio:1;translate:-50% -46%}
+@container wa (aspect-ratio > 1){
+  .wa--signal .wa-title{font-size:min(9cqw,17cqh)}
+  .wa--signal .wa-motif img{width:min(96%,92cqh);translate:-52% -50%}
+}
+
+.wa--dayone{--wa-bg:#0b0d26;--wa-fg:#e7ebf2;--wa-dim:color-mix(in srgb,#e7ebf2 72%,transparent)}
+.wa--dayone .wa-numeral{position:absolute;left:clamp(18px,6cqw,44px);bottom:clamp(18px,6cqw,44px);margin:0;font:400 min(54cqw,70cqh)/.74 var(--display);letter-spacing:-.05em;color:#3d5cff;white-space:nowrap}
+.wa--dayone .wa-numeral i{display:inline-block;width:.42em;height:.075em;margin-left:.05em;background:#ff5c9a;vertical-align:baseline}
+
+.wa--music{--wa-bg:#ff5c9a;--wa-fg:#10132e;--wa-dim:color-mix(in srgb,#10132e 78%,transparent)}
+.wa--music .wa-motif{height:56%}
+.wa--music .wa-disc{position:absolute;left:34%;top:8%;width:58%;aspect-ratio:1;border-radius:50%;background:#10132e}
+.wa--music .wa-disc::before{content:"";position:absolute;inset:11%;border-radius:50%;border:1px solid #ffffff24}
+.wa--music .wa-disc::after{content:"";position:absolute;inset:23%;border-radius:50%;border:1px solid #ffffff1a}
+.wa--music .wa-disc img{position:absolute;left:33%;top:33%;width:34%;height:34%;border-radius:50%;object-fit:cover}
+.wa--music .wa-sleeve{position:absolute;left:clamp(18px,6cqw,44px);top:0;width:52%;aspect-ratio:1;object-fit:cover;border-radius:4px;box-shadow:0 18px 30px -18px #10132e99}
+
+.wa--ib{--wa-bg:#3d5cff;--wa-fg:#f3f5f9;--wa-dim:#f3f5f9}
+.wa--agents{--wa-bg:#ff6b3d;--wa-fg:#10132e;--wa-dim:color-mix(in srgb,#10132e 78%,transparent)}
+.wa--ib .wa-motif svg,.wa--agents .wa-motif svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+
+/* Small landscape covers (phone index): the plate caption steps aside; the article hero still carries it. */
+@container wa (aspect-ratio > 1) and (max-width:560px){.wa .wa-cap{display:none}}
+.wa .wa-zh-inline{font-family:var(--zh-strong);letter-spacing:.04em}
+
+/* Landscape motif geometry wins over each project's portrait height. */
+@container wa (aspect-ratio > 1){
+  .wa>.wa-motif{left:auto;right:0;bottom:0;top:calc(clamp(18px,4.4cqw,52px) * 2 + 18px);width:52%;height:auto;overflow:hidden}
+}
+
+/* Motion: every moving part here belongs to its project script; the series itself is still. */
+html[data-site-motion=off] .wa *{animation:none!important;transition:none!important}
+@media (prefers-reduced-motion:reduce){.wa *{animation:none!important}}

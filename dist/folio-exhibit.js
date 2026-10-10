@@ -1,3 +1,4 @@
+import './folio-turn.js';
 import { t, getLanguage } from './i18n.js';
 import { folioReleases, currentFolio, folioReleaseUrl } from './folio-releases.js';
 import { esc, icon, plusIcon, specList, tagLine, roomTitle, linkButton, insideButton, label } from './exhibit-frame.js';

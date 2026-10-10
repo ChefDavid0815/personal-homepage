@@ -14,6 +14,7 @@ const families={gpt:['#3d5cff','#7a5cff','#6f9bff','#a08cff','#2a3bc4','#5ec4ff'
 const familyOf=model=>isClaude(model)?'claude':'gpt';
 const familyName={gpt:'OpenAI · GPT',claude:'Anthropic · Claude'};
 const colorFor=(model,list)=>{const f=familyOf(model);const peers=list.filter(m=>familyOf(m.model)===f);return families[f][Math.max(0,peers.findIndex(m=>m.model===model))%families[f].length];};
+let pickedBin=null;
 let snapshot=null,range='today',selection=null,stream=null,retry=null,offline=false,offset=0,lastRender='',currentDay='';
 const now=()=>Date.now()+offset;
 const period=()=>({today:c('今日','Today'),'7d':c('近 7 天','7 days'),'30d':c('近 30 天','30 days'),lifetime:c('累计','Lifetime')})[range];
@@ -70,8 +71,11 @@ function render(force=false) {
     const title=b.covered?`${date(b.time,range==='today'?{hour:'2-digit',minute:'2-digit'}:{})} · ${number(b.total)} tokens`:c('无历史记录','No recorded history');
     return `<div class="usage-column"><button type="button" class="usage-bar${b.covered?'':' is-uncovered'}" data-bin="${i}" aria-label="${esc(title)}" style="--height:${Math.max(b.total?1:0,b.total/max*100)}%"><span class="bar-stack"><i class="is-input" style="flex:${b.input-b.cached-b.write}"></i><i class="is-cached" style="flex:${b.cached}"></i><i class="is-write" style="flex:${b.write}"></i><i class="is-output" style="flex:${b.output}"></i></span></button><span class="usage-x-label">${bins.length>12&&i%Math.ceil(bins.length/8)!==0&&i!==bins.length-1?'':esc(label)}</span></div>`;
   }).join('')}</div>`;
+  // One tab stop for the whole chart (arrow keys move inside); a picked bar survives live updates.
+  if(pickedBin!==null&&!bins[pickedBin])pickedBin=null;
+  rovingBars(activeIndex!==undefined?Number(activeIndex):pickedBin);
   if(activeIndex!==undefined) document.querySelector(`[data-bin="${activeIndex}"]`)?.focus({preventScroll:true});
-  $('usage-chart-detail').textContent=c('悬停或选中柱形，查看输入与输出的分布。','Hover or select a bar to explore the token mix.');
+  if(pickedBin!==null)detail(pickedBin);else hint();
   const share=value=>(value/(total.total||1)*100).toFixed(2)+'%';
   const ordered=['gpt','claude'].flatMap(f=>models.filter(m=>familyOf(m.model)===f));
   const groups=['gpt','claude'].map(f=>({f,list:models.filter(m=>familyOf(m.model)===f)})).filter(g=>g.list.length);
@@ -83,15 +87,26 @@ function render(force=false) {
   updateStatus();
 }
 
+function hint() {
+  $('usage-chart-detail').textContent=c('悬停或选中柱形，查看输入与输出的分布。','Hover or select a bar to explore the token mix.');
+}
+function rovingBars(home) {
+  const bars=[...document.querySelectorAll('#usage-chart [data-bin]')];if(!bars.length)return;
+  const stop=Number.isInteger(home)&&bars[home]?home:bars.length-1;
+  bars.forEach((bar,i)=>{bar.tabIndex=i===stop?0:-1;bar.setAttribute('aria-pressed',String(i===pickedBin));});
+}
 function detail(index) {
   const b=selection?.bins[index];if(!b)return;
   $('usage-chart-detail').textContent=b.covered?`${date(b.time,range==='today'?{hour:'2-digit',minute:'2-digit'}:{})} · ${c('输入','Input')} ${short(b.input-b.cached-b.write)} / ${c('缓存','Cached')} ${short(b.cached)} / ${c('输出','Output')} ${short(b.output)} · ${number(b.total)} tokens`:c('该日期早于最早可追溯记录，无法统计。','This date precedes the earliest available record.');
 }
+function pick(index) { pickedBin=index; rovingBars(index); detail(index); }
+// Hover previews a bar; click or keyboard focus picks it; leaving the chart returns to the picked bar (or the hint).
 $('usage-chart').addEventListener('pointerover',event=>{const b=event.target.closest('[data-bin]');if(b)detail(Number(b.dataset.bin));});
-  $('usage-chart').addEventListener('focusin',event=>{if(event.target.dataset.bin!==undefined)detail(Number(event.target.dataset.bin));});
-$('usage-chart').addEventListener('click',event=>{const b=event.target.closest('[data-bin]');if(b)detail(Number(b.dataset.bin));});
+$('usage-chart').addEventListener('pointerleave',()=>{if(pickedBin!==null)detail(pickedBin);else hint();});
+$('usage-chart').addEventListener('focusin',event=>{if(event.target.dataset.bin!==undefined)pick(Number(event.target.dataset.bin));});
+$('usage-chart').addEventListener('click',event=>{const b=event.target.closest('[data-bin]');if(b)pick(Number(b.dataset.bin));});
 $('usage-chart').addEventListener('keydown',event=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;const i=Number(event.target.dataset.bin);if(!Number.isInteger(i))return;event.preventDefault();const end=selection.bins.length-1;const next=event.key==='Home'?0:event.key==='End'?end:Math.max(0,Math.min(end,i+(event.key==='ArrowRight'?1:-1)));document.querySelector(`[data-bin="${next}"]`)?.focus();});
-$('usage-ranges').addEventListener('click',event=>{const b=event.target.closest('[data-range]');if(!b)return;range=b.dataset.range;labels();});
+$('usage-ranges').addEventListener('click',event=>{const b=event.target.closest('[data-range]');if(!b)return;range=b.dataset.range;pickedBin=null;labels();});
 
 function accept(data) {
   if(!data?.hours || !data.collectedAt)return;
@@ -111,7 +126,8 @@ function connect() {
   stream.addEventListener('unavailable',()=>{offline=true;updateStatus();});
   stream.onerror=()=>{stream?.close();retry=setTimeout(()=>{fetchSnapshot();connect();},2000);};
 }
-$('usage-refresh').addEventListener('click',()=>{fetchSnapshot();connect();});
+// Refresh shows that it is working (busy spin, at least briefly) and ignores repeat presses until the fetch settles.
+$('usage-refresh').addEventListener('click',async()=>{const button=$('usage-refresh');if(button.getAttribute('aria-busy')==='true')return;button.setAttribute('aria-busy','true');connect();await Promise.all([fetchSnapshot(),new Promise(resolve=>setTimeout(resolve,700))]);button.removeAttribute('aria-busy');});
 document.addEventListener('visibilitychange',()=>{if(document.hidden){stream?.close();clearTimeout(retry);}else{fetchSnapshot();connect();}});
 window.addEventListener('pagehide',()=>{stream?.close();clearTimeout(retry);});
 window.addEventListener('online',()=>{fetchSnapshot();connect();});

@@ -71,7 +71,9 @@
         "+",
         "F1 / 2026 Team Galleries ↗",
         "Forza / Playground Games ↗",
-        "NBA 2K / Visual Concepts ↗"
+        "NBA 2K / Visual Concepts ↗",
+        "GO SOMEWHERE NEW",
+        "東京・夜・自由"
       ],
       "ids": [
         "pad"
@@ -91,7 +93,16 @@
         "＋",
         "↓",
         "↓",
-        "↓"
+        "↓",
+        "LOVE",
+        "THIS",
+        "GAME!",
+        "HOME",
+        "COURT!",
+        "CITY",
+        "ICON!",
+        "SPLASH",
+        "30!"
       ]
     },
     "dist/now.html": {
@@ -142,7 +153,107 @@
         "↓",
         "↓",
         "↓",
-        "↓"
+        "↓",
+        "_",
+        "↗",
+        "↗",
+        "∞",
+        "02",
+        "01",
+        "A / TEMPORAL EDITION",
+        "UTC",
+        "WEEKEND",
+        "PREVIEW",
+        "SESSION",
+        "ARCHIVE",
+        "LIVE / RESULT / MEMORY",
+        "A / COMMUNITY EDITION",
+        "ATLAS SELECTION / 01",
+        "THE GEOMETRY",
+        "OF SUZUKA",
+        "06 FRAMES / MARTIN LEE",
+        "PHOTOGRAPHY, TOGETHER.",
+        "A / CIRCUIT INTELLIGENCE",
+        "SUZUKA / JAPAN",
+        "EVERY CORNER HAS A FRAME.",
+        "A / MOTORSPORT IDENTITY",
+        "FRAME",
+        "FAN",
+        "YOUR SEASON. YOUR RECORD.",
+        "A / THE CONNECTED SEASON",
+        "R01",
+        "R23",
+        "EVERY FRAME CONNECTED",
+        "1.1",
+        "A / VISUAL SEASON RECORD",
+        "THE IMAGES STAY.",
+        "H / 06",
+        "H / 06",
+        "H / 06",
+        "THE JOURNEY UPDATE",
+        "SEVEN COLOURS.",
+        "ONE MORE ADVENTURE.",
+        "22 SEP 2026",
+        "EDITION / 03",
+        "20",
+        "CHEFZC ATELIER",
+        "THE COURTSIDE COLLECTION",
+        "LOVE!",
+        "IN",
+        "3D.",
+        "POP!",
+        "THREE CASES / TWO WORKS",
+        "20 SEPTEMBER 2026",
+        "NEXT CHAPTER / 02",
+        "647",
+        "MODELS",
+        "ONE WORKSHOP",
+        "YOUR FESTIVAL. STILL GROWING.",
+        "WINDOWS / V0.2.0",
+        "WIS TECH TANK",
+        "FIELD NOTES / 001",
+        "stride.",
+        "A little awareness.",
+        "A better next step.",
+        "A SCHOOL IDEA, TAKING ROOT.",
+        "19 SEPTEMBER 2026",
+        "NEW ARRIVAL",
+        "WEEKS",
+        "FIVE SERIES",
+        "YOUR FESTIVAL. YOUR WAY.",
+        "WINDOWS / V0.1.1",
+        "A↗",
+        "EXPERIMENT",
+        "NO. 003 / 2026",
+        "MEASURE. PLOT. DISCOVER.",
+        "FROM DATA TO DISCOVERY.",
+        "FOLIO / THE OPEN ROAD",
+        "EDITION № 02",
+        "A wider horizon.",
+        "The same journal.",
+        "18 SEPTEMBER 2026",
+        "A SMALL STUDIO. A GROWING STORY.",
+        "THE FIRST EDITION / 1.0",
+        "A CONSIDERED HOME",
+        "FOR YOUR MODS.",
+        "FIRST RELEASE",
+        "FOR THE LOVE",
+        "OF THE GAME.",
+        "ON REPEAT",
+        "GOOD MUSIC.",
+        "GOOD LIFE.",
+        "DAY ONE",
+        "HELLO,",
+        "WORLD.",
+        "+",
+        "+",
+        "+",
+        "YEAR 12",
+        "LEARN.",
+        "EXPLORE.",
+        "AGENTS",
+        "WHAT",
+        "IF?"
       ]
     },
     "dist/profile.html": {
@@ -212,7 +323,11 @@
         "想法的另一面，",
         "是",
         "做出来的东西。",
-        "AfterImage 1.5 把赛程、场次与影像接成可预览、可回看的赛车周末；展厅里还有 Roseraie、Atlas、CHROMA、ProjectLens、Festival Toolkit、AXIOM、Folio 与 NBA After Hours。八件作品，一座持续运营的网站。"
+        "AfterImage 1.5 把赛程、场次与影像接成可预览、可回看的赛车周末；展厅里还有 Roseraie、Atlas、CHROMA、ProjectLens、Festival Toolkit、AXIOM、Folio 与 NBA After Hours。八件作品，一座持续运营的网站。",
+        "∞",
+        "M4",
+        "15",
+        "⌘"
       ],
       "links": [
         "#intro",
@@ -229,7 +344,8 @@
       "text": [
         "[ GALLERY / THE SCHOOL COLLECTION ]",
         "CHEFZC · WIS · 2026",
-        "s."
+        "s.",
+        "×"
       ]
     },
     "dist/usage.html": {
@@ -247,10 +363,18 @@
         "KEEP THE CURIOSITY.",
         "Gallery ↗"
       ]
+    },
+    "dist/nerf.html": {
+      "text": [
+        "↗",
+        "↗",
+        "← 学校实验室",
+        "关闭 ×"
+      ]
     }
   },
   "revisedFiles": {
     "dist/assets/fonts/noto-sans-sc-site-variable.woff2": "eccda707b5911658fe5a6c82fcb073b9b15ddce0dc44659d3704692d894d608c",
-    "dist/personal-content.js": "fe085ef9004596a5583e3c9164d1a5f105357991732a1a8a305a8b9bad6ea187"
+    "dist/personal-content.js": "1cbb46dcaf3a6e1ba949cb20b6ff5731397a073e2502ade2cb1de8a8c6b5c9b3"
   }
 }

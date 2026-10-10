@@ -112,7 +112,7 @@ function ensureDialog(){
   if(dialog)return;
   dialog=document.createElement('dialog');dialog.className='nabat-dialog';
   dialog.setAttribute('aria-labelledby','nabat-dialog-title');
-  dialog.innerHTML='<div class="nabat-dialog-top"><div><h2 id="nabat-dialog-title"></h2><a data-nabat-original target="_blank" rel="noopener noreferrer"></a></div><button type="button" class="nabat-dialog-close" autofocus>×</button></div><img alt=""><p></p>';
+  dialog.innerHTML='<div class="nabat-dialog-top"><div><h2 id="nabat-dialog-title"></h2><a data-nabat-original target="_blank" rel="noopener noreferrer"></a></div><button type="button" class="nabat-dialog-close" autofocus><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 4l12 12M16 4L4 16"/></svg></button></div><img alt=""><p></p>';
   document.body.append(dialog);
   dialog.querySelector('button').addEventListener('click',()=>dialog.close());
   dialog.addEventListener('click',event=>{

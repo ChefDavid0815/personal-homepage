@@ -12,9 +12,9 @@
   --jr-gap:clamp(28px,4.4vw,72px);
   --jr-measure:612px;         /* 34em at 18px for Chinese */
   --accent:var(--c-blue);
-  /* Latin in DM Sans, Chinese in JueJiangHei: the strong reading voice without JueJiang's wide Latin. */
-  --jr-strong:'DM Sans','hellofont-id-juejianghei80','Noto Sans SC',sans-serif;
-  --jr-mid:'DM Sans','hellofont-id-juejianghei65','Noto Sans SC',sans-serif;
+  /* Latin in DM Sans, Chinese in Huiwen Mincho, like the rest of the site. */
+  --jr-strong:var(--body);
+  --jr-mid:var(--body);
 }
 html[lang=en] .posts-page{--jr-measure:38rem}  /* ~66ch of DM Sans at 18.5px */
 .posts-page main#posts-content{display:block;padding:0;margin:0;max-width:none;background:none}

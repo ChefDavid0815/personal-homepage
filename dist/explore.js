@@ -9,10 +9,14 @@ let query=(params.get('q')||'').slice(0,200),group=['all','pages','works','notes
 const c=(zh,en)=>getLanguage()==='en'?en:zh;
 const esc=value=>String(value).replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
 const groupCopy={pages:['个人空间','Spaces'],works:['作品与实验','Works & experiments'],notes:['随笔与记录','Notes & journals']};
+// Dates are shown as 2026.09.30 but stored as 2026-09-30: accept what the reader sees (dots or slashes).
+const searchable=text=>text.replace(/(\d{4})[./](\d{1,2})(?:[./](\d{1,2}))?/g,(match,year,month,day)=>[year,month.padStart(2,'0'),day&&day.padStart(2,'0')].filter(Boolean).join('-'));
 function renderResults(){
-  const results=filterCatalog(catalog,{query,group});const language=getLanguage()==='en'?1:0;
+  const results=filterCatalog(catalog,{query:searchable(query),group});const language=getLanguage()==='en'?1:0;
   const columns=Object.entries(groupCopy).map(([key,names])=>{const items=results.filter(item=>item.group===key);return items.length?`<section class="flow-index-stream flow-index-stream--${key}"><div class="flow-stream-heading"><h2>${esc(names[language])}</h2><span>${String(items.length).padStart(2,'0')}</span></div>${items.map(item=>{const date=key==='notes'&&/^\d{4}-\d{2}-\d{2}$/.test(item.tags?.[0]||'')?item.tags[0]:'';return `<a class="flow-destination" href="${esc(item.href)}">${date?`<time datetime="${esc(date)}">${esc(date.replaceAll('-','.'))}</time>`:''}<h3>${esc(item.title[language])}</h3><p>${esc(item.description[language])}</p><svg class="ic flow-destination-arrow" aria-hidden="true"><use href="./assets/flow/current-icons.svg#arrow-up-right"></use></svg></a>`;}).join('')}</section>`:'';}).join('');
-  root.querySelector('#flow-results').innerHTML=columns||`<div class="flow-index-empty"><h2>${c('这条流，暂时没有找到。','No destination on this stream yet.')}</h2><p>${c('试试一个作品名、关键词或日期。','Try a project name, a keyword or a date.')}</p><button type="button" data-clear-index>${c('清空搜索','Clear search')}</button></div>`;
+  // Empty state: when a type filter hides matches that exist elsewhere, say so and offer the way out.
+  const elsewhere=!results.length&&group!=='all'&&query?filterCatalog(catalog,{query:searchable(query),group:'all'}).length:0;
+  root.querySelector('#flow-results').innerHTML=columns||`<div class="flow-index-empty"><h2>${c('这条流，暂时没有找到。','No destination on this stream yet.')}</h2><p>${elsewhere?c(`其他类型里有 ${elsewhere} 个结果。`,`${elsewhere} ${elsewhere===1?'match':'matches'} in other types.`):c('试试一个作品名、关键词或日期。','Try a project name, a keyword or a date.')}</p><div class="flow-index-empty-actions">${elsewhere?`<button type="button" data-index-group="all">${c('查看全部类型','Show all types')}</button>`:''}<button type="button" data-clear-index>${c('清空搜索','Clear search')}</button></div></div>`;
   root.querySelector('#flow-result-count').textContent=c(`${results.length} 个入口 / 共 ${catalog.length} 个`,`${results.length} destinations / ${catalog.length} total`);
   root.querySelectorAll('[data-index-group]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.indexGroup===group)));
 }
@@ -23,5 +27,5 @@ function render(){
   renderResults();
 }
 root.addEventListener('input',event=>{if(event.target.id==='flow-search'){query=event.target.value;renderResults();reflectUrl();}});
-root.addEventListener('click',event=>{const filter=event.target.closest('[data-index-group]');if(filter){group=filter.dataset.indexGroup;renderResults();reflectUrl();}if(event.target.closest('[data-clear-index]')){query='';root.querySelector('#flow-search').value='';renderResults();reflectUrl();root.querySelector('#flow-search').focus();}});
+root.addEventListener('click',event=>{const filter=event.target.closest('[data-index-group]');if(filter){group=filter.dataset.indexGroup;renderResults();reflectUrl();if(!filter.isConnected)root.querySelector(`.flow-index-filters [data-index-group="${group}"]`)?.focus();}if(event.target.closest('[data-clear-index]')){query='';group='all';root.querySelector('#flow-search').value='';renderResults();reflectUrl();root.querySelector('#flow-search').focus();}});
 render();onLanguageChange(render);

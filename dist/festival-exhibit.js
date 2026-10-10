@@ -1,3 +1,4 @@
+import './festival-weather.js';
 import { festivalJourneyArt } from './festival-journey.js';
 import { t, getLanguage } from './i18n.js';
 import { currentFestival, festivalReleases, festivalReleaseUrl } from './festival-releases.js';

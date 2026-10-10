@@ -1,3 +1,4 @@
+import './school-signatures.js';
 import {nabatCabinet} from './nabat-exhibit.js';
 import './nabat-entry.js';
 import {schoolProjects} from './school-projects.js';
@@ -28,7 +29,24 @@ function scanDiagram() {
   return `<svg class="wis-map" viewBox="0 0 360 255" aria-hidden="true"><defs><pattern id="wis-grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="currentColor" stroke-opacity=".1"/></pattern><linearGradient id="wis-cone" x1="0" y1="1" x2="0" y2="0"><stop stop-color="#547b50" stop-opacity=".35"/><stop offset="1" stop-color="#bcd4a8" stop-opacity=".05"/></linearGradient></defs><rect width="360" height="255" fill="url(#wis-grid)"/><path class="wis-path-line" d="M113 255C127 178 151 131 153 0M233 255C212 177 218 113 216 0" fill="none" stroke="currentColor" stroke-opacity=".22"/><g class="wis-canopy" fill="#b8c6a4"><circle cx="80" cy="62" r="30"/><circle cx="278" cy="75" r="35"/><circle cx="63" cy="186" r="37"/><circle cx="300" cy="191" r="29"/></g><path d="M180 213L106 71Q180 28 254 71Z" fill="url(#wis-cone)" stroke="currentColor" stroke-opacity=".15"/><g class="wis-rings" fill="none" stroke="currentColor"><path d="M143 143Q180 122 217 143"/><path d="M122 103Q180 69 238 103"/><path d="M106 71Q180 28 254 71"/></g><path class="wis-stairs" d="M143 97H220V107H143V117H220V127H143" fill="none" stroke="#ba7d4b" stroke-width="2"/><g class="wis-unknown"><circle cx="183" cy="105" r="23" fill="#f7efe0" stroke="#a47b3d"/><text x="183" y="113" text-anchor="middle" fill="#876336" font-family="Georgia,serif" font-size="25">?</text></g><circle class="wis-position" cx="180" cy="212" r="15" fill="none" stroke="#648260"/><circle cx="180" cy="212" r="5" fill="#2b6248"/><path d="M178 202L180 198L182 202" fill="none" stroke="#2b6248"/></svg>`;
 }
 
+// A language switch rebuilds the cases; keep whatever case is under the reader's eye where it was.
+function viewportAnchor() {
+  const children=[...root.children];
+  // Prefer the first case that starts inside the viewport, so growth above it is what gets compensated.
+  let index=children.findIndex(node=>{const box=node.getBoundingClientRect();return box.top>=60&&box.top<innerHeight;});
+  if(index<0)index=children.findIndex(node=>node.getBoundingClientRect().bottom>90);
+  return index<0?null:{index,top:children[index].getBoundingClientRect().top};
+}
+// Measure before the language switch restyles the old copy (capture phase runs before the switch's own handler).
+let pendingAnchor=null;
+document.addEventListener('click',event=>{if(event.target.closest?.('[data-language]'))pendingAnchor=viewportAnchor();},true);
 function render() {
+  const anchor=landed?(pendingAnchor||viewportAnchor()):null;
+  pendingAnchor=null;
+  renderCases();
+  if(anchor){const node=root.children[anchor.index];if(node)window.scrollBy({top:node.getBoundingClientRect().top-anchor.top,behavior:'instant'});}
+}
+function renderCases() {
   root.innerHTML = schoolIndex() + nabatCabinet() + nerfCabinet() + `<article class="wis-exhibit" id="project-wis-tech-tank" aria-labelledby="wis-title">
     <div class="wis-cover"><img class="wis-cover-photo" src="${wisAsset}woodland.webp" width="1536" height="1024" alt="${c('晨光穿过绿意盎然的林间步道，原创环境艺术插画','Original environmental artwork of morning light on a green woodland path')}"><div class="wis-cover-shade"></div>${wisAtmosphere()}
       <div class="wis-cover-top"><span>WIS TECH TANK</span><span class="wis-tag">${c('校园展览 / 001','SCHOOL EXHIBITION / 001')}</span></div>
@@ -46,6 +64,8 @@ function render() {
   const motionButton=document.createElement('button');
   motionButton.type='button';
   motionButton.className='wis-motion-toggle';
+  // The legacy layer pins this control to 9px with !important; an inline declaration is the only override that wins.
+  motionButton.style.setProperty('font','500 13px/1.2 var(--body)','important');
   motionButton.dataset.wisMotion='';
   root.querySelector('.wis-cover').append(motionButton);
   updateMotion();

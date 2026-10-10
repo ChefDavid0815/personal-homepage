@@ -1,17 +1,8 @@
+import {roseFiligree} from './roseraie-atelier.js';
 const asset = './assets/projects/roseraie/';
 
+// Posts cover and article hero, series plate (flow-windows-b.css): the porcelain arch and its bouquet,
+// the wordmark, one line, one data line. The 0.2.0 interface itself is shown in the article's figures.
 export function roseraiePostArt() {
-  const petals = Array.from({ length: 13 }, (_, index) =>
-    `<i style="--left:${(index * 31 + 9) % 96}%;--drift:${(index - 6) * 14}px;--delay:-${(index * 1.37).toFixed(2)}s;--duration:${12 + index % 5 * 2}s"></i>`
-  ).join('');
-
-  return `<div class="post-art post-art--roseraie rose-post-v2" aria-hidden="true">
-    <div class="rose-post-v2-orbit"></div>
-    <div class="rose-petals">${petals}</div>
-    <div class="rose-post-v2-top"><span>ROSERAIE / THE VIOLET ATELIER</span><span>2026</span></div>
-    <div class="rose-post-v2-wordmark"><img src="${asset}mark-0.2.0.svg" width="92" height="92" alt=""><strong>Roseraie<i>.</i></strong><span>蔷薇工坊</span></div>
-    <img class="rose-post-v2-botanical" src="${asset}violet-botanical.webp" width="768" height="768" alt="" loading="lazy" decoding="async">
-    <div class="rose-post-v2-capture"><img src="${asset}home-0.2.0.png" width="2304" height="1517" alt="" loading="lazy" decoding="async"></div>
-    <div class="rose-post-v2-bottom"><span>LE SALON DES POSSIBLES</span><span>VIOLET PORCELAIN / SILVER FILIGREE</span></div>
-  </div>`;
+  return `<div class="post-art wb wb--wide wb--roseraie" aria-hidden="true"><div class="wb-motif"><div class="rose-petal-host" data-rose-petal-host data-petals="14"></div><div class="wb-arch"><img src="${asset}violet-botanical.webp" width="768" height="768" alt="" loading="lazy" decoding="async"></div></div><div class="wb-type"><strong class="wb-mark">Roseraie<i>.</i></strong><span class="wb-line">蔷薇工坊 / The violet atelier</span></div><div class="wb-data"><span>Le salon des possibles</span><span>0.2.0<em class="wb-more"> / 2026</em></span></div></div>`;
 }

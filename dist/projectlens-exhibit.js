@@ -1,3 +1,4 @@
+import './lens-loupe.js';
 import { getLanguage } from './i18n.js';
 import { esc, specList, tagLine, roomTitle, linkButton, insideButton, label } from './exhibit-frame.js';
 const c=(zh,en)=>getLanguage()==='en'?en:zh;
@@ -8,10 +9,17 @@ const release=`${lensRepo}/releases/tag/v0.1.0`;
 export function lensObject(compact=false) {
   return `<div class="lens-optics${compact?' lens-optics--compact':''}" data-lens-object aria-hidden="true"><div class="lens-optics-grid"></div><div class="lens-fallback"><i></i><i></i><i></i><b>⌘</b></div><span class="lens-coordinate">X / 024<br>Y / 091</span><span class="lens-optics-caption">OPTICAL STUDY — 005</span><span class="lens-cross lens-cross--a">+</span><span class="lens-cross lens-cross--b">+</span></div>`;
 }
+// Post cover / hero and Now window, series plate (flow-windows-b.css): the lines of a file drawn flat,
+// and one lens ring that magnifies them. The 3D optical object stays in the Gallery room.
+let lensPlateCount=0;
+const lensRows=[[[12,64]],[[12,36],[54,72]],[[30,104]],[[30,48],[86,62]],[[48,132]],[[48,70],[126,58]],[[30,28],[66,118]],[[48,96],[152,40]],[[12,44],[64,124]],[[30,120]],[[48,54],[110,76]],[[48,98]],[[30,58]],[[12,32],[52,72]]];
+const lensBars=(fill,accent)=>lensRows.map((row,i)=>row.map(([x,w],k)=>`<rect x="${x}" y="${16+i*15.5}" width="${w}" height="5" rx="2.5" fill="${k===row.length-1&&i%3===1?accent:fill}"/>`).join("")).join("");
+const lensWindow=()=>{const id=`wb-lens-${++lensPlateCount}`;const ticks=Array.from({length:36},(_,i)=>{const a=i*10*Math.PI/180,r1=i%3?80:77,r2=86;return `<path d="M${(140+Math.cos(a)*r1).toFixed(1)} ${(118+Math.sin(a)*r1).toFixed(1)}L${(140+Math.cos(a)*r2).toFixed(1)} ${(118+Math.sin(a)*r2).toFixed(1)}"/>`;}).join('');return `<svg class="wb-lens" viewBox="0 0 240 240" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><defs><clipPath id="${id}"><circle cx="140" cy="118" r="64"/></clipPath></defs><g>${lensBars('#22403a','#2f5a4d')}</g><g clip-path="url(#${id})"><rect x="60" y="40" width="160" height="160" fill="#0f241e"/><g transform="translate(140 118) scale(1.45) translate(-140 -118)">${lensBars('#5f9c86','#8ff5c3')}</g></g><circle cx="140" cy="118" r="64" fill="none" stroke="#8ff5c3" stroke-width="2"/><g stroke="#8ff5c3" stroke-opacity=".45" stroke-width="1">${ticks}</g></svg>`;};
+const lensPlate=(format,line,data)=>`<div class="${format==='tall'?'milestone-art':'post-art'} wb wb--${format} wb--lens" aria-hidden="true"><div class="wb-motif">${lensWindow()}</div><div class="wb-type"><strong class="wb-mark">Look<br>closer.</strong><span class="wb-line">${line}</span></div><div class="wb-data"><span>${data[0]}</span><span>${data[1]}</span></div></div>`;
 export function lensPostArt() {
-  return `<div class="post-art post-art--lens" aria-hidden="true"><div class="lens-art-meta"><span>FIELD NOTES / 008</span><span>V0.1.0</span></div><div class="lens-art-word">LOOK<br><i>CLOSER.</i></div>${lensObject(true)}<span class="lens-art-foot">A LITTLE CLARITY IN THE CODE.</span></div>`;
+  return lensPlate('wide','A little clarity in the code.',['Field notes / 008','0.1.0']);
 }
-export const lensNowArt=()=>`<div class="milestone-art lens-now-art" aria-hidden="true"><div class="lens-art-meta"><span>PROJECT / 05</span><span>LOCAL FIRST</span></div><strong>LOOK<br><i>CLOSER.</i></strong>${lensObject(true)}<span class="lens-art-foot">PROJECTLENS / V0.1.0</span></div>`;
+export const lensNowArt=()=>lensPlate('tall','A little clarity in the code.',['ProjectLens<em class="wb-more"> / project 05</em> / local first','0.1.0']);
 const actionLinks=()=>`<div class="xr-actions">${linkButton({href:release,text:c('下载 Windows 版','Get it for Windows'),iconName:'arrow-down',primary:true})}${linkButton({href:lensRepo,text:'GitHub'})}${linkButton({href:'./post.html?article=projectlens',text:c('制作手记','Build notes'),external:false})}</div>`;
 const modes=[
   ['structure','01','结构','Structure','在文件之间，发现轮廓。','Find the shape between the files.','语言、入口候选、依赖清单与目录体量，先认识项目本身。','Languages, entry candidates, manifests and directory sizes: first, understand the project.','src/ → config/ → docs/'],

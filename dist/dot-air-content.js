@@ -33,3 +33,14 @@ export const dotAirPost={
     {title:'Aviation curiosity, with a personal point of view.',paragraphs:['DOT/AIR has a Fleet Atlas, public airspace observation, aircraft and livery references, plus preferences, collections and a flight journal. Flight DNA makes space for individual priorities: budget, time and aviation interests, balanced on my terms.','Web and native Windows share an account and preferences, with different rhythms of use. Web opens the sky; Windows offers persistent navigation, local scrolling lists and an aircraft inspector.']},
     {title:'Leave room for the real sky.',paragraphs:['This is public-data edition 1.1, Orbital Earth. Flight inventory and fares for specific dates await a supplier, so there are no purchasable offers, bookings or tickets. Fleet, photograph and livery records remain dated references with sources.','I want it to look good and speak accurately. Today the dotted Earth joins Gallery, gets a Now entry, and becomes this note. The next journey may be undecided, but it already has a point of departure.']}],afterword:'No ticket booked yet. The Earth has already made a few turns.',cta:'STEP INTO MY DOTTED SKY'}
 };
+// Flight DNA questions, as asked by the DOT/AIR 1.1 onboarding wizard (web/Algorithm.tsx).
+export const dotAirDna=[
+  {key:'travelFrequency',name:['旅行频率','How often do you fly?'],options:[['偶尔出行','Once in a while'],['每月几次','Every month'],['经常飞行','Most weeks']],pick:1},
+  {key:'budget',name:['预算取向','Your budget instinct'],options:[['总价优先','Spend less'],['平衡体验','A good balance'],['体验优先','Make it special']],pick:1},
+  {key:'cabin',name:['常用舱位','Your usual cabin'],options:[['经济舱','Economy'],['高端经济舱','Premium economy'],['商务舱','Business'],['头等舱','First']],pick:0},
+  {key:'directness',name:['直飞与中转','How do connections feel?'],options:[['尽量直飞','Keep it nonstop'],['合适即可','One can be fine'],['可以多转机','Happy to connect']],pick:0},
+  {key:'comfort',name:['舒适度取向','Comfort matters'],options:[['简单就好','Keep it simple'],['适度舒适','A good balance'],['很重视舒适度','A priority']],pick:1},
+  {key:'agePreference',name:['机龄偏好','Airframe age'],options:[['没有限制','No preference'],['更喜欢较新机身','Prefer newer'],['喜欢经典机型','Love the classics']],pick:0},
+  {key:'alliance',name:['联盟偏好','Alliance preference'],options:[['Any','Any'],['Star Alliance','Star Alliance'],['oneworld','oneworld'],['SkyTeam','SkyTeam']],pick:0},
+  {key:'aircraft',name:['喜欢的机型（可多选）','Aircraft you love (pick any)'],multi:true,options:[['A380','A380'],['A350-900','A350-900'],['A350-1000','A350-1000'],['787-9','787-9'],['787-10','787-10'],['A320','A320'],['737-800','737-800']],pick:[0,1]}
+];

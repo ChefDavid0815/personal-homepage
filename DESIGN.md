@@ -19,14 +19,13 @@ Source of truth for shared tokens: `dist/flow-current.css` (`:root`). Homepage: 
 
 On dark: text `#e7ebf2`, secondary `#e7ebf2b3`.
 
-## Type (Adobe Fonts kit `per8hkf` + self-hosted)
-- **Chinese display** `--zh-display`: HelloFont ID ChunHei — heavy, wide, modern. Headings, big numbers in Chinese, the hero.
-- **Chinese strong** `--zh-strong`: HelloFont ID JueJiangHei 80 — long display sentences, sub-heads.
-- **Chinese reading** inside `--body`: HelloFont ID JueJiangHei 50 (after DM Sans for Latin).
-- **Latin display** `--display`: Cesso — hall titles, English headings, names, big Latin numbers.
-- **Body** `--body`: DM Sans + JueJiangHei 50.
+## Type
+- **Chinese, everywhere** `--zh` (aliased as `--zh-display`, `--zh-strong`, `--zh-mid`, and the CJK part of `--body`): **汇文明朝体 Huiwen Mincho** by TerryWang — a letterpress-textured Song/Mincho, self-hosted as a site subset (`assets/fonts/huiwen-mincho-site.woff2`, licence in `LICENSE-Huiwen-Mincho.txt`: open source, free for commercial use, no resale). One weight (400): hierarchy comes from size, colour and space, never bold.
+- **Latin display** `--display`: Cesso (Adobe Fonts kit `fty8nfs`) — hall titles, English headings, names, big Latin numerals.
+- **Body / UI Latin** `--body`: DM Sans (Chinese inside it falls to Huiwen Mincho).
 - **Mono** `--mono`: IBM Plex Mono — only for data: coordinates, times, dates, counts, specs.
-- ChunHei/Cesso have one weight each: never ask them for bold (`font-synthesis:none` is global). Chinese display keeps letter-spacing ≥ 0.
+- Chinese headings: line-height 1.15–1.25, letter-spacing 0.02–0.06em. Chinese reading text: 1.85–1.95. Nothing readable below 12px in Chinese (the inked edges close up).
+- `font-synthesis:none` is global — no faux bold or italic.
 
 ## Layout
 - Gutter `--gutter` = clamp(20px, 4.2vw, 72px); content max 1680px.
@@ -48,3 +47,10 @@ On dark: text `#e7ebf2`, secondary `#e7ebf2b3`.
 - Each project exhibit keeps the base visual identity of its software (its palette and signature motifs) but may be redrawn freely.
 - **AC8 (Ace Combat 8): the Tasha character artwork must be kept.**
 - Real facts only.
+
+## Exhibit layer (2.1)
+- `dist/flow-rebuild.css` loads last on gallery, now, posts, post and school-gallery; one section per project.
+- Each exhibit keeps its software's palette and at most one signature Latin face. DOT/AIR uses Acumin Pro Wide (its own heading face) from Adobe Fonts kit `mps7cmb`; Chinese stays Huiwen Mincho everywhere.
+- Each exhibit gets one signature interaction drawn from the real product, never decoration for its own sake. DOT/AIR: halftone sky, split-flap board, Flight DNA. Roseraie: petals, filigree, medallions. Atlas: the real Diploma constellation. CHROMA: signal scope. ProjectLens: loupe. AFTERIMAGE: light trails. Festival: season weather. AXIOM: live least-squares fit. Folio: page turn. NBA After Hours: shoot-around. School Lab: NFC / rays / sonar.
+- All of it pauses off-screen, in hidden tabs, with the site motion switch and with reduced motion. Data shown is real or explicitly labelled as simulated.
+- Huiwen Mincho subset: `py -3 scripts/subset-huiwen.py` (from the repaired master). Preservation record: review `scripts/verify-flow-content.py`, then `py -3 scripts/bless-redesign.py`.

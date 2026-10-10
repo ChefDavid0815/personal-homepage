@@ -148,14 +148,16 @@ async function openCase(el) {
     pause.addEventListener('click', () => { v.running = !v.running; controls.autoRotate = v.running; updatePause(); v.wake(); });
     controls.addEventListener('start', () => { v.interacting = true; v.wake(); });
     controls.addEventListener('end', () => { v.interacting = false; v.settling = 40; v.wake(); });
-    el.querySelector('[data-control="reset"]').addEventListener('click', () => { camera.position.copy(initial); controls.target.set(0, height * .47, 0); v.settling = 40; v.wake(); });
+    // Zoom limits are announced on the buttons (aria-disabled keeps keyboard focus in place at a limit).
+    v.syncZoom = () => { const distance = camera.position.distanceTo(controls.target); el.querySelector('[data-control="in"]').setAttribute('aria-disabled', String(distance <= 4.81)); el.querySelector('[data-control="out"]').setAttribute('aria-disabled', String(distance >= 13.99)); };
+    el.querySelector('[data-control="reset"]').addEventListener('click', () => { camera.position.copy(initial); controls.target.set(0, height * .47, 0); v.settling = 40; v.syncZoom(); v.wake(); });
     for (const [action, factor] of [['in', .82], ['out', 1.22]]) el.querySelector(`[data-control="${action}"]`).addEventListener('click', () => {
-      const offset = camera.position.clone().sub(controls.target); offset.setLength(THREE.MathUtils.clamp(offset.length() * factor, 4.8, 14)); camera.position.copy(controls.target).add(offset); v.settling = 40; v.wake();
+      const offset = camera.position.clone().sub(controls.target); offset.setLength(THREE.MathUtils.clamp(offset.length() * factor, 4.8, 14)); camera.position.copy(controls.target).add(offset); v.settling = 40; v.syncZoom(); v.wake();
     });
     const visibility = new IntersectionObserver(entries => { v.visible = entries[0].isIntersecting; if (v.visible) v.wake(); }, { threshold: .02 }); visibility.observe(el); v.visibility = visibility;
     const resize = new ResizeObserver(() => { const rect = el.querySelector('.model-canvas').getBoundingClientRect(); if (!rect.width || !rect.height) return; renderer.setSize(rect.width, rect.height, false); camera.aspect = rect.width / rect.height; camera.updateProjectionMatrix(); v.wake(); });
     resize.observe(el.querySelector('.model-canvas')); v.resize = resize;
-    el.classList.add('model-ready'); el.querySelectorAll('.model-controls button').forEach(button => button.disabled = false);
+    el.classList.add('model-ready'); el.querySelectorAll('.model-controls button').forEach(button => button.disabled = false); v.syncZoom();
     announce(v, 'ready'); v.wake();
     renderer.domElement.addEventListener('webglcontextlost', event => { event.preventDefault(); v.ready = false; el.classList.remove('model-ready'); el.querySelectorAll('.model-controls button').forEach(button => button.disabled = true); announce(v, 'fallback'); });
     renderer.domElement.addEventListener('webglcontextrestored', () => { v.ready = true; el.classList.add('model-ready'); el.querySelectorAll('.model-controls button').forEach(button => button.disabled = false); announce(v, 'ready'); v.wake(); });

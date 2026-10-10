@@ -1,0 +1,136 @@
+/* Unification pass: project windows (Now + Posts covers), set b. Unlayered, loads last.
+
+   One series of plates. Every window is a flat printed plate in its project's own palette:
+   one signature motif on top (or to the right), then a single type block — the wordmark in the
+   project's one signature face, one line, and one data line in Plex Mono under a hairline.
+   The same grammar runs portrait in Now (.wb--tall) and landscape in Posts covers and article
+   heroes (.wb--wide). Everything inside scales from the window itself (container units), so a
+   396px Now window, a 540px cover, a 1320px hero and a 350px phone cover share one set of rules. */
+
+.wb{
+  --wb-bg:#e7ebf2;--wb-ink:#10132e;--wb-accent:#3d5cff;--wb-soft:#10132e14;
+  --wb-face:'cesso',var(--zh-display),serif;--wb-weight:400;--wb-style:normal;--wb-track:-.015em;--wb-m:1;--wb-lh:.94;
+  --wb-line-face:'DM Sans',var(--zh-strong);
+  --wb-mono:'IBM Plex Mono',ui-monospace,monospace;
+  container-type:size;position:relative;isolation:isolate;display:grid;box-sizing:border-box;overflow:hidden;place-items:stretch;place-content:stretch;row-gap:0;column-gap:0;min-height:0;max-height:none;
+  margin:0;padding:var(--wb-pad);border:0;background:var(--wb-bg);color:var(--wb-ink);
+  font-synthesis:none;text-decoration:none;text-transform:none;letter-spacing:0;text-align:left;
+  -webkit-font-smoothing:antialiased;cursor:default
+}
+/* Clear every inherited legacy treatment inside the plate (SVG keeps its own presentation attributes). */
+.wb :where(*:not(svg,svg *)){all:revert;box-sizing:border-box}
+.wb :where(svg){display:block;overflow:visible}
+
+/* Portrait (Now). */
+.wb--tall{--wb-pad:28px;grid-template:minmax(0,1fr) auto auto/minmax(0,1fr)}
+/* Landscape (Posts cover, article hero). */
+.wb--wide{--wb-pad:26px;grid-template:minmax(0,1fr) auto auto/minmax(0,1.08fr) minmax(0,.92fr);column-gap:var(--wb-pad)}
+.wb--wide>.wb-motif{grid-column:2;grid-row:1/3}
+.wb--wide>.wb-type{grid-column:1;grid-row:2}
+.wb--wide>.wb-data{grid-column:1/3;grid-row:3}
+
+.wb-motif{position:relative;display:block;min-width:0;min-height:0;margin:0;container-type:size}
+.wb--tall>.wb-motif{margin-bottom:clamp(14px,5cqi,24px)}
+/* A bleed motif runs off the plate's outer edges (photographs, renders). */
+.wb--tall>.wb-motif--bleed{margin:calc(var(--wb-pad)*-1) calc(var(--wb-pad)*-1) clamp(16px,5.5cqi,26px)}
+.wb--wide>.wb-motif--bleed{margin:calc(var(--wb-pad)*-1) calc(var(--wb-pad)*-1) 0 0}
+.wb-motif--bleed>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+
+.wb-type{display:grid;align-content:end;gap:clamp(6px,2.2cqi,12px);min-width:0}
+.wb-mark{display:block;margin:0;font-family:var(--wb-face);font-weight:var(--wb-weight);font-style:var(--wb-style);
+  font-size:calc(var(--wb-m)*15cqi);line-height:var(--wb-lh);letter-spacing:var(--wb-track);color:var(--wb-ink);overflow-wrap:normal;text-wrap:balance}
+.wb--wide .wb-mark{font-size:calc(var(--wb-m)*9.2cqi)}
+.wb-mark i{font-style:inherit;color:var(--wb-accent)}
+.wb-line{display:block;margin:0;max-width:30em;font:400 clamp(13px,3.7cqi,16px)/1.5 var(--wb-line-face);letter-spacing:.01em;color:color-mix(in srgb,var(--wb-ink) 78%,var(--wb-bg))}
+.wb--wide .wb-line{font-size:clamp(13px,2.15cqi,21px)}
+.wb-data{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin:clamp(12px,4cqi,20px) 0 0;padding:clamp(9px,2.6cqi,12px) 0 0;
+  border-top:1px solid color-mix(in srgb,var(--wb-ink) 26%,transparent);
+  font:400 11px/1.35 var(--wb-mono);letter-spacing:.02em;color:color-mix(in srgb,var(--wb-ink) 82%,var(--wb-bg));font-variant-numeric:tabular-nums}
+.wb--wide .wb-data{margin-top:clamp(12px,2.4cqi,26px);font-size:clamp(11px,1.05cqi,13px)}
+.wb-data>span{display:block;min-width:0;text-wrap:balance}
+.wb-data>span:last-child{flex:none;white-space:nowrap;text-align:right}
+
+/* Frames: Now windows keep the room's 4:5 mount on every width; covers fill their frame; heroes get one shape. */
+.now-page .timeline-list .milestone>.wb:last-child{aspect-ratio:4/5;height:auto}
+.jr-hero .article-art>.wb{--wb-pad:clamp(28px,3.4vw,52px);aspect-ratio:2.55/1;width:100%;height:auto;min-height:0}
+@media (max-width:760px){
+  .wb--tall,.wb--wide{--wb-pad:20px}
+  .jr-hero .article-art>.wb{--wb-pad:20px}
+  .wb-data{font-size:12px}
+  .wb--wide .wb-data{font-size:12px}
+  .wb--wide{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}
+  .jr-hero .article-art>.wb{aspect-ratio:4/3.1}
+}
+
+/* ───────── Roseraie: a porcelain arch holding the violet bouquet ───────── */
+.wb--roseraie{--wb-bg:#ebe2f3;--wb-ink:#3b2858;--wb-accent:#8a63b8;--wb-soft:#f7f2fb;--wb-face:'RoseCormorant',var(--zh-display),serif;--wb-weight:500;--wb-track:-.025em;--wb-m:1.12;--wb-lh:.9}
+.wb--roseraie.wb--first{--wb-bg:#f1e5ee;--wb-ink:#47284a;--wb-accent:#a35d93;--wb-soft:#fbf5f9}
+.wb-arch{position:absolute;left:50%;bottom:0;width:min(66%,calc(100% - 8px));height:100%;translate:-50% 0;border:1px solid color-mix(in srgb,var(--wb-accent) 42%,transparent);border-bottom:0;border-radius:999px 999px 0 0;background:var(--wb-soft)}
+.wb-arch::before{content:"";position:absolute;inset:9px 9px 0;border:1px solid color-mix(in srgb,var(--wb-accent) 22%,transparent);border-bottom:0;border-radius:999px 999px 0 0}
+.wb-arch>img{position:absolute;left:50%;top:7%;width:96%;height:auto;max-height:90%;object-fit:contain;translate:-50% 0;display:block}
+.wb--wide .wb-arch{width:min(78%,calc(100% - 8px));height:100%}
+
+/* ───────── Atlas: a gold orrery around one round plate of the fresco ───────── */
+.wb--atlas{--wb-bg:#0f1830;--wb-ink:#f1e7cf;--wb-accent:#d9b56c;--wb-face:'EB Garamond',var(--zh-display),serif;--wb-track:-.01em;--wb-m:1.08;--wb-lh:.9}
+.wb-orb{position:absolute;left:50%;top:50%;width:min(100cqw,100cqh);aspect-ratio:1;translate:-50% -50%}
+.wb-orb>img{position:absolute;inset:19%;width:62%;height:62%;object-fit:cover;border-radius:50%;display:block}
+.wb-orb>svg{position:absolute;inset:0;width:100%;height:100%}
+.wb-orb svg *{vector-effect:non-scaling-stroke}
+
+/* ───────── CHROMA: a pixel signal meter in the remix colours ───────── */
+.wb--chroma{--wb-bg:#173dff;--wb-ink:#ffffff;--wb-accent:#fff000;--wb-face:'ChromaDisplay',var(--zh-display),sans-serif;--wb-weight:700;--wb-style:italic;--wb-track:-.01em;--wb-m:.98;--wb-lh:.92}
+.wb--chroma.wb--wide{--wb-m:.74}
+.wb-meter{position:absolute;inset:0;width:100%;height:100%}
+
+/* ───────── ProjectLens: one lens ring that magnifies the lines of a file ───────── */
+.wb--lens{--wb-bg:#0c1a16;--wb-ink:#e4f4ea;--wb-accent:#8ff5c3;--wb-face:'cesso',var(--zh-display),serif;--wb-track:-.02em;--wb-m:1.08;--wb-lh:.9}
+.wb-lens{position:absolute;inset:0;width:100%;height:100%}
+
+/* ───────── Festival Toolkit: the season colours as stamps, a garage door and wristbands ───────── */
+.wb--festival{--wb-bg:#e2efcc;--wb-ink:#1e3a2c;--wb-accent:#4f7e9e;--wb-face:'FestivalCondensed',var(--zh-display),sans-serif;--wb-weight:700;--wb-track:-.005em;--wb-m:1.24;--wb-lh:.88}
+.wb--festival.wb--wide{--wb-m:1.06}
+.wb-stamps{position:absolute;top:50%;left:50%;width:100cqmin;height:100cqmin;translate:-50% -50%;display:grid;grid-template:repeat(2,minmax(0,1fr))/repeat(2,minmax(0,1fr));gap:clamp(8px,4cqmin,14px)}
+.wb--wide .wb-stamps{left:auto;right:0;translate:0 -50%}
+.wb-stamps>span{display:grid;place-items:center;border-radius:8px;background:var(--stamp);color:var(--wb-ink)}
+.wb-stamps svg{width:42%;height:auto}
+.wb-garage,.wb-journey{position:absolute;inset:0;width:100%;height:100%}
+.wb--festival-02{--wb-bg:#d9e7f0}
+.wb--festival-03{--wb-bg:#f6e4ea}
+.wb--tall>.wb-motif--top{margin-top:calc(var(--wb-pad)*-1)}
+.wb--wide>.wb-motif--top{margin-top:calc(var(--wb-pad)*-1)}
+
+/* ───────── The Courtside Collection: the arena case, on cobalt ───────── */
+.wb--court-models{--wb-bg:#2445ef;--wb-ink:#fff5dc;--wb-accent:#ffd23f;--wb-face:'cesso',var(--zh-display),serif;--wb-track:-.02em;--wb-m:1.08;--wb-lh:.92}
+.wb--court-models .wb-motif--bleed>img{object-position:50% 58%}
+
+/* ───────── STRIDE: the woodland path above a forest-green ground ───────── */
+.wb--wis{--wb-bg:#16261a;--wb-ink:#eef2e4;--wb-accent:#c6e88f;--wb-face:'WisSerif',var(--zh-display),serif;--wb-track:-.025em;--wb-m:1.3;--wb-lh:.86}
+.wb--wis .wb-motif--bleed>img{object-position:50% 62%}
+
+/* ───────── AXIOM: the Hooke's law plate on lab paper ───────── */
+.wb--axiom{--wb-bg:#eef1f6;--wb-ink:#151a24;--wb-accent:#2e56ed;--wb-face:'AxiomGrotesk','Space Grotesk',var(--zh-display),sans-serif;--wb-weight:700;--wb-track:-.035em;--wb-m:1.06;--wb-lh:.9}
+.wb-plate{position:absolute;inset:0;display:grid;place-items:center;margin:0;padding:6%;border:1px solid color-mix(in srgb,var(--wb-ink) 12%,transparent);border-radius:8px;background:#fff}
+.wb-plate>img{display:block;width:100%;height:100%;object-fit:contain}
+.wb-plate::before{content:"";position:absolute;left:0;top:0;width:28%;height:5px;border-radius:8px 0 0 0;background:#d8f36a}
+.wb--axiom .wb-plate{inset:auto;left:50%;top:50%;translate:-50% -50%;width:min(100cqw,calc(100cqh*1.43));aspect-ratio:10/7;padding:4%}
+.wb--wide.wb--axiom .wb-plate{left:auto;right:0;translate:0 -50%}
+
+/* ───────── Folio: the warm paper studio ───────── */
+.wb--folio{--wb-bg:#f2eade;--wb-ink:#2c2924;--wb-accent:#a8573a;--wb-face:'FolioSerif',var(--zh-display),serif;--wb-style:italic;--wb-track:-.02em;--wb-m:1.28;--wb-lh:.9}
+.wb--folio.wb--edition-2{--wb-bg:#ebe2d3;--wb-m:1.12}
+.wb-icon{position:absolute;left:50%;top:50%;width:min(64cqw,100cqh);aspect-ratio:1;translate:-50% -50%}
+.wb-icon>img{display:block;width:100%;height:100%;object-fit:contain}
+.wb--folio .wb-plate{padding:0;overflow:hidden;background:#faf6ef}
+.wb--folio .wb-plate::before{display:none}
+.wb--folio .wb-plate>img{object-fit:cover;object-position:0 0}
+
+/* ───────── NBA After Hours: a half court drawn on lime ───────── */
+.wb--court{--wb-bg:#c9f55f;--wb-ink:#0f150b;--wb-accent:#ff6b3d;--wb-face:'Space Grotesk',var(--zh-display),sans-serif;--wb-weight:700;--wb-track:-.045em;--wb-m:1.16;--wb-lh:.88}
+.wb-court{position:absolute;inset:0;width:100%;height:100%}
+.wb--court .wb-motif--bleed>img{object-position:30% 50%}
+
+/* Small landscape plates (phone covers) keep the data line to one short line: the longer, decorative
+   half of it returns on every larger cover and on the article hero. */
+.wb-more{font-style:normal}
+@container (max-width:480px){.wb--wide .wb-more{display:none}}
+@container (max-width:340px){.wb--tall .wb-more{display:none}}

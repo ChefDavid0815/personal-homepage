@@ -1,7 +1,7 @@
 /* ACE COMBAT 8 / Wings of Theve — the Game room's first exhibit.
    A night tactical chart seen from above: luminous contour fields, a radar sweep and HUD read-outs over a dark sky,
    the real F-35C top-view in its own grey, and the Tasha sticker (owner requirement: always kept). Motion: ac8-motion.js. */
-.ac8-exhibit{--ace-night:#08131f;--ace-deep:#0d1f31;--ace-hud:#d5ed9c;--ace-cyan:#8fe3d9;--ace-flare:#ff6748;--ace-paper:#eef3ea;--ace-dim:#eef3eab3;--ace-wide:'Flow Wide','hellofont-id-chunhei','Noto Sans SC',sans-serif;--ace-body:'DM Sans','hellofont-id-juejianghei50','Noto Sans SC',sans-serif;--ace-zh:'hellofont-id-chunhei','hellofont-id-juejianghei80','Noto Sans SC',sans-serif;--ace-mono:'IBM Plex Mono','hellofont-id-juejianghei65','Noto Sans SC',monospace;--ace-pad:max(var(--gutter,24px),calc((100vw - 1680px)/2));position:relative;background:var(--ace-night);color:var(--ace-paper);font-family:var(--ace-body);margin:0 calc(50% - 50vw);border:0;border-radius:0;overflow:clip;scroll-margin-top:76px}
+.ac8-exhibit{--ace-night:#08131f;--ace-deep:#0d1f31;--ace-hud:#d5ed9c;--ace-cyan:#8fe3d9;--ace-flare:#ff6748;--ace-paper:#eef3ea;--ace-dim:#eef3eab3;--ace-wide:'Flow Wide',var(--zh-display);--ace-body:var(--body);--ace-zh:var(--zh-display);--ace-mono:'IBM Plex Mono',var(--zh-strong);--ace-pad:max(var(--gutter,24px),calc((100vw - 1680px)/2));position:relative;background:var(--ace-night);color:var(--ace-paper);font-family:var(--ace-body);margin:0 calc(50% - 50vw);border:0;border-radius:0;overflow:clip;scroll-margin-top:76px}
 .ac8-exhibit *{box-sizing:border-box}
 .ac8-exhibit.atelier-arrive{animation:none;opacity:1;translate:0 0}
 .ac8-exhibit.atelier-surface:before{display:none}
@@ -178,3 +178,25 @@ html[lang=en] .ac8-log-heading h3{font:800 clamp(28px,3vw,48px)/1 var(--ace-wide
 html[data-site-motion=off] .ac8-exhibit *{transition:none;will-change:auto}
 @media (prefers-reduced-motion:reduce){.ac8-exhibit *{transition:none!important;animation:none!important;will-change:auto}}
 @media (forced-colors:active){.ac8-stage{forced-color-adjust:none}.ac8-view-buttons button,.ac8-fire,.ac8-data-footer button{border:1px solid ButtonText}}
+
+/* ── Unification pass ──
+   The Tasha artwork is untouched; only its label becomes a flat tag. HUD text never drops below 11px (12px on phones),
+   the chart foot stops before the sticker column so no label runs under the artwork, and the credit sets its source
+   link on its own line. */
+.ac8-tasha-stamp{rotate:0deg;box-shadow:none;border-radius:2px}
+.ac8-tasha-stamp span{font-size:11px}
+.ac8-chart-foot{right:calc(var(--ace-pad) + min(31%,470px) + 24px)}
+.ac8-credit{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px}
+.ac8-credit>span{flex:1 1 34em;max-width:78ch}
+html[lang=zh-CN] .ac8-credit{line-height:1.9}
+.ac8-launch-status{font-size:13px}
+@media (max-width:1180px){.ac8-chart-foot{right:calc(var(--ace-pad) + 34% + 24px)}}
+@media (max-width:760px){
+  .ac8-hud-top,.ac8-ambient-hud,.ac8-chart-foot{font-size:12px}
+  .ac8-subtitle{font-size:12px}
+  .ac8-chart-foot{right:var(--ace-pad);bottom:20px}
+  .ac8-tasha-note{left:0;right:auto;bottom:-4px;white-space:nowrap;font-size:12px}
+  .ac8-tasha-stamp span{font-size:12px}
+  .ac8-view-buttons button{font-size:14px}
+}
+@media (max-width:760px){.ac8-tasha-note{white-space:normal;max-width:78%}}

@@ -35,7 +35,10 @@ if(root){
   const geometry=wingGeometry();if(geometry)state=launchTrail(state,geometry);
  }
  function queueFlares(){const geometry=wingGeometry(true);if(geometry)state=emitCountermeasures(state,{...geometry,distanceScale:narrow?.48:1});}
- function labels(){const view=ac8Views[state.target];root.querySelector('[data-ac8-view-title]').textContent=copy(view.title);root.querySelector('[data-ac8-view-copy]').textContent=copy(view.copy);}
+ // The launch status is kept as a function of the language, so switching 中/EN rewrites it instead of leaving stale copy.
+ let launchStatus=null;
+ function showLaunchStatus(){const node=root.querySelector('[data-ac8-launch-status]');if(node)node.textContent=launchStatus?launchStatus():'';}
+ function labels(){const view=ac8Views[state.target];root.querySelector('[data-ac8-view-title]').textContent=copy(view.title);root.querySelector('[data-ac8-view-copy]').textContent=copy(view.copy);showLaunchStatus();}
  function sweepNodes(nodes,alive){for(const [id,node]of nodes)if(!alive.has(id)){node.remove();nodes.delete(id);}}
  function makeGroup(parent,id,html){const node=document.createElementNS(ns,'g');node.dataset.actor=String(id);node.innerHTML=html;parent.appendChild(node);return node;}
  function paintAmbient(){
@@ -115,11 +118,12 @@ if(root){
  function click(event){
   const button=event.target.closest('[data-ac8-view],[data-ac8-fire]');if(!button||!root.contains(button))return;
   if(button.hasAttribute('data-ac8-view')){state=selectFlightView(state,Number(button.dataset.ac8View));root.querySelectorAll('[data-ac8-view]').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.ac8View)===state.target)));labels();}
-  else{queueLaunch();queueFlares();root.querySelector('[data-ac8-launch-status]').textContent=getLanguage()==='en'?`TRAIL ${String(state.serial).padStart(2,'0')} / ILLUSTRATED LAUNCH`:`轨迹 ${String(state.serial).padStart(2,'0')} / 艺术化发射`;}
+  else{queueLaunch();queueFlares();const serial=String(state.serial).padStart(2,'0');launchStatus=()=>getLanguage()==='en'?`Trail ${serial} / illustrated launch`:`轨迹 ${serial} / 艺术化发射`;}
   if(isMotionPaused()){
    state={...state,position:state.target,velocity:0};state=advanceFlight(state,0,false,systemReducesMotion());
-   if(button.hasAttribute('data-ac8-fire'))root.querySelector('[data-ac8-launch-status]').textContent=systemReducesMotion()?(getLanguage()==='en'?'Reduced motion. Target selected.':'减少动态模式，目标已选中。'):(getLanguage()==='en'?'Motion paused. Trail queued.':'动效已暂停，轨迹已排入。');
+   if(button.hasAttribute('data-ac8-fire'))launchStatus=()=>systemReducesMotion()?(getLanguage()==='en'?'Reduced motion. Target selected.':'减少动态模式，目标已选中。'):(getLanguage()==='en'?'Motion paused. Trail queued.':'动效已暂停，轨迹已排入。');
   }
+  showLaunchStatus();
   paint();schedule();
  }
  function move(event){if(event.pointerType==='touch'||isMotionPaused()||!matchMedia('(hover:hover) and (pointer:fine)').matches)return;const box=stage.getBoundingClientRect();if(event.clientY<box.top||event.clientY>box.bottom){pointer={x:0,y:0};return;}pointer={x:Math.max(-12.5,Math.min(12.5,((event.clientX-box.left)/box.width-.5)*25)),y:Math.max(-9,Math.min(9,((event.clientY-box.top)/box.height-.5)*18))};}
@@ -127,7 +131,7 @@ if(root){
  root.addEventListener('click',click);root.addEventListener('pointermove',move,{passive:true});root.addEventListener('pointerleave',leave);
  function visibility(){for(const a of animations)document.hidden?a.pause():visible&&!isMotionPaused()&&a.play();schedule();}
  document.addEventListener('visibilitychange',visibility);
- const stopMotion=onMotionChange(()=>{if(isMotionPaused()){for(const a of animations){a.finish();a.cancel();}animations.clear();if(systemReducesMotion())state=advanceFlight(state,0,false,true);}paint();schedule();});
+ const stopMotion=onMotionChange(()=>{if(!isMotionPaused()&&launchStatus){launchStatus=null;showLaunchStatus();}if(isMotionPaused()){for(const a of animations){a.finish();a.cancel();}animations.clear();if(systemReducesMotion())state=advanceFlight(state,0,false,true);}paint();schedule();});
  const stopLanguage=onLanguageChange(labels);
  resizeScene();labels();paint();const resize=new ResizeObserver(resizeScene);resize.observe(stage);
  window.addEventListener('pagehide',e=>{if(frame)cancelAnimationFrame(frame);frame=0;last=0;if(e.persisted)return;closed=true;observer.disconnect();resize.disconnect();stopMotion();stopLanguage();for(const a of animations)a.cancel();animations.clear();root.removeEventListener('click',click);root.removeEventListener('pointermove',move);root.removeEventListener('pointerleave',leave);document.removeEventListener('visibilitychange',visibility);enemyNodes.clear();launchNodes.clear();flareNodes.clear();});

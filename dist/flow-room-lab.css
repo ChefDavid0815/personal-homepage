@@ -7,6 +7,8 @@
    the school exhibits and the Courtside cases keep their own materials. */
 
 :root{
+  /* Data in IBM Plex Mono; any Chinese inside a data line lands on the site Chinese face, never a system fallback. */
+  --lab-mono:'IBM Plex Mono',var(--zh-strong);
   --lab-scale:repeating-linear-gradient(90deg,currentColor 0 1px,transparent 1px 12px);
   --lab-scale-major:repeating-linear-gradient(90deg,currentColor 0 1px,transparent 1px 60px);
   --lab-radius:22px;
@@ -353,8 +355,8 @@ html[lang=en] .school-page .school-intro h2{font:400 clamp(32px,3.6vw,60px)/1.05
   .school-page .school-intro h2{font-size:clamp(26px,7.4vw,34px)!important}
   .school-page .school-end{flex-direction:column;align-items:flex-start}
 }
-/* NABAT keeps Nabat Sans for Latin; its Chinese now reads in JueJiangHei instead of the system fallback. */
-.school-page .nabat-exhibit{--nb-sans:"Nabat Sans","hellofont-id-juejianghei65","Noto Sans SC",sans-serif}
+/* NABAT: its own Fraunces stays on the NABAT wordmark only (see the unification block below); everything else resolves through the shared tokens. */
+.school-page .nabat-exhibit{--nb-sans:var(--body);--nb-serif:var(--display)}
 .school-page .nabat-button .ic,.school-page .nabat-text-link .ic{width:16px;height:16px}
 
 /* ═════════════ COURTSIDE · models (Experience) ═════════════
@@ -496,9 +498,7 @@ html[data-header-theme=dark] body.nerf-page .language-switch button[aria-pressed
   .nerf-page main#nerf-project{margin-top:-104px;padding-top:104px}
   html[data-header-theme=dark] .nerf-page .site-header::before{background:color-mix(in srgb,#06130d 86%,transparent)!important}
 }
-/* NeRF keeps Space Grotesk for Latin; Chinese headings move from the system fallback to JueJiangHei 80. */
-.nerf-page :is(.nerf-section-heading h2,.nerf-narrative-heading h2,.nerf-epilogue h2,.nerf-novel-copy h3,.nerf-memory-console h3,.nerf-hero h2){font-family:"Space Grotesk","hellofont-id-juejianghei80","Noto Sans SC",sans-serif!important;font-weight:500}
-.nerf-page .nerf-hero h2{font-family:"DM Sans","hellofont-id-juejianghei80","Noto Sans SC",sans-serif!important}
+/* NeRF headings: see the unification block at the end of this file (tokens only). */
 
 /* ───────────── Round-one fixes ───────────── */
 .usage-page .usage-metric{display:block}
@@ -510,7 +510,7 @@ html[data-header-theme=dark] body.nerf-page .language-switch button[aria-pressed
 .nerf-page .nerf-breadcrumb.flow-breadcrumb{justify-content:flex-start;flex-wrap:wrap;gap:8px 12px}
 .models-page .pop-motion-toggle,.models-page .pop-motion-toggle *{text-transform:none!important}
 html[lang=en] .explore-page .flow-index-hero h1{font-size:clamp(60px,7vw,118px)!important}
-html[lang=zh-CN] .explore-page .flow-destination h3{font-family:'DM Sans','hellofont-id-juejianghei80','Noto Sans SC',sans-serif;font-weight:600}
+html[lang=zh-CN] .explore-page .flow-destination h3{font-family:var(--zh-strong);font-weight:400;letter-spacing:.03em}
 .school-page .school-kicker>span{display:inline!important;color:var(--muted)!important}
 :is(.school-page,.models-page) .collection-navigation .room-token{display:none!important}
 @media (max-width:760px){.school-page .school-header .flow-stream-signature{margin-bottom:22px}}
@@ -518,3 +518,287 @@ html[lang=zh-CN] .explore-page .flow-destination h3{font-family:'DM Sans','hello
 @media (max-width:760px){.nerf-page .flow-breadcrumb-meta{flex-basis:100%;margin-inline-start:0}}
 @media (prefers-reduced-motion:reduce){.school-page .school-index-item,.school-page .school-index-item .ic,.explore-page .flow-destination-arrow,.usage-page .usage-connection>button{transition:none!important;transform:none!important}}
 html[data-site-motion=off] .school-page .school-index-item:hover{transform:none}
+
+/* ═════════════ Unification pass · SCHOOL LAB cases ═════════════
+   One type system inside all three cases: Chinese headings on --zh-display, Chinese labels on --zh-strong, reading
+   text on --body at 1.9, Latin display on Cesso; each case keeps one signature face for its wordmark only
+   (NABAT: Fraunces). Data lines use IBM Plex Mono with the site Chinese face behind it. Tracked caps never exceed
+   .06em, nothing readable drops below 11px (12px on phones), and no label sits above a heading. */
+html[lang=zh-CN] .school-page .school-index-note{line-height:1.8}
+
+/* NABAT */
+.school-page .nabat-exhibit .nabat-cover-brand h2{font-family:"Nabat Editorial",Georgia,serif}
+html[lang=zh-CN] .school-page .nabat-exhibit :is(.nabat-cover-editorial h3,.nabat-record-copy h3,.nabat-atlas-heading h3,.nabat-handover h3){font-family:var(--zh-display);font-weight:400;letter-spacing:.03em;line-height:1.3}
+html[lang=en] .school-page .nabat-exhibit :is(.nabat-cover-editorial h3,.nabat-record-copy h3,.nabat-atlas-heading h3,.nabat-handover h3){font-family:var(--display);font-weight:400;letter-spacing:-.01em;line-height:1.15}
+html[lang=zh-CN] .school-page .nabat-exhibit .nabat-cover-editorial p{font-family:var(--zh-strong);font-weight:400;letter-spacing:.04em;line-height:1.75}
+html[lang=zh-CN] .school-page .nabat-exhibit :is(.nabat-record-copy>p,.nabat-atlas-heading>p,.nabat-handover p,.nabat-screen-figure figcaption,.nabat-exhibit-foot>p,[data-nabat-image-status]){line-height:1.9;letter-spacing:.01em;font-weight:400}
+.school-page .nabat-exhibit :is(.nabat-eyebrow,.nabat-cover-top,.nabat-cover-base,.nabat-specimen-code,.nabat-screen-bar,.nabat-sheet-footer,.nabat-platform-note>span,.nabat-exhibit-foot>span,.nabat-record-orbit>span,.nabat-mini-workspace>div){font-size:11px;letter-spacing:.06em}
+html[lang=zh-CN] .school-page .nabat-exhibit :is(.nabat-competition,.nabat-record-heading>.nabat-eyebrow){font-family:var(--zh-strong);font-weight:400;letter-spacing:.04em;font-size:12px}
+.school-page .nabat-exhibit .nabat-identity-tag>span{font-size:11px}
+.school-page .nabat-exhibit .nabat-identity-tag i{display:flex;align-items:center;gap:4px;color:inherit}
+.school-page .nabat-exhibit .nabat-identity-tag i svg{width:22px;height:12px;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round}
+.school-page .nabat-exhibit .nabat-mini-workspace>span{font-size:12px}
+.school-page .nabat-exhibit .nabat-record-timeline>div{font-size:13px}
+.school-page .nabat-exhibit .nabat-screen-figure figcaption>small{font-size:12px}
+.school-page .nabat-exhibit :is(.nabat-view-controls button,.nabat-screen-controls>button){font-weight:500}
+.school-page .nabat-exhibit .nabat-view-controls button[aria-pressed=true],.school-page .nabat-exhibit .nabat-view-controls button[aria-pressed=true] .nabat-view-label{font-weight:600}
+/* Buttons and switches speak the site's component language (pills) in NABAT's green and clay. */
+.school-page .nabat-exhibit .nabat-button{border-radius:999px;min-height:48px;padding:0 22px;gap:14px}
+.school-page .nabat-exhibit .nabat-screen-controls>button{border-radius:999px}
+/* Labels follow their headings. */
+.school-page .nabat-exhibit .nabat-cover-editorial{display:flex;flex-direction:column;align-items:flex-start}
+.school-page .nabat-exhibit .nabat-cover-editorial>h3{order:0}.school-page .nabat-exhibit .nabat-cover-editorial>.nabat-eyebrow{order:1;margin:14px 0 0}.school-page .nabat-exhibit .nabat-cover-editorial>p{order:2}.school-page .nabat-exhibit .nabat-cover-editorial>a{order:3}
+.school-page .nabat-exhibit .nabat-record-copy{display:flex;flex-direction:column}
+.school-page .nabat-exhibit .nabat-record-copy>h3{order:0;margin-top:0}.school-page .nabat-exhibit .nabat-record-copy>[data-nabat-stamp]{order:1;margin:10px 0 0}.school-page .nabat-exhibit .nabat-record-copy>p{order:2}.school-page .nabat-exhibit .nabat-record-copy>.nabat-view-controls{order:3}.school-page .nabat-exhibit .nabat-record-copy>.nabat-record-caption{order:4}
+.school-page .nabat-exhibit :is(.nabat-atlas-heading>div,.nabat-handover>div:not(.nabat-handover-leaf)){display:flex;flex-direction:column}
+.school-page .nabat-exhibit :is(.nabat-atlas-heading>div,.nabat-handover>div)>h3{order:0;margin-top:0}
+.school-page .nabat-exhibit :is(.nabat-atlas-heading>div,.nabat-handover>div)>.nabat-eyebrow{order:1;margin:12px 0 0}
+.school-page .nabat-exhibit .nabat-handover>div>p{order:2}.school-page .nabat-exhibit .nabat-handover>div>.nabat-actions{order:3}
+.school-page .nabat-exhibit .nabat-platform-note{display:flex;flex-direction:column}
+.school-page .nabat-exhibit .nabat-platform-note>strong{order:0}.school-page .nabat-exhibit .nabat-platform-note>span{order:1;margin-top:14px}.school-page .nabat-exhibit .nabat-platform-note>p{order:2}
+html[lang=zh-CN] .school-page .nabat-exhibit .nabat-platform-note>p{font-family:var(--zh-strong);letter-spacing:.03em;line-height:1.8}
+.school-page .nabat-dialog h2{font-family:var(--display);font-weight:400}
+html[lang=zh-CN] .school-page .nabat-dialog h2{font-family:var(--zh-display);letter-spacing:.03em}
+.school-page .nabat-dialog-close{display:grid;place-items:center;font-size:0}
+.school-page .nabat-dialog-close svg{width:20px;height:20px;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;fill:none}
+.school-page .nabat-dialog>p,.school-page .nabat-dialog [data-nabat-original]{font-size:13px}
+@media (max-width:760px){
+  .school-page .nabat-exhibit :is(.nabat-eyebrow,.nabat-cover-top,.nabat-cover-base,.nabat-specimen-code,.nabat-screen-bar,.nabat-sheet-footer,.nabat-platform-note>span,.nabat-exhibit-foot>span,.nabat-record-orbit>span,.nabat-mini-workspace>div,.nabat-identity-tag>span,.nabat-record-heading>.nabat-eyebrow){font-size:12px;letter-spacing:.04em}
+  .school-page .nabat-exhibit :is(.nabat-mini-workspace>span,.nabat-record-timeline>div,.nabat-view-controls button,.nabat-view-controls button .nabat-view-label,.nabat-screen-controls>button){font-size:13px}
+  .school-page .nabat-exhibit .nabat-identity-tag>strong{font-size:13px}
+}
+
+/* NeRF case (dark specimen) */
+.school-page .nerf-cabinet :is(.nerf-cabinet-header,.nerf-cabinet-footer){font:500 12px/1.6 var(--lab-mono);letter-spacing:.06em}
+.school-page .nerf-cabinet .nerf-cabinet-footer a{font-family:var(--body);letter-spacing:0}
+html[lang=zh-CN] .school-page .nerf-cabinet .nerf-cabinet-footer a{font-family:var(--zh-strong);letter-spacing:.03em}
+.school-page .nerf-cabinet .nerf-floating-label{font:500 12px/1.5 var(--lab-mono);letter-spacing:.04em}
+.school-page .nerf-cabinet .nerf-floating-label span{font-size:11px;letter-spacing:.06em}
+.school-page .nerf-cabinet :is(.nerf-plate-top,.nerf-plate-bottom,.nerf-space-status){font:500 11px/1.5 var(--lab-mono);letter-spacing:.06em}
+.school-page .nerf-cabinet .nerf-space-caption{font:500 12px/1.6 var(--lab-mono);letter-spacing:.02em}
+.school-page .nerf-cabinet .nerf-side-inscription{font:500 11px var(--lab-mono);letter-spacing:.08em}
+.school-page .nerf-cabinet .nerf-field-index{left:51px;top:98px;bottom:auto;font-size:17px;letter-spacing:0}
+.school-page .nerf-cabinet .nerf-overline{font:500 12px/1.6 var(--lab-mono);letter-spacing:.06em}
+html[lang=zh-CN] .school-page .nerf-cabinet h2{font-family:var(--zh-display);font-weight:400;letter-spacing:.03em;line-height:1.25}
+html[lang=en] .school-page .nerf-cabinet h2{font-family:var(--display);font-weight:400;letter-spacing:-.01em;line-height:1.05}
+html[lang=zh-CN] .school-page .nerf-cabinet .nerf-cabinet-note p{line-height:1.9;letter-spacing:.01em}
+.school-page .nerf-cabinet .nerf-cabinet-editorial>div:first-child{display:flex;flex-direction:column}
+.school-page .nerf-cabinet .nerf-cabinet-editorial>div:first-child>h2{order:0;margin-top:0}
+.school-page .nerf-cabinet .nerf-cabinet-editorial>div:first-child>.nerf-overline{order:1;margin-top:18px}
+.school-page .nerf-cabinet .nerf-button{border-radius:999px;padding-inline:24px}
+@media (max-width:760px){
+  .school-page .nerf-cabinet .nerf-field-index{left:14px;top:auto;bottom:80px;font-size:12px}
+  .school-page .nerf-cabinet :is(.nerf-plate-top,.nerf-plate-bottom,.nerf-space-status,.nerf-floating-label span,.nerf-floating-label,.nerf-space-caption,.nerf-cabinet-header,.nerf-cabinet-footer,.nerf-overline){font-size:12px;letter-spacing:.03em}
+}
+
+/* STRIDE (WIS Tech Tank): the forest-paper notebook keeps its greens; its serif voice is now the site Chinese face. */
+.school-page .wis-exhibit :is(.wis-cover-top,.wis-cover-bottom){font:500 12px/1.7 var(--lab-mono);letter-spacing:.06em}
+.school-page .wis-exhibit .wis-tag{font-size:12px;letter-spacing:.02em}
+.school-page .wis-exhibit .wis-eyebrow{font:500 11px/1.8 var(--lab-mono);letter-spacing:.06em}
+html[lang=zh-CN] .school-page .wis-exhibit .wis-cover-copy p{font:400 clamp(24px,2.2vw,30px)/1.45 var(--zh-display);letter-spacing:.06em}
+html[lang=en] .school-page .wis-exhibit .wis-cover-copy p{font:400 clamp(24px,2.2vw,30px)/1.25 var(--display);letter-spacing:-.005em}
+html[lang=zh-CN] .school-page .wis-exhibit :is(.wis-introduction h3,.wis-studio h3,.wis-observations h4){font-family:var(--zh-display);font-weight:400;letter-spacing:.03em;line-height:1.3}
+html[lang=en] .school-page .wis-exhibit :is(.wis-introduction h3,.wis-studio h3,.wis-observations h4){font-family:var(--display);font-weight:400;letter-spacing:-.01em;line-height:1.15}
+html[lang=zh-CN] .school-page .wis-exhibit :is(.wis-introduction>p,.wis-observations p,.wis-scene-note,.wis-exhibit-foot>p){line-height:1.9;letter-spacing:.01em}
+.school-page .wis-exhibit .wis-introduction>p{font-size:16px}
+.school-page .wis-exhibit .wis-specs>span{font:500 12px/1.5 var(--body);letter-spacing:0}
+html[lang=zh-CN] .school-page .wis-exhibit .wis-specs>span{font-family:var(--zh-strong);letter-spacing:.04em}
+.school-page .wis-exhibit .wis-specs b{font:400 clamp(24px,2vw,30px)/1.1 var(--display);letter-spacing:-.01em}
+.school-page .wis-exhibit .wis-fieldbook-head{font:500 11px var(--lab-mono);letter-spacing:.06em}
+.school-page .wis-exhibit .wis-reading small,.school-page .wis-exhibit .wis-reading>span{font:500 11px/1.4 var(--lab-mono);letter-spacing:.02em}
+.school-page .wis-exhibit .wis-reading b{font:400 38px/1 var(--display)}
+.school-page .wis-exhibit .wis-wave>span{font:500 11px/1.7 var(--lab-mono);letter-spacing:.02em}
+.school-page .wis-exhibit .wis-scene-buttons button{font-size:13px;font-weight:500}
+html[lang=zh-CN] .school-page .wis-exhibit .wis-scene-buttons button{font-family:var(--zh-strong);font-weight:400;letter-spacing:.03em}
+.school-page .wis-exhibit .wis-scene-buttons button>span{font:500 11px var(--mono)}
+.school-page .wis-exhibit .wis-scene-note{font-size:14px}
+.school-page .wis-exhibit .wis-caption{font:500 12px/1.8 var(--lab-mono);letter-spacing:0}
+.school-page .wis-exhibit .wis-window-bar{font:500 11px var(--mono);letter-spacing:.06em}
+.school-page .wis-exhibit .wis-observations span{font:500 11px var(--mono);letter-spacing:.06em}
+.school-page .wis-exhibit .wis-observations p{font-size:15px}
+.school-page .wis-exhibit .wis-exhibit-foot>p{font-size:13px}
+.school-page .wis-exhibit .wis-exhibit-foot>a{font-size:14px}
+.school-page .wis-exhibit .wis-text-link{font-size:14px}
+.school-page .wis-exhibit .wis-motion-toggle{font:500 12px/1 var(--body)!important;letter-spacing:0;min-height:36px;padding:0 14px;border-radius:999px}
+html[lang=zh-CN] .school-page .wis-exhibit .wis-motion-toggle{font-family:var(--zh-strong)!important}
+/* Labels follow their headings. */
+.school-page .wis-exhibit .wis-cover-copy{display:flex;flex-direction:column;align-items:flex-start}
+.school-page .wis-exhibit .wis-cover-copy>h2{order:0}.school-page .wis-exhibit .wis-cover-copy>p{order:1}.school-page .wis-exhibit .wis-cover-copy>.wis-eyebrow{order:2;margin-top:14px}
+.school-page .wis-exhibit .wis-introduction{display:flex;flex-direction:column}
+.school-page .wis-exhibit .wis-introduction>h3{order:0;margin-top:0}.school-page .wis-exhibit .wis-introduction>.wis-eyebrow{order:1;margin:16px 0 0}.school-page .wis-exhibit .wis-introduction>:not(h3):not(.wis-eyebrow){order:2}
+.school-page .wis-exhibit .wis-studio-heading>div{display:flex;flex-direction:column}
+.school-page .wis-exhibit .wis-studio-heading>div>h3{order:0;margin:0}.school-page .wis-exhibit .wis-studio-heading>div>.wis-eyebrow{order:1;margin-top:10px}
+.school-page .wis-exhibit .wis-observations>div{display:flex;flex-direction:column}
+.school-page .wis-exhibit .wis-observations>div>h4{order:0;margin-top:0}.school-page .wis-exhibit .wis-observations>div>span{order:1;margin:8px 0 0}.school-page .wis-exhibit .wis-observations>div>p{order:2}
+.school-page .wis-dialog h2{font:400 18px/1.3 var(--display)}
+html[lang=zh-CN] .school-page .wis-dialog h2{font-family:var(--zh-display);letter-spacing:.03em}
+.school-page .wis-dialog>button{display:grid;place-items:center;font-size:0}
+.school-page .wis-dialog>button svg{width:20px;height:20px;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;fill:none}
+@media (max-width:760px){
+  .school-page .wis-exhibit :is(.wis-cover-top,.wis-cover-bottom,.wis-tag,.wis-eyebrow,.wis-fieldbook-head,.wis-reading small,.wis-reading>span,.wis-wave>span,.wis-scene-buttons button>span,.wis-window-bar,.wis-observations span,.wis-caption){font-size:12px;letter-spacing:.03em}
+}
+/* The field book lies flat with a soft shadow instead of a tilted sheet with zero-blur offsets. */
+.school-page .wis-exhibit .wis-fieldbook,.school-page .wis-exhibit .wis-fieldbook:hover{transform:none;box-shadow:0 26px 44px -26px #263b1d59}
+.school-page .wis-exhibit .wis-button{border-radius:999px;padding:14px 22px}
+.school-page .wis-exhibit .wis-motion-toggle{font-size:13px!important}
+
+/* ═════════════ Unification pass · NeRF page and the NeRF case ═════════════
+   Space Grotesk is NeRF's one signature face and stays on the "NeRF_" wordmark only (page hero and the lab case
+   alike, so the two no longer disagree). Chinese headings use --zh-display, English headings Cesso, reading text the
+   shared body at 1.9, and every instrument label IBM Plex Mono with the site Chinese face behind it, never under 11px. */
+.nerf-page .nerf-hero h1,.school-page .nerf-cabinet .nerf-cabinet-word{font-family:"Space Grotesk","DM Sans",sans-serif}
+.nerf-page :is(.nerf-section-heading h2,.nerf-narrative-heading h2,.nerf-epilogue h2,.nerf-novel-copy h3,.nerf-memory-console h3,.nerf-hero h2,.nerf-pipeline-step h3){font-family:var(--display)!important;font-weight:400!important;letter-spacing:-.01em!important}
+html[lang=zh-CN] .nerf-page :is(.nerf-section-heading h2,.nerf-narrative-heading h2,.nerf-epilogue h2,.nerf-novel-copy h3,.nerf-memory-console h3,.nerf-hero h2,.nerf-pipeline-step h3){font-family:var(--zh-display)!important;letter-spacing:.03em!important;line-height:1.3!important}
+html[lang=en] .nerf-page :is(.nerf-section-heading h2,.nerf-narrative-heading h2,.nerf-epilogue h2){line-height:1.08!important}
+html[lang=en] .nerf-page :is(.nerf-novel-copy h3,.nerf-memory-console h3,.nerf-hero h2,.nerf-pipeline-step h3){line-height:1.2!important}
+html[lang=zh-CN] .nerf-page :is(.nerf-hero p,.nerf-section-heading>p,.nerf-narrative-heading p,.nerf-memory-console p,.nerf-pipeline-step p,.nerf-evidence-foot p,.nerf-novel-copy p,.nerf-interface-toc p){line-height:1.9;letter-spacing:.01em}
+.nerf-page .nerf-pipeline-step p,.nerf-page .nerf-novel-copy p{font-size:15px}
+.nerf-page :is(.nerf-overline,.nerf-frame-label,.nerf-recorded-frame figcaption,.nerf-memory-reading small,.nerf-step-number,.nerf-interface figcaption,.nerf-epilogue-bottom,.nerf-breadcrumb,.nerf-init,.nerf-plate-top,.nerf-plate-bottom,.nerf-space-status,.nerf-floating-label span,.nerf-evidence-foot code){font-family:var(--lab-mono);letter-spacing:.04em}
+.nerf-page .nerf-overline{font-size:12px;letter-spacing:.06em}
+.nerf-page :is(.nerf-frame-label,.nerf-recorded-frame figcaption,.nerf-memory-reading small,.nerf-interface figcaption,.nerf-epilogue-bottom,.nerf-evidence-foot code){font-size:12px}
+.nerf-page :is(.nerf-plate-top,.nerf-plate-bottom,.nerf-space-status,.nerf-floating-label span,.nerf-init){font-size:11px}
+.nerf-page .nerf-floating-label{font:500 12px/1.5 var(--lab-mono);letter-spacing:.04em}
+.nerf-page .nerf-space-caption{font:500 12px/1.6 var(--lab-mono);letter-spacing:.02em}
+.nerf-page .nerf-field-index{letter-spacing:0}
+.nerf-page :is(.nerf-checkpoints button,.nerf-view-buttons button){font:500 13px var(--mono);letter-spacing:0}
+.nerf-page .nerf-memory-reading strong{letter-spacing:-.01em}
+.nerf-page .nerf-interface button{font:500 13px var(--body);letter-spacing:0}
+html[lang=zh-CN] .nerf-page .nerf-interface button{font-family:var(--zh-strong);letter-spacing:.03em}
+.nerf-page .nerf-interface-toc h3{font:500 12px var(--mono);letter-spacing:.06em}
+.nerf-page .nerf-evidence-ledger{font-size:13px}
+.nerf-page .nerf-text-link{font:500 13px var(--body)}
+html[lang=zh-CN] .nerf-page .nerf-text-link,html[lang=zh-CN] .nerf-page .nerf-button,html[lang=zh-CN] .nerf-page .nerf-breadcrumb>a{font-family:var(--zh-strong);letter-spacing:.03em}
+.nerf-page .nerf-button,.school-page .nerf-cabinet .nerf-button{border-radius:999px}
+.nerf-page .nerf-dialog button{display:inline-flex;align-items:center;gap:8px;font:500 13px var(--body)}
+html[lang=zh-CN] .nerf-page .nerf-dialog button{font-family:var(--zh-strong)}
+.nerf-page .nerf-dialog button .ic{width:16px;height:16px}
+.nerf-page .nerf-dialog h2{font:400 21px/1.3 var(--display)}
+.nerf-page .ic-back,.school-page .ic-back{rotate:180deg}
+.nerf-page .nerf-breadcrumb>a{display:inline-flex;align-items:center;gap:8px}
+.nerf-page .nerf-breadcrumb .ic,.nerf-page .nerf-epilogue-bottom .ic{width:14px;height:14px}
+.nerf-page .nerf-epilogue-bottom a{display:inline-flex;align-items:center;gap:6px}
+/* Labels follow their headings. */
+.nerf-page .nerf-section-heading>div:first-child,.nerf-page .nerf-narrative-heading,.nerf-page .nerf-epilogue,.nerf-page .nerf-pipeline-step>div{display:flex;flex-direction:column}
+.nerf-page .nerf-epilogue{align-items:center}
+.nerf-page .nerf-section-heading>div:first-child>h2,.nerf-page .nerf-narrative-heading>h2{order:0;margin-top:0}
+.nerf-page .nerf-section-heading>div:first-child>.nerf-overline,.nerf-page .nerf-narrative-heading>.nerf-overline{order:1;margin:-6px 0 0}
+.nerf-page .nerf-narrative-heading>p{order:2}.nerf-page .nerf-narrative-heading>span:last-child{order:3}
+.nerf-page .nerf-epilogue>h2{order:0;margin-top:0}.nerf-page .nerf-epilogue>.nerf-overline{order:1;margin:-18px 0 30px}.nerf-page .nerf-epilogue>.nerf-actions{order:2}.nerf-page .nerf-epilogue>.nerf-epilogue-bottom{order:3}
+.nerf-page .nerf-pipeline-step>div>.nerf-step-graphic{order:0}.nerf-page .nerf-pipeline-step>div>h3{order:1}.nerf-page .nerf-pipeline-step>div>.nerf-overline{order:2;margin:6px 0 2px}.nerf-page .nerf-pipeline-step>div>p{order:3}
+@media (max-width:760px){
+  .nerf-page :is(.nerf-overline,.nerf-frame-label,.nerf-recorded-frame figcaption,.nerf-memory-reading small,.nerf-interface figcaption,.nerf-epilogue-bottom,.nerf-breadcrumb,.nerf-init,.nerf-plate-top,.nerf-plate-bottom,.nerf-space-status,.nerf-floating-label,.nerf-floating-label span,.nerf-space-caption,.nerf-checkpoints button,.nerf-view-buttons button,.nerf-interface button,.nerf-evidence-ledger,.nerf-evidence-foot code){font-size:12px;letter-spacing:.03em}
+}
+.nerf-page .nerf-section-heading>div:first-child>.nerf-overline,.nerf-page .nerf-narrative-heading>.nerf-overline{margin:12px 0 0}
+/* Hero: the code lines become one quiet header line across the top of the field; the console label moves under the wordmark. */
+@media (min-width:761px){
+  .nerf-page .nerf-init{top:34px;bottom:auto;left:7%;right:7%;display:flex;flex-wrap:wrap;gap:2px 26px;line-height:1.7;color:#a0c997cc}
+  .nerf-page .nerf-hero>.nerf-overline{top:300px}
+}
+@media (min-width:761px) and (max-width:1100px){.nerf-page .nerf-hero>.nerf-overline{top:262px}.nerf-page .nerf-init{right:36%}.nerf-page .nerf-hero .nerf-coordinate{translate:0 -26px}}
+@media (max-width:760px){
+  .nerf-page .nerf-hero{display:flex;flex-direction:column;align-items:center}
+  .nerf-page .nerf-hero>h1{order:0}.nerf-page .nerf-hero>.nerf-overline{order:1;margin-top:-6px}.nerf-page .nerf-hero>h2{order:2}.nerf-page .nerf-hero>p{order:3}.nerf-page .nerf-hero>.nerf-actions{order:4}.nerf-page .nerf-hero>.nerf-hero-field{order:5;align-self:stretch}
+  .nerf-page .nerf-init{display:none}
+}
+
+/* ═════════════ Unification pass · COURTSIDE (models) ═════════════
+   Same cobalt, yellow and magenta, printed flat: no starburst clip-art, no tilted cards, no zero-blur drop shadows.
+   Slogans become straight pill tags; Flow Wide stays the room's one signature face for wordmarks and numerals;
+   Chinese headings on --zh-display, labels on --zh-strong, reading on --body. */
+.models-page .pop-print{transform:none!important;rotate:0deg!important;animation:none!important;border-radius:14px}
+.models-page .pop-hero-orbit,.models-page .pop-hero-ball,.models-page .pop-stage-swish{display:none!important}
+.models-page .pop-sticker{left:auto!important;right:18px;bottom:22px!important;top:auto;width:auto!important;height:auto!important;padding:10px 16px;clip-path:none!important;border-radius:999px;transform:none!important;rotate:0deg!important;animation:none!important;font:800 15px/1 var(--cs-wide)!important;letter-spacing:-.01em!important;white-space:nowrap;z-index:4}
+.models-page .pop-stage-sticker{width:auto!important;height:auto!important;padding:9px 14px;clip-path:none!important;border-radius:999px;transform:none!important;rotate:0deg!important;animation:none!important;font:800 13px/1 var(--cs-wide)!important;letter-spacing:0!important;white-space:nowrap;top:18px!important;right:18px!important}
+.models-page .model-stage.pop-interacting .pop-stage-sticker{animation:none!important}
+.models-page .model-number{transform:none!important;rotate:0deg!important}
+.models-page .models-title-row h1 small{rotate:0deg!important}
+html[lang=zh-CN] .models-page .models-title-row h1 small{font:400 16px/1 var(--zh-strong)!important;letter-spacing:.06em!important}
+.models-page .models-seal{border-width:2px!important}
+/* Type roles */
+html[lang=zh-CN] .models-page :is(.models-intro h2,.model-copy h3,.models-closing h2){font-family:var(--zh-display)!important;letter-spacing:.03em!important;line-height:1.25!important}
+html[lang=zh-CN] .models-page :is(.models-intro p,.model-copy>p,.models-closing p,.model-note,.models-credit){line-height:1.9!important;letter-spacing:.01em!important;font-weight:400!important}
+html[lang=zh-CN] .models-page :is(.model-view-tabs button b,.model-download,.model-readme,.models-closing>a,.model-controls button,.pop-motion-toggle,.model-status,.model-specs dt,.models-collection-top){font-family:var(--zh-strong)!important;font-weight:400!important;letter-spacing:.03em!important}
+html[lang=zh-CN] .models-page .model-work-header p{font-family:var(--zh-strong)!important;font-weight:400!important;letter-spacing:.04em}
+.models-page :is(.models-kicker>span,.model-work-header>div>span,.pop-print span,.model-note small){letter-spacing:.04em!important}
+.models-page .model-status{font-size:12px!important}
+.models-page .model-note small{font-size:12px!important}
+.models-page .model-view-tabs button span{font-size:12px!important}
+.models-page .model-edition{font-size:12px!important}
+/* Labels follow their headings. */
+.models-page .model-work-header>div:first-child{display:flex;flex-direction:column;align-items:flex-start}
+.models-page .model-work-header>div:first-child>h2{order:0;margin-top:0!important}
+.models-page .model-work-header>div:first-child>p{order:1}
+.models-page .model-work-header>div:first-child>span{order:2;margin-top:12px}
+/* Zoom limits read on the buttons without stealing keyboard focus. */
+.models-page .model-controls button[aria-disabled=true]{opacity:.45;cursor:default}
+.models-page .model-controls button[aria-disabled=true]:hover{background:var(--cs-cream)!important}
+@media (max-width:760px){
+  .models-page .pop-sticker{font-size:13px!important;padding:8px 12px;right:10px;bottom:14px!important}
+  .models-page :is(.model-status,.model-note small,.model-view-tabs button span,.model-edition,.models-kicker>span,.model-work-header>div>span,.pop-print span){font-size:12px!important}
+}
+.models-page .models-title-row h1 small{animation:none!important;transform:none!important}
+.models-page .pop-sticker{right:22px;bottom:58px!important}
+@media (max-width:760px){.models-page .pop-sticker{right:14px;bottom:44px!important}}
+
+/* ═════════════ Unification pass · PULSE ═════════════
+   Data lines keep IBM Plex Mono, but any Chinese inside them now lands on the site Chinese face (no system
+   fallback); Chinese headings open up to .03em; nothing on a phone reads under 11px; the picked bar is marked;
+   refresh shows that it is working. */
+.usage-page :is(.usage-scope,.usage-metric>small,.usage-chart-foot p,.usage-chart-foot>span,.usage-model-list small,.usage-family h3 strong,.usage-cost-breakdown dd){font-family:var(--lab-mono)}
+html[lang=zh-CN] .usage-page .usage-intro{letter-spacing:.03em;line-height:1.3}
+html[lang=zh-CN] .usage-page .usage-panel-head h2>span{letter-spacing:.03em}
+html[lang=zh-CN] .usage-page :is(.usage-method>summary,#usage-method-body h3){letter-spacing:.03em}
+html[lang=zh-CN] .usage-page :is(#usage-method-body p,.usage-cost-caption,#usage-closing){line-height:1.9;letter-spacing:.01em}
+html[lang=zh-CN] .usage-page :is(.usage-metric>span,.usage-chart-legend,.usage-ranges button,.usage-connection,.usage-model-count span,.usage-cost-number>span,.usage-cost-breakdown dt){font-family:var(--zh-strong);letter-spacing:.03em}
+.usage-page .usage-bar[aria-pressed=true]::after{opacity:1;border-color:var(--c-sun)}
+.usage-page .usage-bar[aria-pressed=true] .bar-stack{filter:brightness(1.2)}
+.usage-page #usage-refresh[aria-busy=true] .ic{animation:pulse-spin .8s linear infinite}
+@keyframes pulse-spin{to{rotate:360deg}}
+@media (prefers-reduced-motion:reduce){.usage-page #usage-refresh[aria-busy=true] .ic{animation:none}.usage-page #usage-refresh[aria-busy=true]{background:var(--flow-ink);color:var(--paper)}}
+html[data-site-motion=off] .usage-page #usage-refresh[aria-busy=true] .ic{animation:none}
+html[data-site-motion=off] .usage-page #usage-refresh[aria-busy=true]{background:var(--flow-ink);color:var(--paper)}
+@media (max-width:760px){
+  .usage-page .usage-y-axis{font-size:11px}
+  .usage-page .usage-x-label{font-size:11px}
+  .usage-page :is(.usage-metric>small,.usage-scope,.usage-chart-foot>span,.usage-chart-legend){font-size:12px}
+}
+
+/* COURTSIDE ticker: the scorer tape is printed once and sits still (the page keeps a single authored motion). */
+.models-page .pop-ticker-track{animation:none!important;transform:none!important;width:auto!important;display:flex;justify-content:center;padding:14px 20px}
+.models-page .pop-ticker-track>span{flex:0 1 auto;white-space:normal;text-align:center;line-height:1.35!important}
+.models-page .pop-ticker-track>span+span{display:none}
+.models-page .pop-title-line i{display:inline-block;line-height:.72;vertical-align:baseline}
+.models-page .pop-ticker-track>span{flex-wrap:wrap;justify-content:center;row-gap:6px;padding:0!important}
+
+/* ═════════════ Unification pass · FLOW INDEX ═════════════ */
+html[lang=zh-CN] .explore-page .flow-index-hero h1{letter-spacing:.03em!important;line-height:1.15!important}
+html[lang=zh-CN] .explore-page :is(.flow-stream-heading h2,.flow-index-empty h2){letter-spacing:.03em}
+html[lang=zh-CN] .explore-page :is(.flow-index-intro,.flow-destination p,.flow-index-empty p){line-height:1.9;letter-spacing:.01em}
+html[lang=zh-CN] .explore-page :is(.flow-index-filters button,.flow-index-empty button){font-family:var(--zh-strong);letter-spacing:.03em}
+.explore-page #flow-result-count{font-family:var(--lab-mono)}
+.explore-page .flow-index-empty-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.explore-page .flow-index-empty-actions button{margin-top:0}
+.explore-page .flow-index-empty-actions button+button{background:none;color:var(--flow-ink);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--flow-ink) 22%,transparent)}
+.explore-page .flow-index-empty-actions button+button:hover{background:var(--flow-ink);color:var(--paper)}
+.explore-page .flow-index-empty-actions button:only-child{background:var(--flow-ink);color:var(--paper);box-shadow:none}
+@media (max-width:760px){.explore-page #flow-result-count,.explore-page .flow-stream-heading>span,.explore-page .flow-destination time{font-size:12px}}
+@media (max-width:760px){
+  :is(.school-page,.models-page) .flow-breadcrumb,:is(.school-page,.models-page) .flow-breadcrumb *{font-size:12px!important}
+  .school-page .wis-exhibit .wis-motion-toggle{top:74px!important;right:20px!important}
+  .school-page .nabat-exhibit .nabat-record-orbit>span{font-size:11px;letter-spacing:.02em}
+  .school-page .school-header .flow-stream-signature{margin-bottom:34px}
+}
+.models-page .pop-stage-type{transform:translate(calc(var(--pointer-x,0px) * -.5),calc(var(--pointer-y,0px) * -.5))!important;rotate:0deg!important}
+@media (max-width:760px){.usage-page .usage-plot>.usage-column:nth-last-child(2) .usage-x-label{visibility:hidden}}
+.models-page .models-closing::before{display:none!important}
+
+/* ═════════════ Token re-assertion ═════════════
+   flow.css (shared, frozen) re-points --display to Space Grotesk and --body to Noto Sans SC inside .exhibit,
+   .model-stage, .nerf-project and every <dialog>. Inside the lab rooms the site tokens must hold, so they are
+   captured once at the root and handed back to those containers. */
+:root{--lab-site-display:var(--display);--lab-site-body:var(--body)}
+:is(.school-page,.models-page,.nerf-page,.usage-page,.explore-page) :is(.exhibit,.game-exhibit,.model-stage,.nerf-project,.post-art,.milestone-art,.article-art),:is(.school-page,.models-page,.nerf-page,.usage-page,.explore-page) dialog,:is(.school-page,.models-page,.nerf-page,.usage-page,.explore-page) dialog *{--display:var(--lab-site-display);--body:var(--lab-site-body)}
+.nerf-page :is(.nerf-checkpoints button,.nerf-view-buttons button,.nerf-evidence-ledger,.nerf-evidence-ledger caption){font-family:var(--lab-mono)}
+.models-page .pop-stage-type{font-family:var(--cs-wide)!important;font-weight:800!important}
+/* A closed disclosure keeps no layout boxes behind the content that follows it. */
+.usage-page .usage-method:not([open]) #usage-method-body{display:none}

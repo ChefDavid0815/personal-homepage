@@ -1,3 +1,4 @@
+import './axiom-fit.js';
 import { t } from './i18n.js';
 import { esc, specList, tagLine, roomTitle, linkButton, insideButton, label } from './exhibit-frame.js';
 

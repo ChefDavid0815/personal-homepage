@@ -265,7 +265,7 @@ html[lang=en] .gallery-page .colophon-copy h2{font-family:var(--display);letter-
 .gallery-page .gallery-route-status{margin:0 0 24px;font:500 14px var(--body);color:var(--flow-ink)}
 
 /* ───────────── DOT/AIR: vermilion, dots and an orbital Earth ───────────── */
-#project-dot-air.da-exhibit{--dx-pad:var(--gutter);--da-type:"Dot Air Display",var(--zh-display);--da-ui:"Dot Air UI","hellofont-id-juejianghei50","Noto Sans SC",sans-serif;margin-block:0 0;border:0;background:var(--da-paper);color:var(--da-ink);overflow:clip;box-shadow:none;padding:0}
+#project-dot-air.da-exhibit{--dx-pad:var(--gutter);--da-type:"Dot Air Display",var(--zh-display);--da-ui:var(--body);margin-block:0 0;border:0;background:var(--da-paper);color:var(--da-ink);overflow:clip;box-shadow:none;padding:0}
 #project-dot-air::before,#project-dot-air::after{display:none}
 #project-dot-air .da-masthead{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:20px;padding:20px var(--dx-pad);border-bottom:1px solid #20221f24;background:var(--da-paper)}
 #project-dot-air .da-masthead h2{font-size:30px;letter-spacing:-.05em;margin:0}
@@ -709,3 +709,346 @@ html[lang=en] .gallery-page .roseraie-dialog .rose-gallery-heading p{font:300 cl
 #project-atlas .atlas-v2-index-grid>div{padding:clamp(16px,1.8vw,26px) 6px}
 #project-atlas .atlas-v2-index-grid span{font:400 clamp(17px,1.4vw,21px)/1.4 var(--zh-mid)}
 html[lang=en] #project-atlas .atlas-v2-index-grid span{font:400 clamp(19px,1.5vw,23px)/1.25 var(--atlas-serif)}
+
+/* ═════════════ Unification pass (2026-10): one exhibit system across every room ═════════════
+   Roles (tokens only): Chinese display → --zh-display; Chinese sub-heads → --zh-strong (--ux-sub); labels and buttons →
+   --ux-label (= --body: DM Sans for Latin, the Chinese reading face for Chinese); reading → --body; data → --mono. Each room keeps one
+   signature Latin display face for its wordmark only. Shared components: fact rows, pill buttons, the drawer ledger
+   (top/bottom rules, title, route, ring toggle) and the detail sheet — each skinned by its room's palette. */
+.gallery-page{--ux-label:var(--body);--ux-sub:var(--zh-strong)}
+/* flow.css gives every .exhibit legacy --display/--body stacks; the rooms take the site tokens instead. */
+.gallery-page .exhibit,.gallery-page .exhibition-dialog.exhibition-dialog{--display:inherit;--body:inherit}
+/* A closed drawer's pages are not part of the page until it opens (Chrome keeps them laid out behind the summary). */
+.gallery-page details:not([open])>:not(summary){visibility:hidden}
+#project-dot-air .da-history:not([open])>.da-history-body{transition:visibility 0s linear .65s}
+
+/* ── Hall and main-room shell ── */
+.gallery-page .gallery-section-prologue>.mono{font:500 13px/1.4 var(--body)}
+.gallery-page .creator-link .mono{font:500 12px var(--body);color:#e7ebf2b3}
+.gallery-page .colophon-copy{display:flex;flex-direction:column}
+.gallery-page .colophon-copy h2{order:1}
+.gallery-page .colophon-copy>p:last-child{order:2}
+.gallery-page .colophon-copy .eyebrow{order:3;margin:18px 0 0}
+.gallery-page .gh h1{letter-spacing:-.02em!important}
+
+/* ── AfterImage: one display voice (Barlow), the quote in the site's Cesso, the edition log as a ledger ── */
+.gallery-page .air-copy h3{letter-spacing:-.02em}
+.gallery-page .air-head h2{letter-spacing:.03em}
+html[lang=en] .gallery-page .air-head h2{letter-spacing:-.02em}
+.gallery-page .air-quote{font:700 clamp(26px,2.5vw,38px)/1.08 var(--air-cond);letter-spacing:0;font-style:normal;color:#e8e5dd}
+.gallery-page .air-quote em{font-style:normal;color:inherit}
+.air-bottom{font-size:12px}
+.gallery-page .air-facts strong{letter-spacing:-.02em}
+.gallery-page .air .ai-release-history{margin:0 var(--gx-room-pad);border:0;border-top:1px solid #f0eee859;border-bottom:1px solid #f0eee859;background:none;overflow:visible}
+.gallery-page .air .ai-release-history>summary{grid-template-columns:auto minmax(0,1fr) auto auto;gap:clamp(16px,3vw,48px);padding:clamp(22px,2.4vw,30px) 0}
+.gallery-page .air .ai-release-history>summary:hover{background:none}
+.gallery-page .air .ai-history-seal{width:56px;height:56px;font-size:40px;letter-spacing:-.1em}
+.gallery-page .air .ai-history-intro small{display:none}
+.gallery-page .air .ai-history-intro strong{font:400 clamp(26px,2.4vw,36px)/1.2 var(--zh-display);letter-spacing:.03em}
+html[lang=en] .gallery-page .air .ai-history-intro strong{font:800 clamp(30px,2.8vw,44px)/.95 var(--air-cond);letter-spacing:0}
+.gallery-page .air .ai-history-intro em{font:400 14px/1.6 var(--body)}
+.gallery-page .air .ai-history-route{font:500 13px/1 var(--mono);letter-spacing:0;color:var(--air-muted);gap:10px}
+.gallery-page .air .ai-history-route-old{color:var(--air-muted)}
+.gallery-page .air .ai-history-route .ic{font-size:14px}
+.gallery-page .air .ai-history-plus{width:52px;height:52px;border-color:#f0eee86b;color:var(--air-cream);transition:transform .6s var(--ease-out),background .35s,color .35s}
+.gallery-page .air .ai-release-history>summary:hover .ai-history-plus{background:var(--air-cream);color:var(--air-ink);border-color:var(--air-cream)}
+.gallery-page .air .ai-history-pages{border-top:1px solid #f0eee82e}
+.gallery-page .air .ai-history-page{grid-template-columns:minmax(150px,2.4fr) minmax(0,9.6fr);column-gap:clamp(20px,4vw,72px);padding:clamp(28px,3vw,44px) 0}
+.gallery-page .air .ai-history-page:first-child{background:none}
+.gallery-page .air .ai-history-date{gap:10px;font:500 13px/1.3 var(--mono)}
+.gallery-page .air .ai-history-date span{display:inline-flex;align-items:center;min-height:26px;padding:0 11px;border:1px solid #f0eee86b;border-radius:999px;font:600 12px/1 var(--ux-label);color:var(--air-cream)!important}
+.gallery-page .air .ai-history-page--latest .ai-history-date span{background:var(--air-red);border-color:var(--air-red);color:#120c0b!important}
+.gallery-page .air .ai-history-page h3{font:400 clamp(22px,2.1vw,32px)/1.3 var(--ux-sub);letter-spacing:.03em}
+html[lang=en] .gallery-page .air .ai-history-page h3{font:800 clamp(26px,2.4vw,38px)/1.04 var(--air-cond);letter-spacing:0}
+.gallery-page .air .ai-history-page h3>span:first-child{margin:0 0 20px;font-size:clamp(72px,7.4vw,124px);letter-spacing:-.02em}
+.gallery-page .air .ai-history-page>p{font-size:15px;line-height:1.85}
+.gallery-page .air .ai-history-changes{grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:18px 28px;border-top:0}
+.gallery-page .air .ai-history-changes>section,.gallery-page .air .ai-history-changes>section+section{grid-template-columns:28px minmax(0,1fr);gap:10px;padding:14px 0 0;border:0;border-top:1px solid #f0eee82e}
+.gallery-page .air .ai-history-changes b{font:500 12px/1.7 var(--mono)}
+.gallery-page .air .ai-history-changes h4{margin:0 0 6px;font:400 17px/1.4 var(--ux-sub);letter-spacing:.03em;color:#f3e7e2}
+html[lang=en] .gallery-page .air .ai-history-changes h4{font:600 15px/1.4 var(--body)}
+.gallery-page .air .ai-history-changes p{font-size:14px;line-height:1.75}
+.gallery-page .air .ai-history-page>a{gap:10px;padding:0;border:0;font:600 14px/1.3 var(--ux-label);color:var(--air-cream);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px;text-decoration-color:#f0eee86b}
+.gallery-page .air .ai-history-page>a:hover{text-decoration-color:var(--air-red)}
+
+/* ── DOT/AIR: Archivo Black (Dot Air Display) stays for the wordmark and Latin display; everything else joins the site ── */
+#project-dot-air.da-exhibit,.gallery-page .da-dialog{--da-ui:var(--body)}
+#project-dot-air .da-marquee{display:none}
+#project-dot-air .da-display h3{letter-spacing:-.02em}
+#project-dot-air .da-way{transform:rotate(-3deg);box-shadow:none;border:0;padding:.14em .52em .2em .24em;letter-spacing:-.02em}
+#project-dot-air .da-way::after{display:none}
+#project-dot-air .da-hero-copy>p{font:400 15px/1.9 var(--body);padding:10px 14px}
+#project-dot-air .da-hero-top{font:600 12px/1.4 var(--body)}
+#project-dot-air .da-coordinate{width:176px;height:176px;gap:6px;border:0;transform:none;box-shadow:none;background:var(--da-yellow)}
+#project-dot-air .da-coordinate>span{font:600 11px/1.3 var(--body);letter-spacing:0}
+#project-dot-air .da-coordinate>span[data-da-coordinates]{font:500 11px/1.3 var(--mono)}
+#project-dot-air .da-coordinate>strong{font-size:50px;letter-spacing:-.02em}
+#project-dot-air .da-pin{font-size:11px}
+#project-dot-air .da-masthead h2{letter-spacing:-.02em}
+#project-dot-air .da-masthead>span{font:500 13px/1.4 var(--body)}
+#project-dot-air .da-overline,#project-dot-air .da-tail>.da-overline{font:500 12px/1.5 var(--body);letter-spacing:0}
+#project-dot-air .da-section-heading{grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);align-items:end}
+#project-dot-air .da-section-heading>.da-overline{order:3;grid-column:1/-1;color:#54564e}
+#project-dot-air .da-dna>div:not(.da-dna-dots),#project-dot-air .da-folio>div:first-child{display:flex;flex-direction:column}
+#project-dot-air .da-dna>div>.da-overline,#project-dot-air .da-folio>div>.da-overline{order:3;margin-top:14px}
+#project-dot-air .da-dna>div>p{order:2}
+#project-dot-air .da-section-heading h3,#project-dot-air .da-dna h3{letter-spacing:-.02em}
+html:not([lang=en]) #project-dot-air .da-section-heading h3{font-family:var(--zh-display);font-size:clamp(46px,5.6vw,96px);line-height:1.2;letter-spacing:.03em}
+html:not([lang=en]) #project-dot-air .da-dna h3{font-family:var(--zh-display);font-size:clamp(34px,3.8vw,64px);line-height:1.2;letter-spacing:.03em}
+#project-dot-air .da-section-heading p,#project-dot-air .da-dna p{font:400 16px/1.9 var(--body)}
+#project-dot-air .da-tail strong{padding:0;background:none;font:600 15px var(--ux-label)}
+#project-dot-air .da-tail>span:last-child{font:600 12px var(--body);letter-spacing:0}
+#project-dot-air .da-tail img{filter:none}
+#project-dot-air .da-airports button span{font:500 12px var(--ux-label);opacity:.85}
+#project-dot-air .da-airports button b{letter-spacing:0}
+#project-dot-air .da-orbit-controls button{font:600 13px var(--ux-label)}
+/* Buttons: one pill for the whole room. */
+#project-dot-air :is(.da-masthead>button,.da-dna>a,.da-links a),.gallery-page .da-dialog .da-links a{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:50px;padding:0 22px;border:1px solid var(--da-ink);border-radius:999px;font:600 14px/1 var(--ux-label);letter-spacing:0;white-space:nowrap;text-decoration:none;transition:background .3s,color .3s,border-color .3s,translate .45s var(--ease-out)}
+#project-dot-air :is(.da-masthead>button,.da-dna>a,.da-links a):hover,.gallery-page .da-dialog .da-links a:hover{translate:0 -2px}
+#project-dot-air :is(.da-masthead>button,.da-links a,.da-dna>a) .ic,.gallery-page .da-dialog .da-links a .ic{width:16px;height:16px}
+/* Drawer ledger. */
+#project-dot-air .da-history{margin:clamp(56px,6vw,96px) var(--dx-pad) 0;border:0;border-top:1px solid #20221f59;border-bottom:1px solid #20221f59;background:none}
+#project-dot-air .da-history>summary{grid-template-columns:minmax(0,1fr) auto auto;gap:clamp(16px,3vw,48px);padding:clamp(22px,2.4vw,30px) 0}
+#project-dot-air .da-history>summary:hover{background:none}
+#project-dot-air .da-history-label{display:none}
+#project-dot-air .da-history-title{font:400 clamp(26px,2.4vw,36px)/1.15 var(--da-type);letter-spacing:-.02em}
+html:not([lang=en]) #project-dot-air .da-history-title{font-family:var(--zh-display);letter-spacing:.03em}
+#project-dot-air .da-history-title small{margin-top:6px;font:400 14px/1.5 var(--body);color:#54564e}
+#project-dot-air .da-history-versions{gap:10px;font:500 13px/1 var(--mono);color:#54564e}
+#project-dot-air .da-history-versions i{font-size:14px}
+#project-dot-air .da-history-toggle{width:52px;height:52px;border:1px solid #20221f59;background:none;color:var(--da-ink);transition:rotate .6s var(--ease-out),background .35s,color .35s}
+#project-dot-air .da-history>summary:hover .da-history-toggle{background:var(--da-ink);color:var(--da-paper)}
+#project-dot-air .da-history-body{padding:0 0 clamp(24px,3vw,40px)}
+#project-dot-air .da-release{padding:clamp(28px,3vw,44px) 0;border-top:1px solid #20221f2e}
+#project-dot-air .da-release-meta{align-items:center;font:500 13px var(--mono);color:#54564e}
+#project-dot-air .da-release-meta span{display:inline-flex;align-items:center;min-height:26px;padding:0 11px;border:1px solid #20221f59;border-radius:999px;font:600 12px/1 var(--ux-label);color:var(--da-ink)}
+#project-dot-air .da-release--current .da-release-meta span{background:var(--da-ink);border-color:var(--da-ink);color:var(--da-paper)}
+#project-dot-air .da-release-heading>strong{letter-spacing:-.02em}
+#project-dot-air .da-release-heading>div{display:flex;flex-direction:column}
+#project-dot-air .da-release-heading .da-overline{order:3;margin-top:12px;color:#54564e}
+#project-dot-air .da-release-heading h4{margin:0 0 14px;font:400 clamp(22px,2.1vw,32px)/1.3 var(--da-type);letter-spacing:-.02em}
+html:not([lang=en]) #project-dot-air .da-release-heading h4{font-family:var(--ux-sub);letter-spacing:.03em}
+#project-dot-air .da-release-heading p{font:400 15px/1.9 var(--body)}
+#project-dot-air .da-release-changes{grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:18px 28px}
+#project-dot-air .da-release-changes section{padding-top:14px;border-top:1px solid #20221f2e}
+#project-dot-air .da-release-changes section>span{font:500 12px var(--mono);color:#b3261b}
+#project-dot-air .da-release-changes h5{margin:8px 0 8px;font:400 17px/1.4 var(--ux-sub);letter-spacing:.03em}
+html[lang=en] #project-dot-air .da-release-changes h5{font:600 15px/1.4 var(--body)}
+#project-dot-air .da-release-changes p{font:400 14px/1.9 var(--body)}
+#project-dot-air .da-release-capture img{border-radius:14px;box-shadow:none;border:1px solid #20221f2e}
+#project-dot-air .da-release-capture figcaption,#project-dot-air .da-release-end p{font:400 13px/1.75 var(--body)}
+#project-dot-air .da-release-end a,#project-dot-air .da-release-original{gap:8px;border:0;font:600 14px/1.3 var(--ux-label);color:var(--da-ink);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px;text-decoration-color:#20221f59}
+#project-dot-air .da-release-original{font-size:13px}
+#project-dot-air .da-release-end a:hover,#project-dot-air .da-release-original:hover{text-decoration-color:currentColor}
+html:not([lang=en]) #project-dot-air .da-folio>div>p{font:400 clamp(20px,1.8vw,28px)/1.4 var(--ux-sub);letter-spacing:.03em}
+#project-dot-air .da-folio>div>p{letter-spacing:-.01em}
+#project-dot-air .da-plate-frame{box-shadow:0 40px 80px -50px #20221f80}
+
+/* ── Roseraie: Cormorant stays for the wordmark and Latin lines; Chinese joins the site tokens ── */
+:is(#project-roseraie,.gallery-page .roseraie-dialog){--rv-han:var(--ux-sub);--rr-display:var(--zh-display)}
+#project-roseraie .rose-hero-copy{display:flex;flex-direction:column;align-items:flex-start}
+#project-roseraie .rose-v2-hero-mark{order:1}
+#project-roseraie .rose-hero-copy h3{order:2;letter-spacing:-.02em}
+#project-roseraie .rose-hero-cn{order:3;font:400 clamp(18px,1.5vw,22px)/1.4 var(--ux-sub);letter-spacing:.04em}
+#project-roseraie .rose-hero-copy h4{order:4}
+#project-roseraie .rose-hero-copy>p:last-of-type{order:5}
+#project-roseraie .rose-hero-copy button{order:6}
+#project-roseraie .rose-overline{order:7;margin-top:26px;font-size:17px}
+#project-roseraie .rose-prologue>div:first-child,#project-roseraie .rose-closing>div:first-child{display:flex;flex-direction:column}
+#project-roseraie .rose-prologue>div>span,#project-roseraie .rose-closing>div>span{order:2;margin:22px 0 0}
+#project-roseraie .rose-triptych>div{grid-template-rows:auto auto auto;align-items:start}
+#project-roseraie .rose-triptych b{grid-column:1;grid-row:1/4;align-self:center}
+#project-roseraie .rose-triptych strong{grid-column:2;grid-row:1}
+#project-roseraie .rose-triptych p{grid-column:2;grid-row:2}
+#project-roseraie .rose-triptych span{grid-column:2;grid-row:3;margin-top:6px;font-size:16px}
+html:not([lang=en]) #project-roseraie :is(.rose-hero-copy h4,.rose-prologue h3,.rose-closing strong){font-family:var(--zh-display);letter-spacing:.03em;line-height:1.2}
+html:not([lang=en]) #project-roseraie .rose-gallery-heading p{font-family:var(--zh-display);letter-spacing:.03em}
+html:not([lang=en]) #project-roseraie :is(.rose-triptych strong,.rose-gallery-rail button span){font-family:var(--ux-sub);letter-spacing:.03em}
+#project-roseraie .rose-v2-medallion{display:none}
+#project-roseraie .rose-v2-preview small,#project-roseraie .rose-v2-scene figcaption{font:500 12px var(--body)}
+#project-roseraie :is(.rose-hero-copy button,.rose-actions a),.gallery-page .roseraie-dialog .rose-actions a{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:50px;padding:0 22px;border-radius:999px;font:600 14px/1 var(--ux-label);letter-spacing:0;box-shadow:none;white-space:nowrap}
+#project-roseraie :is(.rose-hero-copy button,.rose-actions a) .ic,.gallery-page .roseraie-dialog .rose-actions a .ic{width:16px;height:16px}
+/* Roseraie drawer ledger (room and sheet). */
+:is(#project-roseraie,.gallery-page .roseraie-dialog) .rose-v2-history{margin:0 var(--gutter);border:0;border-top:1px solid #b79ad18c;border-bottom:1px solid #b79ad18c;border-radius:0;background:none;box-shadow:none;overflow:visible}
+:is(#project-roseraie,.gallery-page .roseraie-dialog) .rose-v2-history>summary{display:grid;grid-template-columns:auto minmax(0,1fr) auto auto;align-items:center;gap:clamp(16px,3vw,48px);padding:clamp(22px,2.4vw,30px) 0;background:none;list-style:none;cursor:pointer}
+:is(#project-roseraie,.gallery-page .roseraie-dialog) .rose-v2-history>summary::before,:is(#project-roseraie,.gallery-page .roseraie-dialog) .rose-v2-history>summary::after{display:none}
+:is(#project-roseraie,.gallery-page .roseraie-dialog) .rose-v2-history-seal{width:56px;height:56px;box-shadow:none}
+:is(#project-roseraie,.gallery-page .roseraie-dialog) .rose-v2-history-intro{display:flex;flex-direction:column;gap:6px}
+:is(#project-roseraie,.gallery-page .roseraie-dialog) .rose-v2-history-intro small{display:none}
+:is(#project-roseraie,.gallery-page .roseraie-dialog) .rose-v2-history-intro strong{font:400 clamp(26px,2.4vw,36px)/1.2 var(--zh-display);letter-spacing:.03em;color:#4f3c60}
+html[lang=en] :is(#project-roseraie,.gallery-page .roseraie-dialog) .rose-v2-history-intro strong{font:300 clamp(32px,3vw,46px)/1 var(--rv-latin);letter-spacing:-.01em}
+:is(#project-roseraie,.gallery-page .roseraie-dialog) .rose-v2-history-intro em{font:400 14px/1.6 var(--body);font-style:normal;color:#6a5879}
+:is(#project-roseraie,.gallery-page .roseraie-dialog) .rose-v2-history-route{display:inline-flex;align-items:center;gap:10px;font:500 13px/1 var(--mono);color:#6a5879}
+:is(#project-roseraie,.gallery-page .roseraie-dialog) .rose-v2-history-route i{display:inline-flex;font-size:14px;color:#b867a0}
+:is(#project-roseraie,.gallery-page .roseraie-dialog) .rose-v2-history-plus{position:relative;display:block;width:52px;height:52px;border:1px solid #b79ad1;border-radius:50%;font-size:0;color:#5e477c;background:none;transition:rotate .6s var(--ease-out),background .35s,color .35s}
+:is(#project-roseraie,.gallery-page .roseraie-dialog) .rose-v2-history-plus::before,:is(#project-roseraie,.gallery-page .roseraie-dialog) .rose-v2-history-plus::after{content:'';position:absolute;left:50%;top:50%;width:16px;height:1.5px;background:currentColor;translate:-50% -50%}
+:is(#project-roseraie,.gallery-page .roseraie-dialog) .rose-v2-history-plus::after{rotate:90deg}
+:is(#project-roseraie,.gallery-page .roseraie-dialog) .rose-v2-history>summary:hover .rose-v2-history-plus{background:#6f5196;border-color:#6f5196;color:#fffaff}
+:is(#project-roseraie,.gallery-page .roseraie-dialog) .rose-v2-history[open] .rose-v2-history-plus{rotate:45deg}
+:is(#project-roseraie,.gallery-page .roseraie-dialog) .rose-v2-history-pages{display:grid;grid-template-columns:1fr;gap:0;padding:0 0 clamp(24px,3vw,40px);background:none}
+:is(#project-roseraie,.gallery-page .roseraie-dialog) .rose-v2-history-page{display:grid;grid-template-columns:minmax(150px,2.4fr) minmax(0,9.6fr);column-gap:clamp(20px,4vw,72px);align-items:start;padding:clamp(28px,3vw,44px) 0;border:0;border-top:1px solid #b79ad159;border-radius:0;background:none;box-shadow:none}
+:is(#project-roseraie,.gallery-page .roseraie-dialog) .rose-v2-history-page+article{border-left:0;border-top:1px solid #b79ad159}
+:is(#project-roseraie,.gallery-page .roseraie-dialog) .rose-v2-history-page>*{grid-column:2;min-width:0}
+:is(#project-roseraie,.gallery-page .roseraie-dialog) .rose-v2-history-date{grid-column:1;grid-row:1/span 5;display:flex;flex-direction:column;align-items:flex-start;gap:10px;margin:0;font:500 13px/1.3 var(--mono);letter-spacing:0;color:#6a5879}
+:is(#project-roseraie,.gallery-page .roseraie-dialog) .rose-v2-history-date span{display:inline-flex;align-items:center;min-height:26px;padding:0 11px;border:1px solid #b79ad1;border-radius:999px;font:600 12px/1 var(--ux-label);letter-spacing:0;color:#5e477c}
+:is(#project-roseraie,.gallery-page .roseraie-dialog) .rose-v2-history-page:first-child .rose-v2-history-date span{background:#6f5196;border-color:#6f5196;color:#fffaff}
+:is(#project-roseraie,.gallery-page .roseraie-dialog) .rose-v2-history-date time{font:500 13px var(--mono);letter-spacing:0}
+:is(#project-roseraie,.gallery-page .roseraie-dialog) .rose-v2-history-page h4{margin:0;font:400 clamp(22px,2.1vw,32px)/1.3 var(--ux-sub);letter-spacing:.03em;color:#4f3c60}
+html[lang=en] :is(#project-roseraie,.gallery-page .roseraie-dialog) .rose-v2-history-page h4{font:400 clamp(28px,2.6vw,40px)/1.1 var(--rv-latin);letter-spacing:-.01em}
+:is(#project-roseraie,.gallery-page .roseraie-dialog) .rose-v2-history-page h4 span{display:block;margin-bottom:10px;font:300 clamp(56px,5.4vw,88px)/.86 var(--rv-latin);letter-spacing:-.02em;color:#6f5196}
+:is(#project-roseraie,.gallery-page .roseraie-dialog) .rose-v2-history-page>p{margin:12px 0 0;max-width:64ch;font:400 15px/1.9 var(--body);color:#665479}
+:is(#project-roseraie,.gallery-page .roseraie-dialog) .rose-v2-history-changes{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:18px 28px;margin:24px 0 0;padding:0;border:0}
+:is(#project-roseraie,.gallery-page .roseraie-dialog) .rose-v2-history-changes section{display:grid;grid-template-columns:28px minmax(0,1fr);gap:10px;padding:14px 0 0;border:0;border-top:1px solid #b79ad159;background:none}
+:is(#project-roseraie,.gallery-page .roseraie-dialog) .rose-v2-history-changes b{font:500 12px/1.7 var(--mono);color:#b867a0}
+:is(#project-roseraie,.gallery-page .roseraie-dialog) .rose-v2-history-changes h5{margin:0 0 6px;font:400 17px/1.4 var(--ux-sub);letter-spacing:.03em;color:#4f3c60}
+html[lang=en] :is(#project-roseraie,.gallery-page .roseraie-dialog) .rose-v2-history-changes h5{font:500 20px/1.25 var(--rv-latin)}
+:is(#project-roseraie,.gallery-page .roseraie-dialog) .rose-v2-history-changes p{margin:0;font:400 14px/1.75 var(--body);color:#6a5879}
+:is(#project-roseraie,.gallery-page .roseraie-dialog) .rose-v2-history-note{margin:20px 0 0;font:400 13px/1.7 var(--body);color:#6a5879}
+:is(#project-roseraie,.gallery-page .roseraie-dialog) .rose-v2-history-page>a{display:inline-flex;align-items:center;gap:10px;width:fit-content;margin-top:16px;padding:0;border:0;font:600 14px/1.3 var(--ux-label);color:#4f3c60;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px;text-decoration-color:#b79ad1}
+:is(#project-roseraie,.gallery-page .roseraie-dialog) .rose-v2-history-page>a:hover{text-decoration-color:currentColor}
+:is(#project-roseraie,.gallery-page .roseraie-dialog) .rose-v2-history-page>a .ic{width:15px;height:15px}
+
+/* ── Atlas: EB Garamond stays the Latin voice; Chinese joins the site tokens ── */
+#project-atlas,.gallery-page .atlas-dialog .atlas-v2-detail{--atlas-zh:var(--ux-sub)}
+#project-atlas .atlas-v2-edition i{display:inline-block;width:6px;height:6px;margin:0 12px;padding:0;border-radius:50%;background:#a16141;font-size:0;vertical-align:middle}
+#project-atlas .atlas-v2-overture-copy{display:flex;flex-direction:column;align-items:center;transform:translateY(-58%)}
+#project-atlas .atlas-v2-overture-frame::before,#project-atlas .atlas-v2-overture-frame::after{content:"";width:9px;height:9px;padding:0;top:-5px;border-radius:50%;background:#e2c184;box-shadow:0 0 0 6px #14263a}
+#project-atlas .atlas-v2-overture-frame::after{top:auto;bottom:-5px}
+#project-atlas .atlas-v2-overture-copy h3{order:1;letter-spacing:-.02em}
+#project-atlas .atlas-v2-overture-copy p{order:2;letter-spacing:.04em}
+#project-atlas .atlas-v2-overture-copy>span{order:3;margin-top:22px;font:400 clamp(15px,1.2vw,18px)/1.5 var(--ux-sub);letter-spacing:.04em}
+html[lang=en] #project-atlas .atlas-v2-overture-copy p{letter-spacing:0}
+#project-atlas .atlas-v2-prologue>div:first-child{display:flex;flex-direction:column}
+#project-atlas .atlas-v2-prologue .atlas-v2-overline{order:2;margin:22px 0 0}
+html:not([lang=en]) #project-atlas :is(.atlas-v2-prologue h3,.atlas-v2-epilogue-copy h3,.atlas-v2-sky-title strong){font-family:var(--zh-display);letter-spacing:.03em;line-height:1.2}
+html:not([lang=en]) #project-atlas .atlas-v2-ledger p{font-family:var(--ux-sub);letter-spacing:.03em}
+#project-atlas .atlas-v2-ledger b{letter-spacing:-.02em}
+#project-atlas .atlas-v2-epilogue-copy{display:flex;flex-direction:column;align-items:flex-start}
+#project-atlas .atlas-v2-epilogue-copy h3{order:1;margin:0 0 18px}
+#project-atlas .atlas-v2-epilogue-copy>span{order:2;margin-bottom:30px}
+#project-atlas .atlas-v2-epilogue-copy .atlas-v2-actions{order:3}
+#project-atlas .atlas-v2-epilogue-copy small{order:4}
+:is(#project-atlas,.gallery-page .atlas-dialog) .atlas-v2-sky-title{display:flex;flex-direction:column}
+:is(#project-atlas,.gallery-page .atlas-dialog) .atlas-v2-sky-title strong{order:1;margin:0}
+:is(#project-atlas,.gallery-page .atlas-dialog) .atlas-v2-sky-title span{order:2;margin-top:14px}
+:is(#project-atlas,.gallery-page .atlas-dialog) .atlas-v2-manuscript-copy>span{font-size:12px;letter-spacing:.06em}
+html:not([lang=en]) :is(#project-atlas,.gallery-page .atlas-dialog) .atlas-v2-sky-count span{font-family:var(--body);letter-spacing:0;font-size:13px}
+:is(#project-atlas,.gallery-page .atlas-dialog) .atlas-v2-view-rail>p{font:500 13px/1.5 var(--body);letter-spacing:0}
+html:not([lang=en]) :is(#project-atlas,.gallery-page .atlas-dialog) .atlas-v2-view-rail button span{font-family:var(--ux-sub);letter-spacing:.03em}
+:is(#project-atlas,.gallery-page .atlas-dialog) :is(.atlas-v2-prologue button,.atlas-v2-actions a){display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:50px;padding:0 22px;border-radius:999px;font:600 14px/1 var(--ux-label);letter-spacing:0;white-space:nowrap}
+:is(#project-atlas,.gallery-page .atlas-dialog) :is(.atlas-v2-prologue button,.atlas-v2-actions a):hover{transform:none;translate:0 -2px}
+:is(#project-atlas,.gallery-page .atlas-dialog) :is(.atlas-v2-prologue button,.atlas-v2-actions a) .ic{width:16px;height:16px}
+
+/* ── Detail sheets for DOT/AIR, Roseraie and Atlas: the same sheet as the other six rooms ── */
+.gallery-page :is(.da-dialog,.roseraie-dialog,.atlas-dialog){width:min(1440px,calc(100vw - 32px));max-width:none;border-radius:24px;box-shadow:0 40px 120px -30px #000000a6}
+.gallery-page .da-dialog .da-detail-head{display:flex;flex-direction:column;align-items:flex-start;padding:clamp(40px,5vw,84px) clamp(22px,5vw,84px) clamp(28px,3vw,44px)}
+.gallery-page .da-dialog .da-detail-head h2{order:1;margin:0;font-size:clamp(56px,7vw,112px);letter-spacing:-.02em}
+.gallery-page .da-dialog .da-detail-head p{order:2;margin:20px 0 0;font:400 clamp(22px,2.05vw,32px)/1.28 var(--ux-sub);letter-spacing:.03em}
+html[lang=en] .gallery-page .da-dialog .da-detail-head p{font:400 clamp(22px,2vw,30px)/1.2 var(--da-type);letter-spacing:-.01em}
+.gallery-page .da-dialog .da-detail-head .da-overline{order:3;margin-top:16px;font:500 13px/1.4 var(--mono);letter-spacing:0;color:#54564e}
+.gallery-page .da-dialog .da-software{padding:0 clamp(22px,5vw,84px)}
+.gallery-page .da-dialog .da-software img{border-radius:14px;border:1px solid #20221f2e}
+.gallery-page .da-dialog .da-software figcaption{padding:12px 0 0;font:500 13px/1.5 var(--body);color:#54564e}
+.gallery-page .da-dialog .da-detail-body{display:grid;justify-items:start;gap:0;padding:clamp(32px,3.4vw,52px) clamp(22px,5vw,84px) clamp(32px,4vw,64px)}
+.gallery-page .da-dialog .da-detail-body h3{margin:0;padding-top:clamp(22px,2.4vw,32px);border-top:1px solid #20221f2e;width:100%;font:400 clamp(26px,2.6vw,40px)/1.22 var(--da-type);letter-spacing:-.02em}
+html:not([lang=en]) .gallery-page .da-dialog .da-detail-body h3{font-family:var(--zh-display);letter-spacing:.03em}
+.gallery-page .da-dialog .da-detail-body>p:not(.da-note){margin:14px 0 0;max-width:68ch;font:400 16px/1.9 var(--body)}
+.gallery-page .da-dialog .da-detail-body .da-links{margin:28px 0 0}
+.gallery-page .da-dialog .da-note{margin:28px 0 0;padding:18px 22px;max-width:none;border-radius:16px;background:#ebe5d4;font:400 14px/1.75 var(--body);color:#54564e}
+.gallery-page .roseraie-dialog .rose-detail-head{display:flex;flex-direction:column;align-items:flex-start;text-align:left;padding:clamp(40px,5vw,84px) clamp(22px,5vw,84px) clamp(28px,3vw,44px)}
+.gallery-page .roseraie-dialog .rose-detail-head img{order:0;width:72px;height:72px;margin:0 0 18px}
+.gallery-page .roseraie-dialog .rose-detail-head h2{order:1;margin:0;font:300 clamp(64px,7.4vw,124px)/.86 var(--rv-latin);letter-spacing:-.02em;color:#4f3c60}
+.gallery-page .roseraie-dialog .rose-detail-head p{order:2;margin:20px 0 0;font:400 clamp(22px,2.05vw,32px)/1.28 var(--ux-sub);letter-spacing:.03em;color:#563d6e}
+html[lang=en] .gallery-page .roseraie-dialog .rose-detail-head p{font:italic 400 clamp(26px,2.4vw,36px)/1.15 var(--rv-latin);letter-spacing:0}
+.gallery-page .roseraie-dialog .rose-detail-head span{order:3;margin-top:16px;font:500 13px/1.4 var(--mono);letter-spacing:0;color:#856e9b}
+.gallery-page .roseraie-dialog .rose-gallery{padding:0 clamp(22px,5vw,84px)}
+.gallery-page .roseraie-dialog .rose-gallery-heading span,.gallery-page .roseraie-dialog .rose-gallery-caption span:not(:nth-child(2)){font:500 12px var(--body);letter-spacing:0}
+.gallery-page .roseraie-dialog .rose-gallery-caption span:first-child{font:italic 400 18px/1 var(--rv-latin)}
+html:not([lang=en]) .gallery-page .roseraie-dialog .rose-gallery-heading p{font-family:var(--zh-display);letter-spacing:.03em}
+.gallery-page .roseraie-dialog .rose-gallery-rail button small{font:500 12px var(--mono);letter-spacing:0}
+.gallery-page .roseraie-dialog .rose-v2-scene figcaption{font:500 12px var(--body);letter-spacing:0}
+.gallery-page .roseraie-dialog .rose-detail-grid{display:grid;grid-template-columns:1fr;gap:0;margin:0;padding:clamp(28px,3vw,44px) clamp(22px,5vw,84px) 0;background:none;border:0}
+.gallery-page .roseraie-dialog .rose-detail-grid section{display:grid;grid-template-columns:minmax(120px,2.4fr) minmax(0,9.6fr);column-gap:clamp(16px,4vw,72px);padding:clamp(22px,2.4vw,32px) 0;border:0;border-top:1px solid #b79ad159;background:none}
+.gallery-page .roseraie-dialog .rose-detail-grid small{grid-row:1/3;font:500 13px/1.5 var(--body);letter-spacing:0;color:#856e9b}
+.gallery-page .roseraie-dialog .rose-detail-grid h3{grid-column:2;margin:0;font:400 clamp(24px,2.4vw,36px)/1.24 var(--zh-display);letter-spacing:.03em;color:#4f3c60}
+html[lang=en] .gallery-page .roseraie-dialog .rose-detail-grid h3{font:400 clamp(28px,2.6vw,40px)/1.1 var(--rv-latin);letter-spacing:-.01em}
+.gallery-page .roseraie-dialog .rose-detail-grid p{grid-column:2;margin:12px 0 0;max-width:68ch;font:400 15px/1.9 var(--body);color:#665479}
+#project-dialog.roseraie-dialog .rose-v2-history{margin:clamp(28px,3vw,44px) clamp(22px,5vw,84px) 0}
+.gallery-page .roseraie-dialog .rose-actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-start;margin:0;padding:clamp(22px,2.4vw,32px) clamp(22px,5vw,84px) clamp(32px,4vw,64px);border:0;background:none}
+.gallery-page .roseraie-dialog .rose-actions a{border:1px solid #b79ad1;background:#fffaffcc;color:#5e477c}
+.gallery-page .roseraie-dialog .rose-actions a.rose-action-main{background:#6f5196;border-color:#6f5196;color:#fffaff}
+.gallery-page .atlas-dialog .atlas-v2-detail-head{display:flex;flex-direction:column;align-items:flex-start;padding:clamp(40px,5vw,84px) clamp(22px,5vw,84px) clamp(32px,3.4vw,52px)}
+.gallery-page .atlas-dialog .atlas-v2-detail-head h2{order:1;margin:0;font-size:clamp(76px,10vw,150px);letter-spacing:-.02em}
+.gallery-page .atlas-dialog .atlas-v2-detail-head p{order:2;margin:18px 0 0;font:400 clamp(22px,2.05vw,32px)/1.28 var(--ux-sub);letter-spacing:.03em}
+html[lang=en] .gallery-page .atlas-dialog .atlas-v2-detail-head p{font:italic 400 clamp(24px,2.2vw,32px)/1.2 var(--atlas-serif);letter-spacing:0}
+.gallery-page .atlas-dialog .atlas-v2-detail-head>span{order:3;margin-top:16px;font:500 13px/1.4 var(--mono);letter-spacing:0;color:#e1bf83}
+.gallery-page .atlas-dialog .atlas-v2-view-head span{font:500 12px/1.4 var(--atlas-serif);letter-spacing:.06em}
+.gallery-page .atlas-dialog .atlas-v2-detail-chapters{grid-template-columns:1fr;gap:0;padding:clamp(28px,3vw,44px) clamp(22px,5vw,84px) 0}
+.gallery-page .atlas-dialog .atlas-v2-detail-chapters section{display:grid;grid-template-columns:minmax(120px,2.4fr) minmax(0,9.6fr);column-gap:clamp(16px,4vw,72px);padding:clamp(22px,2.4vw,32px) 0;border:0;border-top:1px solid #8e6c4259;background:none}
+.gallery-page .atlas-dialog .atlas-v2-detail-chapters span{grid-row:1/3;font:500 13px/1.5 var(--atlas-serif);letter-spacing:.04em;color:#86563e}
+.gallery-page .atlas-dialog .atlas-v2-detail-chapters h3{grid-column:2;margin:0;font:400 clamp(24px,2.4vw,36px)/1.24 var(--zh-display);letter-spacing:.03em;color:#1d3047}
+html[lang=en] .gallery-page .atlas-dialog .atlas-v2-detail-chapters h3{font:italic 400 clamp(28px,2.6vw,40px)/1.1 var(--atlas-serif);letter-spacing:-.01em}
+.gallery-page .atlas-dialog .atlas-v2-detail-chapters p{grid-column:2;margin:12px 0 0;max-width:68ch;font:400 15px/1.9 var(--body);color:#4f4a40}
+.gallery-page .atlas-dialog .atlas-v2-detail>.atlas-v2-actions{display:flex;flex-wrap:wrap;gap:10px;padding:clamp(22px,2.4vw,32px) clamp(22px,5vw,84px) clamp(32px,4vw,64px);background:radial-gradient(circle at 80% 8%,#f8ebce,#e7d4ae 72%)}
+
+@media (max-width:900px){
+  .gallery-page .air .ai-history-page,:is(#project-roseraie,.gallery-page .roseraie-dialog) .rose-v2-history-page{grid-template-columns:minmax(0,1fr)}
+  :is(#project-roseraie,.gallery-page .roseraie-dialog) .rose-v2-history-date{grid-column:1;grid-row:auto;flex-direction:row;align-items:center;margin-bottom:16px}
+  .gallery-page .air .ai-history-date{flex-direction:row;align-items:center}
+  .gallery-page :is(.roseraie-dialog .rose-detail-grid section,.atlas-dialog .atlas-v2-detail-chapters section){grid-template-columns:minmax(0,1fr);row-gap:8px}
+  .gallery-page :is(.roseraie-dialog .rose-detail-grid small,.atlas-dialog .atlas-v2-detail-chapters span){grid-row:auto}
+  .gallery-page :is(.roseraie-dialog .rose-detail-grid :is(h3,p),.atlas-dialog .atlas-v2-detail-chapters :is(h3,p)){grid-column:1}
+}
+@media (max-width:760px){
+  .gallery-page .air .ai-release-history>summary,:is(#project-roseraie,.gallery-page .roseraie-dialog) .rose-v2-history>summary{grid-template-columns:auto minmax(0,1fr) auto;gap:16px}
+  #project-dot-air .da-history>summary{grid-template-columns:minmax(0,1fr) auto}
+  .gallery-page .air .ai-history-plus,#project-dot-air .da-history-toggle,:is(#project-roseraie,.gallery-page .roseraie-dialog) .rose-v2-history-plus{width:44px;height:44px}
+  :is(#project-roseraie,.gallery-page .roseraie-dialog) .rose-v2-history-route{display:none}
+  #project-dot-air .da-coordinate{width:128px;height:128px}
+  #project-dot-air .da-coordinate>strong{font-size:38px}
+  #project-dot-air .da-hero-top,#project-dot-air .da-airports button span,.air-top,.air-bottom,.gh-rail,.gallery-page .gh .gallery-header-end,.gallery-page .gh .gallery-kicker .collection-volume,.gh-years,.gallery-page .collection-navigation.gn>a>small,.gallery-page .gn .gallery-room-label span+span,.gallery-page .air .ai-sites-index,.air-edition,.air-vf-top,.air-vf-bottom{font-size:12px}
+  #project-dot-air :is(.da-masthead>button,.da-dna>a,.da-links a),.gallery-page .da-dialog .da-links a{min-height:48px;padding:0 18px}
+  #project-roseraie :is(.rose-hero-copy button,.rose-actions a),.gallery-page .roseraie-dialog .rose-actions a,:is(#project-atlas,.gallery-page .atlas-dialog) :is(.atlas-v2-prologue button,.atlas-v2-actions a){min-height:48px;padding:0 18px;white-space:normal}
+  .gallery-page :is(.da-dialog,.roseraie-dialog,.atlas-dialog){width:calc(100vw - 16px);max-height:calc(100dvh - 16px);border-radius:18px}
+  .gallery-page :is(.da-dialog .da-detail-head,.roseraie-dialog .rose-detail-head,.atlas-dialog .atlas-v2-detail-head){padding:64px 18px 24px}
+  .gallery-page .da-dialog :is(.da-software,.da-detail-body),.gallery-page .roseraie-dialog :is(.rose-gallery,.rose-detail-grid,.rose-actions),.gallery-page .atlas-dialog :is(.atlas-v2-detail-chapters,.atlas-v2-detail>.atlas-v2-actions){padding-inline:18px}
+  #project-dialog.roseraie-dialog .rose-v2-history{margin-inline:18px}
+}
+/* Mincho tuning for the Chinese voice: open tracking on headings, generous leading for reading. */
+html:not([lang=en]) .gallery-page :is(.gh .gallery-introduction h2,.gallery-section-prologue h2,.colophon-copy h2){letter-spacing:.03em;line-height:1.2}
+html:not([lang=en]) .gallery-page :is(.gn .gallery-room-label,.collection-navigation.gn>a>span,.collection-toolbar h2,.collection-toolbar h2 .mono:first-child,.colophon-index){letter-spacing:.03em}
+html:not([lang=en]) .gallery-page :is(.gh .gallery-introduction p,.gallery-section-prologue p,.colophon-copy>p:last-child,.air-intro,.air-brief,.air .ai-history-page>p,.air .ai-history-changes p,#project-roseraie .rose-prologue>p,#project-roseraie .rose-hero-copy>p:last-of-type,#project-atlas .atlas-v2-prologue p){line-height:1.9}
+:is(#project-roseraie,.gallery-page .roseraie-dialog) .rose-gallery-rail button>small{grid-column:1}
+:is(#project-roseraie,.gallery-page .roseraie-dialog) .rose-gallery-rail button>span{grid-column:2;min-width:0}
+:is(#project-roseraie,.gallery-page .roseraie-dialog) .rose-gallery-rail button>b{grid-column:3}
+@media (max-width:900px){
+  #project-dot-air .da-section-heading{grid-template-columns:minmax(0,1fr)}
+}
+/* The title's current-drop keeps its hidden full stop inside the dot (no hidden overflow). */
+.gallery-page #gallery-title>span{text-indent:0;letter-spacing:-1em}
+.gallery-page .air .ai-sites-credit :is(a,span){display:inline-block}
+@media (max-width:760px){
+  .gallery-page .air .ai-online,.air-top{font-size:12px}
+  #project-dot-air .da-masthead{grid-template-columns:minmax(0,1fr) auto;gap:12px}
+  #project-dot-air .da-masthead>button{white-space:normal;text-align:left;padding:8px 16px;line-height:1.25}
+  #project-dot-air .da-dna{grid-template-columns:minmax(0,1fr);gap:22px}
+  #project-dot-air .da-dna-dots{display:none}
+  #project-dot-air .da-dna>a,#project-dot-air .da-dna h3{grid-column:1;max-width:100%}
+  #project-dot-air .da-dna>a,#project-dot-air .da-links a,.gallery-page .da-dialog .da-links a{white-space:normal;justify-self:start}
+  html[lang=en] #project-dot-air .da-dna h3{font-size:clamp(28px,8vw,40px)}
+}
+@media (max-width:760px){
+  #project-dot-air .da-masthead{grid-template-columns:minmax(0,1fr)}
+  #project-dot-air .da-masthead>button{justify-self:start}
+  #project-atlas .atlas-v2-overture-copy{top:40%}
+}
+:is(#project-roseraie,.gallery-page .roseraie-dialog) .rose-v2-history[open] .rose-v2-history-plus{transform:none}
+.gallery-page .air .ai-release-history .ai-history-plus{transform:none;transition:rotate .6s var(--ease-out),background .35s,color .35s}
+.gallery-page .air .ai-release-history[open] .ai-history-plus{transform:none;rotate:45deg}
+:is(#project-roseraie,.gallery-page .roseraie-dialog) .rose-v2-history-note{padding:14px 18px;border:0;border-radius:14px;background:#efe3f8;max-width:64ch}
+:is(#project-atlas,.gallery-page .atlas-dialog) :is(.atlas-v2-sky-title span,.atlas-v2-manuscript-copy>span,.atlas-v2-manuscript-index,.atlas-v2-index-head,.atlas-v2-index-foot){font-family:var(--atlas-serif);font-size:12px;letter-spacing:.06em}
+/* Works index: only the buoy is a target — its hidden name pill must never sit on top of a room's buttons. */
+.gallery-page .scene-index--works a{pointer-events:none}
+.gallery-page .scene-index--works a>i{position:relative;pointer-events:auto}
+.gallery-page .scene-index--works a>i::after{content:'';position:absolute;inset:-9px}
+.gallery-page .scene-index--works a>span{pointer-events:none}

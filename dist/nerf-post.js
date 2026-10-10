@@ -1,5 +1,5 @@
 import { getLanguage } from './i18n.js';
-import { nc, fieldArt, pipelineDiagram } from './nerf-art.js';
+import { nc, fieldArt, pipelineDiagram, nerfWindow } from './nerf-art.js';
 import { nerfLinks, nerfAsset } from './nerf-content.js';
 
 export const nerfPost = {
@@ -75,7 +75,7 @@ Fθ(x, d) → (σ, c)
   return {
     toplineLabel: 'RESEARCH LOG / 014',
     projectLink: nerfLinks.project,
-    cover: `<div class="nerf-reader-cover nerf-scope">${fieldArt({caption:false})}<div class="nerf-post-word" aria-hidden="true">NeRF<span>_</span></div></div>`,
+    cover: `<div class="wa wa--nerf">${nerfWindow({data:['ChefZC / Research log 014','2026 / Lego'],line:'From coordinates. To reality.',label:nc('50,000 次训练后实际渲染的 Lego 验证视角，保留白色背景','Recorded Lego validation view after 50,000 iterations, with its white background retained')})}</div>`,
     railTag: 'LEGO / L10 / SEED 0',
     facts: ['RESEARCH START / 2026.09.24', 'PUBLICATION / 2026.09.30', '256 RAYS / RECORDED RUN', 'CHEFZC / SCHOOL LAB'],
     overline: index => overlines[index] || '',

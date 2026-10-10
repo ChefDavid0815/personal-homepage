@@ -1,3 +1,4 @@
+import './court-shot.js';
 // NBA After Hours: the first project, as a night court. Rendered by gallery.js for the 'nba-after-hours' project.
 import { t } from './i18n.js';
 import { esc, specList, tagLine, roomTitle, linkButton, insideButton, label, bare, c } from './exhibit-frame.js';

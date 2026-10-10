@@ -304,7 +304,7 @@ html[lang=en] .h-manifesto{font:400 clamp(32px,3.9vw,66px)/1.12 var(--display);l
 .h-rig-item{min-height:260px;display:flex;flex-direction:column}
 .h-rig-glyph{margin:auto 0 18px;font:400 clamp(100px,9vw,160px)/.8 var(--display);letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1.5px #e7ebf266;transition:color .6s,-webkit-text-stroke-color .6s}
 .h-rig-item:hover .h-rig-glyph{color:#e7ebf2;-webkit-text-stroke-color:#e7ebf2}
-.h-rig-cap{margin:8px 0 0;font:500 11px var(--mono);letter-spacing:.12em;color:#e7ebf280}
+.h-rig-cap{margin:8px 0 0;font:500 12px var(--mono);letter-spacing:.04em;color:#e7ebf280}
 .h-toolkit{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:24px;padding:18px 22px;border:1px solid #e7ebf21f;border-radius:60px;font:500 13px var(--body);color:#e7ebf2b3}
 .h-toolkit b{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:40px;background:#e7ebf2;color:var(--ink);font:600 13px var(--body);letter-spacing:0;text-transform:none}
 .h-toolkit b i{font-style:normal;color:var(--c-blue)}
@@ -533,3 +533,122 @@ html[lang=zh-CN] .h-stops h3,html[lang=zh-CN] .h-lead,html[lang=zh-CN] .h-panel 
 .h-return-motto .profile-spark{color:var(--c-pink);margin-left:8px}
 .h-return-motto+.h-return-line{margin-top:12px}
 @media (max-width:760px){.h-intro{text-align:left;font-size:13px!important}.h-cta{justify-content:flex-start}}
+
+/* ───────── Unification: the record room follows the site's type roles (no micro text, no mono costume) ───────── */
+.h-sound .music-room-label,.h-sound .music-room-label *,.h-sound .music-stat{font:500 13px var(--body)!important;letter-spacing:0!important;text-transform:none!important}
+.h-sound .music-stat{font-family:var(--mono)!important;font-size:12px!important;opacity:.8}
+.h-sound .rotation-control,.h-sound .music-shuffle,.h-sound .music-filter-all,.h-sound .music-listen{font:500 13px var(--body)!important;letter-spacing:0!important;padding:10px 16px!important;min-height:40px}
+.h-sound .rotation-control *,.h-sound .music-shuffle *,.h-sound .music-listen span{font:inherit!important;letter-spacing:0!important}
+.h-sound .music-feature-word{font-size:clamp(34px,3.2vw,52px)!important}
+.h-sound .music-track-copy .eyebrow{font:400 15px var(--zh-strong)!important;letter-spacing:.01em!important;text-transform:none!important}
+html[lang=en] .h-sound .music-track-copy .eyebrow{font:400 18px var(--display)!important}
+.h-sound #music-song-title{font:400 clamp(32px,3vw,48px)/1.12 var(--zh-display)!important;letter-spacing:.01em!important}
+html[lang=en] .h-sound #music-song-title{font-family:var(--display)!important;letter-spacing:-.02em!important}
+.h-sound .music-track-artist{font:400 17px var(--zh-strong)!important;letter-spacing:.01em!important}
+.h-sound .music-track-album{font:400 14px var(--body)!important}
+.h-sound .music-qq-link,.h-sound .music-qq-link span{font:500 13px var(--body)!important;letter-spacing:0!important}
+.h-sound .music-track-index{font:400 12px var(--mono)!important;letter-spacing:.02em!important}
+.h-sound .music-albums-label,.h-sound .music-albums-label *{font:400 15px var(--zh-strong)!important;letter-spacing:.01em!important;text-transform:none!important}
+.h-sound .favourite-album b,.h-sound .favourite-album strong{font:400 19px var(--zh-display)!important;letter-spacing:.01em!important}
+.h-sound .favourite-album small,.h-sound .favourite-album span{font:400 13px var(--body)!important;letter-spacing:0!important}
+.h-sound .music-account a,.h-sound .music-account a span{font:500 14px var(--body)!important}
+.h-sound .music-account p{font:400 12px/1.6 var(--body)!important}
+.h-sound .music-artists-heading h3{font:400 18px var(--zh-strong)!important;letter-spacing:.01em!important;text-transform:none!important}
+.h-sound .music-artist-name{font:400 14px var(--zh-strong)!important;letter-spacing:.01em!important}
+.h-sound .music-artist-count{font:400 12px var(--mono)!important;letter-spacing:0!important}
+.h-sound .music-library summary{font:400 16px var(--zh-strong)!important;letter-spacing:.01em!important}
+.h-sound .music-track-row strong{font:400 15px var(--zh-strong)!important;letter-spacing:.01em!important}
+.h-sound .music-track-row small,.h-sound .music-track-row>.mono{font:400 12px var(--body)!important;letter-spacing:0!important}
+.h-sound .music-bottom-note p{font:400 12px/1.7 var(--body)!important}
+.h-sound .music-bottom-note .mono{font:400 15px var(--display)!important;letter-spacing:0!important}
+.h-sound [class*=sleeve] button,.h-sound [class*=sleeve] a,.h-sound [class*=sleeve] span{letter-spacing:0!important}
+.h-sound .sleeve-open,.h-sound .sleeve-motion{font:500 13px var(--body)!important;text-transform:none!important}
+.h-sound .sleeve-motion span,.h-sound .sleeve-motion b{font:inherit!important}
+.h-sound .music-player-panel *{letter-spacing:0}
+/* NeRF discovery card copy comes from nerf-entry.js */
+.h-exp.nerf-discovery h3{letter-spacing:.01em!important}
+/* Phones: nothing readable below 11px */
+@media (max-width:760px){
+  .h-source-bottom{font-size:11px!important}
+  .h-sound .music-stat,.h-sound .music-room-label *{font-size:12px!important}
+  .h-sound .sleeve-motion,.h-sound .sleeve-open{font-size:12px!important}
+}
+
+/* 器 — Claude & Claude Code join the toolkit; Claude-chan peeks over the ledge */
+.h-toolkit{position:relative;background:#0b0d26}
+.h-toolkit b.h-tool-claude{background:#f6e7dc}
+.h-claude-mark{width:14px;height:14px;fill:none;stroke:#d97757;stroke-width:2.6;stroke-linecap:round}
+.h-tools .h-toolkit{margin-top:clamp(150px,15vw,210px)}
+.h-claude-chan{position:absolute;right:clamp(18px,4vw,64px);bottom:calc(100% - 1px);width:clamp(170px,16vw,236px);aspect-ratio:723/760;transform-origin:50% 100%;pointer-events:auto;cursor:pointer;z-index:2}
+.h-claude-chan img{display:block;width:100%;height:100%;filter:drop-shadow(2px 0 0 #fff) drop-shadow(-2px 0 0 #fff) drop-shadow(0 -2px 0 #fff) drop-shadow(0 2px 0 #fff) drop-shadow(0 12px 22px #00000059);transition:transform .7s cubic-bezier(.34,1.56,.64,1)}
+.h-claude-bubble{position:absolute;right:88%;top:14%;padding:10px 16px;border-radius:18px 18px 4px 18px;background:#fff;color:#0b0d26;font:400 14px/1.5 var(--body);white-space:nowrap;letter-spacing:.02em;opacity:0;scale:.6;transform-origin:100% 100%;transition:opacity .3s,scale .5s cubic-bezier(.34,1.56,.64,1);box-shadow:0 10px 24px -12px #000a}
+html:not([lang=en]) .h-claude-bubble{letter-spacing:.04em}
+.h-claude-spark{position:absolute;left:8%;top:6%;width:16px;height:16px;background:#ffd23f;clip-path:polygon(50% 0,61% 39%,100% 50%,61% 61%,50% 100%,39% 61%,0 50%,39% 39%)}
+.h-claude-chan:hover img,.h-claude-chan:focus-within img{transform:translateY(-10px) rotate(-3deg)}
+.h-claude-chan:hover .h-claude-bubble{opacity:1;scale:1}
+@media (prefers-reduced-motion:no-preference){
+  html:not([data-site-motion=off]) .h-claude-chan{animation:h-chan-sway 5.5s ease-in-out infinite}
+  html:not([data-site-motion=off]) .h-claude-spark{animation:h-chan-spark 2.8s ease-in-out infinite}
+}
+@keyframes h-chan-sway{0%,100%{rotate:-1.6deg}50%{rotate:1.8deg}}
+@keyframes h-chan-spark{0%,100%{scale:.5;opacity:.4;rotate:0deg}50%{scale:1.1;opacity:1;rotate:45deg}}
+@media (hover:none){.h-claude-bubble{opacity:1;scale:1;right:auto;left:-30%;top:-14%;font-size:13px}}
+@media (max-width:760px){.h-tools .h-toolkit{margin-top:150px;padding-right:22px}.h-claude-chan{width:150px;right:14px}.h-claude-bubble{white-space:normal;width:9.5em}}
+.h-tools .h-toolkit{clip-path:none!important}
+
+/* 器 2.1 — drawn devices + the toolkit dock */
+.h-dev{position:relative;pointer-events:none}
+.h-dev svg{display:block;width:100%;height:auto;overflow:visible}
+.h-dev-line{fill:none;stroke:#e7ebf2;stroke-width:1.4;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.6s cubic-bezier(.45,0,.2,1)}
+.h-dev.is-in .h-dev-line{stroke-dashoffset:0}
+.h-dev-screen{fill:#3d5cff12;stroke:#e7ebf226;transition:fill .6s}
+.h-dev--laptop{position:absolute;right:28px;top:76px;width:min(46%,330px)}
+.h-dev-flow{fill:none;stroke-width:2;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.8s cubic-bezier(.45,0,.2,1) .6s}
+.h-dev-flow:nth-of-type(1){stroke:#3d5cff}.h-dev-flow:nth-of-type(2){stroke:#ff5c9a;transition-delay:.75s}.h-dev-flow:nth-of-type(3){stroke:#ffd23f;transition-delay:.9s}
+.h-dev.is-in .h-dev-flow{stroke-dashoffset:0}
+.h-dev-rgb{position:absolute;left:18%;right:18%;top:85.6%;height:3px;border-radius:3px;background:linear-gradient(90deg,#3d5cff,#7a5cff,#ff5c9a,#ff6b3d,#ffd23f,#35d49a,#3d5cff);background-size:200% 100%;box-shadow:0 0 14px #ff5c9a66;opacity:.9}
+.h-rig-main:hover .h-dev-screen{fill:#3d5cff2e}
+.h-rig-item{min-height:300px}
+.h-rig-item .h-dev{margin:auto 0 14px;width:min(100%,210px);align-self:flex-end}
+.h-dev-ink{fill:none;stroke:#ffd23f;stroke-width:3.2;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.4s cubic-bezier(.45,0,.2,1)}
+.h-dev-pencil{fill:#e7ebf2;transition:translate 1.4s cubic-bezier(.45,0,.2,1),rotate 1.4s cubic-bezier(.45,0,.2,1);transform-box:fill-box;transform-origin:50% 100%}
+.h-rig-item:hover .h-dev-ink,.h-rig-item:focus-within .h-dev-ink{stroke-dashoffset:0}
+.h-rig-item:hover .h-dev-pencil{translate:-52px 2px;rotate:-14deg}
+.h-dev-island{fill:#0b0d26;stroke:#e7ebf259;transition:width .6s cubic-bezier(.34,1.56,.64,1),x .6s cubic-bezier(.34,1.56,.64,1)}
+.h-rig-item:hover .h-dev-island{width:44px;x:79px}
+.h-dev-ring{fill:none;stroke:#35d49a;stroke-width:1.5;opacity:0;transform-box:fill-box;transform-origin:center;transition:opacity .4s}
+.h-rig-item:hover .h-dev-ring{opacity:1}
+.h-rig-item:hover .h-dev--phone .h-dev-screen{fill:#35d49a1f}
+/* dock */
+.h-toolkit.h-dock-wrap{display:block;padding:20px clamp(18px,2.4vw,30px) 22px;border-radius:28px}
+.h-dock-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin:0 0 16px;padding-right:clamp(120px,15vw,240px);font:500 13px var(--body);color:#e7ebf2b3}
+.h-dock-head em{font-style:normal;color:var(--c-sun)}
+.h-dock{display:flex;flex-wrap:wrap;align-items:flex-end;gap:18px clamp(20px,3vw,44px)}
+.h-dock-group{display:flex;flex-direction:column;gap:10px}
+.h-dock-group+.h-dock-group{padding-left:clamp(20px,3vw,44px);border-left:1px solid #e7ebf21f}
+.h-dock-label{margin:0;font:500 12px var(--body);color:#e7ebf280}
+html:not([lang=en]) .h-dock-label{letter-spacing:.04em}
+.h-dock-apps{display:flex;flex-wrap:wrap;align-items:flex-end;gap:8px;margin:0;padding:0;list-style:none}
+.h-app{--mag:0;display:flex;flex-direction:column;align-items:center;gap:7px;width:clamp(60px,5.4vw,76px)}
+.h-app-icon{display:block;width:clamp(42px,3.5vw,52px);aspect-ratio:1;transform-origin:50% 100%;transform:translateY(calc(var(--mag) * -10px)) scale(calc(1 + var(--mag) * .42));transition:transform .18s ease-out;filter:drop-shadow(0 10px 16px #00000052)}
+.h-app-icon svg{display:block;width:100%;height:100%}
+.h-app-name{font:500 12px/1.25 var(--body);color:#e7ebf2c7;text-align:center;letter-spacing:0;transition:color .2s,translate .18s ease-out;translate:0 calc(var(--mag) * 2px)}
+.h-app:hover .h-app-name{color:#fff}
+@media (prefers-reduced-motion:no-preference){
+  html:not([data-site-motion=off]) .h-dock-wrap:not(.is-in) .h-app{opacity:0;translate:0 18px}
+  html:not([data-site-motion=off]) .h-app{transition:opacity .6s calc(var(--i) * 45ms),translate .8s cubic-bezier(.34,1.56,.64,1) calc(var(--i) * 45ms)}
+  html:not([data-site-motion=off]) .h-dev-rgb{animation:h-rgb 4s linear infinite}
+  html:not([data-site-motion=off]) .h-rig-item:hover .h-dev-ring{animation:h-ring 1.6s ease-out infinite}
+  html:not([data-site-motion=off]) .h-rig-item:hover .h-dev-ring--2{animation-delay:.5s}
+}
+@keyframes h-rgb{to{background-position:-200% 0}}
+@keyframes h-ring{from{scale:.6;opacity:1}to{scale:1.4;opacity:0}}
+@media (max-width:1100px){.h-dev--laptop{position:relative;right:auto;top:auto;width:min(80%,320px);margin:10px 0 0 auto}}
+@media (max-width:760px){
+  .h-dock-head{padding-right:0;flex-wrap:wrap}
+  .h-dock-group+.h-dock-group{padding-left:0;border-left:0;border-top:1px solid #e7ebf21f;padding-top:14px}
+  .h-app{width:64px}
+}
+.h-app{width:auto;min-width:clamp(60px,5.4vw,76px)}.h-app-name{white-space:nowrap}
+@media (max-width:760px){.h-dock-apps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px 6px;width:100%}.h-app{min-width:0}.h-app-name{white-space:normal}}
+html[lang=en] .h-sound #music-song-title{font-family:var(--display),var(--zh-display)!important;letter-spacing:0!important}
