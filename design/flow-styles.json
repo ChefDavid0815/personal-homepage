@@ -167,5 +167,11 @@
     "./language.css",
     "./atelier.css",
     "./atelier-scenes.css"
+  ],
+  "films.html": [
+    "./styles.css",
+    "./language.css",
+    "./atelier.css",
+    "./atelier-scenes.css"
   ]
 }

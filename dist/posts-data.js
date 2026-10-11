@@ -3,6 +3,7 @@ import {nabatPost} from './nabat-content.js';
 import { flowPost } from './flow-release.js';
 import { currentPost } from './current-release.js';
 import { sunMvPost } from './sun-mv-content.js';
+import { zxPost } from './zhouxuan-content.js';
 import {nerfPost} from './nerf-post.js';
 import {chromaPost} from './chroma-post.js';
 import {atlasPost} from './atlas-post.js';
@@ -16,6 +17,7 @@ import { wisPost } from './wis-post.js';
 import { axiomPost } from './axiom-post.js';
 import { festivalPost } from './festival-post.js';
 export const posts = [
+  zxPost,
   sunMvPost,
   currentPost,
   dotAirPost,

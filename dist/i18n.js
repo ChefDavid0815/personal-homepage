@@ -5,6 +5,8 @@ import {nabatMessages} from './nabat-content.js';
 import { flowReleaseMessages } from './flow-release.js';
 import { currentReleaseMessages } from './current-release.js';
 import { sunMvMessages } from './sun-mv-content.js';
+import { zxMessages } from './zhouxuan-content.js';
+import { filmsMessages } from './films-content.js';
 import {resolveSiteLanguage} from './flow-state.js';
 import {nerfMessages} from './nerf-content.js';
 import {chromaMessages} from './chroma-content.js';
@@ -164,7 +166,7 @@ export const messages = {
   'profile.enterGallery': ['进入项目陈列室 <span aria-hidden="true">→</span>', 'Step into the collection <span aria-hidden="true">→</span>']
 };
 
-Object.assign(messages, personalMessages, musicMessages, folioMessages, axiomMessages, festivalMessages, wisMessages, festivalUpdateMessages, modelMessages, gameMessages, lensMessages, festivalJourneyMessages, chromaMessages, atlasMessages, roseraieMessages, afterimageMessages, nerfMessages, flowReleaseMessages, nabatMessages, dotAirMessages, dotAirReleaseMessages, ac8Messages, currentReleaseMessages, sunMvMessages);
+Object.assign(messages, personalMessages, musicMessages, folioMessages, axiomMessages, festivalMessages, wisMessages, festivalUpdateMessages, modelMessages, gameMessages, lensMessages, festivalJourneyMessages, chromaMessages, atlasMessages, roseraieMessages, afterimageMessages, nerfMessages, flowReleaseMessages, nabatMessages, dotAirMessages, dotAirReleaseMessages, ac8Messages, currentReleaseMessages, sunMvMessages, zxMessages, filmsMessages);
 const storageKey = 'chefzc.language';
 let language = resolveSiteLanguage(null,globalThis.navigator?.language);
 try { language = resolveSiteLanguage(globalThis.localStorage?.getItem(storageKey),globalThis.navigator?.language); } catch { /* Storage may be disabled; the switch still works. */ }

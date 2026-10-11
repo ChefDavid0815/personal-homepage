@@ -21,12 +21,12 @@ test('an article returns to its stable card identity instead of the top of the l
   assert.equal(articleHref('nerf'),'./post.html?article=nerf');assert.equal(articleReturnHref('nerf'),'./posts.html#post-nerf');
 });
 test('every collection uses the same order and the actual current project count',()=>{
-  const rooms=collectionDestinations(9);assert.deepEqual(rooms.map(r=>r.id),['live','main','school','models']);assert.equal(rooms[1].count,9);assert.equal(collectionDestinations(12)[1].count,12);assert.equal(rooms[1].href,'./gallery.html#projects');
+  const rooms=collectionDestinations(9);assert.deepEqual(rooms.map(r=>r.id),['live','main','school','models','films']);assert.equal(rooms[1].count,9);assert.equal(collectionDestinations(12)[1].count,12);assert.equal(rooms[1].href,'./gallery.html#projects');
 });
 const projects=[{id:'test-work',name:'Color Lab',description:'彩色工具',translations:{en:{description:'A colorful tool'}},tags:['TypeScript']}];
 const posts=[{id:'nerf-note',date:'2026-10-07',zh:{title:'神经网络手记',summary:'看见一个世界',category:'研究'},en:{title:'NeRF study',summary:'A world appears',category:'Research'}}];
 test('catalogue keeps each work and note and gives every entry a unique identity and destination',()=>{
-  const catalog=buildCatalog(projects,posts);assert.equal(catalog.filter(r=>r.group==='works').length,8);assert.equal(catalog.filter(r=>r.group==='notes').length,1);assert.equal(new Set(catalog.map(r=>r.id)).size,catalog.length);assert.equal(new Set(catalog.map(r=>r.href)).size,catalog.length);
+  const catalog=buildCatalog(projects,posts);assert.equal(catalog.filter(r=>r.group==='works').length,9);assert.equal(catalog.filter(r=>r.group==='notes').length,1);assert.equal(new Set(catalog.map(r=>r.id)).size,catalog.length);assert.equal(new Set(catalog.map(r=>r.href)).size,catalog.length);
   assert.ok(catalog.some(r=>r.href==='./models-gallery.html#project-curry-head'));assert.ok(catalog.some(r=>r.href==='./post.html?article=nerf-note'));
 });
 test('search supports both languages, normalized characters, conjunctive terms and a recoverable empty state',()=>{

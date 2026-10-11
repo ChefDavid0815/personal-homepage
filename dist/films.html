@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#e7ebf2">
+  <meta name="description" content="ChefZC 的影像作品：用代码渲染的音乐 MV《周旋》与《没了我你依然拥有太阳》，每一帧都由歌曲本身算出来。">
+  <title>影像作品 — ChefZC Films</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/flow/mark.svg">
+  <link rel="preconnect" href="https://use.typekit.net" crossorigin>
+  <script>(function(d){var c={kitId:'fty8nfs',scriptTimeout:3000,async:true},h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},c.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+c.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(c)}catch(e){}};s.parentNode.insertBefore(tk,s)})(document);</script>
+  <link rel="stylesheet" href="./flow-legacy-films.css">
+
+
+
+  <script type="module" src="./motion.js"></script>
+  <script type="module" src="./flow-motion.js"></script>
+  <script type="module" src="./films-hall.js"></script>
+  <script type="module" src="./zhouxuan-exhibit.js"></script>
+  <script type="module" src="./sun-mv-exhibit.js"></script>
+  <link rel="stylesheet" href="./flow.css">
+  <link rel="stylesheet" href="./flow-current.css">
+  <link rel="stylesheet" href="./flow-rebuild.css">
+  <link rel="stylesheet" href="./flow-room-films.css">
+<link rel="stylesheet" href="./site-navigation.css"></head>
+<body class="films-page">
+  <a class="skip-link" href="#film-index" data-i18n="films.skip">跳到影像作品</a>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="./profile.html" aria-label="ChefZC 个人主页"><span class="brand-mark" aria-hidden="true">c<span>_</span></span><span>ChefZC<span class="brand-dot">.</span></span></a>
+      <nav class="page-nav" aria-label="主导航"><a class="nav-link" href="./profile.html" aria-label="Personal Profile"><span class="nav-long">Personal </span>Profile</a><a class="nav-link" href="./gallery.html" aria-current="page">Gallery<span class="nav-count" aria-hidden="true">↗</span></a><a class="nav-link" href="./game.html">游戏</a>
+        <a class="nav-link" href="./now.html">近况</a><a class="nav-link" href="./posts.html">随笔</a><a class="nav-link" href="./usage.html">用量</a></nav>
+      <div class="header-tools"><span class="edition mono">PERSONAL SPACE <span>/</span> 001</span><div class="language-switch" role="group" aria-label="选择语言"><button type="button" data-language="zh" lang="zh-CN" aria-label="切换为中文" aria-pressed="true">中</button><button type="button" data-language="en" lang="en" aria-label="Switch to English" aria-pressed="false">EN</button></div></div>
+    </header>
+    <main>
+      <section class="fh" data-theme="dark" aria-labelledby="films-title">
+        <div class="fh-top">
+          <h1 id="films-title">FILMS<span>.</span></h1>
+          <p class="fh-count"><b>02</b><span data-i18n="films.count">支用代码渲染的 MV</span></p>
+        </div>
+        <div class="fh-body">
+          <h2 data-i18n="films.intro">让歌自己，算出每一帧。</h2>
+          <p data-i18n="films.description">这里放用代码渲染的影像作品。没有摄像机，也没有剪辑软件：每一帧都由歌本身的时间、节拍和人声算出来。</p>
+        </div>
+        <ol class="fh-reels" id="film-index" aria-label="选择一支影片" data-i18n-label="films.index">
+          <li><a class="fh-reel fh-reel--zx" href="#zhouxuan">
+            <span class="fh-frame"><img src="./assets/projects/zhouxuan/prelude.jpg" width="1600" height="900" alt="" decoding="async"><video muted loop playsinline preload="none" data-src="./assets/projects/zhouxuan/prelude.mp4" aria-hidden="true"></video></span>
+            <span class="fh-meta"><b>Code film 02</b><span>5:05</span><time datetime="2026-10-11">2026.10.11</time></span>
+            <strong lang="zh-CN">周旋</strong><span class="fh-line" data-i18n="films.zxLine">王以太 &amp; 艾热AIR / 一颗被线撑着的心</span>
+          </a></li>
+          <li><a class="fh-reel fh-reel--sun" href="#sun-mv">
+            <span class="fh-frame"><img src="./assets/projects/sun-mv/opening.jpg" width="1600" height="900" alt="" decoding="async"><video muted loop playsinline preload="none" data-src="./assets/projects/sun-mv/tear-sun.mp4" aria-hidden="true"></video></span>
+            <span class="fh-meta"><b>Code film 01</b><span>4:53</span><time datetime="2026-10-10">2026.10.10</time></span>
+            <strong lang="zh-CN">没了我你依然拥有太阳</strong><span class="fh-line" data-i18n="films.sunLine">黄霄雲 / 字在被唱出的那一刻写下</span>
+          </a></li>
+        </ol>
+        <p class="fh-more" data-i18n="films.more">以后的视频作品，也会放在这里。</p>
+      </section>
+
+      <section class="zx" id="zhouxuan" data-theme="dark" aria-labelledby="zx-title" data-zhouxuan><noscript><p>《周旋》代码 MV 展柜需要 JavaScript。</p></noscript></section>
+      <section class="smv" id="sun-mv" data-theme="dark" aria-labelledby="smv-title" data-sun-mv><noscript><p>《没了我你依然拥有太阳》代码 MV 展柜需要 JavaScript。</p></noscript></section>
+
+      <nav class="collection-navigation gn" aria-label="选择展厅" data-i18n-label="collection.label"><div class="gallery-room-label"><span data-i18n="gallery.roomsLabel">选择一间展室</span><span>ROOM INDEX / 01—05</span></div></nav>
+    </main>
+
+<div class="site-social-links" aria-label="社交与联系方式" data-i18n-label="contact.socialLabel"><a href="https://github.com/ChefDavid0815" target="_blank" rel="noopener noreferrer"><svg class="symbol " aria-hidden="true" viewBox="0 0 24 24"><use href="./assets/icons.svg#code-xml"></use></svg>GitHub <span aria-hidden="true">↗</span></a><a href="https://www.instagram.com/chefzichuan/" target="_blank" rel="noopener noreferrer"><svg class="symbol " aria-hidden="true" viewBox="0 0 24 24"><use href="./assets/icons.svg#camera"></use></svg>Instagram <span aria-hidden="true">↗</span></a><a href="mailto:zzichuan0808@outlook.com"><svg class="symbol " aria-hidden="true" viewBox="0 0 24 24"><use href="./assets/icons.svg#mail"></use></svg><span data-i18n="contact.email" >邮箱</span><span aria-hidden="true">↗</span></a></div>
+    <footer class="site-footer"><a class="footer-brand" href="./profile.html">ChefZC<span class="lime-text">.</span></a><span class="mono">保持热忱，保持热爱 · VIVA LA VIDA</span><a href="#" class="back-top">回到顶部 <span aria-hidden="true">↑</span></a></footer>
+  </div>
+  <div class="visually-hidden" id="language-announcement" role="status" aria-live="polite"></div>
+</body></html>

@@ -39,7 +39,7 @@ test('retired AER has no independent route and no remaining Now entries',async()
   assert.equal(siteRoutes.some(p=>p.id==='aer'),false);
   const now=await readFile(new URL('../dist/now.html',import.meta.url),'utf8');
   assert.equal(now.includes('milestone--aer'),false);
-  assert.equal((now.match(/class="timeline-entry[\s"]/g)||[]).length,33);
+  assert.equal((now.match(/class="timeline-entry[\s"]/g)||[]).length,34);
 });
 test('the exhibit follows the verified latest software release',()=>assert.equal(dotAirProject.version,'2.0.0'));
 test('the edition log records both real releases, newest first, with bilingual changes',()=>{

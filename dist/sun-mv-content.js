@@ -2,7 +2,7 @@
 // The song's recording and lyrics belong to their authors; this site shows only muted excerpts of the
 // picture and the film's original silent opening (brush sound design by ChefZC). No lyrics are reproduced.
 export const sunMvAsset='./assets/projects/sun-mv/';
-export const sunMvLinks={repo:'https://github.com/ChefDavid0815/the-sun-mv',room:'./gallery.html#code-films',post:'./post.html?article=sun-mv',now:'./now.html#milestone-sun-mv'};
+export const sunMvLinks={repo:'https://github.com/ChefDavid0815/the-sun-mv',room:'./films.html#sun-mv',post:'./post.html?article=sun-mv',now:'./now.html#milestone-sun-mv'};
 
 export const sunMvSong={
   title:'没了我你依然拥有太阳',titleEn:'The Sun Will Illuminate Your World',
