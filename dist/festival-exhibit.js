@@ -1,7 +1,7 @@
 import './festival-weather.js';
 import { festivalJourneyArt } from './festival-journey.js';
 import { t, getLanguage } from './i18n.js';
-import { currentFestival, festivalReleases, festivalReleaseUrl } from './festival-releases.js';
+import { currentFestival, festivalReleases, festivalReleaseUrl, festivalSourceUrl } from './festival-releases.js';
 import { esc, icon, plusIcon, specList, tagLine, roomTitle, linkButton, insideButton, label } from './exhibit-frame.js';
 
 const seasons = ['summer','autumn','winter','spring'];
@@ -39,7 +39,7 @@ export function festivalHistory(id) {
   const route = [...festivalReleases].reverse().map(r=>`<span>${r.version}</span>`).join('<i></i>');
   return `<details class="xr-history fsx-history festival-history" id="${id}"><summary><span class="xr-history-count"><b>${String(festivalReleases.length).padStart(2,'0')}</b><small>Issues</small></span><span class="xr-history-title"><strong>${t('festival.history')}</strong><small>${t('festival.historyHint')}</small></span><span class="xr-history-route" aria-hidden="true">${route}</span><span class="xr-history-toggle" aria-hidden="true">${plusIcon}</span></summary><div class="xr-history-body">${festivalReleases.map((release,index)=>{
     const copy=release[language];
-    return `<article class="xr-release${index===0?' is-current':''}"><div class="xr-release-rail"><b class="xr-release-v">${release.version}</b><time datetime="${release.date}">${release.date.replaceAll('-','.')}</time><span class="xr-release-status">${t(index===0?'festival.current':'festival.previous')}</span><span class="xr-release-ed">Pass / ${release.edition}</span><i class="fsx-barcode" aria-hidden="true"></i></div><div class="xr-release-copy"><h4>${copy.name}</h4><p>${copy.intro}</p><ul>${copy.changes.map(([name,body])=>`<li><b>${name}</b><span>${body}</span></li>`).join('')}</ul><p class="xr-release-note">${copy.note}</p><a href="${festivalReleaseUrl(release.version)}" target="_blank" rel="noopener noreferrer"><span>${t('festival.releaseLink')} ${release.version}</span>${icon('arrow-up-right')}</a></div></article>`;
+    return `<article class="xr-release${index===0?' is-current':''}"><div class="xr-release-rail"><b class="xr-release-v">${release.version}</b><time datetime="${release.date}">${release.date.replaceAll('-','.')}</time><span class="xr-release-status">${t(index===0?'festival.current':'festival.previous')}</span><span class="xr-release-ed">Pass / ${release.edition}</span><i class="fsx-barcode" aria-hidden="true"></i></div><div class="xr-release-copy"><h4>${copy.name}</h4><p>${copy.intro}</p><ul>${copy.changes.map(([name,body])=>`<li><b>${name}</b><span>${body}</span></li>`).join('')}</ul><p class="xr-release-note">${copy.note}</p><a href="${release.source?festivalSourceUrl(release.version):festivalReleaseUrl(release.version)}" target="_blank" rel="noopener noreferrer"><span>${t(release.source?'festival.sourceLink':'festival.releaseLink')} ${release.version}</span>${icon('arrow-up-right')}</a></div></article>`;
   }).join('')}<p class="xr-history-foot"><span>The festival archive</span><span>Your festival. Still growing.</span><span>${t('festival.archiveFoot')}</span></p></div></details>`;
 }
 

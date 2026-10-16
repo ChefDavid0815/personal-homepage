@@ -1,6 +1,6 @@
 import { currentFolio, folioReleaseUrl } from './folio-releases.js';
 import {dotAirProject} from './dot-air-content.js';
-import { currentFestival, festivalReleaseUrl } from './festival-releases.js';
+import { currentFestival, festivalInstaller, festivalReleaseUrl } from './festival-releases.js';
 // 只需在这里添加项目，主页就会自动生成对应卡片。
 // 接入真实项目后，将 demo 设为 false，并填写 repoUrl / liveUrl。
 export const projects = [
@@ -42,7 +42,7 @@ export const projects = [
     category:'WINDOWS SAVE WORKSHOP', number:'04', color:'mint', tags:['Electron','React','Windows'],
     description:'Horizon Festival Toolkit 0.3.0。38 个分类、2,833 个收藏项目、七色腕带、每日更新提醒，以及 647 车型与季节赛工坊。',
     demo:false, version:currentFestival.version, repoUrl:'https://github.com/ChefDavid0815/horizon-festival-toolkit',
-    downloadUrl:festivalReleaseUrl(currentFestival.version), liveUrl:'',
+    downloadUrl:festivalReleaseUrl(festivalInstaller.version), liveUrl:'',
     translations:{zh:{category:'WINDOWS 旅程与收藏工坊'},en:{subtitle:'Let every journey bloom.',description:'Horizon Festival Toolkit 0.3.0. 38 categories, 2,833 journal entries, seven wristbands and daily release checks, alongside 647 car models and seasonal records.'}}
   },
   {

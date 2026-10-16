@@ -382,6 +382,9 @@
   "revisedFiles": {
     "dist/assets/fonts/noto-sans-sc-site-variable.woff2": "eccda707b5911658fe5a6c82fcb073b9b15ddce0dc44659d3704692d894d608c",
     "dist/personal-content.js": "a0c4511e89bae07a2b873b5383b70d9587b5224c75ad31fa7077e9b362276f9d",
-    "dist/posts-data.js": "b01a08bd866a578d3108dfcee00cf06d3b5400eaf408846af634f6b6f23b32f7"
+    "dist/posts-data.js": "b01a08bd866a578d3108dfcee00cf06d3b5400eaf408846af634f6b6f23b32f7",
+    "dist/festival-content.js": "825831894615139306493baa0560b513933085a4339047532f2ced9adf08ff52",
+    "dist/festival-releases.js": "1a298f0fd31c6fad9b9037c6b264041059f77ee9ef81d5f9b54c57f95bb0c3e0",
+    "dist/projects.js": "8473a0d86c59f53553b7dafad8d8806f6ed05209a4284da07b3f0334a67122b0"
   }
 }

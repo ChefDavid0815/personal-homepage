@@ -1,6 +1,31 @@
 // Public releases only. Historical notes retain their original scope.
 export const festivalReleaseUrl = version => `https://github.com/ChefDavid0815/horizon-festival-toolkit/releases/tag/v${version}`;
+// A source-only version has no release page yet: link its release notes in the repository instead.
+export const festivalSourceUrl = version => `https://github.com/ChefDavid0815/horizon-festival-toolkit/blob/main/docs/RELEASE-${version}.md`;
 export const festivalReleases = [
+  {
+    version:'0.4.0', date:'2026-10-16', edition:'04', source:true,
+    zh:{
+      name:'每一次调校，都有据可查。',
+      intro:'调校工坊开张。车库里每辆车的调校、改装和实际花费都能读出来；季节赛跟着游戏自己更新；整个界面换成一张车检证。',
+      changes:[
+        ['TUNING / 调校工坊','读取每辆车的完整调校、已装部件和每个部件的实际成交价，胎压、齿比、定位、防倾杆、阻尼、刹车与差速器换算成实际单位。八种场景计算，同车型复制调校或整套改装，本机调校库，以及社区分享码查询。'],
+        ['REWARDS / 奖励车辆','自动找到 Steam 与 Xbox 安装目录，运行时每分钟比对游戏资源。每周、整季和各项赛事的奖励车辆都从游戏资源读取，未拥有的可以一次加入待写入列表。'],
+        ['REGISTER / 车检证','全新界面：浅绿防伪底纹纸面、带角标的字段框、墨色文字，朱红印章只盖在待写入的修改上；待写入的数值逐位滚动。']
+      ],
+      note:'源码版本，尚未发布安装包。45 项测试通过，桌面版已用隔离存档逐页走查；写入的调校与复制的改装在游戏内的效果尚未验证，场景计算只是一个起点。'
+    },
+    en:{
+      name:'Every tune, on the record.',
+      intro:'The tuning workshop opens. Every car’s tune, upgrades and the CR actually paid can be read from the save; the playlist follows game updates by itself; and the whole interface becomes a vehicle register.',
+      changes:[
+        ['TUNING / THE WORKSHOP','Read every car’s full tune, installed parts and the price paid for each part, with tyre pressure, gearing, alignment, anti-roll, damping, brakes and differential in real units. Eight scenario calculators, same-model tune or full-build transfer, a local tune library and community share-code lookup.'],
+        ['REWARDS / THE CARS','The Steam or Xbox install is found automatically and checked every minute while the app is open. Week, season and event reward cars are read from game resources, and the missing ones can be staged in one step.'],
+        ['REGISTER / A NEW FACE','A complete redesign: tinted security paper, boxed fields with corner tabs, sumi ink, and a vermilion seal reserved for staged changes; staged figures roll digit by digit.']
+      ],
+      note:'Source version; no installer has been published yet. All 45 tests pass and the desktop app was walked page by page on an isolated save. In-game effects of written tunes and copied builds are unverified, and scenario tunes are only a starting point.'
+    }
+  },
   {
     version:'0.3.0', date:'2026-09-22', edition:'03',
     zh:{
@@ -72,7 +97,15 @@ export const festivalReleases = [
   }
 ];
 export const currentFestival = festivalReleases[0];
+// The newest version with a published installer, for download links.
+export const festivalInstaller = festivalReleases.find(release => !release.source);
 export const festivalUpdateMessages = {
+  'now.festival04Label': ['软件 / 大版本', 'SOFTWARE / MAJOR UPDATE'],
+  'now.festival04Kicker': ['把每一次调校，记进车检证', 'EVERY TUNE, INTO THE REGISTER'],
+  'now.festival04Title': ['Festival Toolkit 0.4，调校工坊开张。', 'Festival Toolkit 0.4: the tuning workshop opens.'],
+  'now.festival04Text': ['读出车库里每辆车的调校、改装和实际成交价，胎压、齿比、定位、阻尼都换成真实单位；八种场景计算、同车型复制调校与改装、本机调校库和社区分享码。季节赛会自己跟着游戏更新，奖励车辆一键补齐。整个界面重做成一张车检证：防伪底纹纸、字段框和只盖在待写入修改上的朱红印章。', 'Every car’s tune, upgrades and the CR actually paid, read from the save, with tyre pressure, gearing, alignment and damping in real units; eight scenario calculators, same-model tune and build transfer, a local tune library and community share codes. The playlist now follows game updates, and missing reward cars can be added in one step. The whole interface was redrawn as a vehicle register: security paper, boxed fields and a vermilion seal only for staged changes.'],
+  'now.festival04Note': ['源码版本，安装包尚未发布；写入的调校在游戏内的效果尚未验证。', 'Source version; the installer is not published yet. In-game effects of written tunes are unverified.'],
+  'now.festival04Notes': ['读 0.4 版本说明', 'Read the 0.4 release notes'],
   'now.meta': ['ChefZC 的近况。2026 年 9 月 20 日，Festival Toolkit 0.2 发布：车辆收藏、内容更新与版本手记。', 'Updates from ChefZC. September 20, 2026: Festival Toolkit 0.2 brings a garage, content updates and a version journal.'],
   'profile.bridgeNote': ['Festival Toolkit 来到 0.2：四季之外，多一间梦想车库。还有 AXIOM、Folio 与 NBA After Hours，以及独立的校园实验室。每件作品，都有自己的风景。', 'Festival Toolkit reaches 0.2: beyond four seasons, a garage for the next dream. Explore AXIOM, Folio, NBA After Hours and the separate School Lab. A landscape for every project.']
 };

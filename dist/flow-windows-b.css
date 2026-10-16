@@ -134,3 +134,27 @@
 .wb-more{font-style:normal}
 @container (max-width:480px){.wb--wide .wb-more{display:none}}
 @container (max-width:340px){.wb--tall .wb-more{display:none}}
+/* Festival Toolkit 0.4: the vehicle register. Security-paper ground, boxed card with corner tabs,
+   tune rows whose knobs slide from the old position to the new, and a vermilion seal for the staged change. */
+.wb--festival-04{--wb-bg:#e3ecdc;--wb-ink:#1c2a24;--wb-accent:#c8372d;background-image:repeating-radial-gradient(circle at 18% 120%,transparent 0 9px,#1c2a2410 9px 10px),repeating-radial-gradient(circle at 92% -20%,transparent 0 11px,#1c2a240c 11px 12px)}
+.wb-register{width:100%;height:100%;overflow:visible}
+.wb-reg-paper{fill:#f4f7ef;stroke:#1c2a24;stroke-width:1}
+.wb-reg-tab{fill:none;stroke:#1c2a24;stroke-width:2.2}
+.wb-tune-label{font:400 11px var(--zh);fill:#1c2a24}
+.wb-tune-en{font:500 7px var(--mono);letter-spacing:.06em;fill:#1c2a2499}
+.wb-tune-track{stroke:#1c2a2440;stroke-width:2;stroke-linecap:round}
+.wb-tune-ghost{fill:none;stroke:#1c2a2466;stroke-width:1;stroke-dasharray:2 2}
+.wb-tune-knob circle{fill:#1c2a24;stroke:#f4f7ef;stroke-width:1.5}
+.wb-seal rect{fill:none;stroke:#c8372d;stroke-width:2.4}
+.wb-seal-t{font:400 11px var(--zh);fill:#c8372d;text-anchor:middle}
+.wb-seal{transform-box:fill-box;transform-origin:center}
+@media (prefers-reduced-motion:no-preference){
+  html:not([data-site-motion=off]) .wb--festival-04 .wb-tune-knob{animation:wb-tune-slide 1.1s cubic-bezier(.16,1,.3,1) both;animation-delay:calc(.5s + var(--d,0s))}
+  html:not([data-site-motion=off]) .wb--festival-04 .wb-seal{animation:wb-seal-stamp .5s cubic-bezier(.3,1.6,.5,1) 1.5s both}
+  html:not([data-site-motion=off]) .milestone--festival04:hover .wb-tune-knob{animation-name:wb-tune-slide-again;animation-delay:var(--d,0s)}
+  html:not([data-site-motion=off]) .milestone--festival04:hover .wb-seal{animation-name:wb-seal-stamp-again;animation-delay:.75s}
+}
+@keyframes wb-tune-slide{from{transform:translateX(var(--from))}to{transform:none}}
+@keyframes wb-seal-stamp{0%{opacity:0;scale:1.7}60%{opacity:1}100%{opacity:1;scale:1}}
+@keyframes wb-tune-slide-again{from{transform:translateX(var(--from))}to{transform:none}}
+@keyframes wb-seal-stamp-again{0%{opacity:0;scale:1.7}60%{opacity:1}100%{opacity:1;scale:1}}
